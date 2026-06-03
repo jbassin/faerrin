@@ -26,5 +26,8 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  // site/ is its own workspace package (caster-site, Astro+Solid) with its own
+  // tsconfig + `check` script; don't let caster's CLI tsc walk it.
+  "exclude": ["node_modules", "site", "out"]
 }

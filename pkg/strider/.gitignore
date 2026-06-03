@@ -25,6 +25,3 @@ bun-debug.log*
 
 # typescript
 *.tsbuildinfo
-
-# husky internal wrappers
-/.husky/_

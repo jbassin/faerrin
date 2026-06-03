@@ -1,0 +1,15 @@
+{
+  "//": "Shared compilerOptions base for the faerrin monorepo. Holds only universally-safe knobs; apps re-declare lib/types/jsx/module/paths and their own include/exclude. quartz stays on astro/tsconfigs/strict. NOT YET adopted by apps — wiring deferred to the dependency-unification step.",
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "target": "ESNext",
+    "lib": ["ESNext"]
+  }
+}

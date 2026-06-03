@@ -9,10 +9,9 @@
     "verbatimModuleSyntax": false
   },
   // Root config is the one VS Code auto-discovers, so it must cover every source
-  // tree the editor opens: src/ (Astro app) + scripts/ & migration/ (the pipeline,
-  // which also has the focused CLI-gate config tsconfig.scripts.json). Without
+  // tree the editor opens: src/ (Astro app) + scripts/ (the pipeline). Without
   // scripts/ here, VS Code drops those files into an inferred project with no
   // @types/node → "Cannot find name 'process'".
-  "include": [".astro/types.d.ts", "src/**/*", "scripts/**/*", "migration/**/*"],
+  "include": [".astro/types.d.ts", "src/**/*", "scripts/**/*"],
   "exclude": ["node_modules", "public", "dist"]
 }

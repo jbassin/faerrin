@@ -1,5 +1,5 @@
 {
-  "name": "heart-of-hearts",
+  "name": "quartz",
   "description": "Faerrin TTRPG campaign wiki — content pipeline (scripts/) + Astro + Solid site (src/).",
   "private": true,
   "version": "4.5.1",
@@ -9,14 +9,13 @@
     "dev": "astro dev --port 10114",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check && npx prettier . --check",
-    "format": "npx prettier . --write",
+    "check": "astro check && bunx prettier . --check",
+    "format": "bunx prettier . --write",
     "test": "tsx --test",
     "pipeline": "tsx scripts/run.ts",
     "review": "tsx scripts/review.ts"
   },
   "engines": {
-    "npm": ">=10.9.2",
     "node": ">=22"
   },
   "dependencies": {

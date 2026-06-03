@@ -34,7 +34,14 @@ live-site output paths, root CI, and a gated plan for collapsing the triplicated
 - **[USER DECISION] caster/site fate:** (a) promote to workspace member (`workspaces:["pkg/*","pkg/caster/site"]`),
   (b) exclude as standalone, or (c) fold into caster. Until decided, do NOT delete its bun.lock.
 
-### Step 1 — quartz-on-bun feasibility SPIKE (disposable jj change)  [GATE]
+### Step 1 — quartz-on-bun feasibility SPIKE (disposable jj change)  [GATE] ✅ PASSED 2026-06-03
+> **RESULT: PASS.** On disposable change `tvnvmrup` (abandoned): `bun install` migrated
+> package-lock.json → bun.lock cleanly (no resolution errors, engine-strict/.npmrc ignored by bun);
+> `bunx astro build` succeeded with the astro-pagefind `astro:build:done` hook (346 pages indexed,
+> index written to public/pagefind); **public/ output was byte-for-byte identical to the npm baseline
+> — 763 files = 763 files, 0 added, 0 missing, 384 pagefind files**; `bunx tsx scripts/run.ts export`
+> ran the content pipeline under bun (75 pages, 0.6s). all-bun target is de-risked. Carry this recipe.
+> (Original spike spec below, retained for reference.)
 - On a throwaway `jj new`, inside `pkg/quartz` only: neutralize `.npmrc engine-strict` + drop
   `engines.npm`; `bun install`; `bunx tsx scripts/run.ts all`; `rm -rf .astro <root>/node_modules/.astro`;
   `bunx astro build` → `public/`.
@@ -66,7 +73,14 @@ live-site output paths, root CI, and a gated plan for collapsing the triplicated
 - **[USER DECISION] Dockerfile fate:** `npm ci` breaks once the lockfile is deleted → either migrate
   to `oven/bun`+`bun install`, or mark dead/unused (its comment says prod uses the proxy).
 
-### Step 4 — Consolidate lockfiles  [GATE after]
+### Step 4 — Consolidate lockfiles  [GATE after] ✅ DONE 2026-06-03 (awaiting review)
+> **RESULT:** 5 lockfiles → one root `bun.lock`; workspace recognized (caster, caster-site,
+> heartwood, quartz, strider as `workspace:`); install clean (1664 pkgs). Typecheck:
+> caster ✅ (after excluding nested site/), strider ✅ (after adding explicit
+> `@tanstack/router-generator@^1.167.13` — phantom dep exposed by hoisting), quartz astro
+> check ✅ 0 errors, caster-site astro check ✅ 0 errors. heartwood ⚠️ 2 PRE-EXISTING
+> test-type errors (apply.test.ts, respond.test.ts) — not migration-caused (only change was a
+> no-op @types/bun pin); respond.test.ts is in the Step-7 SDK-upgrade zone.
 - `jj` rm all lockfiles (5, incl. caster/site per Step 0); one root `bun install`.
 - Validate every app installs + typechecks. quartz is now actually bun-runnable (spike proved the build).
 
@@ -132,7 +146,7 @@ baselines; no tracked secrets; rollback documented per gate. Persona **code-revi
 | # | Decision | When |
 |---|----------|------|
 | D1 | caster/site fate → **DECIDED: promote to workspace member** (add to workspaces glob; 5th live site, hoisted deps, one root lock) | Step 0 ✅ |
-| D2 | Dockerfile fate (migrate to bun / mark dead) | Step 3 |
+| D2 | Dockerfile fate → **DECIDED (default): migrated to `oven/bun` + `bun run --filter quartz build`; commented as NOT on deploy path + needs repo-root build context. Confirm/override.** | Step 3 ✅ |
 | D3 | Freeze output-path contract w/ proxy | Step 5 |
 | D4 | OG-render in CI (deploy-only vs every build) | Step 9 |
 | D5 | Wiki ownership flow | Phase 2 Step 10 |

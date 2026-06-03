@@ -14,8 +14,7 @@
     "test:e2e": "playwright test --pass-with-no-tests",
     "format": "prettier --write .",
     "editor:server": "bun run --hot scripts/editor-server.ts",
-    "generate:content": "bun run scripts/build-content.ts",
-    "prepare": "husky"
+    "generate:content": "bun run scripts/build-content.ts"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.2.7",
@@ -28,6 +27,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
+    "@tanstack/router-generator": "^1.167.13",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^25.9.1",
@@ -37,7 +37,6 @@
     "eslint": "^9.0.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "gray-matter": "^4.0.3",
-    "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "prettier": "^3.8.3",
     "remark": "^15.0.1",
