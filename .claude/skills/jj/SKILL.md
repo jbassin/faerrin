@@ -1,5 +1,5 @@
 ---
-name: jujutsu
+name: jj
 description: "**REQUIRED** - Always activate FIRST on any git/VCS operations (commit, status, branch, push, etc.), especially when HEAD is detached. If `.jj/` exists -> this is a Jujutsu (jj) repo - raw git commands can corrupt data. Essential git safety instructions inside. DO NOT IGNORE."
 allowed-tools: Bash(jj *)
 ---
@@ -78,8 +78,8 @@ jj new
 ```
 
 ```bash
-# First, describe what you intend to do
-jj desc -m "Add user authentication to login endpoint"
+# First, describe what you intend to do, using conventional commit format
+jj desc -m "feat(strider): add user authentication to login endpoint"
 
 # Then make your changes - they automatically become part of this commit
 # ... edit files ...
