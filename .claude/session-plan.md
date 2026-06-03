@@ -160,6 +160,14 @@ baselines; no tracked secrets; rollback documented per gate. Persona **code-revi
 > Destructive jj deletes of triplicated data — every delete is a **[GATE]** with a named jj checkpoint.
 
 ### Step 10 — Shared-content SSOT
+> **10.A TRANSCRIPTS ✅ DONE 2026-06-03 (commit `mnlrvpln`):** created `pkg/shared-content/`
+> (workspace member) with canonical line-numbered transcripts (41) + a robust header-agnostic
+> generator (`scripts/build-transcripts.ts`, `bun run --filter shared-content build:transcripts`).
+> Repointed heartwood (9 refs) + caster to `../shared-content/transcripts`. Deleted heartwood/transcripts
+> (37), caster/content/transcripts (41, content-divergent/stale), and the broken update-transcripts.sh.
+> Validated: heartwood 396/396, caster transcript-parse test passes, workspace typecheck green.
+> **10.B WIKI — NEXT:** quartz/content (121) canonical → pkg/shared-content/wiki; delete caster's
+> identical copy + heartwood's stale copy; repoint. (caster wiki-count test 93→121 resolves here.)
 1. **[GATE] Decide wiki owner:** persona **database-architect** compares heartwood-edits→quartz-publishes
    vs quartz-owns→heartwood-proposes, incl. frontmatter + Org layout (flat vs folder) reconciliation.
 2. **Reconcile drift:** diff the 3 wiki copies + transcript copies (caster newest); report; **[GATE]**.

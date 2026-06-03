@@ -12,7 +12,7 @@ import { config } from '../config';
 import type { complete as defaultComplete } from '../llm';
 import type { Command } from 'commander';
 
-const TRANSCRIPTS_DIR  = 'transcripts';
+const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const CLAIMS_DIR       = 'state/claims';
 const RESOLUTIONS_DIR  = 'state/resolutions';

@@ -1,6 +1,6 @@
 ## Project
 
-Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (under `transcripts/`) are segmented, mined for factual claims, matched against existing wiki pages (`content/`), and emitted as proposed edits that ship as GitLab merge requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the MR review).
+Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (read from `../shared-content/transcripts/`, the monorepo SSOT generated from quartz's pipeline) are segmented, mined for factual claims, matched against existing wiki pages (`content/`), and emitted as proposed edits that ship as GitLab merge requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the MR review).
 
 ## Repository layout
 
@@ -16,13 +16,16 @@ src/                          ← all pipeline code
   pricing.ts                  ← USD/1M-token rate table
   log.ts                      ← per-run JSONL cost log writer/summarizer
 content/                      ← Obsidian wiki — the source-of-truth being edited (see "Content files" below)
-transcripts/                  ← raw .txt session logs, line-numbered
 state/                        ← pipeline outputs, one file per transcript per stage (see "Pipeline" below)
 tickets/                      ← numbered spec docs (001-…) that drive the work
 thoughts/shared/plans/        ← pre-implementation plans, one per ticket
 index.ts                      ← top-level entrypoint — registers all CLI commands
-update-transcripts.sh         ← syncs raw transcripts from sibling `quartz` repo, strips headers, line-numbers them
 ```
+
+Transcripts are read from `../shared-content/transcripts/` (the monorepo SSOT, generated from
+quartz's pipeline via `bun run --filter shared-content build:transcripts`). heartwood no longer keeps
+its own `transcripts/`, and the old `update-transcripts.sh` (broken `/emerald/` paths + fixed-header
+transform) has been removed.
 
 ## Pipeline
 

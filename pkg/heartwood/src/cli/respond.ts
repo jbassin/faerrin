@@ -7,7 +7,7 @@ import { respondOne, type RespondCtx } from '../gitlab/respond';
 import type { GitLabClient } from '../gitlab/client';
 import type { Command } from 'commander';
 
-const TRANSCRIPTS_DIR  = 'transcripts';
+const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const SUBMISSIONS_DIR  = 'state/submissions';
 const PROPOSALS_DIR    = 'state/proposals';

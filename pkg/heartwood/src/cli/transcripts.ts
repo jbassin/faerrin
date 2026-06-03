@@ -6,7 +6,7 @@ import {
 } from '../transcript/ledger';
 import type { Command } from 'commander';
 
-const TRANSCRIPTS_DIR = 'transcripts';
+const TRANSCRIPTS_DIR = '../shared-content/transcripts';
 const LEDGER_PATH     = 'state/processed.json';
 
 export interface TranscriptsCliOptions {

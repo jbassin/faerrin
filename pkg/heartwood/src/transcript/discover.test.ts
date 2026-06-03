@@ -64,9 +64,9 @@ test('discoverTranscripts walks a directory, hashes contents, and sorts', async 
   }
 });
 
-test('discoverTranscripts against the real transcripts/ dir finds 37 files (26 main, 11 side)', async () => {
-  const r = await discoverTranscripts('transcripts');
-  expect(r.files.length).toBe(37);
-  expect(r.files.filter((f) => f.isMain).length).toBe(26);
+test('discoverTranscripts against the shared-content transcripts dir finds 41 files (30 main, 11 side)', async () => {
+  const r = await discoverTranscripts('../shared-content/transcripts');
+  expect(r.files.length).toBe(41);
+  expect(r.files.filter((f) => f.isMain).length).toBe(30);
   expect(r.files.filter((f) => !f.isMain).length).toBe(11);
 });

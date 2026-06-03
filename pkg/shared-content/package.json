@@ -1,0 +1,8 @@
+{
+  "name": "shared-content",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:transcripts": "bun scripts/build-transcripts.ts"
+  }
+}

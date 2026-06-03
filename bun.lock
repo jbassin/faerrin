@@ -82,6 +82,9 @@
         "unist-util-visit": "^5.0.0",
       },
     },
+    "pkg/shared-content": {
+      "name": "shared-content",
+    },
     "pkg/strider": {
       "name": "strider",
       "version": "0.1.0",
@@ -1567,6 +1570,8 @@
     "serve": ["serve@14.2.6", "", { "dependencies": { "@zeit/schemas": "2.36.0", "ajv": "8.18.0", "arg": "5.0.2", "boxen": "7.0.0", "chalk": "5.0.1", "chalk-template": "0.4.0", "clipboardy": "3.0.0", "compression": "1.8.1", "is-port-reachable": "4.0.0", "serve-handler": "6.1.7", "update-check": "1.5.4" }, "bin": { "serve": "build/main.js" } }, "sha512-QEjUSA+sD4Rotm1znR8s50YqA3kYpRGPmtd5GlFxbaL9n/FdUNbqMhxClqdditSk0LlZyA/dhud6XNRTOC9x2Q=="],
 
     "serve-handler": ["serve-handler@6.1.7", "", { "dependencies": { "bytes": "3.0.0", "content-disposition": "0.5.2", "mime-types": "2.1.18", "minimatch": "3.1.5", "path-is-inside": "1.0.2", "path-to-regexp": "3.3.0", "range-parser": "1.2.0" } }, "sha512-CinAq1xWb0vR3twAv9evEU8cNWkXCb9kd5ePAHUKJBkOsUpR1wt/CvGdeca7vqumL1U5cSaeVQ6zZMxiJ3yWsg=="],
+
+    "shared-content": ["shared-content@workspace:pkg/shared-content"],
 
     "sharp": ["sharp@0.34.5", "", { "dependencies": { "@img/colour": "^1.0.0", "detect-libc": "^2.1.2", "semver": "^7.7.3" }, "optionalDependencies": { "@img/sharp-darwin-arm64": "0.34.5", "@img/sharp-darwin-x64": "0.34.5", "@img/sharp-libvips-darwin-arm64": "1.2.4", "@img/sharp-libvips-darwin-x64": "1.2.4", "@img/sharp-libvips-linux-arm": "1.2.4", "@img/sharp-libvips-linux-arm64": "1.2.4", "@img/sharp-libvips-linux-ppc64": "1.2.4", "@img/sharp-libvips-linux-riscv64": "1.2.4", "@img/sharp-libvips-linux-s390x": "1.2.4", "@img/sharp-libvips-linux-x64": "1.2.4", "@img/sharp-libvips-linuxmusl-arm64": "1.2.4", "@img/sharp-libvips-linuxmusl-x64": "1.2.4", "@img/sharp-linux-arm": "0.34.5", "@img/sharp-linux-arm64": "0.34.5", "@img/sharp-linux-ppc64": "0.34.5", "@img/sharp-linux-riscv64": "0.34.5", "@img/sharp-linux-s390x": "0.34.5", "@img/sharp-linux-x64": "0.34.5", "@img/sharp-linuxmusl-arm64": "0.34.5", "@img/sharp-linuxmusl-x64": "0.34.5", "@img/sharp-wasm32": "0.34.5", "@img/sharp-win32-arm64": "0.34.5", "@img/sharp-win32-ia32": "0.34.5", "@img/sharp-win32-x64": "0.34.5" } }, "sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg=="],
 

@@ -17,7 +17,7 @@ import type { Proposal } from '../reconcile/propose';
 import { config } from '../config';
 import type { Command } from 'commander';
 
-const TRANSCRIPTS_DIR  = 'transcripts';
+const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const RESOLUTIONS_DIR  = 'state/resolutions';
 const MATCHES_DIR      = 'state/matches';
