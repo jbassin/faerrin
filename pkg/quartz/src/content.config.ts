@@ -22,7 +22,7 @@ const strList = z
 const docs = defineCollection({
   loader: glob({
     pattern: "**/*.md",
-    base: "./content",
+    base: "../shared-content/wiki",
     generateId: ({ entry }) => entry,
   }),
   schema: z

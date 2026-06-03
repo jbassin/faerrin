@@ -1,5 +1,0 @@
----
-title: Raelion
-aliases:
-  - Raelion
----

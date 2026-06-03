@@ -143,7 +143,7 @@ export function loadSite(): Promise<SiteData> {
 async function build(): Promise<SiteData> {
   const entries = await getCollection("docs")
   const relOf = (e: (typeof entries)[number]) =>
-    (e.filePath ?? e.id).split("content/").at(-1) as string
+    (e.filePath ?? e.id).split("shared-content/wiki/").at(-1) as string
   const dates = gitModifiedDates()
 
   // pass 1: slugs (needed as the allSlugs set for "shortest" resolution)

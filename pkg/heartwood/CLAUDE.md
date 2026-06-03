@@ -1,6 +1,6 @@
 ## Project
 
-Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (read from `../shared-content/transcripts/`, the monorepo SSOT generated from quartz's pipeline) are segmented, mined for factual claims, matched against existing wiki pages (`content/`), and emitted as proposed edits that ship as GitLab merge requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the MR review).
+Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (read from `../shared-content/transcripts/`, the monorepo SSOT generated from quartz's pipeline) are segmented, mined for factual claims, matched against existing wiki pages (read from `../shared-content/wiki/`, the monorepo SSOT — quartz is canonical), and emitted as proposed edits that ship as GitLab merge requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the MR review).
 
 ## Repository layout
 
@@ -15,7 +15,7 @@ src/                          ← all pipeline code
   llm.ts                      ← single `complete()` wrapping Anthropic SDK; emits structured output via Zod schema
   pricing.ts                  ← USD/1M-token rate table
   log.ts                      ← per-run JSONL cost log writer/summarizer
-content/                      ← Obsidian wiki — the source-of-truth being edited (see "Content files" below)
+# (wiki read from ../shared-content/wiki/ — the SSOT; quartz canonical. See "Content Files" below)
 state/                        ← pipeline outputs, one file per transcript per stage (see "Pipeline" below)
 tickets/                      ← numbered spec docs (001-…) that drive the work
 thoughts/shared/plans/        ← pre-implementation plans, one per ticket

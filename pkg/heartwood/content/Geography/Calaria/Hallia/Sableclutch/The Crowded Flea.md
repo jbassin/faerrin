@@ -1,1 +1,0 @@
-The Crowded Flea is a pub on the edge of the Fousan River in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]]. It's a popular spot for the dockworkers in the area. It's also the main hideout of the [[Org/Roundhat Gang/index|Roundhat Gang]].

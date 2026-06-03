@@ -1,13 +1,17 @@
 import { test, expect } from 'bun:test';
 import { loadWikiIndex, mergeIndex } from './load';
 
-const CONTENT_DIR = 'content';
+// Wiki corpus is the shared-content SSOT (quartz canonical). Script/ holds
+// generated transcript pages, which loadWikiIndex excludes — so do the same here.
+const CONTENT_DIR = '../shared-content/wiki';
 
 test('indexes every .md file under content/', async () => {
   const index = await loadWikiIndex({ contentDir: CONTENT_DIR });
   const glob = new Bun.Glob('**/*.md');
   let onDisk = 0;
-  for await (const _ of glob.scan({ cwd: CONTENT_DIR })) onDisk += 1;
+  for await (const p of glob.scan({ cwd: CONTENT_DIR })) {
+    if (!p.startsWith('Script/')) onDisk += 1;
+  }
   expect(index.pageCount).toBe(onDisk);
   expect(Object.keys(index.pages).length).toBe(onDisk);
 });
@@ -51,7 +55,7 @@ test('special-character filenames are present and resolvable', async () => {
     'Geography/Færrin.md',
     'Geography/Tormeré/index.md',
     'Geography/Rhædon/index.md',
-    'Org/Ætherion Limited.md',
+    'Org/Ætherion Limited/index.md',
   ]) {
     expect(index.pages[p]).toBeDefined();
   }

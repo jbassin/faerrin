@@ -23,7 +23,7 @@ const RESOLUTIONS_DIR  = 'state/resolutions';
 const MATCHES_DIR      = 'state/matches';
 const SEGMENTS_DIR     = 'state/segments';
 const PROPOSALS_DIR    = 'state/proposals';
-const CONTENT_DIR      = 'content';
+const CONTENT_DIR      = '../shared-content/wiki';
 const WIKI_INDEX_PATH  = 'state/wiki-index.json';
 const CLAUDE_MD_PATH   = 'CLAUDE.md';
 

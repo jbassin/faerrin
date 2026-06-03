@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url"
 import { slugifyFilePath } from "../../scripts/lib/slug.ts"
 
 const here = path.dirname(fileURLToPath(import.meta.url))
-export const contentDir = path.resolve(here, "../../content")
+export const contentDir = path.resolve(here, "../../../shared-content/wiki")
 
 /** All content-relative markdown file paths (posix separators). */
 export function listMarkdownFiles() {

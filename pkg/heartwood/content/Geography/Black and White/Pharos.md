@@ -1,3 +1,0 @@
-Pharos is an infinitely tall concrete edifice visible anywhere on [[Færrin]]. One of its entrances is at 13 Bright Street in the [[Geography/Calaria/Hallia/Aurideon/index|Aurideon]].
-
-One can only see the building once they've already been introduced to it. It connects to disparate locations across the planet and on other planes. Navigation through the building is highly ritualistic, following the "Rule of Three."

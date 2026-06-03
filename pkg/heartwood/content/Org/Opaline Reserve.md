@@ -1,1 +1,0 @@
-The Opaline Reserve is a racketeering operation hosted in a brewery in the [[Geography/Calaria/Hallia/Widdershins/index|Widdershins]] district of [[Geography/Calaria/Hallia/index|Hallia]]. Suspected by the [[Org/Iridescent Church/Convox/Magical Crimes/index|Magical Crimes]] convox to be committing illegal augury within the city limits.

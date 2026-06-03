@@ -1,6 +1,0 @@
-[[Færrin]] is currently experiencing the longest period without overt conflict since the dark ages before Aurelia I's enlightenment. Forty years ago, [[Geography/Calaria/index|Calaria]] wiped a rival nation, [[Geography/Raelion/index|Raelion]], off the face of the map on the night of the _Midnight Sun_. Since then, under threat of total annihilation, the countries of Færrin have avoided outright war. What was once armies clashing on the battlefield became psychological warfare, propaganda campaigns, espionage, far-reaching embargoes, and technological competitions.
-
-Alliances between countries (and some internationally spanning organizations) are tenuous and fickle but can be advantageous in the short term. People who were enemies a decade ago might be friends now and may be opposed again soon. Along with Calaria, eight other countries are participating in this new political climate.
-
-> [!note] Other Lands
-> The continent of Edan -- where Calaria resides -- may not be the only continent on Færrin, but it is the one most relevant to the focus of this book. Other lands worship strange foreign gods and use unfamiliar technology, but their people rarely make the dangerous trek to Edan.

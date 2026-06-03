@@ -10,7 +10,7 @@ import type { Command } from 'commander';
 const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const PROPOSALS_DIR    = 'state/proposals';
-const CONTENT_DIR      = 'content';
+const CONTENT_DIR      = '../shared-content/wiki';
 const DRY_RUNS_DIR     = 'state/dry-runs';
 const SUBMISSIONS_DIR  = 'state/submissions';
 

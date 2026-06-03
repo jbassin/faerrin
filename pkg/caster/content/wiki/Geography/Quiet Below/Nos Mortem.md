@@ -1,1 +1,0 @@
-Nos Mortem is a Victorian-style manor in a fane deep below [[Geography/Calaria/Hallia/index|Hallia]]. It's owned by [[Benjamin Grayson]], and staffed with a whole host of skeletons, ghosts, and ghouls.

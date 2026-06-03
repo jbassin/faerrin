@@ -1,5 +1,0 @@
----
-title: Pyrelight
-aliases:
-  - Pyrelight
----

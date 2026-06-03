@@ -58,7 +58,7 @@ describe("Stage 1 acceptance — real corpus", () => {
 
   test("loads and links the wiki corpus", async () => {
     const { wiki } = await loadCorpus();
-    expect(wiki.pages.size).toBe(93);
+    expect(wiki.pages.size).toBe(121);
     // Wrenford links to the Verdant Expanse; the graph should resolve it.
     const wrenford = [...wiki.pages.keys()].find((p) => p.endsWith("Wrenford.md"));
     expect(wrenford).toBeDefined();

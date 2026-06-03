@@ -16,7 +16,7 @@ const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const RESOLUTIONS_DIR  = 'state/resolutions';
 const MATCHES_DIR      = 'state/matches';
-const CONTENT_DIR      = 'content';
+const CONTENT_DIR      = '../shared-content/wiki';
 const WIKI_INDEX_PATH  = 'state/wiki-index.json';
 
 export interface MatchCliOptions {

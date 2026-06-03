@@ -29,7 +29,7 @@ import PageList from "../components/PageList.astro"
 export async function getStaticPaths() {
   const docs = await getCollection("docs")
   const relOf = (doc: (typeof docs)[number]) =>
-    ((doc.filePath ?? doc.id).split("content/").at(-1) ?? "") as FilePath
+    ((doc.filePath ?? doc.id).split("shared-content/wiki/").at(-1) ?? "") as FilePath
   const dirname = (s: string) => {
     const i = s.lastIndexOf("/")
     return i === -1 ? "." : s.slice(0, i)

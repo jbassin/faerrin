@@ -10,7 +10,8 @@ export const repoRoot = resolve(here, "..", "..")
 export const scriptsDir = resolve(repoRoot, "scripts")
 export const dataDir = resolve(scriptsDir, "data")
 export const scriptOutDir = resolve(scriptsDir, "script")
-export const contentDir = resolve(repoRoot, "content")
+// Wiki content is the monorepo SSOT, hosted in the sibling shared-content package.
+export const contentDir = resolve(repoRoot, "..", "shared-content", "wiki")
 export const scriptContentDir = resolve(contentDir, "Script")
 
 export const defsPath = resolve(scriptsDir, "defs.yaml")

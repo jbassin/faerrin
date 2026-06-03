@@ -1,5 +1,0 @@
----
-title: Hallia
-aliases:
-  - Hallia
----
