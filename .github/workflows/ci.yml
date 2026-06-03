@@ -1,5 +1,4 @@
-# Monorepo CI. NOTE: platform assumed GitHub Actions (no git remote is configured
-# yet — switch to GitLab CI if that's your host). jj is git-colocated, so CI clones
+# Monorepo CI (GitHub Actions — confirmed host). jj is git-colocated, so CI clones
 # the git side normally; no jj-specific handling needed.
 name: CI
 

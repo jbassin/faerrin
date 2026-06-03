@@ -187,8 +187,10 @@ baselines; no tracked secrets; rollback documented per gate. Persona **code-revi
 | D2 | Dockerfile fate → **DECIDED (default): migrated to `oven/bun` + `bun run --filter quartz build`; commented as NOT on deploy path + needs repo-root build context. Confirm/override.** | Step 3 ✅ |
 | D3 | Freeze output-path contract w/ proxy | Step 5 |
 | D4 | OG-render in CI (deploy-only vs every build) | Step 9 |
-| D5 | Wiki ownership flow | Phase 2 Step 10 |
-| D6 | External episodes.json coupling | Phase 2 Step 10 |
+| D5 | Wiki ownership → **DECIDED: quartz is STRICTLY CORRECT. quartz/content (121, = caster) is canonical. heartwood/content is just out-of-date — discard it (incl. its frontmatter/flat-Org). Both caster & heartwood repoint to the shared quartz wiki.** | Phase 2 ✅ |
+| D6 | episodes.json → **DECIDED: point quartz PODCAST_EPISODES_PATH at in-repo pkg/caster/site build output (not the external sibling).** | Phase 2 ✅ |
+| D7 | Sequencing → **DECIDED: transcripts SSOT first, wiki next.** | Phase 2 ✅ |
+| CI | → **DECIDED: GitHub Actions.** | ✅ |
 
 ## Provider Requirements
 🔴 Codex ✗ · 🟡 Gemini ✗ · 🟣 Perplexity ✗ · 🔵 Claude ✓ — all roles via `octo:personas:*`.
