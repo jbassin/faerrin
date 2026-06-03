@@ -1,0 +1,32 @@
+{
+  "name": "heartwood",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "hello": "bun index.ts hello",
+    "cost-report": "bun index.ts cost-report",
+    "index-wiki": "bun index.ts index-wiki",
+    "transcripts": "bun index.ts transcripts",
+    "segment": "bun index.ts segment",
+    "extract": "bun index.ts extract",
+    "resolve": "bun index.ts resolve",
+    "match": "bun index.ts match",
+    "propose": "bun index.ts propose",
+    "submit": "bun index.ts submit",
+    "respond": "bun index.ts respond",
+    "process": "bun index.ts process",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "commander": "^14.0.3",
+    "yaml": "^2.6.0",
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  }
+}

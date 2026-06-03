@@ -1,0 +1,12 @@
+---
+// Ports NotFoundPage + NotFound.tsx. The 404 layout has no sidebars/beforeBody.
+import PageLayout from "../layouts/PageLayout.astro"
+---
+
+<PageLayout title="Not Found" slug="404" description="Not Found" chrome={false}>
+  <article class="popover-hint">
+    <h1>404</h1>
+    <p>Either this page is private or doesn't exist.</p>
+    <a href="/">Home</a>
+  </article>
+</PageLayout>

@@ -1,0 +1,1373 @@
+{
+  "filename": "000.through-a-song-darkly.2025-8-28.txt",
+  "contentHash": "76456b04090eee705175720e9612cdad3361df82c3c90ff0b5021ffbdf98303c",
+  "segmentsContentHash": "76456b04090eee705175720e9612cdad3361df82c3c90ff0b5021ffbdf98303c",
+  "totalLines": 3981,
+  "unitCount": 40,
+  "droppedCount": 29,
+  "repairedCount": 2,
+  "filteredCount": 35,
+  "coverage": {
+    "lines": 2034,
+    "percentOfTranscript": 51
+  },
+  "claims": [
+    {
+      "claim": "Illmari Vaino is the founder of Iconoclasm.",
+      "lines": [
+        565,
+        565
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Illmari Vaino",
+        "Iconoclasm"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "Gin-Soaked Rag is associated with the Sin and Tonic.",
+      "lines": [
+        566,
+        566
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Gin-Soaked Rag",
+        "Sin and Tonic"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "Dura Oil Drinker is a mechanic associated with Iconoclasm.",
+      "lines": [
+        568,
+        568
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Dura Oil Drinker",
+        "Iconoclasm"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "Elias serves as the quartermaster of Iconoclasm.",
+      "lines": [
+        570,
+        570
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Elias",
+        "Iconoclasm"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "The Roundhack gang is run by Tywelwyn Leatherhide.",
+      "lines": [
+        576,
+        578
+      ],
+      "speaker": "Johnny",
+      "role": "gm",
+      "confidence": "speculative",
+      "entities": [
+        "Roundhack",
+        "Tywelwyn Leatherhide"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "Tywelwyn Leatherhide ordered materials from Embercall Industries, which is associated with the Pyrelight faction.",
+      "lines": [
+        610,
+        613
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Tywelwyn Leatherhide",
+        "Embercall Industries",
+        "Pyrelight"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "The faction known as Pyrelight operates a front company called Embercall Industries.",
+      "lines": [
+        613,
+        613
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Pyrelight",
+        "Embercall Industries"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "The local law enforcement in the area is called the Threshold Authority, also known as the TA.",
+      "lines": [
+        667,
+        677
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Threshold Authority"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "The Threshold Authority is suspected of being bought out by either the Roundhack gang or Embercall Industries/Pyrelight.",
+      "lines": [
+        670,
+        671
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Threshold Authority",
+        "Roundhack",
+        "Embercall Industries",
+        "Pyrelight"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "Augers are creatures created through a divination ritual and can be fed to enhance divination magic.",
+      "lines": [
+        697,
+        698
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Augers"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "The Sin and Tonic serves as the base of operations for Iconoclasm.",
+      "lines": [
+        705,
+        706
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Sin and Tonic",
+        "Iconoclasm"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "Iconoclasm possesses a company car available for use by its members.",
+      "lines": [
+        706,
+        707
+      ],
+      "speaker": "Johnny",
+      "role": "player",
+      "confidence": "speculative",
+      "entities": [
+        "Iconoclasm"
+      ],
+      "sourceSegmentStartLine": 547
+    },
+    {
+      "claim": "Ginny's appearance consists of a suit vest and dress pants, but instead of a head, Ginny has a twisted-up dish rag.",
+      "lines": [
+        903,
+        903
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Ginny"
+      ],
+      "sourceSegmentStartLine": 896
+    },
+    {
+      "claim": "Ginny works the bar and can be found facing away from approaching patrons when tending it.",
+      "lines": [
+        904,
+        905
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Ginny"
+      ],
+      "sourceSegmentStartLine": 896
+    },
+    {
+      "claim": "Ginny's rag-head appears to squeeze out liquid when it twists to face someone.",
+      "lines": [
+        906,
+        906
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Ginny"
+      ],
+      "sourceSegmentStartLine": 896
+    },
+    {
+      "claim": "Illmari is normally responsible for cooking food at the establishment.",
+      "lines": [
+        919,
+        919
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Illmari",
+        "Ginny"
+      ],
+      "sourceSegmentStartLine": 896
+    },
+    {
+      "claim": "Ginny works the cooking station in addition to tending bar, at least when Illmari is absent.",
+      "lines": [
+        919,
+        921
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Ginny",
+        "Illmari"
+      ],
+      "sourceSegmentStartLine": 896
+    },
+    {
+      "claim": "Ginny has not mastered cooking human food as well as Illmari has.",
+      "lines": [
+        929,
+        929
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Ginny",
+        "Illmari"
+      ],
+      "sourceSegmentStartLine": 896
+    },
+    {
+      "claim": "The twins are not running a magic item shop, but are two people who are particularly good at crafting and can make healing potions if provided with the necessary components.",
+      "lines": [
+        985,
+        989
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "the twins"
+      ],
+      "sourceSegmentStartLine": 971
+    },
+    {
+      "claim": "The NPC crafter works in a room where rocket hammers are made.",
+      "lines": [
+        1011,
+        1011
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "rocket hammers"
+      ],
+      "sourceSegmentStartLine": 971
+    },
+    {
+      "claim": "The radar dish is believed to be a device for receiving a signal.",
+      "lines": [
+        1027,
+        1028
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "radar dish"
+      ],
+      "sourceSegmentStartLine": 971
+    },
+    {
+      "claim": "Anok keeps a Rolodex-like collection of index cards containing contacts and job leads, which she uses to refer people to work opportunities.",
+      "lines": [
+        1192,
+        1193
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Anok"
+      ],
+      "sourceSegmentStartLine": 1184
+    },
+    {
+      "claim": "Anok has an old friend who runs a scrapyard located one district over from her location in Sableclutch.",
+      "lines": [
+        1196,
+        1197
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Anok",
+        "Sableclutch"
+      ],
+      "sourceSegmentStartLine": 1184
+    },
+    {
+      "claim": "Anok's contact at the scrapyard in Sableclutch regularly hires couriers and similar workers, preferring to engage individuals directly rather than through a formal service.",
+      "lines": [
+        1197,
+        1199
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Anok",
+        "Sableclutch"
+      ],
+      "sourceSegmentStartLine": 1184
+    },
+    {
+      "claim": "Arbiters are empowered by the Scale to conduct bounty hunting, and the Scale does not extend that authority to unaffiliated individuals.",
+      "lines": [
+        1205,
+        1208
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Arbiters",
+        "Scale"
+      ],
+      "sourceSegmentStartLine": 1184
+    },
+    {
+      "claim": "Three police organizations operate in the city of Helya, and each typically posts bounties for outstanding warrants that non-Scale individuals can pursue.",
+      "lines": [
+        1211,
+        1211
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Helya",
+        "Scale"
+      ],
+      "sourceSegmentStartLine": 1184
+    },
+    {
+      "claim": "In Hallia, particularly strong magic set up by the host prevents people from teleporting or sliding between districts freely; residents must use public transit to travel between areas.",
+      "lines": [
+        1230,
+        1230
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1225
+    },
+    {
+      "claim": "Hallia has a trolley system that travels along a route called the Horizon, connecting different numbered districts such as Star 12.",
+      "lines": [
+        1230,
+        1230
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia",
+        "Horizon",
+        "Star 12"
+      ],
+      "sourceSegmentStartLine": 1225
+    },
+    {
+      "claim": "The neighborhood containing the Sin and Tonic is a commercialized, generally poorer part of Helya, but not particularly seedy.",
+      "lines": [
+        1231,
+        1234
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sin and Tonic",
+        "Helya"
+      ],
+      "sourceSegmentStartLine": 1225
+    },
+    {
+      "claim": "The starward districts of Helya feature older, poorly maintained buildings that were constructed when the tram line was first built, in anticipation of a boom that never materialized.",
+      "lines": [
+        1235,
+        1238
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Helya"
+      ],
+      "sourceSegmentStartLine": 1225
+    },
+    {
+      "claim": "Anzu has a raven companion named Othello.",
+      "lines": [
+        1266,
+        1282
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Anzu",
+        "Othello"
+      ],
+      "sourceSegmentStartLine": 1225
+    },
+    {
+      "claim": "The Undertable is a narrow, squished shop wedged between two buildings in a space too large for an alleyway but too small for a standard building, with no street-facing windows and a handwritten sign reading 'Under Table' accompanied by a crude drawing of a table.",
+      "lines": [
+        1342,
+        1352
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Undertable"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "The Undertable's interior is a cramped room filled with tables stacked high with miscellaneous goods including kitchen appliances, loose jewelry, radios in various states of deconstruction, and a large number of firearms.",
+      "lines": [
+        1354,
+        1363
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Undertable"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "Smiler is a centaur and the proprietor of the Undertable, as well as a fence known to Johnny.",
+      "lines": [
+        1365,
+        1371
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Smiler",
+        "Undertable",
+        "Johnny"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "Smiler wears a stained white t-shirt as his only upper garment.",
+      "lines": [
+        1366,
+        1367
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Smiler"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "Johnny has a prior working relationship with Smiler and has dealt with him as a fence on at least one or two previous occasions.",
+      "lines": [
+        1368,
+        1371
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Johnny",
+        "Smiler"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "Smiler stands approximately nine feet tall at full centaur height, and must stoop beneath the ceiling of the Undertable.",
+      "lines": [
+        1382,
+        1383
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Smiler",
+        "Undertable"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "Smiler wears multiple yellowish metal bands on both arms, has his tail braided with gems woven into it, wears flare gauges in his ears with gems embedded in them, and has a long beard braided in the same style as his tail with gems throughout.",
+      "lines": [
+        1385,
+        1391
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Smiler"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "Smiler extends a friends discount to associates of Johnny, on the basis that a friend of his friend would not inform on him to law enforcement.",
+      "lines": [
+        1428,
+        1430
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Smiler",
+        "Johnny"
+      ],
+      "sourceSegmentStartLine": 1341
+    },
+    {
+      "claim": "Belvedere includes a school and provides education to children.",
+      "lines": [
+        1698,
+        1702
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Belvedere"
+      ],
+      "sourceSegmentStartLine": 1651
+    },
+    {
+      "claim": "Belvedere is located hundreds of miles away from the region where the party is operating.",
+      "lines": [
+        1704,
+        1704
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Belvedere"
+      ],
+      "sourceSegmentStartLine": 1651
+    },
+    {
+      "claim": "The country of Raelion was destroyed (referred to as 'gone'), an event that displaced its inhabitants.",
+      "lines": [
+        1737,
+        1747
+      ],
+      "speaker": "Johnny",
+      "role": "gm",
+      "confidence": "speculative",
+      "entities": [
+        "Raelion"
+      ],
+      "sourceSegmentStartLine": 1708
+    },
+    {
+      "claim": "Sableclutch is a neighborhood located near the party's base of operations.",
+      "lines": [
+        1877,
+        1877
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sableclutch"
+      ],
+      "sourceSegmentStartLine": 1869
+    },
+    {
+      "claim": "Sableclutch Scrap is a scrapyard located in or near the Sableclutch neighborhood.",
+      "lines": [
+        1877,
+        1878
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sableclutch Scrap",
+        "Sableclutch"
+      ],
+      "sourceSegmentStartLine": 1869
+    },
+    {
+      "claim": "Hallia has a public tram transportation system.",
+      "lines": [
+        1879,
+        1879
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1869
+    },
+    {
+      "claim": "Sableclutch is not a prosperous part of town.",
+      "lines": [
+        1880,
+        1880
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sableclutch"
+      ],
+      "sourceSegmentStartLine": 1869
+    },
+    {
+      "claim": "Sableclutch contains a notable concentration of religious buildings, including numerous churches.",
+      "lines": [
+        1881,
+        1882
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sableclutch"
+      ],
+      "sourceSegmentStartLine": 1869
+    },
+    {
+      "claim": "The churches in Sableclutch are mostly dedicated to the Host, with a smattering of other gods also represented.",
+      "lines": [
+        1883,
+        1883
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sableclutch",
+        "the Host"
+      ],
+      "sourceSegmentStartLine": 1869
+    },
+    {
+      "claim": "The scrapyard is located on the voidward side of Hallia, reachable by tram.",
+      "lines": [
+        1911,
+        1911
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1910
+    },
+    {
+      "claim": "The voidward strata of Hallia contains slums between the city center and the scrapyard.",
+      "lines": [
+        1912,
+        1912
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1910
+    },
+    {
+      "claim": "The voidward direction of Hallia is characterized by undeveloped land and feels like the far outskirts despite being geographically close to the city center.",
+      "lines": [
+        1913,
+        1914
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1910
+    },
+    {
+      "claim": "The voidward part of Hallia is home primarily to factories that dump waste into the river running through Hallia, situated there to avoid legal consequences or harming residents.",
+      "lines": [
+        1915,
+        1915
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1910
+    },
+    {
+      "claim": "A river runs through the city of Hallia.",
+      "lines": [
+        1915,
+        1915
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1910
+    },
+    {
+      "claim": "Sableclutch Scrap is a scrapyard located in the voidward industrial district of Hallia, notable for its expansive grounds and mountains of trash.",
+      "lines": [
+        1918,
+        1921
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sableclutch Scrap",
+        "Hallia"
+      ],
+      "sourceSegmentStartLine": 1910
+    },
+    {
+      "claim": "Copperjaw is a person known to Anouk who operates at or is associated with Sableclutch Scrap.",
+      "lines": [
+        1928,
+        1928
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw",
+        "Anouk",
+        "Sableclutch Scrap"
+      ],
+      "sourceSegmentStartLine": 1910
+    },
+    {
+      "claim": "Copperjaw is a dwarven man who operates a Crusher.",
+      "lines": [
+        1971,
+        1973
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw",
+        "Crusher"
+      ],
+      "sourceSegmentStartLine": 1969
+    },
+    {
+      "claim": "Copperjaw has a mashed-up, misshapen nose and a black eye, indicating he still gets into fights regularly.",
+      "lines": [
+        1975,
+        1976
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw"
+      ],
+      "sourceSegmentStartLine": 1969
+    },
+    {
+      "claim": "Copperjaw appears to be at the end of middle age or beginning of elderly by dwarven standards, estimated to be around 120 to 130 years old.",
+      "lines": [
+        1977,
+        1979
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw"
+      ],
+      "sourceSegmentStartLine": 1969
+    },
+    {
+      "claim": "By dwarven reckoning, the end of middle age corresponds to approximately 120 to 130 years old.",
+      "lines": [
+        1977,
+        1979
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 1969
+    },
+    {
+      "claim": "Copperjaw's bottom jaw is missing and has been replaced with a crude copper prosthetic vaguely shaped like a jaw, which is the origin of his name.",
+      "lines": [
+        1980,
+        1981
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw"
+      ],
+      "sourceSegmentStartLine": 1969
+    },
+    {
+      "claim": "Copperjaw is the kind of person who tests the grip strength of anyone who shakes his hand, regardless of their age, and responds competitively to a strong handshake.",
+      "lines": [
+        2003,
+        2014
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw"
+      ],
+      "sourceSegmentStartLine": 1969
+    },
+    {
+      "claim": "The employer's policy is that couriers are not told what is inside the suitcase; they are only expected to deliver it.",
+      "lines": [
+        2073,
+        2074
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2015
+    },
+    {
+      "claim": "Copperjaw operates a scrapyard.",
+      "lines": [
+        2087,
+        2088
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw"
+      ],
+      "sourceSegmentStartLine": 2079
+    },
+    {
+      "claim": "Copperjaw has a Giant Crusher stationed at his scrapyard, which he relies on for security when dealing with unwanted visitors.",
+      "lines": [
+        2087,
+        2088
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw",
+        "Giant Crusher"
+      ],
+      "sourceSegmentStartLine": 2079
+    },
+    {
+      "claim": "Cars exist in this setting, and as a consequence tire companies also exist.",
+      "lines": [
+        2103,
+        2104
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2079
+    },
+    {
+      "claim": "Korath is a major tire company in this setting, and it publishes a guide known as the Korath Guide.",
+      "lines": [
+        2106,
+        2109
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Korath",
+        "Korath Guide"
+      ],
+      "sourceSegmentStartLine": 2079
+    },
+    {
+      "claim": "The Diamond District is a relatively upscale part of the city, known for jewelers and fine metal shops, and is located near high-end residential areas.",
+      "lines": [
+        2135,
+        2147
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Diamond District"
+      ],
+      "sourceSegmentStartLine": 2125
+    },
+    {
+      "claim": "Cobblejaw operates out of a junkyard where he crafts items for clients.",
+      "lines": [
+        2184,
+        2187
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "inferred",
+      "entities": [
+        "Cobblejaw"
+      ],
+      "sourceSegmentStartLine": 2181
+    },
+    {
+      "claim": "Cobblejaw personally owns and keeps three guns for himself.",
+      "lines": [
+        2234,
+        2235
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Cobblejaw"
+      ],
+      "sourceSegmentStartLine": 2181
+    },
+    {
+      "claim": "The setting does not have television; radio shows are the primary broadcast entertainment medium.",
+      "lines": [
+        2348,
+        2349
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2334
+    },
+    {
+      "claim": "Tarv is a comic-book character known for having a gun for an arm, and the concept exists across multiple spheres or worlds through convergent cultural evolution.",
+      "lines": [
+        2357,
+        2361
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Tarv"
+      ],
+      "sourceSegmentStartLine": 2334
+    },
+    {
+      "claim": "The setting is a magical society in which bird people and similar non-human beings are common enough that they do not attract unusual attention in public.",
+      "lines": [
+        2375,
+        2375
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2334
+    },
+    {
+      "claim": "Threshold Authority officers wear a greenish uniform with a large 'TA' insignia on it.",
+      "lines": [
+        2551,
+        2551
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Threshold Authority"
+      ],
+      "sourceSegmentStartLine": 2541
+    },
+    {
+      "claim": "Blackline is a law enforcement organization that generally polices the nicer parts of the city.",
+      "lines": [
+        2552,
+        2554
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Blackline"
+      ],
+      "sourceSegmentStartLine": 2541
+    },
+    {
+      "claim": "Blackline officers wear full uniforms and carry batons as their primary weapons rather than firearms.",
+      "lines": [
+        2556,
+        2558
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Blackline"
+      ],
+      "sourceSegmentStartLine": 2541
+    },
+    {
+      "claim": "Blackline operates on a subscription model, providing law enforcement services only to those who pay for them.",
+      "lines": [
+        2571,
+        2574
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Blackline"
+      ],
+      "sourceSegmentStartLine": 2541
+    },
+    {
+      "claim": "Sableclutch Scrap is a junkyard whose owner, Coppajaw, is known to give jobs to newcomers.",
+      "lines": [
+        2587,
+        2590
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Sableclutch Scrap",
+        "Coppajaw"
+      ],
+      "sourceSegmentStartLine": 2541
+    },
+    {
+      "claim": "Blackline officers carry badges with identification numbers.",
+      "lines": [
+        2629,
+        2630
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Blackline"
+      ],
+      "sourceSegmentStartLine": 2598
+    },
+    {
+      "claim": "Blackline is a private law enforcement company that operates in at least some districts of the city.",
+      "lines": [
+        2648,
+        2648
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "inferred",
+      "entities": [
+        "Blackline"
+      ],
+      "sourceSegmentStartLine": 2598
+    },
+    {
+      "claim": "Copperjaw is known to hire couriers or runners to deliver important items, sometimes using children carrying cases.",
+      "lines": [
+        2693,
+        2696
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Copperjaw"
+      ],
+      "sourceSegmentStartLine": 2598
+    },
+    {
+      "claim": "Officer Smith is a Blackline officer who patrols the district; he carries a badge with an identification number.",
+      "lines": [
+        2704,
+        2708
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Officer Smith",
+        "Blackline"
+      ],
+      "sourceSegmentStartLine": 2598
+    },
+    {
+      "claim": "One of the two Blackline officers encountered is mute due to a bad accident sustained in a scuffle with a local gang; his colleagues call him Mute.",
+      "lines": [
+        2717,
+        2727
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Mute",
+        "Blackline"
+      ],
+      "sourceSegmentStartLine": 2598
+    },
+    {
+      "claim": "A trolley station is accessible from the factory and scrapyard district the party was moving through.",
+      "lines": [
+        2763,
+        2768
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2739
+    },
+    {
+      "claim": "The area the party is traveling through has relatively winding streets.",
+      "lines": [
+        2764,
+        2764
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2739
+    },
+    {
+      "claim": "The area lacks traffic cops because employing them would cost money, and there is no clear party to fund them.",
+      "lines": [
+        2765,
+        2765
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2739
+    },
+    {
+      "claim": "The area contains factories and scrapyards, which are serviced by trucks carting goods in and out.",
+      "lines": [
+        2766,
+        2766
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2739
+    },
+    {
+      "claim": "The tram station serves workers heading home from nearby factories, with goblinoid laborers among the regular commuters.",
+      "lines": [
+        2817,
+        2820
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "inferred",
+      "entities": [
+        "goblinoid"
+      ],
+      "sourceSegmentStartLine": 2798
+    },
+    {
+      "claim": "Goblinoid creatures work in the factories in the area near the tram station.",
+      "lines": [
+        2819,
+        2820
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "goblinoid"
+      ],
+      "sourceSegmentStartLine": 2798
+    },
+    {
+      "claim": "The Masque District is a part of the city that contains hotels and is a destination for tourists.",
+      "lines": [
+        2887,
+        2887
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Masque District"
+      ],
+      "sourceSegmentStartLine": 2851
+    },
+    {
+      "claim": "The tram system has named stations, including at least 'Void 2' and 'Zero' (also called 'Prime'), suggesting a numbered or tiered station naming convention.",
+      "lines": [
+        2894,
+        2895
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "inferred",
+      "entities": [
+        "Void 2",
+        "Zero",
+        "Prime"
+      ],
+      "sourceSegmentStartLine": 2892
+    },
+    {
+      "claim": "The tram line in this city is operated by Prime Meridian.",
+      "lines": [
+        2933,
+        2933
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [
+        "Prime Meridian"
+      ],
+      "sourceSegmentStartLine": 2925
+    },
+    {
+      "claim": "The residential district the party is heading to is wealthy enough that all its inhabitants can afford private cars, making public transport unavailable into that part of the city.",
+      "lines": [
+        2950,
+        2950
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 2925
+    },
+    {
+      "claim": "One of the two figures, when opening its mouth to laugh, produced a weird gargling sound instead of normal laughter.",
+      "lines": [
+        3049,
+        3049
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 3004
+    },
+    {
+      "claim": "The two figures are shapeshifters capable of growing approximately a foot and a half in size and shedding their humanoid disguises to reveal their true forms.",
+      "lines": [
+        3073,
+        3074
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 3004
+    },
+    {
+      "claim": "In their true form, the two creatures appear as large, pink, fleshy, naked mole rat-like beings, with their clothes melting into their bodies during transformation.",
+      "lines": [
+        3073,
+        3074
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 3004
+    },
+    {
+      "claim": "In their true form, the creatures' eyes sink into their heads leaving only empty sockets, and most other facial features melt back into the skin, leaving them nearly featureless.",
+      "lines": [
+        3081,
+        3081
+      ],
+      "speaker": "Gamemaster",
+      "role": "gm",
+      "confidence": "stated",
+      "entities": [],
+      "sourceSegmentStartLine": 3004
+    }
+  ]
+}

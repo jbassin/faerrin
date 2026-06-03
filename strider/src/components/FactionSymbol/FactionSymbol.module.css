@@ -1,0 +1,16 @@
+.symbol {
+  display: block;
+  object-fit: contain;
+}
+
+.placeholder {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-display), serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}

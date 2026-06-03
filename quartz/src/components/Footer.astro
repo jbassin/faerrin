@@ -1,0 +1,20 @@
+---
+// Ports Footer.tsx + SharedLayout footer links from quartz.layout.ts.
+import { FOOTER_LINKS } from "../lib/config.ts"
+const year = new Date().getFullYear()
+---
+
+<footer>
+  <p>
+    Created with <a href="https://quartz.jzhao.xyz/">Quartz</a> © {year}
+  </p>
+  <ul>
+    {
+      Object.entries(FOOTER_LINKS).map(([text, link]) => (
+        <li>
+          <a href={link}>{text}</a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>

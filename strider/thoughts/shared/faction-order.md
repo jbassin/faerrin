@@ -1,0 +1,89 @@
+### On-Board Factions
+
+- Ternion Heavy Industries
+  - Jethro Twill
+    - Look: Towering, broad human; stiff engineer uniform (no gala finery). Matte-gray mechanical left arm that whirs faintly. Weathered face, iron-gray beard. Smells of ozone and machine oil.
+    - Vibe: Blunt, gravelly voice, zero corporate patience. Fiercely protective of his crew and the ship's physical safety. Despises politics.
+- Alkahest Freight
+  - Kadou Floch
+    - Look: Wire-thin, sharp-featured (human/elf); fluid grace. Dark green coat with synthetic silk. Permanent amber-stained fingertips. Monocle over right eye that constantly clicks/cycles lenses.
+    - Vibe: Analytical, transactional, fast-talking. Smiles easily but treats every conversation like a math equation or a cost-benefit calculation.
+- Solari Sub-surface
+  - Salvado Tarragona
+    - Look: Short, stocky, densely muscled. Leathery, radiation-scarred skin. Half-formal, half-flight suit with brass buckles. Left eye replaced with a glowing amber sensory plate.
+    - Vibe: Boisterous, stubborn, proud survivalist. Threw a punch or two in his youth. Despises "soft-handed" academic factions.
+- Protectorate
+  - Tamara McKay
+    - Look: Female elf in high-ranking security armor. Usually masked, but her movements are incredibly fluid and relaxed. Bears a couple of distinct, elegant dueling scars on her jaw if she unmasks.
+    - Vibe: Surprisingly lax, casual, and witty attitude for a cop, but radiates the effortless confidence of a lethally capable apex fighter.
+  - Yao Addington
+    - Look: Male gnome in heavy, oversized tactical plating that clanks as he moves. Wearing an intimidating, stylized visor/mask that obscures his face.
+    - Vibe: Laser-focused, strictly by-the-book, and hyper-vigilant. He balances Tamara’s casual demeanor with intense, military rigidity.
+- Ministry of Cultural Progress
+  - Giannos Hasikos
+    - Look: Impeccably groomed human in a sharp, stark-white asymmetric tunic with sharp geometric lines. Smells heavily of expensive, sterile cologne. Hair slicked back perfectly.
+    - Vibe: Deeply unsettling, polite, and patronizing. Speaks with an eerie, quiet calm. He isn't looking at you; he's evaluating your "ideological compliance."
+- The Scale
+  - Ralph Bishop
+    - Look: Heavily scarred, golden-scaled lizardfolk wearing a tailored but slightly tight silk waistcoat. He sits upright, resting both clawed hands on the pommel of a rapier.
+    - Vibe: Intensely professional, fiercely proud, and paranoid. He runs a tight network of informants and bodyguards. He demands the respect due to a major player, and insults are met with icy, quiet threats.
+  - Lance Vesper
+    - Look: Lithe human with pale skin and eyes that subtly shift color under the chandelier light. Wears a high-collared dark leather coat lined with hidden pockets over functional gala attire.
+    - Vibe: Smooth, whispering, and completely unfazed by high society. Doesn't care about titles or waistcoats; deals strictly in the currency of secrets, leverage, and untraceable favors.
+  - Cassian Drake
+    - Look: Burly, heavily tattooed human with a broken nose and a shaved head. He looks absurdly uncomfortable in a tight, rented silk tuxedo jacket that barely closes over his broad chest.
+    - Vibe: Gruff, intimidating, but surprisingly sharp. He functions as the physical enforcer and logistics muscle for the network, viewing the upper-deck elites with open amusement and zero fear.
+- Iridescent Church
+  - Walter Stoke
+    - Look: Elderly, blind human priest wearing heavy, layered vestments woven from translucent, prismatic glass fibers that catch the ballroom light. Guided by a silent clockwork cherub.
+    - Vibe: Zealous, soft-spoken, but unyielding. Treats the voidship's journey as a holy pilgrimage. Sounds comforting, but speaks of heretics with absolute chilling indifference.
+- NecroLog
+  - Gaspar Caetano
+    - Look: Gaunt, pale dhampir with sharp fangs and deep dark circles under his eyes. Wears a heavy leather coat lined with formaldehyde-scented specimen pouches. Fingers constantly tap an erratic rhythm.
+    - Vibe: Unnerved, intense, and morbidly fascinated. Speaks in rapid whispers, looking over his shoulder as if his research notes might escape.
+- Prime Meridian
+  - Tas Millett
+    - Look: Tall, regal hobgoblin with flawless slate-gray skin and sharp, chiseled features. Wears a meticulously pressed naval coat with gold-trimmed cartography lines. Antique brass astrolabe on his belt.
+    - Vibe: Arrogant, patrician, and demanding. Views the multiverse as an unmapped grid waiting to be conquered. Speaks down to anyone who isn't an academic or military equal.
+- Sable and Suns
+  - Lark Crowe
+    - Look: Tengu with glossy black feathers, a sharp beak, and mismatched prosthetic eyes that spin independently. Wears a flashy, velvet captain's coat adorned with stolen military medals and trinkets.
+    - Vibe: Shifty, charismatic, and unprincipled. A career smuggler who knows every blind spot on the voidship's cameras. He talks in hushed, conspiratorial tones, always looking for an angle.
+- Aetherion Limited
+  - Braxton Hall
+    - Look: Sylph with wispy, translucent hair that drifts as if in a phantom breeze. Wears a velvet doublet over a humming brass containment harness. His eyes glow with volatile violet energy.
+    - Vibe: Enthusiastic, reckless, and eccentric. Talks a mile a minute about "breakthroughs." Completely blind to the lethal dangers of his own reality-warping experiments.
+- Verdant Holdings
+  - Cross Trevils
+    - Look: Broad, rock-skinned oread with literal moss growing along his jawline and dirt under his nails. Wears a formal suit woven from living organic fiber. Smells of damp soil and fertilizer.
+    - Vibe: Grounded but deeply ruthless. He doesn't care about abstract science; he cares about cultivating, harvesting, and weaponizing alien flora/fauna for massive profit.
+- RunGunners
+  - Ceres
+    - Look: Sharp-eyed, athletic fetchling with monochromatic, grayscale skin and hair that absorbs local light. Wears an oil-stained duster over formal wear, with a pair of highly customized, heavy-frame hand cannons visible under her coat.
+    - Vibe: Cocky, sharp-tongued, and street-smart. She has her boots on the table mentally, sizing up everyone in the room as either a payroll check or a target.
+- Iconoclasm
+- Hildebrant Corp
+  - Paavo Karhu
+    - Look: Massive, elderly winterkin changeling with skin like cracked ice and a snow-white beard. Wears a heavy, tailored velvet overcoat with diamond-buttoned lapels. Walks with a silver-headed cane.
+    - Vibe: Cold, aristocratic, and fiercely protective of generational wealth. He rarely looks at people directly, preferring to talk to their reflection in his champagne glass.
+- Radiant Arms
+  - Ichel
+    - Look: Android with smooth, porcelain-like synthetic skin and faint, glowing golden circuitry lines running along her throat and temples. Wears a sleek, armor-plated corporate dress.
+    - Vibe: Cold, militaristic, and precision-focused. She speaks with a flat, efficient cadence, viewing conflicts not as tragedies, but as highly profitable product demonstrations for her weapons.
+- Pale Lantern Society
+  - Manus Sudrenus
+    - Look: Sleek, high-elven aristocrat with silver hair tied back in a silken ribbon. Wears flowing, dark silk robes embroidered with faint, glowing constellations. Smells of ancient parchment and lavender.
+    - Vibe: Quietly condescending, deeply knowledgeable about planar history, and secretive. He treats the entire gala like a gathering of uncultured children.
+- Amber Call
+  - Silven Grayson
+    - Look: Sharp-dressed human male in his mid-20s. Inherited the family's striking stark-white hair and cool, slate-gray eyes. Wears flawless amber-and-black formal wear with a subtle, stylized pulse motif stitched into the lining.
+    - Vibe: Exceptionally smooth, corporate, and welcoming. He represents his uncle Benjamin's premium interests on the ship with absolute professionalism, masking any darker family secrets behind a veil of high-society charm.
+- Garrick Textiles
+  - Letov Obratz
+    - Look: Dapper tiefling with small, polished obsidian horns and wine-red skin. Wears an incredibly complex, multi-layered suit made of shifting, iridescent fabrics that change texture based on his mood.
+    - Vibe: Obsessive, flamboyant, and deeply materialistic. He cares far less about planar politics than he does about discovering rare, exotic textiles across the multiverse to corner the high-end market.
+- The Harlequins
+- Harlequins
+  - The Master of Ceremonies
+    - Look: Tall, slender elf wearing an elaborate, high-collared coat adorned with a striking blue-and-gold diamond harlequin pattern. His face is hidden behind a pale, unblinking mask featuring small, elegant horns. Clad in dark, flowing fabrics with a long, tail-like sash trailing behind him, flanked by shadowed, masked bodyguards.
+    - Vibe: Theatrical, enigmatic, and deeply unsettling. He moves with a dramatic, fluid choreography that turns standard conversation into a performance. You never know if he's greeting you warmly, mocking you, or orchestrating your demise.

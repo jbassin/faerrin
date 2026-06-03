@@ -1,0 +1,143 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1rem 1rem;
+  gap: 0;
+  /* Event-transparent so pointer events on the .frame area (the hex map)
+     fall through every HTML ancestor down to the full-viewport Pixi canvas
+     at z-index: -1. Interactive children below (OverlayStrip, TimelineStrip,
+     Modal) re-enable pointer-events: auto explicitly. */
+  pointer-events: none;
+}
+
+.mapRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 680px;
+  align-items: stretch;
+}
+
+@media (min-width: 960px) {
+  .mapRow {
+    flex-direction: row;
+    align-items: stretch;
+    max-width: none;
+    width: auto;
+    gap: 0;
+    justify-content: center;
+  }
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  /* Fully transparent so the map (rendered on the full-viewport canvas below
+     via PixiHost) shows through at full saturation. Border + corners +
+     ::after rim still paint above the canvas as overlay chrome. */
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  padding: 0.5rem;
+  animation: fadeIn var(--duration-slow) var(--ease-out) 0.15s both;
+  /* Let hex hover/click events fall through to the full-viewport Pixi canvas
+     mounted by PixiHost. The decorative chrome inside (corners, hover label,
+     ::after rim) is non-interactive; test hook buttons inside `.root` re-
+     enable pointer events explicitly. */
+  pointer-events: none;
+}
+
+@media (min-width: 960px) {
+  .frame {
+    flex: 0 0 680px;
+    width: 680px;
+  }
+}
+
+/* Brass-rim bezel */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  pointer-events: none;
+}
+
+.cornerTL,
+.cornerTR,
+.cornerBL,
+.cornerBR {
+  position: absolute;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.55rem;
+  line-height: 1;
+  color: color-mix(in srgb, var(--accent-amber) 40%, transparent);
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.cornerTL {
+  top: 6px;
+  left: 7px;
+}
+.cornerTR {
+  top: 6px;
+  right: 7px;
+}
+.cornerBL {
+  bottom: 6px;
+  left: 7px;
+}
+.cornerBR {
+  bottom: 6px;
+  right: 7px;
+}
+
+.hoverLabel {
+  position: absolute;
+  top: 0.85rem;
+  left: 1.4rem;
+  z-index: 1;
+  pointer-events: none;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  color: color-mix(in srgb, var(--accent-amber) 80%, transparent);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--accent-amber) 30%, transparent);
+  min-height: 1em;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.hoverLabel:empty {
+  opacity: 0;
+}
+
+.hoverSubtitle {
+  position: absolute;
+  top: 2.25rem;
+  left: 1.65rem;
+  z-index: 1;
+  pointer-events: none;
+  font-family: var(--font-body), serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--accent-amber) 70%, transparent);
+  min-height: 1em;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.hoverSubtitle:empty {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,63 @@
+---
+import "@fontsource-variable/archivo";
+import "@fontsource/space-mono/400.css";
+import "@fontsource/space-mono/700.css";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const {
+  title,
+  description = "Two-host audio recaps of a Pathfinder 2e campaign.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    {/* Resolve theme before first paint — no flash of the wrong palette. */}
+    <script is:inline>
+      (() => {
+        try {
+          // Deep-black is the brand default; only an explicit choice flips to light.
+          const saved = localStorage.getItem("caster:theme");
+          const dark = saved ? saved === "dark" : true;
+          const theme = dark ? "dark" : "light";
+          document.documentElement.dataset.theme = theme;
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", dark ? "#000000" : "#f4f5f1");
+        } catch (_) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    {
+      /* Print-proof / targeting frame — crop marks + edge telemetry. Decorative. */
+    }
+    <div class="hud-frame" aria-hidden="true">
+      <span class="hud-frame__corner hud-frame__corner--tl"></span>
+      <span class="hud-frame__corner hud-frame__corner--tr"></span>
+      <span class="hud-frame__corner hud-frame__corner--bl"></span>
+      <span class="hud-frame__corner hud-frame__corner--br"></span>
+      <span class="hud-frame__tag hud-frame__tag--tl">ASTRA // CASTER</span>
+      <span class="hud-frame__tag hud-frame__tag--tr">SEC-7 · 36.2°N</span>
+      <span class="hud-frame__tag hud-frame__tag--bl">REC ENGINE v5</span>
+      <span class="hud-frame__tag hud-frame__tag--br">TX // TTRPG→AUDIO</span>
+    </div>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "date": "2024-10-15",
+  "audio": "https://static-audio.iridi.cc/2024-10-15/audio.mp3",
+  "script": [
+    {
+      "start": "00:00:04",
+      "second": 4.25,
+      "text": "This is a test of the auto-recording feature.",
+      "user": {
+        "name": "Josh",
+        "color": "--textJosh"
+      },
+      "duration": 3.445
+    }
+  ]
+}

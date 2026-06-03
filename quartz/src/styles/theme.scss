@@ -1,0 +1,48 @@
+// Warhammer-40k "void/cogitator" recolor. Quartz drives all surface/text/accent
+// colors from the semantic vars below (--light/--lightgray/--gray/--darkgray/
+// --dark/--secondary/--tertiary/--highlight/--textHighlight + the font vars).
+// They are mapped onto strider's void palette (the design source of truth):
+//   --light    #090c10  page bg (void)
+//   --lightgray#171c24  elevated surfaces / borders
+//   --gray     #7a8a99  muted ink
+//   --darkgray #dce8f0  body text (ink)
+//   --dark     #e8f2f8  headings (brightest ink)
+//   --secondary#6dd5c0  phosphor teal — links/accents
+//   --tertiary #f0b46e  amber — secondary accent / hover
+//
+// The site is DARK-ONLY: identical values are set on :root AND
+// :root[saved-theme="dark"] so the (neutralized) theme toggle can never produce
+// a light palette. Speaker color vars (--text<Name>) use the BRIGHT dark-mode
+// variants in both blocks; keep in sync with scripts/lib/roster.ts.
+
+$DEFAULT_SANS_SERIF: 'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+$DEFAULT_MONO: "ui-monospace, SFMono-Regular, SF Mono, Menlo, monospace";
+
+:root,
+:root[saved-theme="dark"] {
+  --light: #090c10;
+  --lightgray: #171c24;
+  --gray: #7a8a99;
+  --darkgray: #dce8f0;
+  --dark: #e8f2f8;
+  --secondary: #6dd5c0;
+  --tertiary: #f0b46e;
+  --highlight: rgba(109, 213, 192, 0.12);
+  --textHighlight: rgba(240, 180, 110, 0.18);
+
+  // Speaker voices, nudged off the candy-pastel rainbow toward the void's
+  // grimdark register so they cohere with the teal/amber accents (Josh→muted
+  // lavender, Jorge→steel-blue so it stops fighting the teal links, Noah→sage).
+  // All retain >10:1 contrast on #090c10. Keep in sync with scripts/lib/roster.ts.
+  --textJosh: rgb(232, 184, 232);
+  --textJorge: rgb(143, 216, 240);
+  --textMike: rgb(255, 173, 173);
+  --textNoah: rgb(184, 212, 168);
+  --textTanner: rgb(255, 214, 165);
+  --textGuest: rgb(235, 235, 236);
+
+  --titleFont: "ITC Serif Gothic", serif;
+  --headerFont: "ITC Serif Gothic", serif;
+  --bodyFont: "Caslon Antique", serif;
+  --codeFont: "IBM Plex Mono", #{$DEFAULT_MONO};
+}

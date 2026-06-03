@@ -1,0 +1,80 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 44px;
+  background: color-mix(in srgb, var(--bg-panel) 85%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: color-mix(in srgb, var(--accent-amber) 60%, transparent);
+  flex-shrink: 0;
+  animation: slideDown var(--duration-slow) var(--ease-out) both;
+  /* Body defaults to pointer-events: none so map clicks fall through to the
+     Pixi canvas; the header re-enables events for itself. */
+  pointer-events: auto;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+
+.markGlyph {
+  color: color-mix(in srgb, var(--accent-amber) 70%, transparent);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.88rem;
+  line-height: 1;
+}
+
+.brandName {
+  font-family: var(--font-display), serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--accent-amber) 22%, transparent);
+}
+
+.dot {
+  color: color-mix(in srgb, var(--accent-amber) 50%, transparent);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.brandSub {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.18em;
+  color: color-mix(in srgb, var(--accent-amber) 75%, transparent);
+  font-size: 0.78rem;
+}
+
+.meta {
+  display: none;
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.16em;
+  color: color-mix(in srgb, var(--accent-amber) 55%, transparent);
+}
+
+@media (min-width: 480px) {
+  .meta {
+    display: inline;
+  }
+}

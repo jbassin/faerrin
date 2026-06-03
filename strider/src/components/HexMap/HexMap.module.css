@@ -1,0 +1,41 @@
+/* The host element is a sizing/positioning placeholder — the actual Pixi
+   canvas lives full-viewport on body (mounted by PixiHost). The map's `world`
+   container is positioned to match this element's screen rect each frame.
+   `pointer-events: none` lets hex hover/click events fall through to the
+   canvas underneath. */
+.root {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7 / 8;
+  background: transparent;
+  pointer-events: none;
+}
+
+.testHooks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 2;
+}
+
+.testHooks li {
+  display: block;
+}
+
+.testHooks button {
+  display: block;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: transparent;
+  opacity: 0;
+  cursor: default;
+  pointer-events: auto;
+}

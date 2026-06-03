@@ -1,0 +1,12 @@
+public
+node_modules
+.astro
+.quartz-cache
+.claude
+
+# Generated artifacts (see CLAUDE.md "Generated files") — do not format
+content/Script
+scripts/data
+scripts/script
+scripts/shibboleth.json
+package-lock.json

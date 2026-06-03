@@ -1,0 +1,147 @@
+---
+// Layout shell ported from quartz/components/renderPage.tsx + Head.tsx. Reproduces
+// the `.page > #quartz-body` CSS grid (left sidebar / center / right sidebar) and
+// the page-header > popover-hint (beforeBody) structure. Sidebar/beforeBody
+// content is supplied via named slots so content, folder, tag, and 404 pages can
+// compose the same shell.
+//
+// NOTE: Quartz's renderPage currently COMMENTS OUT <Footer>, so the live site has
+// no footer. We match that (Footer.astro exists for when it's re-enabled).
+//
+// Interactive widgets (Search, Darkmode, ReaderMode, Explorer, Graph) are Phase 3
+// islands; their sidebar slots are left for those to fill.
+import "../styles/custom.scss"
+import { pathToRoot } from "../../scripts/lib/slug.ts"
+import { SITE_TITLE, SITE_BASE_URL } from "../lib/config.ts"
+import { loadSite, buildExplorerTree } from "../lib/site.ts"
+import PageTitle from "../components/PageTitle.astro"
+import Search from "../components/islands/Search.tsx"
+import Darkmode from "../components/islands/Darkmode.tsx"
+import ReaderMode from "../components/islands/ReaderMode.tsx"
+import Explorer from "../components/islands/Explorer.tsx"
+import Graph from "../components/islands/Graph.tsx"
+import Popover from "../components/islands/Popover.tsx"
+import TranscriptPlayer from "../components/islands/TranscriptPlayer.tsx"
+
+const { title, slug, description = "", chrome = true } = Astro.props
+
+// Explorer tree (build-time). Cheap; loadSite is cached across the build.
+const explorerTree = chrome ? buildExplorerTree(await loadSite()) : []
+const isTranscript = slug.startsWith("Script/")
+
+const baseDir = slug === "404" ? "" : pathToRoot(slug as any)
+const iconPath = `${baseDir}/static/icon.png`.replace(/^\//, "")
+// Display + body fonts (ITC Serif Gothic / Caslon Antique) are self-hosted via
+// src/styles/fonts.scss. Only IBM Plex Mono (code) is loaded from Google Fonts.
+const fontHref = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"
+const ogImage = `https://${SITE_BASE_URL}/static/og-image.png`
+const socialUrl = slug === "404" ? `https://${SITE_BASE_URL}` : `https://${SITE_BASE_URL}/${slug}`
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta charset="utf-8" />
+    {
+      /* Dark-only void theme: force the dark palette before first paint. The
+        toggle is neutralized (the prefers-color-scheme / localStorage read is
+        intentionally dropped) so the light palette can never be applied. */
+    }
+    <script is:inline>
+      document.documentElement.setAttribute("saved-theme", "dark")
+    </script>
+    {
+      /* Display + body fonts are self-hosted (src/styles/fonts.scss). Only IBM
+        Plex Mono (code) still comes from Google Fonts. */
+    }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href={fontHref} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="og:site_name" content={SITE_TITLE} />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image:alt" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:url" content={ogImage} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="twitter:domain" content={SITE_BASE_URL} />
+    <meta property="og:url" content={socialUrl} />
+    <meta property="twitter:url" content={socialUrl} />
+
+    <link rel="icon" href={iconPath} />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body data-slug={slug}>
+    <div id="quartz-root" class="page">
+      <div id="quartz-body">
+        <div class="left sidebar">
+          {
+            chrome && (
+              <>
+                <PageTitle slug={slug} />
+                <div class="spacer mobile-only" />
+                <div
+                  class="flex-component"
+                  style="flex-direction:row;flex-wrap:nowrap;gap:1rem;align-items:center"
+                >
+                  <div style="flex-grow:1;flex-shrink:1;flex-basis:auto">
+                    <Search client:idle />
+                  </div>
+                  <Darkmode client:load />
+                  <ReaderMode client:idle />
+                </div>
+                <Explorer
+                  client:only="solid"
+                  tree={explorerTree}
+                  currentSlug={slug}
+                  title="Looking Glass"
+                />
+              </>
+            )
+          }
+          <slot name="left" />
+        </div>
+        <div class="center">
+          <div class="page-header">
+            <div class="popover-hint">
+              <slot name="beforebody" />
+            </div>
+          </div>
+          <slot />
+          <hr />
+          <div class="page-footer"></div>
+        </div>
+        <div class="right sidebar">
+          {
+            /* page-specific top (Image) → Graph → page-specific (TOC, Backlinks), matching quartz.layout.ts order. */
+          }
+          <slot name="right-top" />
+          {
+            /* Wrap the client:only Graph in a real flex box so the right-sidebar row
+              reserves its column server-side (the island itself is display:contents
+              and would otherwise leave the Image at ~50% width until hydration). */
+          }
+          {
+            chrome && (
+              <div class="graph-slot">
+                <Graph client:only="solid" />
+              </div>
+            )
+          }
+          <slot name="right" />
+        </div>
+      </div>
+    </div>
+    {chrome && <Popover client:idle />}
+    {isTranscript && <TranscriptPlayer client:idle />}
+  </body>
+</html>

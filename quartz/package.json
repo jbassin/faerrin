@@ -1,0 +1,56 @@
+{
+  "name": "heart-of-hearts",
+  "description": "Faerrin TTRPG campaign wiki — content pipeline (scripts/) + Astro + Solid site (src/).",
+  "private": true,
+  "version": "4.5.1",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev --port 10114",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && npx prettier . --check",
+    "format": "npx prettier . --write",
+    "test": "tsx --test",
+    "pipeline": "tsx scripts/run.ts",
+    "review": "tsx scripts/review.ts"
+  },
+  "engines": {
+    "npm": ">=10.9.2",
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^6.0.1",
+    "@floating-ui/dom": "^1.7.6",
+    "@tweenjs/tween.js": "^25.0.0",
+    "astro": "^5.6.0",
+    "astro-pagefind": "^2.0.0",
+    "d3-drag": "^3.0.0",
+    "d3-force": "^3.0.0",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "pixi.js": "^8.18.1",
+    "solid-js": "^1.9.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/d3-drag": "^3.0.7",
+    "@types/d3-force": "^3.0.10",
+    "@types/d3-selection": "^3.0.11",
+    "@types/d3-zoom": "^3.0.8",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.2.1",
+    "mdast-util-to-string": "^4.0.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "reading-time": "^1.5.0",
+    "remark-directive": "^4.0.0",
+    "sass": "^1.100.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.3",
+    "unist-util-visit": "^5.0.0"
+  }
+}

@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Masthead from "../components/Masthead.astro";
+import Player from "../islands/Player.tsx";
+import { loadEpisodes, formatRuntime, type Episode } from "../lib/episodes.ts";
+
+export async function getStaticPaths() {
+  const episodes = await loadEpisodes();
+  return episodes.map((episode) => ({ params: { id: episode.id }, props: { episode } }));
+}
+
+const { episode } = Astro.props as { episode: Episode };
+const arc = String(episode.arcNo).padStart(3, "0");
+const ep = String(episode.episodeNo).padStart(2, "0");
+const kind = episode.isMain ? "Campaign" : "One-Shot";
+const runtime = formatRuntime(episode.runtimeMs);
+---
+
+<Layout title={`${episode.episodeTitle} — Caster`} description={episode.synopsis || undefined}>
+  <Masthead compact />
+
+  <main class="wrap--narrow ep">
+    <header class="ep__head">
+      <div class="ep__meta">
+        <span class="slab slab--green">M-{ep}</span>
+        <span class="label label--soft">{kind}</span>
+        <span class="serial">{episode.date}</span>
+        <span class="serial ep__runtime">T+ <span class="timecode">{runtime}</span></span>
+      </div>
+      <h1 class="display ep__title">{episode.episodeTitle}</h1>
+      <p class="label label--soft ep__arc">{arc} · {episode.arcTitle}</p>
+      <div class="hosts ep__hosts">
+        <span class="host" style="--dot:var(--green)">{episode.hostA} · Recapper</span>
+        <span class="host" style="--dot:var(--blue-ink)">{episode.hostB} · Lorekeeper</span>
+        {episode.hostC && (
+          <span class="host" style="--dot:var(--pink)">{episode.hostC} · Instigator</span>
+        )}
+      </div>
+    </header>
+
+    <div class="hazard-rule hazard-rule--pink ep__hazard" aria-hidden="true"></div>
+
+    <section class="ep__player reticle" aria-label="Player">
+      <p class="label label--soft ep__playerlabel">
+        <span class="led led--live" aria-hidden="true"></span> Now Transmitting
+      </p>
+      <Player
+        client:load
+        id={episode.id}
+        src={episode.mp3Url}
+        title={episode.episodeTitle}
+        artist={episode.arcTitle}
+        runtimeMs={episode.runtimeMs}
+      />
+    </section>
+
+    {
+      episode.synopsis && (
+        <section class="ep__synopsis">
+          <p class="label ep__sectionlabel">
+            <span class="regmark" aria-hidden="true" /> Synopsis
+          </p>
+          <p class="ep__lede">{episode.synopsis}</p>
+        </section>
+      )
+    }
+
+    <details class="ep__transcript sticker">
+      <summary class="ep__summary">
+        <span class="label">Transmission Log</span>
+        <span class="label label--soft ep__count">
+          {episode.transcript.length} lines · <span class="timecode">{runtime}</span>
+        </span>
+        <span class="ep__chev" aria-hidden="true"></span>
+      </summary>
+      <div class="ep__lines">
+        {
+          episode.transcript.map((line) => (
+            <p class:list={["line", `line--${line.speaker}`]}>
+              <span class="line__who">{line.name}</span>
+              <span class="line__text">{line.text}</span>
+            </p>
+          ))
+        }
+      </div>
+    </details>
+  </main>
+
+  <footer class="wrap--narrow site-foot">
+    <a class="label" href="/">← All Episodes</a>
+  </footer>
+</Layout>
+
+<style>
+  .ep {
+    padding-top: clamp(1.5rem, 1rem + 3vw, 3rem);
+    padding-bottom: 4rem;
+  }
+  .ep__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .ep__title {
+    font-size: var(--step-3);
+    letter-spacing: -0.025em;
+  }
+  .ep__arc {
+    margin-top: 0.5rem;
+  }
+  .ep__hosts {
+    margin-top: 1rem;
+  }
+  .ep__runtime {
+    color: var(--ink);
+  }
+  .ep__hazard {
+    margin-top: clamp(1.25rem, 0.9rem + 1.5vw, 1.75rem);
+  }
+  .ep__player {
+    position: relative;
+    margin: clamp(1.5rem, 1rem + 3vw, 2.5rem) 0;
+  }
+  .ep__playerlabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6ch;
+    margin-bottom: 0.7rem;
+  }
+  .ep__sectionlabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6ch;
+    margin-bottom: 0.6rem;
+  }
+  .ep__lede {
+    font-size: var(--step-1);
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+  .ep__synopsis {
+    margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  }
+
+  .ep__transcript {
+    padding: 0;
+    overflow: hidden;
+  }
+  .ep__summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: clamp(1rem, 0.7rem + 1.5vw, 1.4rem);
+    cursor: pointer;
+    list-style: none;
+    background: var(--ink);
+    color: var(--bone);
+  }
+  .ep__summary::-webkit-details-marker {
+    display: none;
+  }
+  .ep__summary .label {
+    color: var(--bone);
+  }
+  .ep__summary .label--soft {
+    color: var(--bone-2);
+  }
+  .ep__count {
+    margin-left: auto;
+  }
+  .ep__chev {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.5rem 0.4rem 0 0.4rem;
+    border-color: var(--pink) transparent transparent transparent;
+    transition: transform 0.2s var(--ease);
+  }
+  details[open] .ep__chev {
+    transform: rotate(180deg);
+  }
+  .ep__lines {
+    padding: clamp(1rem, 0.7rem + 1.5vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .line {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+    padding-bottom: 0.85rem;
+    border-bottom: var(--rule) solid var(--hair);
+  }
+  .line:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .line__who {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    position: sticky;
+  }
+  .line--A .line__who {
+    color: var(--green);
+  }
+  .line--B .line__who {
+    color: var(--blue-ink);
+  }
+  .line--C .line__who {
+    color: var(--pink);
+  }
+  .line__text {
+    line-height: 1.5;
+  }
+  @media (max-width: 540px) {
+    .line {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+  }
+  .site-foot {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 3rem;
+  }
+  .site-foot .label {
+    padding: 0.5em 0.9em;
+    border: var(--rule) solid var(--ink);
+    border-radius: 2px;
+    transition: background 0.12s var(--ease), color 0.12s var(--ease);
+  }
+  .site-foot .label:hover {
+    background: var(--on-accent);
+    color: var(--pink);
+  }
+</style>

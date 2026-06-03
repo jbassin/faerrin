@@ -1,0 +1,25 @@
+{
+  "name": "caster",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "ingest": "bun run src/cli.ts",
+    "distill": "bun run src/cli.ts distill",
+    "script": "bun run src/cli.ts script",
+    "tts": "bun run src/cli.ts tts",
+    "assemble": "bun run src/cli.ts assemble",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
+    "msedge-tts": "^2.0.5"
+  }
+}

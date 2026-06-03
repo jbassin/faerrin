@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Skein — connection treatments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --amber: #f0b46e;
+        --amber-bright: #ffd497;
+        --teal: #6dd5c0;
+        --bg: #090c10;
+        --bg-2: #0e1218;
+        --bg-3: #131822;
+        --text: #c8c1b3;
+        --dim: #7a7466;
+        --rule: #25282e;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 300;
+        line-height: 1.45;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        padding: 72px 48px 120px;
+        background:
+          radial-gradient(
+            ellipse 1200px 600px at 50% 0%,
+            #181d27 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 20% 100%,
+            rgba(240, 180, 110, 0.04) 0%,
+            transparent 40%
+          ),
+          var(--bg);
+        background-attachment: fixed;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 3px,
+          rgba(0, 0, 0, 0.1) 3px,
+          rgba(0, 0, 0, 0.1) 4px
+        );
+        mix-blend-mode: multiply;
+        opacity: 0.35;
+        z-index: 999;
+      }
+
+      .masthead {
+        text-align: center;
+        margin: 0 auto 72px;
+        max-width: 900px;
+      }
+
+      .masthead-rule {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        margin-bottom: 18px;
+        font-family: "Cinzel", serif;
+        font-weight: 500;
+        letter-spacing: 0.55em;
+        font-size: 10px;
+        color: var(--amber);
+      }
+      .masthead-rule::before,
+      .masthead-rule::after {
+        content: "";
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--amber),
+          transparent
+        );
+        opacity: 0.7;
+      }
+      .masthead h1 {
+        font-family: "Cinzel", serif;
+        font-weight: 600;
+        font-size: 34px;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-shadow: 0 0 18px rgba(240, 180, 110, 0.08);
+      }
+      .masthead .glyph {
+        color: var(--amber);
+        font-family: "Cinzel", serif;
+        font-size: 12px;
+        letter-spacing: 0.6em;
+        margin: 22px 0 14px;
+      }
+      .subtitle {
+        color: var(--dim);
+        font-style: italic;
+        font-size: 17px;
+        max-width: 580px;
+        margin: 0 auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+        gap: 36px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .card {
+        background: linear-gradient(180deg, var(--bg-2) 0%, #0c1015 100%);
+        border: 1px solid var(--rule);
+        position: relative;
+        padding: 40px 32px 28px;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.02),
+          0 30px 60px -20px rgba(0, 0, 0, 0.6);
+      }
+
+      .corner {
+        position: absolute;
+        color: var(--amber);
+        font-family: "Cinzel", serif;
+        font-size: 16px;
+        line-height: 1;
+        opacity: 0.85;
+      }
+      .corner.tl {
+        top: 8px;
+        left: 10px;
+      }
+      .corner.tr {
+        top: 8px;
+        right: 10px;
+      }
+      .corner.bl {
+        bottom: 8px;
+        left: 10px;
+      }
+      .corner.br {
+        bottom: 8px;
+        right: 10px;
+      }
+
+      .card-label {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--amber);
+        font-family: "Cinzel", serif;
+        font-weight: 500;
+        font-size: 10px;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .card-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--amber), transparent);
+        opacity: 0.5;
+      }
+
+      .card-title {
+        font-family: "Cinzel", serif;
+        font-weight: 600;
+        font-size: 26px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text);
+        margin-bottom: 22px;
+        line-height: 1.1;
+      }
+
+      .canvas {
+        background: var(--bg);
+        border: 1px solid #181a1f;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        margin-bottom: 18px;
+        display: block;
+      }
+
+      .blurb {
+        font-size: 16px;
+        color: #a7a08e;
+        font-style: italic;
+        line-height: 1.55;
+        margin-bottom: 14px;
+      }
+      .blurb strong {
+        color: var(--amber);
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0.05em;
+      }
+
+      .spec {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        padding-top: 14px;
+        border-top: 1px dashed rgba(122, 116, 102, 0.25);
+        font-family: "Cinzel", serif;
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--dim);
+      }
+      .spec span {
+        color: var(--text);
+        border-left: 1px solid var(--rule);
+        padding-left: 10px;
+      }
+      .spec span:first-child {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      @keyframes pulseFlow {
+        from {
+          stroke-dashoffset: 0;
+        }
+        to {
+          stroke-dashoffset: -340;
+        }
+      }
+      @keyframes hairPulse {
+        0%,
+        100% {
+          opacity: 0.85;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 80px;
+        color: var(--dim);
+        font-family: "Cinzel", serif;
+        font-size: 10px;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+      }
+      footer::before {
+        content: "+ + +";
+        display: block;
+        color: var(--amber);
+        margin-bottom: 8px;
+        letter-spacing: 0.8em;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-rule">Auspex Channel · Skein</div>
+      <h1>Connection Treatments</h1>
+      <div class="glyph">+ + +</div>
+      <p class="subtitle">
+        Four directions for the network's amber thread. Each panel renders the
+        link across four faction-color substrates — read each line against the
+        worst stripe to judge real legibility.
+      </p>
+    </header>
+
+    <main class="grid">
+      <!-- ============================================================ -->
+      <!-- OPTION A — Consecrated Circuit (halo + core)                 -->
+      <!-- ============================================================ -->
+      <section class="card">
+        <span class="corner tl">+</span><span class="corner tr">+</span>
+        <span class="corner bl">+</span><span class="corner br">+</span>
+        <div class="card-label">Option A</div>
+        <h2 class="card-title">Consecrated Circuit</h2>
+
+        <svg
+          class="canvas"
+          viewBox="0 0 320 180"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a3a2a"
+            opacity="0.85"
+          />
+          <rect
+            x="80"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a4a20"
+            opacity="0.85"
+          />
+          <rect
+            x="160"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a4a3a"
+            opacity="0.85"
+          />
+          <rect
+            x="240"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a3550"
+            opacity="0.85"
+          />
+
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#06080b"
+            stroke-width="7"
+            stroke-linecap="round"
+          />
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#f0b46e"
+            stroke-width="2.4"
+            stroke-linecap="round"
+          />
+
+          <g stroke="#f0b46e" stroke-width="3.5" stroke-linecap="round">
+            <line x1="40" y1="48" x2="40" y2="72" />
+            <line x1="28" y1="60" x2="52" y2="60" />
+            <line x1="280" y1="108" x2="280" y2="132" />
+            <line x1="268" y1="120" x2="292" y2="120" />
+          </g>
+        </svg>
+
+        <p class="blurb">
+          <strong>Halo + core.</strong> A near-black outline carves the line out
+          of every faction tone underneath. The amber filament rides on top,
+          untouched by the substrate. Classical cartographic move; reads
+          everywhere, always.
+        </p>
+        <div class="spec">
+          <span>halo · 2.4u dark</span>
+          <span>core · 0.7u amber</span>
+          <span>no animation</span>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- OPTION B — Rite of Signal (stitched dashes)                  -->
+      <!-- ============================================================ -->
+      <section class="card">
+        <span class="corner tl">+</span><span class="corner tr">+</span>
+        <span class="corner bl">+</span><span class="corner br">+</span>
+        <div class="card-label">Option B</div>
+        <h2 class="card-title">Rite of Signal</h2>
+
+        <svg
+          class="canvas"
+          viewBox="0 0 320 180"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a3a2a"
+            opacity="0.85"
+          />
+          <rect
+            x="80"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a4a20"
+            opacity="0.85"
+          />
+          <rect
+            x="160"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a4a3a"
+            opacity="0.85"
+          />
+          <rect
+            x="240"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a3550"
+            opacity="0.85"
+          />
+
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#06080b"
+            stroke-width="8"
+            stroke-linecap="butt"
+          />
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#f0b46e"
+            stroke-width="3.5"
+            stroke-dasharray="11 7"
+            stroke-linecap="butt"
+            filter="drop-shadow(0 0 3px #f0b46e)"
+          />
+
+          <g stroke="#f0b46e" stroke-width="3.5" stroke-linecap="round">
+            <line x1="40" y1="48" x2="40" y2="72" />
+            <line x1="28" y1="60" x2="52" y2="60" />
+            <line x1="280" y1="108" x2="280" y2="132" />
+            <line x1="268" y1="120" x2="292" y2="120" />
+          </g>
+        </svg>
+
+        <p class="blurb">
+          <strong>Stitched ley-line.</strong> A rhythmic dash on a heavy dark
+          backing — the line reads as ritual circuit rather than wire. The most
+          gothic of the four; the network feels stitched into the city like
+          runework.
+        </p>
+        <div class="spec">
+          <span>halo · 2.7u dark</span>
+          <span>dash · 11/7 amber 1.2u</span>
+          <span>amber glow</span>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- OPTION C — Sheaf Pulse (traveling signal)                    -->
+      <!-- ============================================================ -->
+      <section class="card">
+        <span class="corner tl">+</span><span class="corner tr">+</span>
+        <span class="corner bl">+</span><span class="corner br">+</span>
+        <div class="card-label">Option C</div>
+        <h2 class="card-title">Sheaf Pulse</h2>
+
+        <svg
+          class="canvas"
+          viewBox="0 0 320 180"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a3a2a"
+            opacity="0.85"
+          />
+          <rect
+            x="80"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a4a20"
+            opacity="0.85"
+          />
+          <rect
+            x="160"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a4a3a"
+            opacity="0.85"
+          />
+          <rect
+            x="240"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a3550"
+            opacity="0.85"
+          />
+
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#06080b"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#f0b46e"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            opacity="0.6"
+          />
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#fff0d0"
+            stroke-width="3.6"
+            stroke-linecap="round"
+            stroke-dasharray="16 260"
+            filter="drop-shadow(0 0 6px #ffc278)"
+            style="animation: pulseFlow 3.2s linear infinite"
+          />
+
+          <g stroke="#f0b46e" stroke-width="3.5" stroke-linecap="round">
+            <line x1="40" y1="48" x2="40" y2="72" />
+            <line x1="28" y1="60" x2="52" y2="60" />
+            <line x1="280" y1="108" x2="280" y2="132" />
+            <line x1="268" y1="120" x2="292" y2="120" />
+          </g>
+        </svg>
+
+        <p class="blurb">
+          <strong>Living signal.</strong> A bright bead of light travels
+          node-to-node along a dim base. The eye finds motion where static
+          contrast fails. Subtlest at rest; loudest in peripheral vision. Reads
+          as transmission, not infrastructure.
+        </p>
+        <div class="spec">
+          <span>halo · 2.0u dark</span>
+          <span>base · 0.5u amber 0.6α</span>
+          <span>bead · 1.1u pale, 3.2s</span>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- OPTION D — Auspex Channel (teal core + amber wash)           -->
+      <!-- ============================================================ -->
+      <section class="card">
+        <span class="corner tl">+</span><span class="corner tr">+</span>
+        <span class="corner bl">+</span><span class="corner br">+</span>
+        <div class="card-label">Option D</div>
+        <h2 class="card-title">Auspex Channel</h2>
+
+        <svg
+          class="canvas"
+          viewBox="0 0 320 180"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a3a2a"
+            opacity="0.85"
+          />
+          <rect
+            x="80"
+            y="0"
+            width="80"
+            height="180"
+            fill="#5a4a20"
+            opacity="0.85"
+          />
+          <rect
+            x="160"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a4a3a"
+            opacity="0.85"
+          />
+          <rect
+            x="240"
+            y="0"
+            width="80"
+            height="180"
+            fill="#2a3550"
+            opacity="0.85"
+          />
+
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#f0b46e"
+            stroke-width="9"
+            stroke-linecap="round"
+            opacity="0.32"
+            filter="drop-shadow(0 0 5px #f0b46e)"
+          />
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#06080b"
+            stroke-width="4"
+            stroke-linecap="round"
+            opacity="0.7"
+          />
+          <line
+            x1="40"
+            y1="60"
+            x2="280"
+            y2="120"
+            stroke="#6dd5c0"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            filter="drop-shadow(0 0 2px #6dd5c0)"
+            style="animation: hairPulse 2.4s ease-in-out infinite"
+          />
+
+          <g stroke="#f0b46e" stroke-width="3.5" stroke-linecap="round">
+            <line x1="40" y1="48" x2="40" y2="72" />
+            <line x1="28" y1="60" x2="52" y2="60" />
+            <line x1="280" y1="108" x2="280" y2="132" />
+            <line x1="268" y1="120" x2="292" y2="120" />
+          </g>
+        </svg>
+
+        <p class="blurb">
+          <strong>Teal hair on amber smoke.</strong> Wide amber wash gives the
+          link presence; a single teal filament runs through it. Because no
+          faction wears teal, the line stays distinct over every substrate.
+          Trades a sliver of thematic consistency for maximum cross-territory
+          legibility.
+        </p>
+        <div class="spec">
+          <span>wash · 3.0u amber 0.32α</span>
+          <span>shadow · 1.3u dark</span>
+          <span>core · 0.5u teal</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>++ end of file · choose one ++</footer>
+  </body>
+</html>

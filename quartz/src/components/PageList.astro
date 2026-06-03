@@ -1,0 +1,51 @@
+---
+// Ports PageList.tsx: the ul.section-ul listing used by folder and tag pages.
+// Links resolve relative to the current (list) page's slug.
+import { resolveRelative, type PageEntry } from "../lib/site.ts"
+import { LOCALE } from "../lib/config.ts"
+
+interface Props {
+  currentSlug: string
+  entries: PageEntry[]
+  limit?: number
+}
+const { currentSlug, entries, limit } = Astro.props
+const list = limit ? entries.slice(0, limit) : entries
+
+function formatDate(d: Date): string {
+  return d.toLocaleDateString(LOCALE, { year: "numeric", month: "short", day: "2-digit" })
+}
+---
+
+<ul class="section-ul">
+  {
+    list.map((page) => (
+      <li class="section-li">
+        <div class="section">
+          <p class="meta">
+            {page.date && <time datetime={page.date.toISOString()}>{formatDate(page.date)}</time>}
+          </p>
+          <div class="desc">
+            <h3>
+              <a href={resolveRelative(currentSlug as any, page.slug)} class="internal">
+                {page.title}
+              </a>
+            </h3>
+          </div>
+          <ul class="tags">
+            {page.tags.map((tag) => (
+              <li>
+                <a
+                  class="internal tag-link"
+                  href={resolveRelative(currentSlug as any, `tags/${tag}` as any)}
+                >
+                  {tag}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+    ))
+  }
+</ul>

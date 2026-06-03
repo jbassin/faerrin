@@ -1,0 +1,160 @@
+/* Caster — nuMarathon neon design tokens.
+   Pure-black field, bright acid-lime signature, neon pink/orange accents and a
+   deep electric blue, hard edges, registration marks, HUD chrome.
+
+   Palette sourced from color-ref.md:
+     Black #000000  White #ffffff  Primary(lime) #B9FB00  Green #06BE2F
+     Pink #FF0861   Orange #FF7400 Red #E4090C  Purple #BF72E5  Teal #82F5BB
+     Blue #1112A8
+
+   Default (:root) is the pure-black brand theme. `[data-theme="light"]` is the
+   bright alternate. The inline <head> script sets data-theme before paint. */
+
+:root {
+  /* --- Palette: pure-black brand default --------------------------------- */
+  --bone: #000000; /* primary field — pure black */
+  --bone-2: #101014; /* recessed panels */
+  --paper: #16161d; /* raised cards — lifted off the field */
+  --ink: #ffffff; /* pure white text / rules */
+  --ink-soft: #8b938a; /* secondary text */
+
+  --green: #b9fb00; /* primary brand accent — toxic yellow-lime signature */
+  --blue: #1112a8; /* interactive / progress — deep electric blue */
+  --pink: #ff0861; /* highlight / sticker — hot magenta */
+  --orange: #ff7400; /* secondary highlight — hazard orange */
+
+  /* Extended palette — available for future use. */
+  --true-green: #06be2f; /* true green (distinct from the lime --green) */
+  --red: #e4090c; /* alert / destructive */
+  --purple: #bf72e5; /* accent violet */
+  --teal: #82f5bb; /* accent mint */
+
+  /* Content sitting on an accent FILL. Every bright accent (lime/pink/orange)
+     takes dark content; the deep blue is dark, so it takes white content. */
+  --on-accent: #000000;
+  --on-blue: #ffffff;
+
+  /* The deep blue is too dark to read as text or a small mark on the black
+     field, so on-field blue text / dots / reticles use this lighter sibling. */
+  --blue-ink: #5d6dff;
+
+  --hair: rgba(255, 255, 255, 0.15); /* faint divider on the dark field */
+  --focus: var(--green); /* focus ring — neon green glows on black */
+
+  /* --- Type -------------------------------------------------------------- */
+  --font-display: "Archivo Variable", "Archivo", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Wide, heavy display look (variable width + weight axes). */
+  --disp-weight: 850;
+  --disp-width: 115; /* Archivo width axis (62–125) */
+
+  /* Fluid scale. */
+  --step--1: clamp(0.78rem, 0.74rem + 0.2vw, 0.86rem);
+  --step-0: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --step-1: clamp(1.2rem, 1.05rem + 0.7vw, 1.55rem);
+  --step-2: clamp(1.6rem, 1.3rem + 1.5vw, 2.4rem);
+  --step-3: clamp(2.2rem, 1.6rem + 3vw, 4rem);
+  --step-4: clamp(2.9rem, 1.9rem + 5vw, 6rem);
+
+  /* --- Geometry / motion ------------------------------------------------- */
+  --rule: 2px; /* standard hairline weight */
+  --rule-bold: 4px;
+  --edge: 3px solid var(--ink);
+  --shadow-col: var(--green); /* accent offsets glow on black; cards override per-accent */
+  --shadow-hard: 6px 6px 0 var(--shadow-col); /* sticker offset */
+  --shadow-hard-sm: 3px 3px 0 var(--shadow-col);
+  --radius: 2px;
+  --pad: clamp(1rem, 0.6rem + 2vw, 2rem);
+  --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+
+  /* --- Marathon HUD / field-manual primitives ---------------------------- */
+  --crop-len: 14px; /* arm length of a corner crop mark */
+  --crop-weight: 2px; /* stroke weight of crop / reticle arms */
+  --crop-inset: clamp(0.5rem, 0.3rem + 1vw, 1rem); /* frame gap from viewport edge */
+  --reticle-len: 12px; /* arm length of element corner brackets */
+
+  /* Hazard chevron stripe — caution tape. Colour swappable via --hazard-col. */
+  --hazard-col: var(--ink);
+  --hazard: repeating-linear-gradient(
+    -45deg,
+    var(--hazard-col) 0 10px,
+    transparent 10px 20px
+  );
+
+  /* Diagonal cross-hatch fill for empty track / placeholder zones. */
+  --hatch: repeating-linear-gradient(-45deg, var(--bone-2) 0 6px, var(--bone) 6px 12px);
+
+  /* HUD scanline overlay — fine horizontal lines, near-invisible but present. */
+  --scanlines: repeating-linear-gradient(
+    0deg,
+    transparent 0 2px,
+    rgba(255, 255, 255, 0.05) 2px 3px
+  );
+
+  /* Status-LED idle/active colours. */
+  --led-live: var(--green);
+  --led-idle: var(--ink-soft);
+}
+
+/* --- Light alternate ------------------------------------------------------ */
+/* Same palette on a clean off-white field. Bright accents stay fills with dark
+   (--on-accent) content; the lime deepens so it still reads on white, and the
+   focus ring darkens for contrast. */
+:root[data-theme="light"] {
+  --bone: #f4f5f1; /* off-white field */
+  --bone-2: #e8e9e3; /* recessed panels */
+  --paper: #ffffff; /* raised cards */
+  --ink: #0b0b0d; /* near-black text / rules */
+  --ink-soft: #595e57; /* secondary text */
+
+  --green: #6f9c00; /* deepened lime so it holds as a fill / text on white */
+  --blue: #1112a8; /* deep blue reads as-is on the light field */
+  --pink: #ff0861;
+  --orange: #ff7400;
+
+  /* On the light field the deep blue is legible as text directly. */
+  --blue-ink: var(--blue);
+
+  --hair: rgba(11, 11, 13, 0.16);
+  --focus: #0b0b0d; /* dark ring stays visible on a light field */
+
+  --shadow-col: var(--ink); /* hard ink offsets on the light field */
+  --hazard-col: var(--ink);
+  --scanlines: repeating-linear-gradient(
+    0deg,
+    transparent 0 2px,
+    rgba(11, 11, 13, 0.035) 2px 3px
+  );
+  --led-live: var(--green);
+  --led-idle: var(--ink-soft);
+}
+
+/* No-JS fallback: honour an explicit OS *light* preference when no choice is
+   set. Brand default is dark, so the dark path needs no media query — it is the
+   base :root. The inline <head> script normally sets data-theme before paint. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bone: #f4f5f1;
+    --bone-2: #e8e9e3;
+    --paper: #ffffff;
+    --ink: #0b0b0d;
+    --ink-soft: #595e57;
+    --green: #6f9c00;
+    --blue: #1112a8;
+    --pink: #ff0861;
+    --orange: #ff7400;
+    --blue-ink: var(--blue);
+    --hair: rgba(11, 11, 13, 0.16);
+    --focus: #0b0b0d;
+    --shadow-col: var(--ink);
+    --hazard-col: var(--ink);
+    --scanlines: repeating-linear-gradient(
+      0deg,
+      transparent 0 2px,
+      rgba(11, 11, 13, 0.035) 2px 3px
+    );
+    --led-live: var(--green);
+    --led-idle: var(--ink-soft);
+  }
+}

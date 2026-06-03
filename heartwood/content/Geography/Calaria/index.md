@@ -1,0 +1,17 @@
+---
+title: Calaria
+aliases:
+  - Calaria
+---
+Calaria is the power among powers on [[Færrin]] -- others may specialize in a narrow market or niche, but Calaria endeavors to dominate totally. Calarian trade and product spiders across the continent, Calarian radio shows and music broadcast from every antenna, Calarian military might is exerted worldwide, and so on. Children who grow up thousands of miles from away dream of a life in the iridescent lands, and foreign governments fight to maintain their culture despite the shining alternative.
+
+> [!note] Calarian Exceptionalism
+> No one beats the drum of Calarian Excellence more than the Calarians themselves. A proud people, they throw parades celebrating their military might and dump vast capital into the creation of new great works in their name. Less charitable outside observers might instead call the Calarians jingoist, but the correct response to that assertion would be to ask: "What's wrong with being proud of my country?" or "Do you hate all that we've done for _you_ and the rest of Færrin?" or "Ungrateful whelps best leave my Host-fearin' household 'fore I get my .50 cal."
+
+Despite what the screamsheets might say, life for the average Calarian isn't all patriotism and praying. Life _is_ different here than elsewhere in Færrin, but it's not necessarily easier. A booming economy powered by the strongest industrial complex in the planet's history has empowered more people to live like kings than ever -- but on the other side of that coin are all the broken backs used to power that lifestyle. For most, life is spent as a (sometimes well-compensated) cog in one of Færrin's [[Org/index|Orgs]].
+
+### Calarian Government
+
+Calaria grew too large, too fast, with the advent of the [[Divinity/index|Gods']] blessings and the [[Org/Iridescent Church/index|Iridescent Church]]; and then again it saw its size balloon further with the effortless expansion into the [[Infinite Horizon]]. To make up for the lack of administrative capabilities to govern so much land and so many people, the free market stepped up. Things that had been the responsibility of nobles (while they existed) are now handled by private corporations and religious institutions.
+
+The Calarian government is jointly run by the Iridescent Church and a rotating council of powerful corporations, called Orgs. The Orgs each nominate a handful of ministers to act as representatives on the council, and the council internally elects a Prime Minister to act as the public face of the government. The Prime Minister and the Pontifex (the Iridescent Church's head) work together to pass laws, handle international diplomacy, and steer the country culturally.

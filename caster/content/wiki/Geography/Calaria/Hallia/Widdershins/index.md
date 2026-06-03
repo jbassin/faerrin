@@ -1,0 +1,1 @@
+Widdershins is a poorer neighborhood in the southern part of [[Geography/Calaria/Hallia/index|Hallia]]. Hugging the north bank of the Fousan River, Widdershins is where many of the members of the service industry in the city live, as they cannot afford the rent required to live near their place of work.

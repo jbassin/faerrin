@@ -1,0 +1,85 @@
+---
+// Ports TagPage + TagContent. tags/index lists every tag (each with its first 10
+// pages); tags/<tag> lists pages carrying that tag. Tag pages have NO breadcrumbs
+// (Quartz's Breadcrumbs returns null for the tags namespace — verified against the
+// live output). This lives in its own tags/ route, distinct from the root catch-all.
+import { getCollection } from "astro:content"
+import { loadSite, allTags, pagesWithTag, resolveRelative } from "../../lib/site.ts"
+import PageLayout from "../../layouts/PageLayout.astro"
+import ArticleTitle from "../../components/ArticleTitle.astro"
+import PageList from "../../components/PageList.astro"
+
+export async function getStaticPaths() {
+  const toArray = (v: unknown) => (v == null ? [] : Array.isArray(v) ? v : [v])
+  const prefixes = (t: string) => t.split("/").map((_, i, a) => a.slice(0, i + 1).join("/"))
+  const docs = await getCollection("docs")
+  const tags = new Set<string>()
+  for (const d of docs)
+    for (const t of toArray(d.data?.tags)) for (const p of prefixes(String(t))) tags.add(p)
+  const all = ["index", ...[...tags]]
+  return all.map((tag) => ({ params: { tag }, props: { tag } }))
+}
+
+interface Props {
+  tag: string
+}
+
+const { tag } = Astro.props
+const site = await loadSite()
+const slug = `tags/${tag}`
+const NUM_PAGES = 10
+
+const isIndex = tag === "index"
+const title = isIndex ? "Tag Index" : `Tag: ${tag}`
+
+const tags = isIndex ? allTags(site) : []
+const sections = isIndex ? tags.map((t) => ({ tag: t, pages: pagesWithTag(site, t) })) : []
+const pages = isIndex ? [] : pagesWithTag(site, tag)
+const itemsLabel = (n: number) => (n === 1 ? "1 item with this tag" : `${n} items with this tag`)
+---
+
+<PageLayout title={title} slug={slug} description="">
+  <Fragment slot="beforebody">
+    <ArticleTitle title={title} />
+  </Fragment>
+
+  {
+    isIndex ? (
+      <div class="popover-hint">
+        <article />
+        <p>{`Found ${tags.length} total tags`}</p>
+        <div>
+          {sections.map((s) => (
+            <div>
+              <h2>
+                <a
+                  class="internal tag-link"
+                  href={resolveRelative(slug as any, `tags/${s.tag}` as any)}
+                >
+                  {s.tag}
+                </a>
+              </h2>
+              <div class="page-listing">
+                <p>
+                  {itemsLabel(s.pages.length)}
+                  {s.pages.length > NUM_PAGES && <span>{` (showing first ${NUM_PAGES})`}</span>}
+                </p>
+                <PageList currentSlug={slug} entries={s.pages} limit={NUM_PAGES} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ) : (
+      <div class="popover-hint">
+        <article />
+        <div class="page-listing">
+          <p>{itemsLabel(pages.length)}</p>
+          <div>
+            <PageList currentSlug={slug} entries={pages} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+</PageLayout>

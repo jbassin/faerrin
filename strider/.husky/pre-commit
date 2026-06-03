@@ -1,0 +1,4 @@
+bun run format
+git update-index --again
+bun run lint
+bun run build

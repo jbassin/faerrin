@@ -1,0 +1,15 @@
+---
+// Site name in the left sidebar, linking to the root. Ports PageTitle.tsx.
+import { pathToRoot } from "../../scripts/lib/slug.ts"
+import { SITE_TITLE } from "../lib/config.ts"
+
+interface Props {
+  slug: string
+}
+const { slug } = Astro.props
+const baseDir = pathToRoot(slug as any)
+---
+
+<h2 class="page-title">
+  <a href={baseDir}>{SITE_TITLE}</a>
+</h2>

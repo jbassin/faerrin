@@ -1,0 +1,10 @@
+---
+// Ports ArticleTitle.tsx. Quartz's FrontMatter transformer always populates a
+// title (frontmatter or filename stem), so this always renders.
+interface Props {
+  title: string
+}
+const { title } = Astro.props
+---
+
+<h1 class="article-title">{title}</h1>

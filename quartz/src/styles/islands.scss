@@ -1,0 +1,614 @@
+// Interactive-island styles, ported from quartz/components/styles/{darkmode,
+// readermode,explorer,search,graph,popover}.scss (Phase 3). Phase 2 ported the
+// static-component styles + custom.scss; these are the interactive ones. The
+// per-file `@use "../../styles/variables.scss"` headers are replaced by the
+// single import below.
+@use "./variables.scss" as *;
+
+// ── Darkmode (darkmode.scss) ───────────────────────────────────────
+.darkmode {
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  text-align: inherit;
+  flex-shrink: 0;
+
+  & svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    fill: var(--darkgray);
+    transition: opacity 0.1s ease;
+  }
+}
+
+:root[saved-theme="dark"] {
+  color-scheme: dark;
+}
+:root[saved-theme="light"] {
+  color-scheme: light;
+}
+:root[saved-theme="dark"] .darkmode {
+  & > .dayIcon {
+    display: none;
+  }
+  & > .nightIcon {
+    display: inline;
+  }
+}
+:root .darkmode {
+  & > .dayIcon {
+    display: inline;
+  }
+  & > .nightIcon {
+    display: none;
+  }
+}
+
+// ── ReaderMode (readermode.scss) ───────────────────────────────────
+.readermode {
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  text-align: inherit;
+  flex-shrink: 0;
+
+  & svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    fill: var(--darkgray);
+    stroke: var(--darkgray);
+    transition: opacity 0.1s ease;
+  }
+}
+
+:root[reader-mode="on"] {
+  & .sidebar.left,
+  & .sidebar.right {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// ── Explorer (explorer.scss) ───────────────────────────────────────
+@media all and ($mobile) {
+  .page > #quartz-body {
+    & > :not(.sidebar.left:has(.explorer)) {
+      transition: transform 300ms ease-in-out;
+    }
+    &.lock-scroll > :not(.sidebar.left:has(.explorer)) {
+      transform: translateX(100dvw);
+      transition: transform 300ms ease-in-out;
+    }
+    .sidebar.left:has(.explorer) {
+      box-sizing: border-box;
+      position: sticky;
+      background-color: var(--light);
+      padding: 1rem 0 1rem 0;
+      margin: 0;
+    }
+    .hide-until-loaded ~ .explorer-content {
+      display: none;
+    }
+  }
+}
+
+.explorer {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  min-height: 1.2rem;
+  flex: 1 1 0;
+  &.collapsed {
+    flex: 0 1 1.2rem;
+    & .fold {
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  & .fold {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+  }
+
+  @media all and ($mobile) {
+    order: -1;
+    height: initial;
+    overflow: hidden;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  button.mobile-explorer {
+    display: none;
+  }
+  button.desktop-explorer {
+    display: flex;
+  }
+
+  @media all and ($mobile) {
+    button.mobile-explorer {
+      display: flex;
+    }
+    button.desktop-explorer {
+      display: none;
+    }
+  }
+
+  &.desktop-only {
+    @media all and not ($mobile) {
+      display: flex;
+    }
+  }
+
+  svg {
+    pointer-events: all;
+    transition: transform 0.35s ease;
+
+    & > polyline {
+      pointer-events: none;
+    }
+  }
+}
+
+button.mobile-explorer,
+button.desktop-explorer {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+
+  & h2 {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.explorer-content {
+  list-style: none;
+  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
+  margin-top: 0.5rem;
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: contain;
+
+    & li > a {
+      color: var(--dark);
+      opacity: 0.75;
+      pointer-events: all;
+
+      &.active {
+        opacity: 1;
+        color: var(--tertiary);
+      }
+    }
+  }
+
+  .folder-outer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-in-out;
+  }
+  .folder-outer.open {
+    grid-template-rows: 1fr;
+  }
+  .folder-outer > ul {
+    overflow: hidden;
+    margin-left: 6px;
+    padding-left: 0.8rem;
+    border-left: 1px solid var(--lightgray);
+  }
+}
+
+.folder-container {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  user-select: none;
+
+  & div > a {
+    color: var(--secondary);
+    font-family: var(--headerFont);
+    font-size: 1.05rem;
+    font-weight: $semiBoldWeight;
+    line-height: 1.6rem;
+    display: inline-block;
+  }
+  & div > a:hover {
+    color: var(--tertiary);
+  }
+
+  & div > button {
+    color: var(--dark);
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    align-items: center;
+    font-family: var(--headerFont);
+
+    & span {
+      font-size: 1.05rem;
+      display: inline-block;
+      color: var(--secondary);
+      font-weight: $semiBoldWeight;
+      margin: 0;
+      line-height: 1.6rem;
+      pointer-events: none;
+    }
+  }
+}
+
+.folder-icon {
+  margin-right: 5px;
+  color: var(--secondary);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  backface-visibility: visible;
+  flex-shrink: 0;
+}
+
+li:has(> .folder-outer:not(.open)) > .folder-container > svg {
+  transform: rotate(-90deg);
+}
+
+.folder-icon:hover {
+  color: var(--tertiary);
+}
+
+.explorer {
+  @media all and ($mobile) {
+    &.collapsed {
+      flex: 0 0 34px;
+      & > .explorer-content {
+        transform: translateX(-100vw);
+        visibility: hidden;
+      }
+    }
+    &:not(.collapsed) {
+      flex: 0 0 34px;
+      & > .explorer-content {
+        transform: translateX(0);
+        visibility: visible;
+      }
+    }
+    .explorer-content {
+      box-sizing: border-box;
+      z-index: 100;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 0;
+      background-color: var(--light);
+      max-width: 100vw;
+      width: 100vw;
+      transform: translateX(-100vw);
+      transition:
+        transform 200ms ease,
+        visibility 200ms ease;
+      overflow: hidden;
+      padding: 4rem 0 2rem 0;
+      height: 100dvh;
+      max-height: 100dvh;
+      visibility: hidden;
+    }
+    .mobile-explorer {
+      margin: 0;
+      padding: 5px;
+      z-index: 101;
+      .lucide-menu {
+        stroke: var(--darkgray);
+      }
+    }
+  }
+}
+
+.mobile-no-scroll {
+  @media all and ($mobile) {
+    overscroll-behavior: none;
+  }
+}
+
+// ── Search (search.scss) ───────────────────────────────────────────
+.search {
+  min-width: fit-content;
+  max-width: 14rem;
+  @media all and ($mobile) {
+    flex-grow: 0.3;
+  }
+
+  & > .search-button {
+    background-color: color-mix(in srgb, var(--lightgray) 60%, var(--light));
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: inherit;
+    height: 2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    text-align: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: space-between;
+
+    & > p {
+      display: inline;
+      padding: 0 1rem;
+    }
+
+    & svg {
+      cursor: pointer;
+      width: 18px;
+      min-width: 18px;
+      margin: 0 0.5rem;
+
+      .search-path {
+        stroke: var(--darkgray);
+        stroke-width: 2px;
+        transition: stroke 0.5s ease;
+      }
+    }
+  }
+
+  & > .search-container {
+    position: fixed;
+    contain: layout;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    display: none;
+    backdrop-filter: blur(4px);
+
+    &.active {
+      display: inline-block;
+    }
+
+    & > .search-space {
+      width: 65%;
+      margin-top: 12vh;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media all and not ($desktop) {
+        width: 90%;
+      }
+
+      & > * {
+        width: 100%;
+        border-radius: 7px;
+        background: var(--light);
+        box-shadow:
+          0 14px 50px rgba(27, 33, 48, 0.12),
+          0 10px 30px rgba(27, 33, 48, 0.16);
+        margin-bottom: 2em;
+      }
+
+      & > input {
+        box-sizing: border-box;
+        padding: 0.5em 1em;
+        font-family: var(--bodyFont);
+        color: var(--dark);
+        font-size: 1.1em;
+        border: 1px solid var(--lightgray);
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      & .pagefind-ui {
+        --pagefind-ui-primary: var(--secondary);
+        --pagefind-ui-text: var(--dark);
+        --pagefind-ui-background: var(--light);
+        --pagefind-ui-border: var(--lightgray);
+        --pagefind-ui-tag: var(--lightgray);
+        --pagefind-ui-border-radius: 7px;
+        --pagefind-ui-font: var(--bodyFont);
+      }
+    }
+  }
+}
+
+// ── Graph (graph.scss) ─────────────────────────────────────────────
+// Wrapper reserves the right-sidebar column server-side (the Graph island is
+// client:only / display:contents); min-height matches h3 + the 250px graph-outer
+// so hydration doesn't shift the layout.
+.graph-slot {
+  min-height: 290px;
+}
+
+.graph {
+  & > h3 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  & > .graph-outer {
+    border-radius: 5px;
+    border: 1px solid var(--lightgray);
+    box-sizing: border-box;
+    height: 250px;
+    margin: 0.5em 0;
+    position: relative;
+    overflow: hidden;
+
+    & > .global-graph-icon {
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: var(--dark);
+      opacity: 0.5;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      padding: 0.2rem;
+      margin: 0.3rem;
+      top: 0;
+      right: 0;
+      border-radius: 4px;
+      background-color: transparent;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background-color: var(--lightgray);
+      }
+    }
+  }
+
+  & > .global-graph-outer {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    display: none;
+    overflow: hidden;
+
+    &.active {
+      display: inline-block;
+    }
+
+    & > .global-graph-container {
+      border: 1px solid var(--lightgray);
+      background-color: var(--light);
+      border-radius: 5px;
+      box-sizing: border-box;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 80vh;
+      width: 80vw;
+
+      @media all and not ($desktop) {
+        width: 90%;
+      }
+    }
+  }
+}
+
+// ── Popover (popover.scss) ─────────────────────────────────────────
+@keyframes dropin {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.popover {
+  z-index: 999;
+  position: fixed;
+  overflow: visible;
+  padding: 1rem;
+  left: 0;
+  top: 0;
+  will-change: transform;
+
+  & > .popover-inner {
+    position: relative;
+    width: 30rem;
+    max-height: 20rem;
+    padding: 0 1rem 1rem 1rem;
+    font-weight: initial;
+    font-style: initial;
+    line-height: normal;
+    font-size: initial;
+    font-family: var(--bodyFont);
+    border: 1px solid var(--lightgray);
+    background-color: var(--light);
+    border-radius: 5px;
+    box-shadow: 6px 6px 36px 0 rgba(0, 0, 0, 0.25);
+    overflow: auto;
+    overscroll-behavior: contain;
+    white-space: normal;
+    user-select: none;
+    cursor: default;
+  }
+
+  & > .popover-inner[data-content-type] {
+    &[data-content-type*="pdf"],
+    &[data-content-type*="image"] {
+      padding: 0;
+      max-height: 100%;
+    }
+    &[data-content-type*="image"] {
+      img {
+        margin: 0;
+        border-radius: 0;
+        display: block;
+      }
+    }
+    &[data-content-type*="pdf"] {
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  @media all and ($mobile) {
+    display: none !important;
+  }
+}
+
+.active-popover,
+.popover:hover {
+  animation: dropin 0.3s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}

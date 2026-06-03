@@ -1,0 +1,3824 @@
+Context:
+
+This is a transcript of an ongoing ttrpg game in the setting of Faerrin, recorded on 2025-8-11. The four player characters are:
+  - Argyle: 
+    - Formerly a failed celestial and repentant devil both inhabiting an elven body.
+    - The two halves have been separated and spread across the Infinite Horizon.
+    - Now only the celestial, and a custode from the Scale on loan to Iconoclasm.
+  - Benny: 
+    - A nine-year-old android with the visage (and personality) of a child but the martial prowess of an adult
+    - The son of Atum, a high-ranking heart from Belvedere. His full name is Bennix.
+  - Johnny: 
+    - A half-elven man from Raelion. Originally a bartender, but now a mid/high level member of the Ghosts of Raelion
+    - He was blessed by the Watcher to come back from death, to serve as some his eyes across the continent
+  - Anzu: 
+    - A tengu, a bird person. Black feathered with blue feathertips
+    - The scion of the Qureshi family, an aristocratic, well-known patron and member family of Belvedere. He's run away from home.
+
+This is from the main campaign of the game, "Through a Song, Darkly".
+
+The first portion of the transcript is a pre-session chat between the players, and then it transitions to the
+actual session around when someone says something similar to "Do we want to play Pathfinder?" or "Does someone
+want to do a recap?". The session ends when the Gamemaster says somthing similar to "Do we want to call it there
+for the evening?" near the end of the transcript.
+
+Note: transcription is machine-recorded, with an 85% confidence rate.
+
+---
+Billing:
+
+The role of Gamemaster is played by the player Josh.
+The role of Argyle is played by the player Jorge.
+The role of Benny is played by the player Mike.
+The role of Johnny is played by the player Noah.
+The role of Anzu is played by the player Tanner.
+---
+Script:
+
+> Argyle: How are you?  
+> Gamemaster: Now recording.  
+> Gamemaster: I'm doing all right.  
+> Gamemaster: How about yourself?  
+> Argyle: Doing well, doing well.  
+> Argyle: I am doing well.  
+> Gamemaster: That's good.  
+> Gamemaster: Is that a thing you can do?  
+> Argyle: I'm, uh, I'm gonna pause my run for, uh, Hades 2.  
+> Argyle: I like it a lot.  
+> Gamemaster: You can pause in the middle?  
+> Argyle: Yeah, you can do an Hades one too.  
+> Gamemaster: I don't know if I ever tried to do that.  
+> Argyle: You quit, and then when it says quit, it says you'll be able to take off where you last saved, and it'll be like less than a minute ago.  
+> Gamemaster: I think I always just paused, literally paused, and then just put the PS5 into sleep mode.  
+> Argyle: Yeah.  
+> Gamemaster: And then that was good enough.  
+> Argyle: Yeah.  
+> Argyle: But you can quit, and then yeah, just bring it up.  
+> Argyle: But I think part of the reason they also are really... They've solved persistence in the sessions also because they don't want people seed scumming.  
+> Gamemaster: right and then it just generates a new one instead of like exiting and going back I mean I don't know how much information could you possibly guess ahead of time just like from the first room  
+> Argyle: Because the only way to reset your seed is to die.  
+> Argyle: Yeah.  
+> Argyle: I think it's more about... So basically, from the seed, obviously a lot of things contribute.  
+> Argyle: But the first couple of rooms are very thing.  
+> Argyle: But you will get the exact same boons every time.  
+> Argyle: So there's people that are like, I'll just keep resetting until I get an epic attack or epic special, whatever I was looking for.  
+> Argyle: We got die.  
+> Gamemaster: Yeah, but you can already do that.  
+> Gamemaster: They're enemies in the first run.  
+> Gamemaster: Or at least they were in Hades 1.  
+> Argyle: It takes a lot longer.  
+> Gamemaster: Sure, I guess.  
+> Argyle: But especially later on in Hades 1, you got death defiances and all of that.  
+> Argyle: So it's like, ugh.  
+> Gamemaster: Yeah.  
+> Gamemaster: And they get like four revives by the end.  
+> Argyle: Yeah.  
+> Argyle: So that's why they do that.  
+> Argyle: And they're like, all right, you really want to do this?  
+> Argyle: You got to commit to doing it.  
+> Gamemaster: I wonder...  
+> Gamemaster: I have to imagine that, like, speedruns require random seed.  
+> Gamemaster: Is there a way to set the seed?  
+> Argyle: They require you showing death.  
+> Argyle: They require you showing death.  
+> Gamemaster: Why?  
+> Gamemaster: Does the seed show up when you die?  
+> Argyle: No, it'll create a new seed.  
+> Gamemaster: I don't remember that.  
+> Gamemaster: Oh, so as part of the video, you die to prove that you've, like, not... Okay, that makes sense.  
+> Argyle: They want to make sure you have it checked.  
+> Argyle: Yeah, because they don't want you to look at the first rune and go, ooh, that's a really good boon.  
+> Argyle: I will do the speedrun off this one, and I'll use the shield or the bow.  
+> Gamemaster: When you said they require death, I thought you meant at the end of the run, not at the beginning of the run.  
+> Argyle: Oh, yeah, no, no, no.  
+> Gamemaster: That makes more sense.  
+> Argyle: Yeah, they require death.  
+> Argyle: And then obviously there's the fresh file speedrun, which are also cool.  
+> Argyle: Sorry, I'm filling up my water bottle.  
+> Gamemaster: How dare you be hydrated?  
+> Argyle: Lark, which is instead of a... Yeah.  
+> Gamemaster: Your lark?  
+> Argyle: Yeah, I think it's called the brand.  
+> Argyle: It's instead of a Brita.  
+> Gamemaster: Oh, the filter.  
+> Gamemaster: Is that any good?  
+> Argyle: It has a UV filter on it, which I don't care, and we don't really care about that.  
+> Argyle: We just like that the picture was glass.  
+> Gamemaster: That's fair.  
+> Gamemaster: That's an improvement.  
+> Argyle: Unfortunately, the filter area is still plastic.  
+> Argyle: And I've tried to buy glass from metal water bottles, and it really pisses me off.  
+> Argyle: I understand why, but pretty much every single one I go, some part of it has plastic in it, like the lid, or there's some valve, which makes sense.  
+> Argyle: I just...  
+> Gamemaster: I had... I was going to say, like, an old glass bottle sounds terrible.  
+> Argyle: I know metal doesn't bend the same way.  
+> Argyle: Or it's not as malleable.  
+> Argyle: I mean, ideally I want metal for my water ball, but no matter what.  
+> Gamemaster: I don't know.  
+> Gamemaster: I feel like even if it were metal, it would need to have a gasket, right?  
+> Argyle: Yeah.  
+> Argyle: There's always some plastic in there.  
+> Gamemaster: Yeah, I don't know how you would make a 100% metal container.  
+> Argyle: I mean, you might be able to... Well, even like most like mason jars, the metal lids, glass and metal lids, there's like a plastic lining on the metal.  
+> Gamemaster: Yeah, they have a gasket in them.  
+> Gamemaster: Because there's... Isn't that plastic lining?  
+> Argyle: Wait, what?  
+> Gamemaster: The plastic lining in the lid is to serve as a gasket, is it not?  
+> Argyle: I thought what got you the seal was the outer thing.  
+> Gamemaster: Pressing the plastic bit down onto the glass of the mason jar.  
+> Gamemaster: The rubber-like material in a mason jar wound is a sealing compound or gasket.  
+> Argyle: I guess.  
+> Argyle: Because there's the mason jar lid, and then there's the ring around the lid.  
+> Argyle: I feel like you can get away with no plastic there.  
+> Argyle: It might not be the best seal, but I feel like you could do it.  
+> Argyle: That's bullshit.  
+> Gamemaster: It's a gasket.  
+> Gamemaster: You can't... The pressure required to make two pieces of metal stick together such that water doesn't get through is much higher than metal and rubber that's malleable and goes around it.  
+> Argyle: Hey, we used to have, like, how did people used to carry wine in packages before, you know?  
+> Argyle: There's, like, a little wine skin.  
+> Argyle: I feel like you could figure it out.  
+> Gamemaster: Yeah.  
+> Gamemaster: A wineskin is like a treated pouch that's tied up with twine, and I wouldn't turn those upside down, because then all of the liquid would come out.  
+> Argyle: Yeah.  
+> Argyle: And I'm fine with that.  
+> Gamemaster: You just want a cup, then.  
+> Gamemaster: You're describing a cup.  
+> Gamemaster: Like an all-glass vessel.  
+> Argyle: You know, I want a swaffling.  
+> Gamemaster: I... What are you... I just, I don't... I'm sorry, I don't see the conclusion.  
+> Argyle: Oh, are you plastic maxing, Josh?  
+> Gamemaster: I'm not plastic maxing, I just... Okay, besides the fact that rubber and plastic are two different things, there are no microplastics in rubber.  
+> Argyle: I didn't realize we have a big plastic lobbyist over here.  
+> Argyle: Do you want microplastics and everything?  
+> Argyle: What'd you say?  
+> Argyle: Oh.  
+> Argyle: He seems like a big plastic apologist, I'm just saying.  
+> Johnny: I don't know what the context is here, but rubber is canonically different than plastic.  
+> Argyle: Josh really wants plastic in all water bottles.  
+> Gamemaster: I'm just saying that a water bottle with no rubber in it would not be as easy to make watertight.  
+> Gamemaster: There's a reason there's the rubber ring in every water bottle you've ever owned.  
+> Johnny: There's a rubber ring around this right there.  
+> Argyle: And I would...  
+> Benny: Oh, the ones that I have have bamboo rings.  
+> Johnny: Show us a bamboo ring.  
+> Gamemaster: Yeah.  
+> Benny: I left it at home.  
+> Gamemaster: You're at home!  
+> Benny: I left it at... It goes to another school.  
+> Gamemaster: There do exist ways to seal a glass or metal container with other metal, such that you don't have rubber, but you tend to need a bottling machine to do that, and then you can't recap it manually unless you still have the bottling machine on hand.  
+> Argyle: Well, I would buy one for my work and one for my home, and then I will just... No, no, no, no, no.  
+> Gamemaster: You can.  
+> Gamemaster: They make handheld bottle clamps.  
+> Gamemaster: You can do that.  
+> Argyle: I would have it at my desk.  
+> Argyle: I'm not a heathen.  
+> Gamemaster: Okay, they make hand-operated Bob clips.  
+> Argyle: I don't have... Yeah.  
+> Benny: You're going to bring one of those canning machines, and every time you're done sipping, you're just going to seal the can super loud at your desk.  
+> Argyle: Coworkers are like... Coworkers are like, wait a second, do you have boba at your desk?  
+> Argyle: No, no, no, no.  
+> Argyle: Yeah, no, I want... First of all,  
+> Argyle: No other co-workers in my office right now.  
+> Argyle: They might add someone else there, but right now it's my solo, so they wouldn't even see it.  
+> Gamemaster: So you have the room.  
+> Argyle: Second of all, yeah, it would be so funny to show up at this company and the guy you're sharing an office with has an in-office canner because he cans to take it.  
+> Johnny: you  
+> Argyle: Hey, Tanner.  
+> Gamemaster: And, like, every time you want to take a sip, you need to either use a bottle opener or a can opener, depending on your method of resealing.  
+> Argyle: No, no, no.  
+> Argyle: I'm not crazy.  
+> Argyle: I'm going to unseal it once I get to the office and then leave it unsealed for the workday.  
+> Benny: Reasonable.  
+> Argyle: Yeah.  
+> Argyle: Why is that crazy?  
+> Anzu: I just got here, but I'm just going to assume that whatever it is, is crazy.  
+> Argyle: No, no, no.  
+> Argyle: So Tanner, here... Let me get you up to speed.  
+> Johnny: There's no description you can make that isn't insane.  
+> Argyle: Josh...  
+> Gamemaster: Thank you.  
+> Argyle: Josh supports big plastic.  
+> Argyle: He thinks it's fine to have plastics in all water bottle.  
+> Argyle: I was like, I just want something that's mostly metal or glass.  
+> Argyle: I don't need plastic in it.  
+> Argyle: So I want to do canning for my water bottle.  
+> Argyle: So we came up with a great idea of making my water bottle, canning it at home with a canning machine.  
+> Argyle: With it secure, taking it to work, popping it open, drinking it for the workday, canning it again, bring it home.  
+> Gamemaster: So when Jorge says plastic, what he means actually is rubber.  
+> Anzu: Wait, wait, wait, wait, wait.  
+> Anzu: Josh, if I may, why not just have a metal water bottle with a screw cap?  
+> Argyle: Yeah.  
+> Argyle: Those usually have plastic in the screw.  
+> Argyle: Or silicon.  
+> Argyle: I don't trust silicon either.  
+> Gamemaster: Silicon is plastic.  
+> Johnny: Hmm.  
+> Argyle: No, it's different.  
+> Gamemaster: But he doesn't like the idea of there being any kind of gasket or whatever in his water bottle.  
+> Gamemaster: Which is generally how they get made, because that's how you make the two pieces watertight.  
+> Argyle: Also, silicone is not plastic, is it?  
+> Anzu: Thank you.  
+> Gamemaster: Silicone?  
+> Argyle: Yeah.  
+> Gamemaster: Not silicon, silicone.  
+> Argyle: Yeah, silicone.  
+> Argyle: Is it?  
+> Gamemaster: Is that not a plastic?  
+> Gamemaster: Hold on a second.  
+> Benny: Silicon is a rock.  
+> Argyle: Yeah, and then there's silicone.  
+> Argyle: Yeah, no, no.  
+> Gamemaster: Silicone is rubber.  
+> Argyle: Silicon in cooking is normally used as the plastic alternative because it's not plastic and there's no microplastics.  
+> Gamemaster: I apologize.  
+> Argyle: Yeah, that's what I'm just saying.  
+> Argyle: I don't want any soft, non-rocky hard things in my water bottle.  
+> Argyle: I want glass or metal, but glass isn't feasible.  
+> Johnny: Wait, just get a mason jar.  
+> Argyle: Josh hates the idea of wineskins.  
+> Johnny: Just get a mason jar and drop it.  
+> Gamemaster: We talked about a mason jar already.  
+> Argyle: Yeah.  
+> Gamemaster: He doesn't like that there's that small gasket in the lid of the mason jar.  
+> Benny: Just get a soft glass as the sealer.  
+> Anzu: Oh, so you... Oh, fascinating.  
+> Benny: It's already liquid.  
+> Johnny: Have you tried a sheath splatter?  
+> Johnny: That you can just, like, cap?  
+> Johnny: Like, get a cork in it?  
+> Argyle: Of course I am.  
+> Benny: Oh, cork.  
+> Gamemaster: Are you okay with Cork?  
+> Gamemaster: Is Cork fine?  
+> Gamemaster: Okay.  
+> Argyle: It's natural.  
+> Johnny: Are you okay with a cork?  
+> Benny: Every day at the beginning of the work day.  
+> Gamemaster: So I'm just going around the wine bottle.  
+> Johnny: is a non-sustainable like there's a finite number of cork trees in the world oh but for you wait  
+> Benny: Every day at the beginning of the work day.  
+> Argyle: No, it's sustainable in small numbers, not in our numbers.  
+> Benny: What is cork?  
+> Gamemaster: It's fine so long as it's just Jorge.  
+> Argyle: Yeah.  
+> Benny: Wait, hold on.  
+> Benny: What is cork if not the rubber of trees?  
+> Gamemaster: Rubber is the rubber of trees.  
+> Argyle: Well, original rubber did come from trees.  
+> Anzu: Yeah, Josh is correct.  
+> Benny: That sounds like propaganda.  
+> Argyle: Yeah, but you know, Mike is onto something.  
+> Gamemaster: is the cork of trees cork comes from trees well where does he get them mostly the congo  
+> Argyle: You are right.  
+> Argyle: It's too close to rubber.  
+> Argyle: It's too close to rubber.  
+> Argyle: It's too close to rubber.  
+> Benny: I haven't seen it.  
+> Argyle: So we... He's a... No, no, no.  
+> Johnny: Rubber or trees?  
+> Johnny: He's an American Kaiju.  
+> Benny: Rubber comes from Dr. Goodyear and the Michelin guy.  
+> Benny: He just throws them.  
+> Benny: No.  
+> Argyle: He's an eldritch entity.  
+> Benny: He's an eligible entity.  
+> Argyle: We've tied down...  
+> Benny: He's a renewable product.  
+> Gamemaster: Okay, sure.  
+> Argyle: Yeah.  
+> Argyle: So, I don't... I don't understand why the canning idea is crazy.  
+> Benny: He's the perpetual motion machine of rubber.  
+> Gamemaster: It's wildly inconvenient, and I don't see what you gain from it.  
+> Argyle: I mean, the alternative is I just bring a cup there, and then when I'm leaving, I just pour out the water, and then... But that's... No, because then I have to clean it there.  
+> Gamemaster: Why not just leave the cut there?  
+> Gamemaster: Do you not have water at work?  
+> Argyle: I don't have a dishwasher there.  
+> Johnny: Do you have a sink?  
+> Johnny: Is there soap?  
+> Gamemaster: Yeah.  
+> Argyle: Do you think I'm going to clean it myself?  
+> Gamemaster: You would rather run a whole dishwasher cycle?  
+> Anzu: Whoa.  
+> Benny: Thanks.  
+> Anzu: Whoa.  
+> Anzu: Hold on.  
+> Argyle: I mean, I'll throw other things in there.  
+> Argyle: Dishwasher is more efficient than cleaning by hand.  
+> Gamemaster: It's more efficient cleaning by hand when you do a large load all at the same time.  
+> Argyle: Yeah, and I'll load other things.  
+> Gamemaster: I didn't, you know.  
+> Argyle: But also... Okay, but... Why not?  
+> Johnny: It's your company paying for the water because you're leaving the cup there.  
+> Gamemaster: And we've already established you don't care about sustainability.  
+> Gamemaster: Because you just said you want to use cords.  
+> Johnny: Because you're willing to cut down every cork tree in the world.  
+> Argyle: I walked back to cork thing.  
+> Argyle: Also...  
+> Argyle: I don't want... No, no, because then if I do it, if I clean it in the office, I need to use the office sponge.  
+> Johnny: Bring your own sponge.  
+> Gamemaster: Where are you getting the cans from?  
+> Argyle: And even though... Okay, but now I bring my own sponge.  
+> Benny: You're not a fan of him?  
+> Argyle: Now when I'm done, I have a wet sponge.  
+> Argyle: Even if you wring it out, they're still moist.  
+> Argyle: So then I gotta get like a little sponge drying thing for my desk, and that's crazy.  
+> Benny: Well, hold on, hold on.  
+> Argyle: I'd rather have a tanning machine than a sponge dryer.  
+> Benny: What's wrong?  
+> Benny: What's wrong with the office sponge?  
+> Argyle: What'd you say?  
+> Benny: What's wrong with the office sponge?  
+> Argyle: Uh...  
+> Argyle: People like you use it.  
+> Benny: You're just not a fan of him?  
+> Benny: Is he too abrasive?  
+> Argyle: Yeah.  
+> Argyle: Little too.  
+> Argyle: Where am I getting the cans from?  
+> Argyle: I'm not going to get any plastic lined cans because most of them are plastic lined.  
+> Gamemaster: Okay, so what, you're, like, getting your own aluminum?  
+> Argyle: I actually watched a YouTube video on how to make cans and I think I could recreate it.  
+> Gamemaster: But... Okay.  
+> Argyle: I just need a couple hundred thousand dollars worth of materials first.  
+> Anzu: Now, can I just go back to something that I mentioned earlier where instead of all this effort, you could probably just manufacture your own metal screw cap water bottle that's fully metal?  
+> Benny: No.  
+> Argyle: Yeah.  
+> Argyle: Yeah, Josh says it's not possible.  
+> Gamemaster: I didn't say it's not possible.  
+> Argyle: He says you can't make a water bottle without rubber or plastic because he's big plastic.  
+> Gamemaster: I said... Not only did I not say that, we have transcripts that prove that I didn't say that.  
+> Johnny: approach like the rubber is  
+> Gamemaster: I said that the pressure required is much higher than when you use a rubber gasket.  
+> Argyle: Look it up.  
+> Gamemaster: It'd be unpleasant to use, which is why they don't sell it.  
+> Anzu: Josh, is the band of your watch there made of rubber?  
+> Gamemaster: I think so, yeah.  
+> Anzu: Oh, okay.  
+> Argyle: See?  
+> Argyle: He sold out.  
+> Gamemaster: I never said I'm not pro-rubber, by the way.  
+> Anzu: Okay.  
+> Benny: Thank you.  
+> Argyle: It's on his wrist.  
+> Gamemaster: Just like, as a people?  
+> Argyle: Yeah.  
+> Argyle: I'm just saying we should start canning more.  
+> Johnny: We as in the five of us?  
+> Johnny: Or we as in society?  
+> Argyle: Yeah.  
+> Argyle: Yeah.  
+> Argyle: Both.  
+> Argyle: Oh, wait.  
+> Argyle: Also, sorry.  
+> Argyle: This is a random thing.  
+> Argyle: I know it's really late, but Bailey and I are going to be doing engagement photos tomorrow.  
+> Argyle: We were going to do it earlier, but we didn't.  
+> Argyle: She has this really nice white dress, but I came up with an outfit that got vetoed for myself.  
+> Argyle: And I want to hear your guys' opinion on it.  
+> Anzu: Oh, I feel for Bailey sometimes.  
+> Argyle: This got vetoed.  
+> Argyle: I don't know why.  
+> Argyle: Okay.  
+> Gamemaster: You sent that in the wrong chat.  
+> Argyle: Oopsie.  
+> Gamemaster: But I see the thumbnail and I already see why.  
+> Argyle: I put it in our Destiny chat.  
+> Anzu: Oh, boy.  
+> Benny: So what?  
+> Anzu: Let me click play on this.  
+> Argyle: So it's a great outfit for slinking around.  
+> Johnny: There's a fire in his face.  
+> Argyle: I put it on and I was just like, I gotta slink.  
+> Argyle: I can't stop.  
+> Argyle: I gotta slink.  
+> Argyle: So it's a sweater shirt.  
+> Argyle: There's nice sweater shirts that are coming out, but it's black.  
+> Argyle: And then it's the suit from Tanner's wedding.  
+> Argyle: Now that with the gold chain, man, I feel like I feel like I'm a cop on Miami Vice and I'm a great detective.  
+> Argyle: But also way back when I made a deal with the mob boss and he sometimes calls me to like change evidence or let him go out.  
+> Argyle: And like, I just really wanted to wear it.  
+> Argyle: But she was just like, you can't wear this.  
+> Gamemaster: So to clarify, this is self-described as makes you feel like a corrupt policeman in Miami.  
+> Argyle: But I just want to sleep.  
+> Johnny: Josh, can we  
+> Argyle: fully corrupt, but I have a checkered past and I'm trying to be better.  
+> Gamemaster: And that's what you wanted to represent yourself in your engagement photos.  
+> Argyle: Yeah.  
+> Anzu: Now, in Georgia's defense, it is definitely Miami.  
+> Benny: So what was the revision?  
+> Argyle: Yeah.  
+> Gamemaster: No, I'm not saying the description was wrong.  
+> Gamemaster: I'm just saying, like, you just have to hear yourself say it out loud and then understand why maybe it was vetoed.  
+> Benny: Was the chain too small or something?  
+> Argyle: She... Her thoughts were that...  
+> Argyle: I shouldn't dress like this for an engagement shoot.  
+> Johnny: absolutely absolutely oh my god listen  
+> Argyle: She says, you know, if I want to dress like this for Halloween, it's okay.  
+> Anzu: Now, I assume you do know what you're wearing tomorrow?  
+> Argyle: Or, you know, something like that is fine.  
+> Argyle: And then she's like, maybe, I don't know, if Noah's okay, you can wear it to his wedding thing.  
+> Argyle: I'll just slink around.  
+> Argyle: Oh, do you want a drink?  
+> Argyle: I feel like a villain in Toontown.  
+> Argyle: Like, I feel like I'm one of the hyenas with the miniguns.  
+> Johnny: Thank you.  
+> Argyle: Yeah, it's not as great of an expression of me, but it's like a nice sweater, shirt-type thing, but it's white, and I'm going to be wearing a pant.  
+> Anzu: Right.  
+> Anzu: Yeah.  
+> Anzu: Gotta be white.  
+> Anzu: Yeah.  
+> Argyle: Yeah, but I think there's some potential.  
+> Gamemaster: Hmm.  
+> Argyle: But we'll see.  
+> Argyle: Unfortunately, I'm not going to be able to slink around Central Park.  
+> Anzu: It's... No.  
+> Anzu: But it is kind of slick.  
+> Anzu: I can't deny.  
+> Argyle: It is slick, and I felt like the Green Goblin, where I wore, I guess, Ozzie Opward, or whatever his name is, when I had the shirt on, and I was like, maybe this would work, and then I saw Tanner's suit, and I was like, put it on, James, put it on.  
+> Anzu: Wait, we cannot skip Ozzie Osbourne.  
+> Benny: No, we're letting it sit.  
+> Johnny: Thank you.  
+> Argyle: Sorry, rest in peace.  
+> Benny: I felt like the late Ozzie Osbourne who was injected with serum at his bio company and became evil.  
+> Gamemaster: Thank you.  
+> Argyle: Pouring out for the big guy.  
+> Argyle: Sorry.  
+> Anzu: Wow.  
+> Benny: You know what?  
+> Benny: No, I know why Jorge felt like...  
+> Argyle: Norman Osborn.  
+> Argyle: Guys, there's one Osborn.  
+> Argyle: Let's be honest here.  
+> Benny: Wait, wait, wait, wait.  
+> Benny: Let me get that.  
+> Argyle: His name is Norman Virgil Osborn.  
+> Argyle: Let's be honest.  
+> Argyle: It should be Ozzie Osborn.  
+> Argyle: They should have just gone with it.  
+> Argyle: You can't use the name Osborn and not expect people to get him confused.  
+> Johnny: We all know what the gif is.  
+> Anzu: The funny thing about that is traditionally they did like to alliterate.  
+> Argyle: Yeah, yeah, see?  
+> Benny: Hold on, hold on, hold on.  
+> Benny: Jorge, when it was vetoed.  
+> Gamemaster: Yeah, we could tell what it was.  
+> Benny: No, why did it copy, not the gif?  
+> Benny: Yeah, okay.  
+> Johnny: Without context, someone's like, oh, he looks like he's having an interesting board meeting.  
+> Benny: You know how much I've sacrificed?  
+> Argyle: Oh no.  
+> Johnny: How am I supposed to sleep around this company?  
+> Argyle: Wait a second, wait a second.  
+> Argyle: Bailey.  
+> Argyle: Do you have a moment?  
+> Anzu: Put her on.  
+> Argyle: Wait, wait, wait.  
+> Anzu: Put her on.  
+> Gamemaster: Ha!  
+> Argyle: Let's see if I can put this.  
+> Argyle: Can you put something?  
+> Argyle: No.  
+> Anzu: Can you hear me?  
+> Argyle: She can't, unfortunately.  
+> Anzu: Oh, you got to unplug that.  
+> Argyle: Oh.  
+> Argyle: Okay.  
+> Argyle: There we go.  
+> Johnny: Bailey, I'm pro this outfit.  
+> Anzu: Bailey, I'm sorry.  
+> Argyle: Yo, you showed them.  
+> Anzu: I didn't know when I picked those suits out what it would lead to down the line.  
+> Argyle: I told him he can wear it to your wedding.  
+> Johnny: I'm so pro this outfit.  
+> Johnny: I approve.  
+> Argyle: It's going to look really good.  
+> Argyle: When I told them about it, too, and I said, I put on the black shirt, and they're like, what?  
+> Argyle: I called him Ozzie Osbourne and said, so then, you know, so thanks for that, Tanner.  
+> Anzu: I don't know.  
+> Johnny: it's even better  
+> Argyle: That's, that's,  
+> Anzu: You know, they were available for rent.  
+> Anzu: He could have rented it, and then it wouldn't have been a problem.  
+> Argyle: No, he did rent it.  
+> Argyle: He just forgot to return it.  
+> Argyle: Because it was the goblin suit.  
+> Anzu: Okay.  
+> Benny: Forgot to return it.  
+> Anzu: That is outside of my control.  
+> Argyle: It was, don't return me.  
+> Argyle: It makes me want to be a worse man.  
+> Argyle: When I see that.  
+> Johnny: Bye, Bailey.  
+> Argyle: Oh, yeah.  
+> Anzu: Wow.  
+> Argyle: Bye.  
+> Anzu: Thanks Bailey.  
+> Anzu: Bye.  
+> Johnny: Even better with the series of events that's happened right now.  
+> Gamemaster: You're gonna wake up to find that suit mysteriously gone is what's gonna happen.  
+> Argyle: I'll buy another.  
+> Argyle: I'll call up Suitsupply and go, hello, sir, there's been a mistake.  
+> Benny: The suit!  
+> Argyle: I need you to make me one right now.  
+> Benny: The suit!  
+> Argyle: Sir, sir, we have these in stock.  
+> Argyle: Make up for me.  
+> Benny: No, no, it's going to be like the Spongebob episode that was a parody of the Tall Tale Heart.  
+> Argyle: All right.  
+> Benny: Bailey's just going to hear the rustling of the suit in her head for extended periods of time.  
+> Benny: And she's like, it's in the closet.  
+> Benny: I put it in the closet.  
+> Benny: The guilt will eat her because she'll see you superset without the suit.  
+> Benny: It's in there.  
+> Benny: It's going.  
+> Gamemaster: Can we talk about the fact that Mike couldn't reference Edgar Allan Poe?  
+> Gamemaster: He had to reference the Spongebob episode referencing Edgar Allan Poe?  
+> Benny: I didn't see the Edgar Allan Poe movie.  
+> Benny: I just saw the Spongebob episode.  
+> Benny: It's a shame he never got to work with Tarantino.  
+> Johnny: Thank you.  
+> Argyle: I almost spit out my water.  
+> Gamemaster: I hate that.  
+> Gamemaster: I hate that so much.  
+> Gamemaster: I don't think the Spongebob episode that references the Telltale Heart should ever be said by anyone.  
+> Benny: But it exists!  
+> Benny: They made an episode that is the Tall Tale Heart.  
+> Anzu: I actually don't know what episode that is off the top of my head.  
+> Benny: The boots episode where Mr. Krabs gets annoyed by the fishing boots and then he puts them under the floorboards and then he just hears the squeaking and the guilt eats him and he shows Spongebob where he put the boots.  
+> Anzu: Okay.  
+> Anzu: Yeah.  
+> Gamemaster: I've never seen this episode of Spongebob, and I know what it is.  
+> Gamemaster: Because you said what the plot is, because it references a different piece of media.  
+> Gamemaster: So... Okay.  
+> Johnny: Yeah, the movie Mike never saw, the movie of Edgar Allan Poe.  
+> Benny: Yeah, the Tall Tale Heart.  
+> Gamemaster: Great.  
+> Gamemaster: Andrew?  
+> Benny: The sequel I heard was not good, so I didn't even bother with the first one.  
+> Argyle: But yeah, so that's who's got to make an appearance.  
+> Argyle: If I don't wear it to Noah's thing, I might wear it to a welcome dinner for my wedding.  
+> Johnny: You slink into your own wedding.  
+> Argyle: Yeah.  
+> Anzu: I also kept the suit and have been wondering how long I have to wait before I can wear it again.  
+> Gamemaster: Thank you.  
+> Argyle: You can wear it immediately.  
+> Argyle: I think we should all dress like we're from Miami Vice.  
+> Johnny: One of those zoot suits.  
+> Argyle: We'll have different color shirts.  
+> Argyle: They can't be white.  
+> Argyle: They have to be like black, pink, green.  
+> Argyle: And then we can just slink around.  
+> Benny: I might.  
+> Argyle: For those of you who don't know, this group of men are just re-wearing their other ones.  
+> Argyle: They just all decided to really go in on the tan suits.  
+> Johnny: Listen, there's no weddings this year.  
+> Argyle: So they just all... Yeah.  
+> Johnny: Let me call up Suit Supply.  
+> Gamemaster: Do you also have the tan suit?  
+> Johnny: I'll reorder mine.  
+> Gamemaster: Is that what this is?  
+> Johnny: Yeah, except I still remember Mike going, this is a good suit.  
+> Johnny: I think I'm going to just buy this suit.  
+> Gamemaster: Yeah.  
+> Gamemaster: It was a conscious effort.  
+> Johnny: And I remember that conversation.  
+> Johnny: Jorge apparently just had a destiny calling that he needed to keep this suit.  
+> Argyle: Yeah, so you know.  
+> Benny: You never know when you're going to need a tan suit.  
+> Argyle: You never know.  
+> Argyle: And I... Yeah.  
+> Gamemaster: I feel like you always know when you're gonna need a tan suit.  
+> Gamemaster: Usually months in advance.  
+> Argyle: No.  
+> Argyle: But yeah, you never know.  
+> Argyle: You never know.  
+> Argyle: The world's a fickle place.  
+> Anzu: Yeah.  
+> Argyle: Oh, one other final... Sorry to hijack the conversation again, but...  
+> Gamemaster: Excuse me.  
+> Johnny: Thank you.  
+> Argyle: Someone was really good at fishing.  
+> Argyle: I joined D.E.  
+> Argyle: Shaw, and it was a couple days later, I got a text from someone that said, Hey, Jorge, do you have a second?  
+> Gamemaster: Thank you.  
+> Argyle: D. David E. Shaw.  
+> Argyle: And I was like, what the fuck?  
+> Argyle: Why would the billionaire be texting me?  
+> Argyle: But I was like, does he do this with everyone?  
+> Argyle: So I was like, yes.  
+> Argyle: And he's like, I'm in a meeting right now, but I'm very good on text.  
+> Argyle: I'm going to need you to do some tasks for me.  
+> Argyle: And I'm like, report, report.  
+> Argyle: But they found out I started working and within a couple of days just did a phishing tax.  
+> Anzu: Thank you.  
+> Argyle: That's crazy.  
+> Argyle: On my personal cell.  
+> Gamemaster: Should have just given him those gift cards.  
+> Benny: Yeah.  
+> Benny: What if it was actually him, and he's just like, why is no one fucking replying to me?  
+> Argyle: Biomedical research.  
+> Benny: I'll just get someone else to do it.  
+> Benny: And he just went to the next person in the book.  
+> Argyle: I'm scared of bringing my suit jacket out, I'm gonna be honest with you.  
+> Johnny: is because you can't control it.  
+> Gamemaster: Of what it'll do to you?  
+> Gamemaster: Yeah.  
+> Argyle: Yeah.  
+> Johnny: I don't know if we can go off the rails anymore for this session.  
+> Anzu: Yeah, we've gone pretty far.  
+> Anzu: I guess probably I should say, do we want to play Dungeons & Dragons so that it doesn't get any worse?  
+> Argyle: Yeah.  
+> Benny: One more thing.  
+> Benny: If I was a fisher and I had a contact list, I would figure out who works with who and I would guilt trip Jorge.  
+> Benny: I would have someone walk up to him at lunch and be like, did you not text David back?  
+> Benny: I would go until someone guilt tripped and then Jorge would double... No, no, I was fishing.  
+> Benny: The people who were texting me were fishing.  
+> Benny: Unless he talked to you in person, just make Jorge second guess everything.  
+> Benny: That's why I'm not a fisher.  
+> Argyle: And then two lunches from now, someone goes to me and goes, Jorge, did you really tell Tanner that it was a phishing text?  
+> Benny: Yeah.  
+> Argyle: That's crazy.  
+> Johnny: Why are you gaslighting him like that?  
+> Anzu: Very good.  
+> Anzu: Really good stuff today.  
+> Anzu: Maybe we should get a recap going.  
+> Anzu: Do we have any volunteers?  
+> Anzu: Oh, yeah.  
+> Johnny: Last time on EPO.  
+> Johnny: It's on the planet.  
+> Johnny: We were in the spider's lair.  
+> Johnny: We went on a spider murder spree, being like, yeah!  
+> Johnny: And then Strong brought up the point that if we kill all the spiders, there's no spiders left to make the very important silk.  
+> Johnny: And we all went, aw, bummer.  
+> Johnny: So we looked around a little bit, and then we were like, alright, I guess we'll just head out and not kill all the spiders and call it a success.  
+> Johnny: So we did.  
+> Johnny: We headed out.  
+> Johnny: We went back.  
+> Johnny: There was a suspicious tree.  
+> Johnny: wise, blew up the tree in a single fell fireball.  
+> Argyle: Bye-bye.  
+> Johnny: Alakablam!  
+> Johnny: We then returned the conquering heroes, which no one appreciated.  
+> Johnny: It really felt like we sort of got brushed over because there was like some glowing blue knots or something, whatever.  
+> Johnny: I see blue stuff all the time.  
+> Johnny: I'm not making a big fuss about it.  
+> Johnny: We learned that the knots all glowed, sort of like a, I don't know if glowed is the right word, turned midnight blue.  
+> Johnny: for about 10 seconds, and then turned back and everyone freaked out and was like, we don't know what that is.  
+> Johnny: So the group, using incredible charisma, talked our way into a meeting we shouldn't have been in, met a total hack of an archmage.  
+> Johnny: Just a real sorcerer of a wizard.  
+> Johnny: Does not deserve to be called.  
+> Gamemaster: Slumber.  
+> Johnny: We then learned about a priest of... What's his name?  
+> Johnny: Sleep?  
+> Johnny: Slumber.  
+> Johnny: My apologies.  
+> Johnny: Slumber.  
+> Johnny: One town over.  
+> Johnny: You know, one town over.  
+> Johnny: There's like five towns left, so... They needed some brave heroes, and we volunteered to do it.  
+> Johnny: Also, we almost got into a fistfight with the Archmage because he was asking about tangling, and we were ready to tangle.  
+> Argyle: I don't know if we...  
+> Johnny: We all were ready to jump this guy.  
+> Johnny: Every one of us, specifically Josh, was saying he was going to jump him.  
+> Gamemaster: He seemed pretty nice.  
+> Gamemaster: I don't know.  
+> Gamemaster: I gotta say, we had some good rapport go.  
+> Gamemaster: He seemed friendly.  
+> Johnny: A modest fall on this guy, but everyone else blocked him.  
+> Gamemaster: It seems like something a model would do.  
+> Johnny: We learned to tangle with the Archmage through a battle of wills between the wizards.  
+> Johnny: Wise learned to tangle.  
+> Johnny: Overcame this hack Archmage.  
+> Johnny: Who.  
+> Johnny: I have his name written down.  
+> Johnny: But I don't have my notes open.  
+> Anzu: Oh, I've got it somewhere.  
+> Johnny: And then.  
+> Johnny: The Archmage.  
+> Gamemaster: mr belt buckle i don't actually i don't remember right buckle  
+> Johnny: Mr. Beltbuckle.  
+> Johnny: Bilbo Baggins.  
+> Anzu: Bright, bright buckle.  
+> Anzu: Nalo bright buckle.  
+> Johnny: Archmage Brightbuckle.  
+> Anzu: Pretty close.  
+> Johnny: Was scared off.  
+> Johnny: In a. He fled the scene.  
+> Johnny: to go about his business.  
+> Johnny: And we all prepared for the next day.  
+> Anzu: Yeah, that was a relatively accurate recounting of what we did.  
+> Anzu: Luckily, the last time we played was Thursday, so it was super fresh.  
+> Anzu: Yeah, so you can have an inspiration point.  
+> Anzu: So you have been tasked with traveling to the considerably smaller settlement called Palomar.  
+> Anzu: It exists within a repurposed fort from the before times.  
+> Anzu: You are just awaking from your long rest.  
+> Anzu: And it is now morning.  
+> Anzu: And it's time to head out.  
+> Anzu: I've made a slight retcon for the sake of an efficient session.  
+> Anzu: It's a two-day by-foot journey.  
+> Anzu: And that's what we're going with.  
+> Anzu: Unless you have anything in particular you want to do, we could say that you've all gathered near the gate.  
+> Anzu: And the bastion is there.  
+> Anzu: And she says...  
+> Johnny: Thank you.  
+> Anzu: All right, well, I'm wishing the four of you the best of luck.  
+> Anzu: You just more or less follow the road south, and you'll see it.  
+> Anzu: You can't really miss it.  
+> Anzu: We gathered just a couple things for you all.  
+> Anzu: And she hands over a little satchel.  
+> Anzu: And within it is one more regular healing potion.  
+> Argyle: Hmm.  
+> Anzu: as well as four of these small metal disks with a feather etched into it.  
+> Anzu: These are feather tokens.  
+> Anzu: They're a consumable item that you just have to carry on your person.  
+> Anzu: And if you happen to fall more than 20 feet,  
+> Anzu: Basically, Feather Falls you.  
+> Argyle: Oh.  
+> Anzu: and she explains that the reason that you're getting these is part of the second half of the journey is over some very craggy, rocky terrain, and there are a lot of small cracks in the ground, but then strewn about, some of them are quite deep, and you wouldn't want to fall to your death.  
+> Anzu: Is that a hand raised?  
+> Argyle: Yes.  
+> Anzu: interestingly it's the like overall grade of the terrain is pretty flat but it's just like uneven like it's broken up and I suppose yeah it's not icy but yeah  
+> Argyle: So is it more like a glacier or is it more like we're going down a mountain?  
+> Argyle: So like glaciers with like the random like pits.  
+> Argyle: Okay.  
+> Argyle: Yeah.  
+> Argyle: Okay.  
+> Argyle: I'm happy she just volunteered that because I was about to ask her why.  
+> Anzu: Yeah, yeah, yeah.  
+> Argyle: Do we have rope?  
+> Anzu: I would say, yeah, you have a lot of any of the standard adventuring equipment you probably have.  
+> Argyle: I'd like to get some more rope, like a lot of rope.  
+> Anzu: Yeah.  
+> Anzu: Sure.  
+> Anzu: You have, yeah, there's plenty of rope.  
+> Argyle: So have you guys thought about making an air balloon?  
+> Argyle: Hot air balloon?  
+> Anzu: Sorry you're asking me this question.  
+> Argyle: Yeah.  
+> Argyle: Obviously, it's not going to work for this one, but have you guys considered it?  
+> Anzu: Personally, I have not.  
+> Anzu: I'm not involved in some of the more inventive discussions.  
+> Argyle: I mean, I think it's pretty simple, right?  
+> Argyle: Obviously, we can't do airships, but if we had some fabric and some fire, we should be able to make an hot air balloon.  
+> Argyle: I don't understand why we have to do this by foot.  
+> Anzu: Well...  
+> Argyle: You might need to armor the outside of it, though, because there's some birds that might try to attack it.  
+> Anzu: Yeah, there are some airborne dangers that we're aware of, so I don't know, maybe the risk there is too great, and that's why we've not seen it yet.  
+> Argyle: I wonder if you can put one of these little tangles on it to keep them away, you know, and then you fly with it.  
+> Argyle: I notice you're not writing this down.  
+> Argyle: You might want to.  
+> Anzu: I've got a great memory.  
+> Argyle: But... Okay.  
+> Johnny: You should write these down.  
+> Anzu: All right, well...  
+> Anzu: I appreciate the suggestion, and I will pass that along to some of the more inventive folks, maybe the folks at Yesteryear, someone else, I'm not sure, some of the artisans.  
+> Argyle: Okay.  
+> Argyle: Just make sure to tell them it's Quinzelius the Strong, not the Wise that suggested this.  
+> Gamemaster: Can you pilot a hot air balloon?  
+> Anzu: Right.  
+> Gamemaster: Can you tell it to go in a particular direction?  
+> Argyle: Just get a fan.  
+> Benny: if you're skilled enough.  
+> Argyle: Or, are there guns in this setting?  
+> Gamemaster: I should have asked.  
+> Anzu: There are not guns.  
+> Argyle: Oh.  
+> Argyle: Get a really heavy crossbow.  
+> Anzu: I'll report all that as well.  
+> Argyle: Thank you.  
+> Argyle: You can leave that one out.  
+> Argyle: I want to leave something for them to discover.  
+> Anzu: Yes, of course.  
+> Anzu: Good luck, yes.  
+> Anzu: Be ever cautious of your surroundings and see what this priest of slumber has to say.  
+> Anzu: Not really too many of those kinds of folks around, so maybe there's some insight.  
+> Anzu: I don't know.  
+> Argyle: Oh, you're doing the 10 one again?  
+> Johnny: You can count on us.  
+> Anzu: She'll salute back, and you guys are able to begin your trek.  
+> Gamemaster: As we head off, I just want to cast 8, so everybody gets their max HP bumped up by 10.  
+> Anzu: Very nice.  
+> Argyle: What level is that?  
+> Gamemaster: Yep.  
+> Gamemaster: 3.  
+> Argyle: Sorry.  
+> Anzu: Very awesome.  
+> Gamemaster: It seems worth it, given how much you get hit.  
+> Argyle: Yeah, especially for me.  
+> Argyle: The other guys don't really need it.  
+> Anzu: That also kind of has decent synergy with the whole bloodied healing.  
+> Anzu: Yeah, yeah.  
+> Gamemaster: Yeah, because then I can heal you five more hit points when you get blooded.  
+> Anzu: So you head out of the settlement and get to the road and turn your way south.  
+> Anzu: and begin.  
+> Anzu: So, I'm going to need two things.  
+> Anzu: The first being a survival check, and the second being a D8 roll.  
+> Anzu: Historically, that's what we've gone with.  
+> Johnny: Hmm.  
+> Benny: i'll do the d8 oh losing my mind dicks on the d8  
+> Johnny: Hmm.  
+> Gamemaster: Am I the best at survival out of us?  
+> Gamemaster: I think I was.  
+> Gamemaster: I'm not a huge fan of that.  
+> Gamemaster: Twelve.  
+> Anzu: A six?  
+> Anzu: Nice job.  
+> Anzu: You trek throughout the day.  
+> Anzu: Amada, you keep your eyes and ears peeled to your surroundings for any possible threats from...  
+> Gamemaster: Mostly looking out for weird trees.  
+> Johnny: you you  
+> Gamemaster: Nothing to fireball.  
+> Anzu: Yeah, yeah.  
+> Anzu: And as I had mentioned back in our first session, there are some weird trees smattered about, but weird in a different way.  
+> Anzu: Every once in a while, there's a tree that's just fully crystallized.  
+> Anzu: But that's a bit different from the false tree that you had encountered the day before.  
+> Anzu: and by some stroke of luck, you make it through the day without encountering any dangers.  
+> Anzu: As night draws, the forest that you're around starts to thin.  
+> Anzu: The terrain gets a little rockier.  
+> Anzu: And eventually you get the feeling that it's going to be dark soon, and darkness is bad.  
+> Anzu: Theoretically, there is a little bit of synergy.  
+> Johnny: I will put up Lehman's tiny hut so we can tangle in peace.  
+> Gamemaster: Who wants to tangle?  
+> Gamemaster: Okay.  
+> Gamemaster: I think they do the same thing.  
+> Gamemaster: Okay.  
+> Johnny: Yeah, but it's like a hat in a hat.  
+> Johnny: Always looks good.  
+> Argyle: Yeah.  
+> Gamemaster: Yeah, why not?  
+> Gamemaster: Now that we're in the hut, we can tangle and then we'll put the tangle on the hut.  
+> Argyle: Well, what we could do, if you want, since you are the elder here, you can get fresh air and be outside of the hut in a tangle.  
+> Argyle: We can be in the hut with the tangle.  
+> Gamemaster: My understanding is that's totally fine, so sure, if you're trying to kick me out, that's okay.  
+> Argyle: No!  
+> Argyle: You're gonna die, old man!  
+> Argyle: Don't do it!  
+> Gamemaster: No, the monsters don't like the tangle.  
+> Argyle: You're gonna die!  
+> Gamemaster: We're looking for people.  
+> Argyle: Some of them.  
+> Argyle: What if there's people?  
+> Argyle: People are the greatest monsters.  
+> Johnny: We're looking for the greatest monsters.  
+> Argyle: Not bad people.  
+> Gamemaster: I don't think the general economy of this world is set up to support bandits, so I'm not particularly worried about being ambushed on the road.  
+> Argyle: Well, maybe they're not bandits.  
+> Argyle: Maybe they're doomsday cultists.  
+> Gamemaster: Maybe.  
+> Gamemaster: I don't know.  
+> Gamemaster: I'm fine sleeping out.  
+> Gamemaster: If you don't want me in the hut, I can sleep outside the hut.  
+> Johnny: All right, come on, Amada.  
+> Argyle: I mean, like... Alright, no hut.  
+> Johnny: Let's tangle.  
+> Johnny: Let's go.  
+> Johnny: Let's do it.  
+> Gamemaster: Absolutely.  
+> Gamemaster: I'd like to tangle with the wise.  
+> Argyle: Let's not do a hut.  
+> Anzu: Very well.  
+> Johnny: Let's go.  
+> Anzu: The two of you take the 10 minutes to kind of circle around the spot of your selection and grab at wisps of weave in the air and methodically weave them together into a semblance of a tiny little knot that should keep you safe for the night.  
+> Gamemaster: Is that what the tinkle looks like?  
+> Anzu: And it is a mildly whoa.  
+> Anzu: Well, what's funny is I was about to comment on how it does give light.  
+> Anzu: It is a bit bright.  
+> Anzu: It can't be turned off in that regard.  
+> Anzu: So you've got to face away from it or cover your eyes to get some good sleep in.  
+> Gamemaster: I'm already used to going to bed while it's still light out, so nothing's changed.  
+> Gamemaster: Nighttime?  
+> Anzu: That's a really good point.  
+> Johnny: From my monstrous backpack of things, I'll pull out a pair of those, like, Snow Trekker shades that are all wooden and then have the very thin slits.  
+> Anzu: Yeah, that'll help for sure.  
+> Argyle: Like, yeah, okay.  
+> Anzu: OK.  
+> Gamemaster: Naptime?  
+> Anzu: Yeah.  
+> Gamemaster: Do we have to keep watch?  
+> Gamemaster: Should we keep watch even though we're in a hut with a light hut?  
+> Argyle: Oh, we made the hut.  
+> Gamemaster: Yeah, we have a light hut.  
+> Johnny: Yeah, I made that.  
+> Johnny: We got the Tangle Hut.  
+> Argyle: I'll just sleep.  
+> Argyle: What could possibly get through this?  
+> Gamemaster: I trust the archmage that taught the tangling, so I just sleep all the way through.  
+> Johnny: I think someone should say, I'll keep watch.  
+> Johnny: I don't know, guys.  
+> Benny: Okay.  
+> Johnny: I'll take first watch.  
+> Anzu: You can make a perception check.  
+> Johnny: yeah i will oh god it's like a skill four  
+> Anzu: You hear nothing.  
+> Anzu: You sit there.  
+> Anzu: I forget, when you make a Leomin's Tiny Hut, I know it's supposed to be opaque.  
+> Anzu: Is it opaque both ways?  
+> Johnny: I think it's only opaque from the outside.  
+> Gamemaster: It's an easy way to check.  
+> Gamemaster: It means tiny hut.  
+> Argyle: I always thought it was opaque only on the outside, but I think it's way funnier if you can't tell.  
+> Gamemaster: This here is comfortable.  
+> Gamemaster: Emanation is opaque from the outside and of any color you choose, but it's transparent from the inside.  
+> Anzu: Nice.  
+> Anzu: So you don't see nothing, but also you see nothing.  
+> Anzu: And you start to get pretty sleepy.  
+> Gamemaster: What color is the hut?  
+> Johnny: say we'll say it's a dark blue it's not red yeah like a midnight blue  
+> Gamemaster: Slumber hut.  
+> Argyle: Like a midnight blue?  
+> Argyle: I'm not getting up for watch.  
+> Argyle: If you try to wake strong up, you'll be like, oh.  
+> Gamemaster: I mean, Amada would probably be up in time for second watch anyway.  
+> Gamemaster: So it may as well.  
+> Gamemaster: I'll take second watch.  
+> Anzu: Yeah, you can make a perception check.  
+> Anzu: 23.  
+> Gamemaster: What is my perception?  
+> Gamemaster: 48?  
+> Gamemaster: 48.  
+> Benny: 48.  
+> Gamemaster: No, it's 23.  
+> Anzu: You do hear a couple times throughout your watch the sounds of howls in the distance.  
+> Anzu: And you think that maybe there's one point in the night where you see a bit of motion among the trees, but nothing ever approaches that could really be distinguished by the light of the tangle.  
+> Anzu: And your watch passes, and you don't really sleep, right?  
+> Anzu: Elves don't really sleep very much.  
+> Gamemaster: Let's do a little bit of a trance.  
+> Anzu: So, yeah, we'll say that morning comes.  
+> Anzu: And eventually the hut fades.  
+> Anzu: And then over the next few minutes following the hut fading, you see the wisps of the tangle start to kind of drift off and fade away until the tangle is no more.  
+> Anzu: But you can continue your journey.  
+> Anzu: And you do exactly that.  
+> Anzu: You continue.  
+> Anzu: The road turns a bit to the... Let me think about how maps work.  
+> Anzu: To the west.  
+> Anzu: And eventually you start to see the kind of terrain that...  
+> Anzu: The Bastion was describing.  
+> Anzu: Theoretically, Amada, this would not be new to you.  
+> Anzu: You have been this way.  
+> Anzu: And the road itself has been also kind of cracked and shifted over the centuries, similar to the terrain around it.  
+> Anzu: It looks like maybe it wasn't always this way.  
+> Anzu: And the tumult of the past few centuries has affected it as such.  
+> Anzu: That being said, you're trekking the wise.  
+> Anzu: It gets a little tricky for you here and there, being of a bit smaller stature, because there's been a climbing over rock ledges and dropping back down.  
+> Anzu: And there's definitely some athletics involved.  
+> Anzu: And then you guys get to one area in particular that is very rocky.  
+> Anzu: You see a lot of these cracks in the earth that you're trying to avoid.  
+> Anzu: And I'm going to need everyone to make one of an acrobatics, athletics, or survival check.  
+> Argyle: As I see this rocky outcrop, I start slapping my face and then I rage and then sprint towards it.  
+> Johnny: Tanner, we have to climb up this?  
+> Johnny: Is that what we're trying just to confirm?  
+> Anzu: It's both climbing up and then back down.  
+> Anzu: It's not one crack that you're getting over.  
+> Anzu: It's getting through this section of the terrain.  
+> Johnny: How large is this whole thing?  
+> Johnny: Like, how high?  
+> Johnny: Or far?  
+> Anzu: I would say the max height that you're climbing at any one time would be, in a steep way, five feet.  
+> Johnny: okay this is not but it's not something i can just like fly over it's like an extended hike good good  
+> Anzu: Oh yeah, it's like a distance of a couple hundred feet that is a little trickier to traverse.  
+> Anzu: So I'm seeing a couple good rolls, a decent roll, and a not-so-decent roll.  
+> Anzu: The DC was 10.  
+> Anzu: So, most of you are climbing over these rocks decently well.  
+> Anzu: Amada, there's one point where you spot one of these crevices that...  
+> Anzu: is much deeper than the others.  
+> Anzu: And you're able to point that out to, uh, everybody.  
+> Anzu: Um, and, uh, uh, Mr. Wise, uh, you get to this spot and you're moving to avoid it.  
+> Anzu: Um, uh, but what you don't notice is some loose stone, uh, and you begin to stumble in the direction of this crevice and you need to make a dexterity or strength saving throw.  
+> Johnny: Oh, definitely dexterity.  
+> Argyle: Am I near to help, or did I run ahead because I'm... That's fair.  
+> Anzu: I'm going to say he's just in one right now.  
+> Anzu: 13 is unfortunately still a failure.  
+> Johnny: I'm going to use Chronal Shift.  
+> Johnny: Reroll.  
+> Johnny: Better.  
+> Johnny: 13.  
+> Anzu: You fall over the side and begin to plummet.  
+> Anzu: Okay, I was going to say...  
+> Johnny: Feather Fall!  
+> Anzu: Are you casting Feather Fall?  
+> Anzu: Because if you allow yourself to fall 20 feet, the stone that you were given will activate and be expended instead, but it's up to you.  
+> Johnny: Do I have... Do I have enough time to cast Fly as a one-action spell, or is this like a...  
+> Anzu: You are aware that it's on your person.  
+> Anzu: I don't think it's a reaction to prevent a fall, so...  
+> Johnny: Then I will cast Feather Fall.  
+> Anzu: Very well.  
+> Anzu: So you start to more slowly descend into this crevice.  
+> Anzu: And you go down... I'll say... We'll call it 100 feet is how far down you go before you hit a bit of...  
+> Anzu: I guess, ground, something that stops your fall, and you're able to kind of stabilize there.  
+> Anzu: It does seem to you, it's gotten a bit darker this far down, but it does seem to you there are parts that may possibly go deeper, but you've ended up on some ledge or stoppage at some point.  
+> Anzu: And at that time, you begin to hear some movement.  
+> Anzu: scratching along the rocks.  
+> Anzu: And there's a number of screeches that call out from around you.  
+> Anzu: And in addition to around you, those of you still on the surface hear these screeches both from within this crevice and from some of the other cracks in your immediate vicinity.  
+> Anzu: And Wheeze is going to have to roll initiative.  
+> Johnny: Oh, no.  
+> Gamemaster: Who's wheeze?  
+> Johnny: As I'm... I am currently wheezed because I'm... As I'm rolling initiative, I send a message to my brother and I go, hey, I think I messed up.  
+> Argyle: I did really bad on the initiative, so...  
+> Gamemaster: I was just about to call down.  
+> Gamemaster: If you wait 20 minutes, I can get you without spending any resources.  
+> Gamemaster: But I don't know if that's...  
+> Johnny: What am I... What is... Okay.  
+> Anzu: That's okay.  
+> Gamemaster: I did really mediocre.  
+> Benny: Oh, are we all rolling in there?  
+> Argyle: Not the blue angel from Dragon Ball Z. I've heard it both ways.  
+> Anzu: Yeah, everybody's going to roll.  
+> Anzu: Yeah.  
+> Gamemaster: The crevices were screeching.  
+> Anzu: Exactly.  
+> Benny: I thought he said, I thought he said, wheeze, we'll have to roll initiative, but.  
+> Johnny: Wheezes and... Wheezed?  
+> Gamemaster: Louise is in us all.  
+> Benny: Oh.  
+> Gamemaster: Louise is in that band with the song.  
+> Gamemaster: That's Whis.  
+> Gamemaster: There's an S. In the actual Japanese manga, it's in Katakana, so it definitely doesn't have an S. Whis' name is spelled in English in the Japanese Dragon Ball Z manga.  
+> Benny: I thought it was in Japanese.  
+> Argyle: In the actual Japanese manga, it's with an S. Have you read it?  
+> Argyle: Just the S.  
+> Gamemaster: Oh, just the S. Okay.  
+> Gamemaster: Sure.  
+> Anzu: All right, so I'm seeing Wyze, then Glint, then Amada, and then way down there.  
+> Argyle: That's strong.  
+> Argyle: That's wise.  
+> Argyle: That's way down there.  
+> Argyle: Not strong.  
+> Johnny: Oh, no, no.  
+> Johnny: Physically speaking, I am far below ground.  
+> Anzu: OK, give me just a moment.  
+> Anzu: Actually, I guess I could just send this.  
+> Anzu: We're going to Shmeppy.  
+> Anzu: Copy the link.  
+> Anzu: Go to Chatter.  
+> Argyle: Do you guys think... Josh, that does look like an S. Are you telling me that's not an S?  
+> Johnny: I opened Shatter and the first thing I saw was Jorge slinking.  
+> Anzu: Oh, there's a Shmeppy there.  
+> Anzu: Josh got in right below me, but there is a Shmeppy there.  
+> Gamemaster: It was to distract from the shnappy.  
+> Gamemaster: I drew that.  
+> Argyle: That's what I'm telling you.  
+> Gamemaster: In marker.  
+> Argyle: It's real.  
+> Argyle: It's real, Josh.  
+> Gamemaster: The screeches are gargoyles.  
+> Johnny: Oh, God.  
+> Johnny: It's me and Argyle.  
+> Johnny: Six.  
+> Gamemaster: I say... I say we just leave them.  
+> Argyle: I thought, I was about to try to DM Tanner to be like, you accidentally leaked their HP, but then I saw Y's also minus 100, and I was like, oh, it's minus 100, not dash 100 for your node keeping.  
+> Benny: Don't worry, they don't move.  
+> Johnny: What about at night?  
+> Benny: They just stand on buildings.  
+> Gamemaster: There are no buildings around.  
+> Benny: Oh, fuck.  
+> Benny: They might move.  
+> Gamemaster: Maybe... That's Wise's HP, too.  
+> Anzu: Yeah, no, that's their current depth.  
+> Gamemaster: That's just part of Wise's backstory.  
+> Gamemaster: He has 100 HP.  
+> Argyle: Is Strong slightly higher than everyone else because he's so athletic, so he got a little further up?  
+> Anzu: So basically what's going on in this map is the light gray is kind of like one level, and then the darker gray is like five or so feet above that level, and then the black are...  
+> Argyle: Cool.  
+> Anzu: crevices of varying depth that these gargoyles are emerging from.  
+> Anzu: Seems like, with the exception of the two by the wise, the rest of them are pretty much at the surface of the crevice, crawling out and about to head towards you.  
+> Argyle: That's fantastic.  
+> Argyle: Okay.  
+> Anzu: And we actually start with Mr. the Wise.  
+> Johnny: All right.  
+> Gamemaster: I really like the map name.  
+> Gamemaster: I just noticed it.  
+> Benny: Thank you.  
+> Gamemaster: Goofy  
+> Anzu: Thank you.  
+> Johnny: What is the... Tanner, are these each five feet?  
+> Anzu: Every square is five feet.  
+> Anzu: Yeah, yeah.  
+> Johnny: Okay.  
+> Johnny: Then I will bonus action Misty Step behind this guy.  
+> Johnny: And then...  
+> Anzu: Mm-hmm.  
+> Johnny: You think you're trapped down here with me, but I'm trapped down here with you.  
+> Johnny: And then cast Fireball.  
+> Anzu: Okay.  
+> Anzu: I'll make some dexterity saving throws.  
+> Johnny: On both.  
+> Benny: Thank you.  
+> Anzu: How's that sound?  
+> Johnny: Yeah.  
+> Johnny: DC 17.  
+> Anzu: I think they're both going to fail.  
+> Anzu: Yes, they are not dexterous.  
+> Argyle: He's going to melt all the ice around them because these are glaciers, as confirmed earlier.  
+> Anzu: I got a 5 and a 14.  
+> Johnny: Both fail.  
+> Argyle: Cat!  
+> Johnny: They both take 28 points of fire damage.  
+> Anzu: Okay.  
+> Anzu: 28, you said?  
+> Anzu: Oh, I can see it on Josh's screen.  
+> Anzu: Very good.  
+> Anzu: This is 5 and 6.  
+> Johnny: And finally, Tanner, this map rocks.  
+> Anzu: Thank you.  
+> Johnny: That is my turn.  
+> Anzu: Okay.  
+> Anzu: That brings us to Glint.  
+> Benny: Perfect.  
+> Benny: So if I'm looking down in this hole, can I move here and look down into the hole?  
+> Johnny: They're all silicon.  
+> Anzu: Yeah, I'll say you could make them out.  
+> Benny: Perfect.  
+> Argyle: Quick question.  
+> Argyle: Which one of the rocks were soft that Mr. Wise fell into?  
+> Johnny: It's all silicon rocks down here.  
+> Benny: They don't call me two beams.  
+> Benny: no reason as i double check if i have anything besides a hex that requires me to be within 30 feet i don't so one beam at Argyle five 16. does 12 hit  
+> Johnny: you  
+> Anzu: 16 hits.  
+> Anzu: 12 does not hit.  
+> Anzu: So you've hit 5, is that correct?  
+> Benny: Yeah, let me just double check my...  
+> Argyle: Wait, Fly is third level in this real set, right?  
+> Anzu: Indeed.  
+> Argyle: So, Wise said, fuck flying out.  
+> Argyle: I'm going to use Fireball.  
+> Johnny: I, I, okay, one, I assumed that they're gargoyles so they could fly, too, so there's no point in me flying out.  
+> Anzu: You do see wings on these creatures.  
+> Benny: Nice.  
+> Benny: 6 damage.  
+> Johnny: We gotta fight them either way.  
+> Johnny: I'm, I'm ready to go.  
+> Argyle: About a. Are do you want me up here with you?  
+> Gamemaster: You don't need to be.  
+> Gamemaster: Because I go before you, so I can get a bless off before you jump in a hole or something.  
+> Argyle: OK.  
+> Argyle: OK, sounds good.  
+> Anzu: I'm seeing six points of damage.  
+> Benny: And that's my turn.  
+> Anzu: Very well.  
+> Anzu: It is Amada's turn now.  
+> Gamemaster: There's only two people in reach of my Bless right now, so I'm going to Bless those two people.  
+> Johnny: you you  
+> Anzu: Sure.  
+> Gamemaster: And then I'm probably going to walk a little bit over here, just in the hopes that I don't get immediately ganked.  
+> Anzu: Sure, sure.  
+> Gamemaster: I just need to survive one more turn.  
+> Gamemaster: That's it, that's my turn.  
+> Anzu: And less in this game once it applies to someone they haven't.  
+> Anzu: It's not like... Yeah.  
+> Gamemaster: I believe so.  
+> Gamemaster: They have to be within 30 feet of me when I cast the spell, so I can't get wise right now.  
+> Anzu: Got it.  
+> Argyle: Oh, I shouldn't drop in the hole, because there's going to be... No, no, there's way more Gargoyles outside of the hole.  
+> Gamemaster: You can get the hole.  
+> Gamemaster: No, it's fine.  
+> Gamemaster: There are definitely more gargoyles outside of the hole, but if you want to go save your brother, that's thematic, that's fine.  
+> Argyle: Then I can't fight the ones up here.  
+> Gamemaster: Yeah, I don't know how you were planning on getting out of the hole.  
+> Argyle: Yeah.  
+> Gamemaster: But, that's on you.  
+> Argyle: I was just going to eat the damage, too, because 10d6 halved.  
+> Gamemaster: You have a feather fall!  
+> Argyle: No, I got rage.  
+> Argyle: I want to save the featherball.  
+> Benny: I think it'll auto-activate if I understand it correctly.  
+> Argyle: I was going to drop it.  
+> Benny: Oh, okay.  
+> Gamemaster: Well, you could do whatever you like.  
+> Argyle: Yeah, I was going to drop it.  
+> Anzu: It will auto-activate unless it is not on your person.  
+> Argyle: And then I figured it was 60 damage.  
+> Argyle: Half by average is 30.  
+> Argyle: Half again, 15.  
+> Argyle: Why am I not jumping?  
+> Anzu: Okay, so the gargoyles are going to go.  
+> Anzu: They have a 60-foot fly speed.  
+> Anzu: So there's going to be several going for Glint.  
+> Anzu: These two will go for Strong.  
+> Anzu: This one will go for Glint as well.  
+> Anzu: Can't really see it there, so we'll put it there instead.  
+> Anzu: OK, let me see.  
+> Johnny: Thank you.  
+> Anzu: They each make two claw attacks.  
+> Anzu: Wait, I have to move this one here to be closer to Wise.  
+> Anzu: Oh, this is just a whole mess of names.  
+> Anzu: Okay.  
+> Anzu: Anyway, we'll start with Argyle 1.  
+> Argyle: Thank you.  
+> Anzu: That's going to make two attacks on Glint.  
+> Anzu: That is a 17 and a 21.  
+> Benny: There's 17 hits, but do these happen one at a time?  
+> Benny: Like, if I have a reaction, can I do it in between attacks?  
+> Anzu: Yeah, it is one attack and then the other, yeah.  
+> Benny: Okay.  
+> Benny: You can roll damage with the first attack.  
+> Benny: I'm not taking the second damage.  
+> Benny: I'm going to use... What is the official name of this?  
+> Anzu: Fair enough.  
+> Benny: Steps of the Fey.  
+> Benny: So I can cast Misty Step.  
+> Benny: Well, I guess it's Misty Escape is technically it.  
+> Benny: Cast Misty Step as a reaction in response to taking damage.  
+> Benny: This is going to be Dreadful Step.  
+> Benny: So creatures within 5 feet of the space that I left must succeed a Wisdom saving throw or take 2d10 damage.  
+> Benny: Psychic damage.  
+> Anzu: OK, so you are going to take six points of slashing damage.  
+> Benny: Perfect.  
+> Anzu: And then I need to make three wisdom saving throws, right?  
+> Anzu: It's each one that's near you.  
+> Benny: Yep.  
+> Anzu: OK, so they're not wise.  
+> Anzu: I got an 8, a 15, and an 8.  
+> Benny: All fail.  
+> Anzu: Okay, so they're going to take damage.  
+> Benny: They're going to take nine psychic.  
+> Anzu: All right.  
+> Benny: And Glint, in classic faction, will backflip.  
+> Benny: So he'll take the damage, he'll backflip, Misty Step disappear, and then a burst of psychic energy will emanate from where he previously was.  
+> Argyle: Thank you.  
+> Gamemaster: you  
+> Anzu: Yeah, he is known to do that.  
+> Benny: What's also interesting about this particular reaction is, because it's 5e, they've already... Actually, I guess they have their movement for the whole turn.  
+> Benny: It would be more punishing in Pathfinder, because they would have signed an Actionist, right?  
+> Anzu: Yeah, they're decently quick with their wings, so I think that the two that didn't attack you... This one was over here.  
+> Anzu: It might not be able to make it.  
+> Anzu: Nope, they could both make it to Amada.  
+> Argyle: Oh, damn it.  
+> Argyle: I was hoping, I was thinking, I forgot that movement's an action.  
+> Johnny: you  
+> Argyle: I forgot grabbing was an action.  
+> Benny: So, yeah.  
+> Argyle: Oh, no, wait, movement isn't an action.  
+> Gamemaster: If it's not in action.  
+> Benny: This just helps 30 feet.  
+> Benny: I just moved an extra five.  
+> Anzu: All right, so Amada, I'm going to make Argyle 2.  
+> Anzu: Those are both 14s to hit.  
+> Gamemaster: Neither of them hit me.  
+> Anzu: Argyle 3, also on you, is a 9 and a 17.  
+> Gamemaster: Nope.  
+> Anzu: Argyle 4 is making two strikes against Strong.  
+> Argyle: Go for it.  
+> Anzu: Oh, one of them's a natural 20.  
+> Argyle: That's going to crit.  
+> Anzu: The other one is an 8.  
+> Argyle: That one misses.  
+> Anzu: So... The crit is going to be 12 points of damage slashing.  
+> Argyle: All right.  
+> Anzu: Yes, that's how math works.  
+> Anzu: Argyle 5 is going to make 2 strikes on the wise.  
+> Johnny: Oh gosh.  
+> Anzu: That is a 14 and a 23.  
+> Johnny: I will cast shield and the 14 misses.  
+> Anzu: Okay.  
+> Anzu: So from the one hit, you take 8 points of slashing damage.  
+> Johnny: Oh gosh.  
+> Anzu: And then Argyle 6 is going to strike you twice.  
+> Johnny: Okay.  
+> Anzu: That is a 6 and a 20 non-natural.  
+> Johnny: uh the second one hits oh gosh  
+> Anzu: This one will be 5 points of slashing damage.  
+> Anzu: And then finally, Argyle 7 will make 2 strikes on the strong.  
+> Argyle: Go for it.  
+> Anzu: That is a 9 and a 16.  
+> Argyle: Those hit.  
+> Argyle: Oh, no, the nine doesn't.  
+> Anzu: That's five points.  
+> Argyle: Delicious.  
+> Anzu: And it is now your turn, The Strong.  
+> Argyle: Cool.  
+> Argyle: Can I drop?  
+> Argyle: It's OK to say no, obviously.  
+> Argyle: But can I drop this feather falling token?  
+> Argyle: As a bonus action.  
+> Anzu: I think this version of Dungeons & Dragons 5th Edition gives you a free object interaction as part of your turn.  
+> Argyle: It does.  
+> Argyle: And I didn't want to be pushy.  
+> Argyle: I'm going to drop it.  
+> Argyle: And then.  
+> Argyle: I'm going to make an athletics check.  
+> Argyle: On four.  
+> Argyle: To try to grab him.  
+> Anzu: Okay, this is interesting.  
+> Anzu: Yes, I guess I make an athletics or acrobatics, I think is how that works.  
+> Argyle: Yeah, is it contested against mine?  
+> Anzu: Probably.  
+> Argyle: I believe so.  
+> Argyle: 23.  
+> Anzu: I got 15, so... Yes, I believe that it counts as just one of your two attacks as well.  
+> Argyle: So I just grabbed him.  
+> Argyle: And... Oh, cool.  
+> Gamemaster: For what it's worth, in the 2024 version of the rules, it's actually just supposed to be an unarmed attack against the monster's AC.  
+> Anzu: Whoa.  
+> Argyle: Oh.  
+> Anzu: That's interesting.  
+> Anzu: We'll stick with this.  
+> Argyle: OK.  
+> Anzu: We'll say you got them.  
+> Argyle: Well, I would have changed my planning.  
+> Argyle: But for this, I'll just keep it.  
+> Argyle: And if I'm measuring this correctly, I believe, yeah.  
+> Johnny: No.  
+> Anzu: Are you trying to get into the crevice that Wise is in?  
+> Anzu: I'm seeing that there's like 25 feet to get to the square right to the left of Amada.  
+> Argyle: Yeah, I got, let's see my movement speed.  
+> Anzu: I mean, if you go to drag your token, it should tell you what distance you're dragging it.  
+> Argyle: Yeah.  
+> Anzu: So...  
+> Argyle: Sorry.  
+> Johnny: you  
+> Argyle: OK, I have 45 movement speed.  
+> Anzu: Yeah.  
+> Argyle: Can I bring the guy there?  
+> Argyle: We're just going to plummet.  
+> Anzu: You bring him over the edge with you.  
+> Anzu: You have him grappled, so I guess he can't really fly.  
+> Anzu: So, yeah.  
+> Argyle: Ideally, I'm going to try to put him lower than, but I understand we're both going to take damage.  
+> Argyle: I'm not trying to say I'm not going to take any damage, but I want thematically to be like, motherfucker!  
+> Argyle: 10d6.  
+> Anzu: Yeah, yeah.  
+> Anzu: I did say that this was 100 feet, which I think translates to 10d10 damp.  
+> Anzu: Or no, is it d6s?  
+> Argyle: 10d6.  
+> Anzu: Sorry.  
+> Anzu: You're right.  
+> Benny: Eat this.  
+> Anzu: So I will roll 10d6, and you both will take that.  
+> Argyle: Yeah.  
+> Anzu: You're raging already, right?  
+> Argyle: Yeah.  
+> Argyle: 34 points.  
+> Anzu: Yeah, yeah.  
+> Anzu: 34 points to Argyle 4.  
+> Argyle: Cool.  
+> Argyle: So I'll take half of that.  
+> Argyle: 17.  
+> Anzu: Argyle 4 is bloodied by this attack of sorts.  
+> Anzu: You grab him, you kind of suppress his wings and jump down Argyle first and slam him into the crevice below.  
+> Argyle: Yes.  
+> Anzu: You do still have an attack.  
+> Argyle: I still have an attack action.  
+> Argyle: I can't strike him with my mod because I used my object, I'm assuming.  
+> Johnny: Crazy.  
+> Argyle: There's only one.  
+> Anzu: I don't think you would have had to have let go of it.  
+> Argyle: I know drawing gets a hit, but I can just do a, I'm OK doing an unarmed for this.  
+> Anzu: I do think if you want to attack with it, you'll do have to let go of the Argyle.  
+> Argyle: Oh.  
+> Argyle: Ah.  
+> Argyle: Sure.  
+> Anzu: Because it is a two-handed weapon, right?  
+> Gamemaster: Why?  
+> Gamemaster: Is it a cemented weapon?  
+> Argyle: Yeah.  
+> Argyle: So I'll strike him.  
+> Gamemaster: No.  
+> Anzu: So he's no longer grappled, but I think that your grapple did what it was setting out to do.  
+> Argyle: Yeah.  
+> Anzu: Yeah, that hits.  
+> Argyle: I'll do this recklessly.  
+> Argyle: Why am I going to not be reckless?  
+> Argyle: This is where I choose to draw the line.  
+> Argyle: All right.  
+> Johnny: No, no.  
+> Argyle: 23 to hit.  
+> Argyle: All right, cool.  
+> Argyle: And I'm going to use my zealot hit.  
+> Argyle: So I do 20 points of damage.  
+> Anzu: 20 points.  
+> Anzu: It is not in good shape.  
+> Anzu: It is all... I think probably it's already prone.  
+> Argyle: He needs to now make a DC 16 strength check or be knocked on the ground.  
+> Argyle: OK.  
+> Anzu: Oh, we'll just waive that.  
+> Gamemaster: Yeah, when you fall, if you take any damage, like any fall damage, you land prone.  
+> Argyle: Okay, I have 45 movement speed.  
+> Argyle: I don't know if I have enough to stand up.  
+> Argyle: But if not... I can... 25.  
+> Anzu: hmm let me see how far you moved to get to that spot so you only have 20 left which means i don't think you can stand  
+> Argyle: I'll hit him from the ground.  
+> Argyle: Okay.  
+> Argyle: That's fine.  
+> Argyle: I'll keep him holding then.  
+> Argyle: I don't want to... Actually, yeah, I'll just keep him on the ground.  
+> Gamemaster: That's optimal anyway.  
+> Argyle: Yeah.  
+> Benny: on this system.  
+> Argyle: I'm going to keep him grappled, because I don't want him getting up to hit me with advantage.  
+> Argyle: So I'm going to keep him grappled on the ground.  
+> Anzu: Oh, okay.  
+> Anzu: So you've not made that attack.  
+> Argyle: Sorry.  
+> Argyle: Yeah, no, no.  
+> Argyle: I will take that back.  
+> Anzu: Very well.  
+> Argyle: And then, yeah.  
+> Argyle: Bonus action, I will use Warrior of the Gods, since I didn't use a bonus action to drop it.  
+> Anzu: Alrighty.  
+> Argyle: And that'll just give me some healing.  
+> Argyle: That'll just give me some healing.  
+> Anzu: And we can move on.  
+> Argyle: Yes.  
+> Anzu: To the wise!  
+> Johnny: All right.  
+> Johnny: So my brother just crashed out of the sky with another Argyle.  
+> Anzu: Indeed.  
+> Johnny: Good high dive!  
+> Johnny: Great form, brother!  
+> Johnny: So there's three gargoyles down here.  
+> Argyle: Thank you, brother.  
+> Argyle: No one knows a landing pad?  
+> Johnny: Which one looks the worst?  
+> Anzu: 4 and 5 are both looking a bit worse than 6.  
+> Benny: Like attitude-wise, or...?  
+> Johnny: Okay.  
+> Johnny: Uh, gosh.  
+> Johnny: I cannot do that again.  
+> Johnny: I don't want to fry my brother.  
+> Johnny: So... I... Yeah.  
+> Johnny: I will just look at... We'll say... Argyle 6.  
+> Johnny: Uh...  
+> Johnny: And I'll just go, yuck!  
+> Johnny: And I will cast Maximilian's Earthen Grasp on this dude.  
+> Anzu: Okay.  
+> Johnny: So he has to make a... I think it's a Strength save?  
+> Anzu: It's bad.  
+> Anzu: Four?  
+> Anzu: Okay.  
+> Johnny: That is a failure.  
+> Johnny: He will take 2d6 bludgeoning damage and is restrained.  
+> Johnny: Yes.  
+> Anzu: This was number six, right?  
+> Johnny: Takes 6 points of bludgeoning damage.  
+> Johnny: And is restrained.  
+> Johnny: And then... As a... Bonus action... Um... As a bonus action... I will... I'll squeeze that and then go... Do not perceive me!  
+> Anzu: All three of those gargoyles are now bloodied.  
+> Anzu: Okay.  
+> Argyle: Hell yeah.  
+> Johnny: And cast Misty Step to blam to the other side of this hole.  
+> Johnny: There's a big puff of smoke like Batman in the old Atum West show.  
+> Anzu: They're very confused by this.  
+> Anzu: It is Glyn's turn, but I need to grab a tissue real quick, so I'll be back in just a moment.  
+> Benny: He weeps for the gargoyles.  
+> Gamemaster: I think you need to jump in.  
+> Gamemaster: I think we should all have rumbled in the hole.  
+> Johnny: I couldn't show up in this tight confines.  
+> Argyle: Thank you.  
+> Johnny: That was a great move, Jorge.  
+> Argyle: I figured I shouldn't go down there because there's a lot more up here.  
+> Argyle: And then I was like, what if I take one with me?  
+> Gamemaster: There's still more up here.  
+> Johnny: Now there's three of them.  
+> Gamemaster: There's four up here, three down there.  
+> Argyle: No.  
+> Argyle: There's just one more.  
+> Johnny: We got it.  
+> Argyle: It's basically the same if you round.  
+> Argyle: Yeah, well.  
+> Argyle: You guys gotta do something.  
+> Johnny: Josh, if you jump down here too, then there would be three down here, but you wouldn't be up there.  
+> Johnny: No, Glint comes down here too.  
+> Gamemaster: That's true.  
+> Gamemaster: I could leave Glint to deal with all of it.  
+> Gamemaster: Unless, of course, it's Glint's turn, so... Well, we...  
+> Argyle: Wait a second.  
+> Anzu: It is Glyn's turn.  
+> Anzu: Yes, you can begin.  
+> Johnny: We can pull up to these bases if Glint and Amada...  
+> Argyle: Featherfall, you draw, you fall 60 feet in a round, right?  
+> Anzu: Indeed.  
+> Anzu: Something like that.  
+> Argyle: So you guys could jump in and then have an extra round of fighting, both up and down if you want, while falling.  
+> Gamemaster: We'd be 20 feet above the floor of the crevice.  
+> Gamemaster: We couldn't get anybody up top.  
+> Argyle: But they can fly, so there's a chance they'll meet you midway to fight.  
+> Gamemaster: If they fly down, right.  
+> Benny: Okay, so I have Fly, but I don't want to just burn a spell slot or the feather to jump in the hole.  
+> Argyle: You climb out of here.  
+> Benny: No, but it's going down that's the issue.  
+> Benny: Yeah, I'll stay up here.  
+> Gamemaster: Stay up here with me.  
+> Argyle: Be a man.  
+> Benny: As Glint... Let's see...  
+> Benny: I don't like the look of Argyle 3.  
+> Benny: I'm going to cast Hex on Argyle 3.  
+> Anzu: Nice.  
+> Anzu: Really good.  
+> Benny: And Hex is already a third level spell, right?  
+> Johnny: What?  
+> Benny: Oh no, it's first.  
+> Gamemaster: You've been upcasting it so it lasts for eight hours.  
+> Benny: I've been... Oh, right, right, right.  
+> Benny: I was like, why have I not been doing 3d6?  
+> Benny: It's because it's just the bonus time.  
+> Benny: And, yeah, Hex Argyle 3 will be getting the work.  
+> Benny: I am blessed.  
+> Anzu: Indeed.  
+> Gamemaster: Yes.  
+> Benny: Nicki Minaj would be proud.  
+> Johnny: you  
+> Benny: This is the first beam at Hex Argyle 3.  
+> Benny: Yeah, I guess I'll move beforehand.  
+> Benny: Do I have 30 feet of movement?  
+> Anzu: Sure.  
+> Anzu: Probably.  
+> Benny: Does everything have 30 feet of movement?  
+> Gamemaster: That's the standard.  
+> Benny: Yeah.  
+> Benny: And Hex Argyle 3 will get Beam 1.  
+> Benny: 20.  
+> Anzu: Yeah, that's going to hit.  
+> Benny: 15 points of damage.  
+> Anzu: Nice.  
+> Anzu: This is number three.  
+> Anzu: Are you guys hearing my Discord notifications come through?  
+> Benny: Beam 2 shall be 15.  
+> Benny: I can't tell.  
+> Anzu: I should turn this down.  
+> Anzu: Sorry, what was the second?  
+> Anzu: 15 to hit?  
+> Anzu: That does hit.  
+> Benny: Mm-hmm.  
+> Benny: Perfect.  
+> Benny: 20.  
+> Anzu: Wow, nice.  
+> Benny: Points of damage.  
+> Benny: That is actually crazy.  
+> Benny: That's full damage.  
+> Gamemaster: I didn't say anything.  
+> Anzu: That one is bloodied.  
+> Benny: That's my turn.  
+> Anzu: Okay.  
+> Benny: Shooting finger guns is not easy, Josh.  
+> Anzu: No, it is not.  
+> Anzu: Amada, it is your turn now.  
+> Gamemaster: Okay.  
+> Anzu: You've got two gargoyles on you.  
+> Gamemaster: I do.  
+> Anzu: They're clawing at you, trying to scratch you up.  
+> Gamemaster: Clint, should I be mean to you?  
+> Benny: And do what?  
+> Anzu: Oh, now you're going to go down.  
+> Gamemaster: No, I don't know if that's worth it.  
+> Argyle: Come on in.  
+> Gamemaster: I could hide, and I don't know if that's worth it either.  
+> Benny: I'm already in kiting position because I kind of planned on getting swarmed in case you wanted to go down.  
+> Benny: So I don't mind if you hide.  
+> Benny: I also teleport 30 feet on demand when I take damage.  
+> Benny: I could do that three more times today.  
+> Benny: I would be very pleased if three more of them grouped around me and then I got to explode on their faces again and appear 30 feet away.  
+> Gamemaster: Yeah.  
+> Gamemaster: Okay, fine.  
+> Argyle: Oh.  
+> Gamemaster: I'm going to melt into stone.  
+> Gamemaster: And just drop it to the ground beneath me.  
+> Anzu: wow getting use out of that that is a niche spell and you love to see it guys I zoomed in a little bit on the map and it made all the various names work out a lot nicer  
+> Johnny: 500 names over.  
+> Benny: Oh, that's why you said there's a clusterfuck of names.  
+> Benny: Because I didn't see a clusterfuck of names.  
+> Anzu: Yeah, I was zoomed way out from when I was making the map, and it was not good.  
+> Anzu: Okay, so you have melded into stone, which means that you are now stoned.  
+> Gamemaster: Yeah, I'm in stone now.  
+> Anzu: Is that your turn?  
+> Anzu: Very well.  
+> Argyle: Can you move?  
+> Argyle: Are you moving?  
+> Gamemaster: No, I can't.  
+> Gamemaster: Melt into stone lets me go into the stone and then stay there.  
+> Argyle: Oh.  
+> Argyle: Oh.  
+> Gamemaster: It's not like stone walk or anything.  
+> Anzu: He will... He will come out when he's needed.  
+> Anzu: And no sooner.  
+> Gamemaster: Yeah.  
+> Anzu: Okay, so... That means there's only one of you on the surface.  
+> Gamemaster: I just don't want to drop the Bless, and I don't have any damaging spells, really.  
+> Gamemaster: So, I don't know what to do.  
+> Argyle: He's just PETA.  
+> Anzu: So, in fact, there's going to be four gargoyles heading Glint's way.  
+> Anzu: These ones are going to stay.  
+> Argyle: None of them go into the hole?  
+> Johnny: Good night.  
+> Anzu: And they're all going to surround Glint.  
+> Anzu: And we'll see where that goes.  
+> Anzu: Argyle 1 is going to strike you first.  
+> Benny: OK.  
+> Anzu: It's going to make its two attacks.  
+> Benny: It hits.  
+> Benny: No, I'm joking.  
+> Anzu: The first one is a 12, but the second one is a 22.  
+> Benny: Doesn't hit.  
+> Anzu: So, that'll be nine points.  
+> Benny: That will hit.  
+> Benny: Oh.  
+> Benny: Was it nine points?  
+> Benny: What was the first attack?  
+> Benny: Was it six or 16?  
+> Benny: 12?  
+> Gamemaster: It's such a...  
+> Anzu: To hit?  
+> Benny: No, no, no.  
+> Anzu: It was 12 to hit.  
+> Benny: The first time that Glint got hit, I was so excited about teleporting away.  
+> Anzu: Oh, it was 6.  
+> Benny: It was either 6 or 16.  
+> Anzu: Yeah, it would have been 6.  
+> Benny: OK.  
+> Benny: OK.  
+> Benny: Glint's going to teleport again.  
+> Anzu: Yeah.  
+> Benny: Glint's going to teleport.  
+> Anzu: I need to make... Was it Wisdom saves?  
+> Benny: Yes.  
+> Anzu: Okay, can you just... Can you tell me the DC so that I don't have to roll all four of these at once?  
+> Argyle: That's so rough.  
+> Benny: I believe the DC is 16.  
+> Gamemaster: It's such a goofy play style.  
+> Gamemaster: It's very Benny Hill.  
+> Benny: Yes.  
+> Gamemaster: Everybody runs over to one spot, bonks him, he disappears.  
+> Anzu: Okay, so 1, 2, and 3 fail.  
+> Gamemaster: They run over to another spot, try to bonk him, he disappears.  
+> Johnny: Ben and then.  
+> Argyle: It should have got into the hole.  
+> Argyle: Okay.  
+> Anzu: 7 succeeds.  
+> Benny: I shall roll the damage.  
+> Benny: Sticks.  
+> Argyle: Does the hexed one take extra damage because they're hexed?  
+> Benny: That is a good question.  
+> Benny: Let me check Hex.  
+> Anzu: It may.  
+> Anzu: And my question is, is the damage halved on a success or does it not apply?  
+> Anzu: Okay.  
+> Benny: I believe it does not apply.  
+> Johnny: Okay.  
+> Benny: This is... Yeah.  
+> Benny: Must succeed a wisdom saving throw or take 2d10 psychic damage.  
+> Benny: And for Hex...  
+> Anzu: So seven doesn't take...  
+> Benny: Whenever you hit it with an attack roll, I don't think it's just technically hitting it with an attack roll.  
+> Argyle: Yeah.  
+> Anzu: It would not be.  
+> Anzu: OK.  
+> Anzu: Now I need to find out if they can make it back to you.  
+> Anzu: Seven was over here.  
+> Anzu: He flew 40 feet to get to where he is, which means he can only move to here.  
+> Anzu: Argyle 3 was over here, which means he flew 35, which means he can make it back to you.  
+> Johnny: Thank you.  
+> Anzu: He can make it just to there.  
+> Anzu: And then Argyle 2, I think, is going to be too far because he was down here.  
+> Anzu: That was 40 feet.  
+> Anzu: And then so he goes.  
+> Anzu: to here.  
+> Anzu: So you successfully negated four attacks with that move.  
+> Benny: uh i think nine yeah neither hit  
+> Anzu: But the two more from Argyle three are coming in at an 11 and a 15.  
+> Argyle: It was definitely a miss.  
+> Argyle: Because you have a higher AC than me.  
+> Argyle: And I have a 15.  
+> Argyle: I'm still grappling him.  
+> Anzu: Okay, so you take one hit, and then there are three gargoyles in the pits.  
+> Anzu: We'll do Argyle fours to attacks against the strong.  
+> Anzu: You were... You're still grappling him.  
+> Argyle: And we're both prone.  
+> Anzu: I don't know if that does anything to his attacks, although he is prone.  
+> Anzu: Does that give him disadvantage, being prone?  
+> Gamemaster: What is he?  
+> Gamemaster: He's grappled and prone?  
+> Anzu: Yeah, I'm looking as well.  
+> Argyle: Unless he wants to try to free itself.  
+> Anzu: Prone.  
+> Gamemaster: Attacks against any target.  
+> Anzu: Disadvantage on attack rolls if you're prone.  
+> Gamemaster: Oh, sorry.  
+> Gamemaster: Grappled is disadvantage against attacks against anybody other than the grappler, and then prone is also disadvantage on all attacks.  
+> Anzu: So it has disadvantage to attack you is basically what we've got here.  
+> Anzu: Although you are prone.  
+> Argyle: I am pro.  
+> Anzu: which means it would have advantage to attack you.  
+> Argyle: Miss.  
+> Anzu: So it cancels out to straight rolls.  
+> Anzu: Josh, what do we think about that?  
+> Gamemaster: I mean, the interpretation is if you have any number of advantage and any number of disadvantage, it cancels out to a flat roll.  
+> Anzu: All right, well, I got a 6 and a 13.  
+> Anzu: So that's going to miss.  
+> Anzu: Then Argyle 6 is restraining... Well, okay.  
+> Anzu: This is going to get messy.  
+> Anzu: Basically, Argyle 5 is going to fly right above you and attack you from on high.  
+> Argyle: That's a mistake.  
+> Anzu: I'm going to put him in this spot so that you're not overlapping, but theoretically he's directly over your head.  
+> Anzu: How do we feel about that?  
+> Argyle: Sounds good.  
+> Anzu: He can attack you with advantage because you're brown.  
+> Argyle: Bish.  
+> Anzu: So I got a 17.  
+> Anzu: And another 17.  
+> Argyle: That hits.  
+> Argyle: That hit.  
+> Anzu: So... I'll just add them together for you.  
+> Anzu: Does that sound nice?  
+> Argyle: Sounds great.  
+> Anzu: We'll call it 13 points of slashing damage.  
+> Argyle: All right.  
+> Anzu: You can half it.  
+> Argyle: I'll just have that if that sounds good for you.  
+> Anzu: Um...  
+> Anzu: The wise, can you tell me about my restrained Argyle?  
+> Anzu: Does he make a save at the end of his turn?  
+> Johnny: Um, I think it's an action if he wants to get out.  
+> Johnny: Where did this bug go?  
+> Johnny: Yes, to break out, the fairy can use its action to make a strength check.  
+> Anzu: Oh, yeah.  
+> Anzu: Very well.  
+> Anzu: It can't do anything else, so it's going to do that.  
+> Johnny: DC 17.  
+> Johnny: Oh, that is the DC.  
+> Anzu: Yeah, I don't think it's going to do well.  
+> Anzu: Well, I have bad news.  
+> Anzu: I rolled a 15 plus 2.  
+> Anzu: I believe the hand persists, but it is no longer restrained.  
+> Johnny: It is broken free.  
+> Johnny: yeah so the hand is  
+> Anzu: It has used its action, however, so it's just going to move a couple feet this way for now.  
+> Anzu: That's all of them.  
+> Anzu: So we're to the strong.  
+> Anzu: You are prone and grappling Argyle 4.  
+> Argyle: While I'm holding him on the ground, I say, I'm so lonely.  
+> Argyle: The other foragers are scared of me.  
+> Argyle: Can I drop the grapple and stand up?  
+> Anzu: Sure.  
+> Anzu: Yeah, he's like basically clawing at your head as you're standing up.  
+> Argyle: There's a guy above me?  
+> Argyle: I'm going to hit him out of the sky.  
+> Anzu: Sure.  
+> Argyle: So I will make a reckless strike.  
+> Anzu: Yeah, sure.  
+> Argyle: 26.  
+> Argyle: And then I will hit him with my Zealot Smite.  
+> Argyle: So it's 20 points of damage.  
+> Anzu: Nice.  
+> Argyle: And I wasn't kidding.  
+> Johnny: you  
+> Argyle: I would like him to make a con save.  
+> Anzu: Oh my god, you're totally right.  
+> Gamemaster: He's directly above you.  
+> Anzu: I managed to roll a 15.  
+> Anzu: They have pretty good con.  
+> Argyle: Fail.  
+> Argyle: You need a 16.  
+> Anzu: Okay, so it is prone.  
+> Anzu: It's basically on top of the other one.  
+> Argyle: I'm going to smack his prone ass.  
+> Anzu: They're both lying there.  
+> Anzu: Yeah.  
+> Argyle: Which one looks worse, actually?  
+> Johnny: Ciao.  
+> Argyle: Him or the other guy?  
+> Anzu: That one is much worse, the one that you just knocked out of the... You see it's got all these cracks running through its wings.  
+> Argyle: Yeah, I'm going to smack it.  
+> Anzu: It's like trying to stand back up.  
+> Argyle: 23.  
+> Argyle: And then, yeah, so I'll do this.  
+> Anzu: Yeah, yeah.  
+> Argyle: I don't get that smite thing.  
+> Argyle: Is that smite a bonus action?  
+> Argyle: Sorry.  
+> Argyle: I just need to double check that's a bonus action.  
+> Argyle: The Zealot Barbarian.  
+> Argyle: Does anyone know if that thing's a bonus action?  
+> Argyle: It doesn't... I forget what it's called.  
+> Johnny: I got you one sec.  
+> Anzu: Do you know what it's called?  
+> Benny: I would imagine is.  
+> Gamemaster: That's supposed to just happen the first time you hit on a turn.  
+> Johnny: Divine Fury.  
+> Johnny: On each of your turns while your rage is active, the first creature you hit with a weapon or an unarmed strike take extra damage equal to 1d6 plus half your barbarian level rounded down.  
+> Argyle: Yeah, I think it is.  
+> Johnny: The extra damage is the radiant you choose each time.  
+> Argyle: So no...  
+> Argyle: Oh, I wasn't even added to half my barbarian level.  
+> Argyle: Cool.  
+> Argyle: So can you add three more points to that?  
+> Anzu: So...  
+> Argyle: And then I will use my weave to add 2d4 to this.  
+> Argyle: 19 points of damage.  
+> Johnny: thank you  
+> Anzu: You stand up, this creature is above your head, scratch it at you, and you bring your maul around, and it just carries through.  
+> Anzu: You strike and slam it down, and then you come back up.  
+> Anzu: and it instinctively throws a wing to block it, and you go right through the wing, shatter the wing, and shatter its chest, and it crumbles apart at your feet all over the other Argyle that you had slammed down the crevice.  
+> Argyle: Yes.  
+> Anzu: Yeah, that does look relevant.  
+> Anzu: And I guess that's your turn.  
+> Benny: Okay.  
+> Johnny: Yeah!  
+> Anzu: Theoretically, you have a bonus action, but... Oh, right.  
+> Argyle: No, I used it for the force.  
+> Argyle: No, for your weave thing.  
+> Argyle: Yeah.  
+> Anzu: Okay, so up to the wise.  
+> Johnny: We got these two guys left.  
+> Johnny: I'm just going to come after Gargoyle6.  
+> Johnny: The hand is still out.  
+> Johnny: It's just going to kind of glide through the stone and try and grab him again.  
+> Anzu: So I need to make a save of some kind.  
+> Anzu: I got a 13.  
+> Johnny: Yes.  
+> Johnny: DC 17 strength save for Argyle 6.  
+> Anzu: Yeah, yeah.  
+> Johnny: He is restrained again.  
+> Johnny: Takes 2d6 damage.  
+> Johnny: Takes 3 points of bludgeoning damage.  
+> Anzu: Okay, listen, it all adds up eventually.  
+> Anzu: This is number six.  
+> Johnny: He's chipping away.  
+> Johnny: Gosh, I think that's kind of all I got right here.  
+> Anzu: This one is dead.  
+> Johnny: That's...  
+> Johnny: That's my turn, I don't have a whole lot right here.  
+> Anzu: Very well.  
+> Anzu: That makes it... Not what he meant, which is also indicative of issues.  
+> Johnny: I'll pat my brother on the back and say, hey, are you doing okay, bud?  
+> Argyle: 74 out of 87.  
+> Gamemaster: Well,  
+> Anzu: So, we will move on to Glint.  
+> Benny: So this light gray, how much movement is going to cause me to go up that?  
+> Benny: OK.  
+> Anzu: The single square of transitioning from the light gray to the darker gray costs an extra five.  
+> Anzu: But once you're up there, it's the same.  
+> Benny: Hexagonal three.  
+> Anzu: Yeah.  
+> Benny: Get ready to meet your maker.  
+> Anzu: The cat is looking at us.  
+> Benny: That is looking.  
+> Argyle: Josh is familiar.  
+> Gamemaster: Thank you.  
+> Benny: 14.  
+> Anzu: I think that misses.  
+> Anzu: It does.  
+> Benny: How about a 10?  
+> Benny: Did I miss two?  
+> Anzu: That is very unfortunate.  
+> Anzu: Yeah.  
+> Benny: Do I have anything fun?  
+> Benny: I don't think so.  
+> Benny: I think that's just my turn.  
+> Anzu: OK, that brings us to Amada.  
+> Gamemaster: I'm not doing anything useful in the stone, so I think I need to pop out.  
+> Gamemaster: I'm just trying to figure out if it's worth it for me to cast another concentration spell, which would drop them less.  
+> Argyle: Okay, I got it.  
+> Gamemaster: Before Glenn's turn, I was going to say, you guys are hitting them no problem.  
+> Gamemaster: I...  
+> Gamemaster: I think it's fine.  
+> Gamemaster: I'm going to pop out of the stone again, now that they've all aggroed on Glint.  
+> Gamemaster: I'm going to walk 10 feet up here, just so that these four topside gargoyles are within 30 feet of me.  
+> Gamemaster: Oh wait, I don't need to do that.  
+> Gamemaster: I'm casting a different spell.  
+> Gamemaster: I take it back.  
+> Gamemaster: I don't move.  
+> Gamemaster: Instead, I just cast Faerie Fire.  
+> Gamemaster: Which I believe is a 20 by 20 foot cube, so I should just be able to get those four gargoyles up there.  
+> Anzu: Yeah, I would imagine so, as long as... Yeah.  
+> Gamemaster: Okay, so they all need to make deck saves.  
+> Anzu: That sounds good to me.  
+> Argyle: Thank you.  
+> Anzu: Okay, I'm going to do it in number order.  
+> Anzu: So, 1 gets a 14.  
+> Anzu: 2 gets a 5.  
+> Gamemaster: That's a failure.  
+> Anzu: 3 gets an 8.  
+> Gamemaster: That's also a failure.  
+> Gamemaster: That's, that's, that's a failure.  
+> Anzu: Ooh, but 7 gets a natural 20.  
+> Gamemaster: That's also a failure.  
+> Anzu: Um, okay.  
+> Gamemaster: Uh, the, the three that failed are fairy fighters, which means they, they, like, glow green, and everybody has advantage on them.  
+> Anzu: Yeah.  
+> Benny: I was also considering a fairy fire, but I'm glad you did.  
+> Gamemaster: That way you don't have to drop your hex.  
+> Gamemaster: Stop shooting me!  
+> Argyle: Hmm.  
+> Benny: I'm not.  
+> Benny: I'm shooting my computer.  
+> Gamemaster: Oh, of course.  
+> Gamemaster: Obviously.  
+> Anzu: All right.  
+> Gamemaster: And then I'm gonna run away.  
+> Anzu: Will that be all?  
+> Gamemaster: No, I'm gonna run away.  
+> Anzu: Oh, yeah, yeah, smart.  
+> Anzu: Very nice.  
+> Anzu: That does bring us to the gargoyles.  
+> Anzu: Let's see.  
+> Anzu: Argyle 1 is going to come to Glint, as will Argyle 2.  
+> Anzu: Argyle 3 is going to go to Amada.  
+> Anzu: And Argyle 7, I'm going to roll, because he could kind of go either way.  
+> Argyle: Or into the hole.  
+> Gamemaster: gonna get confused and fall in the hole he did say oh what odd was i thought that was nothing yeah  
+> Anzu: Well, it's been flying, so I'm going to roll a d4, and Glint is even.  
+> Argyle: Fly into the hole.  
+> Anzu: That's Amada.  
+> Benny: Either he doesn't attack anyone or he goes for Clint.  
+> Anzu: All right.  
+> Argyle: Now we flip a coin!  
+> Anzu: Okay, so Gargoyle1 is going to make two strikes on Glint.  
+> Gamemaster: Okay.  
+> Anzu: Wow.  
+> Anzu: The first one is a 19.  
+> Anzu: Are you intending on disappearing after that?  
+> Benny: That hits.  
+> Benny: Yeah, we'll... Well, actually, I don't know.  
+> Johnny: Thank you.  
+> Benny: I got hit points.  
+> Benny: I only have so many of these left.  
+> Anzu: Well, that one does 7.  
+> Benny: Yeah, we'll hang out.  
+> Benny: We'll hang out.  
+> Gamemaster: Thank you.  
+> Benny: I want three.  
+> Anzu: Okay.  
+> Anzu: The second strike was a natural 20.  
+> Anzu: So, oh, I rolled pretty low on it.  
+> Anzu: So it becomes eight points.  
+> Benny: OK.  
+> Anzu: Argyle 2 is going to make two strikes on you.  
+> Anzu: The first is a 21.  
+> Anzu: Okay, that's five points.  
+> Benny: Yeah, this does hit.  
+> Benny: Yeah.  
+> Anzu: Are you sticking around for its final strike?  
+> Benny: Yeah.  
+> Anzu: It's a nine to hit.  
+> Benny: It does not.  
+> Anzu: So, Argyle 3 is going to make two strikes on Amada.  
+> Gamemaster: He misses.  
+> Anzu: I believe he does.  
+> Anzu: 9 and 16.  
+> Gamemaster: Both of those miss.  
+> Anzu: Argyle 7 will make 2 strikes on Amada.  
+> Anzu: I got an 18 and a 21.  
+> Gamemaster: Miss.  
+> Gamemaster: That one hits.  
+> Anzu: So, that does... Did I roll twice there?  
+> Johnny: you  
+> Anzu: That does 5 points of slashing damage.  
+> Anzu: All right.  
+> Gamemaster: I dropped the fairy fire.  
+> Gamemaster: That was a waste.  
+> Argyle: Well, you could have been dropping Bless, so it's fine.  
+> Gamemaster: In the end, nothing happened.  
+> Gamemaster: Because I would have dropped the bless there anyway.  
+> Gamemaster: So it was just... It's fine.  
+> Anzu: Well, I'm sorry about that.  
+> Anzu: I got to remove the glowing nature of these gargoyles.  
+> Gamemaster: No, you're not.  
+> Anzu: Argyle 4 is going to stand up.  
+> Argyle: Yeah.  
+> Argyle: And flee?  
+> Gamemaster: Attack him.  
+> Anzu: It might... I think it will.  
+> Anzu: It's going to fly.  
+> Anzu: It's going to...  
+> Argyle: I want you to resist.  
+> Argyle: Yeah, I'll take a swing at it.  
+> Johnny: Hmm.  
+> Argyle: Yeah.  
+> Anzu: So this is fun.  
+> Anzu: Gargoyles have the fly-by trait, which means when it flies out of your reach, it does not provoke an opportunity attack.  
+> Argyle: Oh.  
+> Argyle: Alright, alright.  
+> Gamemaster: Liam.  
+> Argyle: Well, it lost half its movement speed before it could fly to stand up.  
+> Anzu: Yes.  
+> Anzu: So it flies up 30 feet, and then it will dash to go another 60.  
+> Argyle: Damn it!  
+> Argyle: I was going to try to cloud jump on it to grab it.  
+> Anzu: It is now nearly at the surface level.  
+> Anzu: Argyle 6 is restrained, so it will make a Strength check.  
+> Anzu: And it will get a 13, which I think means it remains restrained.  
+> Argyle: so wise is invisible right yeah i thought you were invisible oh okay i shout out the other Argyle i want you to resist and then i start climbing up which i believe is half my movement speed right  
+> Anzu: And then it's the Strong's turn.  
+> Johnny: No, I'm still here.  
+> Johnny: I'm just... I'm behind you.  
+> Johnny: Oh, no, I just bamfed behind you.  
+> Anzu: Yes, I will.  
+> Anzu: You may be aware of this already, but the restrained Argyle is currently on your level.  
+> Anzu: So you could approach it, but you're welcome to climb if you want.  
+> Argyle: I figured there's more gargoyles up here.  
+> Argyle: Hopefully a wizard boy can get, yeah.  
+> Anzu: Very well.  
+> Anzu: So, yeah.  
+> Argyle: So I will climb and dash.  
+> Argyle: So I should be 45.  
+> Anzu: Mm-hmm.  
+> Argyle: Let me just double check something.  
+> Johnny: you you  
+> Argyle: Sorry.  
+> Argyle: I want to double check that my movement speed.  
+> Argyle: Rage does give me more movement speed, right?  
+> Argyle: Or does it not?  
+> Anzu: I think just being a barbarian gives you more movement speed.  
+> Anzu: I'm not sure if rage... So you climb 45 feet.  
+> Argyle: Oh, I thought... Oh, maybe some other barbarians get it.  
+> Argyle: So yeah, I will... Yeah.  
+> Anzu: Okay.  
+> Argyle: And then I'm going to use Cloud's Jaunt and teleport 35 more feet up, like a horror movie.  
+> Argyle: So I'm going to go a total of 75 feet up.  
+> Argyle: I'm going to use the teleport mid-climb.  
+> Argyle: I want to stagger it as I'm chasing.  
+> Anzu: Yeah, yeah.  
+> Argyle: Yeah.  
+> Argyle: Yeah.  
+> Anzu: So it's not that far above you now after this monstrosity of a man just takes to the cliff face.  
+> Gamemaster: Have you used your action yet?  
+> Johnny: So strong is 20.  
+> Anzu: He did dash.  
+> Argyle: The dash.  
+> Anzu: Yeah.  
+> Argyle: Yeah.  
+> Gamemaster: Oh, okay.  
+> Argyle: Yeah.  
+> Gamemaster: Gotcha.  
+> Anzu: Okay.  
+> Anzu: That brings us to the wise.  
+> Anzu: You have a restrained Argyle.  
+> Johnny: So he is high up there, right?  
+> Anzu: Yeah, so there's 80 feet between the two of you.  
+> Argyle: Or you could fly.  
+> Johnny: Absolutely wonderful.  
+> Johnny: Fireball.  
+> Anzu: Yeah.  
+> Johnny: Not at him.  
+> Johnny: How dare you abandon me?  
+> Argyle: You could also come out.  
+> Argyle: You don't have to do that.  
+> Johnny: Nope.  
+> Johnny: I gotta do this.  
+> Johnny: I gotta finish this.  
+> Anzu: So I presume it has disadvantage being restrained.  
+> Johnny: I believe so.  
+> Gamemaster: It has disadvantage on deck saves.  
+> Anzu: Yeah, so it's going to fail.  
+> Johnny: Great.  
+> Johnny: They both take 8d6 fire damage.  
+> Anzu: And got a 6.  
+> Anzu: I'm not sure you could get both of them.  
+> Anzu: And if that changes your plan, I'll allow you to change it.  
+> Anzu: Because Argyle 4 is also way up towards the surface.  
+> Johnny: Oh, he is.  
+> Johnny: Oh, I missed a zero on Argyle four.  
+> Argyle: He's 90 feet up.  
+> Anzu: Yeah.  
+> Johnny: Well, I will not do that.  
+> Anzu: Yeah, yeah.  
+> Anzu: He was fleeing from the strong who decided that he doesn't like that.  
+> Johnny: Gotcha.  
+> Anzu: If you want to do something else, that's okay.  
+> Johnny: Yes.  
+> Johnny: How bad does Argyle six look?  
+> Anzu: It is bloodied, but it hasn't been pushed very far beyond bloodied.  
+> Johnny: Okay.  
+> Johnny: He's restrained.  
+> Johnny: Yeah.  
+> Johnny: I will... Yeah, I'll cast a third level Chromatic Orb at this guy.  
+> Johnny: We're going to make a Thunder damage.  
+> Anzu: Ooh.  
+> Johnny: So I have to make a spell attack roll.  
+> Johnny: Do I have advantage because he is restrained?  
+> Anzu: Indeed.  
+> Anzu: Okay.  
+> Johnny: Excellent.  
+> Argyle: You also have an inspiration die.  
+> Johnny: Oh, even more excellent.  
+> Johnny: It doesn't matter, I crit.  
+> Argyle: Juicy.  
+> Argyle: That's juicy.  
+> Johnny: So let's see here.  
+> Johnny: 5d8 thunder damage times 2.  
+> Johnny: So whatever this is doubled.  
+> Johnny: So he takes 44 points of thunder damage.  
+> Anzu: Yeah, that'll do it.  
+> Anzu: You send an orb of thunderous energy rocketing forward, and Maximilian's earthen grasp kind of tosses the Argyle up into the air a little bit, and the orb just goes right through it, and the rocky remains of the Argyle go all over the place.  
+> Johnny: I alley-ooped him to myself.  
+> Johnny: And then I'll just yell up, I got this one!  
+> Johnny: It's gone!  
+> Argyle: I was looking for a panicked fly one for the Argyle just being like, what the fuck's going on down there?  
+> Anzu: Okay.  
+> Johnny: That's my turn.  
+> Anzu: Yeah, yeah.  
+> Johnny: It was this boom.  
+> Benny: You can remove the hex from Argyle 3.  
+> Anzu: That brings us to Glint.  
+> Benny: I did.  
+> Anzu: Oh, did you lose concentration?  
+> Benny: I lost concentration.  
+> Benny: Let's see.  
+> Johnny: well  
+> Benny: i take disadvantage on range for them being within five feet or no let me double check  
+> Anzu: Think you might.  
+> Argyle: Well, if you can kite any of both of you guys, you can kite towards the whole Strong's coming out of it.  
+> Benny: Will do.  
+> Johnny: you  
+> Benny: I think Glint is going to... These probably have attacks of opportunity.  
+> Benny: Yeah.  
+> Anzu: That's just kind of standard in this game.  
+> Anzu: Everybody does.  
+> Benny: So Glint will disengage and then move... I guess I got... No, I'm just disengaging.  
+> Anzu: Mm-hmm.  
+> Argyle: No, disengaging.  
+> Argyle: Do you have a bonus action disengage?  
+> Argyle: Oh, as your action.  
+> Argyle: The worst bodyguard ever.  
+> Benny: And then... Yeah, no.  
+> Gamemaster: No, not as an action.  
+> Gamemaster: He's engaged.  
+> Benny: It's in my becks.  
+> Benny: He's very non-confrontation.  
+> Benny: He has other means.  
+> Benny: What do I have that's fun for a bonus action?  
+> Benny: Not anything really.  
+> Benny: I think that's going to be it.  
+> Benny: I'm just going to move.  
+> Anzu: Very well.  
+> Anzu: That brings us to Amada.  
+> Gamemaster: I am going to Spirit Guardians.  
+> Anzu: All right.  
+> Anzu: That does damage immediately, doesn't it?  
+> Gamemaster: So, Argyle 3.  
+> Gamemaster: Yeah, it's new.  
+> Gamemaster: It does that now.  
+> Gamemaster: Argyle 3 and Argyle 7 both need to make Wisdom saves.  
+> Anzu: They both are going to fail.  
+> Anzu: OK.  
+> Gamemaster: Then they're going to take 3d8 radiant damage.  
+> Gamemaster: Which is 14.  
+> Gamemaster: 14 radiant damages.  
+> Anzu: Nice.  
+> Anzu: This is the first time Seven has taken any damage.  
+> Argyle: Pretty good roll.  
+> Johnny: Oh.  
+> Gamemaster: sick.  
+> Gamemaster: He dies instantly.  
+> Johnny: Dead.  
+> Argyle: Guys, I have the chance to do the funniest thing with Argyle 4.  
+> Gamemaster: Don't grab him and jump immediately back into the hole.  
+> Johnny: Let's drop straight back down.  
+> Anzu: Okay.  
+> Anzu: Amada, is there anything else you want to do on your turn?  
+> Gamemaster: I run away.  
+> Anzu: They are going to try and strike you.  
+> Argyle: That doesn't interrupt movement in this game.  
+> Gamemaster: I know, but they'll miss.  
+> Anzu: Alright, 3.  
+> Anzu: Okay, so you can't make this up.  
+> Anzu: I got a natural 20 on number 3.  
+> Gamemaster: Lucky.  
+> Gamemaster: Lucky.  
+> Anzu: It does not interrupt movement.  
+> Gamemaster: Lucky disadvantage, Lucky.  
+> Anzu: Argyle 7 is... Oh, sorry.  
+> Gamemaster: 18 doesn't hit.  
+> Anzu: That is 18.  
+> Anzu: Okay, and Argyle 7 missed too.  
+> Anzu: He got like a 12, so... Indeed.  
+> Gamemaster: I get to keep my spirit guardians.  
+> Anzu: The Gargoyles are now going to take their turns.  
+> Anzu: Unfortunately, Glint, I think Argyle 1 and 2 are just going to come right back at you.  
+> Benny: It's OK.  
+> Anzu: So Argyle 1 is going to make his first attack.  
+> Johnny: Thank you.  
+> Anzu: That is a 7 to hit.  
+> Benny: Does not hit.  
+> Anzu: Followed by a 10 to hit.  
+> Benny: Does not hit.  
+> Anzu: And then Argyle 2 gets a natural 1.  
+> Anzu: And an 8 to hit!  
+> Benny: Doesn't hit.  
+> Anzu: Wow!  
+> Anzu: Beautiful!  
+> Benny: Doesn't hit.  
+> Anzu: That's crazy.  
+> Anzu: 3 and 7, I don't think they quite grasp the Spirit Guardians just yet, so they are going to come back at you, Amada.  
+> Gamemaster: Apologies first.  
+> Gamemaster: Is Argyle 4 within 15 feet of me?  
+> Gamemaster: So then he should have made a wisdom saving throw when I ran up to that spot.  
+> Anzu: I guess he would be, right?  
+> Anzu: Just barely.  
+> Argyle: Yeah.  
+> Gamemaster: Because he's within range of my spirit gardens.  
+> Anzu: Okay, I'll do that.  
+> Anzu: Wow, I got a natural 20.  
+> Gamemaster: Okay, so he takes half of however much I rolled.  
+> Gamemaster: Seven.  
+> Gamemaster: Seven points of radiant damage.  
+> Anzu: Seven points.  
+> Gamemaster: Apologies.  
+> Gamemaster: And now the gargoyles can come attack me.  
+> Anzu: Yes, do they take damage when they re-enter?  
+> Anzu: Okay.  
+> Gamemaster: If they end their turn in the aura, they'll take the damage.  
+> Anzu: I think they probably are going to do that, because they're not smart.  
+> Gamemaster: Yeah, if I drop concentration before the end of the turn, I'll take the damage.  
+> Anzu: Yeah.  
+> Anzu: Argyle 3 gets a 13 and a 17.  
+> Gamemaster: Both miss.  
+> Anzu: Argyle 7...  
+> Anzu: gets even lower.  
+> Anzu: 8 and 13.  
+> Anzu: So those both miss.  
+> Gamemaster: Okay, so then they both need to make wisdom saving throws again.  
+> Gamemaster: That succeeds, so he takes a nap.  
+> Anzu: Yes.  
+> Anzu: So Argyle 3 gets an 18.  
+> Johnny: All.  
+> Anzu: Yes.  
+> Anzu: And Argyle 7 gets a 5.  
+> Gamemaster: That's a failure.  
+> Gamemaster: Failure takes seven.  
+> Gamemaster: Success takes three.  
+> Gamemaster: I rolled much worse on this one.  
+> Anzu: Okay.  
+> Anzu: Argyle 4 is still quite fearful.  
+> Anzu: However, it's already in...  
+> Argyle: What do you mean?  
+> Argyle: The half-Giant is climbing up after him.  
+> Johnny: Get back here.  
+> Anzu: the range of the Spirit Guardians, and it can fly by.  
+> Anzu: So it will take two strikes on you, Amada, and then continue flying.  
+> Gamemaster: Okay.  
+> Gamemaster: It does have halved movement speed while within my... Nice.  
+> Argyle: Can you... You can...  
+> Anzu: Oh, that's good to know.  
+> Anzu: He has missed you twice.  
+> Argyle: break up your movement speed by attacking and then keeping the move.  
+> Argyle: Oh, I remember that was a big thing in Pathfinder that you couldn't do that.  
+> Anzu: Yeah.  
+> Gamemaster: Yeah.  
+> Argyle: Yeah.  
+> Gamemaster: In 5e, you just have to... True.  
+> Anzu: Pathfinder sucks.  
+> Gamemaster: 5e is much cooler because you can dole out your movements in the middle of all of your attacks and all that stuff.  
+> Anzu: OK, so it spends 40 feet of movement to go 20 feet.  
+> Anzu: And then it has another 20 left.  
+> Anzu: So it ends up basically  
+> Argyle: What's the range of your Spirit Guardians?  
+> Gamemaster: Don't worry, you can come out of the hole, pick it up, and then throw it back down.  
+> Argyle: Ah.  
+> Anzu: It ends up over here, pretty much at surface level.  
+> Argyle: Damn it.  
+> Argyle: If it ended floating, I was going to try to swat it down.  
+> Anzu: That's where it ends up.  
+> Argyle: It is smart.  
+> Argyle: Alright, so I will... I've...  
+> Anzu: Strong, it is your turn.  
+> Argyle: 45 movement speed so I can use all my movement to get up out of the hole.  
+> Anzu: Indeed.  
+> Anzu: Do you want to come out?  
+> Argyle: So I will... Yeah, so I'll do right... Which one?  
+> Anzu: You could come out in any of those adjacent paths.  
+> Argyle: Are both my compatriots looking bloodied?  
+> Argyle: Or... Yeah.  
+> Anzu: Your compatriots.  
+> Anzu: I can't speak for them.  
+> Gamemaster: No.  
+> Benny: yeah bloody  
+> Gamemaster: I'm fine.  
+> Gamemaster: Oh, you're bloodied?  
+> Argyle: Okay.  
+> Gamemaster: I can heal you.  
+> Johnny: Good.  
+> Argyle: I'll come up on this side.  
+> Anzu: Okay.  
+> Argyle: Um...  
+> Argyle: And then I will bonus action Cloud Jaunt here and just try to be menacing.  
+> Anzu: Actually, they're currently exactly the same.  
+> Argyle: And then I will... Does either one look worse than the other?  
+> Anzu: They've taken... All they've been hit by are the shadow jumps or whatever.  
+> Argyle: All right.  
+> Anzu: They got hit by two shadow jumps.  
+> Argyle: So I'm covered in whatever makes up the insides of a Argyle.  
+> Argyle: And I'm kind of frothing at the mouth.  
+> Anzu: Yeah, you're a little dusty.  
+> Argyle: And then I'm going to just smack number one.  
+> Anzu: Sure.  
+> Anzu: No, you, yeah.  
+> Argyle: Recklessly.  
+> Argyle: So unlucky.  
+> Argyle: Do we have hero points?  
+> Argyle: Or do we each have an inspiration?  
+> Argyle: Or do you have to do it?  
+> Argyle: Restart it.  
+> Argyle: All right.  
+> Anzu: The wise Scott one.  
+> Argyle: So I will do another attack.  
+> Anzu: Yeah.  
+> Anzu: Sorry.  
+> Argyle: 25 for this one.  
+> Argyle: So this is on one.  
+> Anzu: Yeah.  
+> Anzu: That one will hit for sure.  
+> Argyle: All right, this would be it.  
+> Anzu: And you get to add your radiant damage for free, as we've learned.  
+> Argyle: Yes.  
+> Argyle: Yes.  
+> Argyle: Cool.  
+> Johnny: um okay  
+> Argyle: 24 points of damage, and I need a DC 16 con save.  
+> Anzu: Okay, this one is bloodied.  
+> Anzu: Oh, wow, I got a natural 20 again.  
+> Argyle: All right, well, you can stand up for now.  
+> Anzu: He resists your urge to prone him.  
+> Argyle: That'll be my time.  
+> Anzu: That brings us to the wise.  
+> Anzu: You are down in the crevice.  
+> Johnny: Just down in this.  
+> Anzu: Ain't nothing around.  
+> Anzu: You hear the sounds of battle going on above you, but you can't really make out from your angle anybody.  
+> Anzu: You could maybe see a little bit of Amada and Glint over the edge, but you're pretty far down there.  
+> Johnny: All right.  
+> Johnny: I will bonus action.  
+> Johnny: Actually, first I'll cast fly on myself.  
+> Anzu: Mm-hmm.  
+> Johnny: Which gives me a 60 foot fly speed for 10 minutes.  
+> Anzu: Yeah.  
+> Johnny: Then I will cast Misty Step to shoot myself 30 feet up in the air.  
+> Johnny: Which, even with the plus the 60, it won't get me all the way up.  
+> Johnny: So I will get 90 feet up and everyone just slowly hears from this crevice.  
+> Anzu: Yeah, yeah.  
+> Anzu: As you make your way up the crevice via magical means, that's excellent.  
+> Johnny: That's my turn.  
+> Anzu: That brings us back to Glint.  
+> Benny: Let's see.  
+> Benny: What shall go in?  
+> Argyle: If you need to shadow warp out of here, I can take the damage.  
+> Anzu: I think he has to get hit first to do that.  
+> Benny: Yes.  
+> Argyle: No, I know.  
+> Benny: I don't.  
+> Argyle: If that changes his calculus of not wanting to run now.  
+> Anzu: Oh.  
+> Gamemaster: Can he like stab himself to trigger it?  
+> Gamemaster: Like give himself a quick paper cut?  
+> Benny: I don't have to take damage to use it.  
+> Benny: That is a...  
+> Benny: extra feature.  
+> Benny: It's usually a bonus action, but if I take damage, I can use it as a reaction.  
+> Anzu: noted you  
+> Argyle: So you can use an action, too, if you self-administer the pain.  
+> Benny: How about this?  
+> Gamemaster: Yeah.  
+> Benny: How about I use one, but we pull out a recipe not seen before.  
+> Benny: Clint is going to appear.  
+> Gamemaster: in the hold  
+> Benny: Where's a good part?  
+> Johnny: He's going down.  
+> Benny: Clint is going to  
+> Benny: Glint is going to appear over here.  
+> Argyle: He's going after Argyle 4.  
+> Argyle: Argyle 4.  
+> Benny: But... If Argyle... What is it?  
+> Benny: 1 and 2?  
+> Benny: It is 1 and 2.  
+> Benny: If Argyle 1 and 2 want to attack me, they must succeed a wisdom saving throw.  
+> Benny: Oh, actually, I guess I just make the save now.  
+> Benny: They have to succeed a wisdom saving throw or have disadvantage on creatures other than me until the start of my next turn.  
+> Benny: Well, have fun with it.  
+> Gamemaster: You've got a taunt?  
+> Benny: I am going to taunt.  
+> Benny: Have fun with it, Mr. Barbarian.  
+> Benny: Argyle wanted to have to make DC 16 wisdom saves or have disadvantage on him.  
+> Anzu: I got a 4 for Argyle 1.  
+> Benny: He's dead.  
+> Benny: He dies.  
+> Anzu: I did get a 17 with Argyle 2.  
+> Benny: Okay, so Argyle can attack as intended.  
+> Anzu: So you've taunted Argyle 1 in a way.  
+> Benny: Yes.  
+> Benny: And yes.  
+> Argyle: He has great rolls against me.  
+> Argyle: The other guy has advantage.  
+> Benny: And the guy that has advantage, I will be attempting to hit him with two Eldritch Blasts.  
+> Johnny: you you  
+> Anzu: Right.  
+> Benny: So that's a 27 and a 24.  
+> Anzu: Sure.  
+> Anzu: Yeah.  
+> Anzu: So these are both against Gargoyle2, who succeeded.  
+> Benny: Yeah.  
+> Anzu: Okay.  
+> Benny: He gets punished.  
+> Benny: Oh, and the rules suck ass.  
+> Benny: 12 total damage.  
+> Benny: The 6 and 6.  
+> Anzu: Okay.  
+> Anzu: Nice.  
+> Anzu: After Glint is Amada.  
+> Gamemaster: Amada isn't going to move because then people will try to attack him.  
+> Gamemaster: He will instead cast at third level command, targeting gargoyles one, two, and four.  
+> Anzu: Oh.  
+> Gamemaster: And he will command them to grovel.  
+> Anzu: Mm-hmm.  
+> Johnny: Go on.  
+> Anzu: Oh.  
+> Gamemaster: So they have to make wisdom saving throws.  
+> Anzu: Okay.  
+> Anzu: Argyle 1 gets a 9.  
+> Gamemaster: Failure.  
+> Anzu: Argyle 2 gets a 6.  
+> Argyle: you  
+> Gamemaster: That's a failure.  
+> Gamemaster: They all fail.  
+> Anzu: And Argyle 4 gets an 11.  
+> Gamemaster: So on their turn, they spend their turn falling prone.  
+> Anzu: Okay.  
+> Anzu: Would you like to do anything else?  
+> Gamemaster: Nope.  
+> Anzu: All right.  
+> Anzu: That brings us to the Argyle.  
+> Gamemaster: Oh, actually, sorry.  
+> Anzu: Oh.  
+> Gamemaster: I'll chuck a healing word at Glint, because he's injured.  
+> Anzu: Nice.  
+> Gamemaster: And healing word is a bonus action.  
+> Johnny: Well.  
+> Gamemaster: But you're only getting first level.  
+> Gamemaster: I'm sorry.  
+> Benny: That's fine.  
+> Gamemaster: You are going to get 13 hit points.  
+> Argyle: So which ones are going to gravel?  
+> Argyle: One, two, and four.  
+> Gamemaster: One, two, and four on their turn.  
+> Gamemaster: Their whole turn will be to just on the ground.  
+> Anzu: Yes, so it's now the gargoyles' turns.  
+> Anzu: One, two, and four immediately stop what they're doing.  
+> Benny: Yeah.  
+> Anzu: You see Argyle one was starting to kind of glance back between glint and strong, but all three of them kind of shake their heads for a moment and then drop to the ground and kind of put their head down and their hands over their ears and are groveling.  
+> Gamemaster: It's kind of understandable, really.  
+> Anzu: I think Gargoyles 3 and 7 are going to continue to attack you, Amada.  
+> Anzu: So Argyle 3, you have such a high AC.  
+> Anzu: This is a 13 and a 14.  
+> Anzu: And then Argyle 7 gets a 7.  
+> Gamemaster: Nope and nope.  
+> Anzu: However, it also gets a 21.  
+> Gamemaster: Lucky.  
+> Gamemaster: Disadvantage.  
+> Anzu: I'll roll at disadvantage to strike.  
+> Gamemaster: Please.  
+> Anzu: Wow.  
+> Anzu: Unfortunately, the lower of my two rolls is still a 21.  
+> Gamemaster: Alright, that's fine.  
+> Gamemaster: Hit me!  
+> Anzu: That's seven points.  
+> Gamemaster: I... I... Second rolling.  
+> Argyle: Irwin.  
+> Gamemaster: Drop Spirit Guardians.  
+> Anzu: In that case, they will stick around.  
+> Anzu: That's it for the gargoyles.  
+> Anzu: The other three are groveling, so strong.  
+> Gamemaster: For what it's worth, Argyle 3 should have taken damage, because it took its turn before I dropped Concentration on Spirit Guardians.  
+> Argyle: Irwin.  
+> Anzu: Yeah, that's fair.  
+> Anzu: No, I'll give you that.  
+> Anzu: I make a wisdom save.  
+> Gamemaster: Yeah.  
+> Argyle: It would have been so funny if Strong went before the Guardians.  
+> Anzu: I big fail.  
+> Gamemaster: Seven points.  
+> Argyle: Because then I could have just grabbed them and held them off the edge and then left them there flying.  
+> Gamemaster: I was hoping that Argyle 4 would stay over the Chasm, so that when I cast Command and Grovel, it just plummets again, because that would have been funny.  
+> Johnny: What?  
+> Argyle: And also, technically, since I could split up my two attacks, I could grab it, bring it, bring them all out and smack it down.  
+> Argyle: But they're groveling, so I'm going to take advantage of this.  
+> Anzu: Okay, yes.  
+> Anzu: Strong, it is your turn.  
+> Anzu: I'll also note that Argyle 3 is looking horrible.  
+> Anzu: 1 is bloodied, 2 is not.  
+> Argyle: And what about 1 and 2, which is the worst?  
+> Argyle: OK, I'm going to hit 1.  
+> Argyle: 20.  
+> Anzu: Yeah.  
+> Argyle: All right.  
+> Argyle: 3d6 plus 7.  
+> Argyle: I'm going to use my bonus action to use my second and last charge of the weave.  
+> Argyle: 23.  
+> Argyle: Yes.  
+> Anzu: That's 23 damage.  
+> Argyle: Yeah, I'll just give it another smack.  
+> Anzu: Okay.  
+> Anzu: It's looking very bad.  
+> Anzu: Sure.  
+> Argyle: 26 for this one.  
+> Anzu: I'm not sure it can survive.  
+> Argyle: 15.  
+> Anzu: It can't survive.  
+> Anzu: As it's groveling, you lay two heavy blows on it and it crumples into dust and pebble.  
+> Argyle: And I look at the other one and say, pay attention!  
+> Benny: I'm  
+> Johnny: I rock it.  
+> Anzu: It is currently groveling, but it is Wise's turn now.  
+> Argyle: Wait, sorry.  
+> Anzu: Oh, sorry.  
+> Argyle: Token-wise, I will just move right there.  
+> Anzu: Very well.  
+> Argyle: Not a big thing, but... I used my mod!  
+> Gamemaster: Wise tries to get up and Strong is just there on the edge.  
+> Johnny: Just right into his fist.  
+> Johnny: Is it my turn?  
+> Anzu: It is.  
+> Johnny: Gosh, I'm running low on spells.  
+> Johnny: You guys just see how I rocket into the air.  
+> Johnny: And I... Yeah, that was pretty good last time.  
+> Johnny: I'll just yell, Who wants some motherfuckers?  
+> Johnny: And I will...  
+> Johnny: Another one of those.  
+> Johnny: So I'll just do a second level Chromatic Orb at this one threatening my brother, Argyle II.  
+> Anzu: That's going to hit.  
+> Johnny: Another Thunderous Orb.  
+> Johnny: 19.  
+> Johnny: I'll take 4d8 Thunder Damage.  
+> Johnny: He takes 12 Thunder Damage.  
+> Johnny: Yep, I'm just going to hover directly next to my brother, but I want to be at eye level with him.  
+> Anzu: That is a little low.  
+> Anzu: It's bloodied.  
+> Anzu: Whereabouts do you end up?  
+> Anzu: Did you just kind of go straight up a ways?  
+> Anzu: Alright, to be eye level with your brother.  
+> Argyle: Are you going to be over the chasm?  
+> Johnny: Yep, I'm staying over the chasm.  
+> Argyle: I hope you don't lose concentration.  
+> Anzu: You are five feet up.  
+> Johnny: No, I'm not going to stay over the chasm.  
+> Johnny: Is flanking a thing in this game?  
+> Argyle: No.  
+> Anzu: Uh...  
+> Argyle: There's home boot.  
+> Anzu: I guess it is.  
+> Anzu: Oh, it's not.  
+> Argyle: They have optional rules if you want as a DM, but it's not in the draw.  
+> Gamemaster: Yeah, by default it doesn't do anything.  
+> Anzu: All right, we're not going to flank for the time being.  
+> Johnny: Okay, then I'll just fly on up and then... Oh, that's the wrong one.  
+> Johnny: And then go right here and float over my brother's head behind him.  
+> Anzu: Very good.  
+> Argyle: Like an evil Cupid.  
+> Anzu: So you're a couple feet in the air.  
+> Johnny: I'm a short dude.  
+> Anzu: And that makes it Glyn's turn.  
+> Benny: Argyle 3.  
+> Anzu: Yeah, looking very bad.  
+> Anzu: Yeah, the 13 is not going to do it.  
+> Benny: Argyle 3 is kill.  
+> Benny: With the next attack roll, Argyle 3 is kill.  
+> Anzu: Oh, the 16 will.  
+> Benny: Nine points of force damage.  
+> Anzu: Yeah, it is kill.  
+> Anzu: That's for sure.  
+> Benny: The lob and drill.  
+> Anzu: It dodges out of the way of your first Eldritch Blast, but it dodges in just the way you want it to, such that the second blast absolutely slams it.  
+> Anzu: It's like when you're playing dodgeball and you throw the one ball high, you know, distract.  
+> Argyle: Ha ha ha ha ha!  
+> Johnny: You're up.  
+> Anzu: And then the second one wrecks them.  
+> Benny: The lob and drill is well documented.  
+> Benny: I have a clip.  
+> Anzu: And...  
+> Anzu: If you have nothing else, we'll move to Amada.  
+> Benny: Yeah that's it.  
+> Gamemaster: Amada isn't really sure what to do rank.  
+> Gamemaster: Amada, I think, is just going to inflict wounds on Argyle 7.  
+> Johnny: Plus.  
+> Anzu: Okay.  
+> Gamemaster: Oh, wait.  
+> Gamemaster: Actually, one second.  
+> Gamemaster: How far away is Glint?  
+> Gamemaster: Glint is within range.  
+> Anzu: Looks like...  
+> Gamemaster: I think I'm just going to bless everybody.  
+> Gamemaster: Let's just bless everybody.  
+> Gamemaster: Everybody's blessed.  
+> Benny: Bless up.  
+> Anzu: Noice.  
+> Gamemaster: Is anybody particularly injured still?  
+> Argyle: Hashtag love.  
+> Benny: Uh... Not as bad.  
+> Gamemaster: Okay.  
+> Gamemaster: I end my turn then.  
+> Anzu: Okay, the gargoyles will go.  
+> Johnny: you you  
+> Anzu: I think they're allowed to stop groveling now.  
+> Gamemaster: Correct.  
+> Anzu: So Argyle 2 is going to make two strikes on strong.  
+> Anzu: It does stand up in addition to that.  
+> Argyle: Yeah, I figured.  
+> Anzu: You... Right.  
+> Argyle: I did not go reckless because they were prone.  
+> Anzu: So we'll make two regular attacks.  
+> Anzu: The first one is a 17.  
+> Argyle: Yeah, it hits.  
+> Anzu: And the second one is a 19.  
+> Argyle: Yeah, it hits.  
+> Anzu: Would you like me to add... Yeah.  
+> Argyle: I have an AC of 15.  
+> Argyle: That's why I go reckless.  
+> Anzu: The total of the two attacks is 17 damage.  
+> Argyle: Cool.  
+> Anzu: But you can half it.  
+> Argyle: I will take eight.  
+> Johnny: you you  
+> Anzu: I don't mind.  
+> Argyle: Oh, thanks.  
+> Anzu: Argyle 7 will make two attacks out of Mata.  
+> Gamemaster: If this hits, can I half it?  
+> Anzu: I rolled two 8s.  
+> Benny: Sure.  
+> Gamemaster: Okay.  
+> Gamemaster: Doesn't matter.  
+> Anzu: Argyle 4...  
+> Anzu: is rattled.  
+> Anzu: So it's going to flee.  
+> Argyle: It didn't like the pit.  
+> Anzu: The whole ordeal was just crazy.  
+> Anzu: And then literally on top of him disintegrated one of his companions.  
+> Johnny: You just pile drove this dude a hundred feet into a chasm.  
+> Anzu: as well as the climbing was crazy too.  
+> Argyle: I'm like Babadook.  
+> Anzu: That brings us back to the strong.  
+> Argyle: Great.  
+> Argyle: I will now recklessly strike.  
+> Argyle: 20.  
+> Anzu: Yeah.  
+> Argyle: 20.  
+> Anzu: That hits.  
+> Johnny: God, he's so reckless with his attacks.  
+> Argyle: 19 points of damage.  
+> Anzu: 19, that's pretty good.  
+> Anzu: It's looking bad.  
+> Argyle: All right.  
+> Anzu: Oh boy.  
+> Argyle: I will strike it again.  
+> Argyle: That's a crit.  
+> Anzu: I don't think it survives a crit, no matter what.  
+> Argyle: Oh, I rolled perfect on those sixes.  
+> Anzu: Yep.  
+> Anzu: Yeah.  
+> Argyle: So how does this happen, Tanner?  
+> Anzu: Just enough.  
+> Argyle: Yeah.  
+> Anzu: You smack it the one time and it's one arm that it put up totally disintegrates away.  
+> Anzu: and then you swing around back and go under the chin, and you watch the body just kind of crumbles into pebbles, but you see the head fly 50 or so feet before, almost like a little firework, but a dismal one.  
+> Anzu: It breaks apart into stones that then cascade down into the ground.  
+> Argyle: Does it go right over 4's face?  
+> Argyle: And now I'll just use my movement.  
+> Anzu: We'll say yes.  
+> Anzu: It gets... Oh, that's excellent.  
+> Anzu: Is there anything else?  
+> Anzu: Yeah.  
+> Argyle: And I will just get right over there.  
+> Anzu: This Argyle should run too.  
+> Argyle: And I'll lean in and say, I hope you're stronger than your friends.  
+> Argyle: And then I will just...  
+> Johnny: Jesus.  
+> Anzu: That brings us to the wise.  
+> Johnny: I'll just pat my brother on the shoulder and say, seriously, bud, are you feeling all right recently?  
+> Gamemaster: I can take a fireball.  
+> Johnny: And then I will... I'll just rise up into the air a little bit to get a good shot on Argyle 7.  
+> Johnny: And... How bad is he looking?  
+> Johnny: Oh, my gosh.  
+> Anzu: He's actually not bloodied.  
+> Argyle: Ah,  
+> Johnny: This...  
+> Johnny: Can you?  
+> Gamemaster: No.  
+> Johnny: Uh... I will... I'll fly over here, and I'll just look at him and say, you know, I've had a long day, so something, something, something, punchline, rocks!  
+> Johnny: And cast Hideous Laughter.  
+> Johnny: DC 17.  
+> Anzu: Okay.  
+> Anzu: I believe it is smart enough to be laughtered.  
+> Anzu: So I'll make a wisdom save.  
+> Anzu: Is that correct?  
+> Johnny: Uh, yes.  
+> Anzu: I got a 15.  
+> Johnny: Uh, it found this joke with its absurdist meta humor incredibly funny.  
+> Argyle: Yeah.  
+> Anzu: There's a gravelly laugh coming from it.  
+> Johnny: Uh...  
+> Anzu: Does it also fall prone?  
+> Anzu: Is that a thing?  
+> Gamemaster: It's prone and incapacitated.  
+> Johnny: Yes.  
+> Johnny: Yes, this is prone, incapacitated, unable to stand up.  
+> Johnny: At the end of each of its turns and each time it takes damage, it can make another wisdom saving throw.  
+> Anzu: okay um if you have nothing else it becomes glint's turn  
+> Johnny: It has an advantage on the save if it's triggered by damage.  
+> Johnny: I'll turn to Amada and say, hey, Amada, I'm kind of worried about strong.  
+> Gamemaster: I'm not that kind of healer.  
+> Gamemaster: I'm sorry.  
+> Johnny: Oh, hey, Glint, I'm kind of worried about Strong.  
+> Argyle: Wait, what did Amada say?  
+> Johnny: That's my turn.  
+> Benny: Am I still blessed?  
+> Gamemaster: I'm not that kind of healer.  
+> Gamemaster: Whatever you need, I have.  
+> Johnny: That's my turn.  
+> Gamemaster: Yeah?  
+> Benny: I forgot to add it.  
+> Benny: This is it.  
+> Benny: The only guy left.  
+> Anzu: 16 hits.  
+> Benny: And then at 22?  
+> Benny: 16 total.  
+> Anzu: Yeah, they both hit, yeah.  
+> Anzu: Okay.  
+> Anzu: That does bloody it.  
+> Anzu: It theoretically gets two advantaged wisdom saves to un-laugh.  
+> Johnny: Yes, DC 17.  
+> Anzu: Okay.  
+> Anzu: That is a 14.  
+> Anzu: And a 15.  
+> Anzu: So it is still laughing through the pain.  
+> Argyle: Thank you.  
+> Anzu: That brings us to Amada.  
+> Gamemaster: How injured does Argyle IV look?  
+> Anzu: Argyle 4 is bloodied.  
+> Anzu: It's not on the edge, but it's bloodied.  
+> Gamemaster: Okay.  
+> Gamemaster: I will use my last third level spell to cast Guiding Bolt on it, because that's the only spell I have that reaches out that far.  
+> Anzu: Very well.  
+> Anzu: I think you have to roll the hit first.  
+> Gamemaster: You guys do it to me all the time.  
+> Gamemaster: I want the chance to fight the guy as he's running away.  
+> Argyle: Even if it misses, it's going to scare the shit out of him to see this divine lightning bolt whiz by his face.  
+> Gamemaster: It's not even going to be that much.  
+> Johnny: Oh, I was so busy.  
+> Gamemaster: It might.  
+> Gamemaster: 28 points of radiant damage.  
+> Gamemaster: Oh, shit.  
+> Gamemaster: I totally do.  
+> Gamemaster: I'm going to miss this, so it doesn't matter.  
+> Gamemaster: 22.  
+> Gamemaster: Okay.  
+> Anzu: 22 hits.  
+> Anzu: I'll apply the 28 damage.  
+> Anzu: Hey, that's enough.  
+> Gamemaster: Nice!  
+> Gamemaster: Love that guy.  
+> Anzu: As it is flying, it starts to hear the ringing of divine energy flying towards it.  
+> Anzu: It takes one last fearful glance back at the group of you as the divine bolt explodes its head.  
+> Gamemaster: Absolutely.  
+> Gamemaster: The last thing it sees is me doing finger guns.  
+> Gamemaster: And then turning back to Glimt and saying, it's not that hard.  
+> Argyle: Thank you.  
+> Benny: You're getting good.  
+> Anzu: We leave no survivors.  
+> Benny: Old man.  
+> Anzu: It's Gargoyle7's turn.  
+> Anzu: I think it has to try to not laugh at the end of its turn.  
+> Johnny: Yep, but not with advantage, just regular not laughing.  
+> Anzu: I got a 6.  
+> Johnny: This joke really got to it.  
+> Johnny: Yep.  
+> Anzu: So, TheStrong, it is your turn.  
+> Argyle: It is the Strong's turn to laugh, as he will now just bash it down.  
+> Gamemaster: Chrony of advantage.  
+> Anzu: Yeah.  
+> Argyle: So incapacitated, I have advantage.  
+> Argyle: But is it incapacitated?  
+> Gamemaster: It is.  
+> Johnny: Yeah, it's still...  
+> Gamemaster: Incapacitated isn't as strong in 2024.  
+> Argyle: It crits.  
+> Gamemaster: No.  
+> Gamemaster: That's a 2014 rule.  
+> Argyle: Oh.  
+> Argyle: Gosh.  
+> Argyle: OK.  
+> Johnny: Oh yeah, it's not as good.  
+> Johnny: It falls prone, it can't take actions, its concentration is broken, it can't speak, and has disadvantage on initiative?  
+> Gamemaster: Yeah, I don't know in what circumstance you're rolling initiative while incapacitated.  
+> Anzu: I think that part was always there.  
+> Gamemaster: Was it?  
+> Gamemaster: 2014 incapacitated is just...  
+> Anzu: I'm not positive, but if a 29 is the attack roll, it mega hits.  
+> Anzu: 20 points.  
+> Argyle: 20 points of damage.  
+> Anzu: It's not looking good.  
+> Anzu: 18 hits.  
+> Argyle: Alright.  
+> Argyle: 18.  
+> Gamemaster: you can't take actions or reactions  
+> Johnny: on  
+> Argyle: 15.  
+> Anzu: 15 is enough.  
+> Anzu: It did, after the first strike, roll high enough to stop laughing.  
+> Anzu: So you slam down on it once, and the twisted, jovial nature of its face turns to a twisted, absolute fear as you come down on it with your final strike.  
+> Argyle: was able to see its demise.  
+> Anzu: And smush it into the dust, and you listen as some of its rocky remnants cascade down into this crevice, and the battlefield quiets.  
+> Benny: It's like the inverse of the Arthur Fleck Joker, where it's just like, I began to realize life isn't a tragedy, it's a comedy.  
+> Johnny: Guys, you gotta watch out for those loose rocks.  
+> Benny: This one was, I began to realize life isn't a comedy, it's a tragedy.  
+> Argyle: If we didn't kill that one flying away, I wonder if we would have had cave drawings of me.  
+> Johnny: That was crazy.  
+> Gamemaster: It's just loose rocks.  
+> Benny: I feel like that was more than lucifer rocks.  
+> Johnny: What do you mean every single one of these gargoyles is made of rocks and they were all on the loose?  
+> Gamemaster: True.  
+> Benny: Believe me, none of this rocks.  
+> Gamemaster: Good point.  
+> Gamemaster: That's why they call you the wise.  
+> Johnny: I pull off my hat and I bow and you see there is a massive premature bald spot.  
+> Gamemaster: How old is the character?  
+> Argyle: Well, we're twins, so he's the same age as me.  
+> Gamemaster: How old are you?  
+> Gamemaster: Don't say the same age as him.  
+> Argyle: But that's true.  
+> Gamemaster: I know it's true.  
+> Argyle: Alright, shall we continue?  
+> Argyle: Do you guys recognize the name of Quinzelius, by the way?  
+> Gamemaster: It sounds like Quinsentius, but slightly different.  
+> Argyle: Sorry, Quinzenzius.  
+> Argyle: Do you recognize that?  
+> Gamemaster: That sounds like Quinselius, but slightly different.  
+> Johnny: You can't do that to us.  
+> Johnny: That's our thing.  
+> Johnny: Do you remember the one shot that Jorge ran?  
+> Argyle: We had a... Never mind.  
+> Argyle: All right, let's go.  
+> Johnny: I don't know if anyone was there.  
+> Johnny: Jorge ran a couple years ago.  
+> Johnny: We were all level 20 D&D characters just fighting the biggest, baddest monsters Jorge could throw at us.  
+> Gamemaster: Wait, is that the guy that was at the Coliseum that said welcome in stuff?  
+> Johnny: It's just that same character, but younger.  
+> Johnny: It was my character.  
+> Argyle: No, no, no.  
+> Gamemaster: Or it was the character you played?  
+> Johnny: Yeah.  
+> Gamemaster: Okay.  
+> Gamemaster: Gotcha.  
+> Anzu: I don't think I was around for that.  
+> Johnny: It was fun.  
+> Argyle: Maybe that's why it was a one shot.  
+> Anzu: Yeah.  
+> Anzu: That would make sense.  
+> Argyle: All right.  
+> Argyle: We press forward.  
+> Anzu: We carry on.  
+> Johnny: Ride.  
+> Anzu: Okay.  
+> Anzu: Having been delayed a bit, scratched up a bit, you...  
+> Anzu: Get back on the metaphorical horse.  
+> Anzu: There are no horses, but you keep going down the road, which you could still make out enough here and there.  
+> Anzu: You can see its remnants among the cracked terrain.  
+> Anzu: And eventually, the land kind of transitions.  
+> Anzu: The rocks kind of smooth out.  
+> Anzu: There's more short grasses and bush that starts to push through.  
+> Anzu: And after a couple hours,  
+> Anzu: You reckon it is late afternoon, just maybe three hours before sunset, when you start to see on the horizon some kind of structure.  
+> Anzu: You see what looks like some stone walls.  
+> Johnny: Should we put a... Should we put like a...  
+> Anzu: And the road is leading right towards it.  
+> Benny: Thanks, Kevin.  
+> Argyle: Add into it.  
+> Gamemaster: From this distance, can we see if there are people booting a boot?  
+> Anzu: When you can just start to see it, you can't really tell, but after a couple minutes, you do see that there appear to be... You can make out two figures probably walking on the top surface of the wall.  
+> Gamemaster: Or are we still too far away from that?  
+> Anzu: And you could see...  
+> Anzu: couple roofs within the walls.  
+> Anzu: Looks like there's a couple of structures that are tall enough to be seen on the other side of the wall.  
+> Anzu: And eventually you get there.  
+> Anzu: It takes probably another half hour from when you can see it to when you get up to it.  
+> Anzu: I don't know if that geographically makes sense, but we're going with it.  
+> Anzu: And one of the... You see there are two individuals.  
+> Anzu: There's kind of a gate.  
+> Anzu: And there's two individuals, one on either side of the gate.  
+> Anzu: And one of them kind of hails to you and says, Stop there!  
+> Anzu: State your business!  
+> Argyle: I look at the charismatic guy.  
+> Gamemaster: Are you guys blue?  
+> Johnny: This is your moment.  
+> Anzu: You hail from Trilene.  
+> Benny: Yes.  
+> Benny: We are here on official business of the Foragers.  
+> Benny: Of course.  
+> Anzu: All right.  
+> Anzu: Let him in.  
+> Argyle: I almost said, what are we, barbarians?  
+> Benny: Clint will turn to the Clint will turn to the group and go,  
+> Argyle: And then I realized...  
+> Anzu: Yeah, very smooth talker.  
+> Johnny: Thank you.  
+> Anzu: Amada, you would know that the foragers have a good relationship with Palomar, so it's not really a contested thing.  
+> Gamemaster: Yeah.  
+> Gamemaster: Okay.  
+> Anzu: But the gate is opened, and you're met with this kind of like...  
+> Anzu: I've been struggling with what to call it.  
+> Anzu: I'm going with square.  
+> Anzu: There's like a town square kind of thing going on.  
+> Anzu: And about... Like 40 or so feet from the opening of the gate, you see the knot that keeps this...  
+> Anzu: settlements around.  
+> Anzu: It is just a little bit smaller than the masthead knot.  
+> Anzu: which kind of lines up with the size of this fort settlement.  
+> Anzu: You could see, I meant to say this as you approached, the walls have been kind of haphazardly repaired over the years.  
+> Anzu: You see there are areas where there's stone that is clearly a different color than the main bit of stone that makes up these walls.  
+> Anzu: They're about 15 feet high.  
+> Anzu: There's even a couple of areas that seem more like wood reinforced.  
+> Anzu: Did you, Jorge, want to ask something?  
+> Argyle: things.  
+> Argyle: One, which size is the masthead?  
+> Argyle: Is that the biggest in our settlement, or which size?  
+> Anzu: No.  
+> Anzu: Masthead is actually the smallest.  
+> Anzu: It's the one in the front of the settlement.  
+> Argyle: Okay, so... Okay.  
+> Anzu: Yeah.  
+> Argyle: And, sorry, for... I thought it was so funny, because what you said, you sounded, in my mind, like a very articulate, like, toddler, when you're like, I'm struggling for the word for what this is, but I will  
+> Argyle: Guess it's a square.  
+> Argyle: It escapes my grasp, but I guess I'll call it a square.  
+> Johnny: Thank you.  
+> Anzu: Well, you know that I don't mean square the shape.  
+> Gamemaster: you  
+> Anzu: Anyway.  
+> Argyle: A very intelligent dog.  
+> Anzu: The word escapes me, so I choose square.  
+> Benny: Thank you.  
+> Anzu: So anyway, there's this knot a bit smaller than the masthead knot.  
+> Anzu: Immediately around it are just a couple rows of garden beds.  
+> Anzu: And you could see a couple different crops being grown there.  
+> Anzu: To your left, there's a smallish building with what appears to be a symbol of vigil on it, basically just a sun.  
+> Anzu: And then just to the side of that building, a little bit kind of back left from where you're looking, looks to be a large chicken coop.  
+> Anzu: And adjacent to the chicken coop is a small fenced-in area, and there's a donkey within this pen, and there's a very artistically painted sign over this part of the pen that says, Ed the Ass.  
+> Anzu: Um...  
+> Anzu: To the right of the knot, there's a bit of a sandy, what looks like training grounds of sorts.  
+> Johnny: Okay.  
+> Anzu: You see some people in mostly chainmail armor, kind of matching, actually, the two...  
+> Anzu: fellas that are atop the wall just doing a little sparring and then behind that sand pit is a bit of a larger building than the vigil building looks to be more of like a barracks of some kind and you are approached as you enter there was a brief pause  
+> Anzu: before they opened the gate, um, seemingly to, uh, allow some reaction time for the folks within, um, you're approached by a, uh, older, uh, like a middle-aged, uh, human man, um, dressed in, uh, he's got, uh, full, uh, plate armor going, um, and, uh, uh,  
+> Anzu: Amada, you've been here.  
+> Anzu: You would know this man.  
+> Anzu: This is Captain Yannick Ruda.  
+> Anzu: He's kind of the de facto leader of the settlement.  
+> Anzu: And he meets the four of you at the gate.  
+> Anzu: And he goes, ah, foragers.  
+> Anzu: Welcome to Palomar.  
+> Anzu: I have my suspicions about what you may be doing here, but please tell me why you've come.  
+> Argyle: I shake his hand.  
+> Anzu: He shakes back.  
+> Johnny: I will also shake his hand.  
+> Anzu: Yeah, he'll shake your hand too, yep.  
+> Benny: It'll shake his hand.  
+> Johnny: You guys aren't going to shake his hand?  
+> Anzu: Yeah, well met, gentlemen.  
+> Anzu: Very well met.  
+> Argyle: He like cuts it off.  
+> Gamemaster: I've already met him, so I'm not going to shake his hand anyway.  
+> Argyle: I let my more well-spoken friend do the talking.  
+> Benny: What was the... Did we know the name of the wizard that we're looking for?  
+> Benny: Oh, the priest.  
+> Argyle: Yes, it's a priest, right?  
+> Anzu: You were not given a name, no.  
+> Benny: Okay.  
+> Johnny: is this group.  
+> Gamemaster: Well, he said that he's waiting for the more well-spoken of us to speak up, so I'm going to speak up and say, did you guys turn blue?  
+> Anzu: I suppose you could say that about two days ago, the knot here did change color once or twice.  
+> Anzu: I'm not going to lie to you.  
+> Gamemaster: right now we were blue too it was just the three that we could see  
+> Anzu: I was hoping that was just us.  
+> Anzu: All nots, each one.  
+> Johnny: Mm-hmm.  
+> Argyle: All three.  
+> Argyle: That is the priest.  
+> Anzu: Okay.  
+> Anzu: I guess you're going to want to speak to Warren then, huh?  
+> Argyle: Yes.  
+> Anzu: Yes, Warren lives here.  
+> Anzu: He comes from a long line of slumber worshippers.  
+> Anzu: I could take you to him.  
+> Gamemaster: Have you already spoken to him?  
+> Anzu: I have.  
+> Gamemaster: Did he have any good answers?  
+> Anzu: Not really.  
+> Anzu: He... No.  
+> Anzu: He's got a feeling of sorts, but that's really all he's been able to tell us.  
+> Anzu: And he leads you through the square.  
+> Anzu: And you walk through and you see a couple people kind of walking around.  
+> Anzu: You see there's a number of people kind of tending to the garden beds.  
+> Anzu: This is not a very large place.  
+> Anzu: It's just a fort that was repurposed to be a place to survive.  
+> Argyle: As we're walking through, I'm going to turn to him and just say, brother, not to insult you, but why do you choose to live here and why not over in the main settlement?  
+> Anzu: But there are a number of other buildings beyond the few that I described initially.  
+> Anzu: Uh, you know, that's a good question.  
+> Johnny: you  
+> Anzu: I, uh, you know, someone's got to do it.  
+> Anzu: I, my, uh, my family has, uh, been here, um, and, you know, I've chosen to stay at, uh, this is an important place.  
+> Argyle: Appreciate you, Zach.  
+> Anzu: Um, there are, uh, you know, where within better striking distance of, uh, the ruins of Karwen than, uh, than you are over at Trilene.  
+> Anzu: And, um,  
+> Anzu: Sometimes we look for answers there.  
+> Anzu: And so this place needs to be around as a waypoint of sorts.  
+> Argyle: Eric.  
+> Argyle: Commitment to the duty.  
+> Anzu: But we have a decent settlement here.  
+> Anzu: There are kind folks, hardy folks.  
+> Anzu: We make do just fine.  
+> Gamemaster: It's very funny to go up to somebody who lives, like, in the suburbs of a city and say, I appreciate your sacrifice.  
+> Benny: Just.  
+> Argyle: I stopped myself.  
+> Argyle: I said, I appreciate your commitment to duty.  
+> Anzu: That's very smooth.  
+> Anzu: So he does eventually lead you to a bit smaller of a building.  
+> Anzu: Really just kind of a hut.  
+> Anzu: Not much of anything.  
+> Anzu: But it does have hanging on the door a crescent moon just carved out of wood.  
+> Anzu: Kind of simple.  
+> Anzu: and he will knock on the door.  
+> Anzu: It's not an outhouse, although I do realize that I think Shrek's outhouse does have a crescent moon on it.  
+> Argyle: an outhouse.  
+> Argyle: It's a shit.  
+> Anzu: You guys... Anyway...  
+> Benny: Thank you.  
+> Anzu: The door opens and a older, a bit older than Captain Ruta, gray-skinned tiefling man opens  
+> Anzu: opens the door.  
+> Anzu: You can see he's wearing kind of faded blue robes.  
+> Anzu: They look like maybe they were more vibrant once upon a time, but they've become kind of like a gray-blue kind of color.  
+> Anzu: I guess you wouldn't see this immediately, but on the back, there's a very threadbare remnants of what looks like golden embroidery in the shape of a crescent moon.  
+> Anzu: But a lot of the embroidery has come undone, and he wears around his neck a silver amulet that also has a crescent moon made of silver.  
+> Anzu: And he goes...  
+> Anzu: Yes, good day, Captain.  
+> Anzu: Gentlemen, to what do I owe the pleasure of your company?  
+> Anzu: And the captain speaks first and says...  
+> Anzu: Yeah, Warren, these folks are foragers from Trilene.  
+> Anzu: Their knots have had similar phenomena to what we saw here a few days ago, and they wanted to chat with you.  
+> Anzu: Gentlemen, this is Warren, and I'll leave you to it.  
+> Anzu: I'm going to get back to some things.  
+> Anzu: And Warren speaks back up.  
+> Anzu: He goes, yes, my name is Warren Harble.  
+> Anzu: Nice to meet you all.  
+> Anzu: I guess, why don't you come on inside?  
+> Gamemaster: What's his last name?  
+> Anzu: Harble?  
+> Benny: The name is War Horrible.  
+> Johnny: horrible the whole word is like the whole word is like swallowing sounds horrible horrible horrible  
+> Gamemaster: Horrible?  
+> Anzu: No, Harble.  
+> Anzu: Just H-A-R-B-L-E.  
+> Gamemaster: Okay, that makes more sense.  
+> Anzu: That would be kind of...  
+> Benny: He's a kind man.  
+> Anzu: Um...  
+> Gamemaster: You have trouble swallowing stuff, if that's what that sounds like.  
+> Argyle: No, as I say, as food comes out of my mouth.  
+> Johnny: Alright let's go into this house.  
+> Anzu: His hut, you know, his little ramshackle looking from the outside is relatively clean on the inside.  
+> Benny: Good.  
+> Anzu: And he does have a small table with enough chairs for all of you to sit down.  
+> Anzu: He goes, all right, so foragers, huh?  
+> Anzu: What are your names?  
+> Johnny: Vincenzius  
+> Anzu: All right.  
+> Argyle: You can call me strong.  
+> Anzu: Glint.  
+> Anzu: Easy enough.  
+> Anzu: Amada, you have not interfaced with this man before, but he's been around here.  
+> Anzu: You would probably have known that there was a person who worships Slumber here, but you've not really met him before.  
+> Anzu: He goes, all right, so your knots have also done some blue blinking, I take it.  
+> Argyle: Correct.  
+> Anzu: Yeah, we had the same thing here.  
+> Anzu: I got to tell you, it was an interesting experience for me.  
+> Anzu: My ancestors have always been followers of Slumber.  
+> Johnny: Okay.  
+> Anzu: They, once upon a time, ran the temple in Karwin.  
+> Anzu: But ever since things happened, we haven't felt anything.  
+> Anzu: I mean, we've not been gifted any divinity.  
+> Anzu: I had a brief feeling, kind of indescribable, but it coincided at the same time that the knot changed color and went away with it as well.  
+> Anzu: I can only assume that there's something there, but I don't know.  
+> Johnny: What was the feeling?  
+> Johnny: Do you feel like it was your confusion or somebody else's confusion that you were feeling?  
+> Anzu: It was so quick.  
+> Anzu: The best I could describe it as was maybe confusion.  
+> Anzu: I, for my whole life, have felt feelings, as you all have, and this one was markedly different.  
+> Argyle: I understand.  
+> Anzu: So it wasn't me, whatever it was.  
+> Argyle: Slumber's waking up.  
+> Gamemaster: Can you feel anything now?  
+> Johnny: My thoughts exactly.  
+> Gamemaster: Does he look like he knows more than he's letting on, or is he really just as in the dark as the rest of us are?  
+> Anzu: I feel pretty much the same as I've always felt now.  
+> Argyle: This is why we're the best twins.  
+> Benny: Does anyone have a positive multiplier?  
+> Anzu: You can make an insight check.  
+> Argyle: Can anyone else also make an inside check?  
+> Anzu: I'll allow a second insight check.  
+> Johnny: And we got good insight.  
+> Gamemaster: I've got an 18.  
+> Gamemaster: Actually, I'm going to use my last lucky of the day, and hopefully that gives me a better roll.  
+> Argyle: Alright.  
+> Argyle: Anyone else want to roll it?  
+> Gamemaster: 31.  
+> Benny: yeah i'll roll it let me did i ever take uh i'll burn a alberta lucky point 17 for glint  
+> Argyle: Strong is very close to waterboarding this guy.  
+> Argyle: I'm kidding.  
+> Johnny: Insight check using athletics.  
+> Anzu: But we also got a 21.  
+> Anzu: Unfortunately, he does seem to be out of the loop.  
+> Gamemaster: I was hoping he was harboring some secrets or something.  
+> Anzu: He seems to be trying to grasp at things.  
+> Argyle: So where did Slumber get attacked?  
+> Anzu: You believe that he felt something, but...  
+> Benny: Are we rolling?  
+> Argyle: Do you know?  
+> Anzu: Well, it was quite a ways from here.  
+> Anzu: I mean, from what I know, it's almost on the other side of the world.  
+> Anzu: But theoretically, the area is known to us as the Scar.  
+> Argyle: Amen.  
+> Anzu: I have not heard anything about it in a long time, but it used to be a wildly chaotic area of weave energy going everywhere and the weather is crazy and the ground is unstable and generally a bad place.  
+> Johnny: You.  
+> Anzu: But  
+> Anzu: What we know is that the Tynans, they set a trap, and they kind of anchored Slumber to that point before sapping their energy.  
+> Anzu: So my guess would be if Slumber is there in any way, they would still be there.  
+> Anzu: I don't know if they would be able to move.  
+> Johnny: So, just to verbalize some thoughts, they essentially pinned Slumber down, tore him apart, used the succeeding explosion to propel themselves out of here, maybe, and now Slumber got torn apart, and we have all these little Slumbernauts lying around, right?  
+> Argyle: Hmm.  
+> Gamemaster: But then that's for digital.  
+> Anzu: The knots are vigil.  
+> Johnny: But you're getting feelings of confusion.  
+> Benny: Thank you.  
+> Anzu: Yes, the lore goes that vigils sacrifice themselves to create the knots and to allow people to create and maintain knots.  
+> Anzu: So the knots themselves are vigil energy.  
+> Argyle: Do you think...  
+> Johnny: So maybe Slumber's still alive somehow and trying to reach out through what's left of his brother.  
+> Johnny: their brother, their sibling.  
+> Benny: But why now?  
+> Anzu: Yes, Mr. Amada.  
+> Gamemaster: Do we have accurate... This is for the DM.  
+> Anzu: Oh.  
+> Gamemaster: Does this world have accurate timekeeping?  
+> Anzu: What do you mean by that?  
+> Gamemaster: I want to know if we would be able to tell temporally if the blue here happened at the same time as the blue in Trilene, or if there was like a this one happened first, that one happened first type deal.  
+> Anzu: I mean, they know what time of day it was approximately, and I would say it seems to more or less line up.  
+> Johnny: So do you think that Lumber tried to, was trying to wake up and sent out a massive pulse throughout the little bit of God pieces of his, their other half that's lying around somewhere?  
+> Argyle: What do you think it is?  
+> Anzu: You know, could be.  
+> Anzu: I'm not sure.  
+> Anzu: It's got to be something, though.  
+> Anzu: I mean, I've never felt anything.  
+> Anzu: My father never felt anything.  
+> Anzu: My grandfather never felt anything.  
+> Anzu: And this is the first sign, in my opinion, that anyone's ever had from slumber in centuries.  
+> Johnny: Sir!  
+> Johnny: I'll grab his hand.  
+> Johnny: We accept this quest.  
+> Argyle: Thank you.  
+> Johnny: Amado will lead us.  
+> Anzu: Nope.  
+> Gamemaster: Sorry?  
+> Anzu: You intend to go to the Scar?  
+> Johnny: We will... Yeah, I don't... We'll figure out whatever's next on this quest, and we'll do it.  
+> Gamemaster: We should...  
+> Johnny: Do you want to come with us?  
+> Anzu: Do I want to go?  
+> Anzu: I mean, he is my guy.  
+> Johnny: We could be meeting Slumber.  
+> Johnny: Isn't that... That's your guy.  
+> Anzu: I don't know.  
+> Anzu: I'm a little old.  
+> Anzu: He glances at Amada briefly.  
+> Johnny: Hey, look.  
+> Gamemaster: I'm the oldest person I've ever met.  
+> Gamemaster: And that's been true for hundreds of years.  
+> Argyle: Do you have any children?  
+> Anzu: I understand, but I don't know.  
+> Anzu: I'd have to think about it.  
+> Anzu: My feet are not meant for that kind of travel anymore, but I don't.  
+> Argyle: So what's going to happen when you're with this whole temple?  
+> Argyle: Do you have any protégés?  
+> Anzu: To be honest with you, until two days ago, I was not feeling very pious at all.  
+> Johnny: Sir, Mr. Warren, Mr. Orwell, this is Holland.  
+> Argyle: Or if you have any slumber boons, we could also take some of that with us.  
+> Anzu: So...  
+> Johnny: You're the last priest of slumber.  
+> Johnny: What more fitting end to go out than on a pilgrimage to find them?  
+> Johnny: Travel.  
+> Gamemaster: Why are we trying to kill this guy?  
+> Argyle: I don't want gold pieces.  
+> Anzu: I feel not any boons and I have not any boons.  
+> Gamemaster: Yeah, did Slumber bestow you with any gold pieces?  
+> Argyle: I want slumber stuff.  
+> Johnny: Have you gotten, like, plus two magic items?  
+> Johnny: Sir?  
+> Argyle: Do you have any books on slumber like theology?  
+> Argyle: Maybe I'll take up this role when I retire.  
+> Gamemaster: Bye.  
+> Anzu: We do have...  
+> Argyle: I'm now worried you might not be here when I get back, so this is why I ask.  
+> Benny: Yes.  
+> Anzu: We do have some books.  
+> Anzu: There are the... Occasionally we have delvers who travel into the ruins of Karwen to retrieve books and artifacts and the like.  
+> Anzu: And we have a group of  
+> Anzu: I guess, historians.  
+> Anzu: They call themselves Karwenians.  
+> Anzu: They live here at Palomar as well, and they study the recovered artifacts.  
+> Argyle: And.  
+> Anzu: So they have found some books on slumber and some other things.  
+> Anzu: We would definitely want to discuss with them before making any trek into the far reaches of the world.  
+> Gamemaster: Yeah, before we run right into Scar, there's a temple to slumber in Carwin, right?  
+> Anzu: Yes, my ancestors maintained this temple long ago before the city fell.  
+> Gamemaster: Okay.  
+> Johnny: Listen, I could read a book about radioactivity, or I could just go to Chernobyl.  
+> Benny: We'll see if they have any boons before we head to the scar.  
+> Argyle: I knew there was something closer than the scar.  
+> Argyle: I knew there was something closer.  
+> Johnny: I don't understand.  
+> Gamemaster: Thank you.  
+> Argyle: I knew there was a closer option, but I also have a minus two int, so I was ready to just fucking go.  
+> Argyle: To just send it.  
+> Argyle: Just out of curiosity, how far is it to the scar?  
+> Argyle: Well, if it's the other side of the world, it's any direction, actually.  
+> Anzu: The scar, to be honest with you, I don't know.  
+> Johnny: thank you  
+> Anzu: My... Well, here's what I think.  
+> Benny: You've never been?  
+> Gamemaster: Which direction is it?  
+> Benny: Well, you said it's nearly on the other side of the planet, so actually any direction we had will be the correct direction.  
+> Gamemaster: We'll just start walking.  
+> Gamemaster: We'll get there.  
+> Gamemaster: No.  
+> Anzu: My thought would be, if one were to take such a journey, a good first step would be to see if there are any maps...  
+> Gamemaster: As long as we go in that direction, just  
+> Gamemaster: For a while.  
+> Gamemaster: We'll hit it.  
+> Benny: Yeah.  
+> Johnny: it took four seconds it took four seconds it's a rhomboid  
+> Anzu: I am not a geographer.  
+> Anzu: That might be correct.  
+> Anzu: I'm not sure.  
+> Anzu: It's a planet.  
+> Benny: Well, we only need to go in a straight line.  
+> Gamemaster: Yep.  
+> Benny: Strong, you'd consider yourself a straight shooter.  
+> Benny: We'll just have him lead.  
+> Gamemaster: DM, is this a planet?  
+> Argyle: I was born for this desk.  
+> Gamemaster: Is it round?  
+> Gamemaster: Do we know that?  
+> Gamemaster: Okay.  
+> Anzu: As far as you know, it's a round planet, yeah.  
+> Gamemaster: Okay.  
+> Argyle: Was it a sphere or is it like a cylinder?  
+> Benny: Wait, what if the priest doesn't know that and we're about to prove that it is by going all the way?  
+> Anzu: Two days later, you come back from the other direction.  
+> Johnny: It's a really small sphere.  
+> Argyle: So I guess we'll go explore these ruins.  
+> Gamemaster: I'm just imagining, like, we don't go back to try to leave to report in.  
+> Benny: That seems reasonable.  
+> Argyle: On the way to the scar.  
+> Gamemaster: We just leave for the scar.  
+> Gamemaster: And then they send out more foragers to find out what happened, and it's just like, oh yeah, no, they went to the scar.  
+> Gamemaster: They just left.  
+> Johnny: We should probably go back to try a lead and let them know and see if we can get better supplies.  
+> Benny: It's just.  
+> Argyle: No, no, no.  
+> Benny: It's like.  
+> Argyle: We just go straight to the root site, I think.  
+> Benny: It's like this.  
+> Gamemaster: I feel like it's more reasonable to go to Karwin and then come back and then report back than it is to just from here to the Scar immediately in whatever direction that is.  
+> Benny: It definitely sounds like the intern of the new hire doesn't know how to properly scope things, and they start rebuilding entire parts of the stack in order to accomplish... They told me I had to get this done, so we're like, we just went to this car and resurrected the gods so we could figure out what was going on with the blue stuff, and now it's permanently blue, so...  
+> Johnny: I see you.  
+> Gamemaster: Because one of those sounds like a few days and one of those sounds like literal years.  
+> Argyle: Yeah.  
+> Gamemaster: And I...  
+> Gamemaster: Talk to some Carwinites.  
+> Argyle: Yeah.  
+> Anzu: Maybe... Oh.  
+> Benny: Shall we rest and then...  
+> Gamemaster: Carwins.  
+> Gamemaster: What are they called again?  
+> Anzu: Carwenians.  
+> Gamemaster: Carwinians.  
+> Argyle: Yeah.  
+> Anzu: We can go speak with them if you like.  
+> Gamemaster: The Phoenicians.  
+> Johnny: I think it's.  
+> Argyle: Is the captain still here?  
+> Argyle: Ah.  
+> Anzu: No, the captain left you with Warren.  
+> Argyle: All right.  
+> Johnny: I dipped.  
+> Argyle: Let's go.  
+> Gamemaster: He had other things to take care of.  
+> Benny: Are the Carwinians similar to Branch Davidians?  
+> Anzu: I'm not really sure.  
+> Anzu: Probably not.  
+> Benny: Probably not.  
+> Johnny: That one seems very.  
+> Benny: Josh is going to Google Branch Davidians?  
+> Anzu: Josh maybe don't.  
+> Gamemaster: What is this?  
+> Johnny: Branch Davidians, wait.  
+> Gamemaster: Oh!  
+> Gamemaster: I know what this is!  
+> Argyle: What is it?  
+> Gamemaster: Are you guys familiar with that time where there was this standoff in Waco, Texas with the government and this religious group?  
+> Johnny: Oh, I think.  
+> Johnny: Yeah.  
+> Gamemaster: That's the religious group.  
+> Benny: I live for them.  
+> Johnny: That was a real deep, obscure poll, Mike.  
+> Anzu: Just word association, sound association, I don't even know what you call it.  
+> Benny: Guilty by.  
+> Anzu: So the five of you exit Warren's hut and head out kind of across to the other side of town, pass by the knot again.  
+> Anzu: At this point, the...  
+> Anzu: The sun is starting to get a little dark out.  
+> Anzu: And he takes you across to, oh, yeah.  
+> Argyle: Oh, um, should you guys tangle since it's getting dark?  
+> Johnny: Are we in a town?  
+> Gamemaster: Yeah, we're near an actual knot.  
+> Argyle: Well, it's getting dark, and I thought we were supposed to tangle.  
+> Gamemaster: No, we're near a knot.  
+> Anzu: You should be relatively safe within the walls.  
+> Argyle: I sheepishly look at that small knot.  
+> Argyle: Okay, if you say so.  
+> Gamemaster: It's bigger than the tangle we would make.  
+> Gamemaster: And we're in an actual fort.  
+> Johnny: I don't know.  
+> Argyle: Strong's not convinced.  
+> Argyle: Continue.  
+> Anzu: you kind of cross by the training grounds and the barracks and make your way to a building that's a bit more elongate, kind of rectangular, longhouse.  
+> Anzu: And Warren leads the way in.  
+> Anzu: And there are currently two individuals sat at two desks.  
+> Anzu: And you could see there are a number of bookshelves.  
+> Anzu: And there actually is, on the wall, a map.  
+> Anzu: You're not quite sure what is on it just yet.  
+> Anzu: But one of these individuals looks to you.  
+> Anzu: It is a...  
+> Anzu: A gnome.  
+> Anzu: Also a bit on the older side with a pair of round glasses and a bit of a gray beard going a couple inches.  
+> Anzu: And Warren will speak up and he goes, Hey, Tobin, good evening.  
+> Anzu: these are some of the foragers from Trilene.  
+> Anzu: I'm sure you heard that they arrived earlier today.  
+> Anzu: And Tobin goes, Ah, yes, yes, I did hear that you were coming into town.  
+> Anzu: I imagined that you were here on some business with this knot, aren't you?  
+> Anzu: Very strange times.  
+> Anzu: Unprecedented times.  
+> Anzu: We've never seen this.  
+> Johnny: We've never seen anything like this before.  
+> Johnny: Brother, it's crazy out there.  
+> Johnny: Is it crazy?  
+> Argyle: He really gets along with Wise.  
+> Argyle: Wise, you should tell him about the affirmative action.  
+> Argyle: It's cool.  
+> Johnny: I have a whole spiel to tell you about.  
+> Johnny: Later, my fellow gnome, they're not letting us in.  
+> Johnny: They're eating the slime dogs.  
+> Johnny: They're eating the slime cats.  
+> Anzu: Warren speaks up and he goes...  
+> Gamemaster: So long.  
+> Argyle: The safety by the Mastodon is terrible.  
+> Argyle: We need to enact martial law.  
+> Anzu: Tobin, I was discussing with these individuals that our leading theory, as you know, is that slumber has something to do with what's going on.  
+> Johnny: you  
+> Anzu: And there's some discussions about maybe going to the scar.  
+> Anzu: Kind of check it out.  
+> Gamemaster: The devil looks sick.  
+> Benny: It's just like going to the head of NASA.  
+> Benny: We've got some peppy young astronaut camp people that are ready to fly right into the sun.  
+> Johnny: Thank you.  
+> Anzu: And he continues, obviously we don't know how to get there.  
+> Anzu: Tobin, do you know anything about what we may be able to do?  
+> Anzu: And Tobin kind of looks to the map on the wall and he goes, well, we do have one thing.  
+> Anzu: We've got a map.  
+> Anzu: It's a big map.  
+> Anzu: It's a really great map.  
+> Anzu: It can get you...  
+> Anzu: At least six, seven days of travel from here.  
+> Johnny: You.  
+> Anzu: The scar is not on the map.  
+> Gamemaster: It's the scar on the map.  
+> Anzu: You go and look at the map, and you see the center of the map is Karwin.  
+> Anzu: It does look like quite an old map that has been...  
+> Anzu: drawn over in certain areas, uh, over the years to, uh, reflect, uh, changes, uh, since this map was made before things went bad.  
+> Anzu: Um, uh, but you could see that there's, uh, uh, the city of Karwin, um, and then, uh, off, uh, to the, um, uh, the left of it is, uh, or I'm sorry, to the right, uh, is, uh, uh,  
+> Anzu: Oh, no.  
+> Anzu: A fort, which definitely would have had a name.  
+> Gamemaster: It's not Palomar?  
+> Anzu: It does say Palomar now.  
+> Argyle: They white it out over the other names.  
+> Argyle: You don't have to worry about it.  
+> Anzu: Yeah.  
+> Anzu: It used to go by a different name.  
+> Anzu: And then you could see...  
+> Anzu: So Karwin is kind of central to the map.  
+> Anzu: Halfway up, there's kind of some mountain range.  
+> Anzu: And you could see that Trilene has been added to the map.  
+> Anzu: And then way on the west side of the map is the beginning of some kind of body of water.  
+> Anzu: But Tobin also speaks up and goes, but obviously this is not going to take you all the way there.  
+> Argyle: uh-huh  
+> Anzu: But, hmm, let me think for a moment.  
+> Anzu: I have a plan.  
+> Anzu: Or at very least I have the concepts of a plan.  
+> Anzu: Perhaps you lot, you look strong, you look capable.  
+> Anzu: You can go into the ruins of Karwin.  
+> Anzu: There's a library.  
+> Anzu: And maybe there's some bigger maps that can give you more information.  
+> Anzu: And you can learn more about the areas and get more informed on your journey.  
+> Anzu: That might be good.  
+> Gamemaster: Rebecca was not talking us out of going to the scar.  
+> Argyle: Is there a temple for Slumber over there?  
+> Anzu: I believe there is.  
+> Anzu: I am not sure what state of ruin it may be in.  
+> Anzu: The city's not in great shape.  
+> Anzu: There are, of course, dangers there.  
+> Anzu: There's creatures.  
+> Anzu: Very bad.  
+> Anzu: There are some nasty, nasty creatures in Karwin.  
+> Gamemaster: Is the map of, like, the area around Karwin detailed enough of Karwin itself that we can see, like, street layouts or whatever?  
+> Gamemaster: Or is it just, like, a dot and then it's geography around Karwin?  
+> Anzu: You walk up to the map and start to get a closer look, and the answer to your question is no.  
+> Anzu: However, Tobin goes into those desks that the top kind of opens and they hold things underneath.  
+> Anzu: He opens not the desk he was at, but he goes to another one and opens it up.  
+> Anzu: and he takes out a rolled piece of parchment and opens that up and there is a more Karwin it's a map of Karwin is what it is yeah mhm  
+> Gamemaster: a second map.  
+> Gamemaster: We can use this map to get to the maps.  
+> Anzu: And he kind of points out a couple areas.  
+> Johnny: The maps.  
+> Anzu: He shows you where the ruins of the library are.  
+> Anzu: He shows you where the ruins of the temple is.  
+> Anzu: And nearby that, there's also the ruins of a temple to vigil.  
+> Anzu: So perhaps this would be...  
+> Anzu: a good first step to take when you're going to go under some kind of journey like this?  
+> Argyle: sounds good oh  
+> Gamemaster: Just to double check, you don't know, like, the cardinal direction the scar is in, though?  
+> Gamemaster: You can just start walking towards... Is that where the water was on the map?  
+> Anzu: I think that it is at least somewhat west of here, beyond Karwin.  
+> Anzu: Yes, so west of here would lead you first to Karwin and then towards that body of water that is just kind of beginning on this map.  
+> Gamemaster: We need to get a boat.  
+> Argyle: Um, alright, so.  
+> Gamemaster: We go to Carwin?  
+> Argyle: Uh.  
+> Argyle: Yeah, I guess we're gonna carbon.  
+> Benny: Darwin.  
+> Johnny: Go to Carwin and get some more of that.  
+> Gamemaster: It would take too long to go back to Try League, report, and then come back here, and then go to Carwin.  
+> Gamemaster: So we should just go to Carwin, right?  
+> Argyle: Yeah.  
+> Benny: Sure.  
+> Johnny: Yeah.  
+> Benny: Probably take too long to get into cartoon.  
+> Anzu: Karwin is about a day and a half from the fort, from Palomar.  
+> Argyle: Let's go.  
+> Gamemaster: But it's further in the direction we've been walking, right?  
+> Gamemaster: It's not in between.  
+> Argyle: Or do you guys get silk?  
+> Anzu: Right.  
+> Anzu: You need to go farther west, yeah.  
+> Anzu: The road back to Trilene would be first east and then north from where you currently are.  
+> Argyle: Like the silk for your knots?  
+> Anzu: Oh, actually, we don't need it here.  
+> Anzu: The knot is not so large that it requires extra sustenance like that.  
+> Argyle: Oh.  
+> Gamemaster: Thank you.  
+> Anzu: Speaking as Tanner, I don't know if I might have mentioned that or not.  
+> Anzu: In particular, the Albright knot, which is quite large, is mostly what needs the silk.  
+> Anzu: Knots are capable of being maintained without the silk, but the Albright knot is of such a size.  
+> Anzu: And it's been catered to in a way to be a bit larger than it should.  
+> Argyle: Okay.  
+> Argyle: Oh, so if the spiders did die, the city wouldn't collapse, it would just get smaller.  
+> Anzu: So they don't need no silk around here.  
+> Johnny: Oh, God.  
+> Anzu: Yeah, it would be harder to sustain the current population and size of the city.  
+> Argyle: Still bad, but... Alright.  
+> Gamemaster: I mean, we'd just have to kill a few people and then it'd be fine.  
+> Benny: Which, if you're already killing spiders and you like it, I mean... Well, should we... Do we want to... Do people even show up here?  
+> Gamemaster: Oh.  
+> Argyle: Let's just go.  
+> Argyle: Bye!  
+> Anzu: People come in and out of here.  
+> Argyle: What if I crash here tonight?  
+> Gamemaster: Well, we should... Are there ins?  
+> Gamemaster: How does that work?  
+> Argyle: I don't need an N. I could just use a floor.  
+> Gamemaster: Yeah.  
+> Anzu: We've had foragers pass through.  
+> Anzu: We have our delvers that come and go from Carwin.  
+> Anzu: There is space for you here.  
+> Anzu: We can definitely put you up.  
+> Benny: you  
+> Anzu: This is Warren speaking, and as he's speaking, you see his eyes kind of unfocus for a moment, and a look of fear comes over his face.  
+> Anzu: And as this happens, night has fallen, and you were seeing through a window...  
+> Anzu: of this building, the yellowish glow of the palomar not coming through as it turns to a midnight blue color.  
+> Johnny: Oh.  
+> Anzu: The 10 or so seconds pass that have previously passed before turning back to the more golden color.  
+> Anzu: except this time it doesn't go back.  
+> Anzu: The blue color remains, and you see Warren start to kind of hold his head in his hands, and he goes, something's happening.  
+> Argyle: oh no i ran to the wall yeah go  
+> Anzu: I feel... I don't know.  
+> Anzu: I don't know.  
+> Anzu: And from kind of across the fort, you start to hear some screams.  
+> Anzu: And we are going to cliffhanger this bitch.  
+> Johnny: Oh, no.  
+> Gamemaster: We've got time.  
+> Gamemaster: We've got 15 minutes.  
+> Argyle: We never got a short rest in, right?  
+> Anzu: I will allow there to have been a short rest.  
+> Anzu: I didn't want to tell you to short rest, because that would have been a little too indicative, but I'll allow it retroactively, because you had enough time while you were sitting both before at Warren's house and here with the Carwinians.  
+> Argyle: Thank you.  
+> Anzu: So you could short rest, and that will be the last thing we do before closing for the time being.  
+> Argyle: Thanks.  
+> Gamemaster: That was rude of you, Jenna.  
+> Gamemaster: I just wanted to put that out there.  
+> Anzu: To Cliffhanger?  
+> Gamemaster: Yeah.  
+> Anzu: Yeah, I know it's a little unfortunate, but that's what we got.  
+> Anzu: I thought it would be kind of fun.  
+> Argyle: So are there vampires here, or is that what's... You start terrorizing Dot.  
+> Johnny: It's always vampires.  
+> Gamemaster: Yeah.  
+> Gamemaster: Are there vampires here?  
+> Anzu: Oh.  
+> Anzu: Could be vampires.  
+> Anzu: Hard to say.  
+> Johnny: This is where love went after campaign two.  
+> Benny: And hit points.  
+> Argyle: You know, 5e's kind of goofy.  
+> Argyle: You might be able to take on a level 20 Pathfinder character, as long as you adjust saves.  
+> Argyle: If you don't adjust saves, you're fucked.  
+> Gamemaster: Like, if you're a level 20 D&D character, or... You mean our group of level 4s or 3s?  
+> Argyle: Yeah, even level 20s.  
+> Gamemaster: 6.  
+> Gamemaster: I know a level we are.  
+> Argyle: Yeah, I mean, like, adjusted for Pathfinder, if you come up with a way to Scale D&D DCs.  
+> Gamemaster: Well, so actually, you would probably go the other way around.  
+> Argyle: What if you don't?  
+> Gamemaster: Pathfinder has a proficiency without level rule that adjusts the DCs downward so they look more like 5.8.  
+> Gamemaster: We just don't play with that because it's more fun to see big number.  
+> Argyle: Yeah.  
+> Anzu: For sure.  
+> Johnny: Love big number.  
+> Anzu: Yeah, but that's dumb.  
+> Gamemaster: But you don't have to play with big number.  
+> Gamemaster: I mean, that's 5e.  
+> Argyle: That's stupid.  
+> Gamemaster: 5e is just without big number.  
+> Johnny: We love big number.  
+> Johnny: We love big number.  
+> Gamemaster: People like big number.  
+> Gamemaster: Big number is fun.  
+> Benny: We're big on big number.  
+> Argyle: This was a great session.  
+> Johnny: Yeah.  
+> Benny: Yeah.  
+> Gamemaster: This was for a mini campaign.  
+> Anzu: Thank you.  
+> Anzu: Yeah.  
+> Gamemaster: We'll be back, I assume.  
+> Anzu: We will be back.  
+> Anzu: It's funny how things work out sometimes.  
+> Anzu: We rolled on day one for no encounter to happen, but then the Argyle encounter took a lot longer than I thought it would, and so we end up in the same place.  
+> Anzu: It's the illusion of choice.  
+> Argyle: Oh.  
+> Gamemaster: Nice.  
+> Benny: different.  
+> Gamemaster: Ooh.  
+> Gamemaster: Worked out.  
+> Anzu: So that's that.  
+> Anzu: Thank you guys for coming along so far.  
+> Anzu: Maybe since I did set up a cheeky little cliffhanger, we won't go crazy long before playing a session or two to solve what's about to happen.  
+> Gamemaster: We don't have to wait for one of us to not be around to do a one-shot.  
+> Gamemaster: We can definitely take intermissions from the campaign to do one-shots and stuff.  
+> Anzu: Yeah.  
+> Anzu: So that's kind of my thought, is we'll do, yeah, in a couple weeks, something like that.  
+> Anzu: I don't know.  
+> Johnny: Ooh, thanks for putting this together, Tanner.  
+> Johnny: This was great.  
+> Argyle: This is great.  
+> Anzu: Yeah, no problem.  
+> Benny: I like the world building.  
+> Benny: I also like the difficulty of traversal.  
+> Benny: It's like in Campaign 2 when we first got the ship with the heart.  
+> Benny: It's like you can't just go anywhere for free now.  
+> Benny: Travel is difficult again.  
+> Anzu: Yeah, yeah, that's... It's got its place.  
+> Anzu: You know, I think that when you hit the later levels, it just kind of bogs things down, but part of this world is supposed to be, like, unforgiving and dangerous, and so that's... Yeah.  
+> Benny: It also just discouraged, like, oh, we'll just travel 10 days and go there.  
+> Johnny: Yeah, that Argyle, I burned a lot of spells.  
+> Benny: It's just like, no, no, no, no.  
+> Benny: You got to pick and choose.  
+> Benny: You're going to be burning resources and risking.  
+> Anzu: Yeah, the Gargoyles are interesting.  
+> Johnny: Could have gotten nasty.  
+> Johnny: I like the terrain.  
+> Anzu: They're only CR 2, but they've got a decent amount of hit points.  
+> Argyle: Yeah, they go.  
+> Argyle: What was their AC?  
+> Anzu: Their AC was 15.  
+> Argyle: Hmm.  
+> Anzu: which is high, although for a rock creature, they tend to be a little higher than that.  
+> Anzu: But I think because they're a little smaller guys, you know.  
+> Anzu: Yeah, they're kind of fun creatures.  
+> Anzu: And they have flyby, which I think is great, because I've only ever seen owls have that.  
+> Anzu: So...  
+> Johnny: Owls and gargoyles.  
+> Argyle: Yeah.  
+> Argyle: It is so funny how I feel like barbarians are so much better in 5e than they are in Pathfinder.  
+> Argyle: Well, maybe I might have just been playing them wrong in Pathfinder.  
+> Argyle: Whenever I try building a barbarian in Pathfinder, I just give up.  
+> Argyle: Because it's way more reading than I expect from a barbarian.  
+> Argyle: And I'm like, meh.  
+> Gamemaster: I don't think it's the simple class like it is in 5e.  
+> Johnny: I think...  
+> Anzu: I liked the decay barbarian that I played in the...  
+> Johnny: Yeah, I mean, in Pathfinder or Barbarian, it's like a big buff fighter, but you're still supposed to do maneuvers and athletics, and there's still a bunch of different builds you can do versus, I think, in D&D, it's very much the I rage and then I bonk.  
+> Argyle: Yeah.  
+> Anzu: like that devilish one shot.  
+> Argyle: Yeah.  
+> Anzu: That ended up being a two shot, but that was kind of fun.  
+> Anzu: It just gets added damage, but also takes damage while it's raging.  
+> Gamemaster: Which worked.  
+> Argyle: Yeah.  
+> Gamemaster: You did kill a lot of things.  
+> Johnny: Yeah.  
+> Gamemaster: You wiped out whole swarms of people.  
+> Anzu: Yeah.  
+> Johnny: Just keep going.  
+> Gamemaster: Well... True.  
+> Anzu: And if you give it enough hit points, it doesn't matter that it takes damage every round.  
+> Argyle: So next session's in Colorado.  
+> Johnny: Yeah.  
+> Anzu: Yeah.  
+> Gamemaster: Next session's in Colorado.  
+> Gamemaster: I have... I have backstories and builds from two people.  
+> Johnny: The 21st.  
+> Gamemaster: I have build from a third person.  
+> Gamemaster: And I have none from the fourth person.  
+> Argyle: You got everything from me, right?  
+> Benny: It'll happen.  
+> Gamemaster: Yeah.  
+> Argyle: Okay.  
+> Gamemaster: I have I think the full thing from Jorge and Nella.  
+> Gamemaster: So you guys are okay.  
+> Gamemaster: But I need preferably I would like at the very least a build in the next few days.  
+> Gamemaster: I would also like the backstory earlier than right before we do the session.  
+> Anzu: Yeah, I have a basic background to the character.  
+> Anzu: My problem is I'm trying to think of something actually interesting to work in there.  
+> Gamemaster: totally fine.  
+> Argyle: I can give you a couple of things if you want from the Josh took out of my character.  
+> Anzu: So that's where I'm at.  
+> Gamemaster: Okay, well... I was gonna say, Jorge does have, like, a pile this high of unused characters, so you can just... And, like, there's still a full weekend between now and when we next play, so you guys have time to noodle on it.  
+> Argyle: I'm kidding.  
+> Argyle: I'm kidding.  
+> Argyle: Here's my leftovers.  
+> Gamemaster: It's just... I would prefer not to be surprised.  
+> Anzu: Yeah, I may reach out to you one of the evenings this week.  
+> Gamemaster: At the session, you know.  
+> Benny: I'll probably work on this right now.  
+> Gamemaster: But this will be exciting.  
+> Gamemaster: Also, you're welcome to ask me if you have questions about where you want to slot something in or about where hooks might be or anything like that.  
+> Gamemaster: I'm here to help.  
+> Gamemaster: Sure, I'm around.  
+> Johnny: I'll send you guys a few more details about where my house is and everything.  
+> Gamemaster: Yeah, that that would be useful.  
+> Anzu: Oh, I have a question, actually, about Friday.  
+> Johnny: Yes.  
+> Anzu: We're going to a park, but most importantly, I would like to know when.  
+> Johnny: Yes.  
+> Johnny: Oh, I... Yes, hang on.  
+> Anzu: I did not mean to guilt you into sending us anything.  
+> Johnny: Daisy did make an invite that I was supposed to give to you guys.  
+> Anzu: I just...  
+> Anzu: I'm working remotely on and off throughout the week, so I just want to allocate my vacation time appropriately.  
+> Anzu: That's a sick gif.  
+> Johnny: Okay, there's the link.  
+> Johnny: I was supposed to give this to you guys earlier.  
+> Johnny: My apologies.  
+> Johnny: This is the park is literally right next.  
+> Argyle: Oh, I like it.  
+> Argyle: Is that AI-generated?  
+> Johnny: Things are really poorly photoshopped.  
+> Gamemaster: It looks just photoshopped.  
+> Anzu: Yeah, I agree.  
+> Argyle: Yeah, AIs can Photoshop.  
+> Benny: Thank you.  
+> Gamemaster: No, they can't.  
+> Argyle: Yeah, they can.  
+> Anzu: OK, this is an evening event.  
+> Anzu: That's good to know.  
+> Anzu: That is helpful for me.  
+> Argyle: Hey, maybe Mr. Slink can make an appearance for this one.  
+> Johnny: I've told my friends here about you guys, and if you just came up, you just, like, slinked up.  
+> Johnny: 100%.  
+> Anzu: Now, Noah, here's what I want to know.  
+> Anzu: Would that make sense to them?  
+> Anzu: Okay.  
+> Johnny: Well, I've told... It's, like, 50% stories, I'm like, oh, yeah, you know, all my friends are very smart, blah, blah, blah.  
+> Johnny: And then stories like, yeah, one time Mike put Tanner in the bathtub.  
+> Argyle: Yeah, sounds good.  
+> Gamemaster: Thank you.  
+> Johnny: I think we track.  
+> Argyle: You should show Daisy this linking, though.  
+> Argyle: I feel like she'd appreciate that.  
+> Johnny: 100%.  
+> Johnny: Tanner, Liz is, of course, committed.  
+> Argyle: All right.  
+> Anzu: Yes, thank you.  
+> Anzu: We will be there.  
+> Johnny: Great.  
+> Johnny: I'm very excited.  
+> Johnny: I'm so excited to see you guys in person.  
+> Anzu: Yeah, I love Denver, so I'm pumped to be there.  
+> Argyle: Yeah.  
+> Johnny: Very important for anyone who's drinking, one beer hits like two in Colorado.  
+> Johnny: So take that into account.  
+> Gamemaster: How many does two beers hit, like, though?  
+> Benny: Like one.  
+> Johnny: Eight exponential.  
+> Gamemaster: Oh.  
+> Anzu: Ooh.  
+> Johnny: Well, because I remember Jorge came and visited like, it must have been like 2021 or something.  
+> Gamemaster: Hey, that's a good bang for your buck.  
+> Anzu: Yeah.  
+> Gamemaster: That's not bad.  
+> Anzu: Yeah.  
+> Johnny: And I took him to...  
+> Johnny: like a beer, like one of those pour your own beer places.  
+> Johnny: And I was like, listen, they hit really hard.  
+> Johnny: And he was like, okay, cool.  
+> Johnny: I can handle it.  
+> Johnny: Whatever.  
+> Johnny: I'm fine.  
+> Johnny: And then we're sitting at dinner and he's like, I'm really drunk right now.  
+> Johnny: I had two beers.  
+> Argyle: This was the first time I met Daisy, and I was like, Daisy, I want to build an elevator so that I can live in New York and then take it up, drink a beer, and then take it back down and be drunk.  
+> Argyle: She's just like, that is crazy.  
+> Gamemaster: Not the worst idea you've had.  
+> Argyle: No, it's not.  
+> Johnny: People would probably... If you had, like, a total power to get drunk faster, people would probably take it.  
+> Anzu: Pretty far from the worst idea.  
+> Argyle: What about fish food?  
+> Argyle: It's in Pad Thai.  
+> Gamemaster: You were sober when you came up with that.  
+> Johnny: I was at an event.  
+> Johnny: Like, I was at someone's backyard party a couple weeks ago, and I don't know how it came up, but someone was like, oh, yeah, you know, like, the macros and something else.  
+> Johnny: You guys ever had dried shrimp?  
+> Johnny: It's in background.  
+> Johnny: It has great macros.  
+> Johnny: There was no context for it, really, and I was dying laughing, and everyone was like, what is happening?  
+> Johnny: You know how you take a long time to shower?  
+> Johnny: What if you just shower?  
+> Johnny: In one second.  
+> Argyle: power shower.  
+> Johnny: I didn't pitch Helm Tech, though, Jorge.  
+> Johnny: That's all you.  
+> Argyle: Okay, okay.  
+> Argyle: Well, you can also pitch the canning.  
+> Gamemaster: D&D's on Thursday?  
+> Argyle: I give you the option.  
+> Johnny: Okay, just the concept of canning.  
+> Argyle: Alright, so D&D's on Wednesday.  
+> Benny: I remember.  
+> Argyle: This is on Friday.  
+> Argyle: D&D's on Thursday.  
+> Gamemaster: I was going to say, if it's on Wednesday, I'm not going to be there.  
+> Johnny: It is on Thursday.  
+> Benny: There's the.  
+> Johnny: I will, I'll just put it.  
+> Benny: Same.  
+> Anzu: We could probably figure it out.  
+> Gamemaster: I'll do it from the plane.  
+> Gamemaster: Get the Wi-Fi.  
+> Anzu: Ooh, yeah.  
+> Anzu: Either that or we just kind of guess.  
+> Gamemaster: I get to bring dice.  
+> Gamemaster: That's so exciting.  
+> Anzu: Yeah, I'm going to bring dice as well.  
+> Argyle: Oh, we should fight a boss.  
+> Gamemaster: It's going to suck for me.  
+> Johnny: Yes.  
+> Gamemaster: It'll be great for you guys.  
+> Argyle: Yeah, we should fight bosses.  
+> Argyle: I guess fight the campaign boss.  
+> Gamemaster: Listen, I don't know if we've ever run an in... We haven't.  
+> Gamemaster: We've never run an in-person Pathfinder session.  
+> Gamemaster: Combat will be interesting.  
+> Argyle: Oh.  
+> Benny: I'm now realizing I'm going to bring mine.  
+> Gamemaster: Are you all going to have, like, laptops and stuff?  
+> Argyle: Yeah.  
+> Argyle: Yeah.  
+> Anzu: Yeah.  
+> Gamemaster: We might.  
+> Gamemaster: Yeah, we might.  
+> Gamemaster: We might want to, maybe if there is combat, just rely on Foundry for the combat, just to do the numbers and stuff for us.  
+> Argyle: Yeah.  
+> Gamemaster: Unless you guys want to, like, go all in on analog and, like, juggle the numbers ourselves.  
+> Anzu: Sounds pretty bad.  
+> Anzu: I mean, level one, maybe, but...  
+> Argyle: Well the conditions can be really bad.  
+> Johnny: you  
+> Gamemaster: Level 1, it's not going to be much, but everybody will have their laptops.  
+> Argyle: Yeah.  
+> Gamemaster: It'll be fine.  
+> Gamemaster: Yeah.  
+> Argyle: Alright.  
+> Argyle: Adios gentlemen.  
+> Gamemaster: See ya.  
+> Benny: Adios.  

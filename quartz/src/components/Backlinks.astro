@@ -1,0 +1,30 @@
+---
+// Ports Backlinks.tsx (hideWhenEmpty: true). The reverse index in site.ts uses
+// the same resolved-link semantics as Quartz's file.links. The overflow/gradient
+// behavior is a Phase 3 island; here we render the static list.
+import { backlinksFor, resolveRelative, type SiteData, type SiteDoc } from "../lib/site.ts"
+
+interface Props {
+  doc: SiteDoc
+  site: SiteData
+}
+const { doc, site } = Astro.props
+const back = backlinksFor(site, doc.slug).sort((a, b) => a.title.localeCompare(b.title))
+---
+
+{
+  back.length > 0 && (
+    <div class="backlinks">
+      <h3>Backlinks</h3>
+      <ul class="overflow">
+        {back.map((f) => (
+          <li>
+            <a href={resolveRelative(doc.slug, f.slug)} class="internal">
+              {f.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

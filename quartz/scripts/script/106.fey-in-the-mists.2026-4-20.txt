@@ -1,0 +1,2698 @@
+Context:
+
+This is a transcript of an ongoing ttrpg game in the setting of Faerrin, recorded on 2026-4-20. The four player characters are:
+  - Mango: an elven ranger, following the caravan on Finnegan's Ring.
+  - Egan: an orc druid, following the caravan on Finnegan's Ring.
+  - Doug: a gnome rogue, following the caravan on Finnegan's Ring.
+
+This is from a one-shot side story of the game, "Fey in the Mists".
+
+The first portion of the transcript is a pre-session chat between the players, and then it transitions to the
+actual session around when someone says something similar to "Do we want to play Pathfinder?" or "Does someone
+want to do a recap?". The session ends when the Gamemaster says somthing similar to "Do we want to call it there
+for the evening?" near the end of the transcript.
+
+Note: transcription is machine-recorded, with an 85% confidence rate.
+
+---
+Billing:
+
+The role of Mango is played by the player Josh.
+The role of Egan is played by the player Noah.
+The role of Doug is played by the player Mike.
+The role of Gamemaster is played by the player Tanner.
+---
+Script:
+
+> Mango: Now recording.  
+> Gamemaster: Now recording.  
+> Gamemaster: It's pretty close.  
+> Mango: That was pretty close.  
+> Gamemaster: My impression?  
+> Mango: Yeah.  
+> Gamemaster: Yeah.  
+> Gamemaster: Thanks.  
+> Mango: Unless you're saying that was the real Craig.  
+> Gamemaster: I need my adapter.  
+> Mango: What are you adapting?  
+> Gamemaster: A USB-C to a USB...  
+> Gamemaster: Rectangle?  
+> Gamemaster: What are these called?  
+> Mango: A?  
+> Gamemaster: Sure.  
+> Gamemaster: Yeah, classic.  
+> Mango: Is it the regular one?  
+> Mango: Yeah.  
+> Mango: A. And then the weird not square is B. I don't think there's a USB D. Is there a USB D?  
+> Gamemaster: Very exciting.  
+> Gamemaster: Yeah.  
+> Gamemaster: I'm sure they're working on it.  
+> Mango: Not yet, you're right.  
+> Mango: But there is a USB 3 Micro B, which... That is definitely... That's too much for anyone, especially because it's a stupid shape.  
+> Gamemaster: That's almost too much for me.  
+> Gamemaster: Yeah.  
+> Gamemaster: Josh, I have a question for you.  
+> Mango: I have an answer for you.  
+> Gamemaster: It's related to my dead bird.  
+> Mango: Uh-oh.  
+> Gamemaster: Othello.  
+> Mango: Oh!  
+> Mango: Oh!  
+> Mango: Okay.  
+> Mango: Oh my god.  
+> Mango: Okay.  
+> Gamemaster: Sorry about that.  
+> Mango: Ugh.  
+> Mango: I thought you had like a real life dead bird question and I was concerned about my ability to answer.  
+> Mango: Uh huh.  
+> Gamemaster: No, no, no, that's okay.  
+> Gamemaster: So, I need to get another bird.  
+> Gamemaster: You know, I'm not fully a witch, so technically it doesn't come back when I wake up.  
+> Mango: Yeah, so, like, because it's just considered a pet, I think you just have to spend a week looking for a new bird.  
+> Mango: I think that we can just give you the witch familiar respawn rules.  
+> Mango: I don't think that's game-breaking in any way.  
+> Mango: We can just have Othello re-emerge from its ashes, if that's more amenable to you.  
+> Gamemaster: We did have a conversation about that a while back.  
+> Gamemaster: I'm open to sourcing a bird, but... Just condemn a new bird.  
+> Mango: If you would rather not familiar summon Othello, there do exist pet stores.  
+> Mango: Or you could just go into the woods where they live.  
+> Gamemaster: Yeah.  
+> Mango: Yeah, it's up to you.  
+> Mango: It's your choice, whichever you would prefer for your character.  
+> Mango: I think either is fine.  
+> Gamemaster: yeah yeah right well i have some uh funky thoughts related to that but uh i'm gonna go grab my adapter for my headphones so that i don't have to use my speaker  
+> Mango: It depends on how attached you were specifically to Othello.  
+> Mango: Or if you would be okay with getting Othello 2.  
+> Doug: Headphones.  
+> Mango: I have to step away because I spilled a whole can of Coke on myself.  
+> Gamemaster: Could have been granola.  
+> Mango: We'll be back in a moment.  
+> Mango: Could have been granola.  
+> Gamemaster: Hello, hello.  
+> Doug: Hello, hello.  
+> Gamemaster: All right, now I'm feeling good.  
+> Gamemaster: Now I'm feeling comfortable.  
+> Gamemaster: All right.  
+> Gamemaster: You are cutting out really severely right now, very severely.  
+> Doug: Don't tell me that.  
+> Doug: Don't tell me that.  
+> Doug: Am I still cutting out?  
+> Gamemaster: No, it actually sounds much better now.  
+> Doug: Because I'm away from the Faraday cage.  
+> Doug: I couldn't find a competent piece of software.  
+> Gamemaster: You were saying?  
+> Doug: I still haven't found a competent piece of software to build a character on.  
+> Doug: And it makes me want to die.  
+> Gamemaster: Yeah, I don't know what Josh and Noah used.  
+> Gamemaster: And I do apologize for putting you through that inconvenience.  
+> Gamemaster: But I don't have the confidence to run a Pathfinder game, so here we are.  
+> Doug: No, that's okay.  
+> Doug: I just couldn't believe, like, I tried to log, like, last night I was like, oh, I'll go on D&D Beyond.  
+> Doug: And then it just was like, log in with, like, four different things.  
+> Doug: And I was like, don't I have an account?  
+> Doug: God, can't it just take my fucking email?  
+> Doug: Why do I have to log in with Apple or whatever?  
+> Doug: And then I logged in to make a character on there.  
+> Doug: And it's like, oh, yeah, you don't own anything.  
+> Doug: So, like, you get one subclass per.  
+> Gamemaster: Right.  
+> Doug: And I was like, I kind of wanted to use more complicated shit than, like, this single player core subclass.  
+> Gamemaster: Yeah.  
+> Doug: So then I was like, oh, now I have to wait until I get home to make a character.  
+> Doug: And then I did, and then it's like, OrkPub, whatever fucking character creator, does not let me export.  
+> Doug: I can't PDF it, and I can't save it.  
+> Doug: So I have a character that I'm just hoping the browser doesn't refresh.  
+> Doug: I've exported all of the pages of it to local, so I have the character.  
+> Gamemaster: Josh, what did you use to build this character?  
+> Doug: But...  
+> Doug: Incredibly annoying.  
+> Doug: I'm glad I went with the less homebrew-y character because I was debating between two and I was like, I'll do this one.  
+> Doug: To do something more homebrew-y would have been fucking actually suicidal.  
+> Gamemaster: Or did you just fill this in manually?  
+> Mango: Google Sheets?  
+> Mango: I have a Google Sheet that I just make a copy of any time I need to make a new character, and then I just update all the values in it.  
+> Gamemaster: So it's just manual.  
+> Mango: Yeah, yeah, yeah, yeah.  
+> Mango: I figure it's like level three, it isn't enough for me to keep track of or need to try and keep track of, so it ended up being relatively...  
+> Gamemaster: Yeah.  
+> Gamemaster: Mm-hmm.  
+> Mango: small, especially given that a lot of it gets populated by Excel formulas and the like.  
+> Mango: Although I did, for absolutely no reason, come up with a little formula for  
+> Mango: you input into a ledger I have on a different sheet, like individual purchases in whatever denomination they are.  
+> Mango: And then in my main character sheet on the front, it splits it out.  
+> Mango: It like compresses it all and then splits it out into the most efficient grouping of platinum, gold, silver, and copper, which isn't actually necessarily useful in a campaign because like you don't necessarily expect to be able to...  
+> Gamemaster: Of course, of course.  
+> Mango: Turn your coins into the correct denominations that way.  
+> Mango: But I thought it would be fun.  
+> Mango: Even if it is harder to read.  
+> Mango: Because I... What?  
+> Gamemaster: Did you... No, carry on, sorry.  
+> Doug: Thank you.  
+> Mango: What were you going to ask?  
+> Gamemaster: Did you purchase bread?  
+> Mango: Yeah, I didn't know what to do with my money.  
+> Mango: And I was just looking at the list of items and I saw it was super cheap to buy ten loaves of bread.  
+> Mango: So I bought ten loaves of bread.  
+> Mango: I...  
+> Gamemaster: Sure.  
+> Gamemaster: Very good.  
+> Mango: What if it turns out that this is like a really hardcore one-shot and we're going to be trekking for days and we need food?  
+> Gamemaster: It's Oregon Trail.  
+> Gamemaster: Yeah, that's exactly it.  
+> Mango: Mm-hmm.  
+> Gamemaster: Yeah.  
+> Mango: Yeah.  
+> Mango: Listen, I do have enough money left over to purchase a carriage, if need be.  
+> Mango: We could do it.  
+> Gamemaster: Whoa.  
+> Gamemaster: Yeah, I honestly had no idea how much gold to assign, but I figured...  
+> Mango: 250 was good because it's not enough to actually buy the best armor.  
+> Gamemaster: Right.  
+> Mango: So we were limited in AC there, which is rude of you.  
+> Mango: How dare you?  
+> Mango: But it's enough to purchase basically anything else we wanted.  
+> Mango: I was considering... There is a firearm that is still cheap enough for me to purchase.  
+> Mango: But then I thought maybe that won't fit in your setting.  
+> Mango: And also I thought, what would I do with just a gun...  
+> Mango: Because I think it comes with one bullet.  
+> Gamemaster: Yeah, I have not.  
+> Gamemaster: This setting is part of the world that I've had my home game in for many years.  
+> Gamemaster: And I've not introduced guns, but if it had happened, it's whatever.  
+> Gamemaster: Hello, Noah.  
+> Mango: Actually, I do have a question.  
+> Doug: It was.  
+> Mango: I don't know if this is spoiling it.  
+> Mango: Is there, oh, hello.  
+> Mango: Does this one shot take place in the snow?  
+> Gamemaster: It does not.  
+> Mango: Okay.  
+> Gamemaster: I see why you're asking that.  
+> Gamemaster: I don't know if there's something else.  
+> Mango: Nope.  
+> Mango: They only have one for the wintertime.  
+> Gamemaster: Fascinating.  
+> Gamemaster: Is it just like a non-magic item?  
+> Mango: It's fine.  
+> Mango: Yep.  
+> Mango: It's literally just like a ghillie suit.  
+> Gamemaster: Winter Camouflage.  
+> Gamemaster: Oh, it's because it's from the Frost campaign.  
+> Mango: Yeah.  
+> Gamemaster: Yeah, that makes sense.  
+> Egan: I am good.  
+> Mango: Yeah.  
+> Mango: I figured there was a very, very low chance, but if there was a chance and I had, you know, 200 gold pieces left over, so I may as well.  
+> Gamemaster: Right.  
+> Gamemaster: Yeah, yeah, yeah.  
+> Gamemaster: That's so funny.  
+> Gamemaster: How are you, Noah?  
+> Egan: How are you guys?  
+> Egan: Sorry I'm late.  
+> Gamemaster: No problem.  
+> Gamemaster: Kind of worked out for me.  
+> Gamemaster: Noah, what did you use to build your character?  
+> Doug: Same.  
+> Egan: I just did mine on D&D Beyond.  
+> Egan: And then I did a custom subclass for the subclass that I picked.  
+> Gamemaster: Uh-huh.  
+> Mango: Oh, so Noah gets to use a homebrew found on D&D Beyond for his character, but I don't for some reason.  
+> Gamemaster: Oh, they let you do third-party stuff for free?  
+> Egan: Yeah.  
+> Gamemaster: Well, I think it's Unearthed Arcana, so it's kind of in a gray space between homebrew and official.  
+> Egan: Yeah, I just did an Unearthed Arcana.  
+> Mango: Hmm.  
+> Egan: I sent Tanner the exact Unearthed Arcana so he can say my god background.  
+> Gamemaster: It seems fine...  
+> Gamemaster: We're level three, so it's like whatever.  
+> Gamemaster: Oh, I probably had to scroll for that.  
+> Mango: There's not a lot of room to break stuff at level 3.  
+> Egan: Tanner, you saw the extra thing in that subclass that says I do an extra 100d100 damage?  
+> Mango: Is that... Is that specifically against characters that don't have feet?  
+> Mango: Or is that all characters?  
+> Egan: That one's typically characters with feet.  
+> Egan: Characters with no feet, I do no damage.  
+> Mango: Huh?  
+> Mango: Hmm.  
+> Gamemaster: And he actually only gets the bonus in the snow.  
+> Gamemaster: And as we established, there's not going to be snow.  
+> Doug: Thank you.  
+> Gamemaster: So it actually doesn't work.  
+> Egan: I can only do damage in the snow.  
+> Mango: It's a shame.  
+> Egan: So if there's no snow, then I'm out.  
+> Mango: You can't do any damage if there's no snow?  
+> Egan: I can't do any damage.  
+> Mango: That sucks.  
+> Mango: I'm sorry.  
+> Egan: That's all right.  
+> Egan: I took a big swing and sometimes it doesn't pay off.  
+> Gamemaster: Indeed.  
+> Gamemaster: All right.  
+> Gamemaster: So, Mike, you do have a character that's functional.  
+> Doug: Allegedly.  
+> Gamemaster: Okay.  
+> Mango: He just showed up.  
+> Mango: He figured he'd wing it.  
+> Doug: It also wouldn't let me save or edit custom backgrounds.  
+> Doug: I wanted to change a single proficiency.  
+> Doug: It wouldn't let me save or edit custom backgrounds, so I just had to homebrew the normal... I had to click the homebrew button to normally override normal proficiencies.  
+> Egan: Hmm.  
+> Mango: What website are you using?  
+> Doug: Orc pub.  
+> Mango: Like, Dungeon Master's Vault?  
+> Doug: don't think so i think i opened dungeon master's vault and then i it wouldn't let me log in because i don't know passwords are difficult or whatever um okay so that is probably what is currently happening i have all my old orc brew files  
+> Mango: No, they deleted everybody's account if it was inactive for some amount of time.  
+> Mango: But Dungeon Master's Vault is the new one, I believe.  
+> Mango: So it might just be broken because you're using the older version of the website.  
+> Mango: I mean, so long as you can see your character.  
+> Gamemaster: Hey there you go.  
+> Doug: Well, my character exists in an ephemeral state right now.  
+> Doug: It won't let me print or export the character.  
+> Doug: So it only exists on the web page.  
+> Doug: I have exported every page of the character to a PDF.  
+> Doug: So should it randomly refresh, I have backups.  
+> Doug: But we got there.  
+> Gamemaster: Amazing.  
+> Mango: Just don't refresh and you're fine.  
+> Egan: We got there.  
+> Doug: We got there, you know.  
+> Gamemaster: Guys, I just passed page 200 of Song of Monsters.  
+> Egan: Oh.  
+> Egan: What happens on page 200?  
+> Egan: I don't remember my own book.  
+> Mango: You don't remember what happens by page number?  
+> Mango: Fake author.  
+> Egan: Let me see.  
+> Egan: I can look it up on... I have it on... I ghost wrote my own book.  
+> Mango: Ghost wrote it.  
+> Mango: Yeah.  
+> Egan: I can look it up on... I have my own phone on my Kindle.  
+> Egan: Let's see.  
+> Egan: I have my own book.  
+> Gamemaster: It's all coming together around page 200.  
+> Gamemaster: It's all coming together.  
+> Mango: Do you have the equivalent of a sanderlanch?  
+> Mango: Or whatever it's called?  
+> Mango: Do you?  
+> Egan: Yeah.  
+> Egan: Yeah, I do.  
+> Egan: More or less.  
+> Mango: That's the mark of a good author.  
+> Egan: I don't think it's quite as put together as a Sanderlanch.  
+> Egan: It's more like a Giant clusterfuck.  
+> Mango: That's fine.  
+> Mango: That works.  
+> Egan: Oh, Tanner, are you on the I-Core chapter?  
+> Gamemaster: I read the I-Core chapter.  
+> Gamemaster: So whatever page, it's like 205, 206, or something like that, whatever's the end of that chapter.  
+> Egan: Oh.  
+> Egan: Oh, so they've already all met up and they did the Spider-Man thing where they're like, it's you!  
+> Egan: Oh, that's exciting.  
+> Gamemaster: Yeah, yeah, yes.  
+> Egan: Thank you for reading.  
+> Gamemaster: It's been very fun.  
+> Egan: I'm glad you're liking it.  
+> Gamemaster: Also, I think it's so authentically you that  
+> Gamemaster: the drugs are tea.  
+> Mango: No.  
+> Egan: I did that without thinking, and then I gave it to a friend to read, and they were like, oh, that makes sense.  
+> Egan: You like tea.  
+> Egan: And I was like, oh, yeah, I do like one tracks.  
+> Gamemaster: Sometimes it just happens.  
+> Egan: Sometimes it just happens.  
+> Gamemaster: Gee, I guess, do we want to play some Dungeons & Dragons?  
+> Egan: It's a throwback.  
+> Egan: We're playing Dungeons & Dragons.  
+> Doug: you  
+> Gamemaster: It's a throwback.  
+> Gamemaster: I don't have any materials with which I could put together a Pathfinder-based one-shot, so we're sticking with the D&D.  
+> Mango: I was worried that it was bugged when the first time I rolled with advantage and it rolled the same number twice.  
+> Gamemaster: All right.  
+> Gamemaster: Whoa.  
+> Gamemaster: All right.  
+> Gamemaster: That's enough rolling.  
+> Gamemaster: Did I actually break the math bot earlier?  
+> Mango: No, no, you didn't.  
+> Gamemaster: I see.  
+> Mango: It's not broken.  
+> Mango: It's fine.  
+> Mango: It just interpreted that as a command.  
+> Gamemaster: And then we had the little yin foot.  
+> Mango: I really, really dislike this one, Mike.  
+> Doug: What do you mean?  
+> Mango: This week's image is bad.  
+> Gamemaster: I kind of like that it's got bling.  
+> Doug: What's wrong with it?  
+> Mango: Yeah, I don't like the foot hanging out underneath the thing either.  
+> Egan: It's so real in the worst way.  
+> Doug: Do you know what I asked it to do?  
+> Egan: There's two Groots.  
+> Doug: Do you know what I asked it to do?  
+> Doug: I asked it because my character is kind of like a...  
+> Mango: What did you ask it to do?  
+> Doug: shadowy guy so i asked it to have like a today as like a piece of paper being like oh like open to like a a note being passed and then it did it and i was like i asked to do it in a fantasy setting and it did it it also picked like the right hand is a dude's hand that's hairy and the left or at the very least it's hairy with regular size nails and then the left is  
+> Doug: a smooth-skinned, no-hair, long-nailed hand.  
+> Doug: And I'm like, whatever.  
+> Doug: So then I was like, all right, whatever, whatever.  
+> Doug: So then I sent one of the original yin pictures.  
+> Doug: And I was like, can you do it in this art style?  
+> Doug: And then it didn't do it.  
+> Doug: And it just changed the today font to be the today font in the other one.  
+> Mango: Thank you.  
+> Doug: And I was like, no, no, no, regenerate the whole image in this art style.  
+> Doug: Then it made the hand sickly green and added the foot.  
+> Doug: And I was like, whatever.  
+> Doug: Fuck.  
+> Doug: It didn't change the art style at all.  
+> Doug: It just literally, I guess if Barnaby, the yin is behind the hand.  
+> Doug: So that I get three tries.  
+> Doug: And if, and if Gemini doesn't get it in three tries, we've, we've added new lore to, to the story.  
+> Doug: So it's so fucking stupid.  
+> Gamemaster: Indeed.  
+> Gamemaster: All right.  
+> Gamemaster: I guess let's do it.  
+> Gamemaster: Josh, can you give me something quaint and...  
+> Gamemaster: It's the morning and we're outdoors.  
+> Egan: Thank you.  
+> Gamemaster: Yeah, that's pretty good.  
+> Gamemaster: Okay, so it is the morning and the caravan of the Finnegan Ring is about a day through its journey from the  
+> Gamemaster: rice-producing village of Brightmoon, uh, to the next town, the coastal town Reed.  
+> Gamemaster: Uh, this is one of the shorter legs, uh, along the Finnegan Ring, um, uh, but still takes, uh, about four days to complete.  
+> Gamemaster: Um...  
+> Gamemaster: The folks of the caravan are in the midst of converting from their kind of camp layout to getting things back together to get back on the road.  
+> Gamemaster: You see the bar cart, if you will, run by a dwarven woman named... Uh-oh, and I'm going to get this confused.  
+> Egan: Thank you.  
+> Gamemaster: Wait, give me just a moment because, and there's a reason I'm going to get this confused.  
+> Mango: He's introduced more twins for us to hate.  
+> Doug: Thought so.  
+> Gamemaster: A dwarven woman named Millie.  
+> Gamemaster: who I created as a bartender woman before I knew about the existence of Melly, and so that just kind of happened.  
+> Gamemaster: Anyway, she's got two wagons as part of the caravan, and one of them she kind of uses as a traveling bar, and it's got a big tent that kind of rolls out from it that  
+> Gamemaster: kind of covers a large area that she puts out every night.  
+> Gamemaster: And she's cleaning it up with her helper, Liam.  
+> Gamemaster: The two of them are kind of rolling it up and getting it back on top of that carriage.  
+> Gamemaster: Peltino, the half-elf War cleric, is speaking to some of the other guards of the caravan, getting things ready for the day's defenses, deciding where people are going to be.  
+> Doug: Thank you.  
+> Gamemaster: And everyone's just kind of cleaning up and getting ready to go.  
+> Gamemaster: Does anyone want to maybe say what they might be doing as you're gearing up for the day's journey?  
+> Mango: I can go first.  
+> Gamemaster: Please.  
+> Mango: Those of you who, I guess, aren't actively preparing to leave would take notice of my character.  
+> Mango: An elven man looks to be on the younger side.  
+> Mango: Definitely an adult, but not for a very long time.  
+> Mango: wearing standard traveler's garb.  
+> Mango: He looks like he's traveled around a bit with the caravan.  
+> Gamemaster: Thank you.  
+> Mango: He's actively shirking any responsibility.  
+> Mango: He's looking for a spot to laze around maybe on top of one of the carts such that nobody immediately notices his presence and as such can't yell at him to do anything.  
+> Mango: Kind of just laying down, doing some cloud watching.  
+> Mango: Anytime he hears somebody coming closer, sounding perhaps like they might give him something to do, he will roll off the other side of the caravan, sneak around to a different one, and then hide behind that one.  
+> Mango: He's pretty experienced at this point at avoiding work here.  
+> Mango: This is Mango, the elephant ranger.  
+> Egan: Thank you.  
+> Gamemaster: Amazing.  
+> Doug: Sure.  
+> Mango: I volunteer Mike to talk next.  
+> Doug: You'll see making his way a small gnome.  
+> Doug: I imagine each of you would have had some sort of interaction with the gnome.  
+> Doug: He's very personable.  
+> Doug: But he is always have his nose in his book.  
+> Doug: And right now he also has his nose in his book, writing things down, generally observing.  
+> Doug: This is Doug Donahue.  
+> Gamemaster: And can you share with the class, because I do not know what class your character is?  
+> Egan: Why does every one of your characters sound like a 1980s gumshoe?  
+> Doug: I don't know.  
+> Egan: Doug Donahue on the case.  
+> Mango: Honestly... Interesting party comp already.  
+> Doug: Now, if you ask that, if I pick the other class, I'd be mad.  
+> Doug: But Doug Donahue is a rogue.  
+> Gamemaster: Very well.  
+> Egan: I can go next.  
+> Egan: I guess that's not the only one left.  
+> Egan: I'd probably just be helping break stuff down, put stuff away.  
+> Egan: I'm an orc.  
+> Egan: A little bit on the older side.  
+> Egan: Still got some nice hair, but there's definitely some streaks of silver in there.  
+> Egan: Just kind of an unassuming orc guy.  
+> Egan: Helping out where I can, wearing some traveling clothes.  
+> Egan: This is Egan.  
+> Gamemaster: Egan, oh, no, go ahead, Josh.  
+> Mango: I was just going to say, if Doug has his nose in a book, as it sounds like he normally does, I'd like to see if I can rip up small pieces of grass and spitball them and throw them into the book.  
+> Mango: I'm just trying to be annoying to him.  
+> Gamemaster: Yeah, yeah, of course.  
+> Mango: Because if he's not doing stuff and I'm not doing stuff, then it's more likely that somebody notices that we're both not doing stuff.  
+> Egan: Can I roll the notice that they're not doing stuff?  
+> Doug: room.  
+> Gamemaster: Yes.  
+> Gamemaster: Why don't you make a perception check?  
+> Gamemaster: Mango, you're not trying to hide the fact that you're doing this because you can make a sleight of hand check if you would like.  
+> Mango: I'll make a sleight of hand check, because if he comes at me, then we both get caught up and alert everybody to our lack of work.  
+> Mango: I'd much rather that it's just him.  
+> Mango: I'll make a sleight of hand check.  
+> Mango: I'm not very good at sleight of hand.  
+> Mango: Never mind, I'm very good at sleight of hand.  
+> Mango: I got a 22 crit.  
+> Egan: I have an item  
+> Gamemaster: Okay.  
+> Gamemaster: So, Doug, you're sat there reading your book and then right, like, center page, almost exactly the sentence you were reading, just a wad of, like, grass just splats onto the page.  
+> Gamemaster: Oh, and Egan, what did you get for your perception check?  
+> Egan: That actually should have been a 13.  
+> Gamemaster: A 12, a 13.  
+> Egan: I took a stone of good luck as my item, but I forgot to attune to it.  
+> Gamemaster: OK.  
+> Gamemaster: Doug, you're unsure where this grass came from as it lands in your book.  
+> Doug: Doug will quickly move the grass off of the book, glance around, and then write something in the book.  
+> Doug: Just keep walking.  
+> Gamemaster: Mm-hmm.  
+> Gamemaster: Very well.  
+> Gamemaster: Egan, the head of the guard, a man who you've had some interactions with since joining the caravan, Mr. Peltino, comes up to you and he says, Morning, Egan.  
+> Gamemaster: How fair are you today?  
+> Egan: You know, still alive, still kicking.  
+> Gamemaster: Glad to hear it.  
+> Gamemaster: Based on today's formation, I'd like it if you could kind of stick by Nullity's cart.  
+> Gamemaster: Just want to get wide coverage.  
+> Gamemaster: Egan, you know Nullity Docket to be a gnome wizard who sells  
+> Gamemaster: kind of like low-level magic stuff, like spell components.  
+> Gamemaster: He makes some spell scrolls, other common-level magic items, stuff like that.  
+> Egan: I cap.  
+> Egan: You can rely on me.  
+> Gamemaster: Perfect.  
+> Gamemaster: Thank you.  
+> Gamemaster: And then, Mango, you're kind of...  
+> Gamemaster: hiding amongst different carts and whatnot.  
+> Gamemaster: At one point, you do find yourself on top of a carriage, and you overhear two folks speaking below you.  
+> Gamemaster: You see there's...  
+> Gamemaster: pretty old gentleman whom you know to be named Chuck.  
+> Gamemaster: He's mostly just kind of normal looking dude with the exception of his hair from a distance looks very lush and thick for a man of his age.  
+> Gamemaster: And then on closer inspection you see it's because his hair is actually made of these different vines and weeds and stuff like that.  
+> Gamemaster: and he's chatting with a little halfling woman named Erin.  
+> Gamemaster: She's a flautist.  
+> Gamemaster: And he goes, Erin, you know, this is always my least favorite part of the trek.  
+> Gamemaster: And she goes, I know.  
+> Gamemaster: This is where you kind of blip for a little bit a while back.  
+> Gamemaster: I wasn't around, but I've heard the stories.  
+> Gamemaster: How did you ever get back?  
+> Gamemaster: I just followed the mushrooms.  
+> Gamemaster: Listen, I'm staying inside today.  
+> Gamemaster: I'm not coming out at all.  
+> Gamemaster: I'm not letting that mist get anywhere near me.  
+> Gamemaster: And he actually kind of enters the carriage that you are laying atop of.  
+> Mango: hearing something that sounds substantially more fun than, um, you know, breaking down boxes or whatever.  
+> Mango: I'm gonna, like, crawl over to the front and lean over the side so my head hanging down looks into the carriage, like, upside down from the top, uh, and I'll say, Hey!  
+> Gamemaster: oh my gosh don't scare a man like that uh yes this uh this next stretch here uh many many years ago i was on the the ring and uh  
+> Mango: What are you talking about?  
+> Mango: That sounds fun!  
+> Mango: There's mists and mushrooms?  
+> Mango: Oh, you're fine.  
+> Gamemaster: A mist rolled through, and I found myself briefly in the fey realm.  
+> Gamemaster: And it kind of left its mark on me here.  
+> Gamemaster: He kind of gestures to the foliage that is his hair.  
+> Gamemaster: I suppose it could be worse, yes.  
+> Mango: doesn't seem that bad.  
+> Mango: You could be bald.  
+> Mango: Most people your age are.  
+> Mango: You're doing fine.  
+> Egan: you  
+> Gamemaster: Good on you to always see the positive side of things.  
+> Mango: Do you think if I hang out, I could get a hair, a head of hair like yours?  
+> Gamemaster: Anyway, listen, if you'd like to end up on a misadventure in the Fey Realm, you know, you embrace that.  
+> Gamemaster: But I'm staying inside today.  
+> Gamemaster: That's all I'm going to say.  
+> Mango: Hey, you have fun being a fuddy-duddy.  
+> Mango: I'm going to hang outside the whole day.  
+> Gamemaster: All right.  
+> Mango: And I'll climb back up on top of the carriage.  
+> Gamemaster: And with that, unless anyone has anything else they'd like to do in the moment, the caravan starts to get back on the road.  
+> Egan: Thank you.  
+> Gamemaster: So, Mango, you are on top of this carriage that currently holds Chuck.  
+> Doug: you you  
+> Gamemaster: That's kind of...  
+> Gamemaster: probably like center of the caravan.  
+> Gamemaster: Uh, there's a total of like, probably like 40 or so carts that are part of this caravan at the moment.  
+> Gamemaster: Um, uh, Egan, you are say 10 or so carts back, uh, sitting, uh, in the front of the carriage, uh, beside this, uh, little, uh, gnome man, uh, nullity.  
+> Egan: Yep, it's just me and you, Nelly.  
+> Gamemaster: He goes, uh,  
+> Gamemaster: Hi, Egan.  
+> Gamemaster: Good morning.  
+> Gamemaster: Are you sticking around with me today?  
+> Mango: Thank you.  
+> Egan: Just us two out on the road and everybody else, I guess.  
+> Egan: But don't worry, you're in safe hands.  
+> Gamemaster: All right, great.  
+> Gamemaster: I will warn you, there are some interesting things that grow in the area that we're going to be going through today.  
+> Gamemaster: Very good spell material items, very good alchemical items.  
+> Gamemaster: There's a decent chance I'm going to jump from the cart, do a little foraging, and then scurry my way back over.  
+> Egan: All right, well, just give me a heads up if you're going to be doing that so I can keep a watch on you.  
+> Gamemaster: All right.  
+> Gamemaster: Very well.  
+> Gamemaster: And then, Doug, I think you would probably be a little further kind of towards the back of the caravan.  
+> Gamemaster: There's a couple of carriages, unless you'd prefer not to be around this.  
+> Gamemaster: There's a couple of carriages that are more just like person transport.  
+> Gamemaster: There are...  
+> Gamemaster: couple carriages just dedicated to people looking to travel somewhere else along the ring.  
+> Gamemaster: And that's where you would be situated unless you got up to something else.  
+> Doug: I mean, that makes sense.  
+> Doug: Doug's chilling for now.  
+> Gamemaster: All right.  
+> Gamemaster: And the carts scurry on along.  
+> Gamemaster: You're kind of in like...  
+> Gamemaster: kind of plains land, maybe a little more humid than perhaps like the U.S.  
+> Gamemaster: Midwest plains, but make your way again towards the coast.  
+> Gamemaster: To the north of you, there's some kind of hills and mountains.  
+> Gamemaster: And you're going for maybe  
+> Gamemaster: two hours when Nullity kind of perks up and looks to the side and he goes, Oh, Egan, take a look over there.  
+> Gamemaster: there's some puff bush over there.  
+> Gamemaster: I've got to get me some of that.  
+> Gamemaster: And you look over and there's among some of the brush, maybe 50 or so feet from the trail is, you know, like a late stage dandelion where you could blow the seeds.  
+> Gamemaster: It's basically looks like that, but just in a Giant like bush form.  
+> Gamemaster: And,  
+> Gamemaster: Nullity, who was holding the reins to the horse pulling his carriage, kind of snaps his fingers and lets go of the reins and they remain suspended.  
+> Gamemaster: And he hops down and starts to scurry off towards this puffbush.  
+> Egan: I'll give a quick whistle to whichever person is nearest and just yell, we're going for puffs!  
+> Egan: And then scurry after him.  
+> Egan: Not really scurry, I'm much taller than this guy.  
+> Gamemaster: Very well.  
+> Gamemaster: And you do just that and you kind of follow him over and he goes, oh, so actually this plant, while it looks very fun on the outside, the valuable part is actually down underneath.  
+> Gamemaster: It grows some tubers.  
+> Doug: Thank you.  
+> Egan: Right.  
+> Gamemaster: Please help me dig out some tubers.  
+> Gamemaster: Help me dig.  
+> Gamemaster: And  
+> Gamemaster: Why don't you make a nature check just for fun?  
+> Egan: Yeah.  
+> Egan: 21.  
+> Gamemaster: Very good.  
+> Gamemaster: Yeah, so you do kind of some expert work digging around and pulling out some of these kind of like sweet potato-looking tubers, kind of oblong, various shapes.  
+> Gamemaster: Mango, what are you up to?  
+> Gamemaster: Are you just kind of daydreaming?  
+> Gamemaster: Are you actively paying attention to the surroundings?  
+> Mango: I think if anything I got really excited about the mist and so I'm like every few minutes I'm doing the whole like check my fingers see what the humidity is like waiting to see like I'm prepared for the mist and if it's not here yet that's annoying because I expected it like immediately um  
+> Doug: you  
+> Gamemaster: Yeah, yeah.  
+> Gamemaster: All right.  
+> Mango: So, you know, I think I might have, depending on how close they are, I probably would have seen the wizard and the orc run off and, like, taken a notice of them because that's an interesting thing that doesn't normally happen.  
+> Mango: But other than that, I'm kind of just looking around for weather patterns specifically.  
+> Doug: Thank you.  
+> Gamemaster: Why don't you make a perception check?  
+> Mango: Sure.  
+> Mango: That's my perception.  
+> Mango: I totally know what that is.  
+> Mango: I do know what that is.  
+> Mango: 18th.  
+> Gamemaster: 18, you're kind of watching as the two of them run off towards this puff bush and are kind of digging around.  
+> Gamemaster: And you do start to see a kind of bluish mist start to roll in over some nearby hill and come towards the carts.  
+> Mango: Like, from the direction of where they ran off to the puffbush, or from a different direction?  
+> Gamemaster: Yes, it would be beyond them, but it's coming from the north, and they also ran kind of north.  
+> Mango: Okay.  
+> Gamemaster: The caravan is currently traveling west.  
+> Mango: So it's further... They're not at it yet, but it is coming from their direction.  
+> Gamemaster: Right.  
+> Mango: Okay.  
+> Mango: That's very exciting.  
+> Mango: I'm currently weighing in my head, do I yell out that the mist is there?  
+> Mango: Because that's exciting.  
+> Gamemaster: Mm-hmm.  
+> Mango: The only problem being that it might call attention to me, and I'm worried that somebody might have something for me to do, even though we're already on the way.  
+> Gamemaster: Mm-hmm.  
+> Mango: I think the first thing, like...  
+> Mango: Wins over.  
+> Mango: So I start hitting the front of the caravan.  
+> Mango: And being like.  
+> Mango: The mist is here.  
+> Mango: The mist is here.  
+> Mango: You were right.  
+> Mango: You weren't lying.  
+> Mango: And making a bit of a commotion about it.  
+> Mango: Because it's exciting.  
+> Gamemaster: Chuck from within the cart goes, Are you shitting me?  
+> Gamemaster: Are you seeing mist right now?  
+> Gamemaster: And he very briefly looks out from the cart towards that direction, sees the mist, and goes,  
+> Mango: No I am.  
+> Mango: I promise.  
+> Mango: I really am.  
+> Mango: It's over the hill.  
+> Mango: It's coming in that direction.  
+> Mango: From where that wizard dude started playing with that bush.  
+> Gamemaster: Well, shit, yeah, that's it.  
+> Gamemaster: Okay, and he just absolutely shuts the canvas that he is within.  
+> Gamemaster: There were some other folks around that probably heard that commotion, and one of the...  
+> Gamemaster: folks nearby actually currently on a horseback is a halfling with a bow and arrow that actually serves as one of the guards.  
+> Gamemaster: And he takes out a little horn and kind of blows it and goes, Everybody look out!  
+> Gamemaster: We've got mist rolling in!  
+> Gamemaster: Follow the buddy system!  
+> Gamemaster: Return to the carts!  
+> Gamemaster: And you see kind of shouting starts to cascade from up and down the caravan.  
+> Gamemaster: And Doug, you do start to hear this commotion.  
+> Egan: you  
+> Doug: Did I see the two go for the puffs?  
+> Doug: Is there something visible to Doug?  
+> Gamemaster: Well, the question is, were you still doing a lot of reading throughout the day?  
+> Doug: Well, I mean, Doug is reading and writing.  
+> Doug: This is Doug's notebook.  
+> Mango: He's a people watcher.  
+> Doug: Yeah, this is Doug's notebook.  
+> Doug: So he is looking for things to write down.  
+> Gamemaster: Oh, okay.  
+> Doug: Yeah, yeah.  
+> Gamemaster: That's fair.  
+> Gamemaster: Okay, that makes sense.  
+> Gamemaster: I will say yes, you would have seen them go out towards the bush.  
+> Gamemaster: And actually, the caravan doesn't stop for them, so you are actually almost getting lined up at this point with where they are at the puff bush.  
+> Doug: Doug will have made a note about them and also a note of the time that they left and is going to keep Anaïs on them coming back.  
+> Gamemaster: Mm-hmm.  
+> Doug: As far as the commotion from The Mist, after he's done writing all of this down, he's going to try to find someone that looks like they know what they're talking about with regard to The Mist.  
+> Doug: People are freaking out.  
+> Doug: Doug doesn't know what the hell The Mist is.  
+> Doug: Does anyone seem calm or authoritative?  
+> Gamemaster: I would say there is another member of the guard.  
+> Gamemaster: Give me just a moment.  
+> Gamemaster: Oh, there we go.  
+> Gamemaster: Yeah, there's another member of the guard who is also on horseback, kind of riding at the back of the caravan.  
+> Gamemaster: who had previously, you would have noticed, been trailing a decent bit behind, kind of taking up the rear, and has kind of closed in on the back of the caravan.  
+> Doug: Perfect.  
+> Doug: Doug will go to the back.  
+> Doug: He'll take a look at the guy.  
+> Doug: He'll flip through his book.  
+> Doug: What's this guy's name?  
+> Gamemaster: This is Rimson, kind of a dark brown-skinned man, human.  
+> Gamemaster: riding along.  
+> Gamemaster: He's not a senior member of the guard, but he's been around the ring probably a couple times.  
+> Doug: Rimson, you have lots of expertise in, and I'll name something that I know he has expertise in.  
+> Doug: I guess you have lots of expertise in this caravan and its goings on.  
+> Gamemaster: Mm-hmm.  
+> Doug: Do you know what's going on with the Mist?  
+> Gamemaster: So, yes, actually, I have never seen the mist, but what we've heard from Chuck and his experience many years ago is occasionally people caught in the mist get kind of...  
+> Gamemaster: transported somewhere else, and so we try to stick together and stay close.  
+> Gamemaster: It's been a very long time since someone actually has been transported, so no need to panic, but it is a possibility, theoretically.  
+> Doug: Do you think I could speak with Chuck?  
+> Gamemaster: Yeah, if you want to hop on the horse with me, we can ride on up to his caravan.  
+> Doug: I'm sure I'll fit.  
+> Gamemaster: and you can do just that and you start to ride up.  
+> Gamemaster: Egan, you and Nullity hear the sounding of these alarm horns from back at the caravan and can you make a perception check for me?  
+> Egan: Oh, shoot.  
+> Egan: I sure can.  
+> Egan: 15.  
+> Gamemaster: Fifteen, you can kind of make out that there's a couple people that seem to be looking and kind of gesturing to something beyond you and Nullity.  
+> Egan: Nolity, there's trouble.  
+> Egan: I'll look.  
+> Gamemaster: Oh, what seems to be going on?  
+> Gamemaster: And he's just a little guy, so he can't really see over the bush, but you stand up and kind of look in the direction that everyone's coming, and you see very rapidly approaching you is this thick blue mist that seems to have kind of shockingly fast you swallowed up the air to your north.  
+> Egan: We got missed.  
+> Egan: Milities, we got to go.  
+> Egan: We got to scoot.  
+> Egan: We got to skedaddle.  
+> Gamemaster: Oh, all right, all right.  
+> Gamemaster: Let's run.  
+> Gamemaster: And the two of you start running back towards the caravan.  
+> Gamemaster: The mist is gaining on you.  
+> Gamemaster: And Nullity notices this and looks at you and goes, Egan?  
+> Gamemaster: I'm so sorry about this.  
+> Egan: All right.  
+> Gamemaster: And then he snaps his finger and Misty steps further ahead and continues to run towards the cart, basically outpacing you.  
+> Doug: Fireball.  
+> Egan: If he does that, first I yell, I'm going to fucking kill you, Nility!  
+> Egan: And then... Then I'll cast Fireball.  
+> Mango: Also use Misty Step.  
+> Egan: No, then I will... Sorry, I should have pulled these up earlier.  
+> Mango: I assume you're a wizard.  
+> Egan: I am not, but... Yeah.  
+> Mango: Just say that you are and cast Misty Step.  
+> Doug: what's that one saw blade spell from Pathfinder where you've spawned like a bunch of saw blades and he's just like no no towards the person running away from you beheading buzzsaw yeah  
+> Mango: It's fine.  
+> Egan: I cast Spawn Sawblades.  
+> Egan: Tanner, does that stop the mist?  
+> Gamemaster: Yes.  
+> Egan: What can I do?  
+> Mango: Wait, do you mean beheading Buzzsaw?  
+> Egan: I cast Beheading Buzzsaw.  
+> Egan: What is the fastest thing I can turn into?  
+> Egan: I turn it, bonus action, wild shape, I can do this again, into a wild wolf.  
+> Egan: It's got 50 speed.  
+> Egan: I hit the ground, just...  
+> Gamemaster: Oh, yeah, sure.  
+> Gamemaster: You start absolutely booking it towards the cart.  
+> Gamemaster: And... You...  
+> Gamemaster: kind of trying to get to just anywhere on the cart as quick as possible, are actually almost meeting up with, you see, two people on horseback kind of galloping faster than the cart towards one cart that has Mango on top of it.  
+> Gamemaster: And sort of just as you all are converging, the mist...  
+> Gamemaster: passes over everyone, uh, and, uh, you, uh, can't really see what's going on around you, it's, it's, uh, super thick, um, uh, uh, Doug, the, uh, horse, uh, that, uh, Rimson is commanding, uh, kind of, uh, uh, whinnies and, and jumps up, uh, and actually, uh, bucks both of you, uh, off, uh,  
+> Gamemaster: of it.  
+> Gamemaster: Can you make a Dexterity saving throw for me?  
+> Doug: Yes, they did a good job of getting rid of most.  
+> Mango: dex save, not a reflex save.  
+> Mango: There are too many save throws in 5e.  
+> Mango: I've decided.  
+> Egan: I run a 5e campaign for some folks here, and once a session, I ask for a will saving throw.  
+> Mango: Close enough.  
+> Gamemaster: Hey, the folks of Critical Role do that from time to time.  
+> Mango: And it's been like a decade and change since they last played Pathfinder, so it just gets stuck with you.  
+> Gamemaster: Right.  
+> Egan: They are experts.  
+> Doug: At least it exists in the system.  
+> Gamemaster: Yeah.  
+> Doug: It's not like, make a rock saving throw.  
+> Doug: I got a 17 for the deck save.  
+> Mango: Thank you.  
+> Egan: What's my score in rock?  
+> Egan: I was going to say...  
+> Gamemaster: 17.  
+> Gamemaster: Doug, you managed to kind of right yourself mid-air and land on your feet.  
+> Gamemaster: And what kind of shocks you as you land is you were expecting to land on either like kind of grass or gravel, something like pretty solid.  
+> Gamemaster: And you instead kind of find your feet sinking a little bit into some kind of mud.  
+> Gamemaster: And Egan, kind of similarly, you're running in wolf form, again, feeling your paws in the grass.  
+> Egan: Bye.  
+> Gamemaster: And you're mid-bound.  
+> Gamemaster: And the next time your feet touch the ground again, you're feeling kind of like the ground change.  
+> Gamemaster: And all of a sudden, it feels muddy.  
+> Gamemaster: And, Mango, you are on top of this cart, and then all of a sudden you are not.  
+> Gamemaster: Can you also make a dexterity saving throw?  
+> Mango: Absolutely.  
+> Mango: 15.  
+> Egan: Thank you.  
+> Gamemaster: 15.  
+> Gamemaster: Good enough.  
+> Gamemaster: You also land on your feet from this unexpected change and find your feet in the mud.  
+> Gamemaster: Can somebody roll a d4 for me, please?  
+> Doug: yes this determines if we all die one what was it how badly do we die not yet  
+> Egan: Oh, no.  
+> Gamemaster: You don't die.  
+> Gamemaster: The mist, pretty much as quickly as it rolled in, rolls out.  
+> Gamemaster: And the three of you all are within, like, 30-ish feet of each other, maybe a little less, in a completely new area.  
+> Gamemaster: You look around, and where there was bright daylight, you're now in more of a smoggy, kind of dark, overcast swampland.  
+> Gamemaster: Can I get one to two perception checks?  
+> Egan: Can I guide myself on this perception check?  
+> Mango: I'll perceive.  
+> Mango: I am... I think I failed.  
+> Egan: I forgot I can do this.  
+> Gamemaster: Can you guide yourself as a wolf?  
+> Egan: Oh, I can't cast spells as a wolf.  
+> Egan: I drop wolf form.  
+> Egan: I'm an orc again.  
+> Egan: I turn back into a wolf.  
+> Doug: Let me show you how it's done.  
+> Mango: Do... I forget.  
+> Doug: No, you can roll.  
+> Mango: In 5e, do you get the heroic inspiration on a natural 1?  
+> Gamemaster: I don't...  
+> Mango: I don't remember if that was added in 2024.  
+> Mango: I will look.  
+> Gamemaster: Ooh, I have no idea.  
+> Gamemaster: If you would like to see if you could find that.  
+> Mango: I mean, we start with one, so that wouldn't actually apply here, but...  
+> Gamemaster: True.  
+> Doug: What did we get with the heroic inspiration?  
+> Gamemaster: It's like a luck point, I think.  
+> Mango: You can, after you roll something, any die, but before you learn the result, you can use up your heroic inspiration to re-roll it.  
+> Doug: Oh.  
+> Mango: The 2024 thing lets you re-roll hit dice with it as well, which is interesting.  
+> Egan: That's cool.  
+> Egan: I got an 18 to look around.  
+> Gamemaster: Yeah, that's pretty good.  
+> Gamemaster: Mango, you're, despite landing on your feet, are still feeling a little dizzied by this transporting experience.  
+> Gamemaster: And you see exactly what I described.  
+> Gamemaster: You're in this kind of dark, swamp-looking area.  
+> Gamemaster: Egan, you're looking around, and something else that shocks you about this is the nature of this swampland.  
+> Gamemaster: Everything looks to be a little bigger than you would expect.  
+> Gamemaster: The trees kind of bend at weird angles.  
+> Gamemaster: Some of them kind of twist as they go up.  
+> Gamemaster: And it reminds you a little bit of actually an area near where Egan would likely have called home once upon a time.  
+> Gamemaster: There's this kind of rainforest called the Wildlands.  
+> Gamemaster: a little bit north of the Sacred Coalition of Free Folk that is magically huge and overgrown and there's a large orc settlement outside of it where a lot of orts actually go and hunt the  
+> Gamemaster: overgrown and twisted creatures that develop there.  
+> Gamemaster: However, this area that you're in is a completely different biome.  
+> Gamemaster: But you feel similarly, having been in the wild lands probably, you can feel a hint of magic in the air and that this is not necessarily a normal place.  
+> Egan: I'll just call that out.  
+> Doug: Doug will say, wait, wait, wait, wait.  
+> Egan: I'll do that thing where you whistle with two fingers and it makes everyone's ears bleed.  
+> Egan: I'll do that.  
+> Mango: Wow.  
+> Egan: I can't actually do that.  
+> Egan: Eyes up!  
+> Egan: We're in magic territory.  
+> Mango: Can't you alert people quieter?  
+> Egan: No!  
+> Egan: This is danger, boy!  
+> Doug: And he's like checking his pockets and he like looks around.  
+> Doug: He starts looking through the soft ground and you notice him grab his book.  
+> Doug: And you see in gold lettering on the front, it says the Doug Cyclopedia fifth edition.  
+> Doug: He quickly puts it in his pocket.  
+> Mango: know.  
+> Gamemaster: Egan, you also, after a few moments, pick up through some trees.  
+> Mango: He's Volo.  
+> Egan: Oh, no.  
+> Egan: The Doug Cyclopedia.  
+> Gamemaster: Sounds like 100 to 150 feet away from you.  
+> Gamemaster: A woman's voice go, um,  
+> Gamemaster: Hello?  
+> Gamemaster: What just happened?  
+> Gamemaster: Is anyone around?  
+> Gamemaster: Yes, that mist came in and I was just practicing my flute and all of a sudden I was here and  
+> Egan: ma'am are you with our caravan oh what was the flag  
+> Gamemaster: This is... The flautist is Erin Proudcloak, a halfling woman.  
+> Mango: And this does sound like the woman with Chuck.  
+> Mango: It's not like some weird trickery.  
+> Gamemaster: Yes, Mango, you would... It does sound like her, yes.  
+> Doug: Doug will notice him not walking towards her.  
+> Egan: Miss Proud Cloak, you all right?  
+> Gamemaster: It's very dark.  
+> Gamemaster: I don't know what's going on.  
+> Egan: Come towards the sound of my voice.  
+> Egan: Not walking towards this woman.  
+> Gamemaster: Okay, okay, I'm heading that way.  
+> Gamemaster: And... And you start to hear an approach where...  
+> Doug: I just feel like thumbs up, like good call.  
+> Mango: Bye.  
+> Egan: I didn't survive this walking towards weird women in bushes.  
+> Gamemaster: sloshing a little bit through this swampy, muddy terrain.  
+> Gamemaster: After a few moments, emerging from around one of the trees is, in fact, Erin Proudcloak, halfling woman, pretty young, probably 25 years old, carrying a flute.  
+> Gamemaster: and wearing, I guess right now she would be wearing pretty simple clothes.  
+> Gamemaster: She performs with the carnival, but they're not currently performing, so she'd just be wearing her normal clothes.  
+> Gamemaster: And she sees the three of you, and she goes, oh, thank goodness someone else is here.  
+> Gamemaster: This is crazy.  
+> Gamemaster: Where are we?  
+> Gamemaster: Where are we?  
+> Mango: Did Trump happen to come with you?  
+> Mango: Because he seemed like he had a bunch of experience with this.  
+> Gamemaster: You guys are the only ones I've seen.  
+> Gamemaster: I don't know.  
+> Gamemaster: I'm really scared.  
+> Gamemaster: And she kind of squats down and is looking seriously rattled.  
+> Gamemaster: Why don't I get another round of perception checks?  
+> Doug: Just two.  
+> Gamemaster: Yeah.  
+> Doug: And what was this woman's name again?  
+> Gamemaster: Aaron.  
+> Egan: Mike, if you want to roll, I will guide you.  
+> Mango: I did bad.  
+> Egan: You can get guidance.  
+> Doug: You have a better role.  
+> Doug: I took expertise in perception and then I didn't realize how low it would be.  
+> Mango: I did not good.  
+> Mango: 10.  
+> Mango: Oh, you did way better.  
+> Egan: I'm professional.  
+> Mango: I'm just a guy.  
+> Gamemaster: Egan, you see in kind of the area behind and around Erin as she's kind of cowering, there's some shadows being cast by the trees and the foliage around.  
+> Gamemaster: And it looks like it's kind of darkening and almost thickening in a way that's...  
+> Gamemaster: almost starting to look tangible.  
+> Egan: Hey, Miss Proud Cloak, I need you to move away from the shadows.  
+> Gamemaster: And she's just kind of eyes shut, looking head down towards the ground, like, oh no, no, no, this is not good, this is not good, we have to get back, we have to get back, oh my gosh.  
+> Egan: And now I will start moving towards her and try and, like, coax her up.  
+> Egan: And I'll look at the other two and be like, get over here.  
+> Mango: If he calls out the shadows, I think, I don't know if this would work, but as a preventative measure, I will cast Dancing Lights and then have the light orbs kind of surround us in a way to maybe make it harder for shadows to get to us.  
+> Egan: Thumb at the shadow.  
+> Gamemaster: Very nice, very nice.  
+> Egan: Oh, I will cast Mage Armor on myself as this is happening.  
+> Gamemaster: So, Egan, you approach towards Erin, and once you get decently close to her, she kind of acknowledges you approaching, and she looks up and she goes, What are we going to do?  
+> Gamemaster: Can you get us back?  
+> Egan: I look at the other two.  
+> Mango: We just need to follow some mushrooms.  
+> Mango: Like, easy peasy.  
+> Egan: Easy peasy.  
+> Gamemaster: Oh, the mushrooms.  
+> Doug: How do we know which mushrooms to follow and which will kill us?  
+> Mango: Well, I don't think we're supposed to eat the mushrooms.  
+> Mango: So... I don't know.  
+> Doug: No, it might follow, but...  
+> Mango: Chuck said he followed some mushrooms.  
+> Mango: I didn't investigate much because I wasn't actually sure he was telling the truth about the mist in the first place.  
+> Mango: But he said he followed some mushrooms and then he showed up back with everybody else.  
+> Mango: So we just gotta follow some mushrooms.  
+> Mango: So I guess we just start looking.  
+> Gamemaster: Oh, that all sounds crazy.  
+> Gamemaster: This is...  
+> Mango: Listen, you were in the same card as a bald guy that had, like, plants on his head instead.  
+> Mango: He's the one that said follow the mushrooms.  
+> Mango: If I was going to listen to somebody who said to follow plants, it would be the guy who's wearing plants.  
+> Doug: Then we'd follow him.  
+> Egan: Plant people do no shits.  
+> Mango: Yeah, I mean, sounded like an expert.  
+> Egan: Listen, ma'am, I promise you we'll find these mushrooms and we'll all get back home faster than a jackrabbit drinking espresso.  
+> Mango: Is that fast?  
+> Egan: Oh boy, is it fast.  
+> Mango: That's fun.  
+> Egan: You don't even know.  
+> Mango: I don't.  
+> Gamemaster: Would someone, preferably Mango or Egan, like to make a persuasion check to...  
+> Mango: That's why I asked.  
+> Doug: I would like to, in that case... Hold on.  
+> Mango: I can do it.  
+> Doug: Hold on.  
+> Doug: No, no, no.  
+> Doug: In that case, I would like to add a comment before they do and say, honestly, he talked to Chuck.  
+> Doug: He's part of the guard.  
+> Doug: I think if we're getting through this with anyone, it's these two.  
+> Doug: And I would like to help whoever decides to make the check.  
+> Egan: It probably shouldn't be me.  
+> Gamemaster: Very well.  
+> Mango: I'm bad at rolling dice, but I have a pretty good modifier here.  
+> Egan: You, yeah.  
+> Egan: You know, can I guide him?  
+> Egan: Can I be like, he knows what he's doing.  
+> Gamemaster: Sure, sure.  
+> Egan: Guidance.  
+> Mango: Okay, so do I also, does help give me advantage?  
+> Doug: Yeah.  
+> Gamemaster: Yeah, sure.  
+> Mango: E4 from Guidance.  
+> Egan: I missed guidance.  
+> Mango: Natural 20 for a 28.  
+> Gamemaster: Wow, incredible.  
+> Gamemaster: The three of you all are kind of standing around reassuring Erin as she's on the verge of panic here in the swamp.  
+> Gamemaster: And her breathing does start to slow.  
+> Gamemaster: She kind of looks up at you guys and goes, All right.  
+> Gamemaster: Well, if you guys think we can do it, I trust you.  
+> Gamemaster: Maybe we will be all right.  
+> Gamemaster: And the shadows behind her start to subside to a more normal state.  
+> Egan: Just, you know, just wait five years and then can buy volumes one through five for fifth edition.  
+> Doug: Doug will make wide eyes to both of them and then write in his Dougcyclopedia.  
+> Mango: I'm concerned about what the Dougcyclopedia covers.  
+> Mango: 2014 or 2024?  
+> Gamemaster: Anything and everything.  
+> Doug: It's the fifth edition.  
+> Doug: It's not the fifth volume.  
+> Mango: Nothing.  
+> Egan: This is the... I'll do a nature.  
+> Doug: The what?  
+> Doug: Oh.  
+> Mango: We're looking for mushrooms?  
+> Gamemaster: Indeed.  
+> Gamemaster: I will again allow two roles, and they can be investigation or nature.  
+> Egan: Unless anyone's got a really good investigation.  
+> Mango: I'm a ranger that's bad at nature and also investigation.  
+> Doug: Everything's an investigation.  
+> Doug: I will roll investigation then.  
+> Egan: Wait, Josh, what are you?  
+> Mango: I'm a ranger.  
+> Mango: They made nature an instab, okay?  
+> Mango: I'm very dumb.  
+> Egan: Just be a druid and get your wisdom stat added to nature and arcana for some reason.  
+> Mango: I'm a ranger, so I have my whiz stat added to my charisma checks for some reason.  
+> Egan: I don't really get how they were making these new rules.  
+> Egan: They were just sort of adding stuff.  
+> Mango: Yeah.  
+> Gamemaster: That's so interesting.  
+> Gamemaster: I guess they kind of realized it doesn't always make sense that some of these skills are tied to these abilities.  
+> Gamemaster: How can we change that?  
+> Mango: Yeah, and I guess they didn't want to go the full, like, you know, for your class nature is a wisdom.  
+> Gamemaster: Right.  
+> Mango: thing so instead they made it stronger because i have i have better charisma checks than like a bard who goes only into charisma because i get both my charisma and my wisdom added together yeah at level three  
+> Egan: Yeah.  
+> Gamemaster: Oh, because you get to add both.  
+> Gamemaster: Oh, that is kind of broken, huh?  
+> Egan: Yeah.  
+> Egan: I have... With my Stone of Good Luck, I have a plus 9 to Arcana right now.  
+> Egan: So it's...  
+> Gamemaster: That's crazy.  
+> Doug: How does it even break down?  
+> Doug: Like, my highest is a plus seven, and I have expertise because I'm a rogue.  
+> Egan: It's because I have proficiency, so that's plus two.  
+> Egan: And then my intelligence is plus two.  
+> Egan: And then I get my wisdom on top of that.  
+> Egan: And then I have a stone of good luck, which just gives a flat plus one.  
+> Egan: This is why we stopped playing this game.  
+> Doug: That's crazy.  
+> Egan: The rules break down so quickly.  
+> Mango: Hmm.  
+> Doug: And I thought I picked something broken.  
+> Doug: I guess we'll have to see if it's in combat.  
+> Doug: Or at least mildly annoying.  
+> Doug: I avoided picking something that seemed almost explicitly broken.  
+> Doug: But I also don't know.  
+> Egan: Like a hobgoblin with a poleaxe?  
+> Doug: No.  
+> Doug: It's just a subclass.  
+> Doug: There's no complicated synergy.  
+> Doug: I literally looked at a subclass and I was like, damn, that seems really strong.  
+> Doug: Like, advantage?  
+> Doug: I'm really trying to hammer advantage in this because we don't get it in Pathfinder.  
+> Gamemaster: Gotta eat it up.  
+> Mango: Bye.  
+> Egan: We gotta get as much guidance and advantage as we can.  
+> Doug: Yes.  
+> Gamemaster: So the four of you kind of take to the swamp looking around for any sign of these mushrooms that Chuck had referred to.  
+> Gamemaster: And you spend about an hour just kind of looking around, walking around.  
+> Gamemaster: And then, Egan, you see a little bit of motion a couple feet away from you, kind of behind a pair of trees.  
+> Gamemaster: And you approach, and what you see are a group of...  
+> Gamemaster: I'll say five little red cap mushrooms that are not rooted to the ground and are just hopping along together in a group along the swamp ground.  
+> Mango: Yeah, I guess he didn't say that the mushrooms were planted anywhere.  
+> Egan: All elbow mango and go, found the mushrooms.  
+> Doug: you you  
+> Mango: You know...  
+> Egan: I mean, they're plants, but they're not planted.  
+> Egan: I am.  
+> Mango: Yeah, that sounds right.  
+> Mango: I'm not smart enough to know that mushrooms aren't plants.  
+> Egan: I then go into a deep explanation of fungi.  
+> Mango: Do we think it would be bad if the mushrooms spot us?  
+> Mango: Should we be sneakily following these mushrooms?  
+> Mango: Should we ask the mushrooms for help?  
+> Mango: Do mushrooms speak?  
+> Egan: In wherever we are, I don't know.  
+> Egan: I think caution is probably our best bet.  
+> Mango: It should be sneaky.  
+> Egan: When in doubt, sneak it out.  
+> Doug: yeah i i guess i guess chuck didn't really describe if these things were harmful or not well he also flipped through the doug cyclopedia he also not a big fan of brand cereal  
+> Mango: No.  
+> Mango: Although I have to imagine if they were harmful, he'd be dead.  
+> Egan: Yeah, Chuck was pretty weak.  
+> Mango: Yeah.  
+> Egan: Really?  
+> Mango: Do you think that was related?  
+> Mango: Okay, so stealthy?  
+> Doug: i don't have much on the guy so anything can help here i guess that's how i found out wouldn't touch this stuff yes selfie  
+> Egan: I feel like, you know, you're out on the road.  
+> Egan: You probably want some bran.  
+> Egan: Let's eat a lot of vegetables.  
+> Egan: It's not great for him.  
+> Mango: Not stealthy.  
+> Egan: I'll see.  
+> Mango: Stealthy?  
+> Egan: We'll stop.  
+> Mango: Okay, I'll cast Pass Without Trace then.  
+> Egan: Woo!  
+> Egan: Ranger stuff.  
+> Gamemaster: Beautiful.  
+> Mango: You get an extra... Yeah, plus 10.  
+> Doug: This gives us a plus 10, if I recall correctly.  
+> Mango: Yeah.  
+> Egan: What is this game?  
+> Egan: What are these rules?  
+> Mango: You have a plus 10 to your stealth check.  
+> Doug: Why did I even get expertise in stealth?  
+> Doug: What the hell's the point?  
+> Mango: I mean, I still rolled poorly, so... Yeah.  
+> Doug: Because you have disadvantage.  
+> Egan: I wrote a 30.  
+> Doug: 30.  
+> Mango: 19.  
+> Doug: They're like, stealth checks don't matter.  
+> Doug: Just give them the whole thing.  
+> Doug: Just give them all of it.  
+> Gamemaster: Okay, I'm seeing some pretty good numbers here.  
+> Gamemaster: And with the help of Pass Without Trace, Erin actually gets a 26.  
+> Gamemaster: So she's just kind of behind the three of you like, Alright, you guys stay in front.  
+> Gamemaster: I'm going to stick around back here and stay very quiet.  
+> Mango: That's fair.  
+> Mango: That's a good idea.  
+> Gamemaster: And the four of you start to kind of trail a safe distance behind these mushroom as they bounce along.  
+> Gamemaster: And you follow them for 10 minutes or so.  
+> Gamemaster: And you start to see that they're heading towards...  
+> Gamemaster: an area of a bit more brightness than where you currently are.  
+> Gamemaster: As I mentioned, it's pretty dark from the canopy, and again, it's kind of not the mist from before, but a little foggy where you are, and you see what seems to be a bit more sunshine ahead.  
+> Doug: realistically the idea of the sun could bake us alive in seconds Doug will glance back at Aaron and be like no no I'm just kidding and then you'll see him flip and there's like a really big sun on one page like a drawing and it says big scary sun will bake you and he like flips really quickly  
+> Egan: Do it really good.  
+> Mango: Sunshine good?  
+> Mango: Do we want to stay in the mist?  
+> Mango: That's not reassuring.  
+> Gamemaster: Are you serious?  
+> Egan: The Doug Cyclopedia.  
+> Mango: Hey, into the sun.  
+> Doug: Mm-hmm.  
+> Gamemaster: So you follow the mushrooms a little bit further, and you end up in a bit of a clearing.  
+> Gamemaster: It's a little sunnier because there's a bit of an opening in the canopy.  
+> Gamemaster: And the mushrooms just seem to be going straight through it.  
+> Gamemaster: And the group of you end up sort of center stage of this clearing.  
+> Gamemaster: And then you hear a laugh ring out.  
+> Gamemaster: And the foliage around you in a big circle expands and grows into this ring of thick and large spiky vines.  
+> Gamemaster: And kind of directly in front of you on one edge  
+> Gamemaster: a bit of a kind of wooden structure also appears.  
+> Gamemaster: And the laughing is coming from an individual sat within a very large and carved into a seat mushroom.  
+> Doug: Thank you.  
+> Gamemaster: There's a...  
+> Gamemaster: an individual sitting there with a slim, very elven-looking face, very particularly long, pointed ears, kind of long, dark hair that's caked in this mud of the swamp, and they appear to be wearing...  
+> Gamemaster: just like patches of moss and lichen.  
+> Gamemaster: And they laugh and go, Oh, yes!  
+> Gamemaster: Happy day!  
+> Gamemaster: Oh, my packages have arrived on time.  
+> Gamemaster: It gets so boring here in the swamp.  
+> Gamemaster: Are you ready to have a little fun?  
+> Gamemaster: Ah!  
+> Doug: Your name?  
+> Mango: That's why we came.  
+> Mango: To have a little fun.  
+> Egan: It is.  
+> Gamemaster: My name is Larunan, and welcome to my swamp, and welcome to my little arena.  
+> Gamemaster: Oh, let's get the festivities started, and if we have a decent amount of fun, I'll send you back home.  
+> Gamemaster: How does that sound?  
+> Egan: Oh, it's a fight club.  
+> Mango: Were you the one that... Did you bring this here?  
+> Mango: Was that you?  
+> Gamemaster: And you see he kind of tickles on his shoulder a little red cat mushroom that's bouncing there.  
+> Gamemaster: And he goes, Indeed I did.  
+> Gamemaster: I've been so bored recently, and so I thought, let me put on a little show for myself.  
+> Egan: Wait, you're telling me Chuck, the guy who doesn't eat bran, won his way out of the fat club?  
+> Gamemaster: Chuck, chucka.  
+> Mango: He's talking about the bald guy that you made wear the vine's hat.  
+> Doug: Is he a plant?  
+> Gamemaster: Bald guy, bald guy.  
+> Egan: Is he bald with his hair as plants?  
+> Egan: Is that how that works?  
+> Mango: Well, I don't think it... Is his hair plants?  
+> Mango: Or is it just like a plant toupee?  
+> Mango: I didn't really ask.  
+> Mango: I don't think he's a plant.  
+> Egan: He might be a plan.  
+> Mango: I mean, unless you mean the other way.  
+> Mango: Is he like a plant?  
+> Mango: Like he told us to follow the mushrooms?  
+> Mango: Because he's evil.  
+> Mango: That's why he doesn't like the brand.  
+> Egan: That's how it always is.  
+> Mango: This all makes sense now.  
+> Egan: Everyone evil hates Brandon.  
+> Gamemaster: Laranon kind of looks up and squints his eyes for a moment and goes, Ah, yes, the plant hair.  
+> Gamemaster: That was me.  
+> Gamemaster: That was me.  
+> Gamemaster: That was many, many years ago.  
+> Gamemaster: I had almost forgotten.  
+> Gamemaster: Oh, that was a fun one.  
+> Gamemaster: Yes, he made it out.  
+> Gamemaster: Oh, we'll see if perhaps the four of you...  
+> Gamemaster: are as lucky as he was.  
+> Gamemaster: Perhaps let's begin.  
+> Gamemaster: And he claps his hands, and we're going to roll initiative.  
+> Egan: Guys, if we lose and the guy who doesn't eat bran fought his way out of here, it's going to be really nice.  
+> Mango: It could happen.  
+> Doug: Oh, Doug is so ready.  
+> Mango: Maybe Bran makes you weaker and you just don't know it because we've always been eating it.  
+> Egan: Oh.  
+> Egan: What did Miss Broadcloak roll for initiative?  
+> Gamemaster: I'll get to her in a moment.  
+> Doug: Proud cloak.  
+> Doug: Proud cloak.  
+> Doug: Broad cloak sounds like you're calling her fat.  
+> Egan: proud cloak broad cloak is a character from the dark tower that's the wrong fictional universe oh no that's so mean that one's such a thinker  
+> Gamemaster: Yo, what the hell?  
+> Doug: What does Mrs. Longbelt think of this?  
+> Mango: Close enough.  
+> Mango: This is basically the Dark Tower.  
+> Gamemaster: Just a moment.  
+> Gamemaster: Just a moment.  
+> Mango: Don't do that.  
+> Mango: She's a flautist.  
+> Mango: She's respected.  
+> Mango: You can't bully someone like that.  
+> Egan: You can't bully a flautist.  
+> Egan: 16 for Egan Arathmatis.  
+> Doug: 23 for Mr. Donahue.  
+> Mango: Yeah.  
+> Mango: They have enough problems.  
+> Mango: They play the flute for a living.  
+> Gamemaster: Okay, what did the three of you get?  
+> Gamemaster: Whoa.  
+> Gamemaster: Very nice.  
+> Mango: I...  
+> Egan: I think I told you guys my last name, but that's my last name.  
+> Gamemaster: Egan and Aaron have tied on initiative.  
+> Gamemaster: Would you like to go before her or after her?  
+> Egan: I want to go after her.  
+> Egan: I want to see what she does first.  
+> Doug: Do you want to watch her die or do you want to save her?  
+> Egan: I got stuff.  
+> Egan: I'm a druid.  
+> Egan: I can save her.  
+> Egan: I got tricks.  
+> Gamemaster: And then we got a 13.  
+> Egan: Oh, I miss playing a 5v5 so much.  
+> Mango: Oh, yes.  
+> Mango: 13 for Mango.  
+> Gamemaster: Mango has tied with some anonymous combatant.  
+> Mango: No last name.  
+> Mango: Just Mango.  
+> Mango: My dex modifier is 2.  
+> Doug: hundred oh shit  
+> Mango: Oh, wait.  
+> Mango: Yes, my dex modifier is just 2, not 200.  
+> Gamemaster: OK.  
+> Mango: If that still ties, I'll go...  
+> Mango: You could pick if I go first or last.  
+> Gamemaster: No, they have you.  
+> Gamemaster: OK, you are Mango.  
+> Mango: Okay.  
+> Mango: I am... Oh, Schmeppy.  
+> Gamemaster: All right, we're going to go to Shmeppy.  
+> Gamemaster: Everybody loves Shmeppy.  
+> Egan: Everybody loves a good schmappy.  
+> Mango: Everybody likes a good Schmep.  
+> Gamemaster: Let me send the link.  
+> Gamemaster: How's that sound?  
+> Doug: Mm-hmm.  
+> Gamemaster: Okay, I'm going to put it in chatter because it would be sacrilege to put it in dice.  
+> Mango: You could put it in experimentation.  
+> Gamemaster: I don't really spend any time there.  
+> Mango: That's because the only time anybody sends anything in experimentation, it's Jorge clicked on the wrong channel.  
+> Gamemaster: It does look like Jorge was there relatively recently.  
+> Egan: These are all Jordan things.  
+> Mango: Yeah.  
+> Mango: That's the only time stuff gets sent there.  
+> Gamemaster: Okay, I need to do some things to get this fully prepared.  
+> Gamemaster: Well, I didn't...  
+> Doug: Doug's gone.  
+> Egan: Oh, no.  
+> Mango: Every time I hear Doug, I think Dimidome.  
+> Mango: And I don't know if that's what you were going for.  
+> Egan: Doug Dimmadome, owner of the Dimmsdale Dimmadome.  
+> Mango: Yeah, Doug Dimidome.  
+> Doug: Doug Donahue.  
+> Mango: Owner of the Dimsdale Dimidome.  
+> Egan: Is your hat?  
+> Doug: Doug Donahue, delegate of the delightful Doug Cyclopedia.  
+> Egan: How tall is your hat?  
+> Mango: Are there... Oh yeah, how tall is your hat?  
+> Mango: Do you have a hat?  
+> Doug: Doug has a small hat.  
+> Mango: Small hat?  
+> Doug: Small leather hat.  
+> Doug: It's like... Tetrahedral?  
+> Mango: You're getting hat-mocked by Doug Dimmadome.  
+> Egan: Is it like this hat?  
+> Gamemaster: Oh, geez.  
+> Gamemaster: Everyone's moving themselves around.  
+> Doug: No.  
+> Mango: Should we have not done that?  
+> Mango: Do you want us to move ourselves away?  
+> Doug: Owner of the Demizel Dimidum?  
+> Gamemaster: Just be, Mango, slightly more central to the area than you currently are.  
+> Gamemaster: But if you guys want to kind of move yourselves around... Where's the laser?  
+> Gamemaster: You could be anywhere kind of in this circle that I'm making in red.  
+> Mango: Is the northern bit, I assume it's like the porch or whatever the mushroom man is on?  
+> Gamemaster: Yeah, that's the structure.  
+> Gamemaster: It's probably like 30 feet up, and he's looking kind of down on you guys.  
+> Gamemaster: The brown squares are tree trunks.  
+> Gamemaster: If you wanted to maneuver behind them, you could.  
+> Gamemaster: Anyway...  
+> Gamemaster: In this moment, as he claps his hands, a number of figures appear around you.  
+> Gamemaster: First is a small, kind of gnome-looking man with a big red hat and these heavy-looking iron boots.  
+> Gamemaster: carrying a sickle.  
+> Gamemaster: And then... And...  
+> Egan: Oh no.  
+> Mango: When you said red cap mushroom, I thought, are they?  
+> Mango: No, they are.  
+> Gamemaster: There are three kind of cloaked, similarly small in stature figures with this kind of dark gray skin, each holding a pair of small blades, daggers, actually.  
+> Gamemaster: And we'll put them one, two.  
+> Gamemaster: And it is Doug's turn.  
+> Gamemaster: Doug gets to go first.  
+> Doug: Hell yeah.  
+> Doug: Doug will... We'll look smaller.  
+> Doug: The Darklings are smaller, I'm guessing, than the Redcap.  
+> Gamemaster: Yes.  
+> Gamemaster: Not by much, but yes.  
+> Doug: Doug will... Walk up to the Darkling.  
+> Doug: And Doug will... Attack.  
+> Gamemaster: Sure.  
+> Gamemaster: Amazing.  
+> Doug: With...  
+> Doug: his very water themed rapier it's like a little wavy there's like ships on the the handle uh plus six nice let's go eight  
+> Egan: you  
+> Gamemaster: Ape, unfortunately, misses as this creature kind of dodges to the side of your attack.  
+> Doug: You guys see the look on Doug's face?  
+> Doug: It looks the same as when he's writing in the Doug Cyclopedia.  
+> Doug: You really understand he's taking a mental note.  
+> Doug: And then he'll turn and he'll look at Egan and Mango and he'll look at the red cap.  
+> Doug: To clarify, the red cap is a gnome with a mushroom on its head or something else?  
+> Gamemaster: Well, a redcap is a type of fey creature.  
+> Gamemaster: It kind of resembles a gnome, but it's a little more decrepit-looking, and it's got a big red hat on it.  
+> Doug: Ah.  
+> Doug: Doug will point out to Mango and Egan, of course, it's a big red target and use the help action as a bonus action to give advantage on the red cap.  
+> Gamemaster: Uh-huh.  
+> Gamemaster: Very nice.  
+> Gamemaster: Next is at the end of your turn.  
+> Egan: Terrifying.  
+> Gamemaster: Oh, thank you, Josh.  
+> Gamemaster: Yeah, that's what a red cap looks like.  
+> Doug: Oh, what the fuck?  
+> Doug: Okay, cool.  
+> Gamemaster: Indeed.  
+> Gamemaster: Oh, no.  
+> Gamemaster: I'm doing all kinds of crazy stuff.  
+> Gamemaster: Okay.  
+> Gamemaster: Next is initiative count 20.  
+> Gamemaster: And Laranon from on high goes, all right, let's make something happen.  
+> Gamemaster: Let's make this interesting.  
+> Gamemaster: And would someone like to roll a D10 for me?  
+> Doug: Uh-huh.  
+> Doug: Nine.  
+> Gamemaster: A nine.  
+> Gamemaster: Oh, that's so exciting.  
+> Doug: How bad do we die?  
+> Egan: Oh, no.  
+> Mango: I'll immediately combust.  
+> Gamemaster: I need someone else to roll a d4.  
+> Gamemaster: And before you roll, Doug is one, Mango is two, Egan is three, and Aaron is four.  
+> Mango: Oh.  
+> Mango: Noah, do you want to or shall I?  
+> Egan: It's all you.  
+> Mango: Oh, that was a mistake.  
+> Mango: So we're trying not to get a four.  
+> Mango: I got a one.  
+> Mango: It's Doug.  
+> Doug: God damn it.  
+> Gamemaster: And one is Doug.  
+> Mango: Sorry, Doug.  
+> Gamemaster: Doug.  
+> Egan: Oh no.  
+> Gamemaster: You, having just missed this darkling with your blade, feeling a little upset about that, but you're still kind of soaking in the scene, looking around, and you feel your grip on your blade become a little wonky, and you look down, and instead of hands...  
+> Gamemaster: you have two crab claws.  
+> Mango: Oh, no.  
+> Gamemaster: Like, sized up to your body.  
+> Gamemaster: Instead of hands, you have crab claws.  
+> Gamemaster: You're still holding your blade, but it feels very unwieldy.  
+> Gamemaster: Currently, you're not able to effectively attack with your weapon or cast somatic spells.  
+> Egan: Thank you.  
+> Gamemaster: But...  
+> Gamemaster: you are proficient in attacking with the claws, which can use either dexterity or strength, and do 1d6 plus dex or strength, whatever you choose.  
+> Doug: Okay.  
+> Gamemaster: And that's that.  
+> Gamemaster: Next is Erin.  
+> Gamemaster: Erin kind of looks around and goes, oh my god, we're gonna die.  
+> Gamemaster: And she looks to you, Egan, and kind of takes her flute and plays a quick little ditty and gives you a d6 of bardic inspiration.  
+> Egan: Ooh, amazing.  
+> Gamemaster: and she will move just a little bit to be a little closer to the two of you and takes the dodge action.  
+> Gamemaster: And then, Egan, it is your turn.  
+> Doug: So many questions.  
+> Doug: How is that inspiring?  
+> Mango: I feel like the worst bit of the Crab Clause is it can't write in the Doug Cyclopedia anymore.  
+> Egan: We're going to die.  
+> Doug: We're going to die!  
+> Doug: I guess.  
+> Gamemaster: Well, it's the magic, you know, of the music.  
+> Gamemaster: That's a bard stuff.  
+> Doug: She's going first.  
+> Egan: Is that from Doug?  
+> Egan: Is that in the Doug's encyclopedia?  
+> Doug: No, no, no.  
+> Doug: Doug's Encyclopedia has what's happened, not what's going to happen.  
+> Doug: Doug's kind of pissed.  
+> Egan: Oh, no.  
+> Egan: Can't write in the Doug's encyclopedia.  
+> Egan: It's Egan's turn.  
+> Egan: Well, our captor, I forget his name, Lauren, Lauren, Lauren.  
+> Mango: Laruni.  
+> Gamemaster: Oh, Larunan, I think.  
+> Gamemaster: Larunan?  
+> Mango: Laruni.  
+> Gamemaster: Larunan, yeah.  
+> Egan: LaRudy.  
+> Egan: The Fiep.  
+> Egan: Was given his whole speech.  
+> Mango: The Thief.  
+> Egan: Egan was rolling up his sleeves.  
+> Egan: And you see on his wrists.  
+> Egan: And also sort of on his neck.  
+> Egan: And on his ankles too.  
+> Egan: There's these tattoos that look like chains.  
+> Egan: And.  
+> Egan: As Egan's turn starts.  
+> Egan: His eyes.  
+> Egan: The pupils dilate.  
+> Egan: And then contract down to pinpricks.  
+> Egan: And the chains start to glow.  
+> Mango: Darn it?  
+> Egan: And I will.  
+> Egan: I will transform into my Titan form.  
+> Doug: This guy's got a Titan for him.  
+> Mango: What kind of animal is a titan?  
+> Egan: You guys don't have a Titan form?  
+> Egan: Everyone should have a Titan form.  
+> Egan: So you see Egan's flesh begins to, like, writhe and expand massively as this, like, very coarse black fur shoots out through his skin.  
+> Egan: And he erupts in these Giant claws.  
+> Egan: And he grows, like, several sets of eyes and these large horns.  
+> Egan: And I will turn into a behemoth.  
+> Egan: Tanner, can you make me huge?  
+> Doug: Thank you.  
+> Gamemaster: Oh my god.  
+> Gamemaster: I can somehow shift and drag to resize.  
+> Egan: Sorry, large.  
+> Egan: Can you make me large?  
+> Egan: I'm not 100% huge.  
+> Egan: For reference, this is what I'm... This is what I'm doing.  
+> Gamemaster: Big.  
+> Gamemaster: Yes, when you're Circle of the Titan, you can become a Titan, sort of.  
+> Egan: This is a thing Wizards of the Coast put out.  
+> Egan: It's pretty cool.  
+> Gamemaster: And surprisingly fitting for the wild lands where your theoretical backstory that we're making up in the moment...  
+> Egan: I'm a big... Could be someone I saw there.  
+> Doug: Bye.  
+> Egan: Who knows?  
+> Mango: They took two out of the three Jewish Titans, and then instead of taking the third one, they're like, also insects.  
+> Egan: And also insects, yeah.  
+> Mango: We had a bird!  
+> Mango: You could have just taken the flying one, too, if you needed... What?  
+> Mango: Never mind.  
+> Egan: It's way funnier that they... It's way funnier.  
+> Mango: It's not important.  
+> Doug: What's the third one called?  
+> Mango: Ziz.  
+> Doug: Oh.  
+> Egan: I guess they were like, that's not specific enough.  
+> Egan: Or that's too specific.  
+> Egan: That's not general enough.  
+> Mango: They have Leviathan and Behemoth.  
+> Egan: Either way, I'm...  
+> Mango: Sorry.  
+> Egan: General.  
+> Mango: Never mind.  
+> Egan: Either way, I'm now a... We'll say I look like a Giant ape pig boar.  
+> Egan: I'm man bear pig, but Giant.  
+> Egan: That's my bonus action.  
+> Egan: It's my movement.  
+> Egan: I will move up to this red cap right here.  
+> Gamemaster: Thank you.  
+> Egan: Ah!  
+> Egan: Oh my gosh.  
+> Doug: Eat him.  
+> Egan: Okay.  
+> Egan: And then...  
+> Egan: I will use my... I will rend him.  
+> Egan: I will let's make this guy.  
+> Doug: Oh, what?  
+> Egan: I will rend.  
+> Doug: What?  
+> Egan: You guys can't rend?  
+> Egan: I believe I have advantage on this.  
+> Egan: How do I do advantage in this?  
+> Doug: You do.  
+> Mango: Oh, you have advantage to rend, of course.  
+> Doug: No, no, no.  
+> Mango: You gave him advantage to rend.  
+> Doug: Doug gave him advantage.  
+> Doug: Yeah, yeah, yeah.  
+> Mango: Sorry, S. ADV, and then it's a function, so you call it.  
+> Doug: Thank you.  
+> Mango: ADV, open parentheses, close parentheses.  
+> Egan: Cool.  
+> Gamemaster: without the D20.  
+> Mango: Yeah.  
+> Mango: Because it's technically a wrapper over the keepHighest function, which is keepHighest to d20, 1.  
+> Mango: But why would you want to type all that?  
+> Egan: So just ADV, open parentheses, closed parentheses.  
+> Mango: Like this.  
+> Egan: We never have to use that in Pathfinder.  
+> Mango: Yeah.  
+> Egan: My spell attack modifier.  
+> Egan: What is my spell attack modifier?  
+> Egan: Oh my gosh.  
+> Mango: 100.  
+> Mango: 200.  
+> Egan: I do think it's 200.  
+> Egan: It's 6.  
+> Gamemaster: Probably like six or something like that.  
+> Gamemaster: 13 misses, unfortunately.  
+> Mango: If, yeah.  
+> Egan: I got a 13.  
+> Egan: Wow, that's embarrassing.  
+> Gamemaster: You attempt to rend this red cap.  
+> Gamemaster: And it is two sizes smaller than you in this moment.  
+> Gamemaster: And so it just kind of skirts under your claw, question mark?  
+> Doug: Hey.  
+> Egan: I'd swing right over it.  
+> Egan: That's my turn.  
+> Gamemaster: Very well.  
+> Gamemaster: Okay.  
+> Gamemaster: Let me see what I want to do here.  
+> Gamemaster: All right.  
+> Gamemaster: Doug.  
+> Gamemaster: Does a 20 hit you?  
+> Doug: I think, let me... I mean, almost certainly, yes.  
+> Doug: Yeah.  
+> Gamemaster: You take one point of piercing damage as a little dart of an arrow kind of hits you in the neck.  
+> Gamemaster: And you look in the direction that it came from, and appearing from invisibility is this little kind of moss-covered sprite.  
+> Gamemaster: that shoots you with an arrow, and you are currently charmed by this sprite, which means you cannot take any hostile actions against the sprite.  
+> Doug: unfortunate.  
+> Egan: You like me now.  
+> Mango: I think it's very funny for something that you didn't know existed appeared to make it so that you still can't hit it.  
+> Gamemaster: Indeed.  
+> Gamemaster: Mango, does a 14 hit you?  
+> Mango: That's me.  
+> Gamemaster: No.  
+> Mango: No.  
+> Gamemaster: Another sprite appears actually directly adjacent to you and was attempting to stab you with a little needle-like dagger.  
+> Doug: you you  
+> Mango: I rolled so poorly.  
+> Gamemaster: And it's just kind of buzzing in the air now, having missed you.  
+> Gamemaster: and revealed itself.  
+> Gamemaster: Now the Darklings go, because they beat Mango in initiative.  
+> Egan: Thank you.  
+> Gamemaster: Darkling 1, I guess, will attack Doug with one of its daggers.  
+> Gamemaster: Wow.  
+> Gamemaster: All right.  
+> Gamemaster: That's a crit on Doug, unfortunately.  
+> Mango: It's gonna die.  
+> Gamemaster: Doug's just going to take some damage.  
+> Doug: What did Doug do?  
+> Egan: They want lobster for dinner.  
+> Egan: They're coming for your hands.  
+> Gamemaster: Where is my D4?  
+> Gamemaster: Oh, man.  
+> Mango: We got rid of them.  
+> Mango: You gotta use D2s instead.  
+> Gamemaster: Doug takes 16 points of a mixture of piercing and necrotic damage as this Darkling attempts to gut you.  
+> Mango: And I dodge.  
+> Gamemaster: Darkling 2 is going to run up and attempt to stab Mango.  
+> Egan: Good.  
+> Doug: Oh, okay.  
+> Gamemaster: That's a big number.  
+> Gamemaster: Guys, I'm rolling pretty well so far.  
+> Gamemaster: That's a 23 to hit.  
+> Mango: Yeah, that does beat my AC.  
+> Gamemaster: You take 10 points of a mix of piercing and necrotic damage.  
+> Mango: Ouch.  
+> Gamemaster: And then the final Darkling is going to sprint all the way up to Egan.  
+> Gamemaster: And it will flank you!  
+> Gamemaster: And make an attack.  
+> Gamemaster: I think that's a 17 to hit.  
+> Egan: That is my AC.  
+> Gamemaster: Oh.  
+> Mango: Are we using the flanking rules?  
+> Mango: Is flanking a thing?  
+> Gamemaster: Ah, yes, sorry.  
+> Gamemaster: You can flank, yes.  
+> Mango: Okay.  
+> Gamemaster: you take 12 points of piercing and necrotic damage.  
+> Doug: What are the flanking rules?  
+> Egan: Let's see.  
+> Gamemaster: You get advantage on... Unless they nerfed it in the new...  
+> Mango: You get advantage?  
+> Mango: I thought it was just a plus two.  
+> Mango: Hot damn.  
+> Mango: Ah damn.  
+> Egan: I don't even know.  
+> Egan: Did they still have it in there?  
+> Gamemaster: They have the flanked condition, but they don't describe what it does.  
+> Doug: Each of them has advantage on melee attack rolls against that enemy.  
+> Doug: When a creature and at least one of its allies are adjacent to an enemy and on opposite sides or corners of the enemy's space, they flank that enemy and each of them has advantage on melee attacks.  
+> Gamemaster: Well, there you go.  
+> Gamemaster: Mango, it is your turn.  
+> Mango: I think we want to team up on the red cap.  
+> Mango: I know I might take an attack of opportunity here, but I'm going to spend my movement to flank the red cap then with Eagam.  
+> Gamemaster: Sure, sure.  
+> Gamemaster: You are unfortunately going to take two attacks of opportunity.  
+> Mango: Yeah.  
+> Mango: Yeah.  
+> Gamemaster: From the Darkling, it is a 14.  
+> Gamemaster: And then the Sprite I think is also going to miss.  
+> Mango: Does not hit.  
+> Gamemaster: Let me just check its attack bonus.  
+> Gamemaster: Also a 14.  
+> Gamemaster: OK.  
+> Mango: Also doesn't hit.  
+> Mango: As my bonus action, I would like to Hunter's Mark the red cat.  
+> Gamemaster: You've approached the red cap.  
+> Gamemaster: Genius!  
+> Mango: As is my right as a ranger.  
+> Mango: And then I will make an attack.  
+> Mango: And I have advantage on this attack because he's flanked.  
+> Gamemaster: Aha.  
+> Gamemaster: Indeed.  
+> Gamemaster: Yeah, that hits for sure.  
+> Mango: Hot diggity dog.  
+> Egan: Thank you.  
+> Mango: Okay.  
+> Mango: I got a 21 to hit.  
+> Mango: Absolutely.  
+> Mango: Then I will roll damage.  
+> Mango: That's three.  
+> Mango: I deal 20 points of damage as I whack him over the head with... It's a quarterstaff, but it's really just a stick with a little mango grown on the top of it.  
+> Gamemaster: Holy crap.  
+> Egan: It's like Rafiki stick.  
+> Mango: Yeah.  
+> Mango: I just bonk him over the head with it.  
+> Gamemaster: That's hefty.  
+> Mango: Yeah.  
+> Gamemaster: Yeah, you hit him pretty hard.  
+> Gamemaster: Amazing.  
+> Gamemaster: Will that be your turn?  
+> Mango: Yeah.  
+> Mango: That's all three of my actions.  
+> Gamemaster: All right.  
+> Gamemaster: Fantastic.  
+> Gamemaster: On initiative count 10.  
+> Gamemaster: Laranon speaks up again and says, let's keep the fun going!  
+> Gamemaster: And somebody has to roll a d10 for me.  
+> Mango: Mike is our resident dice roller.  
+> Doug: Oh, me, me, me.  
+> Doug: More lobster hands.  
+> Doug: Two.  
+> Egan: you you  
+> Gamemaster: Two.  
+> Gamemaster: Uh... No, uh...  
+> Doug: Someone randomly gets people hands.  
+> Gamemaster: Let's see here.  
+> Gamemaster: Let me do this and maybe this.  
+> Gamemaster: Can somebody roll another d4 for me?  
+> Egan: I'll roll the d4 this time.  
+> Egan: Three.  
+> Mango: You got this, I believe in you.  
+> Mango: I'm very okay at those.  
+> Gamemaster: the area unfortunately where Mango is in a 10 foot square becomes kind of overgrown with spike growth and you need to make a dexterity saving throw  
+> Doug: becomes loved.  
+> Mango: 11.  
+> Gamemaster: Eleven is a fail.  
+> Gamemaster: You take four points of piercing damage from the thorns.  
+> Mango: Oof, ouch, owie.  
+> Gamemaster: You're not grabbed or anything like that, but it is difficult to rain.  
+> Egan: Oh no.  
+> Mango: I'm just in pain.  
+> Gamemaster: And then the red cap will go.  
+> Doug: Thank you.  
+> Mango: I'm bloodied.  
+> Gamemaster: I keep accidentally making tokens down here.  
+> Mango: I dodge.  
+> Egan: It misses.  
+> Gamemaster: The red cap is going to make three strikes with its wicked sickle.  
+> Mango: Dodge.  
+> Gamemaster: It's going to make one at mango.  
+> Egan: That's a wicked sicko, bruh.  
+> Egan: But it's flanked, so it's got super disadvantage.  
+> Mango: Yeah.  
+> Gamemaster: And it gets a 24.  
+> Mango: That I've decided misses even though it's better than my AC.  
+> Gamemaster: You take eight points of slashing damage.  
+> Mango: Die?  
+> Mango: I pass?  
+> Mango: I don't pass, but I come very close.  
+> Egan: Oh, no.  
+> Gamemaster: And then it's going to make its final two strikes on the flanked Egan.  
+> Egan: Don't do it, guy.  
+> Doug: I just feel like there was an easier way to get back at Josh for the TPK than killing all of us.  
+> Egan: That does hit.  
+> Mango: Uh...  
+> Gamemaster: That's a 22 to hit.  
+> Gamemaster: That's 7 points of slashing damage.  
+> Egan: This is a lot of damage.  
+> Gamemaster: And then, jeez, yeah.  
+> Gamemaster: A 23 to hit.  
+> Egan: That also hits.  
+> Gamemaster: For 5 points of slashing damage.  
+> Egan: Are we going to TPK in Tanner's one-shot?  
+> Gamemaster: Hopefully not, but we shall see.  
+> Doug: Doug needs one charge-up round, but he has an ability that allows him to kill everyone that is hostile.  
+> Mango: I thought you were just going to end it, hopefully.  
+> Gamemaster: That brings us back up to Doug.  
+> Mango: Got this, Doug.  
+> Egan: Come on, Doug.  
+> Mango: Hit him with your hat.  
+> Mango: Oh, of course.  
+> Mango: You're just going to spirit bomb everyone?  
+> Doug: Don't put this in the paper.  
+> Doug: I'm definitely not mad.  
+> Doug: that there is now difficult terrain where Doug was going to run up and flank the red cap even harder.  
+> Doug: Doug was definitely not going to do that.  
+> Mango: Just murder someone.  
+> Doug: But what Doug will have to do now is he'll have to use a new class feature.  
+> Doug: He'll have to use a class feature that they added.  
+> Mango: Oh.  
+> Doug: I don't know why they gave this to Rogues.  
+> Gamemaster: Oh yeah, yeah.  
+> Doug: Steady aim?  
+> Doug: Where is it?  
+> Doug: So as a bonus action, Doug can give himself advantage  
+> Doug: So long as he hasn't moved and doesn't move on this turn.  
+> Mango: Yeah.  
+> Egan: you  
+> Doug: So Doug will give himself advantage on Darkling 1.  
+> Doug: And hope that he can just kill him in one hit.  
+> Gamemaster: Sure.  
+> Mango: Nice.  
+> Doug: Because otherwise Doug is actually, I think, dead.  
+> Mango: Kill him.  
+> Doug: Actually, fuck, I had the stupid hands.  
+> Gamemaster: I will allow the claws to benefit from sneak attack, whatever that trait is that allows you to use sneak attack.  
+> Mango: You have to make a claw attack?  
+> Doug: yeah jesus christ okay there's a 14 hit darkling one oh uh how many so i'm rolling three d6 plus  
+> Egan: The sneaky trait.  
+> Mango: It has to either be a finesse or a ranged weapon.  
+> Gamemaster: Yeah, they have finesse, because I said you could use strength or dex to attack with them.  
+> Gamemaster: A 14 does hit Darkling 1.  
+> Doug: three yeah 14 points of damage to darkling one i'm a bit of an improviser  
+> Gamemaster: Yeah, I guess whatever you would have added to your sword.  
+> Mango: Whatever it is.  
+> Gamemaster: It's your dex mod that gets added.  
+> Gamemaster: 14 is perfectly enough to reach out with your crab pincers and slay Darkling1.  
+> Gamemaster: Amazing.  
+> Doug: That's what Doug will say with this free action.  
+> Mango: Yeah.  
+> Gamemaster: And you can't move because you used the steady aim, so your turn is over.  
+> Gamemaster: At the end of your turn, you get the sense that you can dismiss the crab claws if you wanted to.  
+> Doug: Correct.  
+> Doug: Do I use an action?  
+> Gamemaster: No, it's just a... You could do it now.  
+> Doug: Okay.  
+> Doug: At the end of the... Yeah, I know.  
+> Doug: They're dismissed.  
+> Doug: Get them the fuck off my hands.  
+> Gamemaster: Very well.  
+> Egan: They wore gloves the whole time.  
+> Egan: They were oven mitts.  
+> Gamemaster: And then that brings us to initiative count 20.  
+> Gamemaster: Someone's got to roll a d10 as Laranon laughs from above.  
+> Mango: I think you got this.  
+> Doug: Six.  
+> Gamemaster: Six.  
+> Gamemaster: I need another D4 roll.  
+> Gamemaster: Doug is one, Mango is two, Egan is three, and Aaron is four.  
+> Mango: I got this.  
+> Mango: Uh, three.  
+> Mango: Sorry.  
+> Gamemaster: Three is Egan.  
+> Doug: Regan.  
+> Egan: Come on.  
+> Mango: You can't give him crab claws.  
+> Gamemaster: Egan...  
+> Mango: He's already a beast.  
+> Egan: Come on, 100 hit points.  
+> Egan: Come on, 100 hit points.  
+> Gamemaster: Mango, you are kind of right up in battle with Egan with this small red cap in between the two of you.  
+> Gamemaster: And you see... I didn't really think about that.  
+> Gamemaster: The behemoth has legs of some kind, right?  
+> Gamemaster: You're moving around.  
+> Mango: Thank you.  
+> Gamemaster: You see the legs slash bottom half of this behemoth form.  
+> Gamemaster: become kind of like transparent as the bottom half of Egan is jutted partially into the ethereal plane.  
+> Gamemaster: Egan, your movement is currently decreased by five.  
+> Gamemaster: your deck's skills and saving throws are down by two, but since you're a smaller target, your AC goes up by two.  
+> Egan: Oh, I'll take it.  
+> Egan: Save us, Aaron.  
+> Gamemaster: You feel like moving the bottom half of your body is slow and sluggish, as if you're moving through water or something like that.  
+> Gamemaster: And then it's Erin's turn.  
+> Doug: you you  
+> Gamemaster: Erin is very scared and is going to run away from these creatures kind of in between you guys over here.  
+> Gamemaster: She's going to take the dodge action again, but she will continue to play her flute.  
+> Mango: I'll take it I'd love an extra d6  
+> Gamemaster: Is there anyone that particularly wants Aaron's boost as she kind of starts to play and kind of looks around at the three of you?  
+> Egan: I already have one, so I'm good.  
+> Doug: I just... Yeah.  
+> Gamemaster: All right.  
+> Gamemaster: Sure, Mango, you get it.  
+> Gamemaster: You get some bardic inspiration.  
+> Mango: Sick.  
+> Gamemaster: And that brings us to Egan.  
+> Egan: I have a, I have a question.  
+> Egan: If I shoot a five foot line, I think it's five feet wide.  
+> Gamemaster: Sure.  
+> Gamemaster: Oh, is there a tool for this?  
+> Egan: It's five feet wide.  
+> Egan: If I shoot a five foot wide line through the red cap,  
+> Egan: Does it hit the Darkling or the Sprite or both at a diagonal?  
+> Egan: Sorry, I should move myself.  
+> Egan: If you use the measure token... So if I... I'm not doing this yet, but if I were to move, say, like here, and I shot a laser through the red cap, sort of like this...  
+> Gamemaster: Yeah, I think you could definitely hit the Darkling, but to hit all three, you would probably be encroaching on Mango's space as well.  
+> Egan: Okay.  
+> Egan: I don't want to hurt Mango.  
+> Egan: So I will step around the red cap, keeping in its range.  
+> Egan: Probably take an attack of opportunity from the Darkling.  
+> Gamemaster: Oh, yeah.  
+> Gamemaster: it gets a 16 to hit.  
+> Egan: That does not hit.  
+> Mango: Thank you.  
+> Egan: So I'll step around there.  
+> Egan: And then...  
+> Egan: Sort of like in any Godzilla movie, you'll see a blue static electricity run along on my fur and it stands up on end and I will just fire.  
+> Egan: I'll use a level one spell slot to use my incandescent breath.  
+> Gamemaster: All right.  
+> Egan: So I fire.  
+> Gamemaster: What do I need to do about that?  
+> Egan: It's a.  
+> Doug: Thank you.  
+> Egan: It's a dexterity saving throw for the creatures that I am lasering.  
+> Egan: That's a fail.  
+> Gamemaster: OK.  
+> Gamemaster: For the red cap, it's a 3.  
+> Gamemaster: And for the darkling,  
+> Gamemaster: Oh, that's going to succeed.  
+> Gamemaster: That's a 22 for the Darkling.  
+> Egan: That does succeed.  
+> Egan: The red cap takes 15... Wow, that's a good roll.  
+> Egan: Takes 15 points of radiant damage.  
+> Gamemaster: Oh my god.  
+> Egan: Yeah, the Darkling just takes half damage.  
+> Mango: Peace.  
+> Gamemaster: The red cap is for sure bloodied.  
+> Gamemaster: Does the Darkling take half damage?  
+> Gamemaster: That is Darkling 2.  
+> Gamemaster: Darkling 2 is also bloodied by the attack.  
+> Egan: I don't think I have any bonus action things I can do.  
+> Egan: So I will just... I'll just stand there and... Well, actually, if it's still alive, this might be a little dumb.  
+> Egan: I will move back so that Mango gets flanking, even though I'll be flanked by the Darkling.  
+> Gamemaster: Sure.  
+> Mango: Thanks.  
+> Egan: And that's my turn.  
+> Gamemaster: All right.  
+> Gamemaster: Amazing.  
+> Gamemaster: That brings us to the sprites who are both going to shoot their little arrows.  
+> Gamemaster: Sprite one is going to shoot at Doug.  
+> Gamemaster: And get a 13.  
+> Doug: It misses.  
+> Gamemaster: And Sprite2 is going to shoot one at Aaron.  
+> Gamemaster: Oh, at disadvantage because Aaron dodged.  
+> Mango: Oh, no.  
+> Gamemaster: It misses!  
+> Gamemaster: It gets a 10 and it misses Aaron!  
+> Egan: you  
+> Gamemaster: Erin, who, by taking the dodge action, is keeping her head on a swivel as she keeps her hands on her flute, sees the sprite turn on her and just ducks right under the little arrow.  
+> Gamemaster: And then the two Darklings will go.  
+> Gamemaster: We'll start with Darkling 3 because it's definitely going to attack Egan.  
+> Gamemaster: That is a 20 to hit.  
+> Egan: My AC is 19 right now.  
+> Mango: even with the plus two.  
+> Egan: Yeah, that's with the plus two.  
+> Egan: I think I'm about to go down.  
+> Gamemaster: That is...  
+> Mango: But you're about to go down?  
+> Egan: Yeah, I've taken a lot of damage.  
+> Mango: But like, isn't it, when you say go down, do you mean revert back to regular form?  
+> Egan: I went through my...  
+> Egan: my temporary hit points already.  
+> Gamemaster: Oh, yes, they've changed it.  
+> Egan: I think they switched it.  
+> Mango: Oh.  
+> Mango: Oh, it's not like, okay, I don't know how Druid works in 2024.  
+> Mango: I assumed that once you went through the whatever, you reverted back to regular.  
+> Mango: Instead, you get temp HP.  
+> Egan: Yeah, so... Yeah, so I get temp HP equal to twice my druid level, but I already went through that plus the rest of my hit points.  
+> Mango: Gotcha.  
+> Gamemaster: You take seven points.  
+> Egan: Oh, I do not go down.  
+> Egan: I'm still up.  
+> Egan: Just barely, but I'm there.  
+> Gamemaster: And then Darkling 2 is going to go for Mango.  
+> Gamemaster: It's not going to go into the overgrowth, which means it cannot flank you.  
+> Doug: Thank you.  
+> Mango: Oh, that hits, yeah.  
+> Gamemaster: Wow, that's a 7 to hit?  
+> Gamemaster: It misses, and it is your turn now, Mango.  
+> Mango: Nice!  
+> Mango: Egan, how hurt are you?  
+> Egan: I have two hit points.  
+> Mango: Okay, I'm going to use my bonus action to cast Healing Word on Egan.  
+> Mango: Just top him up a little bit.  
+> Egan: Nice.  
+> Mango: So you get... 11 hit points.  
+> Doug: you  
+> Egan: Awesome.  
+> Mango: And then I will whack the red cap again.  
+> Gamemaster: Certainly, you do have advantage.  
+> Mango: I got a 15.  
+> Mango: Okay.  
+> Gamemaster: I believe that hits.  
+> Gamemaster: It does hit.  
+> Mango: Then I will damage.  
+> Egan: um  
+> Doug: Thank you.  
+> Mango: 13 points.  
+> Mango: Actually, I'm going to Heroic Inspiration and reroll that.  
+> Mango: I rolled two ones.  
+> Mango: Try that again.  
+> Mango: Okay, that wasn't much better.  
+> Mango: I got a 12, which is worse.  
+> Gamemaster: It has 12 hit points left.  
+> Mango: Okay, so I shouldn't have used heroic inspiration, but it's fine.  
+> Mango: And that's it.  
+> Gamemaster: You whack this red cap and its red cap goes flying off as it falls to the ground, deceased.  
+> Gamemaster: That's big, because now it doesn't get to go again.  
+> Gamemaster: Man, you pack a punch.  
+> Mango: Hunter's Mark gives me a d6, and then my subclass gives me a d4.  
+> Gamemaster: Oh, I guess the Hunter's Mark.  
+> Mango: So I roll a d8 plus a d6 plus a d4.  
+> Egan: Wow.  
+> Gamemaster: Hell yeah.  
+> Gamemaster: Alright.  
+> Doug: Seven.  
+> Gamemaster: Is that the end of your turn?  
+> Mango: Yes, that's the end of my turn.  
+> Gamemaster: Very well.  
+> Gamemaster: Um...  
+> Gamemaster: Then that brings us to initiative count 10.  
+> Gamemaster: Laranon goes, oh, yes, this is fun.  
+> Gamemaster: Let's keep it going.  
+> Gamemaster: And we'll get another D10 roll.  
+> Mango: Okay, Mike, roll an 11.  
+> Gamemaster: Seven.  
+> Gamemaster: Oh, this one's just silly.  
+> Gamemaster: I do need another D4.  
+> Gamemaster: This time, we're just going to go up the line.  
+> Egan: you're one  
+> Gamemaster: So Doug is one, Aaron is two, Mango is three, and Egan is four.  
+> Mango: You got this, Noah.  
+> Mango: I believe in you.  
+> Doug: Doug, Doug, Doug, Doug.  
+> Gamemaster: That's Doug again.  
+> Gamemaster: Doug, your vision starts to change.  
+> Gamemaster: Your field of view kind of increases, but your visual acuity kind of blurs slightly.  
+> Gamemaster: you are currently having a minus two to perception and ranged attacks, but you are immune to being flanked.  
+> Egan: He's got claws.  
+> Gamemaster: And anyone that looks at Doug will see that his eyes now resemble the eyes of a goat.  
+> Mango: It's fun.  
+> Mango: You should have kept the claws.  
+> Gamemaster: Doug's getting all the animal transformation things.  
+> Mango: Yeah.  
+> Egan: He's got...  
+> Doug: My eyes are backwards.  
+> Doug: My eyes are backwards.  
+> Gamemaster: The red cap would have been next, but it is deceased, and so we go to Doug.  
+> Doug: Doug, Doug, Doug, Doug, Doug.  
+> Mango: Who ducks?  
+> Doug: Doug is going to, because he is low on health, Doug is going to waltz over to here, which seems reasonably safe, right?  
+> Gamemaster: Mm-hmm.  
+> Doug: I mean, he thought he was safe in his other area, but now he has goat eyes.  
+> Mango: Thank you.  
+> Doug: And Doug, even with his goat eyes, he pulls out.  
+> Doug: And he's flipping through the Doug cyclopedia.  
+> Doug: And he's just like, let me see.  
+> Doug: That guy's legs are backwards.  
+> Doug: And that guy's legs are backwards.  
+> Doug: And he'll point out the two darklings, who I just looked up photos of, have the backwards goat legs.  
+> Doug: Be like, aim for the legs.  
+> Gamemaster: Very nice.  
+> Doug: It'll be easier to take him out.  
+> Doug: And he'll use the help for his action and his bonus action and grant advantage on Darkling 3 and Darkling 2.  
+> Mango: Are Darklings legs backwards?  
+> Gamemaster: I don't know.  
+> Doug: As far as I can tell.  
+> Doug: The small ones are, I guess.  
+> Doug: The Lings.  
+> Doug: Maybe you're looking at just Darks.  
+> Mango: Oh, sure.  
+> Mango: Yeah, that's it.  
+> Mango: I'm looking at just Darks.  
+> Doug: Yeah, no, see, their legs are backwards.  
+> Mango: If you say so.  
+> Gamemaster: It's all good.  
+> Gamemaster: He gives the help action either way.  
+> Gamemaster: And next is initiative count 20.  
+> Gamemaster: Now these rolls are very close together because of how things shook out.  
+> Gamemaster: But I need another d10.  
+> Gamemaster: Oh, at the end of your turn, you do feel as though you could return your eyes to normal if you chose.  
+> Doug: Uh, yeah.  
+> Doug: Actually, I don't know.  
+> Doug: I don't really care that much about perception and not being able to be flanked.  
+> Doug: Doug will let it ride.  
+> Doug: Doug will let it ride.  
+> Doug: Maybe he'll keep these eyes after combat and being immune to flanking is kind of big for the D10.  
+> Egan: um  
+> Gamemaster: Ooh, OK.  
+> Gamemaster: Fairy fire reigns throughout the whole area of the arena.  
+> Mango: Hmm.  
+> Gamemaster: Everybody needs to make a dexterity saving throw, including the enemies, although the Darklings are already at advantage to be attacked.  
+> Gamemaster: But let me see.  
+> Egan: Tanner, I take a penalty because I'm half in the ethereal realm, right?  
+> Gamemaster: Oh, you have a minus two to dexterity-based saves, yes.  
+> Egan: Oh, no.  
+> Egan: That means I just roll a flat d20.  
+> Egan: Oh, I got a 19.  
+> Egan: It's okay.  
+> Mango: I'm going to use my bardic.  
+> Mango: I don't know if it'll help.  
+> Mango: Well, actually, first you have to tell me if a 9 is enough to save.  
+> Gamemaster: A nine is not enough to save.  
+> Mango: Okay, then I'm going to use my bardic.  
+> Mango: What about a 14?  
+> Mango: Yeah, that's kind of what I figured.  
+> Gamemaster: A 14 is also not enough to save, unfortunately.  
+> Gamemaster: I'm going to put Fs next to folks who are very fired.  
+> Mango: F in the chat.  
+> Gamemaster: I rolled a lot of failures.  
+> Egan: F in the fairy fire chat.  
+> Egan: I got a 19.  
+> Mango: I like the change to bardic inspiration, though.  
+> Mango: That you get to learn if you failed first before you use the bardic, as opposed to just like what was before.  
+> Gamemaster: Mango failed.  
+> Gamemaster: What did Doug get?  
+> Doug: Doug got 11.  
+> Gamemaster: That is a fail, and Egan.  
+> Gamemaster: That's a success!  
+> Gamemaster: So everybody but Egan and Darkling3 are affected by Faerie Fire, which means folks have advantage on attack rolls against them.  
+> Mango: unfortunate.  
+> Gamemaster: However, since Doug helped, actioned against Darkling 3, everyone also has advantage to attack it.  
+> Gamemaster: So Egan is the only one who's at normal attack right now.  
+> Egan: Okay.  
+> Gamemaster: And that brings us to Erin's turn.  
+> Doug: Lovely.  
+> Gamemaster: And she will this time give Doug a d6 of Barak Inspiration.  
+> Doug: Doug will write it down.  
+> Gamemaster: And then it's Egan's turn.  
+> Egan: First, I will remember that I'm an orc and I have orc things.  
+> Egan: Am I still in the ethereal realm?  
+> Mango: Thank you.  
+> Egan: Is that still happening?  
+> Gamemaster: Let me check my notes.  
+> Gamemaster: I have for one round, but I did not note when exactly it happened.  
+> Mango: He's already taken a turn with the ethereal realm stuff, so it's got to be over around at this point.  
+> Egan: Okay.  
+> Gamemaster: Yeah.  
+> Gamemaster: That's true.  
+> Gamemaster: All right.  
+> Gamemaster: Yeah, we'll say your legs are back to normal.  
+> Egan: Then I will... This is... This is silly.  
+> Doug: you  
+> Egan: In 5e, if you have movement, you can use it... You can, like, break it up, right?  
+> Egan: You don't have to do your full movement and then...  
+> Gamemaster: Yeah.  
+> Mango: Yeah.  
+> Egan: Okay, then I will first jog around.  
+> Mango: Baldur's Gate rules.  
+> Egan: I will jog around to sort of right here.  
+> Egan: And then I will once again laser breath through Darkling 3 and Sprite 2F.  
+> Egan: Actually, no.  
+> Egan: Actually, I can't do that without hitting Darkling 2.  
+> Egan: So I'll do Darkling 3 and Sprite 2F.  
+> Egan: So they both have to make dexterity saves.  
+> Egan: DC 14.  
+> Gamemaster: Very well!  
+> Gamemaster: The Darkling gets... A 6!  
+> Egan: That's a fail.  
+> Gamemaster: And the Sprite gets... A 22!  
+> Egan: The sprite takes 6 radiant damage, and Darkling 3 takes 12 radiant damage.  
+> Gamemaster: Sprite 2 becomes bloodied and Darkling 3 is on death's door.  
+> Egan: Oh.  
+> Doug: Get them off it.  
+> Mango: We want Deb?  
+> Doug: Get death in here.  
+> Doug: Let me open this up.  
+> Doug: Well, we want death for other people, I guess.  
+> Doug: Keep them on death's door then, I guess.  
+> Doug: Don't let death's bank.  
+> Doug: Let me... No.  
+> Egan: Man, I love it.  
+> Mango: Sorry.  
+> Mango: I just noticed this.  
+> Mango: Is your character's name Doug Donald Hugh?  
+> Mango: Okay, that's just in this.  
+> Doug: That's just...  
+> Mango: Okay.  
+> Mango: Okay.  
+> Doug: Well, because I was typing Doug, and I was like, Douglas.  
+> Doug: And I was like, his name's not Douglas.  
+> Doug: His name is Doug.  
+> Doug: But if Doug is short for his first name, then Donahue has to be short for his last name, which is Donald Hugh.  
+> Mango: Of course.  
+> Mango: Because if you have a nickname as your first name, clearly you must also have a nickname for your last name.  
+> Mango: That's how that works.  
+> Doug: I entered that, and I thought it was funny like fucking 30 minutes ago.  
+> Doug: I didn't expect anyone to look.  
+> Egan: So wild.  
+> Gamemaster: Hell yes.  
+> Egan: Bonus action.  
+> Egan: I will use my orcish adrenaline rush to give myself temporary hit points equal to my proficiency bonus.  
+> Egan: So I get two temporary hit points.  
+> Mango: Better than nothing.  
+> Egan: If this guy's on death's door, I guess I'll just stay here and try and tank whatever comes next.  
+> Gamemaster: Very well.  
+> Gamemaster: Next is all of the enemies that remain.  
+> Gamemaster: The sprites are both going to shoot little arrows.  
+> Gamemaster: Sprite 1 is going to go for Erin.  
+> Gamemaster: Oh, at disadvantage.  
+> Egan: Oh, no, Aaron.  
+> Mango: But she's dodging.  
+> Egan: Oh, because...  
+> Gamemaster: She gets, I think, a 12, which is going to hit Erin.  
+> Gamemaster: Um...  
+> Mango: If it helps.  
+> Mango: It's actually just a flat roll.  
+> Mango: It's not a disadvantage.  
+> Gamemaster: Oh, you're right.  
+> Gamemaster: Well, I did roll the lower number with the first roll, so still it's a 12, which does hit Erin anyway.  
+> Gamemaster: So Erin takes one point of damage, which is a sizable chunk for her.  
+> Gamemaster: She's a flautist.  
+> Egan: Oh, no.  
+> Mango: She's a bard!  
+> Mango: She should get bard hit points!  
+> Gamemaster: She's not bloodied, so she's got more than two.  
+> Mango: She's got more than two.  
+> Mango: Great.  
+> Doug: you  
+> Gamemaster: But she does take a point of damage.  
+> Gamemaster: Okay.  
+> Gamemaster: And then the other one is going to shoot at Mango.  
+> Gamemaster: Oh, shoot.  
+> Mango: Dodge.  
+> Gamemaster: That's a 22.  
+> Mango: Yeah, that hits.  
+> Gamemaster: You take one point of piercing damage.  
+> Mango: Absolutely.  
+> Gamemaster: And then the two Darklings are going to go.  
+> Gamemaster: One of them is going to attack Mango and get a 7.  
+> Mango: Mrs. Is Mango's turn.  
+> Gamemaster: And then Darkling 3 is going to go for Egan and get a 10.  
+> Egan: Boo.  
+> Egan: Miss.  
+> Egan: That misses.  
+> Egan: Boo.  
+> Egan: Get laser breathed.  
+> Gamemaster: And that brings us to Mango's turn.  
+> Mango: Mango, go.  
+> Mango: Mango, bonus action.  
+> Mango: Move Hunter's Mark to Darkling 2.  
+> Gamemaster: Sure.  
+> Mango: Mango, whack.  
+> Gamemaster: Yep.  
+> Gamemaster: You have advantage.  
+> Mango: I have double advantage.  
+> Mango: I know that doesn't mean anything, but I have it.  
+> Mango: 17.  
+> Mango: 17 points of damage.  
+> Gamemaster: I'm fairly certain that hits.  
+> Gamemaster: Yes, it does.  
+> Gamemaster: Yeah, you absolutely wreck this guy with your... Yeah, he gets mangoed hard.  
+> Mango: Get mangoed, idiot.  
+> Gamemaster: and falls to the dirt.  
+> Mango: Yeah.  
+> Gamemaster: Would you like to do anything with your movement?  
+> Mango: And that's it.  
+> Mango: Oh, actually, yeah.  
+> Mango: I would.  
+> Mango: So it's ten feet to move out of the current space I'm on.  
+> Gamemaster: Correct.  
+> Mango: Ten.  
+> Mango: Fifteen.  
+> Gamemaster: Very noble.  
+> Gamemaster: Will that end your turn?  
+> Egan: you  
+> Mango: Yes, that's the end of my turn.  
+> Gamemaster: All right.  
+> Gamemaster: Laranon on initiative count 10 goes, oh, the tides look to be turning, but let's see what we can do here.  
+> Doug: Oh, my favorite part.  
+> Gamemaster: Roll that d10.  
+> Doug: Hey.  
+> Gamemaster: Eight.  
+> Gamemaster: A...  
+> Gamemaster: deluge of fungal spores fill the air and everybody needs to make a wisdom saving throw indeed yes  
+> Doug: Question.  
+> Doug: is this magic perfect wait what save was this oh  
+> Mango: Question.  
+> Mango: Does this involve the Charmed status effect?  
+> Egan: Bye.  
+> Gamemaster: I actually don't think it does, but let me double check.  
+> Gamemaster: Wisdom.  
+> Mango: Wisdom.  
+> Gamemaster: No, this does not involve being charmed, unfortunately.  
+> Mango: Okay.  
+> Gamemaster: Okay, let's roll four.  
+> Gamemaster: Erin.  
+> Mango: Sorry Mike.  
+> Gamemaster: Erin fails.  
+> Doug: How do these things happen?  
+> Gamemaster: Okay, what did we get?  
+> Gamemaster: That's a failure.  
+> Mango: 21.  
+> Doug: Bug had advantage, so he got a five.  
+> Mango: 21.  
+> Egan: I added my bargain separation and I got a 13.  
+> Doug: I know.  
+> Gamemaster: I think a 13 is also a failure.  
+> Gamemaster: It is.  
+> Gamemaster: And Mango.  
+> Gamemaster: 21 is a success.  
+> Gamemaster: So...  
+> Gamemaster: Doug, Egan, and Aaron all kind of inhale some of these spores, and your vision kind of, you see, double a little bit, and everything around you just looks odd and off, and you are under the effects of the Confusion spell.  
+> Egan: Oh no.  
+> Mango: You can't take bonus actions or reactions and you have to roll a d10 to figure out what you do that round.  
+> Egan: What does this do?  
+> Egan: No.  
+> Gamemaster: Okay, that was Mango.  
+> Doug: Doi.  
+> Doug: Do.  
+> Doug: Do.  
+> Gamemaster: Now it's Doug's turn.  
+> Gamemaster: Doug, you are confused, so you must roll the d10 for confusion.  
+> Doug: Let me pull a spell up.  
+> Gamemaster: What did you receive?  
+> Egan: um you  
+> Doug: Nine.  
+> Mango: Oh, sick!  
+> Gamemaster: You can do what you want with your action.  
+> Doug: Nice.  
+> Doug: Oh.  
+> Mango: You have your movement and your action to do with as you please.  
+> Gamemaster: Yeah, your bonus action is still forfeit, but you can otherwise act, yes.  
+> Doug: Kale.  
+> Doug: Doug will move.  
+> Gamemaster: You're flanking, so you get advantage.  
+> Doug: With my wavy rapier.  
+> Doug: Yes.  
+> Doug: Yes, we kill him.  
+> Doug: We overkill him.  
+> Mango: Nice.  
+> Doug: This is too many.  
+> Gamemaster: Oh, yeah.  
+> Doug: We kill him so hard.  
+> Gamemaster: He had one hit point, so yes, indeed, you overkill him very heavily.  
+> Gamemaster: Yeah.  
+> Doug: Let me roll the die so we can see how bad he would have died.  
+> Doug: Oh, and it's only the dice multiplied?  
+> Mango: What's interesting about a crit in the 2024 edition is that they explicitly state that you just roll twice as many dice.  
+> Mango: Like, it's not a times two.  
+> Mango: It's you just roll all of your dice twice and then add the modifiers.  
+> Mango: Only the dice.  
+> Mango: It's not like Pathfinder where you get to just do a quick times two.  
+> Gamemaster: It was always only the dice, but now they've made it so that you roll instead of just multiplying.  
+> Mango: Yes.  
+> Mango: Which, honestly, I get.  
+> Mango: More dice is more fun.  
+> Gamemaster: Yeah.  
+> Doug: I went from a billion points of damage.  
+> Gamemaster: It's very dead.  
+> Gamemaster: It's incredibly dead.  
+> Gamemaster: You would have one-shot it.  
+> Gamemaster: Yeah.  
+> Mango: A billion's a lot.  
+> Doug: That's Doug's turn.  
+> Doug: That's how he rolls.  
+> Gamemaster: Very well.  
+> Gamemaster: Laranon goes...  
+> Gamemaster: Oh, the party's almost over.  
+> Gamemaster: But let's have one last bash.  
+> Gamemaster: And I'll have another d10 roll, please.  
+> Gamemaster: Oh, and the fairy fire subsides.  
+> Doug: One.  
+> Doug: Those are good.  
+> Mango: Yeah, like...  
+> Gamemaster: One.  
+> Egan: Thank you.  
+> Mango: Fries, I guess?  
+> Gamemaster: Oh, excellent.  
+> Mango: Chips?  
+> Doug: Yeah.  
+> Mango: That's a good sub-side.  
+> Gamemaster: I need a d4.  
+> Doug: Chips are sometimes.  
+> Gamemaster: This time, Aaron is one, Mango is two, Doug is three, and Egan is four.  
+> Mango: I'm gonna roll a 2.  
+> Mango: Rolled a 3.  
+> Gamemaster: That's Doug again.  
+> Doug: I forgot who that was.  
+> Gamemaster: Yes, however, this time, Doug turns fully into a goat.  
+> Doug: Nice.  
+> Mango: Is this another animal effect?  
+> Mango: I'm so sorry, Mike.  
+> Egan: It happened.  
+> Doug: Very nice.  
+> Gamemaster: It's Doug every time.  
+> Mango: Honestly, this has worked out great for everybody else.  
+> Gamemaster: Okay.  
+> Mango: Doug has just lightning-rodded all of the bad effects.  
+> Doug: Doug is the tank.  
+> Gamemaster: Oh, that's crazy.  
+> Doug: Doug is the tank, but for effects.  
+> Gamemaster: That is so, so funny.  
+> Gamemaster: Okay, what happens after that?  
+> Gamemaster: It's Aaron's turn.  
+> Gamemaster: Aaron is on... Oh, Aaron's confused.  
+> Mango: Oh no.  
+> Mango: That's why he keeps asking us to roll it.  
+> Egan: Come on, big 11.  
+> Gamemaster: I need to roll a d10.  
+> Gamemaster: I don't have a d10 out.  
+> Gamemaster: I got a 10!  
+> Mango: Nice.  
+> Gamemaster: She cannot use a bonus action because she's confused, but she is able to use the dodge action.  
+> Mango: Nice.  
+> Gamemaster: And then it becomes Egan's turn.  
+> Gamemaster: Egan, you need to roll a d10.  
+> Mango: You don't have reach or anything like that, right?  
+> Egan: No, I'm just huge.  
+> Mango: Okay.  
+> Egan: I mean, I'm just large.  
+> Gamemaster: What have you received?  
+> Egan: I got a five, which means... My eyes... My large, titan eyes are just two swirls.  
+> Gamemaster: Five, you do nothing.  
+> Mango: Okay.  
+> Gamemaster: You look around.  
+> Gamemaster: You're really shaken by this whole experience.  
+> Gamemaster: You're seeing kind of colors going around your vision and you're just absolutely hallucinating off these spores.  
+> Egan: doing this.  
+> Mango: These guys get to make, like, saves, right, at the end of their turn to stop being confused?  
+> Gamemaster: Yes, I suppose.  
+> Gamemaster: Yes, you can.  
+> Gamemaster: It is just going to end.  
+> Gamemaster: Yeah, that would have been unfortunate.  
+> Egan: It's a good thing I didn't attack Doug right in front of me.  
+> Mango: Well, then never mind.  
+> Doug: Is this magic?  
+> Gamemaster: Both of you can make wisdom saves.  
+> Gamemaster: Although I think that the confusion will end by the time your next turn comes around anyway.  
+> Mango: It gives them their reaction back, if they need that for anything.  
+> Egan: I got a 23.  
+> Gamemaster: Oh, that's true.  
+> Gamemaster: 23 saves.  
+> Gamemaster: You're no longer confused.  
+> Doug: Is this saving against magic?  
+> Gamemaster: It is still magic, yes.  
+> Mango: Do you have an advantage on saves against magic?  
+> Doug: Who would even... Why would...  
+> Mango: That's crazy.  
+> Doug: It doesn't even matter.  
+> Doug: It's a wisdom save.  
+> Doug: 11.  
+> Gamemaster: You're still confused.  
+> Doug: Why do gnomes get this?  
+> Doug: Gnome cunning.  
+> Doug: Advantage on int, wiz, and ka saves against magic.  
+> Gamemaster: And it has always been that way.  
+> Egan: Yeah, that's  
+> Gamemaster: Regular 5e gnomes had that.  
+> Mango: Yeah.  
+> Mango: Yeah, it's just a nice thing.  
+> Mango: Well, it's because everybody always picks human or elf or, I guess, tiefling.  
+> Mango: It's like, we need to give people stuff that gets them to stop doing that.  
+> Mango: And then it still didn't work because no one ever played gnome.  
+> Gamemaster: Yeah, the gnome cutting is kind of wild.  
+> Gamemaster: Okay.  
+> Gamemaster: The sprites go, since Egan kind of had to forfeit his turn.  
+> Gamemaster: Sprite 2.  
+> Gamemaster: Oh, the fairy fire is gone, so it won't have advantage on you, Mango, but it is going to stab you now that it is within melee range.  
+> Mango: Hit button.  
+> Gamemaster: I think that's going to hit.  
+> Gamemaster: I think that's either a 20 or a 21.  
+> Mango: But again, both of those would hit.  
+> Gamemaster: It's a 21.  
+> Mango: Still hits.  
+> Mango: I'm gonna reaction cast Spiny Shield.  
+> Egan: What?  
+> Gamemaster: I don't know what that does.  
+> Egan: That's a cool spell.  
+> Gamemaster: Uh-huh.  
+> Mango: A bunch of thorns grow out of my shield, and it will... I roll 2d4, and I subtract that much damage from what they deal to me, and then I also deal it to them.  
+> Doug: instantly.  
+> Gamemaster: Okay.  
+> Mango: So... Okay, so I roll to 7.  
+> Gamemaster: She rolled seven points of damage.  
+> Mango: So I take no damage, and the sprite takes 7 damage.  
+> Gamemaster: Okay, this is Sprite 2, who is bloodied.  
+> Gamemaster: So Sprite 2 goes to stab you, and you put your shield up in front of it, and the sprite's pretty small.  
+> Gamemaster: The spikes come out and impale her, and she just stays there on the shield, kind of like a little bug.  
+> Mango: Gross.  
+> Egan: That's a cool spell.  
+> Mango: Yeah.  
+> Gamemaster: The other sprite is going to shoot an arrow at Eren!  
+> Gamemaster: It's going to hit and deal another point of damage to Eren.  
+> Mango: Yeah.  
+> Egan: Oh, no.  
+> Egan: She's on death's door.  
+> Gamemaster: She's not bloodied.  
+> Gamemaster: And then it's Mango's turn.  
+> Mango: Uh, what is the... Can I get to Sprite 1?  
+> Mango: Yeah, I can.  
+> Mango: So I'm gonna... I'm just gonna... I'm gonna walk up.  
+> Gamemaster: Amazing.  
+> Gamemaster: Sure, sure.  
+> Mango: I'm gonna use my bonus action to move my Hunter's Mark over to Sprite 1.  
+> Gamemaster: A 16 hits.  
+> Mango: And then I'm going to attempt to whack it.  
+> Mango: 16.  
+> Egan: Thank you.  
+> Mango: 16 points of damage.  
+> Gamemaster: How would you like to do this?  
+> Mango: I just, like, it's just literally a single bonk, like a kendo sword type deal with the staff over the top of the head.  
+> Gamemaster: It falls to the ground and sinks into the mud as the final combatant is slain.  
+> Mango: I want to hit it with the mango.  
+> Mango: Yeah, just whack.  
+> Gamemaster: Laranon kind of slow claps from up on his throne, and he goes...  
+> Egan: Thanks.  
+> Gamemaster: Oh, yes!  
+> Gamemaster: Excellent, excellent show.  
+> Gamemaster: Really nice work.  
+> Gamemaster: That was a lot of fun.  
+> Gamemaster: A lot of danger.  
+> Gamemaster: Some fun things happening.  
+> Mango: Thanks.  
+> Egan: Still behemoth.  
+> Gamemaster: Yes, that was very scary.  
+> Gamemaster: I was not expecting that.  
+> Gamemaster: Very neat.  
+> Egan: Nobody ever is.  
+> Gamemaster: And then he looks down at the goat that is Doug and goes,  
+> Gamemaster: Oh, poor little guy.  
+> Gamemaster: He's a little goat.  
+> Gamemaster: Oh, man.  
+> Gamemaster: I'll turn him back.  
+> Gamemaster: I'll turn him back.  
+> Doug: Perfect.  
+> Gamemaster: And he kind of turns his hand in a circle, and you return to your gnomish form.  
+> Gamemaster: You do, having not dismissed the separate goat eyes that you received, do still have those.  
+> Mango: Oh, gosh.  
+> Egan: He's got good eyes.  
+> Egan: That's how that one guy got plant hair.  
+> Mango: Does that mean he could dispel it at any time and he's choosing to keep it because he'd be bald otherwise?  
+> Egan: Maybe it's giving us really cool abilities.  
+> Gamemaster: Hard to say.  
+> Gamemaster: Hard to say.  
+> Gamemaster: Well, you guys have provided plenty of fun and excitement for me today, and I so appreciate you playing along.  
+> Egan: That's what I was going to say.  
+> Mango: Baldy.  
+> Gamemaster: I suppose I could send you on your merry way back home now.  
+> Gamemaster: Thanks for playing!  
+> Mango: Oh.  
+> Gamemaster: and the same mist that you saw before starts to creep in from over the various vines and brush that had encircled you until it fully encloses you, and it drifts away, and you find yourself back in the bright sunshine along the Finnegan Ring, and you see...  
+> Gamemaster: A little bit ways in the distance at this point is the caravan, but it goes at a relatively slow speed, and the four of you are able to kind of run and catch up to it, and eventually you get close enough where Brimson, the kind of trailer on horseback, spots you.  
+> Gamemaster: And goes, oh my gosh, you guys are back.  
+> Gamemaster: Wow.  
+> Gamemaster: We honestly didn't know if that was going to happen or not.  
+> Egan: I'll shrink back down into a regular orc.  
+> Gamemaster: Oh, yeah, that's a good point, I guess.  
+> Gamemaster: Ah, oh, good.  
+> Gamemaster: That's you.  
+> Gamemaster: All right.  
+> Mango: I feel like somebody should have a word with Chuck because if Chuck had told us literally any of the smallest amount of detail that would have been useful other than just follow the mushroom we don't need to we need to talk to Chuck Chuck's not short for anything  
+> Egan: Everyone's ringed.  
+> Doug: Yeah, what the fuck?  
+> Egan: I'll just yell, Charles!  
+> Egan: What do you think Chuck's short for?  
+> Egan: Your brother?  
+> Doug: Chuck's not short for Chuckless Donald Hugh.  
+> Mango: Woodchuck, maybe.  
+> Gamemaster: You guys ride up to Chuck and can have words with him if you like.  
+> Doug: My brother lied to us.  
+> Gamemaster: Chuck does not remember what else happened to him during his journey many years ago.  
+> Mango: Likely story.  
+> Gamemaster: But the four of you all make it back a little bloodied, a little damaged, a little bleary-eyed?  
+> Egan: yeah i would actually run away  
+> Gamemaster: Question mark?  
+> Doug: Woo!  
+> Mango: He kept the goat eyes.  
+> Gamemaster: But that's it.  
+> Gamemaster: That's the one shot.  
+> Gamemaster: You did it.  
+> Mango: I had 5 HP the second half of that battle.  
+> Doug: I had 4 HP the second half of that battle.  
+> Gamemaster: Yeah.  
+> Gamemaster: I rolled super high attack rolls the first half of combat and then super low attack rolls the second half.  
+> Mango: Yeah, we were...  
+> Mango: Nice.  
+> Egan: It was close there.  
+> Doug: Could it be just a fourth level spell?  
+> Mango: Red caps are... What's a 4th level spell?  
+> Doug: Confusion?  
+> Doug: Oh, the specific one?  
+> Mango: I mean, Confusion is a really good crowd control like thing.  
+> Gamemaster: Yeah.  
+> Gamemaster: Yeah, that was probably the most powerful thing that  
+> Gamemaster: was on there.  
+> Gamemaster: But it's limited to one round, no matter whether you saved or not.  
+> Doug: Because this says, I guess the confusion spell.  
+> Doug: Oh, this is free basic rules.  
+> Mango: I liked jumping into 5e for a little bit again, doing some murder.  
+> Doug: I don't know.  
+> Gamemaster: The confusion being cast on you guys from the spores would have dissipated on its own.  
+> Doug: That makes sense.  
+> Gamemaster: Same as the fairy fire that only lasted one round.  
+> Gamemaster: I think it's a little different.  
+> Doug: Understandably.  
+> Egan: That was fun.  
+> Gamemaster: A little spicy.  
+> Gamemaster: You successfully avoided the first combat by calming down Aaron, which is probably good because the second combat was a little closer for comfort than I thought it would be.  
+> Mango: so if we were like low on health and resources it wouldn't have been good oh that's fun that's what those shadow guys would have been  
+> Gamemaster: Right.  
+> Gamemaster: There's a fey creature called a mean lock that are conjured into being by extreme feelings of fear.  
+> Egan: Thank you.  
+> Gamemaster: Yeah.  
+> Gamemaster: Correct.  
+> Gamemaster: And...  
+> Gamemaster: The D4 that was rolled towards the beginning of the one-shot decided which one of four NPCs got transported to the Fey Realm with you, and Erin was tied for the most cowardly, as in the DC to calm her was 20, but you kind of crushed it.  
+> Egan: Oh, nice.  
+> Mango: I mean, I got very lucky on that particular roll, on top of having advantage and an additional d4 from Guidance.  
+> Gamemaster: Yeah.  
+> Gamemaster: Right.  
+> Mango: So that worked out very well.  
+> Egan: Oh, man.  
+> Egan: IV guidance is incredible.  
+> Mango: Yeah.  
+> Gamemaster: Indeed it is, yeah.  
+> Gamemaster: Pretty powerful.  
+> Mango: Like, I fully understand why when Pathfinder split from D&D they made the change to Guidance, but 5e Guidance is fun.  
+> Mango: It's fun to just, like, be glowing and get a d4 to whatever roll you like all the time.  
+> Doug: it's like quite crazy.  
+> Doug: Like it's, it's out of combat.  
+> Doug: I guess it's ridiculous because the alternative in Pathfinder is also not bad as far as just keeping a cantrip up, but it's a plus one and then you're immune for an hour.  
+> Doug: So you can't just spam plus ones.  
+> Doug: This one is plus a D4 and just spam it.  
+> Gamemaster: Oh, we didn't play with this, but they actually did nerf Guidance in 2024.  
+> Mango: Bonuses are bonuses.  
+> Egan: Well, okay, when I was, like, first building Johnny, I had, like, a little spreadsheet.  
+> Egan: I was like, okay, I can do these to get circumstances bonus, and then these are status bonuses, and then maybe this can be an item bonus, and then I can do debuffs here, and then 5e, it's just like, I spam guidance.  
+> Mango: Yeah.  
+> Doug: Give them disadvantage.  
+> Egan: You're gonna do more.  
+> Doug: I don't know.  
+> Egan: I step over here, and now you can do more twice.  
+> Doug: First level fighter.  
+> Doug: Yeah.  
+> Mango: Did they?  
+> Gamemaster: you have to pick a skill to guide.  
+> Egan: Oh.  
+> Gamemaster: And guidance only applies to a roll using that skill.  
+> Mango: You touch a willing creature and choose a skill.  
+> Gamemaster: Which I guess if you know what you're rolling anyway, it doesn't matter.  
+> Mango: Yeah.  
+> Gamemaster: But I don't know, could you have added guidance to attack rolls before?  
+> Mango: Right.  
+> Gamemaster: I forget.  
+> Mango: No.  
+> Doug: No.  
+> Doug: Oh no.  
+> Mango: No, no, no.  
+> Mango: It was always for skill checks.  
+> Egan: Oh.  
+> Gamemaster: Alright, so...  
+> Mango: The difference was that, like, 2014 version was for any skill check you do in the minute.  
+> Mango: I guess for new 2024, it's for a specific skill check you do in a minute.  
+> Gamemaster: Yeah.  
+> Mango: But you're assuming that you're casting guidance to do a thing anyway.  
+> Gamemaster: Right.  
+> Gamemaster: Yeah.  
+> Mango: So...  
+> Egan: You're not walking around being like, I might need this in the next minute.  
+> Doug: You know what?  
+> Mango: I...  
+> Doug: That's actually... We have a blind spot for how OP it is.  
+> Doug: Because you could just cast it on everyone on your team and be like, I don't know, whatever the next skill check you roll, add a D4 to it.  
+> Doug: Sure.  
+> Doug: Like...  
+> Mango: I mean, like, if you were being a stickler for the rules, which you, like, might want to be given how powerful guidance is as a spell, like, you could say, you know, once I've asked for you to make the persuasion check, it is too late to add things on after the fact.  
+> Mango: So it's like you would have to know to cast guidance before you go into the conversation and hope it happens, like, within the first minute of it.  
+> Mango: But, like...  
+> Mango: I think that depends on how much of a problem it actually ends up being.  
+> Gamemaster: Yeah.  
+> Mango: I feel like at low levels it's a pretty big dent in your role, but at high levels I don't know how much it adds necessarily.  
+> Gamemaster: Well, 5e is bounded in a way that Pathfinder is not.  
+> Mango: I mean, that's fair.  
+> Egan: I mean, I think by the end of our first campaign, Dorcan had like a plus 18 to perception.  
+> Mango: I'm so used to Pathfinder, you guys at the end of the campaign rolled a 60 semi-regularly on some of your rolls.  
+> Gamemaster: Right.  
+> Mango: So, like...  
+> Gamemaster: Yeah.  
+> Egan: So at some point, guidance stops being useful.  
+> Mango: Yeah, but that was like on top of the fact that I believe, just like campaign two and campaign one, I think I gave you guys items or whatever that helped you break the bounded accuracy a little bit, especially as we were getting towards the end.  
+> Egan: I think that was only a little bit because Dorcan had like a plus six wisdom, but then I had expertise and perception.  
+> Mango: Yeah, I mean, plus six is already breaking the bounded accuracy there because it's supposed to top out at five.  
+> Gamemaster: Did you have a weapon expertise?  
+> Mango: But anyway, this was a good time.  
+> Egan: That was fun.  
+> Mango: I like Rangers.  
+> Doug: That also means.  
+> Mango: I think it took four revisions, but I think Rangers are pretty okay now.  
+> Gamemaster: Or what do they call it?  
+> Mango: Oh, you know, I forgot to ask you to do it on every attack I made.  
+> Doug: Mastering.  
+> Mango: But yes, every time I hit somebody, you were supposed to roll a con save or fall prone.  
+> Gamemaster: Yeah.  
+> Gamemaster: I kind of forgot about that until now as well.  
+> Mango: And I forgot to ask you to do it every time.  
+> Mango: Yeah.  
+> Egan: What kind of ranger were you?  
+> Mango: I was a Fae Wanderer Ranger because that felt like it would be thematic for the one shot.  
+> Gamemaster: And indeed it was.  
+> Gamemaster: Who knew?  
+> Mango: Also, I like the Feywanderer archetype.  
+> Mango: That's the thing that lets me add the wisdom to my charisma checks.  
+> Mango: And it also just fully gives you an additional d4 of damage on an attack every round.  
+> Gamemaster: Yeah, that's wild.  
+> Mango: So...  
+> Mango: I assume that the reason that they give that to you is because it's supposed to take the place of using Hunter's Mark, so that frees up your bonus action.  
+> Mango: But it doesn't say you can't stack it with Hunter's Mark.  
+> Gamemaster: Right.  
+> Gamemaster: Do both.  
+> Mango: So, yeah.  
+> Egan: That's a real Unearthed Arcana they released recently.  
+> Gamemaster: Yeah.  
+> Mango: But I... I mean, it was a good time.  
+> Mango: I didn't get a friend, though.  
+> Mango: I wasn't a Beastmaster, so I didn't get to have an animal buddy.  
+> Gamemaster: Unfortunate.  
+> Mango: I guess... I guess the Behemoth counts as the animal buddy.  
+> Mango: Yeah, that's wacky.  
+> Egan: I saw that.  
+> Gamemaster: It is kind of wild.  
+> Egan: It... Yeah.  
+> Gamemaster: And you get bigger at higher levels.  
+> Gamemaster: Yeah.  
+> Mango: At level 10, you're huge.  
+> Mango: At level 14, you're gargantuan.  
+> Gamemaster: That's really nuts.  
+> Egan: The biggest thing is that you have to find a way to give yourself Mage Armor, otherwise your AC is terrible.  
+> Mango: Your AC is 11 plus wisdom.  
+> Mango: Oh.  
+> Egan: Yeah, so I had to, I was like, I gotta get Mage Armor somehow.  
+> Mango: Oh, I'm sorry, 11 plus wisdom is the highest AC you can have.  
+> Mango: If you were like the insect, it's 8 plus your wisdom.  
+> Egan: Yeah.  
+> Gamemaster: Yeah, I'm curious what form it will see, if it gets suggested or anything.  
+> Mango: That's crazy.  
+> Egan: But at higher levels, you can do really cool stuff.  
+> Egan: And I hope they print this one because this one's fun.  
+> Egan: You can swallow stuff at level 14.  
+> Egan: I think it seems like the feedback on this one has been pretty positive.  
+> Mango: Nice.  
+> Doug: Thank you.  
+> Egan: I love a druid, so I'm hoping that they print this one.  
+> Mango: Well, thank you, Tanner, for running this one-shot.  
+> Gamemaster: There you go, there you go.  
+> Egan: Thank you, Tanner.  
+> Gamemaster: Yeah, no problem.  
+> Gamemaster: That was fun.  
+> Mango: It's nice to be on... Yeah.  
+> Gamemaster: I figured I'd do a little chaos, you know.  
+> Mango: I mean, it's no here's a thousand wands that all do a random effect, but it's closer to chaotic.  
+> Doug: I'm still plotting on a Pathfinder version of that.  
+> Mango: Are you just, you're writing up like 10,000 different effects on your own?  
+> Doug: I'm planning on... No, no, no, no.  
+> Doug: I found a Pathfinder 10,000 effects.  
+> Doug: But the story is important because it has to be continuous.  
+> Mango: Right.  
+> Doug: So I'm trying to remember what even happened and then have that... Well, the back... We'll see.  
+> Mango: The back fell off.  
+> Gamemaster: That's what I was going to say.  
+> Egan: you  
+> Doug: Maybe the back falls off in the sequel.  
+> Doug: But I'm toying with ideas of how to get four commenters  
+> Doug: A bag of wands again.  
+> Doug: Okay.  
+> Gamemaster: Amazing.  
+> Gamemaster: All right.  
+> Gamemaster: I am around next week, but I'm not around the following week.  
+> Gamemaster: Just for heads up to everybody.  
+> Egan: I cannot do Monday next week, but I can do any other day.  
+> Egan: I can do Tuesday if that works.  
+> Gamemaster: Ooh, see, now that makes it interesting.  
+> Gamemaster: I could do Tuesday next week.  
+> Mango: tuesday mike can you do tuesday i know tuesday is not usually a fun day for you maybe  
+> Doug: Um.  
+> Doug: Maybe.  
+> Gamemaster: Let me think about Wednesday.  
+> Gamemaster: Wednesday is possible.  
+> Gamemaster: I'm going to California on Thursday.  
+> Egan: Oh, fun.  
+> Egan: Just for fun or for...  
+> Gamemaster: So, Liz's dad got a work reward trip to San Diego that he added us to.  
+> Gamemaster: But Liz and I are actually going a couple days...  
+> Gamemaster: early because my cousin lives an hour outside of San Diego so we're going to stay with him for a few days and then going to San Diego for a few days so I'm out Thursday the 30th through Wednesday the 6th which means theoretically I might be able to play Thursday the 7th but we'll see how everyone else's availability looks like that week  
+> Mango: We'll see then.  
+> Doug: Maybe.  
+> Gamemaster: But that all being said, let me think about Wednesday of next week and see if I could swing it.  
+> Gamemaster: Yeah.  
+> Mango: Maybe see you all next week.  
+> Gamemaster: All right.  
+> Gamemaster: Yeah.  
+> Gamemaster: Good night, folks.  
+> Egan: Maybe.  

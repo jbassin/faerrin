@@ -1,0 +1,230 @@
+// Per-component styles ported from the Quartz components' inline `.css` strings
+// and quartz/components/styles/*.scss. Aggregated here so they load before the
+// custom.scss overrides (which intentionally win the cascade). Markup classes
+// are global, so these are global rules.
+
+// ── ArticleTitle (ArticleTitle.tsx) ────────────────────────────────
+.article-title {
+  margin: 2rem 0 0 0;
+}
+
+// ── PageTitle (PageTitle.tsx) ──────────────────────────────────────
+.page-title {
+  font-size: 1.75rem;
+  margin: 0;
+  font-family: var(--titleFont);
+}
+
+// ── TagList (TagList.tsx) ──────────────────────────────────────────
+.tags {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+  gap: 0.4rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.section-li > .section > .tags {
+  justify-content: flex-end;
+}
+
+.tags > li {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  overflow-wrap: normal;
+}
+
+a.internal.tag-link {
+  border-radius: 8px;
+  background-color: var(--highlight);
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.1rem;
+}
+
+// ── PageList (PageList.tsx) ────────────────────────────────────────
+.section h3 {
+  margin: 0;
+}
+
+.section > .tags {
+  margin: 0;
+}
+
+// ── Breadcrumbs (styles/breadcrumbs.scss) ──────────────────────────
+.breadcrumb-container {
+  margin: 0;
+  margin-top: 0.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.breadcrumb-element {
+  p {
+    margin: 0;
+    margin-left: 0.5rem;
+    padding: 0;
+    line-height: normal;
+  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+// ── ContentMeta (styles/contentMeta.scss) ──────────────────────────
+.content-meta {
+  margin-top: 0;
+  color: var(--darkgray);
+
+  &[show-comma="true"] {
+    > *:not(:last-child) {
+      margin-right: 8px;
+
+      &::after {
+        content: ",";
+      }
+    }
+  }
+}
+
+// ── Backlinks (styles/backlinks.scss) ──────────────────────────────
+.backlinks {
+  flex-direction: column;
+
+  & > h3 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  & > ul.overflow {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    max-height: calc(100% - 2rem);
+    overscroll-behavior: contain;
+
+    & > li {
+      & > a {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// ── Footer (styles/footer.scss) ────────────────────────────────────
+footer {
+  text-align: left;
+  margin-bottom: 4rem;
+  opacity: 0.7;
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: -1rem;
+  }
+}
+
+// ── List pages — folder/tag (styles/listPage.scss) ─────────────────
+ul.section-ul {
+  list-style: none;
+  margin-top: 2em;
+  padding-left: 0;
+}
+
+li.section-li {
+  margin-bottom: 1em;
+
+  & > .section {
+    display: grid;
+    grid-template-columns: fit-content(8em) 3fr 1fr;
+
+    @media all and (max-width: 800px) {
+      & > .tags {
+        display: none;
+      }
+    }
+
+    & > .desc > h3 > a {
+      background-color: transparent;
+    }
+
+    & .meta {
+      margin: 0 1em 0 0;
+      opacity: 0.6;
+    }
+  }
+}
+
+// ── TableOfContents — modern (styles/toc.scss) ─────────────────────
+.toc {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  min-height: 1.4rem;
+  flex: 0 0.5 auto;
+  &:has(button.toc-header.collapsed) {
+    flex: 0 1 1.4rem;
+  }
+}
+
+button.toc-header {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+
+  & h3 {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0;
+  }
+
+  & .fold {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+  }
+
+  &.collapsed .fold {
+    transform: rotateZ(-90deg);
+  }
+}
+
+ul.toc-content {
+  list-style: none;
+  position: relative;
+  margin: 0.5rem 0;
+  padding: 0;
+  max-height: calc(100% - 2rem);
+  overscroll-behavior: contain;
+
+  & > li > a {
+    color: var(--dark);
+    opacity: 0.35;
+    transition:
+      0.5s ease opacity,
+      0.3s ease color;
+    &.in-view {
+      opacity: 0.75;
+    }
+  }
+
+  @for $i from 0 through 6 {
+    & .depth-#{$i} {
+      padding-left: calc(1rem * #{$i});
+    }
+  }
+}

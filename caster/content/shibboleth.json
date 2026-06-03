@@ -1,0 +1,313 @@
+{
+  "Through a Song, Darkly": {
+    "isMain": true,
+    "roles": {
+      "Josh": [
+        {
+          "name": "Gamemaster",
+          "desc": [
+            "the gamemaster for the session, controls all characters besides the players"
+          ]
+        }
+      ],
+      "Jorge": [
+        {
+          "name": "Argyle",
+          "desc": [
+            "Formerly a failed celestial and repentant devil both inhabiting an elven body.",
+            "The two halves have been separated and spread across the Infinite Horizon.",
+            "Now only the celestial, and a custode from the Scale on loan to Iconoclasm."
+          ]
+        },
+        {
+          "name": "Arctos",
+          "desc": [
+            "A polar bear, awakened by the grace of the Iridescent Host",
+            "Once a pet for a young Minister Vane, who would grow up to become a Calarian council member"
+          ]
+        }
+      ],
+      "Mike": [
+        {
+          "name": "Benny",
+          "desc": [
+            "A nine-year-old android with the visage (and personality) of a child but the martial prowess of an adult",
+            "The son of Atum, a high-ranking heart from Belvedere. His full name is Bennix."
+          ]
+        }
+      ],
+      "Noah": [
+        {
+          "name": "Johnny",
+          "desc": [
+            "A half-elven man from Raelion. Originally a bartender, but now a mid/high level member of the Ghosts of Raelion",
+            "He was blessed by the Watcher to come back from death, to serve as some his eyes across the continent"
+          ]
+        }
+      ],
+      "Tanner": [
+        {
+          "name": "Anzu",
+          "desc": [
+            "A tengu, a bird person. Black feathered with blue feathertips",
+            "The scion of the Qureshi family, an aristocratic, well-known patron and member family of Belvedere. He's run away from home."
+          ]
+        }
+      ]
+    }
+  },
+  "Interred in Iomenei": {
+    "isMain": false,
+    "roles": {
+      "Josh": [
+        {
+          "name": "Gamemaster",
+          "desc": [
+            "the gamemaster for the session, controls all characters besides the players"
+          ]
+        }
+      ],
+      "Jorge": [
+        {
+          "name": "Grant",
+          "desc": [
+            "a worker from the Undercroft; a dwarf"
+          ]
+        }
+      ],
+      "Mike": [
+        {
+          "name": "Gage",
+          "desc": [
+            "a worker from the Undercroft; a human"
+          ]
+        }
+      ],
+      "Noah": [
+        {
+          "name": "Barlow",
+          "desc": [
+            "a worker from the Undercroft; an elf"
+          ]
+        }
+      ],
+      "Tanner": [
+        {
+          "name": "Archie",
+          "desc": [
+            "a worker from the Undercroft; a human"
+          ]
+        }
+      ]
+    }
+  },
+  "Fae and Forest": {
+    "isMain": false,
+    "roles": {
+      "Josh": [
+        {
+          "name": "Gamemaster",
+          "desc": [
+            "the gamemaster for the session, controls all characters besides the players"
+          ]
+        }
+      ],
+      "Jorge": [
+        {
+          "name": "Cedric",
+          "desc": [
+            "an investigator with the magical crimes convox; an elf"
+          ]
+        }
+      ],
+      "Mike": [
+        {
+          "name": "Krod",
+          "desc": [
+            "an investigator with the magical crimes convox; a dog-person"
+          ]
+        }
+      ],
+      "Noah": [
+        {
+          "name": "Andros",
+          "desc": [
+            "an investigator with the magical crimes convox; a half-minotaur, half-centaur"
+          ]
+        }
+      ],
+      "Tanner": [
+        {
+          "name": "Mickey",
+          "desc": [
+            "an investigator with the magical crimes convox; a dwarf"
+          ]
+        }
+      ]
+    }
+  },
+  "A Hunt of Metal and Vine": {
+    "isMain": false,
+    "roles": {
+      "Josh": [
+        {
+          "name": "Gamemaster",
+          "desc": [
+            "the gamemaster for the session, controls all characters besides the players"
+          ]
+        }
+      ],
+      "Jorge": [
+        {
+          "name": "Cliff",
+          "desc": [
+            "a special operative of the Scale; a human"
+          ]
+        }
+      ],
+      "Mike": [
+        {
+          "name": "Zangron",
+          "desc": [
+            "a special operative of the Scale; a human"
+          ]
+        }
+      ],
+      "Noah": [
+        {
+          "name": "Reverend",
+          "desc": [
+            "a special operative of the Scale; a hobgoblin"
+          ]
+        }
+      ],
+      "Tanner": [
+        {
+          "name": "Gregor",
+          "desc": [
+            "a special operative of the Scale; a human"
+          ]
+        }
+      ]
+    }
+  },
+  "The First Spark": {
+    "isMain": false,
+    "roles": {
+      "Josh": [
+        {
+          "name": "Gamemaster",
+          "desc": [
+            "the gamemaster for the session, controls all characters besides the players"
+          ]
+        }
+      ],
+      "Jorge": [
+        {
+          "name": "Pluckwort",
+          "desc": [
+            "a henchman in the Velvet Mark, a gang in Hallia's Masque District; a lizardfolk"
+          ]
+        }
+      ],
+      "Mike": [
+        {
+          "name": "Combo",
+          "desc": [
+            "a henchman in the Velvet Mark, a gang in Hallia's Masque District; a robot"
+          ]
+        }
+      ],
+      "Noah": [
+        {
+          "name": "Salvatore",
+          "desc": [
+            "a henchman in the Velvet Mark, a gang in Hallia's Masque District; an orc"
+          ]
+        }
+      ],
+      "Tanner": [
+        {
+          "name": "Archie",
+          "desc": [
+            "a henchman in the Velvet Mark, a gang in Hallia's Masque District; a human"
+          ]
+        }
+      ]
+    }
+  },
+  "Observatory, Slipped": {
+    "isMain": false,
+    "roles": {
+      "Josh": [
+        {
+          "name": "Gamemaster",
+          "desc": [
+            "the gamemaster for the session, controls all characters besides the players"
+          ]
+        }
+      ],
+      "Jorge": [
+        {
+          "name": "Foral",
+          "desc": [
+            "a field agent of Sedecium; a goblin gunslinger/rogue"
+          ]
+        }
+      ],
+      "Mike": [
+        {
+          "name": "Scrazzy",
+          "desc": [
+            "a field agent of Sedecium; a human wizard"
+          ]
+        }
+      ],
+      "Tanner": [
+        {
+          "name": "Ozzie",
+          "desc": [
+            "a field agent of Sedecium; an orc guardian"
+          ]
+        }
+      ]
+    }
+  },
+  "Fey in the Mists": {
+    "isMain": false,
+    "roles": {
+      "Josh": [
+        {
+          "name": "Mango",
+          "desc": [
+            "an elven ranger, following the caravan on Finnegan's Ring."
+          ]
+        }
+      ],
+      "Noah": [
+        {
+          "name": "Egan",
+          "desc": [
+            "an orc druid, following the caravan on Finnegan's Ring."
+          ]
+        }
+      ],
+      "Mike": [
+        {
+          "name": "Doug",
+          "desc": [
+            "a gnome rogue, following the caravan on Finnegan's Ring."
+          ]
+        }
+      ],
+      "Tanner": [
+        {
+          "name": "Gamemaster",
+          "desc": [
+            "the gamemaster for the session, controls all characters besides the players"
+          ]
+        }
+      ]
+    }
+  }
+}

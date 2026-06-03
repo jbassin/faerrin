@@ -1,0 +1,177 @@
+---
+// Site masthead. `compact` renders the slim episode-page bar with a back link.
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+---
+
+<header class:list={["masthead", { "masthead--compact": compact }]}>
+  <div class="wrap masthead__inner">
+    <a class="masthead__brand reticle" href="/" aria-label="Caster home">
+      <span class="regmark" aria-hidden="true"></span>
+      <span class="display masthead__word">Caster</span>
+    </a>
+    <div class="masthead__right">
+      {
+        compact ? (
+          <a class="label masthead__back" href="/">
+            ← All Episodes
+          </a>
+        ) : (
+          <p class="label label--soft masthead__tag">
+            <span class="led led--live" aria-hidden="true" />
+            Recap Engine // <span class="masthead__status">Online</span>
+          </p>
+        )
+      }
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch colour theme"
+      >
+        <span class="theme-toggle__glyph theme-toggle__moon" aria-hidden="true">☾</span>
+        <span class="theme-toggle__glyph theme-toggle__sun" aria-hidden="true">☀</span>
+        <span class="theme-toggle__label label" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="masthead__rule" aria-hidden="true"></div>
+</header>
+
+<style>
+  .masthead {
+    padding-top: clamp(1rem, 0.5rem + 2vw, 2.25rem);
+  }
+  .masthead__inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .masthead__brand {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6ch;
+    padding: 0.15em 0.5em 0.15em 0.1em;
+  }
+  .masthead__word {
+    font-size: clamp(1.8rem, 1.2rem + 3vw, 3.2rem);
+    letter-spacing: -0.02em;
+  }
+  .masthead__reg {
+    font-family: var(--font-mono);
+    font-size: 0.7em;
+    transform: translateY(-0.7em);
+    color: var(--orange);
+  }
+  .masthead__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6ch;
+    align-self: center;
+  }
+  .masthead__status {
+    color: var(--blue-ink);
+  }
+  .masthead__back {
+    align-self: center;
+    padding: 0.5em 0.9em;
+    background: var(--ink);
+    color: var(--bone);
+    transition: background 0.15s var(--ease), color 0.15s var(--ease);
+  }
+  .masthead__back:hover {
+    background: var(--green);
+    color: var(--on-accent);
+  }
+  /* Hazard caution-stripe baseline — the masthead reads as a bulkhead edge. */
+  .masthead__rule {
+    margin-top: clamp(0.75rem, 0.4rem + 1.5vw, 1.5rem);
+    height: 0.6rem;
+    background: var(--hazard);
+    border-block: var(--rule) solid var(--ink);
+  }
+  .masthead--compact .masthead__word {
+    font-size: clamp(1.4rem, 1rem + 2vw, 2rem);
+  }
+
+  .masthead__right {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5ch;
+    padding: 0.4em 0.7em;
+    border: var(--rule) solid var(--ink);
+    border-radius: 2px;
+    background: var(--paper);
+    box-shadow: var(--shadow-hard-sm);
+    transition:
+      transform 0.12s var(--ease),
+      box-shadow 0.12s var(--ease),
+      background 0.12s var(--ease),
+      color 0.12s var(--ease);
+  }
+  .theme-toggle:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--shadow-col);
+    background: var(--ink);
+    color: var(--bone);
+  }
+  .theme-toggle__glyph {
+    font-size: 1.05em;
+    line-height: 1;
+  }
+  /* Show the target affordance: moon while light, sun while dark. */
+  .theme-toggle__sun {
+    display: none;
+  }
+  :global(:root[data-theme="dark"]) .theme-toggle__moon {
+    display: none;
+  }
+  :global(:root[data-theme="dark"]) .theme-toggle__sun {
+    display: inline;
+  }
+  .theme-toggle__label::after {
+    content: "Dark";
+  }
+  :global(:root[data-theme="dark"]) .theme-toggle__label::after {
+    content: "Light";
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("theme-toggle");
+  const meta = document.querySelector('meta[name="theme-color"]');
+
+  const apply = (theme: string) => {
+    document.documentElement.dataset.theme = theme;
+    meta?.setAttribute("content", theme === "dark" ? "#000000" : "#f4f5f1");
+    btn?.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+    );
+    btn?.setAttribute("aria-pressed", String(theme === "dark"));
+  };
+
+  // Match the pre-painted theme set by the inline <head> script.
+  apply(document.documentElement.dataset.theme === "dark" ? "dark" : "light");
+
+  btn?.addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    try {
+      localStorage.setItem("caster:theme", next);
+    } catch {
+      /* storage unavailable (private mode) — ignore */
+    }
+    apply(next);
+  });
+</script>

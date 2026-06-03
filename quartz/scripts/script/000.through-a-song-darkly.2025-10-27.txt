@@ -1,0 +1,1138 @@
+Context:
+
+This is a transcript of an ongoing ttrpg game in the setting of Faerrin, recorded on 2025-10-27. The four player characters are:
+  - Argyle: 
+    - Formerly a failed celestial and repentant devil both inhabiting an elven body.
+    - The two halves have been separated and spread across the Infinite Horizon.
+    - Now only the celestial, and a custode from the Scale on loan to Iconoclasm.
+  - Benny: 
+    - A nine-year-old android with the visage (and personality) of a child but the martial prowess of an adult
+    - The son of Atum, a high-ranking heart from Belvedere. His full name is Bennix.
+  - Johnny: 
+    - A half-elven man from Raelion. Originally a bartender, but now a mid/high level member of the Ghosts of Raelion
+    - He was blessed by the Watcher to come back from death, to serve as some his eyes across the continent
+  - Anzu: 
+    - A tengu, a bird person. Black feathered with blue feathertips
+    - The scion of the Qureshi family, an aristocratic, well-known patron and member family of Belvedere. He's run away from home.
+
+This is from the main campaign of the game, "Through a Song, Darkly".
+
+The first portion of the transcript is a pre-session chat between the players, and then it transitions to the
+actual session around when someone says something similar to "Do we want to play Pathfinder?" or "Does someone
+want to do a recap?". The session ends when the Gamemaster says somthing similar to "Do we want to call it there
+for the evening?" near the end of the transcript.
+
+Note: transcription is machine-recorded, with an 85% confidence rate.
+
+---
+Billing:
+
+The role of Gamemaster is played by the player Josh.
+The role of Argyle is played by the player Jorge.
+The role of Benny is played by the player Mike.
+The role of Johnny is played by the player Noah.
+The role of Anzu is played by the player Tanner.
+---
+Script:
+
+> Gamemaster: Good evening.  
+> Argyle: Good evening, how are you?  
+> Gamemaster: I'm doing quite well.  
+> Gamemaster: How are you?  
+> Gamemaster: I'm mad at everybody who's ever touched a computer, I think.  
+> Argyle: Doing well, doing well.  
+> Argyle: What they do now.  
+> Gamemaster: I've decided.  
+> Gamemaster: My coworkers insist on using AI to write stuff, and then it breaks things.  
+> Gamemaster: And then they're all surprised about, like, how could this happen?  
+> Argyle: Yeah.  
+> Argyle: So what's annoying it... Yeah, go ahead.  
+> Gamemaster: So you're familiar with Cursor, right?  
+> Argyle: Yeah.  
+> Gamemaster: Did you know that Cursor has an enterprise solution that allows your manager to track how many lines of code you've written versus how many lines of code your AI has written?  
+> Argyle: I did not, but that's crazy.  
+> Gamemaster: Yeah, so my manager, who's always been a metrics-oriented guy in a way that I'm not a huge fan of, in my mid-year, he'll talk about lines of code written as if that's an appreciable metric of how good one is at their job.  
+> Gamemaster: Which is stupid.  
+> Gamemaster: Either way, it's a new data point for him.  
+> Gamemaster: And so we have like a little internal leaderboard thing of how many lines of code each person has written with Claude in Cursor.  
+> Argyle: Bye.  
+> Gamemaster: And I am permanently in last because I refuse to install the program on my computer.  
+> Gamemaster: um but i i swear over the course of the past two to three weeks we've had multiple consumer like customer facing incidents due to like stupid shit  
+> Gamemaster: that would have never been written by a human because the logic was completely wrong, because the AI just straight-up hallucinated what it was trying to do.  
+> Gamemaster: And then the human is stupid, and they don't look at the code and then think for literally half a second to be like, hmm, yes, I do calculate the percentage of something happening by just multiplying the number by 100.  
+> Gamemaster: That's how percentages work.  
+> Gamemaster: And then it hits prod, and everybody's complaining, and I just...  
+> Gamemaster: I don't want to have to deal with shitty AI written code.  
+> Johnny: Wait, so your manager is pro you just using AI code?  
+> Gamemaster: But that's the opposite direction of where everyone's moving.  
+> Argyle: I feel you.  
+> Argyle: Well, I just... I just re-sent you my company's open job recs in case you want to...  
+> Gamemaster: Yeah, because you have to think about the velocity.  
+> Johnny: Josh, move fast and break things.  
+> Gamemaster: They're very good at the latter.  
+> Gamemaster: I know.  
+> Gamemaster: I'm just complaining.  
+> Gamemaster: I'm very... I don't even want to say risk-adverse.  
+> Gamemaster: I just... You know, economy is scary, and this place pays me more than enough money, so I'm probably going to complain.  
+> Argyle: You're free to complain.  
+> Gamemaster: I might apply.  
+> Argyle: I'm all for it.  
+> Argyle: I'm just letting you know in case you want... I think my manager is the biggest idiot in the company, and I think everyone else is pretty smart.  
+> Gamemaster: No, I understand.  
+> Gamemaster: This is very much your, you're like, hey, this is, although, listen, I've heard you complain about your manager being an idiot.  
+> Gamemaster: Oh, that's sad.  
+> Argyle: Yeah.  
+> Argyle: What's funny is he will write me comments that are just so wrong that some of them are AI and others are just wrong.  
+> Argyle: He reviewed one of my CLs and he's like, hey, can we tidy this up?  
+> Argyle: Can you check this in and tidy this up?  
+> Argyle: And then in parentheses, by tidy this up, I mean remove your do not submit comments.  
+> Argyle: Because I usually put that if I'm putting some...  
+> Argyle: debugging print statement or log so I don't forget it so I can control F it.  
+> Argyle: But I was looking at my code and they just weren't in the entire branch.  
+> Argyle: So he must have been looking at like something else and it's just like I don't even know how to respond to these comments without being an asshole.  
+> Gamemaster: He just assumed that in the past you've left those comments, so you did that on this one too.  
+> Argyle: I've never left it in.  
+> Argyle: I've only had it when I was working on something and I showed him, but it's funny.  
+> Argyle: And I was just like, ah, you're an idiot.  
+> Argyle: Hey.  
+> Johnny: Why would you call Tanner that?  
+> Johnny: That's so rude.  
+> Gamemaster: That was terribly mean.  
+> Anzu: Yeah, what an entrance for me.  
+> Anzu: Jeez.  
+> Argyle: Yeah.  
+> Gamemaster: I will say, you know, as much as my coworkers suck, I have to do the bare minimum, and I look amazing against them.  
+> Gamemaster: So, it could be way worse.  
+> Johnny: It's like, do you want to be the best on the worst team or the worst on the best team?  
+> Gamemaster: Yeah, and, you know, at some point, I do not want to, like, be the best on the worst team, but...  
+> Anzu: now this is why the boss calls you at three in the morning right what do you think of tonight's betting lines  
+> Gamemaster: Yes, and that is my fault.  
+> Johnny: I assume there was like an incident and he called you.  
+> Gamemaster: But, yeah.  
+> Gamemaster: I don't know.  
+> Argyle: So.  
+> Johnny: He wasn't just like, hey, Josh, you up?  
+> Gamemaster: It was a booty call.  
+> Gamemaster: It was really awkward because he's married with a kid.  
+> Gamemaster: Yeah, when stuff breaks, I happen to be on a very short list of people that get called in order.  
+> Gamemaster: I believe I'm number two, number one being like the CTO, and he immediately says, do not call me, and passes it along to the next person on the incident list.  
+> Argyle: So, Josh, when you, if you were to, does it, does clot measure the code you submit that's AI generated or the ones you just use?  
+> Gamemaster: But... That's me.  
+> Gamemaster: It measures the ones that get committed to main that the origin was cursor, I believe.  
+> Argyle: Okay, never mind.  
+> Gamemaster: Why?  
+> Gamemaster: Oh, you're saying that I could, like, you know, just make a feature and then have it generate a bunch of lines so that it just looks like I've used AI for a bunch of stuff?  
+> Argyle: I was just going to say, tap, tap, tap, tap, tap.  
+> Gamemaster: I don't mind being last on the leaderboard.  
+> Argyle: Yeah.  
+> Gamemaster: I don't like AI writing code.  
+> Argyle: What... What about...  
+> Benny: Oh, I thought they were preventing you, like, this is bad, you guys have to stop using AI.  
+> Gamemaster: No, no, no.  
+> Gamemaster: So I don't know if you're familiar with Cursor's enterprise solution, but Cursor will track the number of lines committed to a repository written by Cursor versus written by the human.  
+> Gamemaster: And my manager is using that as a new metric in figuring out performance and stuff like that.  
+> Gamemaster: And so we have this little leaderboard that he has access to.  
+> Gamemaster: That is, this person wrote 18% of their code with Cursor.  
+> Gamemaster: This person wrote 45% and all that kind of stuff.  
+> Gamemaster: And I believe it, like, shows the actual line breakdowns.  
+> Gamemaster: And I am permanently on zero because I refuse to even install the cursor program on my computer.  
+> Gamemaster: I'm not doing it.  
+> Benny: Do you use an LLM at all to write your code?  
+> Gamemaster: No!  
+> Gamemaster: My brain works!  
+> Gamemaster: I can write code!  
+> Gamemaster: I don't need a computer to write a worse version of the code that I would write.  
+> Benny: Well, I mean, I guess it depends what domain you're working in.  
+> Benny: Because I use it a decent amount if I'm like, I don't want to write this 13 line snippet that I've probably written before.  
+> Benny: Hey, how do you do this?  
+> Benny: And then it dumps me a snippet and then I copy paste.  
+> Gamemaster: I don't know.  
+> Gamemaster: I think if I ever bump into a situation where I'm like, this is the third time that I've written this snippet, my solution is not have an AI write it a fourth time.  
+> Gamemaster: It's abstract out that particular snippet.  
+> Benny: Oh, no.  
+> Benny: I mean, it really depends.  
+> Benny: But you don't even ask it about how to do stuff with a specific new tool or API.  
+> Benny: Do you talk to them at all?  
+> Gamemaster: No, I read the docs.  
+> Johnny: Mike?  
+> Gamemaster: I go on to the documentation for the tool, if it has one, and if it doesn't, I read the source code.  
+> Benny: OK.  
+> Gamemaster: I worked at a finance shop that you couldn't even use Stack Overflow for for a while, so I'm just used to... Sorry, did you say something?  
+> Argyle: Might be with your manager on this one, Josh.  
+> Argyle: Okay.  
+> Argyle: No, I'm with your manager on this one, but I'm kidding.  
+> Argyle: No, I'm going to... So to be honest with you, I feel like in data engineering, there's a good amount of just numb... Can you take this data frame and then transform this and then do this group by... And...  
+> Gamemaster: Oh yeah, sure.  
+> Gamemaster: No, that's fair.  
+> Gamemaster: I don't know.  
+> Gamemaster: I...  
+> Gamemaster: Yep.  
+> Argyle: I know most of it, but when it's like a slightly annoying thing, I'm just like, you just write it.  
+> Argyle: But I never have AI write hard things.  
+> Argyle: I only have it write things I know I could do.  
+> Benny: Or if it's new.  
+> Argyle: I just don't feel like checking this thing.  
+> Benny: Like, if you ask me to do anything in Pandas, I'm not using an LLM.  
+> Benny: If you ask me to do something in Polars, I'm going to be like, how is this done in Polars?  
+> Benny: Sometimes I'll go to the Polars docs.  
+> Benny: Like, 50% of the time I'll ask an LLM, 50% I'll go to the Polars docs.  
+> Johnny: Thank you.  
+> Benny: For SQL, I'm not going to the docs.  
+> Benny: For SQL, I'm like, hey, I have this table, I have this.  
+> Benny: Do this fucking stupid join shit, because I don't know SQL.  
+> Benny: And then it's like...  
+> Benny: does whatever subquery stuff that it likes.  
+> Benny: Or if I'm translating SQL to SQL Alchemy in Python, so it's two things I don't know.  
+> Benny: It's like doubly nested.  
+> Benny: I'll go to a bunch of times I've just taken SQL and I've been like, can you make this the SQL Alchemy syntax in Python?  
+> Benny: And then it'll give it back to me and then I'll PR it.  
+> Benny: And then my manager's like,  
+> Benny: What is this?  
+> Benny: And I'm like, dude, this is all AI.  
+> Benny: I checked it.  
+> Benny: It looks fine.  
+> Benny: But I don't know exactly the SQL that is going on here.  
+> Benny: I know loosely the data processing that's going on.  
+> Benny: But I ask it a bunch of questions about stuff.  
+> Gamemaster: Oh.  
+> Anzu: How trustworthy are these LLMs at writing code?  
+> Anzu: If you don't know the language and you're asking it to make these things, do you have a lot of faith in what it's making?  
+> Benny: It's like 50-50.  
+> Benny: You still have to understand what it's... Like, for SQL, I can read the SQL.  
+> Benny: Like, oh, it's doing this join, and then maybe it throws in an operation.  
+> Benny: I don't know.  
+> Benny: And that's fine.  
+> Benny: I've asked to write C++ before, and I hammer it on what I know.  
+> Benny: Like, treating it like a black box.  
+> Benny: If I'm looking at C++, and I'm like, the shit you gave me is not in... It's not in the same style as this other stuff.  
+> Benny: So I'm like, look at this...  
+> Benny: hand it back to me in a different way because it doesn't look correct.  
+> Benny: And then I'll hammer it on why it did specific things.  
+> Benny: Why did you use this kind of a thing?  
+> Benny: Why did you have this as a particular arg?  
+> Benny: Why this?  
+> Benny: Why this?  
+> Benny: So I'll ask it to generate code, and I'll use it.  
+> Benny: But I'll usually hammer it if it's something that I don't understand that it gives me in the output.  
+> Argyle: That's what I do.  
+> Gamemaster: But do you feel after that interrogation that given an opportunity similar to that in the future, you could then write the sea yourself?  
+> Benny: Yeah.  
+> Benny: It's like a curve thing.  
+> Benny: In the very past where you only have docs, there's not even Stack Overflow, you have to spend a bunch of time and you will know the component better.  
+> Benny: But in order to get anything done, you have to spend a bunch of time.  
+> Benny: Now you can go to an LLM.  
+> Benny: You won't learn much, but you can get the thing done.  
+> Benny: So it's like you have to pick where on the curve you want to be.  
+> Argyle: So.  
+> Benny: So sometimes it's like we need this fucking...  
+> Gamemaster: But if it breaks, how do you figure out what's broken?  
+> Gamemaster: You ask the AI, like, what's broken about this?  
+> Benny: you would hope that the AI solution is temporary and long enough that it solves the immediate problem in front of you.  
+> Benny: And then, yeah, you might go back, you might ask the LLM, you might go back and learn documentation.  
+> Benny: Maybe you'll have a bit more breathing room to actually get the problem done.  
+> Benny: Because a lot of the stuff I run into is just like, you have to fix this in the next hour, or you have to fix this in the next three hours, or this needs to be hot fixed to prod, so it can't be breaking in prod in the next...  
+> Benny: six hours, like get this done immediately.  
+> Benny: So a lot of the stuff is like, if an LLM could give me the solution and I can take time to understand it later, I will take that every single time.  
+> Benny: Like, yeah, here's code that works.  
+> Argyle: for me the way I use it is I only have it write a function at a time I never will be like can you just take this data transform all of this and extract this and do this I might be like I don't feel like building this stupid regex thing can you do this regex function this is the input this is the output here's examples I also have a rule with myself an AI can either write the tests or the code it cannot write both  
+> Benny: I'll figure out why it works later.  
+> Johnny: Thank you.  
+> Argyle: So that's one thing I have.  
+> Argyle: And then the other thing, I will sometimes use it either for front end stuff on my side products, and it's awful.  
+> Argyle: It takes a lot of time, but I just refuse to do front end.  
+> Argyle: Or really small things that require knowing an API that I just don't care that much about.  
+> Argyle: For example, on my Plex server, I just set up a new Discord channel, and I wanted a bot that I can just do slash restart.  
+> Argyle: so it can run on my machine like a rebuild of a Docker container.  
+> Argyle: And then I was just like, I don't, how do I write a bot?  
+> Argyle: And then it's like, go to Discord, developer settings, turn this, copy this thing here, and then here, and then I specifically don't tell it commands because I don't want it trying to over-engineer things.  
+> Argyle: Then I'm like, just let me run a bash command, and then I'll go and I'll replace the bash command with my actual thing.  
+> Argyle: But that's like, and then it showed me how to write a Python script for like,  
+> Benny: Yeah.  
+> Argyle: Here's like an event thing.  
+> Argyle: I see the annotation and stuff like that.  
+> Argyle: That also being said, Tanner, I think LLMs for code severely drop off the second you leave Python.  
+> Argyle: I think when you're not in Python, terrible.  
+> Argyle: And if you're not using like a big library, it's usually much worse.  
+> Argyle: And then I've been saying this for a few months before it was in style.  
+> Argyle: I really do think we're hitting a plateau on LLMs.  
+> Argyle: And I think largely what's happening now is people are just faking new tests and fine-tuning on them.  
+> Argyle: And that's where we're seeing improvements.  
+> Argyle: I think we're starting to see the limits of what current architectures can do with a transformer.  
+> Argyle: And I think that's also why people like OpenAI's CEO, Sam Altman, and Mark Zuckerberg from Meta are saying things like, you know, LLM might be a bubble.  
+> Argyle: you know, because they've been saying that publicly recently, because I think, honestly, they can only Scale so much.  
+> Argyle: Like, it's crazy how much water and power it takes to do a thing that humans can do with just, like, fucking coffee and marshmallows, right?  
+> Argyle: Like, it is crazy how inefficient it is, and it's not going to get that much better that much quicker.  
+> Anzu: Hmm.  
+> Argyle: It's just going to be bad.  
+> Benny: Although, to be fair, they... To be fair, they do surpass humans in a bunch of stuff.  
+> Argyle: That's my thoughts on it.  
+> Argyle: I think we need a new architecture to do anything else.  
+> Benny: As far as information synthesis and recall, it's like... I also use them for  
+> Johnny: But aren't like a lot of things they surpass humans at not what like the primary uses are?  
+> Argyle: Not efficiency-wise.  
+> Johnny: Like in medical fields, don't they do a lot of great?  
+> Johnny: I'm not an expert here.  
+> Johnny: Don't they do a lot of great stuff?  
+> Johnny: But like in the everyday uses, they're really not that efficient.  
+> Benny: I don't think that's true.  
+> Benny: I mean, the stuff that I've seen, there was like one landmark study that had three cohorts competing for diagnostics.  
+> Benny: They had humans, humans with access to Chad GPT, and Chad GPT itself.  
+> Benny: And the order of lowest accuracy to highest for diagnosis was...  
+> Benny: humans, humans plus ChatGPT, and then ChatGPT by itself.  
+> Benny: So if you put a human in between ChatGPT and you had to make the final decision, it actually lost accuracy just versus a model, which makes sense.  
+> Johnny: I...  
+> Argyle: I don't believe... Diagnosis for what?  
+> Benny: It's diagnostics.  
+> Benny: It's just general diagnosis.  
+> Benny: Like, here are symptoms.  
+> Benny: Figure out the disease.  
+> Gamemaster: but diagnostics for known issues.  
+> Argyle: Yeah, I also don't believe that... But also, the reason I don't...  
+> Benny: How are you going to diagnose?  
+> Benny: You're going to say that there's no matching disease?  
+> Gamemaster: I'm going to say it is possible for a human to show up with something that doesn't match an existing diagnosis.  
+> Benny: Yeah.  
+> Benny: I don't know what rate that would be, but...  
+> Argyle: The reason I don't believe that study is because if you're a human that knows how to use LLMs, you shouldn't get worse results ever.  
+> Argyle: Like, you should be strictly as good as the LLM.  
+> Argyle: I don't see... I get... Well, what I'm saying is... But then in that...  
+> Gamemaster: I mean, I know plenty of people who can program, and then they start using an LLM, and the code they write is worse.  
+> Gamemaster: Because you start offloading responsibility to the LLM you're talking to, and so you don't do as much yourself.  
+> Argyle: In that regard, I'm surprised that you could just give an LLM full autonomy and do better than the human.  
+> Argyle: In most of the studies I've seen, whenever you pair the AI with the human, that's when it does better than both groups.  
+> Argyle: How was the LLM not having a human?  
+> Argyle: What was the interface?  
+> Argyle: What was it diagnosing?  
+> Argyle: How is it doing these things?  
+> Argyle: What's the bottleneck?  
+> Argyle: There has to be some IO or something.  
+> Benny: Oh, I mean, it's just the symptoms of the patient.  
+> Argyle: So the patient themselves started using ChatGPT, and then the difference was a doctor with ChatGPT?  
+> Benny: I think it was just a write-up of the symptoms, and then the doctor had to go off of the write-up.  
+> Argyle: See?  
+> Argyle: There's the write-up.  
+> Argyle: And then I found with a lot of this stuff, normally it's like some engineers fucking with things in their training sets and things like that.  
+> Johnny: you you  
+> Argyle: Like, I know, for example, with medical things, when I briefly worked with, like, Gemini and medicine stuff, it's like...  
+> Argyle: You had to do so much finagling, and they only did better on simple tasks at the moment.  
+> Argyle: Like, I don't know how just, like, you take a textbook example of something.  
+> Benny: Yeah.  
+> Argyle: Like, I don't understand.  
+> Argyle: You just have a write-up, and then if you just give it straight to ChatGPT versus you give it to a person to give to ChatGPT, the person does worse.  
+> Benny: The person has the final say.  
+> Benny: So they're allowed to veto Chet-GBT, which I assume they did in the study.  
+> Benny: I also don't think this is a profound problem to say that LLMs are doing better.  
+> Benny: It's like large-Scale data synthesis and retrieval.  
+> Benny: It's someone that spent four to eight years practicing medicine, trying to memorize symptoms  
+> Benny: versus something that can search all symptoms.  
+> Benny: Like, it's not crazy to me.  
+> Benny: The thing that's crazy to me is like, SweBench is like 57% Django or something.  
+> Benny: Frontend is solved via LLMs for any existing framework.  
+> Johnny: Thank you.  
+> Benny: Obviously, new ones are going to come out.  
+> Benny: But when people are like, oh, I've built this app with an LLM, it's like, well, you weren't doing anything out of sample.  
+> Benny: You wanted a frontend that did this.  
+> Benny: The LLM has seen a billion frontends that do this.  
+> Benny: You want to keep your data in this format.  
+> Benny: It's seen a billion of those.  
+> Benny: It had to tie them together.  
+> Benny: It's seen a billion of those.  
+> Benny: So if you're asking it to make an app, it's like saying Wix is profound.  
+> Benny: Because you can build a website clicking around.  
+> Benny: You can... What, like building a full stack app with an LLM?  
+> Argyle: Have you tried doing any of this with any of the state-of-art LLMs?  
+> Argyle: Yeah.  
+> Benny: I built a website with one.  
+> Argyle: Yeah, full stack, though.  
+> Benny: No, I mean just front end.  
+> Argyle: I just straight up don't believe people that say it's seamless because I've done it multiple times.  
+> Argyle: It is not seamless.  
+> Argyle: Like, it is just bad.  
+> Argyle: And I mean, like, relatively simple things.  
+> Benny: That, I don't know.  
+> Argyle: Like, sure, if I just have a data set that has a CSV, it's going to do well.  
+> Argyle: But if I'm like, hey, can you just use this picture and then put a sprite on it that someone can move around with?  
+> Argyle: They just can't do it.  
+> Benny: Well, okay, yeah.  
+> Benny: I think images is something else.  
+> Benny: But like my brother built an app, like a Rust app that has an HTML JavaScript front end, and he didn't write any HTML JavaScript.  
+> Argyle: And what does it do?  
+> Benny: It's a YouTube MP3 downloader.  
+> Benny: So you enter a link.  
+> Benny: It goes to YouTube, downloads it, and then adds it to a playlist.  
+> Argyle: What I mean is that's extremely simple.  
+> Argyle: The second you get anything that's not extremely simple, not even hard, just middle of the road, they just deteriorate from my experience.  
+> Benny: Like involving a database?  
+> Argyle: I've tried Claude, GPT, Gemini.  
+> Argyle: If you just need multiple decision-making things in there, they just deteriorate.  
+> Benny: I mean, I guess it depends how you're prompting it.  
+> Benny: If you're asking it, build a website from scratch.  
+> Benny: You could say, give me a plan to build a website from scratch.  
+> Benny: I want it to do this, this, and this.  
+> Benny: If you're using this technology, tell me exactly where to get all of these things and how to link it to the front end.  
+> Argyle: Which is the study that had these three control groups?  
+> Argyle: I'm curious to read it.  
+> Argyle: Do you have it?  
+> Anzu: Jorge, have you considered that maybe you're just not that good at generating AI prompts?  
+> Gamemaster: Yeah, you're not a prompt engineer, is the problem.  
+> Argyle: I worked in an AGI lab and we were just discussing how this stuff just doesn't work yet.  
+> Johnny: Thank you.  
+> Gamemaster: I don't actually know if this is the one that you were looking at, Mike.  
+> Gamemaster: I've been, while you guys have been having your repartee, I've been trying to find various papers.  
+> Gamemaster: There are so many.  
+> Gamemaster: There are so many LLM papers on diagnoses, to the point that I found a meta-study looking at 64 other LLM studies for using LLMs to help with diagnoses in various continents.  
+> Anzu: yeah yeah we love those  
+> Johnny: He's what  
+> Gamemaster: It's a lot.  
+> Gamemaster: See, that's a different one.  
+> Gamemaster: That's a different one than the one that I was looking at that also has three sections of results with doctors, doctors with LLMs and LLMs.  
+> Gamemaster: There's so much.  
+> Gamemaster: The one that I was looking at was using remote video conferencing.  
+> Argyle: Yeah, this used MedPOM.  
+> Argyle: That's why.  
+> Argyle: MedPOM and GPT.  
+> Benny: That's that's but that was my whole point.  
+> Argyle: Yeah, this used MedPOM in LLM that was trained on diagnosis snippets.  
+> Argyle: You're just giving it data it's seen.  
+> Benny: It's just.  
+> Gamemaster: Yeah, that's fine.  
+> Benny: Did it.  
+> Gamemaster: Training a model like... I want to be able to go to chat.openai.com and upload a picture of an x-ray of my stomach and have it tell me what's wrong.  
+> Benny: I mean.  
+> Argyle: No, but what I'm saying is...  
+> Benny: Are you going to not train it on medical diagnoses and then ask it to do?  
+> Johnny: That's the degrees for her.  
+> Benny: It's like asking a.  
+> Argyle: Let me rephrase my thoughts more candid.  
+> Gamemaster: Okay?  
+> Anzu: Too many noodles.  
+> Argyle: If you have a description of a diagnosis and you are told to use Gen AI and you get it wrong and the Gen AI is capable of getting it right, you're an idiot.  
+> Anzu: Bye, medical engineer.  
+> Johnny: It's the masters for her.  
+> Argyle: You're just a straight idiot.  
+> Benny: I mean, sure.  
+> Argyle: I'm just saying, you're a straight bozo.  
+> Benny: I don't think these doctors were like sat down and be like, the machine is better than you.  
+> Argyle: If you are given something  
+> Benny: You are worse than the machine.  
+> Benny: The machine will do better than you.  
+> Benny: Do not veto the machine.  
+> Benny: And if they still vetoed the machine at the end, what are you going to do?  
+> Benny: But like, yeah, this is.  
+> Argyle: They don't know how to use the machine, is what I'm telling you.  
+> Argyle: This is being done by people who just don't know how to use the machine.  
+> Benny: Oh, no.  
+> Benny: Yeah.  
+> Benny: Yeah.  
+> Benny: No, no, no.  
+> Benny: I'm willing to bet they weren't trained.  
+> Argyle: But when you pair it with radiologists to do cancer diagnosis, radiologists with the AI does better than the AI or the radiologists by themselves.  
+> Johnny: you  
+> Benny: That I believe because it's Vision.  
+> Argyle: Because radiologists also know how to use tech.  
+> Argyle: There's a lot of doctors... I think they're one of the highest tech savvy people that know how to use programs.  
+> Benny: That I... Yeah.  
+> Argyle: A lot of these doctors...  
+> Argyle: There's a reason their systems suck.  
+> Argyle: They're like illiterate.  
+> Benny: Yeah, but...  
+> Benny: I mean, this is one of the best things.  
+> Benny: If you just want to do stuff in sample, they're absolutely crazy.  
+> Benny: People falsely attributed GPT-5 for solving an open problem in math.  
+> Benny: Do you know what GPT-5 really did?  
+> Benny: Because GPT-5 produced a solution.  
+> Benny: Are you guys familiar with this?  
+> Gamemaster: You have to be more specific, because there have been a few math-related games you've completed it.  
+> Argyle: Yeah.  
+> Benny: Well, this one is an open problem.  
+> Benny: This isn't like doing well on like a...  
+> Benny: on new questions, like a bunch of PhDs.  
+> Gamemaster: This isn't the one where it figured out how to sort better at low end, right?  
+> Benny: No, no, no, no.  
+> Benny: This was something else.  
+> Benny: I forgot exactly the context of the problem.  
+> Benny: But I think it was some geometry or some combinatorics problem.  
+> Benny: But it produced a correct solution to it.  
+> Benny: What it did was it just searched all of the papers and had found that someone had solved the problem before, but it was not widely published or recognized.  
+> Benny: So it was considered by the math community to be open and unsolved.  
+> Benny: And GPT-5 was like, I actually have the solution right here, and then just cited a paper that had a correct solution to it.  
+> Johnny: you  
+> Benny: I think that's like 80% solving an open problem.  
+> Benny: If you have a solution that no one knows about, it's not a solved problem.  
+> Argyle: I think that's when LLMs are good.  
+> Benny: But again, yeah, yeah.  
+> Argyle: Needle and Haystacks.  
+> Argyle: They're really good at that.  
+> Benny: Information retrieval and synthesis.  
+> Benny: It's been my favorite way to use them the whole time.  
+> Benny: I don't ask them to produce any code larger than half a function in the actual code base I work in.  
+> Benny: I do ask them to build like, I asked them to build one small thing and then really made sure it was good.  
+> Benny: It was a single class.  
+> Benny: It was a compacting queue based on keys, like last message per key.  
+> Johnny: Bye.  
+> Benny: And I was like, I had to write it in like fucking 15 minutes because a different change that I had done that fixed one thing broke three others, and people were bitching at me.  
+> Benny: And I was like, okay, please just write me the compacting queue.  
+> Benny: I'll incorporate it into this thing.  
+> Benny: And then within like an hour, I had the solution already deployed, and it was well under memory.  
+> Benny: And then actually someone sent me, the same guy that was bitching at me sent me, he's like, very good job on the compacting queue.  
+> Benny: And I was just like, all right, man.  
+> Benny: I didn't have the idea for it, but...  
+> Benny: I didn't write the compacting queue.  
+> Gamemaster: I don't know.  
+> Gamemaster: I've just had coworkers on a video call with me where I sent them a sequel snippet and then I watched them copy and paste it into Cursor and ask it to explain it to them.  
+> Gamemaster: So I just don't like it being used as a crutch.  
+> Benny: I wouldn't do that on a call.  
+> Argyle: I mean, there's also papers, if you guys are aware, papers of people that use Gen AI for most of their tasks throughout the day.  
+> Argyle: And their brains, when they do CAT scans, show decreased functionality.  
+> Benny: Oh, yeah, no.  
+> Argyle: Like, they're getting worse.  
+> Benny: Yeah, completely.  
+> Benny: Josh's comment was not wrong.  
+> Benny: People become worse programmers because you're not dealing with the nuts and bolts.  
+> Benny: So I don't know.  
+> Benny: Hopefully, your brain is doing something productive with all its newly found cycles in programming.  
+> Benny: But I don't know.  
+> Benny: Maybe we're freeing up cycles for the Sora TikTok clone.  
+> Benny: And you can watch videos of Sam Altman stealing GPUs and getting pulled over.  
+> Gamemaster: I saw that video of the AI-generated video game where it's just like a fever dream.  
+> Johnny: Thank you.  
+> Gamemaster: I don't know if you guys have seen this.  
+> Gamemaster: It's ridiculous.  
+> Benny: probably have.  
+> Gamemaster: Let me see if I can find it.  
+> Benny: The Sora videos were very funny for three days.  
+> Benny: But they fell into five different categories.  
+> Benny: But the funniest one was SpongeBob getting pulled over.  
+> Benny: But that was early stable diffusion, where you had Jar Jar Binks at the Nuremberg trials.  
+> Gamemaster: What?  
+> Benny: You can only see so many of those kinds of images before you're like, all right, I get it.  
+> Benny: You put funny guy in serious situation or serious guy in funny situation.  
+> Benny: We get it.  
+> Benny: Oh, oh, OK.  
+> Benny: I did see this one.  
+> Benny: This is probably the worst.  
+> Benny: I don't even know what this was made with.  
+> Gamemaster: I have no idea.  
+> Gamemaster: I have to believe that the person who posted it was being ironic, but also he's the CEO of HyperWrite AI and Otherside AI and also SchumerPrompt.com, which is a GitHub for prompts.  
+> Benny: I'm always suspicious of the video because I feel like people generate 100 and then pick one.  
+> Argyle: I think he's... Yeah.  
+> Gamemaster: And he's an investor in Grok.  
+> Gamemaster: What is investor in Grok?  
+> Argyle: I would also love to know how much of that was actually written by AI.  
+> Gamemaster: It's private.  
+> Gamemaster: Oh, no, no, no, no, no, no.  
+> Argyle: Yeah.  
+> Gamemaster: Listen, if this video is the best of 100, that's worse.  
+> Gamemaster: Like, that's worse.  
+> Johnny: This is unhinged.  
+> Gamemaster: That's so much worse.  
+> Benny: Oh, no, no, no.  
+> Benny: But it doesn't... It looks like a dream, right?  
+> Benny: If it didn't even look like a dream, that's the other 99, is what I'm saying.  
+> Benny: Every time I see a video... I don't know.  
+> Benny: It can do Will Smith eating spaghetti really well now.  
+> Gamemaster: Yeah, I mean, if that's the benchmark, how good is AI at making Will Smith eat spaghetti?  
+> Benny: I'd be shocked if that wasn't...  
+> Johnny: That is the benchmark.  
+> Gamemaster: I know that used to be.  
+> Gamemaster: Like, back when Image Generation made everything look like nightmare fuel, and you got the Will Smith with his face, like, compressing as he eats the spaghetti.  
+> Gamemaster: Now he can eat spaghetti.  
+> Gamemaster: Finally, the internet has allowed Mr. Smith to eat some spaghetti.  
+> Benny: I saw someone say that even though the new Will Smith eating spaghetti videos are more accurate, they're less or no, that they're more realistic.  
+> Anzu: Thank you.  
+> Benny: They're less accurate because the previous one described the actual feeling of eating spaghetti, like the way that the video moved and like how he moved.  
+> Benny: It actually was accurate to the human feeling of eating spaghetti.  
+> Gamemaster: Yeah, it used to be art, and now it's just Will Smith eating some spaghetti.  
+> Benny: Now it's just photorealistic.  
+> Benny: It's no longer impressionist.  
+> Argyle: It's impressionist.  
+> Benny: Yeah, exactly.  
+> Benny: That was just cameras.  
+> Johnny: Yeah.  
+> Gamemaster: Yeah.  
+> Gamemaster: Just worse cameras.  
+> Benny: I like some of the Gaga songs.  
+> Benny: What the fuck does she know about cameras?  
+> Gamemaster: I don't know, I think it worked out for them.  
+> Gamemaster: People still use Polaroids.  
+> Benny: True.  
+> Gamemaster: Do you want to play some Pathfinder?  
+> Anzu: I think that'd be good.  
+> Argyle: Yeah.  
+> Benny: Sure.  
+> Gamemaster: We don't have to.  
+> Johnny: Actually, I have an AI I'd like to try out that can just play it for all of us.  
+> Gamemaster: Listen, it's been in the back of my head.  
+> Gamemaster: I'm like, clearly this is the wave of the future.  
+> Gamemaster: I should learn how to do a rag and stuff.  
+> Gamemaster: So I should add all of our campaign stuff into an LLM.  
+> Gamemaster: I've not gotten around to it because it seems like it's just enough effort that I don't want to bother.  
+> Gamemaster: Maybe I should ask an LLM to do it for me.  
+> Anzu: Oh, God.  
+> Gamemaster: Bootstrap.  
+> Anzu: Someone do the recap.  
+> Gamemaster: Are there Von Neumann LLMs yet?  
+> Gamemaster: Are we getting there?  
+> Gamemaster: Does anyone want to do a recap?  
+> Johnny: What did we do last time?  
+> Benny: Yeah.  
+> Argyle: I can do the recap.  
+> Gamemaster: I mean, I can do the recap if no one wants to.  
+> Anzu: We definitely don't want you to have the point.  
+> Argyle: Yeah, I can do this.  
+> Gamemaster: Yeah, if I do it, I get a villain point, and then I can spend it on something fun.  
+> Argyle: So I'm going to interject with some information I found out from Josh.  
+> Argyle: So we're going to start with we just murdered two bozos that tried to jump us, right?  
+> Argyle: They got fucking clapped.  
+> Argyle: Then, turns out...  
+> Argyle: In Calaria, there's standard ground laws, so we technically could have reported this to the police.  
+> Argyle: We didn't ask.  
+> Argyle: We don't care.  
+> Argyle: We didn't do that.  
+> Argyle: We hid the fucking bodies, which is actually the only crime we committed in that instance.  
+> Gamemaster: Incorrect.  
+> Argyle: And stealing.  
+> Gamemaster: You also looted the bodies.  
+> Argyle: We're stealing and then mutilating and then hiding the dead bodies.  
+> Gamemaster: Yeah.  
+> Benny: Thank you.  
+> Argyle: But other than that, those are the crimes, actually.  
+> Argyle: Anyway.  
+> Argyle: We then trotted around.  
+> Argyle: We delivered the briefcase.  
+> Argyle: The person was like, wow, do you have a nine-year-old strapped to the briefcase with really strong hands?  
+> Argyle: And we're like, yep.  
+> Argyle: And then the nine-year-old was like, hey, here's a lollipop.  
+> Johnny: It was $30, actually.  
+> Argyle: We also handed them a business card.  
+> Argyle: But anyway, we went shopping.  
+> Argyle: The nine-year-old got a magical lollipop given to them that they can now cosplay more effectively as a nine-year-old.  
+> Argyle: Johnny Skyfall tried to buy solid gold glasses, and turns out his $10 or $100 wasn't enough.  
+> Argyle: So he's like, I'll come back.  
+> Argyle: Oh, sorry.  
+> Argyle: So his $30 wasn't enough for solid gold sunglasses.  
+> Johnny: Thank you.  
+> Argyle: And the guy's like, you're fucking poor.  
+> Argyle: And then Johnny's like, I'm going to come back here.  
+> Argyle: And then Johnny...  
+> Argyle: tried to smoke, but turns out he's not cool enough or old enough.  
+> Argyle: And he just ended up hacking up a bunch of smoke, uh, really should let the smoking to the cool guys.  
+> Argyle: Uh, we then went to a fence where we committed our next crime of the day, where we tried to sell illegal police IDs.  
+> Argyle: And then they're like, I don't know.  
+> Argyle: We don't even know if it's going to work.  
+> Argyle: And then we're like, can you get someone to test it?  
+> Argyle: And they're like, that's going to cost money.  
+> Argyle: And we're like, we're cheap and criminals.  
+> Argyle: So no.  
+> Argyle: Uh, so then we left, uh,  
+> Argyle: We then decide, hey, we should get those people from the bowling alley.  
+> Argyle: So we went over there.  
+> Argyle: Johnny did a cool James Bond thing.  
+> Argyle: And I was like, he's probably going to get stabbed.  
+> Argyle: Luckily, didn't get stabbed.  
+> Argyle: He did not have to fall from the sky again.  
+> Argyle: So we kept going.  
+> Argyle: And then we kept going.  
+> Argyle: We then go, all right, well, I guess we have a car now.  
+> Argyle: We should get a license, which isn't a driver's license.  
+> Argyle: It's like a British person internet license type of thing.  
+> Argyle: Poor the Brits.  
+> Gamemaster: I think you got to very, very dry frittata, I think is where we left off.  
+> Argyle: They have no freedoms anymore.  
+> Argyle: Side note.  
+> Argyle: We go into the Fane.  
+> Argyle: We sleep for the night.  
+> Argyle: We tried to teach our heart how to cook quiche.  
+> Argyle: Disaster.  
+> Argyle: They just made a thick omelette.  
+> Argyle: Which is an omelette.  
+> Anzu: And in its defense, we did not provide it the proper tools, i.e.  
+> Gamemaster: No, it had eggs and bacon, and that's it.  
+> Anzu: ingredients.  
+> Gamemaster: That's 100% of the ingredients it had.  
+> Argyle: We then... Oh, we also... Our bird friend made us tinfoil hats.  
+> Gamemaster: Poor Ginny.  
+> Gamemaster: It happens.  
+> Argyle: And... Side note, not important to the recap, but our bird friend eats eggs.  
+> Argyle: Kind of weird.  
+> Argyle: Thought I should note that.  
+> Argyle: Anyway.  
+> Johnny: Why is this recap Jorge dunking on everybody?  
+> Argyle: We then decide to go for a little nap.  
+> Argyle: So we wake up, and then we get up pretty early for us, which is like 7.  
+> Argyle: We then...  
+> Argyle: Take out the car with our new license.  
+> Argyle: We drive over to the FedEx with Hippogriffs.  
+> Argyle: And then we go, wow, we should really figure out why these satellites pointed to this little safety deposit box, or PO box.  
+> Argyle: And they were like, you know what?  
+> Argyle: They totally checked this thing all day.  
+> Argyle: So we just decide we're going to camp out in front of this thing.  
+> Argyle: And then we have our bird friend who has a bird friend.  
+> Argyle: Luckily, it's inside away from the Griffins.  
+> Argyle: Hippogriffs?  
+> Argyle: Griffins or Hippogriffs?  
+> Gamemaster: Hippogriffs.  
+> Argyle: Hippogriffs.  
+> Argyle: So we have our bird friend's bird friend hiding, looking at it while we're hiding out in our stakeout car.  
+> Argyle: And then we just start going around.  
+> Gamemaster: It might be griffins.  
+> Gamemaster: I don't know why I said hippogriffs.  
+> Gamemaster: It's definitely griffins.  
+> Gamemaster: It's Gryphonline.  
+> Anzu: I was under the impression that hippogriffs are purely Harry Potter, but I could be wrong about that.  
+> Benny: I was going to say I thought Harry Potter was a muggle.  
+> Johnny: I thought they were around before.  
+> Anzu: No... Well...  
+> Gamemaster: No, a hippogriff is a real thing.  
+> Gamemaster: Front half is an eagle, hind half is a horse.  
+> Benny: A real thing.  
+> Gamemaster: It first showed up in Ludovico Ristorio's Orlando Furioso in the 16th century.  
+> Benny: Where is that?  
+> Argyle: I think Tanner's dad in Jonathan Campaign 2 was a pirate on a hippogriff.  
+> Johnny: For everyone interested in Ludovico's Orlando Furioso, here is the picture.  
+> Argyle: We never got confirmation because we stopped playing right then.  
+> Argyle: But side note, we then, Johnny Skyfall was like, how about you guys share some information since I'm the only one talking about my backstory.  
+> Argyle: So we're like, we'll share some information.  
+> Argyle: We're like, wow, that's really cool.  
+> Johnny: Like the Sopranos.  
+> Argyle: And then it cuts to black.  
+> Argyle: Also, Tanner said a very appropriate question, and I thought he was hating on short people.  
+> Anzu: Oh, uh, yes.  
+> Argyle: How do gnomes drive?  
+> Argyle: I was like, holy shit, man!  
+> Anzu: Learning new stuff about Anzu every day.  
+> Gamemaster: Actually, wait, no, I do have a question about the bird eating eggs thing.  
+> Gamemaster: Jorge, do you think it's weird when people eat veal?  
+> Argyle: Yeah.  
+> Argyle: What?  
+> Gamemaster: Do you think it's weird when humans eat veal?  
+> Argyle: I think morally it's terrible.  
+> Gamemaster: For humans to eat veal?  
+> Argyle: Yeah.  
+> Gamemaster: Okay.  
+> Argyle: I eat it, but I think morally it's terrible.  
+> Argyle: It's delicious.  
+> Benny: I try not to eat that much.  
+> Argyle: It's really good.  
+> Argyle: I try not to eat that much.  
+> Gamemaster: Jorge eating some veal and being like, ooh, I'm so bad.  
+> Argyle: I won't buy... I won't buy it at the grocery store, but if it's at a restaurant, I might buy it.  
+> Anzu: You cannot pause that long before qualifying.  
+> Gamemaster: I mean... Like... Even if you thought it was...  
+> Benny: I try not to eat that much.  
+> Johnny: Thank you.  
+> Argyle: I'm gonna be honest with you.  
+> Anzu: Trying to stand on this high ground.  
+> Argyle: I'll be honest with you.  
+> Argyle: Sometimes there's like a nice veal ragu.  
+> Argyle: I might be like, damn, I'm going to eat that.  
+> Argyle: But, you know, it's a similar thing with octopus.  
+> Argyle: But it turns out you can eat octopus if you're in the UK and be guilt free because they're invasive.  
+> Argyle: But anyway.  
+> Gamemaster: Even if you thought it was wrong, like if you went to a restaurant and you saw somebody else had ordered the veal, you wouldn't think, that's strange, right?  
+> Argyle: Yeah.  
+> Gamemaster: That's not the... So then, why is it weird for Anzu to eat an egg?  
+> Argyle: Okay.  
+> Argyle: Yeah.  
+> Argyle: Where are you going with this?  
+> Gamemaster: He's not eating an egg of the same species as him.  
+> Argyle: Yeah, but Veal isn't a primate.  
+> Gamemaster: Veal, I mean, veal is a baby mammal.  
+> Johnny: You don't know that.  
+> Johnny: You can't prove it.  
+> Argyle: Yeah, yeah, but if... So if someone... If I'm at a restaurant and someone orders, like, monkey brain, I'm like, that is fucked, and you should not be ordering that.  
+> Gamemaster: No, I definitely can prove that Veal is a baby mammal.  
+> Johnny: No.  
+> Johnny: You don't know.  
+> Johnny: You can't prove it.  
+> Argyle: Veal?  
+> Gamemaster: Well, the problem there is the brain bit, not the monkey.  
+> Argyle: No.  
+> Argyle: All right, if it was monkey quadriceps, I'd be like, that's fucked.  
+> Gamemaster: Why?  
+> Benny: You didn't want to say monkey breasts, that's why.  
+> Argyle: Yeah, I was going to say monkey pack, and I was like, that's too much.  
+> Johnny: But we're at this Gryphon office.  
+> Argyle: Why?  
+> Argyle: It's too close.  
+> Gamemaster: Yeah, you're at this Gryphon office.  
+> Argyle: It's too close.  
+> Gamemaster: Which, by the way, apparently the front half of both a Gryphon and a hippogriff is that it's an eagle, but then the back half is either a horse or a lion.  
+> Gamemaster: These are the lion ones.  
+> Johnny: One of those is cooler.  
+> Gamemaster: They're griffins.  
+> Gamemaster: Also, I feel like hippogriff makes me think that the back half would be a hippo.  
+> Gamemaster: But it's not.  
+> Argyle: Quick question.  
+> Argyle: Does a half-hippogriff, half-griffon produce Giant eagles from Lord of the Rings?  
+> Gamemaster: No, because the back half of both of those is an animal.  
+> Argyle: A la Man-Man from the short, from our one-shot.  
+> Gamemaster: It's not human.  
+> Gamemaster: The front half for both is an eagle.  
+> Gamemaster: The difference is a centaur's top half is human and a minotaur's bottom half is human.  
+> Gamemaster: So when you put them together, that makes a human.  
+> Argyle: Minotaurs were mid-half human.  
+> Gamemaster: But if you have, like, eagle horse and eagle lion and you put them together, you're definitely getting top half is eagle.  
+> Johnny: Bye.  
+> Gamemaster: It's just the bottom half, you're not sure if it's lion or if it's horse.  
+> Anzu: or somewhere in between.  
+> Benny: Josh, what if it's a recessive gene?  
+> Gamemaster: No.  
+> Argyle: Because their legs are hooves.  
+> Gamemaster: It's not a recessive gene.  
+> Gamemaster: This is magical genetics.  
+> Benny: But what if it is?  
+> Gamemaster: It doesn't work this... Like, you know, if you tried drawing up a Punnett square for this kind of stuff, you'd be really confused.  
+> Argyle: One final closing comment.  
+> Benny: But I'm just saying.  
+> Argyle: Minotaurs have feet with hooves, so it's really just their porcos that are human.  
+> Anzu: Also  
+> Gamemaster: It's just the middle bit.  
+> Argyle: Yeah, yeah, because it's human head.  
+> Gamemaster: So I guess underneath...  
+> Johnny: Did you ever see Andros' feet?  
+> Johnny: You never saw Andros take his shoes off.  
+> Gamemaster: Actually, Andrus might have had cloven hoof feet and then the whole rest of him was totally normal.  
+> Johnny: You don't know.  
+> Gamemaster: Except that he was like nine feet tall.  
+> Anzu: Also, there are plenty of birds that eat the eggs of other bird species.  
+> Gamemaster: Yeah.  
+> Argyle: Yeah, yeah.  
+> Argyle: No, no, I didn't realize you were a predator bird.  
+> Benny: Or an animal.  
+> Johnny: Jorge, listen.  
+> Argyle: It was like when Marzo saw the prey folk.  
+> Johnny: Andros is taking an improv.  
+> Johnny: Andrew's taking an improv class somewhere in this city in a couple of weeks.  
+> Johnny: If you want to meet him, you can go take that improv class.  
+> Gamemaster: Do we know that for sure?  
+> Gamemaster: Andrus might be dead.  
+> Anzu: He could die in a book, from what I've heard.  
+> Argyle: He might not have made it out.  
+> Johnny: He's taking an improv class?  
+> Argyle: He might not have made it out.  
+> Anzu: He could die in a book?  
+> Johnny: But didn't it take place a few weeks ahead of this current campaign?  
+> Gamemaster: Oh, so you're saying that he goes to improv and then maybe he dies.  
+> Johnny: Yeah, so there could be a short period of time before he dies.  
+> Gamemaster: Okay.  
+> Johnny: where Argyle and Andros are best friends.  
+> Gamemaster: Sure.  
+> Johnny: They could be in a scene together.  
+> Argyle: Okay, one really close thing.  
+> Argyle: I searched Minotaurs to look at the images to verify this.  
+> Gamemaster: Sure.  
+> Gamemaster: Of course.  
+> Argyle: Scrolled, but then there's a suggested related search.  
+> Argyle: The first one is Minotaur scary, and that's in bold.  
+> Argyle: And the second one is male Minotaur.  
+> Argyle: Weirdos are searching there.  
+> Gamemaster: I don't want to see no women minotaurs in my Google search.  
+> Argyle: Yeah.  
+> Benny: when you search for menopause, but there's too many women.  
+> Argyle: The third one is Minotaur Percy Jackson.  
+> Gamemaster: Gross.  
+> Benny: Stuck out.  
+> Gamemaster: Okay, you get a mythic point.  
+> Johnny: So we're outside this post office.  
+> Gamemaster: Yeah, you get a mythic point.  
+> Argyle: Cool.  
+> Gamemaster: You are all currently staked out.  
+> Gamemaster: That's the correct term, right?  
+> Gamemaster: You're all stuck out.  
+> Benny: No one's safe there.  
+> Anzu: You suck me out.  
+> Gamemaster: You're in the process of staking out  
+> Gamemaster: Gryphonline.  
+> Benny: Sure.  
+> Anzu: Yeah, yeah, yeah.  
+> Gamemaster: The way that this is working is you guys woke up, crack of dawn to make your way over to the mail office as soon as it opened.  
+> Gamemaster: You hit a little bird up on a rafter.  
+> Gamemaster: The bird is magic.  
+> Gamemaster: Thank you for asking.  
+> Gamemaster: He's hanging out.  
+> Gamemaster: He's watching the P.O.  
+> Gamemaster: box that is known to be the address of Embercall Incorporated, which is a known entity associated with Pyrelight, which is the gang that is doing stuff, I guess.  
+> Gamemaster: Um...  
+> Gamemaster: It has been pouring since yesterday.  
+> Gamemaster: You have a meeting later today on Pier 54 with Tywelwyn Leatherhide, head of the Round Hat Gang, who you did manage to get this meeting put together due to some swagger on Mr. Skyfall's part.  
+> Gamemaster: You also have, it is currently Friday, so tomorrow there is a pending meeting in the sewers with Whiskers and Co.  
+> Gamemaster: adorned with tinfoil hats to learn more about this mysterious entity that is supposedly everywhere and controlling people's minds and the like.  
+> Anzu: That's tomorrow, you said.  
+> Anzu: Excellent.  
+> Gamemaster: Yes, that would be tomorrow.  
+> Gamemaster: You have been in the car for a few hours now, waiting to see if anybody would stop by to pick up stuff from this post box.  
+> Gamemaster: PO box?  
+> Gamemaster: What is that?  
+> Gamemaster: I don't know what the PO and PO box stands for.  
+> Gamemaster: PO box.  
+> Argyle: Post office.  
+> Gamemaster: Post office box.  
+> Gamemaster: So I guess it would be a G box, because it's not the post office, it's Gryphonline.  
+> Gamemaster: But that's worse, so we're going to keep calling it PO box.  
+> Argyle: It actually is post office box.  
+> Argyle: I thought it was being an ass.  
+> Argyle: I was like, I think that's right, but it doesn't seem right saying out loud.  
+> Gamemaster: Nice.  
+> Gamemaster: So anyway, you guys are hanging out in the City Tripper, the car that is just under Iconoclasm's purview.  
+> Gamemaster: It's technically owned by Illmari, but you've never seen him drive it.  
+> Gamemaster: You've been at Iconoclasm for two days now, so that's not particularly surprising.  
+> Gamemaster: Just kind of hanging out, waiting to see if anybody hits it.  
+> Gamemaster: I mean, there's a clock on the dashboard.  
+> Gamemaster: At 5 o'clock, the radio that you've had on in the background, relatively low, just kind of to fill any dead noise, dead space, because you've all just kind of been cramped in this car for the past few hours.  
+> Gamemaster: You hear a chime that would be familiar to those of you who listen to the radio, which I don't know if that's true of all of your characters.  
+> Johnny: important thing that got left out of the recap it's raining and it's not stopping ever  
+> Gamemaster: But those that do would recognize this as the opening chime of The Situation Room, which is a radio show that comes on like when people are going to work and leaving work and is like a news aggregation type deal.  
+> Benny: Benny will recognize it and turn it up.  
+> Gamemaster: So it's five o'clock.  
+> Gamemaster: Yes, Johnny.  
+> Gamemaster: I said it's rated.  
+> Gamemaster: I said that.  
+> Argyle: Yeah, I forgot to mention that, though.  
+> Gamemaster: Jorge forgot, so I will revoke his mythic, because he didn't mention it.  
+> Johnny: But did you say that the weather is not going to stop ever?  
+> Benny: Let's go!  
+> Johnny: Oh, no.  
+> Benny: Crabs in a bucket!  
+> Gamemaster: We'll split it up.  
+> Gamemaster: I get half, and then Noah gets half.  
+> Gamemaster: Not bad.  
+> Johnny: Nice.  
+> Johnny: I can do something in expert proficiency.  
+> Argyle: To get half, you just get one dice.  
+> Argyle: You can declare it, and the next die you roll is the die you use.  
+> Johnny: Yeah.  
+> Argyle: Whoa.  
+> Gamemaster: So Benny reaches forward, turns the dial on the radio, and, you know, increases the volume so you all can get a listen.  
+> Gamemaster: You hear one of the two hosts, Bev Sirnow, start speaking.  
+> Benny: Thank you.  
+> Gamemaster: Hello, one and all for another installation of The Situation Room.  
+> Gamemaster: I'm Bev Sirnow.  
+> Gamemaster: With me, as always, is the constantly indicted Chuck Vessler.  
+> Gamemaster: And then you hear Chuck on the other end say,  
+> Gamemaster: Nothing's stuck to me yet.  
+> Gamemaster: So what's on the docket today, Bev?  
+> Gamemaster: And Bev says, well, the thing on everyone's mind is, of course, the rain, the weather.  
+> Gamemaster: I hated driving through it to get here.  
+> Gamemaster: I'm not looking forward to driving through it to get home.  
+> Gamemaster: And Chuck cuts in and says, yeah, but my good friend is the CEO of Rainy Days Incorporated, which is the and you like hear him shift as he gets closer to the mic and says the sponsor of today's sponsor of today's broadcast.  
+> Gamemaster: The only place that I trust to get galoshes and umbrellas.  
+> Gamemaster: Because, you know, their stock is up 13% at the end of the day today, which is not a bad haul for unending, ceaseless rain.  
+> Gamemaster: I'm not looking forward to walking home in it, though.  
+> Gamemaster: And Bev says, and that's why we have on a special guest for today.  
+> Gamemaster: Everybody give a warm welcome to the, and you can hear some rustling of papers, the deputy director of the...  
+> Johnny: you you  
+> Gamemaster: Magical Crimes Convox here in Hellia.  
+> Gamemaster: Major-Chaplain Ewan McFoster.  
+> Gamemaster: Ewan, what do you think about all this?  
+> Gamemaster: And then a third voice comes on the radio and says, Well, Bev Sirnow, it's pretty obvious that this is a symptom of illegal augury.  
+> Gamemaster: Everybody knows when you look too far down the world tree, it kind of strains under the pressure, and we get things like this.  
+> Gamemaster: That's why there are very strict augury allotments since the accident of 24.  
+> Argyle: Those bitches.  
+> Johnny: Thank you.  
+> Gamemaster: But it seems someone's circumventing that, and until that happens, I can expect rain for the foreseeable future.  
+> Gamemaster: But you don't need to worry, Bev.  
+> Gamemaster: We are devoting 100% of the resources we have available to tracking down this criminal and ensuring that they cannot continue to impact us.  
+> Gamemaster: And then Chuck says, so do we have to be worried about anything other than rain?  
+> Gamemaster: And the Major-Chaplain says...  
+> Gamemaster: Unfortunately, the blowback from excessive soothsaying is unique to the method by which the person is circumventing our laws and our allotment.  
+> Gamemaster: In the past, it might be minor or it might be major.  
+> Gamemaster: We've seen darkness for days.  
+> Gamemaster: We've seen issues moving from one part of the horizon to another.  
+> Gamemaster: There was that incident over in Tor Strand that I firmly believe we just lost Star 13 due to illegal augury.  
+> Gamemaster: But I can assure our citizens we're not going to let it get that far.  
+> Gamemaster: We'll catch him.  
+> Gamemaster: Bev says, oof, scary.  
+> Gamemaster: Well, I hope you guys do the best you can and catch him sooner rather than later.  
+> Gamemaster: I will be happy to hang up my rain jacket.  
+> Gamemaster: And now, and it like moves on to another part of the segment that is less interesting to you guys.  
+> Gamemaster: Yes.  
+> Johnny: I'll look over at Anzu and say, Anzu, you know, I know what the Calamity of 24 was, but you're a learned person.  
+> Johnny: I just want to check that you know what it is.  
+> Argyle: Can I roll a religion?  
+> Gamemaster: You can roll, if you like, a society or an arcana check to know if you know what the incident of 24 was.  
+> Gamemaster: You can.  
+> Gamemaster: The DC will be higher.  
+> Argyle: What about an athletics?  
+> Gamemaster: Well, Tanner already crit.  
+> Benny: Oh, I don't know.  
+> Johnny: Senator's all about it.  
+> Gamemaster: So which one was that?  
+> Anzu: That was society.  
+> Gamemaster: Which did you roll?  
+> Gamemaster: Society, okay.  
+> Anzu: Unless, Josh, you think that lore academia would be more interesting.  
+> Gamemaster: Lord Academia would be more interesting, given your position in Belvedere.  
+> Gamemaster: Or, like, your access info in Belvedere.  
+> Anzu: It's the same modifier, so...  
+> Gamemaster: Okay.  
+> Gamemaster: So, you would know that the Incident of 24, 624, was a... Sorry, 524.  
+> Gamemaster: Like, more than a hundred years ago, it was the excuse...  
+> Gamemaster: It's unclear how true it is.  
+> Gamemaster: It was the excuse that Calaria used to break off a trade deal, like a relatively large trade deal, with Raelion, saying that Raelion was attempting to look too far into the future, and it was negatively impacting the whole continent.  
+> Johnny: Thank you.  
+> Gamemaster: And it was the first crack in the relationship between the two countries that would eventually devolve into War.  
+> Gamemaster: and then all of the other stuff that happened with Raelion.  
+> Gamemaster: From the Belvedere, unrelated to the two countries' perspective, it's still up for debate if Raelion was doing it.  
+> Johnny: Thank you.  
+> Gamemaster: There is very strong evidence that someone was, in fact, doing too much future-telling, causing negative effects on the world.  
+> Gamemaster: It's just not clear if Raelion was actually doing it, or if it was like a false flag thing from Calaria, or if it was an unrelated third party.  
+> Argyle: you  
+> Gamemaster: It definitely was occurring.  
+> Gamemaster: It's just unclear who was doing it.  
+> Gamemaster: It's the Calarian stance.  
+> Gamemaster: It's taught in schools that Raelion was doing it.  
+> Gamemaster: Raelion, while it was still around, taught the opposite.  
+> Gamemaster: They said that it was like someone else that had been doing it to frame Raelion.  
+> Gamemaster: And there's kind of, amongst everybody else on the continent that cares about that kind of stuff, debate.  
+> Gamemaster: Unfortunately, it's not really possible at the moment to go and check, which it was, unless you could look through top-secret Calarian Iridescent Church files and see if they had written about it one way or the other.  
+> Gamemaster: But it's kind of a moot point anyway, since Raelion isn't around to complain anymore in any large quantity.  
+> Gamemaster: Yes, Jorge.  
+> Argyle: oh sorry go ahead yeah should we uh go tell the cops about those uh little like uh you know booty below the saint the city streets uh which cop was on the radio again which organization  
+> Anzu: No, I just, I obviously share that with everybody.  
+> Johnny: I don't know.  
+> Johnny: Didn't it sort of seem like the cops were in on that whole thing?  
+> Gamemaster: So that was the deputy director of the Magical Crimes Convox, which is part of the Iridescent Host.  
+> Johnny: Oh.  
+> Gamemaster: that is distinct from the two law enforcement organizations that you guys have had brushes with.  
+> Gamemaster: Threshold Authority are the guys in green that were at the roller rink area and you think may be related to Pyrelight in some way.  
+> Gamemaster: And Blackline were the two folks that you met earlier.  
+> Gamemaster: Yes.  
+> Argyle: Is Cedric Corot part of this group?  
+> Argyle: Or is that a different magical crime?  
+> Gamemaster: Uh...  
+> Gamemaster: Oh, yeah, no, no, no, no.  
+> Gamemaster: So the characters that you guys were playing in the past three-shot are part of this org that this deputy director is a part of.  
+> Argyle: So I don't know if you guys know anyone, but I'm sure the Scale could get me in contact with someone for us to chat with.  
+> Gamemaster: Same convox.  
+> Gamemaster: I will say that if you want to talk to this particular convox in some way, those of you who still have an active connection to parts of the orgs that you left before you went to Iconoclasm would probably have a way of setting up that meeting for you.  
+> Anzu: I'm sure if we wanted to report possible crime to them, they'd also be open to hearing that.  
+> Argyle: I think we should.  
+> Argyle: I think we should trust.  
+> Argyle: In my notebook, write this down.  
+> Benny: We could also just go take care of it ourselves.  
+> Gamemaster: Yes.  
+> Johnny: You can report it to the cops.  
+> Johnny: I don't have a great relationship with them.  
+> Benny: Do you guys know if there's a stock market nearby?  
+> Argyle: What are you alleging?  
+> Anzu: Josh, are there stock markets anywhere?  
+> Anzu: Oh, duh.  
+> Gamemaster: No, there are.  
+> Argyle: Should we... Okay, okay, so... Is...  
+> Anzu: He talked about the stock price.  
+> Gamemaster: Yeah.  
+> Gamemaster: Yeah.  
+> Anzu: Yeah, I forgot.  
+> Gamemaster: You know the, like, I don't know if the nine-year-old has any, like, direct influence with it in the past, but the Hallia Exchange is the largest stock exchange on the continent, and is hosted right here in the city.  
+> Benny: I will remind you, Benny has record-keeping lore.  
+> Benny: He is well-read.  
+> Benny: How about...  
+> Gamemaster: Okay, so he would be familiar with it.  
+> Argyle: Is there a nearest Kulshi that we can bet on the weather?  
+> Anzu: Don't get me started on those ads.  
+> Johnny: We can't short the weather?  
+> Anzu: Annoying the hell out of me this week.  
+> Gamemaster: We don't have, we're not that far along, unfortunately, fortunately, in Calarian society that we've not over-commoditized everything yet.  
+> Johnny: Yeah.  
+> Benny: How about we take care of whatever important business this... We only have like seven things to do today.  
+> Benny: We have to check out the PO box that they're definitely going to visit.  
+> Benny: We got to have a meeting at sundown with that guy that is interested in you.  
+> Gamemaster: this is this is my mistake i think  
+> Benny: Little sus.  
+> Benny: And then we're going to go to a stock market and... We're going to go to a stock market and short all of the umbrella hawking companies and then...  
+> Johnny: Yeah, are almonds really big?  
+> Argyle: Is there any crop that needs a lot of water that we can short some commodity, like red lentils?  
+> Benny: Hop into the sewers and finish off the rainmakers?  
+> Gamemaster: I think there's a law that says that you can't invest in futures of any onions, so that's out.  
+> Argyle: You know what, guys?  
+> Argyle: I'm gonna kill Argyle and just make a banker.  
+> Gamemaster: Then why is he adventuring?  
+> Argyle: That's adventuring.  
+> Argyle: He's adventuring to get tips on what to invest in.  
+> Gamemaster: He's just looking for insider information, effectively?  
+> Benny: wrap it up one hour wrap it up it's 20 minutes I'm driving it's in the rain I want to be safe  
+> Gamemaster: Okay.  
+> Johnny: Alright, has anyone checked this PO Box?  
+> Gamemaster: Ridiculous.  
+> Anzu: Yeah, you said it's been a long time at this point, right?  
+> Gamemaster: So in the time... It's been a while.  
+> Gamemaster: Nobody has come by to look at that particular PO box.  
+> Anzu: And how close are we to our meeting?  
+> Gamemaster: Maybe an hour out?  
+> Argyle: We can get there in 30 minutes, so we should go.  
+> Gamemaster: Yeah.  
+> Johnny: Alright, friends.  
+> Johnny: I... I can... Are we... So do we want to, like, try and break into this PO Box while we're here?  
+> Johnny: Just to see what's in it?  
+> Anzu: I guess we could, but we have to be really careful.  
+> Benny: Oh, I think you're talking about plan B for Benny, that he'll take out his thieves' tools that he showed you earlier.  
+> Anzu: I don't want to get caught.  
+> Gamemaster: Okay, so I will remind you of the layout of the area where this P.O.  
+> Anzu: Very good, Benny.  
+> Johnny: I think... Here's my pitch.  
+> Gamemaster: Box is.  
+> Gamemaster: It's like an Amazon locker area, effectively.  
+> Gamemaster: It's a huge wall of these mailboxes, and then in one corner is an employee of Gryphonline.  
+> Gamemaster: Just putting that out there.  
+> Johnny: I have a feat that lets me create diversion, surprisingly, using performance.  
+> Gamemaster: I'm not surprised.  
+> Johnny: And somebody else gets the hidden or obscured or whatever it is.  
+> Johnny: So I can create a performance, create a diversion, and then Benny can sneak over, bust it open, take whatever's inside, run away.  
+> Benny: Go with me.  
+> Gamemaster: Okay, you can try that if you like.  
+> Argyle: I'll wait in the car.  
+> Benny: What do you guys think?  
+> Benny: Lollipop?  
+> Johnny: Is there any better?  
+> Benny: No lollipop?  
+> Benny: Too much attention?  
+> Benny: Too cute?  
+> Benny: Not cute enough?  
+> Argyle: I think it's too cute.  
+> Argyle: Actually.  
+> Argyle: Have you seen Naked Gun 2?  
+> Argyle: I'm kidding.  
+> Argyle: It's in the trailer.  
+> Argyle: But anyway.  
+> Benny: It is in the trailer.  
+> Gamemaster: What are you trying to do?  
+> Benny: There's just a scene where a little girl with a lollipop skips into a bank and then takes a mask off, and it's Liam Neeson wearing a little girl's outfit, and then he beats up all the people at the bank.  
+> Johnny: Oh.  
+> Gamemaster: That's true.  
+> Argyle: He's Liam Neeson, but his character is just Liam Neeson from the narrative.  
+> Anzu: He has made movie-based characters in the past.  
+> Benny: Have you read the letters of Benny?  
+> Argyle: All right.  
+> Benny: It spells I am Liam Neeson.  
+> Benny: All right.  
+> Benny: Benny goes in with Johnny Skyfall.  
+> Johnny: Thank you.  
+> Gamemaster: Okay.  
+> Argyle: Are you going in, my friend?  
+> Anzu: I feel like probably we wait outside.  
+> Argyle: And then it cuts to black, so it goes to red.  
+> Gamemaster: Okay, so the child and the performer walk into the area.  
+> Gamemaster: Right now it's five-ish, so it's actually a little crowded right now.  
+> Gamemaster: People have been kind of filtering in because work ended, and so they're going to check their mailbox on their way home.  
+> Gamemaster: There's like six or seven people in here right now, either interacting with the mail or there's one person talking to the employee.  
+> Gamemaster: Spread throughout the room.  
+> Gamemaster: No one's standing directly in front of the PO box that you're looking to break open, but there are people.  
+> Gamemaster: What you doing?  
+> Johnny: I'm going to get into... What does this map look like?  
+> Johnny: I have it open.  
+> Johnny: Josh, how tall is this tree in the middle?  
+> Gamemaster: The tree itself is relatively large.  
+> Gamemaster: I want to say like 40 feet from grass.  
+> Gamemaster: Or not from grass.  
+> Argyle: By the way, just quick question.  
+> Gamemaster: From rain.  
+> Johnny: That's big.  
+> Argyle: We're not at like the point of society with CCTV, right?  
+> Gamemaster: Correct.  
+> Gamemaster: There are no cameras.  
+> Argyle: Okay, just double check.  
+> Gamemaster: We don't have security guards hanging out in an office looking at CCTV and seeing everything like that.  
+> Gamemaster: Particularly well-funded areas might have arcane eyes in relative areas.  
+> Johnny: you  
+> Argyle: Yeah.  

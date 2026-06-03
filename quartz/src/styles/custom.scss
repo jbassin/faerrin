@@ -1,0 +1,637 @@
+@use "./base.scss";
+
+// ── Custom callout: [x] ────────────────────────────────────────────
+.callout {
+  &[data-callout="x"] {
+    --color: #ffffff;
+    --border: #ffffff;
+    --bg: #ffaaff;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
+  }
+}
+
+// ── Dark-only theme: hide the neutralized darkmode toggle ──────────
+// The Darkmode island is left mounted (least-risk) but the theme is forced
+// dark in PageLayout.astro, so the toggle is a no-op and is hidden.
+.darkmode {
+  display: none !important;
+}
+
+// ── Heading typography ─────────────────────────────────────────────
+h1 {
+  letter-spacing: -0.028em;
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+h2 {
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h3 {
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+// ── Article title ──────────────────────────────────────────────────
+h1.article-title {
+  font-size: 2.4rem;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+// ── Body text ──────────────────────────────────────────────────────
+article p,
+article li,
+article td {
+  line-height: 1.7;
+}
+
+// ── Internal links: underline instead of highlight pill ────────────
+// Overrides base.scss `.internal { background-color: var(--highlight) }`
+a.internal {
+  background-color: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--secondary) 40%, transparent);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    color: var(--secondary);
+    border-bottom-color: var(--secondary);
+  }
+
+  &.broken {
+    border-bottom-style: dashed;
+    border-bottom-color: color-mix(in srgb, var(--gray) 60%, transparent);
+    opacity: 1;
+  }
+
+  &:has(> img) {
+    border-bottom: none;
+  }
+}
+
+// ── Tag links: small-cap bordered chip ─────────────────────────────
+// More specific than `a.internal` to win the cascade without !important on border
+a.internal.tag-link {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  border: 1px solid var(--lightgray);
+  border-radius: 2px;
+  padding: 0.15rem 0.45rem !important;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gray);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+    background-color: transparent !important;
+  }
+}
+
+// ── Blockquote ────────────────────────────────────────────────────
+blockquote {
+  border-left: 2px solid var(--secondary);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 2rem 0;
+
+  p {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--darkgray);
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0.6rem;
+    }
+  }
+}
+
+// ── HR: short editorial rule ───────────────────────────────────────
+hr {
+  width: 3rem;
+  height: 2px;
+  background-color: var(--secondary);
+  margin: 2.75rem auto;
+  border: none;
+  opacity: 0.5;
+}
+
+// ── Tables ────────────────────────────────────────────────────────
+.table-container > table {
+  margin: 1.5rem 0;
+  padding: 0;
+  width: 100%;
+  font-size: 0.95rem;
+
+  th {
+    font-family: var(--headerFont);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1.5px solid var(--lightgray);
+    border-top: none;
+  }
+
+  td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid var(--lightgray);
+    vertical-align: top;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// ── Left sidebar: subtle rule ──────────────────────────────────────
+.sidebar.left {
+  border-right: 1px solid var(--lightgray);
+  padding-right: 1.5rem;
+
+  @media (max-width: 800px) {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+// ── Page title (site name in sidebar) ──────────────────────────────
+h2.page-title {
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  a {
+    color: var(--dark);
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+// ── Content meta: subdued dateline ────────────────────────────────
+.content-meta {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+// ── Explorer nav items: slightly smaller ───────────────────────────
+.explorer-content ul li a {
+  font-size: 0.88rem;
+}
+
+.folder-container div > a,
+.folder-container div > button span {
+  font-size: 0.88rem;
+}
+
+// ── Footer: top border, full opacity ───────────────────────────────
+// Overrides `opacity: 0.7` from components/styles/footer.scss
+footer {
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--gray);
+  opacity: 1;
+  border-top: 1px solid var(--lightgray);
+  padding-top: 1.5rem;
+
+  p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: var(--gray);
+  }
+
+  a {
+    color: var(--gray);
+    font-weight: inherit;
+    border-bottom: 1px solid transparent;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      color: var(--secondary);
+      border-bottom-color: var(--secondary);
+    }
+  }
+}
+
+// ── Inline code ───────────────────────────────────────────────────
+code {
+  font-size: 0.84em;
+  border-radius: 3px;
+}
+
+// ── Selection ─────────────────────────────────────────────────────
+::selection {
+  background: color-mix(in srgb, var(--secondary) 18%, transparent);
+  color: var(--dark);
+}
+
+// ── Transcript / Script pages ─────────────────────────────────────
+// Markup is produced by the Transcript transformer from the directives the
+// content pipeline emits; the sticky custom player is built at runtime by
+// transcript.inline.ts. Per-speaker colors reference the --text<Name> custom
+// properties defined in quartz/util/theme.ts. Keep $speakers in sync with
+// scripts/lib/roster.ts.
+$speakers: (Josh, Jorge, Mike, Noah, Tanner, Guest);
+
+// Filter scope: toggling .hide-<Name> on the root removes that speaker's lines
+// with a single class change (no per-node JS iteration).
+.transcript-root {
+  @each $name in $speakers {
+    &.hide-#{$name} .transcript-line.#{$name} {
+      display: none;
+    }
+  }
+}
+
+// ── Sticky player bar ─────────────────────────────────────────────
+.transcript-player {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  // Own stacking context so the fixed scanline overlay (body::before, z-index:50)
+  // does not composite its CRT grid over the sticky player chrome.
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--dark) 8%, transparent);
+
+  // The native <audio> stays as the playback engine but is hidden.
+  audio {
+    display: none;
+  }
+}
+
+.transcript-transport {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--darkgray);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.1s ease;
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: currentColor;
+  }
+
+  &:hover {
+    background: var(--lightgray);
+    color: var(--dark);
+  }
+
+  &:active {
+    transform: scale(0.92);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 1px;
+  }
+
+  &.is-active {
+    color: var(--secondary);
+    background: color-mix(in srgb, var(--secondary) 14%, transparent);
+  }
+}
+
+.tp-play {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--light);
+  background: var(--secondary);
+
+  svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  &:hover {
+    color: var(--light);
+    background: color-mix(in srgb, var(--secondary) 85%, var(--dark));
+  }
+}
+
+.tp-scrubber {
+  flex: 1;
+  min-width: 3rem;
+  height: 4px;
+  margin: 0 0.3rem;
+  appearance: none;
+  background: var(--lightgray);
+  border-radius: 2px;
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--secondary);
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 50%;
+    background: var(--secondary);
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+  }
+}
+
+.tp-time {
+  flex-shrink: 0;
+  font-family: var(--codeFont);
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-variant-numeric: tabular-nums;
+}
+
+// ── Search row ────────────────────────────────────────────────────
+.transcript-search {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tp-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+  color: var(--dark);
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--secondary);
+  }
+}
+
+.tp-search-count {
+  flex-shrink: 0;
+  min-width: 3.5rem;
+  text-align: right;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--gray);
+}
+
+.tp-search-nav {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+// ── Speaker filter chips ──────────────────────────────────────────
+.transcript-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.78rem;
+  color: var(--dark);
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    opacity 0.15s ease,
+    border-color 0.15s ease;
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 1px;
+  }
+
+  &[aria-pressed="false"] {
+    // line-through carries the "off" signal; opacity stays high enough that the
+    // 0.78rem label keeps AA contrast on the void bg.
+    opacity: 0.55;
+    text-decoration: line-through;
+  }
+}
+
+.tp-chip-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--gray);
+}
+
+@each $name in $speakers {
+  .tp-chip.#{$name} .tp-chip-dot {
+    background: var(--text#{$name});
+  }
+}
+
+// Name toggle (character ↔ real). Sits at the head of the filter row, styled as
+// a distinct accented pill so it reads as a mode switch, not a speaker filter.
+.tp-names-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--secondary) 40%, transparent);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+
+  svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    fill: currentColor;
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--secondary) 20%, transparent);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 1px;
+  }
+}
+
+// ── Transcript lines ──────────────────────────────────────────────
+.transcript-line {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 5px;
+  scroll-margin-top: 6rem;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: color-mix(in srgb, var(--secondary) 8%, transparent);
+  }
+
+  // Currently-playing line: accent rail + tint.
+  &.is-playing {
+    background: color-mix(in srgb, var(--secondary) 13%, transparent);
+    box-shadow: inset 0.2rem 0 0 var(--secondary);
+  }
+
+  // Search hits and the active hit.
+  &.search-match {
+    background: color-mix(in srgb, var(--tertiary) 16%, transparent);
+  }
+
+  &.search-current {
+    background: color-mix(in srgb, var(--tertiary) 30%, transparent);
+    box-shadow: inset 0.2rem 0 0 var(--tertiary);
+  }
+
+  // Deep-link landing flash.
+  &.is-target {
+    animation: transcript-flash 2.4s ease-out;
+  }
+}
+
+.transcript-time {
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--codeFont);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--gray);
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  // 0.75 keeps this small mono timestamp (an interactive control) above the 3:1
+  // non-text contrast floor on the void bg; 0.55 dropped it to ~2.4:1.
+  opacity: 0.75;
+  transition:
+    opacity 0.15s ease,
+    color 0.15s ease;
+
+  &:hover {
+    opacity: 1;
+    color: var(--secondary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 1px;
+    opacity: 1;
+  }
+}
+
+.transcript-name {
+  flex-shrink: 0;
+  font-weight: 600;
+
+  @each $name in $speakers {
+    &.#{$name} {
+      color: var(--text#{$name});
+    }
+  }
+}
+
+.transcript-content {
+  flex: 1;
+}
+
+@keyframes transcript-flash {
+  0%,
+  35% {
+    background: color-mix(in srgb, var(--secondary) 32%, transparent);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transcript-line.is-target {
+    animation: none;
+  }
+}

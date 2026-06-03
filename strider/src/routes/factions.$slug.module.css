@@ -1,0 +1,101 @@
+.root {
+  padding: 1rem;
+  max-width: 620px;
+  margin: 0 auto;
+  /* Body defaults to pointer-events: none for the home route's canvas
+     fall-through; this route's main has its own card chrome to interact with. */
+  pointer-events: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.back {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: color-mix(in srgb, var(--accent-amber) 80%, transparent);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  flex-shrink: 0;
+  transition:
+    color var(--duration-fast),
+    filter var(--duration-fast);
+}
+
+.back:hover {
+  color: var(--accent-amber);
+  filter: drop-shadow(0 0 3px var(--accent-amber));
+}
+
+.arrow {
+  font-size: 0.9em;
+}
+
+.breadcrumb {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, var(--accent-amber) 55%, transparent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  border-top: 3px solid var(--faction-color, var(--accent-amber));
+}
+
+/* Brass-rim bezel */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid color-mix(in srgb, var(--accent-amber) 22%, transparent);
+  pointer-events: none;
+}
+
+.cornerTL,
+.cornerTR,
+.cornerBL,
+.cornerBR {
+  position: absolute;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.55rem;
+  line-height: 1;
+  color: color-mix(in srgb, var(--accent-amber) 40%, transparent);
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.cornerTL {
+  top: 6px;
+  left: 7px;
+}
+.cornerTR {
+  top: 6px;
+  right: 7px;
+}
+.cornerBL {
+  bottom: 6px;
+  left: 7px;
+}
+.cornerBR {
+  bottom: 6px;
+  right: 7px;
+}

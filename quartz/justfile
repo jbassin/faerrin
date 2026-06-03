@@ -1,0 +1,22 @@
+list:
+    just --list
+
+# Astro dev server (HMR). Pagefind search is empty here — it indexes built HTML;
+# use `just dev-search` to exercise search against a real build.
+dev *args:
+    npx astro dev --port 10114 {{ args }}
+
+# Build + preview the static site so Pagefind search works (indexes the build).
+dev-search *args:
+    npm run build && npx astro preview --host --port 10114 {{ args }}
+
+# Production build → publishes to public/ (what the reverse proxy serves).
+build:
+    bash build.sh
+
+review:
+    npx tsx scripts/review.ts
+
+# Run the content pipeline. Pass a step name to run just one, e.g. `just pipeline ingest`.
+pipeline *args:
+    npx tsx scripts/run.ts {{ args }}

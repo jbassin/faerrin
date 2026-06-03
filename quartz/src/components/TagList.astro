@@ -1,0 +1,24 @@
+---
+// Ports TagList.tsx. Tag links resolve to tags/<tag> relative to the page.
+import { resolveRelative, type SiteDoc } from "../lib/site.ts"
+
+interface Props {
+  doc: SiteDoc
+}
+const { doc } = Astro.props
+const tags = doc.tags
+---
+
+{
+  tags.length > 0 && (
+    <ul class="tags">
+      {tags.map((tag) => (
+        <li>
+          <a href={resolveRelative(doc.slug, `tags/${tag}` as any)} class="internal tag-link">
+            {tag}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}

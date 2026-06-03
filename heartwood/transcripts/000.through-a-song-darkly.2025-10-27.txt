@@ -1,0 +1,1101 @@
+000001	Gamemaster: Good evening.  
+000002	Argyle: Good evening, how are you?  
+000003	Gamemaster: I'm doing quite well.  
+000004	Gamemaster: How are you?  
+000005	Gamemaster: I'm mad at everybody who's ever touched a computer, I think.  
+000006	Argyle: Doing well, doing well.  
+000007	Argyle: What they do now.  
+000008	Gamemaster: I've decided.  
+000009	Gamemaster: My coworkers insist on using AI to write stuff, and then it breaks things.  
+000010	Gamemaster: And then they're all surprised about, like, how could this happen?  
+000011	Argyle: Yeah.  
+000012	Argyle: So what's annoying it... Yeah, go ahead.  
+000013	Gamemaster: So you're familiar with Cursor, right?  
+000014	Argyle: Yeah.  
+000015	Gamemaster: Did you know that Cursor has an enterprise solution that allows your manager to track how many lines of code you've written versus how many lines of code your AI has written?  
+000016	Argyle: I did not, but that's crazy.  
+000017	Gamemaster: Yeah, so my manager, who's always been a metrics-oriented guy in a way that I'm not a huge fan of, in my mid-year, he'll talk about lines of code written as if that's an appreciable metric of how good one is at their job.  
+000018	Gamemaster: Which is stupid.  
+000019	Gamemaster: Either way, it's a new data point for him.  
+000020	Gamemaster: And so we have like a little internal leaderboard thing of how many lines of code each person has written with Claude in Cursor.  
+000021	Argyle: Bye.  
+000022	Gamemaster: And I am permanently in last because I refuse to install the program on my computer.  
+000023	Gamemaster: um but i i swear over the course of the past two to three weeks we've had multiple consumer like customer facing incidents due to like stupid shit  
+000024	Gamemaster: that would have never been written by a human because the logic was completely wrong, because the AI just straight-up hallucinated what it was trying to do.  
+000025	Gamemaster: And then the human is stupid, and they don't look at the code and then think for literally half a second to be like, hmm, yes, I do calculate the percentage of something happening by just multiplying the number by 100.  
+000026	Gamemaster: That's how percentages work.  
+000027	Gamemaster: And then it hits prod, and everybody's complaining, and I just...  
+000028	Gamemaster: I don't want to have to deal with shitty AI written code.  
+000029	Johnny: Wait, so your manager is pro you just using AI code?  
+000030	Gamemaster: But that's the opposite direction of where everyone's moving.  
+000031	Argyle: I feel you.  
+000032	Argyle: Well, I just... I just re-sent you my company's open job recs in case you want to...  
+000033	Gamemaster: Yeah, because you have to think about the velocity.  
+000034	Johnny: Josh, move fast and break things.  
+000035	Gamemaster: They're very good at the latter.  
+000036	Gamemaster: I know.  
+000037	Gamemaster: I'm just complaining.  
+000038	Gamemaster: I'm very... I don't even want to say risk-adverse.  
+000039	Gamemaster: I just... You know, economy is scary, and this place pays me more than enough money, so I'm probably going to complain.  
+000040	Argyle: You're free to complain.  
+000041	Gamemaster: I might apply.  
+000042	Argyle: I'm all for it.  
+000043	Argyle: I'm just letting you know in case you want... I think my manager is the biggest idiot in the company, and I think everyone else is pretty smart.  
+000044	Gamemaster: No, I understand.  
+000045	Gamemaster: This is very much your, you're like, hey, this is, although, listen, I've heard you complain about your manager being an idiot.  
+000046	Gamemaster: Oh, that's sad.  
+000047	Argyle: Yeah.  
+000048	Argyle: What's funny is he will write me comments that are just so wrong that some of them are AI and others are just wrong.  
+000049	Argyle: He reviewed one of my CLs and he's like, hey, can we tidy this up?  
+000050	Argyle: Can you check this in and tidy this up?  
+000051	Argyle: And then in parentheses, by tidy this up, I mean remove your do not submit comments.  
+000052	Argyle: Because I usually put that if I'm putting some...  
+000053	Argyle: debugging print statement or log so I don't forget it so I can control F it.  
+000054	Argyle: But I was looking at my code and they just weren't in the entire branch.  
+000055	Argyle: So he must have been looking at like something else and it's just like I don't even know how to respond to these comments without being an asshole.  
+000056	Gamemaster: He just assumed that in the past you've left those comments, so you did that on this one too.  
+000057	Argyle: I've never left it in.  
+000058	Argyle: I've only had it when I was working on something and I showed him, but it's funny.  
+000059	Argyle: And I was just like, ah, you're an idiot.  
+000060	Argyle: Hey.  
+000061	Johnny: Why would you call Tanner that?  
+000062	Johnny: That's so rude.  
+000063	Gamemaster: That was terribly mean.  
+000064	Anzu: Yeah, what an entrance for me.  
+000065	Anzu: Jeez.  
+000066	Argyle: Yeah.  
+000067	Gamemaster: I will say, you know, as much as my coworkers suck, I have to do the bare minimum, and I look amazing against them.  
+000068	Gamemaster: So, it could be way worse.  
+000069	Johnny: It's like, do you want to be the best on the worst team or the worst on the best team?  
+000070	Gamemaster: Yeah, and, you know, at some point, I do not want to, like, be the best on the worst team, but...  
+000071	Anzu: now this is why the boss calls you at three in the morning right what do you think of tonight's betting lines  
+000072	Gamemaster: Yes, and that is my fault.  
+000073	Johnny: I assume there was like an incident and he called you.  
+000074	Gamemaster: But, yeah.  
+000075	Gamemaster: I don't know.  
+000076	Argyle: So.  
+000077	Johnny: He wasn't just like, hey, Josh, you up?  
+000078	Gamemaster: It was a booty call.  
+000079	Gamemaster: It was really awkward because he's married with a kid.  
+000080	Gamemaster: Yeah, when stuff breaks, I happen to be on a very short list of people that get called in order.  
+000081	Gamemaster: I believe I'm number two, number one being like the CTO, and he immediately says, do not call me, and passes it along to the next person on the incident list.  
+000082	Argyle: So, Josh, when you, if you were to, does it, does clot measure the code you submit that's AI generated or the ones you just use?  
+000083	Gamemaster: But... That's me.  
+000084	Gamemaster: It measures the ones that get committed to main that the origin was cursor, I believe.  
+000085	Argyle: Okay, never mind.  
+000086	Gamemaster: Why?  
+000087	Gamemaster: Oh, you're saying that I could, like, you know, just make a feature and then have it generate a bunch of lines so that it just looks like I've used AI for a bunch of stuff?  
+000088	Argyle: I was just going to say, tap, tap, tap, tap, tap.  
+000089	Gamemaster: I don't mind being last on the leaderboard.  
+000090	Argyle: Yeah.  
+000091	Gamemaster: I don't like AI writing code.  
+000092	Argyle: What... What about...  
+000093	Benny: Oh, I thought they were preventing you, like, this is bad, you guys have to stop using AI.  
+000094	Gamemaster: No, no, no.  
+000095	Gamemaster: So I don't know if you're familiar with Cursor's enterprise solution, but Cursor will track the number of lines committed to a repository written by Cursor versus written by the human.  
+000096	Gamemaster: And my manager is using that as a new metric in figuring out performance and stuff like that.  
+000097	Gamemaster: And so we have this little leaderboard that he has access to.  
+000098	Gamemaster: That is, this person wrote 18% of their code with Cursor.  
+000099	Gamemaster: This person wrote 45% and all that kind of stuff.  
+000100	Gamemaster: And I believe it, like, shows the actual line breakdowns.  
+000101	Gamemaster: And I am permanently on zero because I refuse to even install the cursor program on my computer.  
+000102	Gamemaster: I'm not doing it.  
+000103	Benny: Do you use an LLM at all to write your code?  
+000104	Gamemaster: No!  
+000105	Gamemaster: My brain works!  
+000106	Gamemaster: I can write code!  
+000107	Gamemaster: I don't need a computer to write a worse version of the code that I would write.  
+000108	Benny: Well, I mean, I guess it depends what domain you're working in.  
+000109	Benny: Because I use it a decent amount if I'm like, I don't want to write this 13 line snippet that I've probably written before.  
+000110	Benny: Hey, how do you do this?  
+000111	Benny: And then it dumps me a snippet and then I copy paste.  
+000112	Gamemaster: I don't know.  
+000113	Gamemaster: I think if I ever bump into a situation where I'm like, this is the third time that I've written this snippet, my solution is not have an AI write it a fourth time.  
+000114	Gamemaster: It's abstract out that particular snippet.  
+000115	Benny: Oh, no.  
+000116	Benny: I mean, it really depends.  
+000117	Benny: But you don't even ask it about how to do stuff with a specific new tool or API.  
+000118	Benny: Do you talk to them at all?  
+000119	Gamemaster: No, I read the docs.  
+000120	Johnny: Mike?  
+000121	Gamemaster: I go on to the documentation for the tool, if it has one, and if it doesn't, I read the source code.  
+000122	Benny: OK.  
+000123	Gamemaster: I worked at a finance shop that you couldn't even use Stack Overflow for for a while, so I'm just used to... Sorry, did you say something?  
+000124	Argyle: Might be with your manager on this one, Josh.  
+000125	Argyle: Okay.  
+000126	Argyle: No, I'm with your manager on this one, but I'm kidding.  
+000127	Argyle: No, I'm going to... So to be honest with you, I feel like in data engineering, there's a good amount of just numb... Can you take this data frame and then transform this and then do this group by... And...  
+000128	Gamemaster: Oh yeah, sure.  
+000129	Gamemaster: No, that's fair.  
+000130	Gamemaster: I don't know.  
+000131	Gamemaster: I...  
+000132	Gamemaster: Yep.  
+000133	Argyle: I know most of it, but when it's like a slightly annoying thing, I'm just like, you just write it.  
+000134	Argyle: But I never have AI write hard things.  
+000135	Argyle: I only have it write things I know I could do.  
+000136	Benny: Or if it's new.  
+000137	Argyle: I just don't feel like checking this thing.  
+000138	Benny: Like, if you ask me to do anything in Pandas, I'm not using an LLM.  
+000139	Benny: If you ask me to do something in Polars, I'm going to be like, how is this done in Polars?  
+000140	Benny: Sometimes I'll go to the Polars docs.  
+000141	Benny: Like, 50% of the time I'll ask an LLM, 50% I'll go to the Polars docs.  
+000142	Johnny: Thank you.  
+000143	Benny: For SQL, I'm not going to the docs.  
+000144	Benny: For SQL, I'm like, hey, I have this table, I have this.  
+000145	Benny: Do this fucking stupid join shit, because I don't know SQL.  
+000146	Benny: And then it's like...  
+000147	Benny: does whatever subquery stuff that it likes.  
+000148	Benny: Or if I'm translating SQL to SQL Alchemy in Python, so it's two things I don't know.  
+000149	Benny: It's like doubly nested.  
+000150	Benny: I'll go to a bunch of times I've just taken SQL and I've been like, can you make this the SQL Alchemy syntax in Python?  
+000151	Benny: And then it'll give it back to me and then I'll PR it.  
+000152	Benny: And then my manager's like,  
+000153	Benny: What is this?  
+000154	Benny: And I'm like, dude, this is all AI.  
+000155	Benny: I checked it.  
+000156	Benny: It looks fine.  
+000157	Benny: But I don't know exactly the SQL that is going on here.  
+000158	Benny: I know loosely the data processing that's going on.  
+000159	Benny: But I ask it a bunch of questions about stuff.  
+000160	Gamemaster: Oh.  
+000161	Anzu: How trustworthy are these LLMs at writing code?  
+000162	Anzu: If you don't know the language and you're asking it to make these things, do you have a lot of faith in what it's making?  
+000163	Benny: It's like 50-50.  
+000164	Benny: You still have to understand what it's... Like, for SQL, I can read the SQL.  
+000165	Benny: Like, oh, it's doing this join, and then maybe it throws in an operation.  
+000166	Benny: I don't know.  
+000167	Benny: And that's fine.  
+000168	Benny: I've asked to write C++ before, and I hammer it on what I know.  
+000169	Benny: Like, treating it like a black box.  
+000170	Benny: If I'm looking at C++, and I'm like, the shit you gave me is not in... It's not in the same style as this other stuff.  
+000171	Benny: So I'm like, look at this...  
+000172	Benny: hand it back to me in a different way because it doesn't look correct.  
+000173	Benny: And then I'll hammer it on why it did specific things.  
+000174	Benny: Why did you use this kind of a thing?  
+000175	Benny: Why did you have this as a particular arg?  
+000176	Benny: Why this?  
+000177	Benny: Why this?  
+000178	Benny: So I'll ask it to generate code, and I'll use it.  
+000179	Benny: But I'll usually hammer it if it's something that I don't understand that it gives me in the output.  
+000180	Argyle: That's what I do.  
+000181	Gamemaster: But do you feel after that interrogation that given an opportunity similar to that in the future, you could then write the sea yourself?  
+000182	Benny: Yeah.  
+000183	Benny: It's like a curve thing.  
+000184	Benny: In the very past where you only have docs, there's not even Stack Overflow, you have to spend a bunch of time and you will know the component better.  
+000185	Benny: But in order to get anything done, you have to spend a bunch of time.  
+000186	Benny: Now you can go to an LLM.  
+000187	Benny: You won't learn much, but you can get the thing done.  
+000188	Benny: So it's like you have to pick where on the curve you want to be.  
+000189	Argyle: So.  
+000190	Benny: So sometimes it's like we need this fucking...  
+000191	Gamemaster: But if it breaks, how do you figure out what's broken?  
+000192	Gamemaster: You ask the AI, like, what's broken about this?  
+000193	Benny: you would hope that the AI solution is temporary and long enough that it solves the immediate problem in front of you.  
+000194	Benny: And then, yeah, you might go back, you might ask the LLM, you might go back and learn documentation.  
+000195	Benny: Maybe you'll have a bit more breathing room to actually get the problem done.  
+000196	Benny: Because a lot of the stuff I run into is just like, you have to fix this in the next hour, or you have to fix this in the next three hours, or this needs to be hot fixed to prod, so it can't be breaking in prod in the next...  
+000197	Benny: six hours, like get this done immediately.  
+000198	Benny: So a lot of the stuff is like, if an LLM could give me the solution and I can take time to understand it later, I will take that every single time.  
+000199	Benny: Like, yeah, here's code that works.  
+000200	Argyle: for me the way I use it is I only have it write a function at a time I never will be like can you just take this data transform all of this and extract this and do this I might be like I don't feel like building this stupid regex thing can you do this regex function this is the input this is the output here's examples I also have a rule with myself an AI can either write the tests or the code it cannot write both  
+000201	Benny: I'll figure out why it works later.  
+000202	Johnny: Thank you.  
+000203	Argyle: So that's one thing I have.  
+000204	Argyle: And then the other thing, I will sometimes use it either for front end stuff on my side products, and it's awful.  
+000205	Argyle: It takes a lot of time, but I just refuse to do front end.  
+000206	Argyle: Or really small things that require knowing an API that I just don't care that much about.  
+000207	Argyle: For example, on my Plex server, I just set up a new Discord channel, and I wanted a bot that I can just do slash restart.  
+000208	Argyle: so it can run on my machine like a rebuild of a Docker container.  
+000209	Argyle: And then I was just like, I don't, how do I write a bot?  
+000210	Argyle: And then it's like, go to Discord, developer settings, turn this, copy this thing here, and then here, and then I specifically don't tell it commands because I don't want it trying to over-engineer things.  
+000211	Argyle: Then I'm like, just let me run a bash command, and then I'll go and I'll replace the bash command with my actual thing.  
+000212	Argyle: But that's like, and then it showed me how to write a Python script for like,  
+000213	Benny: Yeah.  
+000214	Argyle: Here's like an event thing.  
+000215	Argyle: I see the annotation and stuff like that.  
+000216	Argyle: That also being said, Tanner, I think LLMs for code severely drop off the second you leave Python.  
+000217	Argyle: I think when you're not in Python, terrible.  
+000218	Argyle: And if you're not using like a big library, it's usually much worse.  
+000219	Argyle: And then I've been saying this for a few months before it was in style.  
+000220	Argyle: I really do think we're hitting a plateau on LLMs.  
+000221	Argyle: And I think largely what's happening now is people are just faking new tests and fine-tuning on them.  
+000222	Argyle: And that's where we're seeing improvements.  
+000223	Argyle: I think we're starting to see the limits of what current architectures can do with a transformer.  
+000224	Argyle: And I think that's also why people like OpenAI's CEO, Sam Altman, and Mark Zuckerberg from Meta are saying things like, you know, LLM might be a bubble.  
+000225	Argyle: you know, because they've been saying that publicly recently, because I think, honestly, they can only scale so much.  
+000226	Argyle: Like, it's crazy how much water and power it takes to do a thing that humans can do with just, like, fucking coffee and marshmallows, right?  
+000227	Argyle: Like, it is crazy how inefficient it is, and it's not going to get that much better that much quicker.  
+000228	Anzu: Hmm.  
+000229	Argyle: It's just going to be bad.  
+000230	Benny: Although, to be fair, they... To be fair, they do surpass humans in a bunch of stuff.  
+000231	Argyle: That's my thoughts on it.  
+000232	Argyle: I think we need a new architecture to do anything else.  
+000233	Benny: As far as information synthesis and recall, it's like... I also use them for  
+000234	Johnny: But aren't like a lot of things they surpass humans at not what like the primary uses are?  
+000235	Argyle: Not efficiency-wise.  
+000236	Johnny: Like in medical fields, don't they do a lot of great?  
+000237	Johnny: I'm not an expert here.  
+000238	Johnny: Don't they do a lot of great stuff?  
+000239	Johnny: But like in the everyday uses, they're really not that efficient.  
+000240	Benny: I don't think that's true.  
+000241	Benny: I mean, the stuff that I've seen, there was like one landmark study that had three cohorts competing for diagnostics.  
+000242	Benny: They had humans, humans with access to Chad GPT, and Chad GPT itself.  
+000243	Benny: And the order of lowest accuracy to highest for diagnosis was...  
+000244	Benny: humans, humans plus ChatGPT, and then ChatGPT by itself.  
+000245	Benny: So if you put a human in between ChatGPT and you had to make the final decision, it actually lost accuracy just versus a model, which makes sense.  
+000246	Johnny: I...  
+000247	Argyle: I don't believe... Diagnosis for what?  
+000248	Benny: It's diagnostics.  
+000249	Benny: It's just general diagnosis.  
+000250	Benny: Like, here are symptoms.  
+000251	Benny: Figure out the disease.  
+000252	Gamemaster: but diagnostics for known issues.  
+000253	Argyle: Yeah, I also don't believe that... But also, the reason I don't...  
+000254	Benny: How are you going to diagnose?  
+000255	Benny: You're going to say that there's no matching disease?  
+000256	Gamemaster: I'm going to say it is possible for a human to show up with something that doesn't match an existing diagnosis.  
+000257	Benny: Yeah.  
+000258	Benny: I don't know what rate that would be, but...  
+000259	Argyle: The reason I don't believe that study is because if you're a human that knows how to use LLMs, you shouldn't get worse results ever.  
+000260	Argyle: Like, you should be strictly as good as the LLM.  
+000261	Argyle: I don't see... I get... Well, what I'm saying is... But then in that...  
+000262	Gamemaster: I mean, I know plenty of people who can program, and then they start using an LLM, and the code they write is worse.  
+000263	Gamemaster: Because you start offloading responsibility to the LLM you're talking to, and so you don't do as much yourself.  
+000264	Argyle: In that regard, I'm surprised that you could just give an LLM full autonomy and do better than the human.  
+000265	Argyle: In most of the studies I've seen, whenever you pair the AI with the human, that's when it does better than both groups.  
+000266	Argyle: How was the LLM not having a human?  
+000267	Argyle: What was the interface?  
+000268	Argyle: What was it diagnosing?  
+000269	Argyle: How is it doing these things?  
+000270	Argyle: What's the bottleneck?  
+000271	Argyle: There has to be some IO or something.  
+000272	Benny: Oh, I mean, it's just the symptoms of the patient.  
+000273	Argyle: So the patient themselves started using ChatGPT, and then the difference was a doctor with ChatGPT?  
+000274	Benny: I think it was just a write-up of the symptoms, and then the doctor had to go off of the write-up.  
+000275	Argyle: See?  
+000276	Argyle: There's the write-up.  
+000277	Argyle: And then I found with a lot of this stuff, normally it's like some engineers fucking with things in their training sets and things like that.  
+000278	Johnny: you you  
+000279	Argyle: Like, I know, for example, with medical things, when I briefly worked with, like, Gemini and medicine stuff, it's like...  
+000280	Argyle: You had to do so much finagling, and they only did better on simple tasks at the moment.  
+000281	Argyle: Like, I don't know how just, like, you take a textbook example of something.  
+000282	Benny: Yeah.  
+000283	Argyle: Like, I don't understand.  
+000284	Argyle: You just have a write-up, and then if you just give it straight to ChatGPT versus you give it to a person to give to ChatGPT, the person does worse.  
+000285	Benny: The person has the final say.  
+000286	Benny: So they're allowed to veto Chet-GBT, which I assume they did in the study.  
+000287	Benny: I also don't think this is a profound problem to say that LLMs are doing better.  
+000288	Benny: It's like large-scale data synthesis and retrieval.  
+000289	Benny: It's someone that spent four to eight years practicing medicine, trying to memorize symptoms  
+000290	Benny: versus something that can search all symptoms.  
+000291	Benny: Like, it's not crazy to me.  
+000292	Benny: The thing that's crazy to me is like, SweBench is like 57% Django or something.  
+000293	Benny: Frontend is solved via LLMs for any existing framework.  
+000294	Johnny: Thank you.  
+000295	Benny: Obviously, new ones are going to come out.  
+000296	Benny: But when people are like, oh, I've built this app with an LLM, it's like, well, you weren't doing anything out of sample.  
+000297	Benny: You wanted a frontend that did this.  
+000298	Benny: The LLM has seen a billion frontends that do this.  
+000299	Benny: You want to keep your data in this format.  
+000300	Benny: It's seen a billion of those.  
+000301	Benny: It had to tie them together.  
+000302	Benny: It's seen a billion of those.  
+000303	Benny: So if you're asking it to make an app, it's like saying Wix is profound.  
+000304	Benny: Because you can build a website clicking around.  
+000305	Benny: You can... What, like building a full stack app with an LLM?  
+000306	Argyle: Have you tried doing any of this with any of the state-of-art LLMs?  
+000307	Argyle: Yeah.  
+000308	Benny: I built a website with one.  
+000309	Argyle: Yeah, full stack, though.  
+000310	Benny: No, I mean just front end.  
+000311	Argyle: I just straight up don't believe people that say it's seamless because I've done it multiple times.  
+000312	Argyle: It is not seamless.  
+000313	Argyle: Like, it is just bad.  
+000314	Argyle: And I mean, like, relatively simple things.  
+000315	Benny: That, I don't know.  
+000316	Argyle: Like, sure, if I just have a data set that has a CSV, it's going to do well.  
+000317	Argyle: But if I'm like, hey, can you just use this picture and then put a sprite on it that someone can move around with?  
+000318	Argyle: They just can't do it.  
+000319	Benny: Well, okay, yeah.  
+000320	Benny: I think images is something else.  
+000321	Benny: But like my brother built an app, like a Rust app that has an HTML JavaScript front end, and he didn't write any HTML JavaScript.  
+000322	Argyle: And what does it do?  
+000323	Benny: It's a YouTube MP3 downloader.  
+000324	Benny: So you enter a link.  
+000325	Benny: It goes to YouTube, downloads it, and then adds it to a playlist.  
+000326	Argyle: What I mean is that's extremely simple.  
+000327	Argyle: The second you get anything that's not extremely simple, not even hard, just middle of the road, they just deteriorate from my experience.  
+000328	Benny: Like involving a database?  
+000329	Argyle: I've tried Claude, GPT, Gemini.  
+000330	Argyle: If you just need multiple decision-making things in there, they just deteriorate.  
+000331	Benny: I mean, I guess it depends how you're prompting it.  
+000332	Benny: If you're asking it, build a website from scratch.  
+000333	Benny: You could say, give me a plan to build a website from scratch.  
+000334	Benny: I want it to do this, this, and this.  
+000335	Benny: If you're using this technology, tell me exactly where to get all of these things and how to link it to the front end.  
+000336	Argyle: Which is the study that had these three control groups?  
+000337	Argyle: I'm curious to read it.  
+000338	Argyle: Do you have it?  
+000339	Anzu: Jorge, have you considered that maybe you're just not that good at generating AI prompts?  
+000340	Gamemaster: Yeah, you're not a prompt engineer, is the problem.  
+000341	Argyle: I worked in an AGI lab and we were just discussing how this stuff just doesn't work yet.  
+000342	Johnny: Thank you.  
+000343	Gamemaster: I don't actually know if this is the one that you were looking at, Mike.  
+000344	Gamemaster: I've been, while you guys have been having your repartee, I've been trying to find various papers.  
+000345	Gamemaster: There are so many.  
+000346	Gamemaster: There are so many LLM papers on diagnoses, to the point that I found a meta-study looking at 64 other LLM studies for using LLMs to help with diagnoses in various continents.  
+000347	Anzu: yeah yeah we love those  
+000348	Johnny: He's what  
+000349	Gamemaster: It's a lot.  
+000350	Gamemaster: See, that's a different one.  
+000351	Gamemaster: That's a different one than the one that I was looking at that also has three sections of results with doctors, doctors with LLMs and LLMs.  
+000352	Gamemaster: There's so much.  
+000353	Gamemaster: The one that I was looking at was using remote video conferencing.  
+000354	Argyle: Yeah, this used MedPOM.  
+000355	Argyle: That's why.  
+000356	Argyle: MedPOM and GPT.  
+000357	Benny: That's that's but that was my whole point.  
+000358	Argyle: Yeah, this used MedPOM in LLM that was trained on diagnosis snippets.  
+000359	Argyle: You're just giving it data it's seen.  
+000360	Benny: It's just.  
+000361	Gamemaster: Yeah, that's fine.  
+000362	Benny: Did it.  
+000363	Gamemaster: Training a model like... I want to be able to go to chat.openai.com and upload a picture of an x-ray of my stomach and have it tell me what's wrong.  
+000364	Benny: I mean.  
+000365	Argyle: No, but what I'm saying is...  
+000366	Benny: Are you going to not train it on medical diagnoses and then ask it to do?  
+000367	Johnny: That's the degrees for her.  
+000368	Benny: It's like asking a.  
+000369	Argyle: Let me rephrase my thoughts more candid.  
+000370	Gamemaster: Okay?  
+000371	Anzu: Too many noodles.  
+000372	Argyle: If you have a description of a diagnosis and you are told to use Gen AI and you get it wrong and the Gen AI is capable of getting it right, you're an idiot.  
+000373	Anzu: Bye, medical engineer.  
+000374	Johnny: It's the masters for her.  
+000375	Argyle: You're just a straight idiot.  
+000376	Benny: I mean, sure.  
+000377	Argyle: I'm just saying, you're a straight bozo.  
+000378	Benny: I don't think these doctors were like sat down and be like, the machine is better than you.  
+000379	Argyle: If you are given something  
+000380	Benny: You are worse than the machine.  
+000381	Benny: The machine will do better than you.  
+000382	Benny: Do not veto the machine.  
+000383	Benny: And if they still vetoed the machine at the end, what are you going to do?  
+000384	Benny: But like, yeah, this is.  
+000385	Argyle: They don't know how to use the machine, is what I'm telling you.  
+000386	Argyle: This is being done by people who just don't know how to use the machine.  
+000387	Benny: Oh, no.  
+000388	Benny: Yeah.  
+000389	Benny: Yeah.  
+000390	Benny: No, no, no.  
+000391	Benny: I'm willing to bet they weren't trained.  
+000392	Argyle: But when you pair it with radiologists to do cancer diagnosis, radiologists with the AI does better than the AI or the radiologists by themselves.  
+000393	Johnny: you  
+000394	Benny: That I believe because it's Vision.  
+000395	Argyle: Because radiologists also know how to use tech.  
+000396	Argyle: There's a lot of doctors... I think they're one of the highest tech savvy people that know how to use programs.  
+000397	Benny: That I... Yeah.  
+000398	Argyle: A lot of these doctors...  
+000399	Argyle: There's a reason their systems suck.  
+000400	Argyle: They're like illiterate.  
+000401	Benny: Yeah, but...  
+000402	Benny: I mean, this is one of the best things.  
+000403	Benny: If you just want to do stuff in sample, they're absolutely crazy.  
+000404	Benny: People falsely attributed GPT-5 for solving an open problem in math.  
+000405	Benny: Do you know what GPT-5 really did?  
+000406	Benny: Because GPT-5 produced a solution.  
+000407	Benny: Are you guys familiar with this?  
+000408	Gamemaster: You have to be more specific, because there have been a few math-related games you've completed it.  
+000409	Argyle: Yeah.  
+000410	Benny: Well, this one is an open problem.  
+000411	Benny: This isn't like doing well on like a...  
+000412	Benny: on new questions, like a bunch of PhDs.  
+000413	Gamemaster: This isn't the one where it figured out how to sort better at low end, right?  
+000414	Benny: No, no, no, no.  
+000415	Benny: This was something else.  
+000416	Benny: I forgot exactly the context of the problem.  
+000417	Benny: But I think it was some geometry or some combinatorics problem.  
+000418	Benny: But it produced a correct solution to it.  
+000419	Benny: What it did was it just searched all of the papers and had found that someone had solved the problem before, but it was not widely published or recognized.  
+000420	Benny: So it was considered by the math community to be open and unsolved.  
+000421	Benny: And GPT-5 was like, I actually have the solution right here, and then just cited a paper that had a correct solution to it.  
+000422	Johnny: you  
+000423	Benny: I think that's like 80% solving an open problem.  
+000424	Benny: If you have a solution that no one knows about, it's not a solved problem.  
+000425	Argyle: I think that's when LLMs are good.  
+000426	Benny: But again, yeah, yeah.  
+000427	Argyle: Needle and Haystacks.  
+000428	Argyle: They're really good at that.  
+000429	Benny: Information retrieval and synthesis.  
+000430	Benny: It's been my favorite way to use them the whole time.  
+000431	Benny: I don't ask them to produce any code larger than half a function in the actual code base I work in.  
+000432	Benny: I do ask them to build like, I asked them to build one small thing and then really made sure it was good.  
+000433	Benny: It was a single class.  
+000434	Benny: It was a compacting queue based on keys, like last message per key.  
+000435	Johnny: Bye.  
+000436	Benny: And I was like, I had to write it in like fucking 15 minutes because a different change that I had done that fixed one thing broke three others, and people were bitching at me.  
+000437	Benny: And I was like, okay, please just write me the compacting queue.  
+000438	Benny: I'll incorporate it into this thing.  
+000439	Benny: And then within like an hour, I had the solution already deployed, and it was well under memory.  
+000440	Benny: And then actually someone sent me, the same guy that was bitching at me sent me, he's like, very good job on the compacting queue.  
+000441	Benny: And I was just like, all right, man.  
+000442	Benny: I didn't have the idea for it, but...  
+000443	Benny: I didn't write the compacting queue.  
+000444	Gamemaster: I don't know.  
+000445	Gamemaster: I've just had coworkers on a video call with me where I sent them a sequel snippet and then I watched them copy and paste it into Cursor and ask it to explain it to them.  
+000446	Gamemaster: So I just don't like it being used as a crutch.  
+000447	Benny: I wouldn't do that on a call.  
+000448	Argyle: I mean, there's also papers, if you guys are aware, papers of people that use Gen AI for most of their tasks throughout the day.  
+000449	Argyle: And their brains, when they do CAT scans, show decreased functionality.  
+000450	Benny: Oh, yeah, no.  
+000451	Argyle: Like, they're getting worse.  
+000452	Benny: Yeah, completely.  
+000453	Benny: Josh's comment was not wrong.  
+000454	Benny: People become worse programmers because you're not dealing with the nuts and bolts.  
+000455	Benny: So I don't know.  
+000456	Benny: Hopefully, your brain is doing something productive with all its newly found cycles in programming.  
+000457	Benny: But I don't know.  
+000458	Benny: Maybe we're freeing up cycles for the Sora TikTok clone.  
+000459	Benny: And you can watch videos of Sam Altman stealing GPUs and getting pulled over.  
+000460	Gamemaster: I saw that video of the AI-generated video game where it's just like a fever dream.  
+000461	Johnny: Thank you.  
+000462	Gamemaster: I don't know if you guys have seen this.  
+000463	Gamemaster: It's ridiculous.  
+000464	Benny: probably have.  
+000465	Gamemaster: Let me see if I can find it.  
+000466	Benny: The Sora videos were very funny for three days.  
+000467	Benny: But they fell into five different categories.  
+000468	Benny: But the funniest one was SpongeBob getting pulled over.  
+000469	Benny: But that was early stable diffusion, where you had Jar Jar Binks at the Nuremberg trials.  
+000470	Gamemaster: What?  
+000471	Benny: You can only see so many of those kinds of images before you're like, all right, I get it.  
+000472	Benny: You put funny guy in serious situation or serious guy in funny situation.  
+000473	Benny: We get it.  
+000474	Benny: Oh, oh, OK.  
+000475	Benny: I did see this one.  
+000476	Benny: This is probably the worst.  
+000477	Benny: I don't even know what this was made with.  
+000478	Gamemaster: I have no idea.  
+000479	Gamemaster: I have to believe that the person who posted it was being ironic, but also he's the CEO of HyperWrite AI and Otherside AI and also SchumerPrompt.com, which is a GitHub for prompts.  
+000480	Benny: I'm always suspicious of the video because I feel like people generate 100 and then pick one.  
+000481	Argyle: I think he's... Yeah.  
+000482	Gamemaster: And he's an investor in Grok.  
+000483	Gamemaster: What is investor in Grok?  
+000484	Argyle: I would also love to know how much of that was actually written by AI.  
+000485	Gamemaster: It's private.  
+000486	Gamemaster: Oh, no, no, no, no, no, no.  
+000487	Argyle: Yeah.  
+000488	Gamemaster: Listen, if this video is the best of 100, that's worse.  
+000489	Gamemaster: Like, that's worse.  
+000490	Johnny: This is unhinged.  
+000491	Gamemaster: That's so much worse.  
+000492	Benny: Oh, no, no, no.  
+000493	Benny: But it doesn't... It looks like a dream, right?  
+000494	Benny: If it didn't even look like a dream, that's the other 99, is what I'm saying.  
+000495	Benny: Every time I see a video... I don't know.  
+000496	Benny: It can do Will Smith eating spaghetti really well now.  
+000497	Gamemaster: Yeah, I mean, if that's the benchmark, how good is AI at making Will Smith eat spaghetti?  
+000498	Benny: I'd be shocked if that wasn't...  
+000499	Johnny: That is the benchmark.  
+000500	Gamemaster: I know that used to be.  
+000501	Gamemaster: Like, back when Image Generation made everything look like nightmare fuel, and you got the Will Smith with his face, like, compressing as he eats the spaghetti.  
+000502	Gamemaster: Now he can eat spaghetti.  
+000503	Gamemaster: Finally, the internet has allowed Mr. Smith to eat some spaghetti.  
+000504	Benny: I saw someone say that even though the new Will Smith eating spaghetti videos are more accurate, they're less or no, that they're more realistic.  
+000505	Anzu: Thank you.  
+000506	Benny: They're less accurate because the previous one described the actual feeling of eating spaghetti, like the way that the video moved and like how he moved.  
+000507	Benny: It actually was accurate to the human feeling of eating spaghetti.  
+000508	Gamemaster: Yeah, it used to be art, and now it's just Will Smith eating some spaghetti.  
+000509	Benny: Now it's just photorealistic.  
+000510	Benny: It's no longer impressionist.  
+000511	Argyle: It's impressionist.  
+000512	Benny: Yeah, exactly.  
+000513	Benny: That was just cameras.  
+000514	Johnny: Yeah.  
+000515	Gamemaster: Yeah.  
+000516	Gamemaster: Just worse cameras.  
+000517	Benny: I like some of the Gaga songs.  
+000518	Benny: What the fuck does she know about cameras?  
+000519	Gamemaster: I don't know, I think it worked out for them.  
+000520	Gamemaster: People still use Polaroids.  
+000521	Benny: True.  
+000522	Gamemaster: Do you want to play some Pathfinder?  
+000523	Anzu: I think that'd be good.  
+000524	Argyle: Yeah.  
+000525	Benny: Sure.  
+000526	Gamemaster: We don't have to.  
+000527	Johnny: Actually, I have an AI I'd like to try out that can just play it for all of us.  
+000528	Gamemaster: Listen, it's been in the back of my head.  
+000529	Gamemaster: I'm like, clearly this is the wave of the future.  
+000530	Gamemaster: I should learn how to do a rag and stuff.  
+000531	Gamemaster: So I should add all of our campaign stuff into an LLM.  
+000532	Gamemaster: I've not gotten around to it because it seems like it's just enough effort that I don't want to bother.  
+000533	Gamemaster: Maybe I should ask an LLM to do it for me.  
+000534	Anzu: Oh, God.  
+000535	Gamemaster: Bootstrap.  
+000536	Anzu: Someone do the recap.  
+000537	Gamemaster: Are there Von Neumann LLMs yet?  
+000538	Gamemaster: Are we getting there?  
+000539	Gamemaster: Does anyone want to do a recap?  
+000540	Johnny: What did we do last time?  
+000541	Benny: Yeah.  
+000542	Argyle: I can do the recap.  
+000543	Gamemaster: I mean, I can do the recap if no one wants to.  
+000544	Anzu: We definitely don't want you to have the point.  
+000545	Argyle: Yeah, I can do this.  
+000546	Gamemaster: Yeah, if I do it, I get a villain point, and then I can spend it on something fun.  
+000547	Argyle: So I'm going to interject with some information I found out from Josh.  
+000548	Argyle: So we're going to start with we just murdered two bozos that tried to jump us, right?  
+000549	Argyle: They got fucking clapped.  
+000550	Argyle: Then, turns out...  
+000551	Argyle: In Calaria, there's standard ground laws, so we technically could have reported this to the police.  
+000552	Argyle: We didn't ask.  
+000553	Argyle: We don't care.  
+000554	Argyle: We didn't do that.  
+000555	Argyle: We hid the fucking bodies, which is actually the only crime we committed in that instance.  
+000556	Gamemaster: Incorrect.  
+000557	Argyle: And stealing.  
+000558	Gamemaster: You also looted the bodies.  
+000559	Argyle: We're stealing and then mutilating and then hiding the dead bodies.  
+000560	Gamemaster: Yeah.  
+000561	Benny: Thank you.  
+000562	Argyle: But other than that, those are the crimes, actually.  
+000563	Argyle: Anyway.  
+000564	Argyle: We then trotted around.  
+000565	Argyle: We delivered the briefcase.  
+000566	Argyle: The person was like, wow, do you have a nine-year-old strapped to the briefcase with really strong hands?  
+000567	Argyle: And we're like, yep.  
+000568	Argyle: And then the nine-year-old was like, hey, here's a lollipop.  
+000569	Johnny: It was $30, actually.  
+000570	Argyle: We also handed them a business card.  
+000571	Argyle: But anyway, we went shopping.  
+000572	Argyle: The nine-year-old got a magical lollipop given to them that they can now cosplay more effectively as a nine-year-old.  
+000573	Argyle: Johnny Skyfall tried to buy solid gold glasses, and turns out his $10 or $100 wasn't enough.  
+000574	Argyle: So he's like, I'll come back.  
+000575	Argyle: Oh, sorry.  
+000576	Argyle: So his $30 wasn't enough for solid gold sunglasses.  
+000577	Johnny: Thank you.  
+000578	Argyle: And the guy's like, you're fucking poor.  
+000579	Argyle: And then Johnny's like, I'm going to come back here.  
+000580	Argyle: And then Johnny...  
+000581	Argyle: tried to smoke, but turns out he's not cool enough or old enough.  
+000582	Argyle: And he just ended up hacking up a bunch of smoke, uh, really should let the smoking to the cool guys.  
+000583	Argyle: Uh, we then went to a fence where we committed our next crime of the day, where we tried to sell illegal police IDs.  
+000584	Argyle: And then they're like, I don't know.  
+000585	Argyle: We don't even know if it's going to work.  
+000586	Argyle: And then we're like, can you get someone to test it?  
+000587	Argyle: And they're like, that's going to cost money.  
+000588	Argyle: And we're like, we're cheap and criminals.  
+000589	Argyle: So no.  
+000590	Argyle: Uh, so then we left, uh,  
+000591	Argyle: We then decide, hey, we should get those people from the bowling alley.  
+000592	Argyle: So we went over there.  
+000593	Argyle: Johnny did a cool James Bond thing.  
+000594	Argyle: And I was like, he's probably going to get stabbed.  
+000595	Argyle: Luckily, didn't get stabbed.  
+000596	Argyle: He did not have to fall from the sky again.  
+000597	Argyle: So we kept going.  
+000598	Argyle: And then we kept going.  
+000599	Argyle: We then go, all right, well, I guess we have a car now.  
+000600	Argyle: We should get a license, which isn't a driver's license.  
+000601	Argyle: It's like a British person internet license type of thing.  
+000602	Argyle: Poor the Brits.  
+000603	Gamemaster: I think you got to very, very dry frittata, I think is where we left off.  
+000604	Argyle: They have no freedoms anymore.  
+000605	Argyle: Side note.  
+000606	Argyle: We go into the Fane.  
+000607	Argyle: We sleep for the night.  
+000608	Argyle: We tried to teach our heart how to cook quiche.  
+000609	Argyle: Disaster.  
+000610	Argyle: They just made a thick omelette.  
+000611	Argyle: Which is an omelette.  
+000612	Anzu: And in its defense, we did not provide it the proper tools, i.e.  
+000613	Gamemaster: No, it had eggs and bacon, and that's it.  
+000614	Anzu: ingredients.  
+000615	Gamemaster: That's 100% of the ingredients it had.  
+000616	Argyle: We then... Oh, we also... Our bird friend made us tinfoil hats.  
+000617	Gamemaster: Poor Ginny.  
+000618	Gamemaster: It happens.  
+000619	Argyle: And... Side note, not important to the recap, but our bird friend eats eggs.  
+000620	Argyle: Kind of weird.  
+000621	Argyle: Thought I should note that.  
+000622	Argyle: Anyway.  
+000623	Johnny: Why is this recap Jorge dunking on everybody?  
+000624	Argyle: We then decide to go for a little nap.  
+000625	Argyle: So we wake up, and then we get up pretty early for us, which is like 7.  
+000626	Argyle: We then...  
+000627	Argyle: Take out the car with our new license.  
+000628	Argyle: We drive over to the FedEx with Hippogriffs.  
+000629	Argyle: And then we go, wow, we should really figure out why these satellites pointed to this little safety deposit box, or PO box.  
+000630	Argyle: And they were like, you know what?  
+000631	Argyle: They totally checked this thing all day.  
+000632	Argyle: So we just decide we're going to camp out in front of this thing.  
+000633	Argyle: And then we have our bird friend who has a bird friend.  
+000634	Argyle: Luckily, it's inside away from the Griffins.  
+000635	Argyle: Hippogriffs?  
+000636	Argyle: Griffins or Hippogriffs?  
+000637	Gamemaster: Hippogriffs.  
+000638	Argyle: Hippogriffs.  
+000639	Argyle: So we have our bird friend's bird friend hiding, looking at it while we're hiding out in our stakeout car.  
+000640	Argyle: And then we just start going around.  
+000641	Gamemaster: It might be griffins.  
+000642	Gamemaster: I don't know why I said hippogriffs.  
+000643	Gamemaster: It's definitely griffins.  
+000644	Gamemaster: It's Gryphonline.  
+000645	Anzu: I was under the impression that hippogriffs are purely Harry Potter, but I could be wrong about that.  
+000646	Benny: I was going to say I thought Harry Potter was a muggle.  
+000647	Johnny: I thought they were around before.  
+000648	Anzu: No... Well...  
+000649	Gamemaster: No, a hippogriff is a real thing.  
+000650	Gamemaster: Front half is an eagle, hind half is a horse.  
+000651	Benny: A real thing.  
+000652	Gamemaster: It first showed up in Ludovico Ristorio's Orlando Furioso in the 16th century.  
+000653	Benny: Where is that?  
+000654	Argyle: I think Tanner's dad in Jonathan Campaign 2 was a pirate on a hippogriff.  
+000655	Johnny: For everyone interested in Ludovico's Orlando Furioso, here is the picture.  
+000656	Argyle: We never got confirmation because we stopped playing right then.  
+000657	Argyle: But side note, we then, Johnny Skyfall was like, how about you guys share some information since I'm the only one talking about my backstory.  
+000658	Argyle: So we're like, we'll share some information.  
+000659	Argyle: We're like, wow, that's really cool.  
+000660	Johnny: Like the Sopranos.  
+000661	Argyle: And then it cuts to black.  
+000662	Argyle: Also, Tanner said a very appropriate question, and I thought he was hating on short people.  
+000663	Anzu: Oh, uh, yes.  
+000664	Argyle: How do gnomes drive?  
+000665	Argyle: I was like, holy shit, man!  
+000666	Anzu: Learning new stuff about Anzu every day.  
+000667	Gamemaster: Actually, wait, no, I do have a question about the bird eating eggs thing.  
+000668	Gamemaster: Jorge, do you think it's weird when people eat veal?  
+000669	Argyle: Yeah.  
+000670	Argyle: What?  
+000671	Gamemaster: Do you think it's weird when humans eat veal?  
+000672	Argyle: I think morally it's terrible.  
+000673	Gamemaster: For humans to eat veal?  
+000674	Argyle: Yeah.  
+000675	Gamemaster: Okay.  
+000676	Argyle: I eat it, but I think morally it's terrible.  
+000677	Argyle: It's delicious.  
+000678	Benny: I try not to eat that much.  
+000679	Argyle: It's really good.  
+000680	Argyle: I try not to eat that much.  
+000681	Gamemaster: Jorge eating some veal and being like, ooh, I'm so bad.  
+000682	Argyle: I won't buy... I won't buy it at the grocery store, but if it's at a restaurant, I might buy it.  
+000683	Anzu: You cannot pause that long before qualifying.  
+000684	Gamemaster: I mean... Like... Even if you thought it was...  
+000685	Benny: I try not to eat that much.  
+000686	Johnny: Thank you.  
+000687	Argyle: I'm gonna be honest with you.  
+000688	Anzu: Trying to stand on this high ground.  
+000689	Argyle: I'll be honest with you.  
+000690	Argyle: Sometimes there's like a nice veal ragu.  
+000691	Argyle: I might be like, damn, I'm going to eat that.  
+000692	Argyle: But, you know, it's a similar thing with octopus.  
+000693	Argyle: But it turns out you can eat octopus if you're in the UK and be guilt free because they're invasive.  
+000694	Argyle: But anyway.  
+000695	Gamemaster: Even if you thought it was wrong, like if you went to a restaurant and you saw somebody else had ordered the veal, you wouldn't think, that's strange, right?  
+000696	Argyle: Yeah.  
+000697	Gamemaster: That's not the... So then, why is it weird for Anzu to eat an egg?  
+000698	Argyle: Okay.  
+000699	Argyle: Yeah.  
+000700	Argyle: Where are you going with this?  
+000701	Gamemaster: He's not eating an egg of the same species as him.  
+000702	Argyle: Yeah, but Veal isn't a primate.  
+000703	Gamemaster: Veal, I mean, veal is a baby mammal.  
+000704	Johnny: You don't know that.  
+000705	Johnny: You can't prove it.  
+000706	Argyle: Yeah, yeah, but if... So if someone... If I'm at a restaurant and someone orders, like, monkey brain, I'm like, that is fucked, and you should not be ordering that.  
+000707	Gamemaster: No, I definitely can prove that Veal is a baby mammal.  
+000708	Johnny: No.  
+000709	Johnny: You don't know.  
+000710	Johnny: You can't prove it.  
+000711	Argyle: Veal?  
+000712	Gamemaster: Well, the problem there is the brain bit, not the monkey.  
+000713	Argyle: No.  
+000714	Argyle: All right, if it was monkey quadriceps, I'd be like, that's fucked.  
+000715	Gamemaster: Why?  
+000716	Benny: You didn't want to say monkey breasts, that's why.  
+000717	Argyle: Yeah, I was going to say monkey pack, and I was like, that's too much.  
+000718	Johnny: But we're at this Gryphon office.  
+000719	Argyle: Why?  
+000720	Argyle: It's too close.  
+000721	Gamemaster: Yeah, you're at this Gryphon office.  
+000722	Argyle: It's too close.  
+000723	Gamemaster: Which, by the way, apparently the front half of both a Gryphon and a hippogriff is that it's an eagle, but then the back half is either a horse or a lion.  
+000724	Gamemaster: These are the lion ones.  
+000725	Johnny: One of those is cooler.  
+000726	Gamemaster: They're griffins.  
+000727	Gamemaster: Also, I feel like hippogriff makes me think that the back half would be a hippo.  
+000728	Gamemaster: But it's not.  
+000729	Argyle: Quick question.  
+000730	Argyle: Does a half-hippogriff, half-griffon produce Giant eagles from Lord of the Rings?  
+000731	Gamemaster: No, because the back half of both of those is an animal.  
+000732	Argyle: A la Man-Man from the short, from our one-shot.  
+000733	Gamemaster: It's not human.  
+000734	Gamemaster: The front half for both is an eagle.  
+000735	Gamemaster: The difference is a centaur's top half is human and a minotaur's bottom half is human.  
+000736	Gamemaster: So when you put them together, that makes a human.  
+000737	Argyle: Minotaurs were mid-half human.  
+000738	Gamemaster: But if you have, like, eagle horse and eagle lion and you put them together, you're definitely getting top half is eagle.  
+000739	Johnny: Bye.  
+000740	Gamemaster: It's just the bottom half, you're not sure if it's lion or if it's horse.  
+000741	Anzu: or somewhere in between.  
+000742	Benny: Josh, what if it's a recessive gene?  
+000743	Gamemaster: No.  
+000744	Argyle: Because their legs are hooves.  
+000745	Gamemaster: It's not a recessive gene.  
+000746	Gamemaster: This is magical genetics.  
+000747	Benny: But what if it is?  
+000748	Gamemaster: It doesn't work this... Like, you know, if you tried drawing up a Punnett square for this kind of stuff, you'd be really confused.  
+000749	Argyle: One final closing comment.  
+000750	Benny: But I'm just saying.  
+000751	Argyle: Minotaurs have feet with hooves, so it's really just their porcos that are human.  
+000752	Anzu: Also  
+000753	Gamemaster: It's just the middle bit.  
+000754	Argyle: Yeah, yeah, because it's human head.  
+000755	Gamemaster: So I guess underneath...  
+000756	Johnny: Did you ever see Andros' feet?  
+000757	Johnny: You never saw Andros take his shoes off.  
+000758	Gamemaster: Actually, Andrus might have had cloven hoof feet and then the whole rest of him was totally normal.  
+000759	Johnny: You don't know.  
+000760	Gamemaster: Except that he was like nine feet tall.  
+000761	Anzu: Also, there are plenty of birds that eat the eggs of other bird species.  
+000762	Gamemaster: Yeah.  
+000763	Argyle: Yeah, yeah.  
+000764	Argyle: No, no, I didn't realize you were a predator bird.  
+000765	Benny: Or an animal.  
+000766	Johnny: Jorge, listen.  
+000767	Argyle: It was like when Marzo saw the prey folk.  
+000768	Johnny: Andros is taking an improv.  
+000769	Johnny: Andrew's taking an improv class somewhere in this city in a couple of weeks.  
+000770	Johnny: If you want to meet him, you can go take that improv class.  
+000771	Gamemaster: Do we know that for sure?  
+000772	Gamemaster: Andrus might be dead.  
+000773	Anzu: He could die in a book, from what I've heard.  
+000774	Argyle: He might not have made it out.  
+000775	Johnny: He's taking an improv class?  
+000776	Argyle: He might not have made it out.  
+000777	Anzu: He could die in a book?  
+000778	Johnny: But didn't it take place a few weeks ahead of this current campaign?  
+000779	Gamemaster: Oh, so you're saying that he goes to improv and then maybe he dies.  
+000780	Johnny: Yeah, so there could be a short period of time before he dies.  
+000781	Gamemaster: Okay.  
+000782	Johnny: where Argyle and Andros are best friends.  
+000783	Gamemaster: Sure.  
+000784	Johnny: They could be in a scene together.  
+000785	Argyle: Okay, one really close thing.  
+000786	Argyle: I searched Minotaurs to look at the images to verify this.  
+000787	Gamemaster: Sure.  
+000788	Gamemaster: Of course.  
+000789	Argyle: Scrolled, but then there's a suggested related search.  
+000790	Argyle: The first one is Minotaur scary, and that's in bold.  
+000791	Argyle: And the second one is male Minotaur.  
+000792	Argyle: Weirdos are searching there.  
+000793	Gamemaster: I don't want to see no women minotaurs in my Google search.  
+000794	Argyle: Yeah.  
+000795	Benny: when you search for menopause, but there's too many women.  
+000796	Argyle: The third one is Minotaur Percy Jackson.  
+000797	Gamemaster: Gross.  
+000798	Benny: Stuck out.  
+000799	Gamemaster: Okay, you get a mythic point.  
+000800	Johnny: So we're outside this post office.  
+000801	Gamemaster: Yeah, you get a mythic point.  
+000802	Argyle: Cool.  
+000803	Gamemaster: You are all currently staked out.  
+000804	Gamemaster: That's the correct term, right?  
+000805	Gamemaster: You're all stuck out.  
+000806	Benny: No one's safe there.  
+000807	Anzu: You suck me out.  
+000808	Gamemaster: You're in the process of staking out  
+000809	Gamemaster: Gryphonline.  
+000810	Benny: Sure.  
+000811	Anzu: Yeah, yeah, yeah.  
+000812	Gamemaster: The way that this is working is you guys woke up, crack of dawn to make your way over to the mail office as soon as it opened.  
+000813	Gamemaster: You hit a little bird up on a rafter.  
+000814	Gamemaster: The bird is magic.  
+000815	Gamemaster: Thank you for asking.  
+000816	Gamemaster: He's hanging out.  
+000817	Gamemaster: He's watching the P.O.  
+000818	Gamemaster: box that is known to be the address of Embercall Incorporated, which is a known entity associated with Pyrelight, which is the gang that is doing stuff, I guess.  
+000819	Gamemaster: Um...  
+000820	Gamemaster: It has been pouring since yesterday.  
+000821	Gamemaster: You have a meeting later today on Pier 54 with Tywelwyn Leatherhide, head of the Round Hat Gang, who you did manage to get this meeting put together due to some swagger on Mr. Skyfall's part.  
+000822	Gamemaster: You also have, it is currently Friday, so tomorrow there is a pending meeting in the sewers with Whiskers and Co.  
+000823	Gamemaster: adorned with tinfoil hats to learn more about this mysterious entity that is supposedly everywhere and controlling people's minds and the like.  
+000824	Anzu: That's tomorrow, you said.  
+000825	Anzu: Excellent.  
+000826	Gamemaster: Yes, that would be tomorrow.  
+000827	Gamemaster: You have been in the car for a few hours now, waiting to see if anybody would stop by to pick up stuff from this post box.  
+000828	Gamemaster: PO box?  
+000829	Gamemaster: What is that?  
+000830	Gamemaster: I don't know what the PO and PO box stands for.  
+000831	Gamemaster: PO box.  
+000832	Argyle: Post office.  
+000833	Gamemaster: Post office box.  
+000834	Gamemaster: So I guess it would be a G box, because it's not the post office, it's Gryphonline.  
+000835	Gamemaster: But that's worse, so we're going to keep calling it PO box.  
+000836	Argyle: It actually is post office box.  
+000837	Argyle: I thought it was being an ass.  
+000838	Argyle: I was like, I think that's right, but it doesn't seem right saying out loud.  
+000839	Gamemaster: Nice.  
+000840	Gamemaster: So anyway, you guys are hanging out in the City Tripper, the car that is just under Iconoclasm's purview.  
+000841	Gamemaster: It's technically owned by Illmari, but you've never seen him drive it.  
+000842	Gamemaster: You've been at Iconoclasm for two days now, so that's not particularly surprising.  
+000843	Gamemaster: Just kind of hanging out, waiting to see if anybody hits it.  
+000844	Gamemaster: I mean, there's a clock on the dashboard.  
+000845	Gamemaster: At 5 o'clock, the radio that you've had on in the background, relatively low, just kind of to fill any dead noise, dead space, because you've all just kind of been cramped in this car for the past few hours.  
+000846	Gamemaster: You hear a chime that would be familiar to those of you who listen to the radio, which I don't know if that's true of all of your characters.  
+000847	Johnny: important thing that got left out of the recap it's raining and it's not stopping ever  
+000848	Gamemaster: But those that do would recognize this as the opening chime of The Situation Room, which is a radio show that comes on like when people are going to work and leaving work and is like a news aggregation type deal.  
+000849	Benny: Benny will recognize it and turn it up.  
+000850	Gamemaster: So it's five o'clock.  
+000851	Gamemaster: Yes, Johnny.  
+000852	Gamemaster: I said it's rated.  
+000853	Gamemaster: I said that.  
+000854	Argyle: Yeah, I forgot to mention that, though.  
+000855	Gamemaster: Jorge forgot, so I will revoke his mythic, because he didn't mention it.  
+000856	Johnny: But did you say that the weather is not going to stop ever?  
+000857	Benny: Let's go!  
+000858	Johnny: Oh, no.  
+000859	Benny: Crabs in a bucket!  
+000860	Gamemaster: We'll split it up.  
+000861	Gamemaster: I get half, and then Noah gets half.  
+000862	Gamemaster: Not bad.  
+000863	Johnny: Nice.  
+000864	Johnny: I can do something in expert proficiency.  
+000865	Argyle: To get half, you just get one dice.  
+000866	Argyle: You can declare it, and the next die you roll is the die you use.  
+000867	Johnny: Yeah.  
+000868	Argyle: Whoa.  
+000869	Gamemaster: So Benny reaches forward, turns the dial on the radio, and, you know, increases the volume so you all can get a listen.  
+000870	Gamemaster: You hear one of the two hosts, Bev Sirnow, start speaking.  
+000871	Benny: Thank you.  
+000872	Gamemaster: Hello, one and all for another installation of The Situation Room.  
+000873	Gamemaster: I'm Bev Sirnow.  
+000874	Gamemaster: With me, as always, is the constantly indicted Chuck Vessler.  
+000875	Gamemaster: And then you hear Chuck on the other end say,  
+000876	Gamemaster: Nothing's stuck to me yet.  
+000877	Gamemaster: So what's on the docket today, Bev?  
+000878	Gamemaster: And Bev says, well, the thing on everyone's mind is, of course, the rain, the weather.  
+000879	Gamemaster: I hated driving through it to get here.  
+000880	Gamemaster: I'm not looking forward to driving through it to get home.  
+000881	Gamemaster: And Chuck cuts in and says, yeah, but my good friend is the CEO of Rainy Days Incorporated, which is the and you like hear him shift as he gets closer to the mic and says the sponsor of today's sponsor of today's broadcast.  
+000882	Gamemaster: The only place that I trust to get galoshes and umbrellas.  
+000883	Gamemaster: Because, you know, their stock is up 13% at the end of the day today, which is not a bad haul for unending, ceaseless rain.  
+000884	Gamemaster: I'm not looking forward to walking home in it, though.  
+000885	Gamemaster: And Bev says, and that's why we have on a special guest for today.  
+000886	Gamemaster: Everybody give a warm welcome to the, and you can hear some rustling of papers, the deputy director of the...  
+000887	Johnny: you you  
+000888	Gamemaster: Magical Crimes Convox here in Hellia.  
+000889	Gamemaster: Major-Chaplain Ewan McFoster.  
+000890	Gamemaster: Ewan, what do you think about all this?  
+000891	Gamemaster: And then a third voice comes on the radio and says, Well, Bev Sirnow, it's pretty obvious that this is a symptom of illegal augury.  
+000892	Gamemaster: Everybody knows when you look too far down the world tree, it kind of strains under the pressure, and we get things like this.  
+000893	Gamemaster: That's why there are very strict augury allotments since the accident of 24.  
+000894	Argyle: Those bitches.  
+000895	Johnny: Thank you.  
+000896	Gamemaster: But it seems someone's circumventing that, and until that happens, I can expect rain for the foreseeable future.  
+000897	Gamemaster: But you don't need to worry, Bev.  
+000898	Gamemaster: We are devoting 100% of the resources we have available to tracking down this criminal and ensuring that they cannot continue to impact us.  
+000899	Gamemaster: And then Chuck says, so do we have to be worried about anything other than rain?  
+000900	Gamemaster: And the Major-Chaplain says...  
+000901	Gamemaster: Unfortunately, the blowback from excessive soothsaying is unique to the method by which the person is circumventing our laws and our allotment.  
+000902	Gamemaster: In the past, it might be minor or it might be major.  
+000903	Gamemaster: We've seen darkness for days.  
+000904	Gamemaster: We've seen issues moving from one part of the horizon to another.  
+000905	Gamemaster: There was that incident over in Tor Strand that I firmly believe we just lost Star 13 due to illegal augury.  
+000906	Gamemaster: But I can assure our citizens we're not going to let it get that far.  
+000907	Gamemaster: We'll catch him.  
+000908	Gamemaster: Bev says, oof, scary.  
+000909	Gamemaster: Well, I hope you guys do the best you can and catch him sooner rather than later.  
+000910	Gamemaster: I will be happy to hang up my rain jacket.  
+000911	Gamemaster: And now, and it like moves on to another part of the segment that is less interesting to you guys.  
+000912	Gamemaster: Yes.  
+000913	Johnny: I'll look over at Anzu and say, Anzu, you know, I know what the Calamity of 24 was, but you're a learned person.  
+000914	Johnny: I just want to check that you know what it is.  
+000915	Argyle: Can I roll a religion?  
+000916	Gamemaster: You can roll, if you like, a society or an arcana check to know if you know what the incident of 24 was.  
+000917	Gamemaster: You can.  
+000918	Gamemaster: The DC will be higher.  
+000919	Argyle: What about an athletics?  
+000920	Gamemaster: Well, Tanner already crit.  
+000921	Benny: Oh, I don't know.  
+000922	Johnny: Senator's all about it.  
+000923	Gamemaster: So which one was that?  
+000924	Anzu: That was society.  
+000925	Gamemaster: Which did you roll?  
+000926	Gamemaster: Society, okay.  
+000927	Anzu: Unless, Josh, you think that lore academia would be more interesting.  
+000928	Gamemaster: Lord Academia would be more interesting, given your position in Belvedere.  
+000929	Gamemaster: Or, like, your access info in Belvedere.  
+000930	Anzu: It's the same modifier, so...  
+000931	Gamemaster: Okay.  
+000932	Gamemaster: So, you would know that the Incident of 24, 624, was a... Sorry, 524.  
+000933	Gamemaster: Like, more than a hundred years ago, it was the excuse...  
+000934	Gamemaster: It's unclear how true it is.  
+000935	Gamemaster: It was the excuse that Calaria used to break off a trade deal, like a relatively large trade deal, with Raelion, saying that Raelion was attempting to look too far into the future, and it was negatively impacting the whole continent.  
+000936	Johnny: Thank you.  
+000937	Gamemaster: And it was the first crack in the relationship between the two countries that would eventually devolve into War.  
+000938	Gamemaster: and then all of the other stuff that happened with Raelion.  
+000939	Gamemaster: From the Belvedere, unrelated to the two countries' perspective, it's still up for debate if Raelion was doing it.  
+000940	Johnny: Thank you.  
+000941	Gamemaster: There is very strong evidence that someone was, in fact, doing too much future-telling, causing negative effects on the world.  
+000942	Gamemaster: It's just not clear if Raelion was actually doing it, or if it was like a false flag thing from Calaria, or if it was an unrelated third party.  
+000943	Argyle: you  
+000944	Gamemaster: It definitely was occurring.  
+000945	Gamemaster: It's just unclear who was doing it.  
+000946	Gamemaster: It's the Calarian stance.  
+000947	Gamemaster: It's taught in schools that Raelion was doing it.  
+000948	Gamemaster: Raelion, while it was still around, taught the opposite.  
+000949	Gamemaster: They said that it was like someone else that had been doing it to frame Raelion.  
+000950	Gamemaster: And there's kind of, amongst everybody else on the continent that cares about that kind of stuff, debate.  
+000951	Gamemaster: Unfortunately, it's not really possible at the moment to go and check, which it was, unless you could look through top-secret Calarian iridescent church files and see if they had written about it one way or the other.  
+000952	Gamemaster: But it's kind of a moot point anyway, since Raelion isn't around to complain anymore in any large quantity.  
+000953	Gamemaster: Yes, Jorge.  
+000954	Argyle: oh sorry go ahead yeah should we uh go tell the cops about those uh little like uh you know booty below the saint the city streets uh which cop was on the radio again which organization  
+000955	Anzu: No, I just, I obviously share that with everybody.  
+000956	Johnny: I don't know.  
+000957	Johnny: Didn't it sort of seem like the cops were in on that whole thing?  
+000958	Gamemaster: So that was the deputy director of the Magical Crimes Convox, which is part of the Iridescent Host.  
+000959	Johnny: Oh.  
+000960	Gamemaster: that is distinct from the two law enforcement organizations that you guys have had brushes with.  
+000961	Gamemaster: Threshold Authority are the guys in green that were at the roller rink area and you think may be related to Pyrelight in some way.  
+000962	Gamemaster: And Blackline were the two folks that you met earlier.  
+000963	Gamemaster: Yes.  
+000964	Argyle: Is Cedric Corot part of this group?  
+000965	Argyle: Or is that a different magical crime?  
+000966	Gamemaster: Uh...  
+000967	Gamemaster: Oh, yeah, no, no, no, no.  
+000968	Gamemaster: So the characters that you guys were playing in the past three-shot are part of this org that this deputy director is a part of.  
+000969	Argyle: So I don't know if you guys know anyone, but I'm sure the scale could get me in contact with someone for us to chat with.  
+000970	Gamemaster: Same convox.  
+000971	Gamemaster: I will say that if you want to talk to this particular convox in some way, those of you who still have an active connection to parts of the orgs that you left before you went to Iconoclasm would probably have a way of setting up that meeting for you.  
+000972	Anzu: I'm sure if we wanted to report possible crime to them, they'd also be open to hearing that.  
+000973	Argyle: I think we should.  
+000974	Argyle: I think we should trust.  
+000975	Argyle: In my notebook, write this down.  
+000976	Benny: We could also just go take care of it ourselves.  
+000977	Gamemaster: Yes.  
+000978	Johnny: You can report it to the cops.  
+000979	Johnny: I don't have a great relationship with them.  
+000980	Benny: Do you guys know if there's a stock market nearby?  
+000981	Argyle: What are you alleging?  
+000982	Anzu: Josh, are there stock markets anywhere?  
+000983	Anzu: Oh, duh.  
+000984	Gamemaster: No, there are.  
+000985	Argyle: Should we... Okay, okay, so... Is...  
+000986	Anzu: He talked about the stock price.  
+000987	Gamemaster: Yeah.  
+000988	Gamemaster: Yeah.  
+000989	Anzu: Yeah, I forgot.  
+000990	Gamemaster: You know the, like, I don't know if the nine-year-old has any, like, direct influence with it in the past, but the Hallia Exchange is the largest stock exchange on the continent, and is hosted right here in the city.  
+000991	Benny: I will remind you, Benny has record-keeping lore.  
+000992	Benny: He is well-read.  
+000993	Benny: How about...  
+000994	Gamemaster: Okay, so he would be familiar with it.  
+000995	Argyle: Is there a nearest Kulshi that we can bet on the weather?  
+000996	Anzu: Don't get me started on those ads.  
+000997	Johnny: We can't short the weather?  
+000998	Anzu: Annoying the hell out of me this week.  
+000999	Gamemaster: We don't have, we're not that far along, unfortunately, fortunately, in Calarian society that we've not over-commoditized everything yet.  
+001000	Johnny: Yeah.  
+001001	Benny: How about we take care of whatever important business this... We only have like seven things to do today.  
+001002	Benny: We have to check out the PO box that they're definitely going to visit.  
+001003	Benny: We got to have a meeting at sundown with that guy that is interested in you.  
+001004	Gamemaster: this is this is my mistake i think  
+001005	Benny: Little sus.  
+001006	Benny: And then we're going to go to a stock market and... We're going to go to a stock market and short all of the umbrella hawking companies and then...  
+001007	Johnny: Yeah, are almonds really big?  
+001008	Argyle: Is there any crop that needs a lot of water that we can short some commodity, like red lentils?  
+001009	Benny: Hop into the sewers and finish off the rainmakers?  
+001010	Gamemaster: I think there's a law that says that you can't invest in futures of any onions, so that's out.  
+001011	Argyle: You know what, guys?  
+001012	Argyle: I'm gonna kill Argyle and just make a banker.  
+001013	Gamemaster: Then why is he adventuring?  
+001014	Argyle: That's adventuring.  
+001015	Argyle: He's adventuring to get tips on what to invest in.  
+001016	Gamemaster: He's just looking for insider information, effectively?  
+001017	Benny: wrap it up one hour wrap it up it's 20 minutes I'm driving it's in the rain I want to be safe  
+001018	Gamemaster: Okay.  
+001019	Johnny: Alright, has anyone checked this PO Box?  
+001020	Gamemaster: Ridiculous.  
+001021	Anzu: Yeah, you said it's been a long time at this point, right?  
+001022	Gamemaster: So in the time... It's been a while.  
+001023	Gamemaster: Nobody has come by to look at that particular PO box.  
+001024	Anzu: And how close are we to our meeting?  
+001025	Gamemaster: Maybe an hour out?  
+001026	Argyle: We can get there in 30 minutes, so we should go.  
+001027	Gamemaster: Yeah.  
+001028	Johnny: Alright, friends.  
+001029	Johnny: I... I can... Are we... So do we want to, like, try and break into this PO Box while we're here?  
+001030	Johnny: Just to see what's in it?  
+001031	Anzu: I guess we could, but we have to be really careful.  
+001032	Benny: Oh, I think you're talking about plan B for Benny, that he'll take out his thieves' tools that he showed you earlier.  
+001033	Anzu: I don't want to get caught.  
+001034	Gamemaster: Okay, so I will remind you of the layout of the area where this P.O.  
+001035	Anzu: Very good, Benny.  
+001036	Johnny: I think... Here's my pitch.  
+001037	Gamemaster: Box is.  
+001038	Gamemaster: It's like an Amazon locker area, effectively.  
+001039	Gamemaster: It's a huge wall of these mailboxes, and then in one corner is an employee of Gryphonline.  
+001040	Gamemaster: Just putting that out there.  
+001041	Johnny: I have a feat that lets me create diversion, surprisingly, using performance.  
+001042	Gamemaster: I'm not surprised.  
+001043	Johnny: And somebody else gets the hidden or obscured or whatever it is.  
+001044	Johnny: So I can create a performance, create a diversion, and then Benny can sneak over, bust it open, take whatever's inside, run away.  
+001045	Benny: Go with me.  
+001046	Gamemaster: Okay, you can try that if you like.  
+001047	Argyle: I'll wait in the car.  
+001048	Benny: What do you guys think?  
+001049	Benny: Lollipop?  
+001050	Johnny: Is there any better?  
+001051	Benny: No lollipop?  
+001052	Benny: Too much attention?  
+001053	Benny: Too cute?  
+001054	Benny: Not cute enough?  
+001055	Argyle: I think it's too cute.  
+001056	Argyle: Actually.  
+001057	Argyle: Have you seen Naked Gun 2?  
+001058	Argyle: I'm kidding.  
+001059	Argyle: It's in the trailer.  
+001060	Argyle: But anyway.  
+001061	Benny: It is in the trailer.  
+001062	Gamemaster: What are you trying to do?  
+001063	Benny: There's just a scene where a little girl with a lollipop skips into a bank and then takes a mask off, and it's Liam Neeson wearing a little girl's outfit, and then he beats up all the people at the bank.  
+001064	Johnny: Oh.  
+001065	Gamemaster: That's true.  
+001066	Argyle: He's Liam Neeson, but his character is just Liam Neeson from the narrative.  
+001067	Anzu: He has made movie-based characters in the past.  
+001068	Benny: Have you read the letters of Benny?  
+001069	Argyle: All right.  
+001070	Benny: It spells I am Liam Neeson.  
+001071	Benny: All right.  
+001072	Benny: Benny goes in with Johnny Skyfall.  
+001073	Johnny: Thank you.  
+001074	Gamemaster: Okay.  
+001075	Argyle: Are you going in, my friend?  
+001076	Anzu: I feel like probably we wait outside.  
+001077	Argyle: And then it cuts to black, so it goes to red.  
+001078	Gamemaster: Okay, so the child and the performer walk into the area.  
+001079	Gamemaster: Right now it's five-ish, so it's actually a little crowded right now.  
+001080	Gamemaster: People have been kind of filtering in because work ended, and so they're going to check their mailbox on their way home.  
+001081	Gamemaster: There's like six or seven people in here right now, either interacting with the mail or there's one person talking to the employee.  
+001082	Gamemaster: Spread throughout the room.  
+001083	Gamemaster: No one's standing directly in front of the PO box that you're looking to break open, but there are people.  
+001084	Gamemaster: What you doing?  
+001085	Johnny: I'm going to get into... What does this map look like?  
+001086	Johnny: I have it open.  
+001087	Johnny: Josh, how tall is this tree in the middle?  
+001088	Gamemaster: The tree itself is relatively large.  
+001089	Gamemaster: I want to say like 40 feet from grass.  
+001090	Gamemaster: Or not from grass.  
+001091	Argyle: By the way, just quick question.  
+001092	Gamemaster: From rain.  
+001093	Johnny: That's big.  
+001094	Argyle: We're not at like the point of society with CCTV, right?  
+001095	Gamemaster: Correct.  
+001096	Gamemaster: There are no cameras.  
+001097	Argyle: Okay, just double check.  
+001098	Gamemaster: We don't have security guards hanging out in an office looking at CCTV and seeing everything like that.  
+001099	Gamemaster: Particularly well-funded areas might have arcane eyes in relative areas.  
+001100	Johnny: you  
+001101	Argyle: Yeah.  

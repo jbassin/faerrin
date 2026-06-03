@@ -1,0 +1,183 @@
+/* Marathon-styled audio transport. Hard edges, green play, blue progress. */
+
+.player {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border: var(--edge);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow-hard);
+  overflow: hidden;
+}
+
+.player__play {
+  flex: none;
+  width: clamp(4.5rem, 18vw, 6rem);
+  background: var(--green);
+  border-right: var(--edge);
+  display: grid;
+  place-items: center;
+  transition: background 0.12s var(--ease);
+}
+/* Hover inverts to a near-black backdrop so the neon glyph glows (the bright
+   accent reads poorly on the light --ink of the dark theme). */
+.player__play:hover {
+  background: var(--on-accent);
+  color: var(--green);
+}
+.player__play.is-playing {
+  background: var(--blue);
+}
+/* The deep blue takes white content, so override the dark default glyph. */
+.player__play.is-playing .glyph-play {
+  color: var(--on-blue);
+}
+.player__play.is-playing .glyph-pause i {
+  background: var(--on-blue);
+}
+.player__play.is-playing:hover {
+  background: var(--on-accent);
+  color: var(--blue-ink);
+}
+.player__glyph {
+  display: grid;
+  place-items: center;
+}
+.glyph-play {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.85rem 0 0.85rem 1.4rem;
+  border-color: transparent transparent transparent currentColor;
+  color: var(--on-accent);
+  margin-left: 0.2rem;
+}
+.player__play:hover .glyph-play {
+  color: currentColor;
+}
+.glyph-pause {
+  display: flex;
+  gap: 0.4rem;
+}
+.glyph-pause i {
+  display: block;
+  width: 0.42rem;
+  height: 1.6rem;
+  background: var(--on-accent);
+}
+.player__play.is-playing:hover .glyph-pause i {
+  background: currentColor;
+}
+
+.player__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: clamp(0.9rem, 0.6rem + 1.5vw, 1.3rem);
+}
+.player__row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.player__skip {
+  flex: none;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--step--1);
+  letter-spacing: 0.05em;
+  padding: 0.35em 0.5em;
+  border: var(--rule) solid var(--ink);
+  border-radius: 2px;
+  background: var(--bone);
+  transition: background 0.12s var(--ease), color 0.12s var(--ease);
+}
+.player__skip:hover {
+  background: var(--on-accent);
+  color: var(--pink);
+}
+
+.player__track {
+  position: relative;
+  flex: 1;
+  height: 1.4rem;
+  min-width: 0;
+  cursor: pointer;
+  touch-action: none;
+  border: var(--rule) solid var(--ink);
+  border-radius: 2px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--bone-2) 0 6px,
+    var(--bone) 6px 12px
+  );
+}
+.player__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--blue);
+  border-right: var(--rule) solid var(--ink);
+  width: 0;
+  /* HUD scanlines ride the progress so it reads as a charged signal bar. */
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 2px,
+    rgba(17, 17, 16, 0.18) 2px 3px
+  );
+}
+/* Crosshair knob — a targeting reticle that slides the timeline. */
+.player__knob {
+  position: absolute;
+  top: 50%;
+  width: 0.9rem;
+  height: 1.7rem;
+  background: var(--ink);
+  border: var(--rule) solid var(--bone);
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s var(--ease);
+}
+.player__knob::after {
+  content: "";
+  position: absolute;
+  inset: 50% 2px auto 2px;
+  height: var(--rule);
+  background: var(--bone);
+  transform: translateY(-50%);
+}
+.player__track.is-scrubbing .player__knob {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+.player__track:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.player__times {
+  display: flex;
+  justify-content: space-between;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.player__times span::before {
+  content: "T+ ";
+  color: var(--blue-ink);
+}
+.player__total {
+  color: var(--ink);
+}
+/* Two classes so this out-specifies `.player__times span::before` above. */
+.player__times .player__total::before {
+  content: "/ ";
+  color: var(--ink-soft);
+}
+
+@media (max-width: 460px) {
+  .player__skip {
+    padding: 0.3em 0.35em;
+  }
+}

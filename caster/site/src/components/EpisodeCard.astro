@@ -1,0 +1,170 @@
+---
+import type { Episode } from "../lib/episodes.ts";
+import { formatRuntime } from "../lib/episodes.ts";
+
+interface Props {
+  episode: Episode;
+  index: number;
+}
+const { episode, index } = Astro.props;
+const arc = String(episode.arcNo).padStart(3, "0");
+const ep = String(episode.episodeNo).padStart(2, "0");
+const kind = episode.isMain ? "Campaign" : "One-Shot";
+const runtime = formatRuntime(episode.runtimeMs);
+// Cycle accent across the grid so cards feel hand-placed, not stamped.
+// Lead with pink/orange so the loud accents own the top of the grid; green
+// (the brand colour) stays present in the masthead, hero, and LEDs regardless.
+const accents = ["pink", "orange", "green", "blue"] as const;
+const accent = accents[index % accents.length];
+---
+
+<a
+  class:list={["card", `card--${accent}`]}
+  href={`/${episode.id}/`}
+  style={`--reveal-delay:${Math.min(index, 8) * 60}ms`}
+>
+  <i class="card__reticle reticle" aria-hidden="true"></i>
+  <div class="card__top">
+    <span class:list={["slab", `slab--${accent}`]}>M-{ep}</span>
+    <span class="label label--soft card__kind">{kind}</span>
+    <span class="label label--soft card__date">{episode.date}</span>
+  </div>
+
+  <h2 class="display card__title">{episode.episodeTitle}</h2>
+
+  <p class="label label--soft card__arc">{arc} · {episode.arcTitle}</p>
+
+  <div class="card__foot">
+    <span class="hosts">
+      <span class="host" style="--dot:var(--green)">{episode.hostA}</span>
+      <span class="host" style="--dot:var(--blue-ink)">{episode.hostB}</span>
+      {episode.hostC && <span class="host" style="--dot:var(--pink)">{episode.hostC}</span>}
+    </span>
+    <span class="card__play">
+      <span class="card__runtime timecode label">T+ {runtime}</span>
+      <span class="card__tri" aria-hidden="true"></span>
+    </span>
+  </div>
+
+  <span class="card__barcode barcode" aria-hidden="true"></span>
+</a>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: clamp(1.1rem, 0.8rem + 1.5vw, 1.6rem);
+    background: var(--paper);
+    border: var(--edge);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-hard);
+    transition:
+      transform 0.16s var(--ease),
+      box-shadow 0.16s var(--ease);
+    animation: card-in 0.5s var(--ease) both;
+    animation-delay: var(--reveal-delay);
+  }
+  .card::after {
+    /* corner accent tab */
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 1.4rem;
+    width: 2.4rem;
+    height: 0.7rem;
+    background: var(--tab, var(--green));
+    border: var(--edge);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  .card--green {
+    --tab: var(--green);
+  }
+  .card--blue {
+    --tab: var(--blue);
+  }
+  .card--pink {
+    --tab: var(--pink);
+  }
+  .card--orange {
+    --tab: var(--orange);
+  }
+  .card:hover,
+  .card:focus-visible {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 var(--shadow-col);
+  }
+  /* Corner targeting brackets — accent-tinted, revealed/charged on hover. */
+  .card__reticle {
+    position: absolute;
+    inset: 0;
+    color: var(--tab, var(--green));
+    opacity: 0.55;
+    transition: opacity 0.16s var(--ease);
+  }
+  .card:hover .card__reticle,
+  .card:focus-visible .card__reticle {
+    opacity: 1;
+  }
+  /* Barcode spine across the card base. */
+  .card__barcode {
+    height: 0.85rem;
+    margin-top: 0.1rem;
+    opacity: 0.55;
+    transition: opacity 0.16s var(--ease);
+  }
+  .card:hover .card__barcode,
+  .card:focus-visible .card__barcode {
+    opacity: 0.9;
+  }
+  .card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  /* Keep the M-NN slab and CAMPAIGN/ONE-SHOT tag grouped left; date floats right. */
+  .card__kind {
+    margin-right: auto;
+  }
+  .card__title {
+    font-size: var(--step-2);
+    letter-spacing: -0.015em;
+  }
+  .card__arc {
+    margin-top: -0.4rem;
+  }
+  .card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 0.9rem;
+    border-top: var(--rule) solid var(--hair);
+  }
+  .card__play {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6ch;
+  }
+  .card__tri {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.5rem 0 0.5rem 0.85rem;
+    border-color: transparent transparent transparent var(--ink);
+  }
+  @keyframes card-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -1,0 +1,16 @@
+---
+// Ports Image.tsx: the sidebar image from the `img` frontmatter key (remote or
+// local). Rendered DesktopOnly in the right sidebar.
+interface Props {
+  img?: string
+}
+const { img } = Astro.props
+---
+
+{
+  img && (
+    <div class="desktop-only">
+      <img src={img} width="256px" height="326px" style="object-position: top; object-fit: cover" />
+    </div>
+  )
+}

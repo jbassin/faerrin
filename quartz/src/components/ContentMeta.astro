@@ -1,0 +1,28 @@
+---
+// Ports ContentMeta.tsx: a dateline (git "modified" date) + reading time.
+// Date format matches Date.tsx formatDate (en-US, short month, 2-digit day).
+import readingTime from "reading-time"
+import { LOCALE } from "../lib/config.ts"
+import type { SiteDoc } from "../lib/site.ts"
+
+interface Props {
+  doc: SiteDoc
+}
+const { doc } = Astro.props
+const text = doc.entry.body ?? ""
+
+function formatDate(d: Date): string {
+  return d.toLocaleDateString(LOCALE, { year: "numeric", month: "short", day: "2-digit" })
+}
+
+const minutes = Math.ceil(readingTime(text).minutes)
+---
+
+{
+  text && (
+    <p show-comma="true" class="content-meta">
+      {doc.date && <time datetime={doc.date.toISOString()}>{formatDate(doc.date)}</time>}
+      <span>{`${minutes} min read`}</span>
+    </p>
+  )
+}

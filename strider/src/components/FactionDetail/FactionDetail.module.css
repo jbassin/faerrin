@@ -1,0 +1,127 @@
+.root {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.orderId {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: color-mix(in srgb, var(--accent-amber) 75%, transparent);
+}
+
+.name {
+  font-family: var(--font-display), serif;
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  line-height: 1.1;
+  text-align: left;
+  margin: 0;
+  word-break: break-word;
+  text-shadow: 0 0 8px color-mix(in srgb, var(--accent-amber) 18%, transparent);
+}
+
+.symbol {
+  flex-shrink: 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(
+    --faction-color,
+    color-mix(in srgb, var(--accent-amber) 22%, transparent)
+  );
+  margin-bottom: 1.25rem;
+  opacity: 0.6;
+}
+
+.section {
+  margin-bottom: 1.25rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: color-mix(in srgb, var(--accent-amber) 78%, transparent);
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+}
+
+.description {
+  font-family: var(--font-body), serif;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+
+.description p {
+  margin-bottom: 0.7rem;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+.member {
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid
+    color-mix(in srgb, var(--accent-amber) 22%, transparent);
+}
+
+.member:last-child {
+  margin-bottom: 0;
+}
+
+.memberName {
+  font-family: var(--font-display), serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.memberGlyph {
+  color: color-mix(in srgb, var(--accent-amber) 70%, transparent);
+  font-family: var(--font-mono), monospace;
+  font-weight: 400;
+  margin-right: 0.1em;
+}
+
+.memberBio {
+  font-family: var(--font-body), serif;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: var(--ink-dim);
+}
+
+.memberBio p {
+  margin-bottom: 0.5rem;
+}
+
+.memberBio p:last-child {
+  margin-bottom: 0;
+}

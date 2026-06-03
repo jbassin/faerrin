@@ -1,0 +1,44 @@
+// Self-hosted @font-face declarations for the Warhammer-40k "void/cogitator"
+// recolor. Files copied verbatim from strider/public/fonts/ (served from /fonts/
+// via publicDir = assets/). Display = ITC Serif Gothic Heavy, body = Caslon
+// Antique. Mapped onto quartz's --titleFont/--bodyFont in theme.scss. IBM Plex
+// Mono (code) is still loaded from Google Fonts in PageLayout.astro.
+@font-face {
+  font-family: "Caslon Antique";
+  src: url("/fonts/CaslonAntique.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caslon Antique";
+  src: url("/fonts/CaslonAntique-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caslon Antique";
+  src: url("/fonts/CaslonAntique-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caslon Antique";
+  src: url("/fonts/CaslonAntique-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ITC Serif Gothic";
+  src: url("/fonts/ITCSerifGothicStd-Heavy.otf") format("opentype");
+  // Only the Heavy weight file exists. Map the full weight range to it so headings
+  // rendered at the default 400 (quartz sets --headerFont without a weight) resolve
+  // to this face instead of synth-bolding or falling back to serif. The display
+  // look is always the heavy cut, by design.
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Masthead from "../components/Masthead.astro";
+import EpisodeCard from "../components/EpisodeCard.astro";
+import { loadEpisodes, formatRuntime } from "../lib/episodes.ts";
+
+const episodes = await loadEpisodes();
+const totalMs = episodes.reduce((s, e) => s + e.runtimeMs, 0);
+---
+
+<Layout title="Caster — Campaign Recaps">
+  <Masthead />
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="hero__ghost display" aria-hidden="true">
+        {String(episodes.length).padStart(2, "0")}
+      </span>
+      <p class="hero__kicker label">
+        <span class="led led--live" aria-hidden="true"></span>
+        Transmission Log // Active
+      </p>
+      <h1 class="display hero__title">
+        Session<br />Recaps
+      </h1>
+      <p class="hero__lede">
+        Three hosts — <strong>Reed</strong>, <strong>Quill</strong> &amp;
+        <strong>Charlotte</strong> — talk through each Pathfinder&nbsp;2e session like a
+        roundtable, grounded against the campaign wiki and rendered to audio.
+      </p>
+
+      <div class="hero__stats" role="group" aria-label="Archive status">
+        <span class="serial">
+          <span class="regmark" aria-hidden="true"></span>
+          {episodes.length} Episode{episodes.length === 1 ? "" : "s"}
+        </span>
+        <span class="serial">
+          T+ <span class="timecode">{formatRuntime(totalMs)}</span> Total
+        </span>
+        <span class="hero__barcode barcode" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <div class="hazard-rule hazard-rule--orange hero__hazard" aria-hidden="true"></div>
+
+    {
+      episodes.length === 0 ? (
+        <section class="empty sticker">
+          <p class="label">No finished episodes yet</p>
+          <p class="empty__hint">
+            Run the pipeline through <code>assemble</code> to produce an{" "}
+            <code>episode.mp3</code>, then rebuild this site.
+          </p>
+        </section>
+      ) : (
+        <section class="grid" aria-label="Episodes">
+          {episodes.map((ep, i) => (
+            <EpisodeCard episode={ep} index={i} />
+          ))}
+        </section>
+      )
+    }
+  </main>
+
+  <footer class="wrap site-foot">
+    <span class="regmark" aria-hidden="true"></span>
+    <span class="label label--soft">Caster — built from transcripts at caster.iridi.cc</span>
+    <span class="regmark" aria-hidden="true"></span>
+  </footer>
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    padding: clamp(2rem, 1.2rem + 4vw, 4.5rem) 0 clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    overflow: hidden;
+  }
+  /* Giant outlined episode index, ghosted behind the masthead of the page. */
+  .hero__ghost {
+    position: absolute;
+    top: clamp(-1rem, -0.5rem - 2vw, 0.5rem);
+    right: -0.5rem;
+    font-size: clamp(7rem, 4rem + 22vw, 18rem);
+    line-height: 0.8;
+    color: transparent;
+    /* Loud pink outline — the ghost index asserts itself behind the masthead. */
+    -webkit-text-stroke: 3px color-mix(in oklab, var(--pink) 60%, transparent);
+    text-stroke: 3px color-mix(in oklab, var(--pink) 60%, transparent);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+  .hero > :not(.hero__ghost) {
+    position: relative;
+    z-index: 1;
+  }
+  .hero__kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7ch;
+    margin-bottom: 1rem;
+  }
+  .hero__title {
+    font-size: var(--step-4);
+    letter-spacing: -0.03em;
+  }
+  .hero__lede {
+    max-width: 38ch;
+    margin-top: 1.2rem;
+    font-size: var(--step-1);
+    line-height: 1.35;
+    color: var(--ink-soft);
+  }
+  .hero__lede strong {
+    color: var(--ink);
+  }
+  .hero__stats {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.6rem;
+  }
+  .hero__stats .serial {
+    align-items: center;
+  }
+  .hero__barcode {
+    flex: 1;
+    min-width: 4rem;
+    max-width: 14rem;
+    height: 1.2rem;
+  }
+  .hero__hazard {
+    margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: clamp(1.25rem, 0.8rem + 2vw, 2rem);
+    padding-bottom: clamp(2rem, 1rem + 4vw, 4rem);
+  }
+  .empty {
+    margin: 2rem 0 4rem;
+    padding: clamp(1.5rem, 1rem + 3vw, 3rem);
+    text-align: center;
+  }
+  .empty__hint {
+    margin-top: 0.75rem;
+    color: var(--ink-soft);
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--bone-2);
+    padding: 0.1em 0.4em;
+    border-radius: 2px;
+  }
+  .site-foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1ch;
+    padding: 2rem 0 3rem;
+    border-top: var(--rule) solid var(--hair);
+    text-align: center;
+  }
+</style>

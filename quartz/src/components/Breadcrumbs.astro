@@ -1,0 +1,26 @@
+---
+// Ports Breadcrumbs.tsx: Home ❯ folder ❯ … ❯ current. Takes the page slug and
+// the display title for the current (last) crumb; folder crumbs are resolved by
+// breadcrumbsFor (site.ts). Omitted on the index page by the caller.
+import { breadcrumbsFor, type SiteData } from "../lib/site.ts"
+
+interface Props {
+  slug: string
+  title: string
+  site: SiteData
+}
+const { slug, title, site } = Astro.props
+const spacer = "❯"
+const crumbs = breadcrumbsFor(site, slug as any, title)
+---
+
+<nav class="breadcrumb-container" aria-label="breadcrumbs">
+  {
+    crumbs.map((crumb, i) => (
+      <div class="breadcrumb-element">
+        <a href={crumb.path}>{crumb.displayName}</a>
+        {i !== crumbs.length - 1 && <p>{` ${spacer} `}</p>}
+      </div>
+    ))
+  }
+</nav>

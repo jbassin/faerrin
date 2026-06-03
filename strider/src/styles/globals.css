@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Void palette */
+  --bg-void: #090c10;
+  --bg-panel: #0f1318;
+  --bg-elevated: #171c24;
+  --bg-hover: #1e2530;
+
+  --ink: #dce8f0;
+  --ink-dim: #7a8a99;
+  --ink-faint: #3a434f;
+
+  --accent: #6dd5c0; /* phosphor teal */
+  --accent-amber: #f0b46e;
+
+  --rule: #1e2730;
+  --rule-bright: #2f3c4e;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 120ms;
+  --duration-base: 220ms;
+  --duration-slow: 400ms;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  background-color: var(--bg-void);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: var(--ink);
+  font-family: var(--font-body), serif;
+  font-size: 21px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* Default to event-transparent so clicks fall through to the full-viewport
+     Pixi canvas mounted by PixiHost (z-index: -1). Interactive top-level
+     children (SiteHeader, route main, Modal) re-enable pointer-events: auto
+     explicitly. */
+  pointer-events: none;
+}
+
+main {
+  flex: 1;
+}
+
+/* Scanline overlay — decorative, non-interactive */
+@keyframes scanline-drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes scanline-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.78;
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 40px);
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.17) 2px,
+    rgba(0, 0, 0, 0.17) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  animation:
+    scanline-drift 32s linear infinite,
+    scanline-flicker 2.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Vignette — draws the eye to the map center */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}

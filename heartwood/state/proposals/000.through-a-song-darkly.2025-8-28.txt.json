@@ -1,0 +1,543 @@
+{
+  "filename": "000.through-a-song-darkly.2025-8-28.txt",
+  "contentHash": "76456b04090eee705175720e9612cdad3361df82c3c90ff0b5021ffbdf98303c",
+  "matchesContentHash": "76456b04090eee705175720e9612cdad3361df82c3c90ff0b5021ffbdf98303c",
+  "stats": {
+    "totalClusters": 35,
+    "updateClusters": 8,
+    "createClusters": 11,
+    "aliasEditClusters": 5,
+    "commentClusters": 11,
+    "proposalsByKind": {
+      "edit": 12,
+      "append": 0,
+      "create": 10,
+      "comment": 11
+    },
+    "droppedByReason": {
+      "oldText-not-unique:count=0": 1,
+      "parent-directory-missing": 1
+    },
+    "llmCalls": 19
+  },
+  "proposals": [
+    {
+      "kind": "edit",
+      "path": "Geography/Calaria/Hallia/index.md",
+      "oldText": "---\ntitle: Hallia\naliases:\n  - Hallia\n---\n",
+      "newText": "---\ntitle: Hallia\naliases:\n  - Hallia\n---\nHallia is a city in [[Geography/Calaria/index|Calaria]] divided into numbered districts, with a river running through it.\n\n### Districts & Layout\n\nHallia is organized into numbered districts. Travel between districts is restricted by particularly strong magic set up by the city's host, which prevents residents from teleporting or sliding freely between areas — public transit must be used instead.\n\nThe city's districts vary considerably in character by direction. The **Diamond District** is a relatively upscale area known for its jewelers and fine metal shops, situated near high-end residential neighborhoods. By contrast, the **voidward** side of the city is characterized by undeveloped land that feels like the far outskirts despite being geographically close to the city center. The voidward strata contain slums between the city center and the scrapyard at the city's edge, as well as factories that dump waste into the river running through Hallia — placed there to avoid legal consequences or harm to residents elsewhere.\n\n### Transportation\n\nHallia operates a public trolley and tram system. The trolleys travel along a route called the **Horizon**, connecting different numbered districts such as Star 12. The tram network extends to the voidward side of the city, providing access to areas such as the scrapyard.\n\n### Notable Locations\n\n**Sableclutch Scrap** is a scrapyard located in the voidward industrial district, notable for its expansive grounds and mountains of trash. It is reachable by tram from the city center.\n\n### Law Enforcement\n\n**Blackline** is a private law enforcement company that generally polices the nicer parts of the city, operating in at least some of Hallia's districts.\n",
+      "citations": [
+        [
+          1230,
+          1230
+        ],
+        [
+          1879,
+          1879
+        ],
+        [
+          1911,
+          1911
+        ],
+        [
+          1912,
+          1912
+        ],
+        [
+          1913,
+          1914
+        ],
+        [
+          1915,
+          1915
+        ],
+        [
+          1918,
+          1921
+        ],
+        [
+          2135,
+          2147
+        ],
+        [
+          2552,
+          2554
+        ],
+        [
+          2648,
+          2648
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+      "oldText": "Anouk is the more technologically-inclined of the twins. Her portion of the [[Org/Iconoclasm/index|Iconoclasm]] workshop is covered by multimeters, oscilloscopes, and other electrical accoutrement. She tends to be more outgoing than her brother.",
+      "newText": "Anouk is the more technologically-inclined of the twins. Her portion of the [[Org/Iconoclasm/index|Iconoclasm]] workshop is covered by multimeters, oscilloscopes, and other electrical accoutrement — including the area where rocket hammers are made. She tends to be more outgoing than her brother.\n\nNeither Anouk nor Anaïs runs a magic item shop; rather, they are simply two people exceptionally skilled at crafting, and can produce healing potions if provided with the necessary components.\n\nAnouk maintains a Rolodex-like collection of index cards containing contacts and job leads, which she uses to refer people to work opportunities. Among her contacts is an old friend who runs a scrapyard one district over in [[Sableclutch]] — known as **Sableclutch Scrap**, operated by a person called **Copperjaw**. This contact regularly hires couriers and similar workers, preferring to engage individuals directly rather than through a formal service.",
+      "citations": [
+        [
+          985,
+          989
+        ],
+        [
+          1011,
+          1011
+        ],
+        [
+          1192,
+          1193
+        ],
+        [
+          1196,
+          1197
+        ],
+        [
+          1197,
+          1199
+        ],
+        [
+          1928,
+          1928
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+      "oldText": "Ginny is the [[Hearts|Heart]] that maintains the [[Sin and Tonic]] fane. He's friends with [[Illmari Vaino|Illmari]] and the rest of [[Org/Iconoclasm/index|Iconoclasm]], and is considered by most to be part of the team, despite his inability to leave his position behind the bar.",
+      "newText": "Ginny is the [[Hearts|Heart]] that maintains the [[Sin and Tonic]] fane. He works the bar, and can typically be found facing away from approaching patrons when tending it. He's friends with [[Illmari Vaino|Illmari]] and the rest of [[Org/Iconoclasm/index|Iconoclasm]], and is considered by most to be part of the team, despite his inability to leave his position behind the bar.",
+      "citations": [
+        [
+          904,
+          905
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Illmari Vaino.md",
+      "oldText": "Illmari is the current proprietor of the [[Sin and Tonic]] and the founder of the mercenary group [[Org/Iconoclasm/index|Iconoclasm]].",
+      "newText": "Illmari is the current proprietor of the [[Sin and Tonic]], where he is normally responsible for cooking food, and the founder of the mercenary group [[Org/Iconoclasm/index|Iconoclasm]].",
+      "citations": [
+        [
+          919,
+          919
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Pyrelight/index.md",
+      "oldText": "---\ntitle: Pyrelight\naliases:\n  - Pyrelight\n---\n",
+      "newText": "---\ntitle: Pyrelight\naliases:\n  - Pyrelight\n---\nPyrelight is a faction that operates the front company [[Embercall Industries]].\n\n### Known Associates\n\n[[Tywelwyn Leatherhide]] has ordered materials from Embercall Industries.\n",
+      "citations": [
+        [
+          610,
+          613
+        ],
+        [
+          613,
+          613
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Roundhat Gang/People/Tywelwyn Leatherhide.md",
+      "oldText": "it appears that he's struck a deal with someone in [[Org/Pyrelight/index|Pyrelight]].",
+      "newText": "it appears that he's struck a deal with someone in [[Org/Pyrelight/index|Pyrelight]], and he has ordered materials from [[Embercall Industries]], a Pyrelight-associated supplier.",
+      "citations": [
+        [
+          610,
+          613
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/The Scale.md",
+      "oldText": "  - **Arbiters** track down those who have escaped justice and deliver them their due.",
+      "newText": "  - **Arbiters** track down those who have escaped justice and deliver them their due. The Scale empowers Arbiters to conduct bounty hunting, and does not extend that authority to unaffiliated individuals.",
+      "citations": [
+        [
+          1205,
+          1208
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Divinity/Unknown Entities/Anzu.md",
+      "content": "---\ntitle: Anzu\n---\nAnzu has a raven companion named Othello.\n",
+      "citations": [
+        [
+          1266,
+          1282
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Roundhat Gang/People/Cobblejaw.md",
+      "content": "---\ntitle: Cobblejaw\n---\nCobblejaw personally owns and keeps three guns for himself.\n",
+      "citations": [
+        [
+          2234,
+          2235
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Roundhat Gang/People/Copperjaw.md",
+      "content": "---\ntags:\n  - Dwarf\n---\nCopperjaw is an aging dwarven man who operates a Crusher and scrapyard. His most distinctive feature is his missing bottom jaw, replaced with a crude copper prosthetic vaguely shaped like a jaw — the origin of his name. He has a mashed-up, misshapen nose and a black eye, signs that he still gets into fights regularly despite his age.\n\nHe appears to be at the end of middle age or the beginning of elderly by dwarven standards, estimated to be around 120 to 130 years old.\n\nCopperjaw is the kind of person who tests the grip strength of anyone who shakes his hand, regardless of their age, and responds competitively to a strong handshake. He is known to hire couriers or runners to deliver important items, sometimes using children carrying cases.\n\n> [!note] Security\n> Copperjaw keeps a Giant Crusher stationed at his scrapyard, which he relies on for security when dealing with unwanted visitors.\n",
+      "citations": [
+        [
+          1971,
+          1973
+        ],
+        [
+          1975,
+          1976
+        ],
+        [
+          1977,
+          1979
+        ],
+        [
+          1980,
+          1981
+        ],
+        [
+          2003,
+          2014
+        ],
+        [
+          2087,
+          2088
+        ],
+        [
+          2693,
+          2696
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/goblinoid.md",
+      "content": "---\ntitle: Goblinoid\naliases:\n  - Goblinoids\n---\nGoblinoid is a term for a category of creatures that includes goblins and related kin.\n\nGoblinoids are present in the working population of at least some urban and industrial areas, employed as factory laborers and commuting alongside other workers.",
+      "citations": [
+        [
+          2817,
+          2820
+        ],
+        [
+          2819,
+          2820
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Geography/Helya.md",
+      "content": "---\ntitle: Helya\n---\nHelya is a settlement whose starward districts are characterized by older, poorly maintained buildings constructed when the tram line was first built, in anticipation of a boom that never materialized.",
+      "citations": [
+        [
+          1235,
+          1238
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Geography/Calaria/Hallia/Masque District.md",
+      "content": "---\ntitle: Masque District\n---\nThe Masque District is a part of [[Geography/Calaria/Hallia/index|Hallia]] known for its hotels and as a destination for tourists.",
+      "citations": [
+        [
+          2887,
+          2887
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Geography/Prime.md",
+      "content": "---\ntitle: Prime\naliases:\n  - Zero\n---\nPrime (also called Zero) is a named station on the tram system, part of a numbered or tiered station naming convention that includes stations such as Void 2.\n",
+      "citations": [
+        [
+          2894,
+          2895
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Roundhat Gang/People/Smiler.md",
+      "content": "---\ntags:\n  - Centaur\n---\nSmiler is a towering centaur standing approximately nine feet tall at full height, forcing him to stoop beneath the low ceiling of his establishment. He wears a stained white t-shirt as his only upper garment. Multiple yellowish metal bands adorn both arms, and his ears bear flare gauges with gems embedded in them. His long beard is braided in the same style as his tail, with gems woven throughout both.\n\nSmiler is the proprietor of the [[Org/Roundhat Gang/index|Undertable]] and operates as a fence. [[Johnny]] has a prior working relationship with him, having dealt with Smiler on at least one or two previous occasions. Smiler extends a friends discount to associates of Johnny, reasoning that a friend of his friend would not inform on him to law enforcement.\n",
+      "citations": [
+        [
+          1365,
+          1371
+        ],
+        [
+          1366,
+          1367
+        ],
+        [
+          1368,
+          1371
+        ],
+        [
+          1382,
+          1383
+        ],
+        [
+          1385,
+          1391
+        ],
+        [
+          1428,
+          1430
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Threshold Authority.md",
+      "content": "---\ntitle: Threshold Authority\naliases:\n  - TA\n---\nThe Threshold Authority (commonly abbreviated **TA**) is the local law enforcement organization operating in the area.\n\nOfficers of the Threshold Authority wear a greenish uniform bearing a large **TA** insignia.",
+      "citations": [
+        [
+          667,
+          677
+        ],
+        [
+          2551,
+          2551
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Geography/Calaria/Hallia/Undertable.md",
+      "content": "---\ntitle: Undertable\naliases:\n  - Under Table\n---\nThe Undertable is a narrow, squished shop wedged between two buildings in a space too large for an alleyway but too small for a standard building. It has no street-facing windows, and its only signage is a handwritten sign reading \"Under Table\" accompanied by a crude drawing of a table.\n\nThe interior is a cramped room filled with tables stacked high with miscellaneous goods, including kitchen appliances, loose jewelry, radios in various states of deconstruction, and a large number of firearms.\n",
+      "citations": [
+        [
+          1342,
+          1352
+        ],
+        [
+          1354,
+          1363
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Divinity/Outer Gods/Iridescent Host.md",
+      "oldText": "aliases:\n  - Host\n",
+      "newText": "aliases:\n  - Host\n  - the Host\n",
+      "citations": [
+        [
+          1883,
+          1883
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+      "oldText": "aliases:\n  - Anouk\n",
+      "newText": "aliases:\n  - Anouk\n  - Anok\n",
+      "citations": [
+        [
+          1192,
+          1193
+        ],
+        [
+          1196,
+          1197
+        ],
+        [
+          1197,
+          1199
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Elias Ramsey.md",
+      "oldText": "---\ntags:\n  - Dwarf\nimg: https://i.imgur.com/rkEMbUm.png\n---\n",
+      "newText": "---\ntags:\n  - Dwarf\nimg: https://i.imgur.com/rkEMbUm.png\naliases:\n  - Elias\n---\n",
+      "citations": [
+        [
+          570,
+          570
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Roundhat Gang/index.md",
+      "oldText": "aliases:\n  - Roundhat Gang\n",
+      "newText": "aliases:\n  - Roundhat Gang\n  - Roundhack\n",
+      "citations": [
+        [
+          576,
+          578
+        ],
+        [
+          670,
+          671
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/The Scale.md",
+      "oldText": "---\ntags:\n  - Judge\n  - Religious\n---\n",
+      "newText": "---\ntags:\n  - Judge\n  - Religious\naliases:\n  - Scale\n---\n",
+      "citations": [
+        [
+          1205,
+          1208
+        ],
+        [
+          1211,
+          1211
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Geography/Calaria/Hallia/Sableclutch/Sin and Tonic.md",
+      "message": "Claim: Gin-Soaked Rag is associated with the Sin and Tonic.\nRationale: The page does not mention any entity or item called 'Gin-Soaked Rag' in connection with the Sin and Tonic, so this would be new information to add.",
+      "citations": [
+        [
+          566,
+          566
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Org/Iconoclasm/index.md",
+      "message": "Claim: Dura Oil Drinker is a mechanic associated with Iconoclasm.\nRationale: The page makes no mention of Dura Oil Drinker or any mechanic role within Iconoclasm, so this is new information that would update the page.",
+      "citations": [
+        [
+          568,
+          568
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Org/Iconoclasm/index.md",
+      "message": "Claim: Elias Ramsey serves as the quartermaster of Iconoclasm.\nRationale: The page does not mention Elias Ramsey or a quartermaster position within Iconoclasm, so this adds new information not currently on the page.",
+      "citations": [
+        [
+          570,
+          570
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Org/Pyrelight/index.md",
+      "message": "Claim: The Threshold Authority is suspected of being bought out by either the Roundhat Gang gang or Embercall Industries/Pyrelight.\nRationale: The claim about the Threshold Authority potentially being bought out by the Roundhat Gang or Embercall Industries/Pyrelight is new information not covered on the current stub page.",
+      "citations": [
+        [
+          670,
+          671
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": null,
+      "message": "Claim: Augers are creatures created through a divination ritual and can be fed to enhance divination magic.\nRationale: No candidate wiki page matched this claim.",
+      "citations": [
+        [
+          697,
+          698
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Org/Iconoclasm/index.md",
+      "message": "Claim: The Sin and Tonic serves as the base of operations for Iconoclasm.\nRationale: The page does not mention 'The Sin and Tonic' or any specific base of operations for Iconoclasm, so this would be new information added to the page.",
+      "citations": [
+        [
+          705,
+          706
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Org/Iconoclasm/index.md",
+      "message": "Claim: Iconoclasm possesses a company car available for use by its members.\nRationale: The page contains no mention of a company car or any vehicles available to Iconoclasm members, so this adds information not currently present.",
+      "citations": [
+        [
+          706,
+          707
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+      "message": "Claim: Ginny's appearance consists of a suit vest and dress pants, but instead of a head, Ginny has a twisted-up dish rag.\nRationale: The page describes Ginny as wearing a three-piece suit (not just a vest and dress pants), and the dishrag forms the entirety of his body occupying the center of the suit rather than serving only as a head replacement.\nPage excerpt: Gin Soaked Rag, or Ginny for short, appears as a 6-foot-tall dishrag wearing a three-piece suit.",
+      "citations": [
+        [
+          903,
+          903
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Org/Iconoclasm/People/Anaïs Marchal.md",
+      "message": "Claim: The NPC crafter works in a room where rocket hammers are made.\nRationale: The page states Anaïs's portion of the workshop is dominated by magical tomes and alchemical reagents, not rocket hammers, contradicting the claim that the crafter works in a room where rocket hammers are made.\nPage excerpt: His portion of the [[Org/Iconoclasm/index|Iconoclasm]] workshop is dominated by magical tomes and alchemical reagents.",
+      "citations": [
+        [
+          1011,
+          1011
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Geography/Raelion/index.md",
+      "message": "Claim: The country of Raelion was destroyed (referred to as 'gone'), an event that displaced its inhabitants.\nRationale: The wiki page for Raelion exists but contains no content beyond the title and alias metadata, so the claim that Raelion was destroyed and its inhabitants displaced adds new information not yet present on the page.",
+      "citations": [
+        [
+          1737,
+          1747
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Geography/Færrin.md",
+      "message": "Claim: The setting is a magical society in which bird people and similar non-human beings are common enough that they do not attract unusual attention in public.\nRationale: The page states that before magic arrived only humans existed on Færrin, and afterward some humans gained new traits and magic beasts appeared — implying non-human beings are a relatively recent and notable development, not an unremarkable commonplace.\nPage excerpt: Before magic was introduced to Færrin, the only sentient life on the planet was human. Afterward, more than half of the humans found themselves taking on new traits, spurred by the sudden influx of magical energy. Magic beasts with sentience also appeared throughout the planet.",
+      "citations": [
+        [
+          2375,
+          2375
+        ]
+      ]
+    }
+  ]
+}

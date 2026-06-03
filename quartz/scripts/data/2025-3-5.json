@@ -1,0 +1,16 @@
+{
+  "date": "2025-3-5",
+  "audio": "https://static-audio.iridi.cc/2025-3-5/audio.mp3",
+  "script": [
+    {
+      "start": "00:00:00",
+      "second": 0.031,
+      "text": "Thank you.",
+      "user": {
+        "name": "Jorge",
+        "color": "--textJorge"
+      },
+      "duration": 0.169
+    }
+  ]
+}

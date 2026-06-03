@@ -1,0 +1,3 @@
+Wrenford is a small city on the edge of the [[Verdant Expanse]]. It was built by a number of [[Org/index|Orgs]] out of [[Geography/Calaria/index|Calaria]] who wanted to log the copious timber in the Expanse, but the forest fought back until it was deemed too expensive to pursue. Now the city remains half-developed, never quite reaching the potential the Orgs originally saw but not dying out either.
+
+Many of the residents of Wrenford are followers of the [[Green Father]] on top of the [[Iridescent Host|Host]].
