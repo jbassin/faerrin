@@ -129,7 +129,7 @@ CLI `*One` functions throw on precondition failures (missing upstream state, sta
 
 ---
 
-## Content files
+## Content Files
 
 The `content/` directory holds Obsidian-flavored markdown files that form the world wiki. Each file represents a single topic: a place, person, organization, game rule, or cosmic phenomenon. **Proposed edits must match these conventions** — the LLM is given these rules as part of the propose-stage prompt.
 

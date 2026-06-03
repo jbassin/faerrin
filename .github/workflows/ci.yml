@@ -25,9 +25,9 @@ jobs:
       - name: Lint (strider)
         run: bun --filter '*' lint
       - name: Test (all apps)
-        # NOTE: currently RED due to 3 pre-existing failures unrelated to the
-        # monorepo migration (caster real-corpus count drift 93→121; heartwood
-        # propose.test '## Content Files' casing). Triage before relying on this gate.
+        # NOTE: currently RED due to 2 pre-existing caster failures unrelated to
+        # the monorepo migration: real-corpus tests hard-code counts (wiki pages
+        # 93 vs drifted 121; transcript parsing) — Phase-2 data-reconciliation work.
         run: bun --filter '*' test
 
   build:

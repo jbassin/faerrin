@@ -135,7 +135,12 @@ live-site output paths, root CI, and a gated plan for collapsing the triplicated
 > RED until the 3 pre-existing failures are triaged. D4 (OG-in-CI): defaulted to ON (strider build needs it).
 >
 > **PHASE 1 EXIT STATE:** typecheck ✅ · astro check ✅ · lint ✅ · builds ✅ (quartz byte-identical) ·
-> test ⚠️ 3 pre-existing fails. Commits: lnxymxyq, mlxkxwkz, rxkwtnut, trsoootk, wtxxkprm.
+> test ⚠️ 2 pre-existing caster real-corpus fails (Phase-2 reconciliation). Commits: lnxymxyq,
+> mlxkxwkz, rxkwtnut, trsoootk, wtxxkprm, nmnyslyr.
+>
+> **Heartwood loadConventions bug FIXED (`nmnyslyr`):** CLAUDE.md `## Content files`→`## Content
+> Files` so loadConventions' indexOf matches; previously the whole CLAUDE.md was fed to the propose
+> LLM. heartwood now 396/396 tests pass.
 - CI: jj is git-colocated → CI clones git, **just works**. Changed-app matrix from
   `git diff --name-only <base>...HEAD` → `pkg/<app>`; **root-config change (package.json/bun.lock/
   tsconfig.base) ⇒ test ALL apps**. Add `playwright install --with-deps chromium` (cache); keep
