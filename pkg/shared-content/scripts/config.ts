@@ -2,6 +2,9 @@
 // Operational values live here; large human-edited data lives in YAML
 // (defs.yaml for corrections, campaigns.yaml for campaign/character config).
 
+import { resolve } from "node:path";
+import { sharedRoot } from "./lib/paths";
+
 export const remote = {
   /** Base URL of the transcript/audio API consumed by `ingest`. */
   baseUrl: "https://static-audio.iridi.cc/",
@@ -27,14 +30,16 @@ export const review = {
 
 export const podcast = {
   /**
-   * Path to the external `episodes.json` mapping a session date
+   * Path to the in-repo caster-site `episodes.json` mapping a session date
    * (year-month-day, non-padded — matching the transcript `date` field) to a
-   * podcast episode (`{ link, title }`). Lives outside this repo, so it is
-   * overridable via env; `export` adds a podcast link to any Script page whose
-   * date is present here. Missing file → no links emitted (silently skipped).
+   * podcast episode (`{ link, title }`). Defaults to the caster-site build output
+   * (`pkg/caster/site/dist/episodes.json`); overridable via env. `export` adds a
+   * podcast link to any Script page whose date is present here. Missing file (e.g.
+   * caster-site not built yet) → no links emitted (silently skipped).
    */
   episodesPath:
-    process.env.PODCAST_EPISODES_PATH ?? "/ruby/data/experiments/caster/site/dist/episodes.json",
+    process.env.PODCAST_EPISODES_PATH ??
+    resolve(sharedRoot, "..", "caster", "site", "dist", "episodes.json"),
 }
 
 export const campaign = {
