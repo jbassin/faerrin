@@ -2,7 +2,7 @@ import { test, expect, describe } from "bun:test";
 import type Anthropic from "@anthropic-ai/sdk";
 import { AnthropicClient, type ToolSpec } from "./client.ts";
 
-// Inject a fake SDK so callTool's response handling is exercised with no network.
+// Inject a fake SDK so response handling is exercised with no network.
 function fakeAnthropic(message: unknown): Anthropic {
   return {
     messages: {
@@ -45,5 +45,31 @@ describe("AnthropicClient.callTool", () => {
       fakeAnthropic({ stop_reason: "end_turn", content: [{ type: "text", text: "nope" }] }),
     );
     await expect(client.callTool(req)).rejects.toThrow(/did not call the forced tool/);
+  });
+});
+
+describe("AnthropicClient.message", () => {
+  test("returns text + usage for a plain (text-mode) completion", async () => {
+    const client = new AnthropicClient(
+      fakeAnthropic({
+        stop_reason: "end_turn",
+        content: [{ type: "text", text: "hello world" }],
+        usage: { input_tokens: 10, output_tokens: 3, cache_read_input_tokens: 2 },
+      }),
+    );
+    const r = await client.message({ system: "sys", userContent: "hi" });
+    expect(r.text).toBe("hello world");
+    expect(r.toolInput).toBeUndefined();
+    expect(r.usage).toEqual({ inputTokens: 10, cacheReadTokens: 2, cacheWriteTokens: 0, outputTokens: 3 });
+    expect(r.stopReason).toBe("end_turn");
+  });
+
+  test("extracts tool input + does not throw on max_tokens when no tool is forced", async () => {
+    const client = new AnthropicClient(
+      fakeAnthropic({ stop_reason: "max_tokens", content: [{ type: "text", text: "partial" }] }),
+    );
+    const r = await client.message({ userContent: "hi" });
+    expect(r.text).toBe("partial");
+    expect(r.stopReason).toBe("max_tokens");
   });
 });

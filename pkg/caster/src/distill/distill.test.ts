@@ -1,7 +1,7 @@
 import { test, expect, describe, afterAll } from "bun:test";
 import { rm } from "node:fs/promises";
 import type { Session } from "../types.ts";
-import type { LlmClient, ToolCallRequest } from "../llm/client.ts";
+import type { LlmClient, ToolCallRequest } from "@faerrin/llm";
 import { distillSession, loadOrDistill } from "./index.ts";
 import { DISTILL_SYSTEM_PROMPT } from "./prompt.ts";
 import { DISTILL_TOOL_NAME } from "./schema.ts";

@@ -9,6 +9,7 @@
       "name": "caster",
       "dependencies": {
         "@anthropic-ai/sdk": "^0.100.1",
+        "@faerrin/llm": "workspace:*",
         "msedge-tts": "^2.0.5",
       },
       "devDependencies": {
@@ -30,10 +31,21 @@
         "typescript": "^5.9.3",
       },
     },
+    "pkg/faerrin-llm": {
+      "name": "@faerrin/llm",
+      "dependencies": {
+        "@anthropic-ai/sdk": "^0.100.1",
+      },
+      "devDependencies": {
+        "@types/bun": "^1.3.14",
+        "typescript": "^5.9.3",
+      },
+    },
     "pkg/heartwood": {
       "name": "heartwood",
       "dependencies": {
         "@anthropic-ai/sdk": "^0.100.1",
+        "@faerrin/llm": "workspace:*",
         "commander": "^14.0.3",
         "yaml": "^2.6.0",
         "zod": "^3.23.0",
@@ -300,6 +312,8 @@
     "@eslint/plugin-kit": ["@eslint/plugin-kit@0.4.1", "", { "dependencies": { "@eslint/core": "^0.17.0", "levn": "^0.4.1" } }, "sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA=="],
 
     "@exodus/bytes": ["@exodus/bytes@1.15.1", "", { "peerDependencies": { "@noble/hashes": "^1.8.0 || ^2.0.0" }, "optionalPeers": ["@noble/hashes"] }, "sha512-S6mL0yNB/Abt9Ei4tq8gDhcczc4S3+vQ4ra7vxnAf+YHC02srtqxKKZghx2Dq6p0e66THKwR6r8N6P95wEty7Q=="],
+
+    "@faerrin/llm": ["@faerrin/llm@workspace:pkg/faerrin-llm"],
 
     "@floating-ui/core": ["@floating-ui/core@1.7.5", "", { "dependencies": { "@floating-ui/utils": "^0.2.11" } }, "sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ=="],
 

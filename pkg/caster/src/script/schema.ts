@@ -1,4 +1,4 @@
-import type { ToolSpec } from "../llm/client.ts";
+import type { ToolSpec } from "@faerrin/llm";
 
 export const SCRIPT_TOOL_NAME = "record_script";
 

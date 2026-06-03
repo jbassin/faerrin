@@ -1,7 +1,7 @@
 import { test, expect, describe, afterAll } from "bun:test";
 import { rm } from "node:fs/promises";
 import type { SessionDigest, WikiCorpus, WikiPage } from "../types.ts";
-import type { LlmClient, ToolCallRequest } from "../llm/client.ts";
+import type { LlmClient, ToolCallRequest } from "@faerrin/llm";
 import { generateScript, loadOrGenerateScript } from "./index.ts";
 import { buildScriptSystemPrompt } from "./prompt.ts";
 import { SCRIPT_TOOL_NAME } from "./schema.ts";

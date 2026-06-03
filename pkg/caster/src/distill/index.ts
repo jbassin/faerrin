@@ -1,13 +1,13 @@
 import type { Session, SessionDigest } from "../types.ts";
-import type { LlmClient } from "../llm/client.ts";
-import { AnthropicClient } from "../llm/client.ts";
+import type { LlmClient } from "@faerrin/llm";
+import { AnthropicClient } from "@faerrin/llm";
 import { DISTILL_SYSTEM_PROMPT, buildDistillUserContent } from "./prompt.ts";
 import { distillTool } from "./schema.ts";
 import { parseDigest } from "./parse.ts";
 import { DEFAULT_OUT_DIR, digestPath, readDigest, writeDigest } from "./store.ts";
 
-export type { LlmClient, ToolCallRequest } from "../llm/client.ts";
-export { AnthropicClient, DEFAULT_MODEL } from "../llm/client.ts";
+export type { LlmClient, ToolCallRequest } from "@faerrin/llm";
+export { AnthropicClient, DEFAULT_MODEL } from "@faerrin/llm";
 export { DigestParseError, parseDigest } from "./parse.ts";
 export { DEFAULT_OUT_DIR, digestPath, readDigest, writeDigest } from "./store.ts";
 

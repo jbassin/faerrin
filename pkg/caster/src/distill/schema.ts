@@ -5,7 +5,7 @@
 // length constraints (minItems, minLength, etc.) are not enforced by the API, so
 // we keep the schema to types + descriptions and validate in parseDigest().
 
-import type { ToolSpec } from "../llm/client.ts";
+import type { ToolSpec } from "@faerrin/llm";
 
 export const DISTILL_TOOL_NAME = "record_session_digest";
 

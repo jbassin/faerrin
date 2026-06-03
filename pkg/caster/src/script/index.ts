@@ -1,6 +1,6 @@
 import type { HostConfig, Script, SessionDigest, WikiCorpus } from "../types.ts";
-import type { LlmClient } from "../llm/client.ts";
-import { AnthropicClient } from "../llm/client.ts";
+import type { LlmClient } from "@faerrin/llm";
+import { AnthropicClient } from "@faerrin/llm";
 import { groundDigest } from "./grounding.ts";
 import { buildScriptSystemPrompt, buildScriptUserContent } from "./prompt.ts";
 import { scriptTool } from "./schema.ts";

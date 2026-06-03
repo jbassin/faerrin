@@ -1,4 +1,4 @@
-import { costUSD } from './pricing';
+import { costUSD } from '@faerrin/llm';
 
 export interface LLMCallRecord {
   ts: string;              // ISO timestamp

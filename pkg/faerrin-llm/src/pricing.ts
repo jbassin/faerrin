@@ -6,6 +6,8 @@ export interface ModelPricing {
   output: number;
 }
 
+// Only models that are cost-tracked need entries; unknown models cost 0 (graceful).
+// (caster runs Opus but does no cost accounting, so Opus is intentionally absent.)
 export const PRICING_USD_PER_1M: Record<string, ModelPricing> = {
   'claude-haiku-4-5-20251001': { input: 1.0,  cacheRead: 0.10, cacheWrite: 1.25, output: 5.0 },
   'claude-sonnet-4-6':         { input: 3.0,  cacheRead: 0.30, cacheWrite: 3.75, output: 15.0 },
