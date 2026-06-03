@@ -1,7 +1,18 @@
 import { test, expect, describe, beforeEach } from 'bun:test';
 import { mkdir, rm } from 'node:fs/promises';
 import { buildCommitActions } from './apply';
+import type { CommitAction } from './client';
 import type { Proposal } from '../reconcile/propose';
+
+// CommitAction is a discriminated union; only create/update/move carry `content`
+// (delete does not). These tests build edit/create/append proposals that always
+// yield content-bearing actions, so narrow once here.
+function contentOf(action: CommitAction): string {
+  if (!('content' in action) || action.content === undefined) {
+    throw new Error(`expected a content-bearing action, got '${action.action}'`);
+  }
+  return action.content;
+}
 
 let tmpDir: string;
 
@@ -33,8 +44,8 @@ describe('edit', () => {
     expect(actions).toHaveLength(1);
     expect(actions[0]!.action).toBe('update');
     expect(actions[0]!.filePath).toBe('content/Geography/Hallia/index.md');
-    expect(actions[0]!.content).toContain('New description.');
-    expect(actions[0]!.content).not.toContain('Old description.');
+    expect(contentOf(actions[0]!)).toContain('New description.');
+    expect(contentOf(actions[0]!)).not.toContain('Old description.');
   });
 
   test('oldText count 0 → throws', async () => {
@@ -81,7 +92,7 @@ describe('edit', () => {
     ];
     const actions = await buildCommitActions(proposals, ctx());
     expect(actions).toHaveLength(1);
-    expect(actions[0]!.content).toBe('ALPHA. BETA. Gamma.\n');
+    expect(contentOf(actions[0]!)).toBe('ALPHA. BETA. Gamma.\n');
   });
 });
 
@@ -97,7 +108,7 @@ describe('create', () => {
     expect(actions).toHaveLength(1);
     expect(actions[0]!.action).toBe('create');
     expect(actions[0]!.filePath).toBe('content/Org/NewOrg/index.md');
-    expect(actions[0]!.content).toBe('# New Org\n\nA new organization.\n');
+    expect(contentOf(actions[0]!)).toBe('# New Org\n\nA new organization.\n');
   });
 
   test('duplicate path (two creates for same file) → throws', async () => {
@@ -130,7 +141,7 @@ describe('append', () => {
       citations: [[5, 6]],
     }];
     const actions = await buildCommitActions(proposals, ctx());
-    expect(actions[0]!.content).toBe(
+    expect(contentOf(actions[0]!)).toBe(
       '# Hallia\n\nIntro paragraph.\n\n### New Section\n\nNew content.',
     );
   });
@@ -145,7 +156,7 @@ describe('append', () => {
       citations: [[3, 3]],
     }];
     const actions = await buildCommitActions(proposals, ctx());
-    expect(actions[0]!.content).toContain('## Districts\n\nExtra district detail.\n\nDistrict info.');
+    expect(contentOf(actions[0]!)).toContain('## Districts\n\nExtra district detail.\n\nDistrict info.');
   });
 
   test('heading not found → throws', async () => {

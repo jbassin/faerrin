@@ -206,7 +206,7 @@ describe('respondOne — tracked discussions', () => {
             citations: [[1, 1]],
           },
         },
-      } as ReturnType<typeof defaultComplete> extends Promise<infer T> ? Promise<T> : never;
+      } as Awaited<ReturnType<typeof defaultComplete>>;
     };
 
     await Bun.write(`${tmpDir}/content/Foo.md`, '# Foo\n\nExisting content.\n');

@@ -84,13 +84,29 @@ live-site output paths, root CI, and a gated plan for collapsing the triplicated
 - `jj` rm all lockfiles (5, incl. caster/site per Step 0); one root `bun install`.
 - Validate every app installs + typechecks. quartz is now actually bun-runnable (spike proved the build).
 
-### Step 5 — Live-site build validation  [GATE after]  ← highest stakes
+### Step 5 — Live-site build validation  [GATE after]  ← highest stakes ✅ DONE 2026-06-03
+> **RESULT:** quartz 763 files byte-identical to baseline ✅; strider all 21 pages + assets +
+> og-map.png (Playwright OG works under bun) ✅ (extra pixi chunks = benign re-resolution);
+> caster-site builds clean ✅ (added missing `build` script alias). All three live sites build
+> under the workspace. (D3: quartz output unchanged → output-path contract effectively confirmed.)
 - Build quartz + strider (+ caster/site if included) under the new workspace; **diff against the
   Step-3 baselines** (URL/file set, sampled hashes). Pagefind + OG renders green.
 - **[USER DECISION] Freeze output-path contract:** confirm proxy expects `pkg/quartz/public` and
   `pkg/strider/dist/client` at root-relative `/` assets — do NOT change `outDir`/`publicDir`/`base`.
 
-### Step 6 — husky → jj-compatible hooks  [AUTO]
+### Step 6 — husky → jj-compatible hooks  [AUTO] ✅ DONE 2026-06-03
+> **RESULT:** removed husky entirely from strider (devDep, .husky/, .gitignore entry; prepare
+> script already gone). jj has no git-hook system, so pre-commit format/lint/build moves to CI (Step 9).
+>
+> **Separate commit (per user): heartwood typecheck fixes** — apply.test.ts now narrows CommitAction
+> via a `contentOf()` helper; respond.test.ts cast → `Awaited<ReturnType<...>>`. heartwood typecheck
+> now green; 22 gitlab tests pass. (Commit `mlxkxwkz`.)
+>
+> **PRE-EXISTING test-runtime failures found (NOT migration-caused, left for triage):**
+> (1) caster `corpus.integration.test.ts` — hard-codes wiki.pages.size=93 but corpus has 121 (data
+> drift — Phase-2 reconciliation territory); (2) caster "parses all transcript files" (same real-corpus
+> drift); (3) heartwood `propose.test.ts:301` expects `## Content Files` but CLAUDE.md has `## Content
+> files` (case-mismatch test bug). strider 128/128 pass.
 - Replace strider's `.husky/pre-commit` (git-hook + `git update-index`; never fires under jj) with a
   jj-aware pre-commit (or drop). Persona: **deployment-engineer**.
 
