@@ -110,15 +110,32 @@ live-site output paths, root CI, and a gated plan for collapsing the triplicated
 - Replace strider's `.husky/pre-commit` (git-hook + `git update-index`; never fires under jj) with a
   jj-aware pre-commit (or drop). Persona: **deployment-engineer**.
 
-### Step 7 — heartwood @anthropic-ai/sdk 0.39→0.100  [GATE after]  ← isolated, 1 file
+### Step 7 — heartwood @anthropic-ai/sdk 0.39→0.100  [GATE after]  ← isolated ✅ DONE 2026-06-03
+> **RESULT:** bumped to ^0.100.1 (aligned w/ caster). `src/llm.ts` needed NO changes — 0.100 is
+> compatible (`Tool['input_schema']` indexed access still valid). typecheck green; tests unchanged
+> (395 pass + the 1 pre-existing case-mismatch fail). Commit `rxkwtnut`. (Orphaned 0.39 in bun's
+> .bun store is unreferenced — harmless.)
 - Verified: `Anthropic` imported only in `src/llm.ts:46` (`Tool['input_schema']`→`Tool.InputSchema`).
 - `bun run typecheck` + heartwood tests must pass. Persona: **typescript-pro**.
 
-### Step 8 — Unify shared dep versions  [AUTO]
+### Step 8 — Unify shared dep versions  [AUTO] ✅ DONE 2026-06-03
+> **RESULT:** typescript ^5.9.3 (dev everywhere; caster peerDep→devDep), @types/node ^24.2.1
+> (strider 25→24), prettier ^3.8.3 (quartz), pixi.js ^8.18.1 (strider). Also fixed a 2nd phantom
+> dep: declared `@eslint/js` (strider eslint.config import). All typecheck + astro check + lint
+> green. Commit `trsoootk`. (tsconfig.base.json wiring deferred — apps' configs diverge; base
+> available for future adoption.)
 - typescript ^5.9.3 (dev everywhere; drop caster peer); @types/node ^24.2.1; prettier ^3.8.3;
   pixi.js ^8.18.1. Re-validate all apps.
 
-### Step 9 — Root CI + per-app lint/format  [GATE after]
+### Step 9 — Root CI + per-app lint/format  [GATE after] ✅ DONE 2026-06-03 (awaiting review)
+> **RESULT:** root `check` script added; `.github/workflows/ci.yml` (bun 1.3.14, install→typecheck→
+> check→lint→test, then build job with Playwright chromium). Lint/format fan out per-app via
+> `--filter` (no single root config — quartz semi:false vs strider defaults). **PLATFORM ASSUMED
+> GitHub Actions** (no git remote configured — confirm or switch to GitLab CI). CI `test` step will be
+> RED until the 3 pre-existing failures are triaged. D4 (OG-in-CI): defaulted to ON (strider build needs it).
+>
+> **PHASE 1 EXIT STATE:** typecheck ✅ · astro check ✅ · lint ✅ · builds ✅ (quartz byte-identical) ·
+> test ⚠️ 3 pre-existing fails. Commits: lnxymxyq, mlxkxwkz, rxkwtnut, trsoootk, wtxxkprm.
 - CI: jj is git-colocated → CI clones git, **just works**. Changed-app matrix from
   `git diff --name-only <base>...HEAD` → `pkg/<app>`; **root-config change (package.json/bun.lock/
   tsconfig.base) ⇒ test ALL apps**. Add `playwright install --with-deps chromium` (cache); keep

@@ -1,0 +1,50 @@
+# Monorepo CI. NOTE: platform assumed GitHub Actions (no git remote is configured
+# yet — switch to GitLab CI if that's your host). jj is git-colocated, so CI clones
+# the git side normally; no jj-specific handling needed.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - name: Install (frozen lockfile)
+        run: bun install --frozen-lockfile
+      - name: Typecheck (all apps)
+        run: bun --filter '*' typecheck
+      - name: Astro check (quartz, caster-site)
+        run: bun --filter '*' check
+      - name: Lint (strider)
+        run: bun --filter '*' lint
+      - name: Test (all apps)
+        # NOTE: currently RED due to 3 pre-existing failures unrelated to the
+        # monorepo migration (caster real-corpus count drift 93→121; heartwood
+        # propose.test '## Content Files' casing). Triage before relying on this gate.
+        run: bun --filter '*' test
+
+  build:
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - name: Install (frozen lockfile)
+        run: bun install --frozen-lockfile
+      # strider's `build` renders an OG image via Playwright (decision D4: OG-in-CI).
+      - name: Install Playwright Chromium
+        run: bunx playwright install --with-deps chromium
+      - name: Build sites (quartz, strider, caster-site)
+        # NOTE: quartz's `build` here is `astro build` against committed content/.
+        # The production build (pkg/quartz/build.sh) additionally runs the remote
+        # ingest pipeline; that is intentionally NOT run in CI.
+        run: bun --filter '*' build
