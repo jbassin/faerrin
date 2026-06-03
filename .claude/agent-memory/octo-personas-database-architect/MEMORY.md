@@ -1,0 +1,3 @@
+- [Faerrin monorepo data topology](project_faerrin-data-topology.md) — how the 4 apps (caster/heartwood/quartz/strider) share campaign data, and where it's duplicated
+- [Shared-data SSOT migration goal](project_ssot-migration-goal.md) — discovery phase aiming for a single source of truth for shared campaign data
+- [Faerrin schema/format mismatches](project_faerrin-schema-mismatches.md) — frontmatter drift, slug logic, transcript formats, strider naming divergences
