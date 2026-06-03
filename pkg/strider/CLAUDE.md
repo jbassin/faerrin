@@ -6,7 +6,7 @@ This file provides guidance to Claude Code when working in this repository.
 
 Strider is a statically-rendered interactive website displaying a map of "The Strider," a city in a Pathfinder 2e tabletop roleplaying campaign. The map shows 20 factions controlling territory across a circular hex grid; clicking a faction reveals its symbol, description, and known members.
 
-The site is statically built and served by an existing reverse proxy that is **not** configured in this repo.
+The site is statically built (to `dist/client`) and served by a Caddy reverse proxy configured at the repo root in `sites.caddyfile` (the `strider.iridi.cc` block). That file is **gitignored** (it holds a Cloudflare DNS token), so it lives in the working tree on the host but is not version-controlled.
 
 ## Tech Stack
 
@@ -176,4 +176,4 @@ Tickets live in `tickets/` as markdown files — this project does not use Linea
 - Read the sub-`CLAUDE.md` in any directory you're editing inside (`src/components/`, `src/lib/`, `content/layers/`, `scripts/`) — they carry local conventions the root doc deliberately omits.
 - Do not modify `content/factions/*.md` without explicit instruction.
 - When adding dependencies, mention them in chat before installing.
-- The reverse proxy that serves this site is not in this repo. Output-shaping concerns (basepath, asset prefix) must be confirmed with the user before being added to `vite.config.ts`.
+- The reverse proxy that serves this site is Caddy, configured at the repo root in `sites.caddyfile` (`strider.iridi.cc` → `strider/dist/client`); the file is gitignored (host-local, holds a secret). Output-shaping concerns (basepath, asset prefix) must be confirmed with the user before being added to `vite.config.ts`.

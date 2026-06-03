@@ -76,9 +76,14 @@ quartz is canonical for content.
 
 ## Gotchas (non-obvious; learned the hard way)
 
-- **quartz is a live site behind an external reverse proxy.** Its build output must stay
+- **quartz is a live site behind a Caddy reverse proxy.** Its build output must stay
   byte-identical (763 files) — do not change `outDir`/`publicDir`/`base`. Validate big changes with a
   build + file-set diff.
+- **Reverse-proxy config lives in `sites.caddyfile` at the repo root** (not "outside the repo" as older
+  docs claimed). It defines `heart.iridi.cc` → `quartz/public`, `caster.iridi.cc` → `caster/site/dist`,
+  and `strider.iridi.cc` → `strider/dist/client`. The file is **gitignored** (it embeds a Cloudflare
+  DNS token), so it sits in the working tree on the host but is not version-controlled — keep that
+  secret out of git, and if you edit routing, edit this file.
 - The URL-slug logic is **`quartz/src/lib/slug.ts`** (renderer-only). `github-slugger` lives in
   quartz because `slug.ts` uses it.
 - **Never `.split("content/")` on a path** — `"shared-content/"` contains `"content/"`. Split on the

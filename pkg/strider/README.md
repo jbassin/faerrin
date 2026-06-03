@@ -8,7 +8,7 @@ Strider is a website that displays a map of **The Strider**, a city in a Pathfin
 
 The map is also a timeline. Every event — a faction's birth, a territorial claim, an assassination, a coup — lives in a timestamped "layer" markdown file. The app replays these in chronological order, so you can scrub to any point in the campaign and see who controlled what at that moment.
 
-The site is fully prerendered to static HTML and served by an external reverse proxy that lives outside this repo.
+The site is fully prerendered to static HTML (to `dist/client`) and served by a Caddy reverse proxy. Its config lives at the repo root in [`sites.caddyfile`](../../sites.caddyfile) (the `strider.iridi.cc` block), which is gitignored — it holds a Cloudflare DNS token, so the file is host-local and not version-controlled.
 
 ## Tech stack
 
