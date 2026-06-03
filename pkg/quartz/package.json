@@ -1,6 +1,6 @@
 {
   "name": "quartz",
-  "description": "Faerrin TTRPG campaign wiki — content pipeline (scripts/) + Astro + Solid site (src/).",
+  "description": "Faerrin TTRPG campaign wiki — Astro + Solid renderer (src/). The content pipeline lives in pkg/shared-content.",
   "private": true,
   "version": "4.5.1",
   "type": "module",
@@ -10,10 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check && bunx prettier . --check",
-    "format": "bunx prettier . --write",
-    "test": "tsx --test",
-    "pipeline": "tsx scripts/run.ts",
-    "review": "tsx scripts/review.ts"
+    "format": "bunx prettier . --write"
   },
   "engines": {
     "node": ">=22"
@@ -29,8 +26,6 @@
     "d3-selection": "^3.0.0",
     "d3-zoom": "^3.0.0",
     "github-slugger": "^2.0.0",
-    "gray-matter": "^4.0.3",
-    "js-yaml": "^4.1.0",
     "pixi.js": "^8.18.1",
     "solid-js": "^1.9.13"
   },
@@ -40,7 +35,6 @@
     "@types/d3-force": "^3.0.10",
     "@types/d3-selection": "^3.0.11",
     "@types/d3-zoom": "^3.0.8",
-    "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.2.1",
     "mdast-util-to-string": "^4.0.0",
     "prettier": "^3.8.3",
@@ -48,7 +42,6 @@
     "reading-time": "^1.5.0",
     "remark-directive": "^4.0.0",
     "sass": "^1.100.0",
-    "tsx": "^4.20.3",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0"
   }

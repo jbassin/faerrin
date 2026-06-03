@@ -3,7 +3,7 @@
 // listings), newest first. Hand-rolled to avoid an extra dependency.
 import type { APIRoute } from "astro"
 import { loadSite, type SiteDoc } from "../lib/site.ts"
-import { simplifySlug } from "../../scripts/lib/slug.ts"
+import { simplifySlug } from "../lib/slug.ts"
 import { SITE_TITLE, SITE_BASE_URL } from "../lib/config.ts"
 
 const esc = (s: string) =>

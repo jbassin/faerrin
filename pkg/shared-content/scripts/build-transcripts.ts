@@ -1,5 +1,5 @@
 // Generates the canonical line-numbered transcripts under ../transcripts/ from
-// quartz's pipeline output (../../quartz/scripts/script/*.txt) — the single source
+// the pipeline's output (scripts/script/*.txt, in this package) — the single source
 // of truth. Replaces the old, broken heartwood/update-transcripts.sh (which had
 // dead /emerald/ paths AND a fixed `tail -n +38` that assumed a 37-line header;
 // headers actually vary 27–38 lines by campaign).
@@ -17,7 +17,7 @@ import { readdir, mkdir, rm } from "node:fs/promises";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const sharedRoot = path.resolve(here, "..");
-const srcDir = path.resolve(sharedRoot, "..", "quartz", "scripts", "script");
+const srcDir = path.resolve(sharedRoot, "scripts", "script");
 const outDir = path.resolve(sharedRoot, "transcripts");
 
 function transform(raw: string): string {

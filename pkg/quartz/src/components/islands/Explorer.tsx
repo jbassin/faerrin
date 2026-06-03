@@ -12,7 +12,7 @@
  * current slug auto-open. Files get .active when they are the current page.
  */
 import { For, createSignal, onCleanup, onMount } from "solid-js"
-import { resolveRelative, simplifySlug } from "../../../scripts/lib/slug.ts"
+import { resolveRelative, simplifySlug } from "../../lib/slug.ts"
 
 interface TreeNode {
   slug: string

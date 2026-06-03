@@ -1,34 +1,43 @@
 # shared-content
 
-Single source of truth for campaign data shared across the monorepo's apps.
+The monorepo's **content platform** — the single source of truth for shared campaign data
+(wiki + transcripts) **and** the pipeline that generates it. Apps consume the *data* by filesystem
+path; quartz additionally imports one shared helper (`folderIndexName`).
 
-This is a **data directory** (not a code package you import) — consumers reference it by
-filesystem path, derived from their own location. It carries a small `package.json` only so its
-generators can run as workspace scripts.
+## Data (the SSOT)
 
-## Contents
+- `wiki/` — the hand-maintained Obsidian wiki (quartz is canonical). Also holds the **generated**
+  `wiki/Script/` transcript pages (written by the pipeline's `export` step). quartz's astro build
+  reads `wiki/` as its content root; heartwood + caster read `wiki/` for matching/cleaning and
+  **exclude `Script/`** (those are transcript pages, not wiki articles).
+- `transcripts/` — canonical line-numbered session transcripts (`NNNNNN\t<text>`), generated from
+  the pipeline's `scripts/script/*.txt`. Consumed by heartwood + caster.
 
-- `transcripts/` — canonical line-numbered session transcripts (`NNNNNN\t<text>`). **Generated**
-  from quartz's pipeline output (`../quartz/scripts/script/*.txt`), which is the producer of record
-  (it ingests from the remote API and applies corrections). Regenerate with:
+## The pipeline (`scripts/`)
 
-  ```sh
-  bun run --filter shared-content build:transcripts
-  ```
+Moved here from quartz (it was entangled with quartz's renderer only via `slug.ts` —now back in
+quartz `src/lib/`— and the shared `folder-index.ts`, which stayed here). Run it:
 
-  The generator (`scripts/build-transcripts.ts`) is header-length-agnostic (starts at the first
-  quoted line), replacing the old `heartwood/update-transcripts.sh` (dead `/emerald/` paths + a
-  fixed `tail -n +38` that only worked for one campaign).
+```sh
+bun run --filter shared-content pipeline          # ingest → export → script (all)
+bun run --filter shared-content build:transcripts # regenerate transcripts/ from scripts/script
+```
+
+- `scripts/run.ts` — CLI orchestrator (`ingest`/`export`/`script`/`all`).
+- `scripts/pipeline/` — `ingest.ts` (remote API → `scripts/data/*.json`), `export.ts`
+  (→ `wiki/Script/*.md`), `script.ts` (→ `scripts/script/*.txt`, `scripts/shibboleth.json`).
+- `scripts/lib/` — `paths`, `content` walker, `corrections`, `linker`, `campaigns`, `roster`,
+  `http`, `log`, `types`, and the **shared** `folder-index.ts` (imported by quartz's renderer too).
+- `scripts/build-transcripts.ts` — header-agnostic line-numbered transcript generator (replaced the
+  old broken `heartwood/update-transcripts.sh`).
+- `scripts/{campaigns.yaml,defs.yaml,shibboleth.json}` — pipeline config/artifacts.
 
 ## Consumers
 
-- **heartwood** reads `../shared-content/transcripts/` (its pipeline: segment → … → submit).
-- **caster** reads `../shared-content/transcripts/` (audio/TTS ingest).
+- **quartz** (renderer) — astro reads `wiki/`; imports `scripts/lib/folder-index.ts`; runs the
+  pipeline via `build.sh` (`bun run --filter shared-content pipeline`).
+- **heartwood** — reads `../shared-content/wiki/` (Script excluded) + `../shared-content/transcripts/`.
+- **caster** — reads `../shared-content/wiki/` (Script excluded) + `../shared-content/transcripts/`.
 
-> Paths are currently cwd-relative (`../shared-content/...`), matching how the apps are run from
-> their own directories. If apps ever run from elsewhere, switch to repo-root-derived resolution.
-
-## Roadmap
-
-The wiki corpus (currently triplicated across quartz/heartwood/caster) is slated to join this SSOT
-next, with quartz's `content/` as canonical (heartwood's copy is out of date).
+> Data paths are cwd-relative (`../shared-content/...`), matching how apps run from their own dirs;
+> the pipeline derives its own paths from `import.meta.url` (location-independent).

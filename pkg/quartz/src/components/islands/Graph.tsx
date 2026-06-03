@@ -24,7 +24,7 @@ import { drag } from "d3-drag"
 import { select } from "d3-selection"
 import { Text, Graphics, Application, Container, Circle } from "pixi.js"
 import { Group as TweenGroup, Tween as Tweened } from "@tweenjs/tween.js"
-import { resolveRelative, simplifySlug } from "../../../scripts/lib/slug.ts"
+import { resolveRelative, simplifySlug } from "../../lib/slug.ts"
 
 interface D3Config {
   drag: boolean

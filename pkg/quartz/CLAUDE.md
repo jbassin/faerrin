@@ -64,7 +64,7 @@ separate copy step. Key files:
   `public/`.
 - **`src/layouts/PageLayout.astro`** — the grid shell + sidebar chrome.
 - **`src/lib/site.ts`** — build-time index (resolved links/backlinks, git
-  dates, breadcrumbs, Explorer tree) reusing the isomorphic **`scripts/lib/slug.ts`**
+  dates, breadcrumbs, Explorer tree) reusing the isomorphic **`src/lib/slug.ts`**
   (the single source of truth for URL slugs — ported verbatim from Quartz).
 - **`src/components/islands/*.tsx`** — Solid islands (TranscriptPlayer,
   Darkmode, ReaderMode, Explorer, Search, Popover, Graph).
@@ -86,7 +86,17 @@ island ports, cutover).
   `tags/[...tag].astro`, `index.xml.ts` (RSS), `sitemap.xml.ts`, `static/contentIndex.json.ts`
   (graph data), `404.astro`.
 
-### Content pipeline (`scripts/`)
+### Content pipeline — MOVED to `pkg/shared-content`
+
+> The content pipeline (ingest → export → script) and its `lib/` now live in
+> **`pkg/shared-content/scripts/`** (the monorepo content platform), not here. It writes the
+> wiki Script pages into `shared-content/wiki/Script`, which this site reads as its astro content
+> root. Run it via `bun run --filter shared-content pipeline` (or `just pipeline [step]`). The
+> isomorphic URL-slug logic (`slug.ts`) stayed with the renderer at **`src/lib/slug.ts`**; the
+> shared `folder-index.ts` lives in `shared-content/scripts/lib/`. The detail below is retained for
+> reference but the code paths are now under `shared-content`.
+
+### Content pipeline (historical — see shared-content)
 
 This repo hosts a TTRPG campaign wiki for the _Faerrin_ setting. A custom TypeScript
 pipeline (run with `tsx`, no build step) generates content from external sources before

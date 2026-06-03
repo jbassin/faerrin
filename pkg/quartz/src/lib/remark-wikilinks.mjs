@@ -12,7 +12,7 @@
 // transcript line bodies resolve too.
 import path from "node:path"
 import { visit } from "unist-util-visit"
-import { slugifyFilePath, transformLink } from "../../scripts/lib/slug.ts"
+import { slugifyFilePath, transformLink } from "./slug.ts"
 import { allSlugs, contentDir } from "./content-paths.mjs"
 
 // [[fp]], [[fp|alias]], [[fp#anchor]], [[fp#anchor|alias]]  (embeds skipped in Phase 1)

@@ -3,7 +3,7 @@
 // to keep the dependency budget tight.
 import type { APIRoute } from "astro"
 import { loadSite } from "../lib/site.ts"
-import { simplifySlug } from "../../scripts/lib/slug.ts"
+import { simplifySlug } from "../lib/slug.ts"
 import { SITE_BASE_URL } from "../lib/config.ts"
 
 export const GET: APIRoute = async () => {

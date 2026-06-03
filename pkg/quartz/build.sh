@@ -14,8 +14,10 @@ ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 # workspace-aware; --frozen-lockfile fails if the root bun.lock is stale.
 bun install --frozen-lockfile
 
-# 1. Content pipeline (ingest → export → script), via bun's native tsx runner.
-bunx tsx scripts/run.ts all
+# 1. Content pipeline (ingest → export → script). It lives in pkg/shared-content
+# now (the content platform); it writes the wiki Script pages into shared-content/wiki,
+# which this site reads as its astro content root.
+bun run --filter shared-content pipeline
 
 # 2. Clear the content-layer cache. Astro keeps it in BOTH .astro/ and the
 # hoisted ${ROOT}/node_modules/.astro/, and does NOT reliably invalidate it on

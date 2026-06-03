@@ -4,7 +4,7 @@
  * a reverse backlink index, git "modified" dates, normalized frontmatter, and
  * breadcrumb ancestry.
  *
- * Link resolution reuses the SAME shared resolver (scripts/lib/slug.ts) and the
+ * Link resolution reuses the SAME shared resolver (src/lib/slug.ts) and the
  * exact edge-derivation proven byte-faithful to Quartz by migration/parity-graph.ts.
  * Backlinks therefore reproduce Quartz's `file.links`-based backlink set.
  *
@@ -14,7 +14,7 @@ import { execFileSync } from "node:child_process"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { getCollection } from "astro:content"
-import { folderIndexName } from "../../scripts/lib/folder-index.ts"
+import { folderIndexName } from "../../../shared-content/scripts/lib/folder-index.ts"
 import {
   isFolderPath,
   pathToRoot,
@@ -29,7 +29,7 @@ import {
   type FullSlug,
   type RelativeURL,
   type SimpleSlug,
-} from "../../scripts/lib/slug.ts"
+} from "./slug.ts"
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const repoRoot = path.resolve(here, "../..")
