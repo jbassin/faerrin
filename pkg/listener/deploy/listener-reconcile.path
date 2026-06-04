@@ -1,0 +1,15 @@
+# systemd USER unit — install to ~/.config/systemd/user/listener-reconcile.path
+# Watches the Craig drop folder and starts listener-reconcile.service on change.
+# This is the low-latency, event-driven trigger; pair it with the cron recovery
+# heartbeat (see deploy/CUTOVER.md) so a missed event still gets caught.
+[Unit]
+Description=Watch the Craig drop folder; reconcile on change
+
+[Path]
+# Fires on any modification in the folder. The reconciler's `unzip -t` readiness
+# gate handles partial syncs, and its single-flight lock handles overlap, so
+# eager/over-firing is harmless.
+PathChanged=/home/jbassin/drive/Craig
+
+[Install]
+WantedBy=default.target

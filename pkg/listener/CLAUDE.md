@@ -60,8 +60,11 @@ systemd `.path` unit, a manual run) can call it at any time, idempotently. A sin
 (`data/.reconcile.lock`) prevents overlapping runs. Readiness is gated by `unzip -t` (robust on
 synced/FUSE drives where inotify/lsof lie). Outputs use **atomic appearance** (write `.tmp` → rename),
 and `transcribe.py` skips already-finished tracks — so a crash mid-session resumes per track (~30min)
-instead of redoing hours. Only the expensive transcription node carries this discipline; the cheap
-downstream rebuild (ingest → caster → quartz) is wired at the Phase 4 cutover.
+instead of redoing hours. After materializing new sessions, it runs the downstream cascade via
+`downstream.sh` (wiki pipeline + quartz build, then the caster podcast) — only on new materialization,
+so it never re-spends on idle ticks. `LISTENER_SKIP_DOWNSTREAM=1` transcribes only;
+`deploy/` holds the systemd `.path`/`.service` trigger templates + the cutover runbook
+(`deploy/CUTOVER.md`).
 
 ## Layout
 
@@ -74,6 +77,8 @@ downstream rebuild (ingest → caster → quartz) is wired at the Phase 4 cutove
 | `src/{audio,transcribe,exec,fsx,paths}.ts` | ffmpeg merge · python CLI call · subprocess helpers · atomic write · config |
 | `python/transcribe.py` | **the one Python step**: whisperx, per-track resume, model loaded once per batch |
 | `python/{process,script,clean}.py` | legacy all-Python pipeline (fallback) + helpers it imports |
+| `downstream.sh` | the cascade conductor: wiki (shared-content pipeline + quartz build) + podcast (caster) |
+| `deploy/` | systemd `.path`/`.service` trigger templates + `CUTOVER.md` runbook |
 | `data/` (gitignored) | sessions (`saved/{date}/`), whisper model, lock — **never committed** |
 
 ## Gotchas

@@ -8,7 +8,7 @@ import { mergeAudio } from "./audio.ts"
 import { transcribe } from "./transcribe.ts"
 import { run, runOk } from "./exec.ts"
 import { writeAtomic } from "./fsx.ts"
-import { dataPath, tmpPath, incomingPath, pythonDir } from "./paths.ts"
+import { dataPath, tmpPath, incomingPath, pythonDir, pkgRoot } from "./paths.ts"
 import type { Segment } from "./types.ts"
 
 // Reconciler for the listener stage. It is *level-triggered*: each run observes
@@ -157,12 +157,36 @@ function materializeSession(date: string, zip: string): "MATERIALIZED" | "EMPTY"
   }
 }
 
-// The cheap, already-idempotent tail (ingest -> export -> script, then caster
-// podcast + quartz wiki builds). Wiring those cross-package builds is the Phase 4
-// cutover (needs the INGEST_SOURCE=local flip + host validation), so for now we
-// only signal that a rebuild is due.
-function rebuildDownstream(n: number): void {
-  log(`${n} new session(s) materialized — downstream rebuild pending (Phase 4 cutover)`)
+// Cascade the downstream rebuild for the freshly-materialized sessions: the
+// wiki path (shared-content pipeline + quartz build) and the podcast path
+// (caster). That sequence lives in an editable shell conductor (downstream.sh)
+// rather than hard-coded here, because it spans packages, costs Anthropic
+// credits (caster distill/script), and has creative/provider choices. We run it
+// with INGEST_SOURCE=local so the wiki reads this package's saved/ output.
+//   - LISTENER_SKIP_DOWNSTREAM=1  → transcribe only, skip the rebuild
+//   - LISTENER_DOWNSTREAM_CMD=... → override the hook path
+function rebuildDownstream(dates: string[]): void {
+  if (process.env.LISTENER_SKIP_DOWNSTREAM === "1") {
+    log(`downstream skipped (LISTENER_SKIP_DOWNSTREAM=1); new: ${dates.join(", ")}`)
+    return
+  }
+  const hook = process.env.LISTENER_DOWNSTREAM_CMD ?? path.join(pkgRoot, "downstream.sh")
+  if (!fs.existsSync(hook)) {
+    log(`no downstream hook at ${hook}; ${dates.length} session(s) ready but unpublished`)
+    return
+  }
+  log(`rebuilding downstream for: ${dates.join(", ")}`)
+  try {
+    run("bash", [hook, ...dates], {
+      env: {
+        ...process.env,
+        INGEST_SOURCE: "local",
+        INGEST_SAVED_DIR: path.join(dataPath, "saved"),
+      },
+    })
+  } catch (err) {
+    log(`downstream rebuild failed: ${err instanceof Error ? err.message : String(err)}`)
+  }
 }
 
 export function reconcile(): void {
@@ -177,7 +201,7 @@ export function reconcile(): void {
     const pending = pendingSessions(zips, dataPath)
     log(`incoming=${zips.length} zip(s), ${pending.length} needing transcription`)
 
-    let materialized = 0
+    const materializedDates: string[] = []
     for (const { zip, date } of pending) {
       if (!ready(zip)) {
         log(`not fully landed yet (unzip -t failed): ${path.basename(zip)}`)
@@ -187,7 +211,7 @@ export function reconcile(): void {
         log(`materializing session ${date}`)
         const res = materializeSession(date, zip)
         if (res === "MATERIALIZED") {
-          materialized++
+          materializedDates.push(date)
           if (process.env.LISTENER_KEEP_ZIP !== "1") fs.rmSync(zip, { force: true })
         }
       } catch (err) {
@@ -202,7 +226,7 @@ export function reconcile(): void {
       }
     }
 
-    if (materialized > 0) rebuildDownstream(materialized)
+    if (materializedDates.length > 0) rebuildDownstream(materializedDates)
     else log("no new sessions — nothing downstream to rebuild")
   } finally {
     releaseLock(lock)

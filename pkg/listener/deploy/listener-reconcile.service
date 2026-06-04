@@ -1,0 +1,29 @@
+# systemd USER unit — install to ~/.config/systemd/user/listener-reconcile.service
+# Runs one reconcile pass: transcribe any landed-but-unprocessed Craig zips, then
+# cascade the downstream rebuild (wiki + podcast). Triggered by the .path unit
+# (on folder change) and/or cron (recovery heartbeat). Safe to fire eagerly — the
+# reconciler gates on `unzip -t` and holds a single-flight lock.
+[Unit]
+Description=Faerrin listener — transcribe new Craig recordings, then publish (wiki + podcast)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# whisper transcription runs for HOURS — never time out the start.
+TimeoutStartSec=infinity
+# survive memory pressure: deprioritize (don't get OOM-killed first).
+OOMScoreAdjust=-500
+
+# --- EDIT THESE for your host ---
+WorkingDirectory=/ruby/data/experiments/faerrin
+# Land new sessions beside the existing 27GB history, and read transcripts locally:
+Environment=LISTENER_DATA_PATH=/ruby/data/experiments/listener_wretch/data
+Environment=INGEST_SOURCE=local
+# Free MS Edge TTS for the podcast (set =elevenlabs for paid, needs a key):
+Environment=CASTER_TTS_PROVIDER=edge
+# caster distill/script need this; keep it out of git (use an EnvironmentFile):
+# EnvironmentFile=%h/.config/faerrin/listener.env   # contains ANTHROPIC_API_KEY=...
+
+# login shell so bun + uv are on PATH (whisper via uv, builds via bun).
+ExecStart=/bin/bash -lc 'bun run --filter listener process'
