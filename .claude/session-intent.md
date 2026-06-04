@@ -1,42 +1,56 @@
 # Session Intent Contract
 
-**Created:** 2026-06-03
+**Created:** 2026-06-04
 **Plan:** See .claude/session-plan.md
-**Discovery:** thoughts/shared/research/2026-06-03-monorepo-migration-discovery.md
 
 ## Job Statement
-Migrate four independently-developed apps (`pkg/{caster,heartwood,quartz,strider}`) into a single
-**Bun-workspaces monorepo** so they can share resources/packages and a single source of truth for
-the common Faerrin campaign data, without breaking the two live static sites (quartz, strider).
+
+Import the `listener_wretch` project (currently at `/ruby/data/experiments/listener_wretch`,
+external to the repo) into the Faerrin monorepo. It is the upstream producer of the data the
+monorepo consumes: it turns Craig Discord recordings into per-session `script.json` transcripts
+(pulled by `shared-content`'s ingest) and `audio.mp3` files (served to `quartz` listeners).
+
+The challenge: it is **Python built on whisperx (Whisper large-v3 + PyTorch + ffmpeg)**, against a
+repo whose convention is "Bun everywhere." It also has host coupling (hardcoded `/emerald` paths,
+a Craig sync folder, a `shelve` state DB, a cron job) and is decoupled from the monorepo only over
+HTTP (`static-audio.iridi.cc`).
+
+## Decisions Captured (from intent questions)
+
+- **Language:** Recommend in plan — **vendor Python as-is** and **hybrid (TS orchestration + Python
+  whisper core)** are both live options; full TS rewrite is OFF the table.
+- **Transcription:** **Keep local whisperx.** Offline, free, proven quality. The whisper step stays
+  Python no matter what.
+- **Integration seam:** **Re-wire into the build** — move away from the HTTP fetch toward the
+  in-repo pipeline reading listener output directly (staged, behind a parity gate).
+- **Optimize for (priorities):**
+  1. Kill host coupling (remove `/emerald` hardcoding; env-configurable, portable).
+  2. Language uniformity (reduce Python surface; honor "Bun everywhere" where feasible).
+  3. Minimal risk to live sites (quartz + shared-content keep working; transcripts/audio uninterrupted).
+  - NOT chosen: "low effort / just land it" — willing to invest for portability + uniformity.
 
 ## Success Criteria
-- All four apps build, typecheck, and test from a single root via `bun --filter`.
-- One root `bun.lock`; shared dependency versions unified; no tracked secrets.
-- quartz runs fully on Bun (off npm/tsx) with Astro + Vite + Pagefind validated.
-- A clear, documented path to a single shared-content package (SSOT), with the drifted copies
-  reconciled — executed as a gated phase 2.
-- Nothing relies on the broken `update-transcripts.sh` cross-app sync.
 
-## Boundaries / Constraints
-- **jj repo** — every move/delete/rename uses `jj`, never raw git.
-- **Only Claude is available** as a provider — all multi-LLM orchestration is fulfilled by distinct
-  Claude persona agents (`octo:personas:*`), outputs synthesized by the lead. (See memory:
-  octo-personas-not-llms.)
-- **Live sites** — quartz (`heart.iridi.cc`) and strider are served by an external reverse proxy
-  NOT in this repo. Output paths / basepaths must not change without explicit user confirmation.
-- Per-app `CLAUDE.md` files conflict (caster forbids vite; strider/quartz use it) — keep nested.
-- **Destructive data dedup** (deleting triplicated wiki/transcripts) requires a checkpoint before execution.
+- `listener_wretch` lives in-repo as a workspace package, runnable from the monorepo.
+- No hardcoded host paths; everything via env/derived paths (matches `lib/paths.ts` pattern).
+- The whisper transcription core remains local whisperx with unchanged output quality.
+- The ingest seam is re-wired to read listener output directly, with **byte-identical**
+  `shared-content/scripts/data/{date}.json` output proven on a sample session (live-site safety).
+- The roster (Discord-ID → name) is unified to one SSOT instead of duplicated across languages.
+- Whole workspace stays green (typecheck + tests); quartz build stays byte-identical (763 files).
 
-## Decisions (from intent capture)
-- **Wiki ownership:** decide during implementation — scaffold the shared-content structure now,
-  defer the ownership + reconciliation decision to a dedicated phase-2 step backed by a persona-agent
-  analysis of both flows (heartwood-edits-quartz-publishes vs quartz-owns).
-- **Scope:** foundation first. Phase 1 = steps 1–6 + 9. Phase 2 (gated) = shared-data SSOT (7) +
-  `@faerrin/llm` extraction (8).
-- **Involvement:** semi-autonomous — run low-risk steps autonomously; pause at high-risk gates
-  (quartz→bun build validation; any destructive jj delete of duplicated data).
+## Boundaries / Non-Goals
 
-## Context
-- Knowledge: well-informed (deep discovery just completed).
-- Clarity: clear requirements (sequencing identified).
-- Stakes: high (live sites + destructive data dedup).
+- Do **not** re-transcribe historical sessions — those transcripts are already committed in
+  `shared-content/scripts/data`. Whisper is non-deterministic across versions; re-running would
+  churn committed data. Migration handles **new sessions going forward**.
+- Do **not** commit audio/zip/model artifacts to git (hundreds of MB–GB). They stay gitignored and
+  served as static files.
+- Do **not** replace whisperx with an API or whisper.cpp (transcription stays local whisperx).
+- `listener_wretch` has **no git history** (no `.jj`/`.git`) — nothing to preserve; clean import.
+
+## Tension to Resolve
+
+"Re-wire into the build" vs. "minimal risk to live sites" — the re-wire touches the live ingest
+path. Resolved by **staging**: keep producing identical outputs, validate parity, then cut the
+ingest source over from HTTP to local in a separate, reversible step.

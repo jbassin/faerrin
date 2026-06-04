@@ -1,0 +1,17 @@
+[project]
+name = "listener-wretch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "hf-xet>=1.1.1",
+    "loguru>=0.7.3",
+    "pydub>=0.25.1",
+    "whisperx>=3.3.4",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+]

@@ -1,0 +1,22 @@
+# Runtime data + artifacts — NEVER commit. This package's data/ is ~36GB on the
+# host (27GB of session audio under saved/, a 2.9GB whisper model under models/).
+data/
+tmp/
+
+# Belt-and-suspenders: never track heavy media / model / state artifacts even if
+# they land outside data/.
+*.aac
+*.mp3
+*.zip
+*.pkl
+*.pkl.*
+models/
+
+# Python local environment
+python/.venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Local env overrides
+.env

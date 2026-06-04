@@ -1,0 +1,11 @@
+{
+  "name": "listener",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Craig Discord recordings -> per-session transcript (script.json) + merged audio.mp3 via local whisperx. Python (deliberate monorepo exception; see CLAUDE.md).",
+  "scripts": {
+    "process": "mkdir -p \"${LISTENER_DATA_PATH:-data}\" \"${LISTENER_TMP_PATH:-tmp}\" && cd python && uv run process.py",
+    "script": "cd python && uv run script.py",
+    "clean": "cd python && uv run clean.py"
+  }
+}

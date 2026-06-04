@@ -1,206 +1,218 @@
-# Session Plan — Faerrin Monorepo Migration (v2, post stress-test)
+# Session Plan — Import `listener_wretch` into the Faerrin Monorepo
 
-**Created:** 2026-06-03 · **Revised:** 2026-06-03 after persona stress-test (code-reviewer + cloud-architect)
+**Created:** 2026-06-04
 **Intent Contract:** .claude/session-intent.md
-**Discovery:** thoughts/shared/research/2026-06-03-monorepo-migration-discovery.md (see CORRECTIONS)
-**Mode:** Native, persona-driven (only Claude; persona agents substitute for multi-LLM).
+**Status:** Plan only — not executed. Run `/octo:embrace` (or implement-plan) when ready.
+
+---
 
 ## What You'll End Up With
-A working Bun-workspaces monorepo where all apps build/test/typecheck from the root with one
-`bun.lock`, unified deps, quartz fully on Bun (proven by a spike first), jj-safe hooks, frozen
-live-site output paths, root CI, and a gated plan for collapsing the triplicated campaign data.
 
-## ⚠️ What the stress-test changed (deltas from v1)
-- **5 apps, not 4** — `pkg/caster/site/` (`caster-site`, own bun.lock) was missed. Its fate is a gate before any lockfile work.
-- **quartz→bun moved BEFORE lockfile consolidation** as a disposable spike (was after). It's the least-proven combo (Astro5+Vite+Pagefind+Playwright on bun); validate before committing the repo to one lock.
-- **Parity gates don't exist** — replaced with a self-captured pre-migration `public/` build baseline.
-- **No single root prettier/eslint** — fan out per-app (quartz `semi:false` vs strider defaults conflict).
-- **husky `prepare` removal moved before the first root `bun install`.**
-- **Explicit jj checkpoint + per-gate rollback** (`jj op restore`).
-- New explicit decisions surfaced: caster/site fate, external `episodes.json` coupling, Dockerfile fate, frozen output-path contract, OG-render-in-CI.
+`listener_wretch` living in-repo as **`pkg/listener`**, a Bun-workspace package whose orchestration
+is TypeScript and whose only Python is a thin, self-contained **whisper transcription CLI**. It is
+host-portable (env/derived paths, no `/emerald` hardcoding), the Discord-ID→name roster is unified to
+a single source of truth, and the `shared-content` ingest reads its output **directly** instead of
+over HTTP — with byte-identical `data/{date}.json` proven before the live cutover.
 
 ---
 
-## PHASE 1 — Foundation. Execute semi-autonomously; pause at [GATE].
+## The System Today (what we're importing)
 
-> VCS: all ops via `jj`. Rollback at any gate: `jj op log` → `jj op restore <id>` (or `jj undo`).
-> Root rule: **root scripts only delegate via `bun --filter` (per-app cwd) — never re-implement
-> `tsc`/`astro build`/`vite build` at root** (relative outDir/publicDir would resolve wrong → live-site break).
-> Invariant: per-app `.gitignore` (heartwood's negated allow-lists), `CLAUDE.md`, `.prettierrc`,
-> eslint configs all stay **nested**. Root configs add root-level rules only.
+**Pipeline (`process.py`, cron-driven via `process.sh`):**
 
-### Step 0 — Checkpoint + caster/site decision  [GATE]
-- `jj` commit the plan/discovery/memory; `jj new` for a clean migration change (untangle from plan files).
-- **[USER DECISION] caster/site fate:** (a) promote to workspace member (`workspaces:["pkg/*","pkg/caster/site"]`),
-  (b) exclude as standalone, or (c) fold into caster. Until decided, do NOT delete its bun.lock.
+1. **Watch + state** — scan `INCOMING_PATH` (`~/drive/Craig`) for Craig `.zip` recordings; dedupe
+   against a `shelve` pickle DB (`data.pkl`). (`process.py:main`, `db.py`)
+2. **Unzip + organize** — extract zip → temp; create `saved/{date}/`. (`file_utils.py`)
+3. **Audio merge** — `pydub` overlays each player's `.aac` track into one `audio.mp3`. Needs
+   **ffmpeg**. (`process.py:merge_sound_files`)
+4. **Transcribe** — `whisperx.load_audio` → `transcribe` (Whisper large-v3, CPU/int8) → `align`
+   (wav2vec2), per player track → per-user segment JSON. **The irreducible Python core.**
+   (`process.py:transcribe`, `models.py`)
+5. **Assemble script** — `SoundStack` time-merges all per-user segments into one ordered
+   `script.json`. (`sound_stack.py`, `script.py`)
+6. **Publish + cleanup** — move tracks into `saved/{date}/`, delete source zip; a static server
+   exposes `saved/{date}/` at `https://static-audio.iridi.cc/{date}/`.
+7. **Config** — `consts.py`: hardcoded `/emerald` paths + `PLAYERS` roster (Discord-ID → name).
 
-### Step 1 — quartz-on-bun feasibility SPIKE (disposable jj change)  [GATE] ✅ PASSED 2026-06-03
-> **RESULT: PASS.** On disposable change `tvnvmrup` (abandoned): `bun install` migrated
-> package-lock.json → bun.lock cleanly (no resolution errors, engine-strict/.npmrc ignored by bun);
-> `bunx astro build` succeeded with the astro-pagefind `astro:build:done` hook (346 pages indexed,
-> index written to public/pagefind); **public/ output was byte-for-byte identical to the npm baseline
-> — 763 files = 763 files, 0 added, 0 missing, 384 pagefind files**; `bunx tsx scripts/run.ts export`
-> ran the content pipeline under bun (75 pages, 0.6s). all-bun target is de-risked. Carry this recipe.
-> (Original spike spec below, retained for reference.)
-- On a throwaway `jj new`, inside `pkg/quartz` only: neutralize `.npmrc engine-strict` + drop
-  `engines.npm`; `bun install`; `bunx tsx scripts/run.ts all`; `rm -rf .astro <root>/node_modules/.astro`;
-  `bunx astro build` → `public/`.
-- **PROVE:** astro build green · astro-pagefind index emitted (`public/pagefind/`) · Playwright OG
-  render green under bun · sampled page-output hash unchanged.
-- Green → carry the proven `build.sh` recipe forward. Red → STOP, surface to user before committing
-  the repo to an all-bun lock. `jj abandon` the spike (knowledge is the deliverable).
-- Persona: **deployment-engineer** drives; **debugger** if it breaks.
+**The monorepo seam (decoupled over HTTP):**
 
-### Step 2 — Scaffold root  [AUTO]
-- Root `.gitignore` **FIRST** (`node_modules`, `.env`, `.env.*`, `!.env.example`, `*.tsbuildinfo`).
-- Root `package.json` (workspaces per Step 0 decision; root scripts = `bun --filter '*' <script>`).
-- Root `.env.example` (all vars: ANTHROPIC_API_KEY shared; heartwood GITLAB_*+MODEL_FILTER/RESOLVE; caster ELEVENLABS).
-- `tsconfig.base.json` — **compilerOptions only** (strict/target/moduleResolution). Apps keep own
-  include/exclude/paths/types. quartz stays on `astro/tsconfigs/strict`. strider keeps `@/*` alias.
-- Persona: **backend-architect** drafts; lead reviews.
+- `shared-content/scripts/pipeline/ingest.ts` lists `static-audio.iridi.cc`, finds each session's
+  `script.json`, fetches it, and builds the `audio` URL `…/{date}/audio.mp3`. It then formats raw
+  lines (`{start,end,user,text}`) → `data/{date}.json` (the committed, canonical transcript).
+- `config.ts → remote.baseUrl = "https://static-audio.iridi.cc/"` is the exact seam the re-wire replaces.
+- **Roster duplication:** `lib/roster.ts userToName` (`boiledpacakes→Jorge`, `miked6187→Mike`, …) is
+  the inverse of `consts.PLAYERS` — same data, two languages.
 
-### Step 3 — Pre-install prep + apply proven quartz conversion  [AUTO]
-- Capture **pre-migration baselines**: current `pkg/quartz/public/` and `pkg/strider/dist/client/`
-  build manifests (file list + sampled hashes) as the de-facto parity baseline.
-- Apply the spike-proven quartz changes for real: rename pkg `heart-of-hearts`→`quartz`;
-  `.npmrc`/engines; rewrite `build.sh` (install BEFORE pipeline; `bun install --frozen-lockfile`;
-  explicit `rm -rf pkg/quartz/.astro <root>/node_modules/.astro`); `npx`→`bunx` in build.sh +
-  **package.json (`check`/`format`)** + justfile + (Dockerfile per decision below); remove stale
-  `tsconfig.scripts.json` ref.
-- Remove `prepare:"husky"` from strider **now** (before any root install).
-- Pin `@types/bun` to the concrete installed version (both bun apps, identical). Drop the speculative
-  caster `zod` add (verified: caster has no `import … from "zod"` — only add if a real import exists).
-- **[USER DECISION] Dockerfile fate:** `npm ci` breaks once the lockfile is deleted → either migrate
-  to `oven/bun`+`bun install`, or mark dead/unused (its comment says prod uses the proxy).
-
-### Step 4 — Consolidate lockfiles  [GATE after] ✅ DONE 2026-06-03 (awaiting review)
-> **RESULT:** 5 lockfiles → one root `bun.lock`; workspace recognized (caster, caster-site,
-> heartwood, quartz, strider as `workspace:`); install clean (1664 pkgs). Typecheck:
-> caster ✅ (after excluding nested site/), strider ✅ (after adding explicit
-> `@tanstack/router-generator@^1.167.13` — phantom dep exposed by hoisting), quartz astro
-> check ✅ 0 errors, caster-site astro check ✅ 0 errors. heartwood ⚠️ 2 PRE-EXISTING
-> test-type errors (apply.test.ts, respond.test.ts) — not migration-caused (only change was a
-> no-op @types/bun pin); respond.test.ts is in the Step-7 SDK-upgrade zone.
-- `jj` rm all lockfiles (5, incl. caster/site per Step 0); one root `bun install`.
-- Validate every app installs + typechecks. quartz is now actually bun-runnable (spike proved the build).
-
-### Step 5 — Live-site build validation  [GATE after]  ← highest stakes ✅ DONE 2026-06-03
-> **RESULT:** quartz 763 files byte-identical to baseline ✅; strider all 21 pages + assets +
-> og-map.png (Playwright OG works under bun) ✅ (extra pixi chunks = benign re-resolution);
-> caster-site builds clean ✅ (added missing `build` script alias). All three live sites build
-> under the workspace. (D3: quartz output unchanged → output-path contract effectively confirmed.)
-- Build quartz + strider (+ caster/site if included) under the new workspace; **diff against the
-  Step-3 baselines** (URL/file set, sampled hashes). Pagefind + OG renders green.
-- **[USER DECISION] Freeze output-path contract:** confirm proxy expects `pkg/quartz/public` and
-  `pkg/strider/dist/client` at root-relative `/` assets — do NOT change `outDir`/`publicDir`/`base`.
-
-### Step 6 — husky → jj-compatible hooks  [AUTO] ✅ DONE 2026-06-03
-> **RESULT:** removed husky entirely from strider (devDep, .husky/, .gitignore entry; prepare
-> script already gone). jj has no git-hook system, so pre-commit format/lint/build moves to CI (Step 9).
->
-> **Separate commit (per user): heartwood typecheck fixes** — apply.test.ts now narrows CommitAction
-> via a `contentOf()` helper; respond.test.ts cast → `Awaited<ReturnType<...>>`. heartwood typecheck
-> now green; 22 gitlab tests pass. (Commit `mlxkxwkz`.)
->
-> **PRE-EXISTING test-runtime failures found (NOT migration-caused, left for triage):**
-> (1) caster `corpus.integration.test.ts` — hard-codes wiki.pages.size=93 but corpus has 121 (data
-> drift — Phase-2 reconciliation territory); (2) caster "parses all transcript files" (same real-corpus
-> drift); (3) heartwood `propose.test.ts:301` expects `## Content Files` but CLAUDE.md has `## Content
-> files` (case-mismatch test bug). strider 128/128 pass.
-- Replace strider's `.husky/pre-commit` (git-hook + `git update-index`; never fires under jj) with a
-  jj-aware pre-commit (or drop). Persona: **deployment-engineer**.
-
-### Step 7 — heartwood @anthropic-ai/sdk 0.39→0.100  [GATE after]  ← isolated ✅ DONE 2026-06-03
-> **RESULT:** bumped to ^0.100.1 (aligned w/ caster). `src/llm.ts` needed NO changes — 0.100 is
-> compatible (`Tool['input_schema']` indexed access still valid). typecheck green; tests unchanged
-> (395 pass + the 1 pre-existing case-mismatch fail). Commit `rxkwtnut`. (Orphaned 0.39 in bun's
-> .bun store is unreferenced — harmless.)
-- Verified: `Anthropic` imported only in `src/llm.ts:46` (`Tool['input_schema']`→`Tool.InputSchema`).
-- `bun run typecheck` + heartwood tests must pass. Persona: **typescript-pro**.
-
-### Step 8 — Unify shared dep versions  [AUTO] ✅ DONE 2026-06-03
-> **RESULT:** typescript ^5.9.3 (dev everywhere; caster peerDep→devDep), @types/node ^24.2.1
-> (strider 25→24), prettier ^3.8.3 (quartz), pixi.js ^8.18.1 (strider). Also fixed a 2nd phantom
-> dep: declared `@eslint/js` (strider eslint.config import). All typecheck + astro check + lint
-> green. Commit `trsoootk`. (tsconfig.base.json wiring deferred — apps' configs diverge; base
-> available for future adoption.)
-- typescript ^5.9.3 (dev everywhere; drop caster peer); @types/node ^24.2.1; prettier ^3.8.3;
-  pixi.js ^8.18.1. Re-validate all apps.
-
-### Step 9 — Root CI + per-app lint/format  [GATE after] ✅ DONE 2026-06-03 (awaiting review)
-> **RESULT:** root `check` script added; `.github/workflows/ci.yml` (bun 1.3.14, install→typecheck→
-> check→lint→test, then build job with Playwright chromium). Lint/format fan out per-app via
-> `--filter` (no single root config — quartz semi:false vs strider defaults). **PLATFORM ASSUMED
-> GitHub Actions** (no git remote configured — confirm or switch to GitLab CI). CI `test` step will be
-> RED until the 3 pre-existing failures are triaged. D4 (OG-in-CI): defaulted to ON (strider build needs it).
->
-> **PHASE 1 EXIT STATE:** typecheck ✅ · astro check ✅ · lint ✅ · builds ✅ (quartz byte-identical) ·
-> test ⚠️ 2 pre-existing caster real-corpus fails (Phase-2 reconciliation). Commits: lnxymxyq,
-> mlxkxwkz, rxkwtnut, trsoootk, wtxxkprm, nmnyslyr.
->
-> **Heartwood loadConventions bug FIXED (`nmnyslyr`):** CLAUDE.md `## Content files`→`## Content
-> Files` so loadConventions' indexOf matches; previously the whole CLAUDE.md was fed to the propose
-> LLM. heartwood now 396/396 tests pass.
-- CI: jj is git-colocated → CI clones git, **just works**. Changed-app matrix from
-  `git diff --name-only <base>...HEAD` → `pkg/<app>`; **root-config change (package.json/bun.lock/
-  tsconfig.base) ⇒ test ALL apps**. Add `playwright install --with-deps chromium` (cache); keep
-  OG-rendering `build` OFF non-deploy jobs.
-- Format/lint **fan out per-app** (`bun --filter '*' format/lint`) — NO root prettier/eslint config.
-- **[USER DECISION] OG-render-in-CI:** run Playwright OG only on deploy jobs, or every build?
-- Persona: **deployment-engineer** (CI) + **code-reviewer** (config).
-
-**Phase-1 exit (Deliver):** from a CLEAN checkout (delete `src/generated/`, `routeTree.gen.ts` first
-to prove self-bootstrapping), `bun --filter '*' typecheck` + `test` green; all site builds match
-baselines; no tracked secrets; rollback documented per gate. Persona **code-reviewer** final pass.
+**Moving parts to tame:** ffmpeg dependency · ~3GB whisper model download · `shelve` pickle state ·
+Craig sync folder · cron job · hardcoded host paths · large audio/zip artifacts (must stay out of git).
 
 ---
 
-## PHASE 2 — Shared-data SSOT + shared packages. GATED — separate plan, after Phase 1 merges.
+## Recommended Approach: **Hybrid, staged** (vendor-first → hybridize → re-wire)
 
-> Destructive jj deletes of triplicated data — every delete is a **[GATE]** with a named jj checkpoint.
+The two live options resolve cleanly when sequenced rather than chosen:
 
-### Step 10 — Shared-content SSOT
-> **10.A TRANSCRIPTS ✅ DONE 2026-06-03 (commit `mnlrvpln`):** created `pkg/shared-content/`
-> (workspace member) with canonical line-numbered transcripts (41) + a robust header-agnostic
-> generator (`scripts/build-transcripts.ts`, `bun run --filter shared-content build:transcripts`).
-> Repointed heartwood (9 refs) + caster to `../shared-content/transcripts`. Deleted heartwood/transcripts
-> (37), caster/content/transcripts (41, content-divergent/stale), and the broken update-transcripts.sh.
-> Validated: heartwood 396/396, caster transcript-parse test passes, workspace typecheck green.
-> **10.B WIKI — NEXT:** quartz/content (121) canonical → pkg/shared-content/wiki; delete caster's
-> identical copy + heartwood's stale copy; repoint. (caster wiki-count test 93→121 resolves here.)
-1. **[GATE] Decide wiki owner:** persona **database-architect** compares heartwood-edits→quartz-publishes
-   vs quartz-owns→heartwood-proposes, incl. frontmatter + Org layout (flat vs folder) reconciliation.
-2. **Reconcile drift:** diff the 3 wiki copies + transcript copies (caster newest); report; **[GATE]**.
-3. **Mechanism (architecture decision):** shared data is read via `fs` (not imported) by all apps →
-   make it a **plain directory** (`pkg/shared-content/` or root `content/`) referenced via each app's
-   `repoRoot`-derived path module — NOT a workspace package, NOT symlinks. Optional thin typed loader
-   may be a package (`@faerrin/content-loader`).
-4. **Resolve external `episodes.json` coupling** (`/ruby/data/experiments/caster/site/dist/episodes.json`):
-   keep env override / vendor into shared-content / drop.
-5. Extract via `jj`; repoint quartz `scripts/lib/paths.ts`, heartwood, caster reads.
-6. Delete `update-transcripts.sh` + duplicate copies. **[GATE]** per delete.
+- **Vendor-as-is** is the fastest way to satisfy *minimal risk* + *kill host coupling* — but leaves a
+  full Python package, working against *language uniformity*.
+- **Hybrid** satisfies *language uniformity* (TS owns everything except the model call) — but is more
+  work and riskier to do in one leap.
 
-### Step 11 — Extract `@faerrin/llm`
-- After Step 7. Merge caster wrapper (streaming, max-tokens guard, provider seam) + heartwood cost
-  layer (`pricing.ts`, `recordLLMCall`, Zod-at-boundary). Hoist `pricing.ts` first. Persona:
-  **backend-architect** + **code-reviewer** (preserve cost-log semantics exactly).
-- Do NOT build `@faerrin/content`/`@faerrin/slug` — overlap is intentional divergence.
+**So do vendor-as-is FIRST (Phase 1), then hybridize incrementally (Phase 2), then re-wire the seam
+(Phase 3).** Each phase ships independently, is reversible, and keeps the workspace green. If you stop
+after Phase 1 you still have a portable, in-repo, working pipeline; Phases 2–3 are pure upside on
+uniformity and coupling.
+
+**Recommendation: target the hybrid end-state, but gate each phase.** The whisper core (`transcribe`,
+`models.py`) stays Python forever (per your decision); everything around it (watch, state, unzip,
+audio merge, script assembly, publish, config) is mechanical and ports to TS without behavior change.
+
+### Target layout
+
+```
+pkg/listener/
+  package.json            # Bun workspace member: scripts wrap orchestration + `uv run` for transcribe
+  CLAUDE.md               # local guidance (the "one Python member" exception, ffmpeg/model deps)
+  src/                    # TS orchestration (Phase 2): watch, state, unzip, audio-merge(ffmpeg), soundstack, publish
+  python/
+    pyproject.toml        # uv project — whisperx + deps ONLY
+    transcribe.py         # thin CLI: session dir of .aac in → per-user segment JSON out (model loads once)
+  .env.example            # INCOMING_PATH, DATA_PATH, TMP_PATH, OUTPUT mode, etc.
+  .gitignore              # data/, tmp/, *.zip, *.aac, *.mp3, models/, *.pkl
+```
 
 ---
 
-## Outstanding USER DECISIONS (surfaced by stress-test)
-| # | Decision | When |
-|---|----------|------|
-| D1 | caster/site fate → **DECIDED: promote to workspace member** (add to workspaces glob; 5th live site, hoisted deps, one root lock) | Step 0 ✅ |
-| D2 | Dockerfile fate → **DECIDED (default): migrated to `oven/bun` + `bun run --filter quartz build`; commented as NOT on deploy path + needs repo-root build context. Confirm/override.** | Step 3 ✅ |
-| D3 | Freeze output-path contract w/ proxy | Step 5 |
-| D4 | OG-render in CI (deploy-only vs every build) | Step 9 |
-| D5 | Wiki ownership → **DECIDED: quartz is STRICTLY CORRECT. quartz/content (121, = caster) is canonical. heartwood/content is just out-of-date — discard it (incl. its frontmatter/flat-Org). Both caster & heartwood repoint to the shared quartz wiki.** | Phase 2 ✅ |
-| D6 | episodes.json → **DECIDED: point quartz PODCAST_EPISODES_PATH at in-repo pkg/caster/site build output (not the external sibling).** | Phase 2 ✅ |
-| D7 | Sequencing → **DECIDED: transcripts SSOT first, wiki next.** | Phase 2 ✅ |
-| CI | → **DECIDED: GitHub Actions.** | ✅ |
+## How We'll Get There — Phased
+
+### Phase 0 — Confirm host facts  ✅ DONE (2026-06-04)
+**Confirmed:**
+- ✅ Deps present on host: **ffmpeg 4.4.2**, **uv 0.11.19**, **python 3.11** (`.python-version`).
+- ✅ **`/emerald` is a symlink → `/ruby`.** No path ambiguity — `consts.py`'s `/emerald` paths
+  resolve to the same disk as `/ruby`. Still hardcoded (kill in Phase 1), but not pointing elsewhere.
+- ✅ Craig incoming `~/drive/Craig` exists, currently **empty** (zips deleted post-process — expected).
+- ✅ **Footprint: 36GB** — model **2.9GB**, `data/saved/` **27GB across 82 sessions** (~400MB/session;
+  e.g. 2026-6-1 `audio.mp3` is 216MB). → gitignoring `data/` is **non-negotiable**.
+- ✅ `shelve` state present (`data.pkl.{dat,dir,bak}`, 419KB, mtime Jun 2).
+- ✅ **Cron:** `30 2 * * *` → `process.sh` (daily 02:30). Clean import: no `.git`/`.jj` in the project.
+- ✅ **Output contract** (per `saved/{date}/`): per-player `N-<discordid>.aac`, `audio.mp3`,
+  per-user `<id>~N.json`, `script.json`. Raw `script.json` line = `{start,end,text,words[],user}`
+  with `user` = raw Discord ID; ingest uses only `start/end/user/text`.
+
+**⚠️ Open items surfaced (resolve in Define / before Phase 3):**
+- ✅ **`static-audio.iridi.cc` host — RESOLVED (user decision 2026-06-04):** audio is **safe to move**;
+  the user will update the reverse proxy **out-of-band**. Phase 3 = listener writes `audio.mp3` to its
+  in-repo (gitignored) served dir; we do NOT touch proxy config. The transcript `audio` URL contract
+  stays as-is unless the user says the URL changes.
+- ⚠️ **Transcript format drift — RESOLVED + flagged as pre-existing regression.** Verified against
+  2026-5-21: the raw `script.json` already contains `" Jaws."` / `"Now you can hear me, Jaws."`
+  (capitalized + punctuated); `ingest.ts` faithfully trims the leading space + applies corrections.
+  So **casing comes from the model, and the transform is byte-faithful** (parity gate strategy holds).
+  The 2026-6-1 **lowercase/unpunctuated** output is therefore an **upstream model/config change in
+  `listener_wretch` itself** (note `consts.py` has `large-v3` with `distil-large-v3` commented) — a
+  pre-existing quality regression, NOT caused by migration. ✅ **RESOLVED (user decision 2026-06-04):
+  ACCEPT current output** as-is; revisit the whisperx model/settings *after* the migration.
+- ⚠️ **Separate quartz cron** — `12 * * * *` builds `/emerald/.../quartz` (the OLD standalone repo),
+  not the monorepo `pkg/quartz`. Out of scope here, but the live quartz deploy may still be pre-monorepo;
+  flag for the deployment cutover.
+
+### Phase 1 — Vendor as-is, made portable  ✅ DONE (2026-06-04)  *(satisfies: minimal risk, kill host coupling)*
+**Shipped:** `pkg/listener/` created — Python vendored under `python/` (13 code/config files, no data);
+`consts.py` now derives paths from package location with `LISTENER_*` env overrides (zero `/emerald`
+hardcoding); `package.json` joins the `pkg/*` workspace with `process`/`script`/`clean` scripts (omits
+typecheck/test/lint so it sits out those `bun --filter` runs); strict `.gitignore` guards the 36GB
+`data/`+model+artifacts; `.env.example` + local `CLAUDE.md` (documents the deliberate Python exception).
+**Gate passed:** workspace green (typecheck clean ×5 pkgs; 656 tests pass / 0 fail); Python modules
+byte-compile; env-derivation + override verified; jj confirms no heavy artifacts tracked. Not yet committed.
+1. Import the Python under `pkg/listener/python/` (clean copy — no git history to preserve).
+2. Replace `consts.py` hardcoded paths with **env + derived defaults** (mirror `lib/paths.ts`:
+   derive from package location, override via `.env`). Add `.env.example`.
+3. Replace `process.sh` (sources `.bashrc`, `/emerald` paths) with a `package.json` script /
+   `justfile` target invoking `uv run`.
+4. Add `pkg/listener/.gitignore` for `data/`, `tmp/`, audio/zip/model/pkl artifacts.
+5. Give it a `package.json` (joins `pkg/*` workspace) + a local `CLAUDE.md` documenting the
+   **deliberate Python exception** and its system deps (ffmpeg, model, disk).
+6. **Gate:** run it on one **new** Craig zip end-to-end on the host; confirm `script.json` +
+   `audio.mp3` produced identically to today. Workspace still green.
+
+### Phase 2 — Hybridize: TS orchestration around a Python whisper CLI  *(satisfies: language uniformity)*
+7. Carve the Python down to **`transcribe.py`**: a CLI taking a session's `.aac` files and emitting
+   per-user segment JSON. **Model loads once per session invocation** (don't reload the 3GB model
+   per file — preserve the `run_once` behavior at the session level).
+8. Port orchestration to TS in `pkg/listener/src/`:
+   - watch/state: replace `shelve` pickle with a JSON file or `bun:sqlite` (state is near-disposable —
+     processed zips are deleted, so a fresh start is low-risk; document this).
+   - unzip (node/bun), audio merge (**shell out to ffmpeg directly**, dropping `pydub`), `SoundStack`
+     (trivial TS port), publish/cleanup.
+9. TS calls `uv run python/transcribe.py <session-dir>` for step 4 only.
+10. **Unify the roster:** make `shared-content/lib/roster.ts` the SSOT; have listener read the same
+    mapping (export a small JSON/TS the Python CLI can also read) instead of its own `PLAYERS`.
+11. Typecheck/test the new TS package; add unit tests for `SoundStack` and the date/username parsing
+    (`file_data.py` logic is fiddly and worth pinning).
+12. **Gate:** new session through the hybrid path yields a `script.json` equivalent to the Python path.
+
+### Phase 3 — Re-wire the ingest seam  *(satisfies: re-wire into the build — behind a parity gate)*
+13. Add listener output as a **local source** the pipeline can read: either a new `run.ts` step that
+    runs listener, or point `ingest` at a local `saved/` dir instead of `remote.baseUrl`.
+14. Make ingest's source **configurable** (local vs HTTP) so cutover is a flag flip, not a rewrite.
+15. **Parity gate (live-site safety):** run re-wired ingest, diff `shared-content/scripts/data/*.json`
+    against the committed files — must be **byte-identical** for existing sessions. Then build quartz
+    and confirm the **763-file** set is unchanged.
+16. Audio: keep serving `audio.mp3` as static files (per Phase 0 decision); update only the transcript
+    source, leaving the audio URL contract intact unless Phase 0 chose otherwise.
+17. Cut over (flip the flag); keep the HTTP path available as fallback for one cycle. Update
+    `sites.caddyfile` only if audio hosting moves (it's gitignored — edit on host).
+
+### Phase 4 — Operationalize & document
+18. Move the cron job to reference the new in-repo location (documented unit; or a monorepo script).
+19. Update root `CLAUDE.md` (package table + the Python-exception gotcha) and `shared-content`
+    CLAUDE.md (ingest now local-first). Write `pkg/listener/CLAUDE.md`.
+20. Decommission `/ruby/data/experiments/listener_wretch` once the in-repo path runs a full real cycle.
+
+---
+
+## Phase Weights (octo)
+
+```
+DISCOVER  ██████ 15%   Host facts (Phase 0); largely done — codebase already mapped
+DEFINE    ██████████ 25%   Lock hybrid-vs-vendor staging, parity contract, env schema, roster SSOT
+DEVELOP   ████████████████ 40%   Phases 1–3 porting (Python→portable, orchestration→TS, re-wire)
+DELIVER   ████████ 20%   Parity gates, quartz 763-file diff, workspace green, cutover w/ fallback
+```
+
+## Debate / Decision Checkpoints
+
+- 🔸 **After Define:** "Vendor-as-is as the end state, or push all the way to hybrid?" (effort vs.
+  uniformity — Phase 1 is a valid stopping point).
+- 🔸 **Phase 0:** audio hosting — keep `static-audio.iridi.cc` vs. Caddy-serve a local dir.
+- 🔸 **Before Phase 3 cutover:** parity gate must pass (byte-identical `data/*.json` + 763-file quartz build).
+
+---
+
+## Key Risks
+
+- **Whisper non-determinism** → never re-transcribe history; parity is on the *pipeline transform*
+  and *new* sessions only. Historical `data/*.json` is already canonical and committed.
+- **Large artifacts in git** → strict `.gitignore`; audio/zip/model/pkl never tracked.
+- **Model reload cost** → transcribe per session, not per file (keep `run_once` semantics).
+- **Live ingest path** → keep HTTP source as a switchable fallback through cutover.
+- **`jj`, not git** → all moves/adds via `jj` (see `jj` skill); listener_wretch has no history to port.
+- **Host-path ambiguity** → `consts.py` says `/emerald` but project lives under `/ruby`; confirm live values in Phase 0.
 
 ## Provider Requirements
-🔴 Codex ✗ · 🟡 Gemini ✗ · 🟣 Perplexity ✗ · 🔵 Claude ✓ — all roles via `octo:personas:*`.
 
-## Success Criteria — see .claude/session-intent.md
+🔴 Codex CLI: Not installed ✗   🟡 Gemini CLI: Not installed ✗   🟤 OpenCode: Not installed ✗
+🔵 Claude: Available ✓ — multi-perspective via `octo:personas:*` agents (this repo's convention; see
+memory `octo-personas-not-llms`). Useful personas here: `cloud-architect` (audio hosting / cutover),
+`python-pro` (transcribe CLI), `code-reviewer` (parity gate).
+
+## Execution
+
+```bash
+/octo:embrace "import listener_wretch into the monorepo per .claude/session-plan.md"
+# or run phases as discrete implement-plan passes (Phase 1 is independently shippable)
+```
+
+## Next Steps
+1. Review this plan.
+2. Decide the Phase-1 stopping question (vendor-only vs. full hybrid) — or defer to the Define gate.
+3. Execute when ready (start with Phase 0 host-fact confirmation).
