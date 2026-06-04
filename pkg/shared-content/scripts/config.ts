@@ -18,6 +18,26 @@ export const remote = {
   retryBackoffMs: 500,
 }
 
+export const ingest = {
+  /**
+   * Where `ingest` reads sessions from: the static-audio host ("remote",
+   * default) or a local `listener` output dir ("local"). Override with
+   * INGEST_SOURCE. The "local" path reads transcripts off the filesystem (the
+   * in-repo producer) instead of over HTTP — the migration's re-wired seam. The
+   * audio URL is unchanged either way (the mp3 stays served from `remote.baseUrl`).
+   */
+  source: (process.env.INGEST_SOURCE === "local" ? "local" : "remote") as
+    | "remote"
+    | "local",
+  /**
+   * For source="local": the `listener` package's `saved/` dir — one subdir per
+   * session date, each holding `script.json` (+ `audio.mp3`). Override with
+   * INGEST_SAVED_DIR. Defaults to the in-repo listener output.
+   */
+  savedDir:
+    process.env.INGEST_SAVED_DIR ?? resolve(sharedRoot, "..", "listener", "data", "saved"),
+}
+
 export const site = {
   /** Public base URL of the built site, used in generated audio-deeplink JS. */
   baseUrl: "https://heart.iridi.cc",

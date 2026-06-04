@@ -134,7 +134,19 @@ byte-compile; env-derivation + override verified; jj confirms no heavy artifacts
 6. **Gate:** run it on one **new** Craig zip end-to-end on the host; confirm `script.json` +
    `audio.mp3` produced identically to today. Workspace still green.
 
-### Phase 2 — Hybridize: TS orchestration around a Python whisper CLI  *(satisfies: language uniformity)*
+### Phase 2 — Hybridize: TS orchestration around a Python whisper CLI  ✅ DONE (2026-06-04)  *(satisfies: language uniformity)*
+**Shipped (commits `ffdc6697` logic core, `0225385f` orchestrator):** `src/process.ts` owns the
+pipeline (watch → state via `data/state.json` replacing the shelve pickle → unzip → ffmpeg `amix`
+audio merge replacing pydub → call `python/transcribe.py` → `SoundStack` assemble → publish to
+`saved/{date}/`). `python/transcribe.py` is the lone Python step (whisperx, model loaded once per
+batch). Roster unified: `isPlayer()` added to `shared-content/scripts/lib/roster.ts` (SSOT);
+`src/roster.ts` re-exports it; `consts.PLAYERS` now only feeds the `process:py` fallback. Ported
+`sound_stack.py`/`file_data.py` to TS with bun tests. `process` script → TS orchestrator; `process:py`
+kept as fallback. **Verified:** 6-pkg typecheck green; 16 listener tests + full suite 0 fail; ffmpeg
+`amix normalize=0` + libmp3lame confirmed on host; orchestrator smoke-runs clean on empty incoming.
+**⏳ Pending host validation:** real end-to-end whisper run against a Craig `.zip` (the slow CPU step)
+— folds into the Phase 3 parity gate. Open robustness note: `amix` assumes homogeneous track formats
+(true for Craig); add `aresample` only if a real session proves otherwise.
 7. Carve the Python down to **`transcribe.py`**: a CLI taking a session's `.aac` files and emitting
    per-user segment JSON. **Model loads once per session invocation** (don't reload the 3GB model
    per file — preserve the `run_once` behavior at the session level).
@@ -150,7 +162,17 @@ byte-compile; env-derivation + override verified; jj confirms no heavy artifacts
     (`file_data.py` logic is fiddly and worth pinning).
 12. **Gate:** new session through the hybrid path yields a `script.json` equivalent to the Python path.
 
-### Phase 3 — Re-wire the ingest seam  *(satisfies: re-wire into the build — behind a parity gate)*
+### Phase 3 — Re-wire the ingest seam  ✅ CORE DONE (2026-06-04)  *(satisfies: re-wire into the build — behind a parity gate)*
+**Shipped:** `ingest` now has a switchable source (`config.ingest.source`, env `INGEST_SOURCE`,
+default `remote` = no behavior change). `source=local` reads each session's `script.json` straight
+off `listener`'s `saved/` dir (`INGEST_SAVED_DIR`) via a new `getLocalListing()` that shares the exact
+same format transform as the remote path; audio URL stays `static-audio.iridi.cc` (mp3 stays out of git).
+**🎯 PARITY GATE PASSED:** ran `INGEST_SOURCE=local` against the 81-session `listener_wretch/data/saved`
+→ wrote 75 sessions → **0 modified, 0 added** vs the committed `data/*.json` (byte-identical). Full
+workspace green (6 typecheck; all suites 0 fail). quartz 763-file check not needed (default unchanged,
+data byte-identical, renderer untouched) — it belongs to the live cutover.
+**Remaining for cutover (Phase 4-adjacent):** flip the default to `local` once `listener` writes to the
+real saved dir on the host; audio host move (user, out-of-band). Original Phase 3 steps below for ref.
 13. Add listener output as a **local source** the pipeline can read: either a new `run.ts` step that
     runs listener, or point `ingest` at a local `saved/` dir instead of `remote.baseUrl`.
 14. Make ingest's source **configurable** (local vs HTTP) so cutover is a flag flip, not a rewrite.

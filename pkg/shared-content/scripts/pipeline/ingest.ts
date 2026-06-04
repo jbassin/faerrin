@@ -1,6 +1,6 @@
 import fs from "node:fs/promises"
 import path from "node:path"
-import { remote } from "../config"
+import { remote, ingest as ingestCfg } from "../config"
 import { dataDir } from "../lib/paths"
 import { fetchJSON } from "../lib/http"
 import { loadCorrections } from "../lib/corrections"
@@ -53,10 +53,47 @@ async function getListing(): Promise<ListedSession[]> {
   return res
 }
 
+// Local source: read each session's script.json straight off the listener
+// package's saved/ dir instead of over HTTP. The transform below is shared with
+// the remote path, so output is byte-identical given identical script.json
+// inputs — that equivalence is the migration's parity gate.
+async function getLocalListing(): Promise<ListedSession[]> {
+  const res: ListedSession[] = []
+
+  let entries: string[]
+  try {
+    entries = await fs.readdir(ingestCfg.savedDir)
+  } catch (err) {
+    const reason = err instanceof Error ? err.message : String(err)
+    log.warn(`ingest(local): cannot read ${ingestCfg.savedDir}: ${reason}`)
+    return res
+  }
+
+  for (const name of entries.sort()) {
+    if (remote.skipDirs.includes(name)) continue
+
+    const scriptPath = path.join(ingestCfg.savedDir, name, "script.json")
+    try {
+      const script = JSON.parse(await fs.readFile(scriptPath, "utf8")) as RawLine[]
+      if (script.length === 0) continue
+
+      // Audio is still served over HTTP from the static host (the mp3 stays out
+      // of the repo); only the transcript source moves local.
+      res.push({ date: name, script, audio: `${remote.baseUrl}${name}/audio.mp3` })
+    } catch {
+      // No script.json here (or unreadable) — skip, mirroring the remote path's
+      // "no script.json -> skip" behavior.
+    }
+  }
+
+  return res
+}
+
 export async function run(): Promise<void> {
   const replace = await loadCorrections()
-  const sessions = await getListing()
-  log.info(`ingest: writing ${sessions.length} session(s) to ${dataDir}`)
+  const sessions =
+    ingestCfg.source === "local" ? await getLocalListing() : await getListing()
+  log.info(`ingest: source=${ingestCfg.source}, writing ${sessions.length} session(s) to ${dataDir}`)
 
   for (const { date, script, audio } of sessions) {
     const formatted: FormattedLine[] = script.map(({ start, end, user, text }) => ({
