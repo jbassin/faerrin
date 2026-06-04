@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Craig Discord recordings -> per-session transcript (script.json) + merged audio.mp3 via local whisperx. Hybrid: TS orchestration around a thin Python whisper CLI (see CLAUDE.md).",
   "scripts": {
-    "process": "mkdir -p \"${LISTENER_DATA_PATH:-data}\" \"${LISTENER_TMP_PATH:-tmp}\" && cd python && uv run process.py",
+    "process": "bun src/process.ts",
+    "process:py": "mkdir -p \"${LISTENER_DATA_PATH:-data}\" \"${LISTENER_TMP_PATH:-tmp}\" && cd python && uv run process.py",
     "script": "cd python && uv run script.py",
     "clean": "cd python && uv run clean.py",
     "typecheck": "tsc --noEmit",
