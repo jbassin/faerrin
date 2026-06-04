@@ -11,6 +11,7 @@ whole session's tracks in a single invocation, never one file per process.
 """
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -24,6 +25,14 @@ from models import get_alignment_model, get_transcription_model
 def transcribe_file(aac_path: str, out_dir: str) -> str:
     stem = Path(aac_path).stem
     out_path = str(Path(out_dir) / f"{stem}.json")
+
+    # Track-level resume: a finished track is a checkpoint. Skipping it means a
+    # crash partway through a session only re-runs the unfinished tracks (~30min
+    # each) instead of the whole multi-hour session. If every track is already
+    # done the model is never even loaded (the loaders below are lazy).
+    if Path(out_path).exists():
+        log.info("skip {} (already transcribed)", stem)
+        return out_path
 
     log.info("loading audio {}", stem)
     audio = whisperx.load_audio(aac_path)
@@ -42,8 +51,12 @@ def transcribe_file(aac_path: str, out_dir: str) -> str:
         return_char_alignments=False,
     )
 
-    with open(out_path, "w") as f:
+    # Atomic appearance: write to .tmp then rename, so the per-track checkpoint
+    # only ever exists whole (the skip above can trust it).
+    tmp_path = out_path + ".tmp"
+    with open(tmp_path, "w") as f:
         json.dump(result["segments"], f)
+    os.replace(tmp_path, out_path)
 
     log.info("wrote {}", out_path)
     return out_path

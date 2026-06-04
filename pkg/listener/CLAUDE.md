@@ -40,7 +40,7 @@ Craig .zip ─▶ src/process.ts ─┬─ unzip ─┬─ ffmpeg amix ─▶ sa
 ## Run
 
 ```sh
-bun run --filter listener process   # main pipeline (TS orchestrator): new Craig zips -> saved/{date}/{audio.mp3,script.json,...}
+bun run --filter listener process   # reconcile(): transcribe any landed-but-unprocessed Craig zips
 bun run --filter listener process:py  # legacy all-Python pipeline (fallback during migration)
 bun run --filter listener typecheck
 bun run --filter listener test
@@ -51,18 +51,30 @@ Paths derive from the package location and are overridable via `LISTENER_*` env 
 recordings). The Python `consts.py` reads `os.environ` directly (Bun doesn't auto-load `.env` for the
 subprocess), so set real env vars when overriding.
 
+## The reconciler model
+
+`src/process.ts` is **level-triggered**, not event-driven: each `reconcile()` run observes desired
+state (zips in `incoming`) vs actual state (`saved/{date}/script.json` present) and materializes the
+gap. There is **no persisted job state** — the filesystem is the ledger — so any trigger (cron, a
+systemd `.path` unit, a manual run) can call it at any time, idempotently. A single-flight lock
+(`data/.reconcile.lock`) prevents overlapping runs. Readiness is gated by `unzip -t` (robust on
+synced/FUSE drives where inotify/lsof lie). Outputs use **atomic appearance** (write `.tmp` → rename),
+and `transcribe.py` skips already-finished tracks — so a crash mid-session resumes per track (~30min)
+instead of redoing hours. Only the expensive transcription node carries this discipline; the cheap
+downstream rebuild (ingest → caster → quartz) is wired at the Phase 4 cutover.
+
 ## Layout
 
 | Path | What |
 |------|------|
-| `src/process.ts` | **main orchestrator** (watch → unzip → merge audio → call transcribe → assemble → publish) |
+| `src/process.ts` | **reconcile()** — level-triggered: pending sessions → materialize → (downstream rebuild) |
 | `src/soundStack.ts` | time-orders per-user segments into one transcript (port of sound_stack.py) |
 | `src/fileData.ts` | Craig filename parsing (port of file_data.py) |
 | `src/roster.ts` | re-exports `isPlayer` from shared-content's roster (the SSOT) |
-| `src/{audio,transcribe,state,exec,paths}.ts` | ffmpeg merge · python CLI call · JSON state · subprocess helper · config |
-| `python/transcribe.py` | **the one Python step**: whisperx transcription, model loaded once per batch |
+| `src/{audio,transcribe,exec,fsx,paths}.ts` | ffmpeg merge · python CLI call · subprocess helpers · atomic write · config |
+| `python/transcribe.py` | **the one Python step**: whisperx, per-track resume, model loaded once per batch |
 | `python/{process,script,clean}.py` | legacy all-Python pipeline (fallback) + helpers it imports |
-| `data/` (gitignored) | sessions (`saved/{date}/`), whisper model, state — **never committed** |
+| `data/` (gitignored) | sessions (`saved/{date}/`), whisper model, lock — **never committed** |
 
 ## Gotchas
 
@@ -71,12 +83,11 @@ subprocess), so set real env vars when overriding.
 - **Roster SSOT:** track-filtering uses `isPlayer` from `shared-content/scripts/lib/roster.ts` (the
   same map ingest uses). The legacy `python/consts.py PLAYERS` is only used by the `process:py`
   fallback — prefer the roster.
-- **TS state ≠ Python state:** the TS orchestrator uses `data/state.json`; the legacy Python path uses
-  `data/data.pkl`. They don't share state — pick one pipeline per host.
+- **Disk is the ledger (TS path):** the reconciler dedups on `saved/{date}/script.json` existence —
+  no `state.json`. Deleting the source zip is hygiene, not correctness (a kept zip is simply skipped).
+  The legacy `process:py` path still uses its own `data/data.pkl` shelve state — pick one per host.
 - **Don't re-transcribe history.** Historical transcripts are already canonical in
   `shared-content/scripts/data`. Whisper output is non-deterministic across versions; this pipeline is
   for **new** sessions only.
 - **Known regression (accepted):** output went lowercase/unpunctuated as of ~2026-6-1 (an upstream
   whisperx model/config change). Accepted for now; revisit post-migration.
-- **State DB is near-disposable:** processed zips are deleted after processing, so `data.pkl` mostly
-  guards against re-processing the current incoming batch.

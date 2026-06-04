@@ -9,3 +9,10 @@ export function run(cmd: string, args: string[], opts: { cwd?: string } = {}): v
     throw new Error(`${cmd} exited with status ${res.status ?? "signal " + res.signal}`)
   }
 }
+
+// Run a subprocess quietly and report only success/failure. Used for the
+// readiness probe (`unzip -t`) where the exit code is the whole answer.
+export function runOk(cmd: string, args: string[], opts: { cwd?: string } = {}): boolean {
+  const res = spawnSync(cmd, args, { stdio: "ignore", cwd: opts.cwd })
+  return !res.error && res.status === 0
+}
