@@ -184,7 +184,13 @@ real saved dir on the host; audio host move (user, out-of-band). Original Phase 
 17. Cut over (flip the flag); keep the HTTP path available as fallback for one cycle. Update
     `sites.caddyfile` only if audio hosting moves (it's gitignored — edit on host).
 
-### Phase 4 — Operationalize & document
+### Phase 4 — Operationalize & document  ✅ IN-REPO DONE (2026-06-04)  *(host execution = user-owned)*
+**Shipped (`03e42f02`):** `reconcile()` → `downstream.sh` (full cascade: wiki pipeline + quartz build
+→ caster podcast via date→session-id resolver, free edge TTS default). `deploy/` = systemd
+`.path`+`.service` templates + `CUTOVER.md` runbook. Knobs: `LISTENER_SKIP_DOWNSTREAM`,
+`LISTENER_DOWNSTREAM_CMD`, `CASTER_TTS_PROVIDER`, `SKIP_PODCAST`. Workspace green (19 listener tests).
+**Host steps remain user-owned** (validate whisper run → install units + linger → repoint/retire crons
+→ `LISTENER_DATA_PATH` at 27GB store → audio proxy move → decommission). Original notes below for ref.
 18. Move the cron job to reference the new in-repo location (documented unit; or a monorepo script).
 19. Update root `CLAUDE.md` (package table + the Python-exception gotcha) and `shared-content`
     CLAUDE.md (ingest now local-first). Write `pkg/listener/CLAUDE.md`.

@@ -6,9 +6,6 @@
 Description=Watch the Craig drop folder; reconcile on change
 
 [Path]
-# Fires on any modification in the folder. The reconciler's `unzip -t` readiness
-# gate handles partial syncs, and its single-flight lock handles overlap, so
-# eager/over-firing is harmless.
 PathChanged=/home/jbassin/drive/Craig
 
 [Install]
