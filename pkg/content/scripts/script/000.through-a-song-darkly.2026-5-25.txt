@@ -1296,7 +1296,7 @@ Script:
 > Gamemaster: Oh, this is, I didn't realize that there were fans of the industry on board.  
 > Gamemaster: This is, you know, the poncho wasn't particularly popular, which always surprised me because I always thought it was an excellent multi-purpose garment.  
 > Benny: Exactly.  
-> Gamemaster: It's just, it's not been particularly popular in Helya.  
+> Gamemaster: It's just, it's not been particularly popular in Hallia.  
 > Benny: Couldn't have said it better myself.  
 > Gamemaster: Listen, if you go further out, Velthara, they love the poncho, especially further out, especially our waterproof variants.  
 > Gamemaster: Although, admittedly, that fabric isn't as soft, so I don't wear it myself.  
@@ -3481,7 +3481,7 @@ Script:
 > Argyle: That's true.  
 > Gamemaster: I don't know.  
 > Argyle: That's fucked up.  
-> Gamemaster: If you ever make it back to Helya, you can hunt him down and ask.  
+> Gamemaster: If you ever make it back to Hallia, you can hunt him down and ask.  
 > Johnny: Man, really right up in the mix.  
 > Benny: This is true.  
 > Gamemaster: He's still around.  

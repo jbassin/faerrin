@@ -1245,7 +1245,7 @@ Script:
 > Gamemaster: They're not gonna trust that to randos.  
 > Argyle: Yeah.  
 > Gamemaster: Um...  
-> Gamemaster: But if you're looking specifically for bounty work, there are usually bounties available for many of the three police orgs that work in Helya for outstanding warrants and the like.  
+> Gamemaster: But if you're looking specifically for bounty work, there are usually bounties available for many of the three police orgs that work in Hallia for outstanding warrants and the like.  
 > Argyle: I saw you go to the scrapyard.  
 > Argyle: I will say, I turn over to my compatriots, a healing potion's four gold.  
 > Argyle: That's a lot of money.  
@@ -1268,7 +1268,7 @@ Script:
 > Gamemaster: And it's very much the experience of, like, the area that the Sin and Tonic is in is not, like, particularly well-to-do.  
 > Gamemaster: It is mostly a, like, a commercialized area.  
 > Gamemaster: People don't make a ton of income, but it's enough to get by.  
-> Gamemaster: It definitely doesn't feel seedy so much as it just feels kind of, like, generally one of the poorer parts of Helya.  
+> Gamemaster: It definitely doesn't feel seedy so much as it just feels kind of, like, generally one of the poorer parts of Hallia.  
 > Gamemaster: But in comparison, as you move further starward, the buildings become less well-maintained, and they become older.  
 > Gamemaster: Like, they got built up at some point when people believed that, like, when this tram line was first built, people thought that it would boom and become this big thing, and so people got in and built buildings.  
 > Gamemaster: And then nothing really came of it, because there wasn't much reason to go that far out.  
@@ -2231,7 +2231,7 @@ Script:
 > Argyle: You're right.  
 > Gamemaster: You're just not going to get the answer.  
 > Argyle: All right.  
-> Johnny: I like you, Cobblejaw.  
+> Johnny: I like you, Copperjaw.  
 > Johnny: I think we're gonna be friends.  
 > Johnny: I'll take my sunglasses down.  
 > Gamemaster: Sure.  

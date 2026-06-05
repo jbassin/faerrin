@@ -19,7 +19,7 @@ Jorge:
   - George
   - Georgie
 Immix:
-  - "[IE]mix"
+  - '[IE]mix'
 Althane:
   - Ulthane
   - Ossine
@@ -56,6 +56,7 @@ Pyrelight:
 Hallia:
   - Halia
   - Haleah
+  - Helya
 in Hallia:
   - Inhalia
 of Hallia:
@@ -275,7 +276,7 @@ Smiler:
   - Milo
 Roundhats:
   - round\s*hats
-"8:15":
+'8:15':
   - May 15
 Pyre:
   - pyre
@@ -534,7 +535,7 @@ Bennix:
 Bennix's:
   - Benix's
 6d6:
-  - "66"
+  - '66'
 Protectorates:
   - protectorates
 Manus:
@@ -547,3 +548,5 @@ Anzu said he's:
   - Aunt Suzette is
 Fort DC:
   - fork, DC
+Copperjaw:
+  - Cobblejaw
