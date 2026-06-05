@@ -1,10 +1,10 @@
-# systemd USER unit — install to ~/.config/systemd/user/listener-reconcile.service
+# systemd USER unit — install to ~/.config/systemd/user/wretch-reconcile.service
 # Runs one reconcile pass: transcribe any landed-but-unprocessed Craig zips, then
 # cascade the downstream rebuild (wiki + podcast). Triggered by the .path unit
 # (on folder change) and/or cron (recovery heartbeat). Safe to fire eagerly — the
 # reconciler gates on `unzip -t` and holds a single-flight lock.
 [Unit]
-Description=Faerrin listener — transcribe new Craig recordings, then publish (wiki + podcast)
+Description=Faerrin wretch — transcribe new Craig recordings, then publish (wiki + podcast)
 After=network-online.target
 Wants=network-online.target
 
@@ -13,6 +13,6 @@ Type=oneshot
 TimeoutStartSec=infinity
 OOMScoreAdjust=-500
 WorkingDirectory=/ruby/data/experiments/faerrin
-EnvironmentFile=/ruby/data/experiments/faerrin/pkg/listener/.env
+EnvironmentFile=/ruby/data/experiments/faerrin/pkg/wretch/.env
 EnvironmentFile=/ruby/data/experiments/faerrin/.env
-ExecStart=/bin/bash -lc 'bun run --filter listener process'
+ExecStart=/bin/bash -lc 'bun run --filter @faerrin/wretch process'
