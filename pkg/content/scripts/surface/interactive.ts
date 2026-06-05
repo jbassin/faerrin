@@ -54,6 +54,29 @@ function clip(s: string, n = 100): string {
   return s.length <= n ? s : s.slice(0, n - 1) + "…"
 }
 
+/**
+ * Drop candidates whose span was already handled this review (tracked in `seen`,
+ * keyed by folded span) or is already a known mistranscription (`isCovered`). So a
+ * span the user already decided on never re-appears on a later line/session, and
+ * corrections already in defs.yaml aren't re-surfaced. Mutates `seen`.
+ */
+export function dedupeForReview(
+  items: KnownCandidate[],
+  seen: Set<string>,
+  fold: (s: string) => string,
+  isCovered: (span: string) => boolean,
+): KnownCandidate[] {
+  const out: KnownCandidate[] = []
+  for (const c of items) {
+    const key = fold(c.span)
+    if (seen.has(key)) continue
+    if (isCovered(c.span)) continue
+    seen.add(key)
+    out.push(c)
+  }
+  return out
+}
+
 /** An LLM judge's take on a candidate, shown inline when `--judge` is used. */
 export interface JudgeNote {
   verdict: "confirm" | "new" | "reject"

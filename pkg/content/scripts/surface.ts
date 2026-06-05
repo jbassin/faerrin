@@ -161,11 +161,13 @@ async function runReview(rest: string[]): Promise<void> {
 
   const { findKnown } = await import("./surface/known")
   const { discover } = await import("./surface/discover")
-  const { reviewKnown, reviewClusters, annotationKey } = await import("./surface/interactive")
+  const { reviewKnown, reviewClusters, annotationKey, dedupeForReview } = await import("./surface/interactive")
   const { judgeSession } = await import("./surface/judge")
   const { readSession, listSessionDates } = await import("./surface/tokens")
   const { buildLexicon } = await import("./lib/lexicon")
   const { addCorrection } = await import("./lib/defs")
+  const { loadCorrections } = await import("./lib/corrections")
+  const { foldForMatch } = await import("./lib/normalize")
 
   const useJudge = rest.includes("--judge")
 
@@ -193,14 +195,19 @@ async function runReview(rest: string[]): Promise<void> {
     } else {
       const target = rest.find((a) => !a.startsWith("--")) ?? "all"
       const dates = target === "all" ? await listSessionDates() : [target]
+      // Skip spans already corrected in defs.yaml, and any span handled earlier in
+      // this review (across all sessions) so the same correction never re-prompts.
+      const replace = await loadCorrections()
+      const seen = new Set<string>()
       for (const date of dates) {
         const t = await readSession(date)
         if (!t) {
           log.warn(`no session "${date}"`)
           continue
         }
-        const items = findKnown(t, lex)
-        if (items.length > 0) console.log(`\n=== ${date} ===`)
+        const items = dedupeForReview(findKnown(t, lex), seen, foldForMatch, (span) => replace(span) !== span)
+        if (items.length === 0) continue
+        console.log(`\n=== ${date} ===`)
 
         let annotations: Annotations | undefined
         if (useJudge && items.length > 0) {

@@ -4,6 +4,7 @@ import {
   reviewKnown,
   reviewClusters,
   annotationKey,
+  dedupeForReview,
   type Annotations,
   type ReviewDeps,
 } from "./interactive"
@@ -19,6 +20,25 @@ test("parseAction maps inputs to actions", () => {
   expect(parseAction("d", 2)).toEqual({ kind: "deny" })
   expect(parseAction("q", 2)).toEqual({ kind: "quit" })
   expect(parseAction("zzz", 2)).toBeNull()
+})
+
+const fold = (s: string) => s.toLowerCase()
+const none = () => false
+
+test("dedupeForReview collapses repeats of the same span (incl. across sessions)", () => {
+  const seen = new Set<string>()
+  const a = dedupeForReview([cand("Hildebrandt", "Hildebrant"), cand("Hildebrandt", "Hildebrant")], seen, fold, none)
+  expect(a).toHaveLength(1)
+  // a later session re-using the span yields nothing
+  const b = dedupeForReview([cand("Hildebrandt", "Hildebrant")], seen, fold, none)
+  expect(b).toHaveLength(0)
+})
+
+test("dedupeForReview drops spans already covered by defs.yaml", () => {
+  const seen = new Set<string>()
+  const isCovered = (span: string) => span === "Hildebrandt"
+  const out = dedupeForReview([cand("Hildebrandt", "Hildebrant"), cand("Twelwyn", "Tywelwyn")], seen, fold, isCovered)
+  expect(out.map((c) => c.span)).toEqual(["Twelwyn"])
 })
 
 function makeDeps(answers: string[]) {
