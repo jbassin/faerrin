@@ -10,9 +10,9 @@ import { extractOne, type ExtractCtx } from './extract';
 import { resolveOne, type ResolveCtx } from './resolve';
 import { matchOne, type MatchCtx } from './match';
 import { proposeOne, type ProposeCtx } from './propose';
-import { submitOne } from '../gitlab/submit';
-import type { SubmitCtx } from '../gitlab/submit';
-import type { GitLabClient } from '../gitlab/client';
+import { submitOne } from '../github/submit';
+import type { SubmitCtx } from '../github/submit';
+import type { GitHubClient } from '../github/client';
 import type { WikiIndex } from '../wiki/index-schema';
 import type { complete as defaultComplete } from '../llm';
 import { config } from '../config';
@@ -47,7 +47,7 @@ export interface ProcessCliOptions {
     propose?: string;
   };
   completeFn?: typeof defaultComplete;
-  clientFn?:   (baseUrl: string, token: string, projectId: string) => GitLabClient;
+  clientFn?:   (apiUrl: string, token: string, repo: string) => GitHubClient;
   // Injected wiki index (skips disk read; used in tests)
   wikiIndex?: WikiIndex;
 }
@@ -278,14 +278,14 @@ async function buildSummary(
   const lines: string[] = [`# Process-All Run — ${ts}\n`];
 
   lines.push('## Transcripts\n');
-  lines.push('| Transcript | Result | MR |');
+  lines.push('| Transcript | Result | PR |');
   lines.push('|---|---|---|');
   for (const t of targets) {
     const entry = ledger.entries.find((e) => e.filename === t.filename);
     const failed = failureSet.has(t.filename);
     const result = failed ? '✗ failed' : '✓';
-    const mr = entry?.prUrl ? `[MR](${entry.prUrl})` : '—';
-    lines.push(`| ${t.filename} | ${result} | ${mr} |`);
+    const pr = entry?.prUrl ? `[PR](${entry.prUrl})` : '—';
+    lines.push(`| ${t.filename} | ${result} | ${pr} |`);
   }
 
   if (rollup) {
@@ -471,7 +471,7 @@ export function register(program: Command): void {
     .command('process [name]')
     .description('Run the full pipeline for one transcript or all')
     .option('--all',                 'process all eligible transcripts')
-    .option('--dry-run',             'skip actual GitLab submission')
+    .option('--dry-run',             'skip actual GitHub submission')
     .option('--force <stage>',       `re-run from this stage (${PIPELINE_STAGES.join(', ')})`)
     .option('--stop-before <stage>', 'halt pipeline before this stage')
     .option('--concurrency <n>',     'parallel workers (--all only)', (v) => parseInt(v, 10), 1)

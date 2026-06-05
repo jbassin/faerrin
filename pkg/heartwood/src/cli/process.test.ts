@@ -14,7 +14,7 @@ import type { ExtractCtx } from './extract';
 import type { ResolveCtx } from './resolve';
 import type { MatchCtx } from './match';
 import type { ProposeCtx } from './propose';
-import type { SubmitCtx } from '../gitlab/submit';
+import type { SubmitCtx } from '../github/submit';
 import {
   readLedger, writeLedger, emptyLedger, markStage,
   type Ledger, type LedgerEntry, EMPTY_STAGES,

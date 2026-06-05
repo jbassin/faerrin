@@ -24,7 +24,7 @@ describe('writeDryRun', () => {
 
     expect(out.dryRunDir).toBe(`${dryRunsDir}/my-transcript`);
     expect(out.changesPath).toBe(`${dryRunsDir}/my-transcript/changes.json`);
-    expect(out.descriptionPath).toBe(`${dryRunsDir}/my-transcript/mr-description.md`);
+    expect(out.descriptionPath).toBe(`${dryRunsDir}/my-transcript/pr-description.md`);
     expect(out.notesPath).toBe(`${dryRunsDir}/my-transcript/notes.json`);
     expect(out.discussionsPath).toBe(`${dryRunsDir}/my-transcript/discussions.json`);
 

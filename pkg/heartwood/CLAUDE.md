@@ -1,6 +1,6 @@
 ## Project
 
-Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (read from `../shared-content/transcripts/`, the monorepo SSOT generated from quartz's pipeline) are segmented, mined for factual claims, matched against existing wiki pages (read from `../shared-content/wiki/`, the monorepo SSOT — quartz is canonical), and emitted as proposed edits that ship as GitLab merge requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the MR review).
+Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (read from `../shared-content/transcripts/`, the monorepo SSOT generated from quartz's pipeline) are segmented, mined for factual claims, matched against existing wiki pages (read from `../shared-content/wiki/`, the monorepo SSOT — quartz is canonical), and emitted as proposed edits that ship as GitHub pull requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the PR review).
 
 ## Repository layout
 
@@ -10,7 +10,7 @@ src/                          ← all pipeline code
   wiki/                       ← content/ parsing, indexing, summarization
   transcript/                 ← discovery, ledger, chunking, segmentation, extraction
   reconcile/                  ← entity resolution, candidate match, classify, cluster, propose, validate
-  gitlab/                     ← REST client, dry-run, commit/MR apply, submissions ledger, respond
+  github/                     ← REST client, dry-run, commit/PR apply, submissions ledger, respond
   config.ts                   ← env-var loading (frozen, lazy)
   llm.ts                      ← single `complete()` wrapping Anthropic SDK; emits structured output via Zod schema
   pricing.ts                  ← USD/1M-token rate table
@@ -46,8 +46,8 @@ segment → extract → resolve → match → propose → submit → respond
 | resolve | `bun run resolve [name]` | claims + wiki-index | `state/resolutions/<file>.json` | Haiku (`MODEL_RESOLVE`) |
 | match | `bun run match [name]` | resolutions + wiki-index + content/ | `state/matches/<file>.json` (+ `_debug/`) | Sonnet (`MODEL_MATCH`) |
 | propose | `bun run propose [name]` | matches + content/ | `state/proposals/<file>.json` (+ `_debug/`) | Sonnet (`MODEL_PROPOSE`) |
-| submit | `bun run submit [name] [--dry-run]` | proposals + content/ | `state/submissions/<file>.json` or `state/dry-runs/<basename>/`; opens GitLab MR | — |
-| respond | `bun run respond [name]` | submissions + open MR discussions | replies / revised commits to the MR | Sonnet (`MODEL_VERIFY`) |
+| submit | `bun run submit [name] [--dry-run]` | proposals + content/ | `state/submissions/<file>.json` or `state/dry-runs/<basename>/`; opens GitHub PR | — |
+| respond | `bun run respond [name]` | submissions + open PR review threads | replies / revised commits to the PR | Sonnet (`MODEL_VERIFY`) |
 
 End-to-end: `bun run process <name>` (or `bun run process --all`). Flags: `--dry-run`, `--force <stage>`, `--stop-before <stage>`, `--concurrency <n>`. Concurrent workers serialize their ledger writes through a `LedgerMutex` (`src/cli/process.ts`).
 
@@ -76,9 +76,9 @@ Ignored: `state/runs/*`, `state/{claims,matches,proposals}/_debug/`.
 Bun auto-loads `.env`. Required vars (`src/config.ts` throws if missing):
 
 - `ANTHROPIC_API_KEY`
-- `GITLAB_TOKEN` — personal access token with `api` scope
-- `GITLAB_PROJECT_ID` — numeric project id for the GitLab project hosting `content/`
-- `GITLAB_URL` — base URL, no trailing slash
+- `GITHUB_TOKEN` — PAT (classic `repo` scope, or fine-grained Contents + Pull requests RW) for the repo hosting `content/`
+- `GITHUB_REPO` — `owner/name` of the GitHub repo hosting `content/`
+- `GITHUB_API_URL` — **optional**, base API URL (defaults to `https://api.github.com`; set for GitHub Enterprise)
 
 Optional model overrides (defaults in parens):
 

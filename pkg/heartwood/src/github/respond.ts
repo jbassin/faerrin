@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { createClient, type GitLabClient, type CommitAction, type Discussion } from './client';
+import { createClient, type GitHubClient, type CommitAction, type Discussion } from './client';
 import { readSubmissions } from './submissions';
 import { buildCommitActions } from './apply';
 import { loadConventions } from '../reconcile/propose';
@@ -16,7 +16,7 @@ export interface RespondCtx {
   contentDir:      string;
   transcriptsDir:  string;
   conventionsPath: string;
-  clientFn?:       (baseUrl: string, token: string, projectId: string) => GitLabClient;
+  clientFn?:       (apiUrl: string, token: string, repo: string) => GitHubClient;
   completeFn?:     typeof defaultComplete;
 }
 
@@ -70,7 +70,18 @@ const DiffCommentOutputSchema = z.object({
 
 export async function respondOne(entry: LedgerEntry, ctx: RespondCtx): Promise<void> {
   if (entry.stages.prOpened === null) {
-    throw new Error(`MR not opened — run 'bun run submit ${entry.filename}' first`);
+    throw new Error(`PR not opened — run 'bun run submit ${entry.filename}' first`);
+  }
+
+  // Legacy GitLab entries (pre-migration) carry a gitlab.com prUrl and GitLab
+  // discussion hashes that will never match GitHub IDs. Skip them rather than
+  // risk acting on an unrelated GitHub PR of the same number. Reset to reprocess.
+  if (entry.prUrl && /gitlab\.com|\/-\/merge_requests\//.test(entry.prUrl)) {
+    console.warn(
+      `respond: skipping ${entry.filename} — legacy GitLab PR (${entry.prUrl}); ` +
+      `run 'bun run transcripts reset ${entry.filename}' to reprocess on GitHub`,
+    );
+    return;
   }
 
   const basename = entry.filename.endsWith('.txt')
@@ -83,15 +94,15 @@ export async function respondOne(entry: LedgerEntry, ctx: RespondCtx): Promise<v
     throw new Error(`submissions file missing for ${entry.filename} — no discussion tracking available`);
   }
 
-  let client: GitLabClient;
+  let client: GitHubClient;
   if (ctx.clientFn) {
     client = ctx.clientFn('', '', '');
   } else {
     const cfg = config();
-    client = createClient(cfg.GITLAB_URL, cfg.GITLAB_TOKEN, cfg.GITLAB_PROJECT_ID);
+    client = createClient(cfg.GITHUB_API_URL, cfg.GITHUB_TOKEN, cfg.GITHUB_REPO);
   }
 
-  const allDiscussions = await client.listDiscussions(sub.mrIid);
+  const allDiscussions = await client.listDiscussions(sub.prNumber);
   const trackedIds = new Set(sub.discussions.map((d) => d.discussionId));
 
   // Load proposals file to resolve proposal objects by index
@@ -165,13 +176,13 @@ export async function respondOne(entry: LedgerEntry, ctx: RespondCtx): Promise<v
     const parts: string[] = [];
     if (speculativeApplied > 0) parts.push(`${speculativeApplied} speculative approval(s) applied`);
     if (diffApplied > 0)        parts.push(`${diffApplied} diff comment(s) applied`);
-    const message = `wiki: apply MR responses for ${basename}\n\n${parts.join('\n')}`;
+    const message = `wiki: apply PR responses for ${basename}\n\n${parts.join('\n')}`;
     await client.commitFiles(sub.branch, accumulatedActions, message);
   }
 
   // ---- Post replies ----
   for (const { discussionId, body } of queuedReplies) {
-    await client.addDiscussionNote(sub.mrIid, discussionId, body);
+    await client.addDiscussionNote(sub.prNumber, discussionId, body);
   }
 
   const total = speculativeApplied + diffApplied;
@@ -279,11 +290,16 @@ async function applyDiffComment(
   const firstNote = disc.notes[0]!;
   const filePath  = firstNote.position!.new_path;   // repo-relative, e.g. content/Foo.md
 
+  // The wiki lives at ctx.contentDir (../shared-content/wiki), not heartwood's cwd.
+  // Strip the repo-relative `content/` prefix to read the real file off disk;
+  // filePath stays repo-relative for the prompt and the committed CommitAction paths.
+  const diskPath = `${ctx.contentDir}/${filePath.replace(/^content\//, '')}`;
+
   // Find the first stakeholder instruction (first note in the discussion, or look at all notes)
   const instruction = disc.notes.map((n) => n.body).join('\n').trim();
 
   const fileContent = await (async () => {
-    const f = Bun.file(filePath);
+    const f = Bun.file(diskPath);
     return (await f.exists()) ? await f.text() : '';
   })();
 

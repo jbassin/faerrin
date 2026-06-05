@@ -1,11 +1,12 @@
 import { test, expect, describe, beforeEach } from 'bun:test';
 import { mkdir } from 'node:fs/promises';
 import { respondOne, type RespondCtx } from './respond';
-import type { GitLabClient, Discussion } from './client';
+import type { GitHubClient, Discussion } from './client';
 import type { LedgerEntry } from '../transcript/ledger';
 import { EMPTY_STAGES } from '../transcript/ledger';
 import type { SubmissionsFile } from './submissions';
 import { writeSubmissions } from './submissions';
+import type { complete as defaultComplete } from '../llm';
 
 // ---- Helpers ----
 
@@ -26,7 +27,7 @@ function makeEntry(filename: string, prOpened = true): LedgerEntry {
       prOpened:  prOpened ? '2025-01-03T00:00:00Z' : null,
     },
     errors: [],
-    mrIid: 1,
+    prNumber: 1,
   };
 }
 
@@ -72,20 +73,21 @@ async function writeProposalsFile(dir: string, filename: string, proposals: unkn
 
 function makeMockClient(
   discussions: Discussion[] = [],
-  overrides: Partial<GitLabClient> = {},
-): { client: GitLabClient; committed: Array<{ branch: string; actions: unknown[]; message: string }>; replies: Array<{ discussionId: string; body: string }> } {
+  overrides: Partial<GitHubClient> = {},
+): { client: GitHubClient; committed: Array<{ branch: string; actions: unknown[]; message: string }>; replies: Array<{ discussionId: string; body: string }> } {
   const committed: Array<{ branch: string; actions: unknown[]; message: string }> = [];
   const replies: Array<{ discussionId: string; body: string }> = [];
 
-  const client: GitLabClient = {
-    getProject: async () => ({ defaultBranch: 'main', webUrl: 'https://example.com' }),
+  const client: GitHubClient = {
+    getProject: async () => ({ defaultBranch: 'main', webUrl: 'https://github.com/ns/proj' }),
     branchExists: async () => false,
     createBranch: async () => {},
-    commitFiles: async (branch, actions, message) => { committed.push({ branch, actions, message }); },
-    createMergeRequest: async () => ({ iid: 1, webUrl: 'https://example.com/mr/1' }),
-    createDiscussion: async () => ({ discussionId: 'disc-0' }),
+    commitFiles: async (branch, actions, message) => { committed.push({ branch, actions, message }); return 'sha'; },
+    createPullRequest: async () => ({ number: 1, webUrl: 'https://github.com/ns/proj/pull/1' }),
+    createReviewComment: async () => ({ discussionId: 'disc-0' }),
     listDiscussions: async () => discussions,
-    addDiscussionNote: async (_mrIid, discussionId, body) => { replies.push({ discussionId, body }); },
+    addDiscussionNote: async (_prNumber, discussionId, body) => { replies.push({ discussionId, body }); },
+    addIssueComment: async () => {},
     ...overrides,
   };
   return { client, committed, replies };
@@ -93,7 +95,7 @@ function makeMockClient(
 
 function makeCtx(
   tmpDir: string,
-  client: GitLabClient,
+  client: GitHubClient,
   completeFn?: RespondCtx['completeFn'],
 ): RespondCtx {
   return {
@@ -112,7 +114,7 @@ async function writeDefaultSub(dir: string, filename: string, discussions: Submi
   const basename = filename.endsWith('.txt') ? filename.slice(0, -4) : filename;
   await writeSubmissions(`${dir}/submissions/${basename}.json`, {
     filename,
-    mrIid: 1,
+    prNumber: 1,
     branch: `wiki/${basename}`,
     discussions,
   });
@@ -133,13 +135,26 @@ describe('respondOne — guards', () => {
   test('throws when prOpened is null', async () => {
     const entry = makeEntry('000.test.2025-1-1.txt', false);
     const { client } = makeMockClient();
-    await expect(respondOne(entry, makeCtx(tmpDir, client))).rejects.toThrow('MR not opened');
+    await expect(respondOne(entry, makeCtx(tmpDir, client))).rejects.toThrow('PR not opened');
   });
 
   test('throws when submissions file is missing', async () => {
     const entry = makeEntry('000.test.2025-1-1.txt');
     const { client } = makeMockClient();
     await expect(respondOne(entry, makeCtx(tmpDir, client))).rejects.toThrow('submissions file missing');
+  });
+
+  test('legacy GitLab entry (gitlab.com prUrl) is skipped without touching the client', async () => {
+    const entry = { ...makeEntry('000.test.2025-1-1.txt'), prUrl: 'https://gitlab.com/x/y/-/merge_requests/2' };
+    let listed = false;
+    const { client, committed, replies } = makeMockClient([], {
+      listDiscussions: async () => { listed = true; return []; },
+    });
+    // No submissions file written — the guard must return before reading it.
+    await respondOne(entry, makeCtx(tmpDir, client));
+    expect(listed).toBe(false);
+    expect(committed).toHaveLength(0);
+    expect(replies).toHaveLength(0);
   });
 });
 
@@ -323,6 +338,27 @@ describe('respondOne — diff discussions', () => {
     expect(replies[0]!.discussionId).toBe('diff-1');
   });
 
+  test('diff handler reads the real wiki file from contentDir, not heartwood cwd', async () => {
+    const disc = makeDiffDiscussion('diff-1', 'tweak this entry', 'content/Old.md');
+    await Bun.write(`${tmpDir}/content/Old.md`, '# Old\n\nUNIQUE-MARKER-CONTENT\n');
+
+    let capturedUser = '';
+    const mockComplete: RespondCtx['completeFn'] = async (args) => {
+      capturedUser = args.user;
+      return { text: '', usage: { input: 0, cacheRead: 0, cacheWrite: 0, output: 0, ms: 0 }, value: { actions: [] } } as never;
+    };
+
+    const { client } = makeMockClient([disc]);
+    await writeDefaultSub(tmpDir, FILENAME);
+    await writeProposalsFile(`${tmpDir}/proposals`, FILENAME, []);
+
+    await respondOne(makeEntry(FILENAME), makeCtx(tmpDir, client, mockComplete));
+
+    // The LLM must receive the file's real content, not the empty-read fallback.
+    expect(capturedUser).toContain('UNIQUE-MARKER-CONTENT');
+    expect(capturedUser).not.toContain('(empty)');
+  });
+
   test('diff discussion already has "Applied." → skipped', async () => {
     const disc: Discussion = {
       id: 'diff-1',
@@ -421,6 +457,3 @@ describe('respondOne — batching', () => {
     expect(replies).toHaveLength(2);      // one per handled discussion
   });
 });
-
-// Needed for type narrowing in mockComplete above
-import type { complete as defaultComplete } from '../llm';

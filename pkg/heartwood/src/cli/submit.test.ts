@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { submit } from './submit';
 import { readLedger, writeLedger, markStage, emptyLedger } from '../transcript/ledger';
-import type { GitLabClient } from '../gitlab/client';
+import type { GitHubClient } from '../github/client';
 
 // ---- Helpers ----
 
@@ -81,16 +81,17 @@ async function populateProposals(
   writeFileSync(join(s.proposalsDir, `${filename}.json`), JSON.stringify(payload, null, 2));
 }
 
-function makeNoopClient(): GitLabClient {
+function makeNoopClient(): GitHubClient {
   return {
-    getProject:          async () => ({ defaultBranch: 'main', webUrl: 'https://gitlab.example.com/ns/proj' }),
+    getProject:          async () => ({ defaultBranch: 'main', webUrl: 'https://github.com/ns/proj' }),
     branchExists:        async () => false,
     createBranch:        async () => {},
-    commitFiles:         async () => {},
-    createMergeRequest:  async () => ({ iid: 1, webUrl: 'https://gitlab.example.com/ns/proj/-/merge_requests/1' }),
-    createDiscussion:    async () => ({ discussionId: 'disc-0' }),
+    commitFiles:         async () => 'deadbeef',
+    createPullRequest:   async () => ({ number: 1, webUrl: 'https://github.com/ns/proj/pull/1' }),
+    createReviewComment: async () => ({ discussionId: 'disc-0' }),
     listDiscussions:     async () => [],
     addDiscussionNote:   async () => {},
+    addIssueComment:     async () => {},
   };
 }
 
@@ -178,7 +179,7 @@ test('--all with nothing ready → logs nothing to submit', async () => {
   }
 });
 
-test('--dry-run --all with one ready transcript → calls dry-run path, no real GitLab calls', async () => {
+test('--dry-run --all with one ready transcript → calls dry-run path, no real GitHub calls', async () => {
   const s = setup(['000.alpha.2025-8-28.txt']);
   try {
     const filename = '000.alpha.2025-8-28.txt';
@@ -194,16 +195,17 @@ test('--dry-run --all with one ready transcript → calls dry-run path, no real 
     ledger = markStage(ledger, filename, 'proposed');
     await writeLedger(s.ledgerPath, ledger);
 
-    const gitlabCalls: string[] = [];
+    const githubCalls: string[] = [];
     const mockClientFn = () => ({
-      getProject:         async () => { gitlabCalls.push('getProject'); return { defaultBranch: 'main', webUrl: '' }; },
-      branchExists:       async () => { gitlabCalls.push('branchExists'); return false; },
-      createBranch:       async () => { gitlabCalls.push('createBranch'); },
-      commitFiles:        async () => { gitlabCalls.push('commitFiles'); },
-      createMergeRequest: async () => { gitlabCalls.push('createMergeRequest'); return { iid: 1, webUrl: '' }; },
-      createDiscussion:   async () => { gitlabCalls.push('createDiscussion'); return { discussionId: 'disc-0' }; },
-      listDiscussions:    async () => [],
-      addDiscussionNote:  async () => { gitlabCalls.push('addDiscussionNote'); },
+      getProject:          async () => { githubCalls.push('getProject'); return { defaultBranch: 'main', webUrl: '' }; },
+      branchExists:        async () => { githubCalls.push('branchExists'); return false; },
+      createBranch:        async () => { githubCalls.push('createBranch'); },
+      commitFiles:         async () => { githubCalls.push('commitFiles'); return 'deadbeef'; },
+      createPullRequest:   async () => { githubCalls.push('createPullRequest'); return { number: 1, webUrl: '' }; },
+      createReviewComment: async () => { githubCalls.push('createReviewComment'); return { discussionId: 'disc-0' }; },
+      listDiscussions:     async () => [],
+      addDiscussionNote:   async () => { githubCalls.push('addDiscussionNote'); },
+      addIssueComment:     async () => { githubCalls.push('addIssueComment'); },
     });
 
     await submit(undefined, { all: true, dryRun: true }, {
@@ -211,7 +213,7 @@ test('--dry-run --all with one ready transcript → calls dry-run path, no real 
       clientFn: mockClientFn,
     });
 
-    expect(gitlabCalls).toHaveLength(0);
+    expect(githubCalls).toHaveLength(0);
 
     const basename = '000.alpha.2025-8-28';
     const changesExists = await Bun.file(`${s.dryRunsDir}/${basename}/changes.json`).exists();
@@ -237,7 +239,7 @@ test('ledger correctly written after mock success', async () => {
     const entry = updated.entries.find((e) => e.filename === filename)!;
     expect(entry.stages.verified).not.toBeNull();
     expect(entry.stages.prOpened).not.toBeNull();
-    expect(entry.prUrl).toBe('https://gitlab.example.com/ns/proj/-/merge_requests/1');
+    expect(entry.prUrl).toBe('https://github.com/ns/proj/pull/1');
   } finally {
     teardown(s.root);
   }

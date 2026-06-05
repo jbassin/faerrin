@@ -2,9 +2,9 @@ import { test, expect, describe, beforeEach } from 'bun:test';
 import { mkdir } from 'node:fs/promises';
 import { submitOne } from './submit';
 import type { SubmitCtx } from './submit';
-import type { GitLabClient, CommitAction } from './client';
+import type { GitHubClient } from './client';
 import type { Ledger, LedgerEntry } from '../transcript/ledger';
-import { emptyLedger, EMPTY_STAGES, readLedger } from '../transcript/ledger';
+import { EMPTY_STAGES, readLedger } from '../transcript/ledger';
 import type { Proposal } from '../reconcile/propose';
 
 // ---- helpers ----
@@ -37,7 +37,6 @@ async function writeProposalsFile(dir: string, filename: string, proposals: Prop
     },
     proposals,
   };
-  // Update proposalsByKind stats
   for (const p of proposals) {
     const kinds = payload.stats.proposalsByKind as Record<string, number>;
     kinds[p.kind] = (kinds[p.kind] ?? 0) + 1;
@@ -53,12 +52,12 @@ async function writeContentFile(dir: string, relPath: string, content: string) {
 }
 
 let _discId = 0;
-function makeMockClient(overrides: Partial<GitLabClient> = {}): { client: GitLabClient; calls: string[] } {
+function makeMockClient(overrides: Partial<GitHubClient> = {}): { client: GitHubClient; calls: string[] } {
   const calls: string[] = [];
-  const client: GitLabClient = {
+  const client: GitHubClient = {
     getProject: async () => {
       calls.push('getProject');
-      return { defaultBranch: 'main', webUrl: 'https://gitlab.example.com/ns/proj' };
+      return { defaultBranch: 'main', webUrl: 'https://github.com/ns/proj' };
     },
     branchExists: async (name) => {
       calls.push(`branchExists:${name}`);
@@ -69,24 +68,31 @@ function makeMockClient(overrides: Partial<GitLabClient> = {}): { client: GitLab
     },
     commitFiles: async (branch, _actions, _message) => {
       calls.push(`commitFiles:${branch}`);
+      return 'head-sha';
     },
-    createMergeRequest: async (opts) => {
-      calls.push(`createMergeRequest:${opts.sourceBranch}`);
-      return { iid: 1, webUrl: 'https://gitlab.example.com/ns/proj/-/merge_requests/1' };
+    createPullRequest: async (opts) => {
+      calls.push(`createPullRequest:${opts.headBranch}`);
+      return { number: 1, webUrl: 'https://github.com/ns/proj/pull/1' };
     },
-    createDiscussion: async (mrIid, _body) => {
+    createReviewComment: async (prNumber, _opts) => {
       const id = `disc-${_discId++}`;
-      calls.push(`createDiscussion:${mrIid}:${id}`);
+      calls.push(`createReviewComment:${prNumber}:${id}`);
       return { discussionId: id };
     },
-    listDiscussions: async (_mrIid) => [],
-    addDiscussionNote: async (mrIid, discussionId, _body) => {
-      calls.push(`addDiscussionNote:${mrIid}:${discussionId}`);
+    listDiscussions: async (_prNumber) => [],
+    addDiscussionNote: async (prNumber, discussionId, _body) => {
+      calls.push(`addDiscussionNote:${prNumber}:${discussionId}`);
+    },
+    addIssueComment: async (prNumber, _body) => {
+      calls.push(`addIssueComment:${prNumber}`);
     },
     ...overrides,
   };
   return { client, calls };
 }
+
+const EDIT = (path = 'Geography/Hallia/index.md'): Proposal =>
+  ({ kind: 'edit', path, oldText: 'Old text.', newText: 'New text.', citations: [[10, 10]] });
 
 // ---- tests ----
 
@@ -112,7 +118,7 @@ describe('submitOne — live path', () => {
     await mkdir(submissionsDir, { recursive: true });
   });
 
-  function makeCtx(clientFn: () => GitLabClient, dryRun = false): SubmitCtx {
+  function makeCtx(clientFn: () => GitHubClient, dryRun = false): SubmitCtx {
     return {
       transcriptsDir: `${tmpDir}/transcripts`,
       ledgerPath,
@@ -125,16 +131,13 @@ describe('submitOne — live path', () => {
     };
   }
 
-  test('calls getProject, branchExists, createBranch, commitFiles, createMergeRequest in order', async () => {
+  test('calls getProject, branchExists, createBranch, commitFiles, createPullRequest in order', async () => {
     const filename = '000.through-a-song-darkly.2025-8-28.txt';
     const entry = makeEntry(filename);
     const ledger = makeLedger(entry);
 
     await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
-    const proposals: Proposal[] = [
-      { kind: 'edit', path: 'Geography/Hallia/index.md', oldText: 'Old text.', newText: 'New text.', citations: [[10, 10]] },
-    ];
-    await writeProposalsFile(proposalsDir, filename, proposals);
+    await writeProposalsFile(proposalsDir, filename, [EDIT()]);
 
     const { client, calls } = makeMockClient();
     await submitOne(entry, ledger, makeCtx(() => client));
@@ -143,7 +146,7 @@ describe('submitOne — live path', () => {
     expect(calls[1]).toBe(`branchExists:wiki/000.through-a-song-darkly.2025-8-28`);
     expect(calls[2]).toBe(`createBranch:wiki/000.through-a-song-darkly.2025-8-28:main`);
     expect(calls[3]).toBe(`commitFiles:wiki/000.through-a-song-darkly.2025-8-28`);
-    expect(calls[4]).toBe(`createMergeRequest:wiki/000.through-a-song-darkly.2025-8-28`);
+    expect(calls[4]).toBe(`createPullRequest:wiki/000.through-a-song-darkly.2025-8-28`);
   });
 
   test('branch collision: tries wiki/foo-2 when wiki/foo exists', async () => {
@@ -152,10 +155,7 @@ describe('submitOne — live path', () => {
     const ledger = makeLedger(entry);
 
     await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
-    const proposals: Proposal[] = [
-      { kind: 'edit', path: 'Geography/Hallia/index.md', oldText: 'Old text.', newText: 'New text.', citations: [[10, 10]] },
-    ];
-    await writeProposalsFile(proposalsDir, filename, proposals);
+    await writeProposalsFile(proposalsDir, filename, [EDIT()]);
 
     const { client, calls } = makeMockClient({
       branchExists: async (name) => {
@@ -179,8 +179,7 @@ describe('submitOne — live path', () => {
     const entry = makeEntry(filename);
     const ledger = makeLedger(entry);
 
-    const proposals: Proposal[] = [];
-    await writeProposalsFile(proposalsDir, filename, proposals);
+    await writeProposalsFile(proposalsDir, filename, []);
 
     const { client } = makeMockClient();
     await submitOne(entry, ledger, makeCtx(() => client));
@@ -189,7 +188,7 @@ describe('submitOne — live path', () => {
     const updatedEntry = updated.entries.find((e) => e.filename === filename)!;
     expect(updatedEntry.stages.verified).not.toBeNull();
     expect(updatedEntry.stages.prOpened).not.toBeNull();
-    expect(updatedEntry.prUrl).toBe('https://gitlab.example.com/ns/proj/-/merge_requests/1');
+    expect(updatedEntry.prUrl).toBe('https://github.com/ns/proj/pull/1');
   });
 
   test('stale proposals (contentHash mismatch) → throws without calling any client methods', async () => {
@@ -220,16 +219,13 @@ describe('submitOne — live path', () => {
     const ledger = makeLedger(entry);
 
     await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
-    const proposals: Proposal[] = [
-      { kind: 'edit', path: 'Geography/Hallia/index.md', oldText: 'Old text.', newText: 'New text.', citations: [[10, 10]] },
-    ];
-    await writeProposalsFile(proposalsDir, filename, proposals);
+    await writeProposalsFile(proposalsDir, filename, [EDIT()]);
 
     const { client } = makeMockClient({
-      commitFiles: async () => { throw new Error('GitLab API error: 500'); },
+      commitFiles: async () => { throw new Error('GitHub API error: 500'); },
     });
 
-    await expect(submitOne(entry, ledger, makeCtx(() => client))).rejects.toThrow('GitLab API error');
+    await expect(submitOne(entry, ledger, makeCtx(() => client))).rejects.toThrow('GitHub API error');
 
     const updated = await readLedger(ledgerPath);
     const updatedEntry = updated.entries.find((e) => e.filename === filename)!;
@@ -237,12 +233,14 @@ describe('submitOne — live path', () => {
     expect(updatedEntry.errors.some((e) => e.stage === 'prOpened')).toBe(true);
   });
 
-  test('createDiscussion called once per CommentProposal', async () => {
+  test('createReviewComment called once per CommentProposal when an edit carries the diff', async () => {
     const filename = '000.through-a-song-darkly.2025-8-28.txt';
     const entry = makeEntry(filename);
     const ledger = makeLedger(entry);
 
+    await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
     const proposals: Proposal[] = [
+      EDIT(),
       { kind: 'comment', reason: 'speculative', relatedPath: 'Geography/Hallia/index.md', message: 'Speculative.', citations: [[5, 5]] },
       { kind: 'comment', reason: 'contradict', relatedPath: null, message: 'Contradiction.', citations: [[10, 12]] },
     ];
@@ -251,16 +249,108 @@ describe('submitOne — live path', () => {
     const { client, calls } = makeMockClient();
     await submitOne(entry, ledger, makeCtx(() => client));
 
-    const discCalls = calls.filter((c) => c.startsWith('createDiscussion:'));
-    expect(discCalls).toHaveLength(2);
+    const reviewCalls = calls.filter((c) => c.startsWith('createReviewComment:'));
+    expect(reviewCalls).toHaveLength(2);
   });
 
-  test('submissions file written with mrIid, branch, and discussion mappings', async () => {
+  test('a rejected review comment (422) is folded into a PR-level comment and does not abort submit', async () => {
+    const filename = '000.through-a-song-darkly.2025-8-28.txt';
+    const entry = makeEntry(filename);
+    const ledger = makeLedger(entry);
+
+    await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
+    const proposals: Proposal[] = [
+      EDIT(),
+      { kind: 'comment', reason: 'speculative', relatedPath: 'Geography/Hallia/index.md', message: 'Spec.', citations: [[5, 5]] },
+    ];
+    await writeProposalsFile(proposalsDir, filename, proposals);
+
+    let issueCommentBody = '';
+    const { client } = makeMockClient({
+      createReviewComment: async () => { throw new Error('GitHub API POST /pulls/1/comments failed (422): line must be part of the diff'); },
+      addIssueComment: async (_n, body) => { issueCommentBody = body; },
+    });
+
+    // Must NOT throw despite the 422.
+    await submitOne(entry, ledger, makeCtx(() => client));
+
+    // Rejected note folded into the PR-level comment.
+    expect(issueCommentBody).toContain('## Flagged for Review');
+    expect(issueCommentBody).toContain('Spec.');
+
+    // PR still recorded in the ledger (not orphaned).
+    const updated = await readLedger(ledgerPath);
+    const updatedEntry = updated.entries.find((e) => e.filename === filename)!;
+    expect(updatedEntry.stages.prOpened).not.toBeNull();
+    expect(updatedEntry.prNumber).toBe(1);
+
+    // No tracked discussions, since the inline comment didn't anchor.
+    const sub = JSON.parse(await Bun.file(`${submissionsDir}/000.through-a-song-darkly.2025-8-28.json`).text());
+    expect(sub.discussions).toHaveLength(0);
+  });
+
+  test('review comments are anchored to the first non-delete file at line 1 on the head sha', async () => {
+    const filename = '000.through-a-song-darkly.2025-8-28.txt';
+    const entry = makeEntry(filename);
+    const ledger = makeLedger(entry);
+
+    await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
+    const proposals: Proposal[] = [
+      EDIT(),
+      { kind: 'comment', reason: 'speculative', relatedPath: 'Geography/Hallia/index.md', message: 'Spec.', citations: [[5, 5]] },
+    ];
+    await writeProposalsFile(proposalsDir, filename, proposals);
+
+    const anchors: Array<{ commitId: string; path: string; line: number }> = [];
+    const { client } = makeMockClient({
+      createReviewComment: async (_n, opts) => {
+        anchors.push({ commitId: opts.commitId, path: opts.path, line: opts.line });
+        return { discussionId: 'd0' };
+      },
+    });
+    await submitOne(entry, ledger, makeCtx(() => client));
+
+    expect(anchors[0]).toEqual({ commitId: 'head-sha', path: 'content/Geography/Hallia/index.md', line: 1 });
+  });
+
+  test('only-comments (no edits) → no review comments; comments folded into PR body under "Flagged for Review"', async () => {
     const filename = '000.through-a-song-darkly.2025-8-28.txt';
     const entry = makeEntry(filename);
     const ledger = makeLedger(entry);
 
     const proposals: Proposal[] = [
+      { kind: 'comment', reason: 'speculative', relatedPath: 'Org/Foo/index.md', message: 'Spec msg.', citations: [[1, 2]] },
+      { kind: 'comment', reason: 'contradict', relatedPath: null, message: 'Contra msg.', citations: [[3, 3]] },
+    ];
+    await writeProposalsFile(proposalsDir, filename, proposals);
+
+    let capturedBody = '';
+    const { client, calls } = makeMockClient({
+      createPullRequest: async (opts) => {
+        capturedBody = opts.body;
+        return { number: 1, webUrl: 'https://github.com/ns/proj/pull/1' };
+      },
+    });
+    await submitOne(entry, ledger, makeCtx(() => client));
+
+    expect(calls.filter((c) => c.startsWith('createReviewComment:'))).toHaveLength(0);
+    expect(capturedBody).toContain('## Flagged for Review');
+    expect(capturedBody).toContain('Spec msg.');
+    expect(capturedBody).toContain('Contra msg.');
+
+    // No discussions tracked when folded into the body.
+    const sub = JSON.parse(await Bun.file(`${submissionsDir}/000.through-a-song-darkly.2025-8-28.json`).text());
+    expect(sub.discussions).toHaveLength(0);
+  });
+
+  test('submissions file written with prNumber, branch, and discussion mappings', async () => {
+    const filename = '000.through-a-song-darkly.2025-8-28.txt';
+    const entry = makeEntry(filename);
+    const ledger = makeLedger(entry);
+
+    await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
+    const proposals: Proposal[] = [
+      EDIT(),
       { kind: 'comment', reason: 'speculative', relatedPath: null, message: 'Spec.', citations: [[1, 1]] },
     ];
     await writeProposalsFile(proposalsDir, filename, proposals);
@@ -272,14 +362,14 @@ describe('submitOne — live path', () => {
     const subFile = Bun.file(`${submissionsDir}/${basename}.json`);
     expect(await subFile.exists()).toBe(true);
     const sub = JSON.parse(await subFile.text());
-    expect(sub.mrIid).toBe(1);
+    expect(sub.prNumber).toBe(1);
     expect(sub.branch).toBe(`wiki/${basename}`);
     expect(sub.discussions).toHaveLength(1);
-    expect(sub.discussions[0].proposalIndex).toBe(0);
+    expect(sub.discussions[0].proposalIndex).toBe(1);
     expect(typeof sub.discussions[0].discussionId).toBe('string');
   });
 
-  test('mrIid written to ledger on success', async () => {
+  test('prNumber written to ledger on success', async () => {
     const filename = '000.through-a-song-darkly.2025-8-28.txt';
     const entry = makeEntry(filename);
     const ledger = makeLedger(entry);
@@ -290,10 +380,10 @@ describe('submitOne — live path', () => {
 
     const updated = await readLedger(ledgerPath);
     const updatedEntry = updated.entries.find((e) => e.filename === filename)!;
-    expect(updatedEntry.mrIid).toBe(1);
+    expect(updatedEntry.prNumber).toBe(1);
   });
 
-  test('MR title is title-cased campaign name + session date', async () => {
+  test('PR title is title-cased campaign name + session date', async () => {
     const filename = '000.through-a-song-darkly.2025-8-28.txt';
     const entry = makeEntry(filename);
     const ledger = makeLedger(entry);
@@ -302,9 +392,9 @@ describe('submitOne — live path', () => {
 
     let capturedTitle = '';
     const { client } = makeMockClient({
-      createMergeRequest: async (opts) => {
+      createPullRequest: async (opts) => {
         capturedTitle = opts.title;
-        return { iid: 1, webUrl: 'https://gitlab.example.com/ns/proj/-/merge_requests/1' };
+        return { number: 1, webUrl: 'https://github.com/ns/proj/pull/1' };
       },
     });
 
@@ -312,12 +402,14 @@ describe('submitOne — live path', () => {
     expect(capturedTitle).toBe('Wiki: Through A Song Darkly 2025-08-28');
   });
 
-  test('discussion body includes [Speculative] / [Contradiction] prefix and (no related page) when relatedPath null', async () => {
+  test('review comment body includes [Speculative] / [Contradiction] prefix and (no related page) when relatedPath null', async () => {
     const filename = '000.through-a-song-darkly.2025-8-28.txt';
     const entry = makeEntry(filename);
     const ledger = makeLedger(entry);
 
+    await writeContentFile(contentDir, 'Geography/Hallia/index.md', '# Hallia\n\nOld text.\n');
     const proposals: Proposal[] = [
+      EDIT(),
       { kind: 'comment', reason: 'speculative', relatedPath: 'Org/Foo/index.md', message: 'Spec msg.', citations: [[1, 2]] },
       { kind: 'comment', reason: 'contradict', relatedPath: null, message: 'Contra msg.', citations: [[3, 3]] },
     ];
@@ -325,8 +417,8 @@ describe('submitOne — live path', () => {
 
     const noteBodies: string[] = [];
     const { client } = makeMockClient({
-      createDiscussion: async (_mrIid, body) => {
-        noteBodies.push(body);
+      createReviewComment: async (_n, opts) => {
+        noteBodies.push(opts.body);
         return { discussionId: `disc-${noteBodies.length - 1}` };
       },
     });
@@ -353,7 +445,7 @@ describe('submitOne — live path', () => {
 
     let capturedMessage = '';
     const { client } = makeMockClient({
-      commitFiles: async (_, _actions, message) => { capturedMessage = message; },
+      commitFiles: async (_, _actions, message) => { capturedMessage = message; return 'head-sha'; },
     });
 
     await submitOne(entry, ledger, makeCtx(() => client));
@@ -402,7 +494,7 @@ describe('submitOne — dry-run path', () => {
 
     const basename = '000.through-a-song-darkly.2025-8-28';
     const changesExists     = await Bun.file(`${tmpDir}/dry-runs/${basename}/changes.json`).exists();
-    const descExists        = await Bun.file(`${tmpDir}/dry-runs/${basename}/mr-description.md`).exists();
+    const descExists        = await Bun.file(`${tmpDir}/dry-runs/${basename}/pr-description.md`).exists();
     const notesExists       = await Bun.file(`${tmpDir}/dry-runs/${basename}/notes.json`).exists();
     const discussionsExists = await Bun.file(`${tmpDir}/dry-runs/${basename}/discussions.json`).exists();
     expect(changesExists).toBe(true);
@@ -410,7 +502,6 @@ describe('submitOne — dry-run path', () => {
     expect(notesExists).toBe(true);
     expect(discussionsExists).toBe(true);
 
-    // Ledger unchanged (stages not set)
     const resultEntry = result.entries.find((e) => e.filename === filename)!;
     expect(resultEntry.stages.prOpened).toBeNull();
   });

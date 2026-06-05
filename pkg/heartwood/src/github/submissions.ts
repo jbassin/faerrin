@@ -6,12 +6,21 @@ export const DiscussionMappingSchema = z.object({
   proposalIndex: z.number().int().nonnegative(),
 });
 
-export const SubmissionsFileSchema = z.object({
+// `prNumber` is the GitHub PR number. Legacy files written before the GitLab→GitHub
+// migration used `mrIid`; a preprocess step maps that key onto `prNumber` on read so
+// existing committed submissions still parse. New writes always use `prNumber`.
+export const SubmissionsFileSchema = z.preprocess((raw) => {
+  if (raw && typeof raw === 'object' && !('prNumber' in raw) && 'mrIid' in raw) {
+    const { mrIid, ...rest } = raw as Record<string, unknown>;
+    return { ...rest, prNumber: mrIid };
+  }
+  return raw;
+}, z.object({
   filename:    z.string(),
-  mrIid:       z.number().int().positive(),
+  prNumber:    z.number().int().positive(),
   branch:      z.string(),
   discussions: z.array(DiscussionMappingSchema),
-});
+}));
 
 export type DiscussionMapping = z.infer<typeof DiscussionMappingSchema>;
 export type SubmissionsFile   = z.infer<typeof SubmissionsFileSchema>;

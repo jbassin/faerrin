@@ -22,7 +22,7 @@ describe('writeSubmissions / readSubmissions round-trip', () => {
     const path = `${dir}/000.test.2025-1-1.json`;
     const data: SubmissionsFile = {
       filename:    '000.test.2025-1-1.txt',
-      mrIid:       42,
+      prNumber:    42,
       branch:      'wiki/000.test.2025-1-1',
       discussions: [
         { discussionId: 'abc123', proposalIndex: 0 },
@@ -39,17 +39,26 @@ describe('writeSubmissions / readSubmissions round-trip', () => {
     const dir = await makeTmpDir();
     const path = `${dir}/pretty.json`;
     await writeSubmissions(path, {
-      filename: 'a.txt', mrIid: 1, branch: 'wiki/a', discussions: [],
+      filename: 'a.txt', prNumber: 1, branch: 'wiki/a', discussions: [],
     });
     const raw = await Bun.file(path).text();
     expect(raw).toContain('\n');
     expect(raw.endsWith('\n')).toBe(true);
   });
 
-  test('schema rejects invalid data (negative mrIid)', async () => {
+  test('schema rejects invalid data (negative prNumber)', async () => {
     const dir = await makeTmpDir();
     const path = `${dir}/bad.json`;
-    await Bun.write(path, JSON.stringify({ filename: 'a.txt', mrIid: -1, branch: 'wiki/a', discussions: [] }));
+    await Bun.write(path, JSON.stringify({ filename: 'a.txt', prNumber: -1, branch: 'wiki/a', discussions: [] }));
     await expect(readSubmissions(path)).rejects.toThrow();
+  });
+
+  test('legacy mrIid file is read as prNumber (GitLab→GitHub back-compat)', async () => {
+    const dir = await makeTmpDir();
+    const path = `${dir}/legacy.json`;
+    await Bun.write(path, JSON.stringify({ filename: 'a.txt', mrIid: 7, branch: 'wiki/a', discussions: [] }));
+    const back = await readSubmissions(path);
+    expect(back?.prNumber).toBe(7);
+    expect((back as unknown as Record<string, unknown>).mrIid).toBeUndefined();
   });
 });

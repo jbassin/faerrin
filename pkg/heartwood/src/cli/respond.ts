@@ -3,8 +3,8 @@ import {
   readLedger, writeLedger, reconcile, findEntry,
   type Ledger,
 } from '../transcript/ledger';
-import { respondOne, type RespondCtx } from '../gitlab/respond';
-import type { GitLabClient } from '../gitlab/client';
+import { respondOne, type RespondCtx } from '../github/respond';
+import type { GitHubClient } from '../github/client';
 import type { Command } from 'commander';
 
 const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
@@ -22,7 +22,7 @@ export interface RespondCliOptions {
   proposalsDir?:    string;
   contentDir?:      string;
   conventionsPath?: string;
-  clientFn?:        (baseUrl: string, token: string, projectId: string) => GitLabClient;
+  clientFn?:        (apiUrl: string, token: string, repo: string) => GitHubClient;
 }
 
 export async function respond(
@@ -97,7 +97,7 @@ export async function respond(
     process.exit(1);
   }
   if (r.entry.stages.prOpened === null) {
-    console.error(`'${r.entry.filename}' has no open MR — run 'bun run submit ${name}' first`);
+    console.error(`'${r.entry.filename}' has no open PR — run 'bun run submit ${name}' first`);
     process.exit(1);
   }
   await respondOne(r.entry, ctx);
@@ -106,7 +106,7 @@ export async function respond(
 export function register(program: Command): void {
   program
     .command('respond [name]')
-    .description('Post responses to MR reviewer comments')
+    .description('Post responses to PR reviewer comments')
     .option('--all', 'process all eligible transcripts')
     .action((n: string | undefined, opts: { all?: boolean }) => respond(n, opts));
 }

@@ -1,5 +1,5 @@
 import { test, expect, describe, beforeEach } from 'bun:test';
-import { mkdir, rm } from 'node:fs/promises';
+import { mkdir } from 'node:fs/promises';
 import { buildCommitActions } from './apply';
 import type { CommitAction } from './client';
 import type { Proposal } from '../reconcile/propose';

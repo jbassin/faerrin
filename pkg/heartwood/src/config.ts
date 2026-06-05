@@ -1,4 +1,6 @@
-const REQUIRED = ['ANTHROPIC_API_KEY', 'GITLAB_TOKEN', 'GITLAB_PROJECT_ID', 'GITLAB_URL'] as const;
+const REQUIRED = ['ANTHROPIC_API_KEY', 'GITHUB_TOKEN', 'GITHUB_REPO'] as const;
+
+const DEFAULT_GITHUB_API_URL = 'https://api.github.com';
 
 const MODEL_DEFAULTS = {
   MODEL_SEGMENT: 'claude-haiku-4-5-20251001',
@@ -12,9 +14,9 @@ const MODEL_DEFAULTS = {
 
 export interface Config {
   ANTHROPIC_API_KEY: string;
-  GITLAB_TOKEN:      string;
-  GITLAB_PROJECT_ID: string;
-  GITLAB_URL:        string;
+  GITHUB_TOKEN:      string;
+  GITHUB_REPO:       string;
+  GITHUB_API_URL:    string;
   MODEL_SEGMENT: string;
   MODEL_EXTRACT: string;
   MODEL_FILTER: string;
@@ -34,9 +36,9 @@ export function config(): Config {
   }
   const out: Config = {
     ANTHROPIC_API_KEY: Bun.env.ANTHROPIC_API_KEY!,
-    GITLAB_TOKEN:      Bun.env.GITLAB_TOKEN!,
-    GITLAB_PROJECT_ID: Bun.env.GITLAB_PROJECT_ID!,
-    GITLAB_URL:        Bun.env.GITLAB_URL!,
+    GITHUB_TOKEN:      Bun.env.GITHUB_TOKEN!,
+    GITHUB_REPO:       Bun.env.GITHUB_REPO!,
+    GITHUB_API_URL:    Bun.env.GITHUB_API_URL ?? DEFAULT_GITHUB_API_URL,
     MODEL_SEGMENT: Bun.env.MODEL_SEGMENT ?? MODEL_DEFAULTS.MODEL_SEGMENT,
     MODEL_EXTRACT: Bun.env.MODEL_EXTRACT ?? MODEL_DEFAULTS.MODEL_EXTRACT,
     MODEL_FILTER:  Bun.env.MODEL_FILTER  ?? MODEL_DEFAULTS.MODEL_FILTER,

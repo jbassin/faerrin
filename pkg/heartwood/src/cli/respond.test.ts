@@ -4,8 +4,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { respond } from './respond';
 import { writeLedger, markStage, setPrUrl, emptyLedger } from '../transcript/ledger';
-import { writeSubmissions } from '../gitlab/submissions';
-import type { GitLabClient } from '../gitlab/client';
+import { writeSubmissions } from '../github/submissions';
+import type { GitHubClient } from '../github/client';
 
 // ---- Helpers ----
 
@@ -51,16 +51,17 @@ function teardown(root: string): void {
   rmSync(root, { recursive: true, force: true });
 }
 
-function makeNoopClient(): GitLabClient {
+function makeNoopClient(): GitHubClient {
   return {
-    getProject:        async () => ({ defaultBranch: 'main', webUrl: 'https://gitlab.example.com/ns/proj' }),
-    branchExists:      async () => false,
-    createBranch:      async () => {},
-    commitFiles:       async () => {},
-    createMergeRequest: async () => ({ iid: 1, webUrl: 'https://gitlab.example.com/ns/proj/-/merge_requests/1' }),
-    createDiscussion:  async () => ({ discussionId: 'disc-0' }),
-    listDiscussions:   async () => [],
-    addDiscussionNote: async () => {},
+    getProject:          async () => ({ defaultBranch: 'main', webUrl: 'https://github.com/ns/proj' }),
+    branchExists:        async () => false,
+    createBranch:        async () => {},
+    commitFiles:         async () => 'deadbeef',
+    createPullRequest:   async () => ({ number: 1, webUrl: 'https://github.com/ns/proj/pull/1' }),
+    createReviewComment: async () => ({ discussionId: 'disc-0' }),
+    listDiscussions:     async () => [],
+    addDiscussionNote:   async () => {},
+    addIssueComment:     async () => {},
   };
 }
 
@@ -83,12 +84,12 @@ async function seedLedgerWithPrOpened(s: Setup, filename: string): Promise<void>
     return new Bun.CryptoHasher('sha256').update(bytes).digest('hex');
   })();
   let ledger = emptyLedger();
-  ledger = { entries: [{ filename, contentHash, stages: { segmented: null, extracted: null, resolved: null, matched: null, proposed: '2025-01-01T00:00:00Z', verified: '2025-01-02T00:00:00Z', prOpened: '2025-01-03T00:00:00Z' }, errors: [], mrIid: 1 }] };
+  ledger = { entries: [{ filename, contentHash, stages: { segmented: null, extracted: null, resolved: null, matched: null, proposed: '2025-01-01T00:00:00Z', verified: '2025-01-02T00:00:00Z', prOpened: '2025-01-03T00:00:00Z' }, errors: [], prNumber: 1 }] };
   await writeLedger(s.ledgerPath, ledger);
 
   const basename = filename.endsWith('.txt') ? filename.slice(0, -4) : filename;
   await writeSubmissions(join(s.submissionsDir, `${basename}.json`), {
-    filename, mrIid: 1, branch: `wiki/${basename}`, discussions: [],
+    filename, prNumber: 1, branch: `wiki/${basename}`, discussions: [],
   });
 
   writeFileSync(join(s.proposalsDir, `${filename}.json`), JSON.stringify({
@@ -176,7 +177,7 @@ test('named transcript not yet submitted → exits 1', async () => {
   }
 });
 
-test('--all with no open MRs → logs nothing to respond', async () => {
+test('--all with no open PRs → logs nothing to respond', async () => {
   const s = setup(['000.alpha.2025-8-28.txt']);
   try {
     const logs: string[] = [];
@@ -190,7 +191,7 @@ test('--all with no open MRs → logs nothing to respond', async () => {
   }
 });
 
-test('named transcript with open MR → calls respondOne (no discussions = no-op)', async () => {
+test('named transcript with open PR → calls respondOne (no discussions = no-op)', async () => {
   const s = setup(['000.alpha.2025-8-28.txt']);
   try {
     await seedLedgerWithPrOpened(s, '000.alpha.2025-8-28.txt');
@@ -207,7 +208,7 @@ test('named transcript with open MR → calls respondOne (no discussions = no-op
   }
 });
 
-test('--all with one open MR → processes it', async () => {
+test('--all with one open PR → processes it', async () => {
   const s = setup(['000.alpha.2025-8-28.txt']);
   try {
     await seedLedgerWithPrOpened(s, '000.alpha.2025-8-28.txt');

@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
   emptyLedger, reconcile, findEntry,
-  markStage, recordError, setPrUrl, setMrIid, resetEntry, resetEntryStage,
+  markStage, recordError, setPrUrl, setPrNumber, resetEntry, resetEntryStage,
   readLedger, writeLedger, LedgerSchema,
   EMPTY_STAGES,
 } from './ledger';
@@ -45,7 +45,7 @@ test('reconcile preserves entry when contentHash unchanged (survives transcripts
 test('reconcile clears stages when contentHash differs', () => {
   const f = fixtureFile();
   const stale = markStage(reconcile(emptyLedger(), [f]).ledger, f.filename, 'segmented');
-  const stale2 = setPrUrl(stale, f.filename, 'https://gitlab/.../-/merge_requests/7');
+  const stale2 = setPrUrl(stale, f.filename, 'https://github.com/owner/repo/pull/7');
   const fNew = fixtureFile({ contentHash: 'hash-B' });
   const next = reconcile(stale2, [fNew]);
   expect(next.changes.rehashed).toEqual([f.filename]);
@@ -103,34 +103,47 @@ test('markStage sets timestamp and clears prior errors for that stage', () => {
   expect(l.entries[0]!.errors).toEqual([]);
 });
 
-test('setMrIid sets mrIid on the entry', () => {
+test('setPrNumber sets prNumber on the entry', () => {
   const f = fixtureFile();
   let l = reconcile(emptyLedger(), [f]).ledger;
-  l = setMrIid(l, f.filename, 42);
-  expect(l.entries[0]!.mrIid).toBe(42);
+  l = setPrNumber(l, f.filename, 42);
+  expect(l.entries[0]!.prNumber).toBe(42);
 });
 
-test('mrIid survives LedgerSchema round-trip', () => {
+test('prNumber survives LedgerSchema round-trip', () => {
   const f = fixtureFile();
   let l = reconcile(emptyLedger(), [f]).ledger;
-  l = setMrIid(l, f.filename, 99);
+  l = setPrNumber(l, f.filename, 99);
   const parsed = LedgerSchema.parse(JSON.parse(JSON.stringify(l)));
-  expect(parsed.entries[0]!.mrIid).toBe(99);
+  expect(parsed.entries[0]!.prNumber).toBe(99);
 });
 
-test('resetEntry clears all stages, errors, prUrl, and mrIid', () => {
+test('legacy mrIid is read as prNumber (GitLab→GitHub back-compat)', () => {
+  const legacy = {
+    entries: [{
+      filename: 'x.txt', contentHash: 'abc',
+      stages: { ...EMPTY_STAGES, prOpened: '2026-01-01T00:00:00.000Z' },
+      mrIid: 5, errors: [],
+    }],
+  };
+  const parsed = LedgerSchema.parse(legacy);
+  expect(parsed.entries[0]!.prNumber).toBe(5);
+  expect((parsed.entries[0]! as Record<string, unknown>).mrIid).toBeUndefined();
+});
+
+test('resetEntry clears all stages, errors, prUrl, and prNumber', () => {
   const f = fixtureFile();
   let l = reconcile(emptyLedger(), [f]).ledger;
   l = markStage(l, f.filename, 'segmented');
   l = markStage(l, f.filename, 'extracted');
-  l = setPrUrl(l, f.filename, 'https://example/mr/1');
-  l = setMrIid(l, f.filename, 7);
+  l = setPrUrl(l, f.filename, 'https://example/pr/1');
+  l = setPrNumber(l, f.filename, 7);
   l = recordError(l, f.filename, 'matched', 'boom');
   l = resetEntry(l, f.filename);
   expect(l.entries[0]!.stages).toEqual(EMPTY_STAGES);
   expect(l.entries[0]!.errors).toEqual([]);
   expect(l.entries[0]!.prUrl).toBeUndefined();
-  expect(l.entries[0]!.mrIid).toBeUndefined();
+  expect(l.entries[0]!.prNumber).toBeUndefined();
 });
 
 test('resetEntryStage clears the named stage AND all downstream stages (cascade)', () => {

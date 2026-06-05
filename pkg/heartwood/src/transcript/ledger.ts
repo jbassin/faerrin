@@ -30,14 +30,24 @@ export const ErrorRecordSchema = z.object({
   message: z.string(),
 });
 
-export const LedgerEntrySchema = z.object({
+// `prNumber` is the GitHub PR number. Legacy ledgers written before the
+// GitLab→GitHub migration used `mrIid`; a preprocess step maps that key onto
+// `prNumber` on read so existing committed ledgers still parse. New writes use
+// `prNumber`.
+export const LedgerEntrySchema = z.preprocess((raw) => {
+  if (raw && typeof raw === 'object' && !('prNumber' in raw) && 'mrIid' in raw) {
+    const { mrIid, ...rest } = raw as Record<string, unknown>;
+    return { ...rest, prNumber: mrIid };
+  }
+  return raw;
+}, z.object({
   filename:    z.string(),
   contentHash: z.string(),
   stages:      StagesSchema,
   prUrl:       z.string().optional(),
-  mrIid:       z.number().int().positive().optional(),
+  prNumber:    z.number().int().positive().optional(),
   errors:      z.array(ErrorRecordSchema),
-});
+}));
 
 export const LedgerSchema = z.object({
   entries: z.array(LedgerEntrySchema),
@@ -176,8 +186,8 @@ export function setPrUrl(ledger: Ledger, filename: string, prUrl: string): Ledge
   return replaceEntry(ledger, filename, (e) => ({ ...e, prUrl }));
 }
 
-export function setMrIid(ledger: Ledger, filename: string, mrIid: number): Ledger {
-  return replaceEntry(ledger, filename, (e) => ({ ...e, mrIid }));
+export function setPrNumber(ledger: Ledger, filename: string, prNumber: number): Ledger {
+  return replaceEntry(ledger, filename, (e) => ({ ...e, prNumber }));
 }
 
 export function resetEntry(ledger: Ledger, filename: string): Ledger {
@@ -202,8 +212,11 @@ export function resetEntryStage(ledger: Ledger, filename: string, stage: Stage):
       stages,
       errors: e.errors.filter((err) => !cleared.has(err.stage)),
     };
-    // If prOpened was cleared, prUrl is now meaningless.
-    if (cleared.has('prOpened')) delete next.prUrl;
+    // If prOpened was cleared, prUrl and prNumber are now meaningless.
+    if (cleared.has('prOpened')) {
+      delete next.prUrl;
+      delete next.prNumber;
+    }
     return next;
   });
 }

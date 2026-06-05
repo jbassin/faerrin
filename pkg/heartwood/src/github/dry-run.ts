@@ -20,7 +20,7 @@ export async function writeDryRun(
 ): Promise<DryRunOutput> {
   const dryRunDir       = `${dryRunsDir}/${basename}`;
   const changesPath     = `${dryRunDir}/changes.json`;
-  const descriptionPath = `${dryRunDir}/mr-description.md`;
+  const descriptionPath = `${dryRunDir}/pr-description.md`;
   const notesPath       = `${dryRunDir}/notes.json`;
   const discussionsPath = `${dryRunDir}/discussions.json`;
 

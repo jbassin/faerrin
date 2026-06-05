@@ -3,8 +3,8 @@ import {
   readLedger, writeLedger, reconcile, findEntry,
   type Ledger, type LedgerEntry,
 } from '../transcript/ledger';
-import { submitOne, type SubmitCtx } from '../gitlab/submit';
-import type { GitLabClient } from '../gitlab/client';
+import { submitOne, type SubmitCtx } from '../github/submit';
+import type { GitHubClient } from '../github/client';
 import type { Command } from 'commander';
 
 const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
@@ -22,7 +22,7 @@ export interface SubmitCliOptions {
   dryRunsDir?:     string;
   submissionsDir?: string;
   dryRun?:         boolean;
-  clientFn?:       (baseUrl: string, token: string, projectId: string) => GitLabClient;
+  clientFn?:       (apiUrl: string, token: string, repo: string) => GitHubClient;
 }
 
 export async function submit(
@@ -120,8 +120,8 @@ export async function submit(
 export function register(program: Command): void {
   program
     .command('submit [name]')
-    .description('Submit edit proposals to GitLab as a merge request')
+    .description('Submit edit proposals to GitHub as a pull request')
     .option('--all',     'process all eligible transcripts')
-    .option('--dry-run', 'write dry-run file instead of opening MR')
+    .option('--dry-run', 'write dry-run file instead of opening PR')
     .action((n: string | undefined, opts: { all?: boolean; dryRun?: boolean }) => submit(n, opts));
 }

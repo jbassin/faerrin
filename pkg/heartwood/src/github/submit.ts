@@ -1,10 +1,10 @@
 import { mkdir } from 'node:fs/promises';
-import { createClient, type GitLabClient, type CommitAction } from './client';
+import { createClient, type GitHubClient, type CommitAction } from './client';
 import { buildCommitActions } from './apply';
 import { writeDryRun } from './dry-run';
 import { writeSubmissions, type DiscussionMapping } from './submissions';
 import { parseFilename } from '../transcript/discover';
-import { markStage, setPrUrl, setMrIid, writeLedger, recordError, type Ledger, type LedgerEntry } from '../transcript/ledger';
+import { markStage, setPrUrl, setPrNumber, writeLedger, recordError, type Ledger, type LedgerEntry } from '../transcript/ledger';
 import type { Proposal, CommentProposal } from '../reconcile/propose';
 import { config } from '../config';
 import type { Citation } from '../reconcile/cluster';
@@ -17,7 +17,7 @@ export interface SubmitCtx {
   dryRunsDir:     string;
   submissionsDir: string;
   dryRun:         boolean;
-  clientFn?:      (baseUrl: string, token: string, projectId: string) => GitLabClient;
+  clientFn?:      (apiUrl: string, token: string, repo: string) => GitHubClient;
   writeLedgerFn?: (path: string, ledger: Ledger) => Promise<void>;
 }
 
@@ -63,12 +63,12 @@ export async function submitOne(
   const basename = entry.filename.endsWith('.txt')
     ? entry.filename.slice(0, -4)
     : entry.filename;
-  const mrTitle = buildMrTitle(parsed?.campaignName ?? basename, parsed?.sessionDate ?? '');
+  const prTitle = buildPrTitle(parsed?.campaignName ?? basename, parsed?.sessionDate ?? '');
 
   if (ctx.dryRun) {
-    const description = buildMrBody(actions, proposals, stats, '', '', entry.filename);
+    const body = buildPrBody(actions, proposals, stats, '', '', entry.filename);
     const notes = commentProposals.map((p) => buildNoteBody(p, '', '', entry.filename));
-    const output = await writeDryRun(basename, actions, description, notes, [], ctx.dryRunsDir);
+    const output = await writeDryRun(basename, actions, body, notes, [], ctx.dryRunsDir);
     console.log(`dry-run: ${entry.filename}`);
     console.log(`  changes:     ${output.changesPath}`);
     console.log(`  description: ${output.descriptionPath}`);
@@ -76,12 +76,12 @@ export async function submitOne(
     return ledger;
   }
 
-  let client: GitLabClient;
+  let client: GitHubClient;
   if (ctx.clientFn) {
     client = ctx.clientFn('', '', '');
   } else {
     const cfg = config();
-    client = createClient(cfg.GITLAB_URL, cfg.GITLAB_TOKEN, cfg.GITLAB_PROJECT_ID);
+    client = createClient(cfg.GITHUB_API_URL, cfg.GITHUB_TOKEN, cfg.GITHUB_REPO);
   }
 
   try {
@@ -90,37 +90,84 @@ export async function submitOne(
     await client.createBranch(branch, defaultBranch);
 
     const commitMessage = buildCommitMessage(basename, actions, proposals);
-    await client.commitFiles(branch, actions, commitMessage);
+    const headSha = await client.commitFiles(branch, actions, commitMessage);
 
-    const description = buildMrBody(actions, proposals, stats, webUrl, defaultBranch, entry.filename);
-    const { iid, webUrl: mrUrl } = await client.createMergeRequest({
-      title:        mrTitle,
-      description,
-      sourceBranch: branch,
-      targetBranch: defaultBranch,
-    });
+    // The first non-delete file action carries the review comments: GitHub only
+    // accepts a review comment anchored to a file that appears in the PR diff.
+    const carrier = actions.find((a) => a.action !== 'delete');
 
-    const discussions: DiscussionMapping[] = [];
-    for (const p of commentProposals) {
-      const body = buildNoteBody(p, webUrl, defaultBranch, entry.filename);
-      const { discussionId } = await client.createDiscussion(iid, body);
-      discussions.push({ discussionId, proposalIndex: proposals.indexOf(p) });
+    let body = buildPrBody(actions, proposals, stats, webUrl, defaultBranch, entry.filename);
+
+    // Fallback: when there are no file edits (only comments), there is no diff to
+    // anchor review comments to. Fold the comment bodies into the PR body instead,
+    // under a "Flagged for Review" section, so the reviewer still sees them.
+    if (!carrier && commentProposals.length > 0) {
+      const flagged = commentProposals
+        .map((p) => buildNoteBody(p, webUrl, defaultBranch, entry.filename))
+        .join('\n\n---\n\n');
+      body += `\n\n## Flagged for Review\n\n${flagged}`;
     }
 
-    await mkdir(ctx.submissionsDir, { recursive: true });
-    await writeSubmissions(`${ctx.submissionsDir}/${basename}.json`, {
-      filename: entry.filename,
-      mrIid:    iid,
-      branch,
-      discussions,
+    const { number, webUrl: prUrl } = await client.createPullRequest({
+      title:      prTitle,
+      body,
+      headBranch: branch,
+      baseBranch: defaultBranch,
     });
 
+    // The branch + PR now exist on GitHub. Record them to the ledger immediately
+    // so a later failure can't orphan them — a retry would otherwise open a
+    // second PR. Everything below is best-effort and must not revert this.
     let next = markStage(ledger, entry.filename, 'verified');
     next = markStage(next, entry.filename, 'prOpened');
-    next = setPrUrl(next, entry.filename, mrUrl);
-    next = setMrIid(next, entry.filename, iid);
+    next = setPrUrl(next, entry.filename, prUrl);
+    next = setPrNumber(next, entry.filename, number);
     await (ctx.writeLedgerFn ?? writeLedger)(ctx.ledgerPath, next);
-    console.log(`submitted ${entry.filename}: ${mrUrl}`);
+
+    // Post each note as an inline review comment anchored to the carrier file.
+    // GitHub rejects (422) a comment whose line isn't within the diff hunk, so a
+    // failure here must NOT abort the submit — collect rejects and fold them into
+    // a single PR-level comment so the reviewer still sees them.
+    const discussions: DiscussionMapping[] = [];
+    const unanchored: string[] = [];
+    if (carrier) {
+      for (const p of commentProposals) {
+        const noteBody = buildNoteBody(p, webUrl, defaultBranch, entry.filename);
+        try {
+          const { discussionId } = await client.createReviewComment(number, {
+            body:     noteBody,
+            commitId: headSha,
+            path:     carrier.filePath,
+            line:     1,
+          });
+          discussions.push({ discussionId, proposalIndex: proposals.indexOf(p) });
+        } catch (err) {
+          console.warn(`submit: could not anchor review comment on ${entry.filename}: ${(err as Error).message}`);
+          unanchored.push(noteBody);
+        }
+      }
+    }
+    if (unanchored.length > 0) {
+      try {
+        await client.addIssueComment(number, `## Flagged for Review\n\n${unanchored.join('\n\n---\n\n')}`);
+      } catch (err) {
+        console.warn(`submit: could not post fallback PR comment on ${entry.filename}: ${(err as Error).message}`);
+      }
+    }
+
+    try {
+      await mkdir(ctx.submissionsDir, { recursive: true });
+      await writeSubmissions(`${ctx.submissionsDir}/${basename}.json`, {
+        filename: entry.filename,
+        prNumber: number,
+        branch,
+        discussions,
+      });
+    } catch (err) {
+      console.warn(`submit: PR #${number} opened but failed to write submissions for ${entry.filename}: ${(err as Error).message}`);
+    }
+
+    console.log(`submitted ${entry.filename}: ${prUrl}`);
     return next;
   } catch (err) {
     const msg = (err as Error).message;
@@ -130,7 +177,7 @@ export async function submitOne(
   }
 }
 
-async function findAvailableBranch(client: GitLabClient, basename: string): Promise<string> {
+async function findAvailableBranch(client: GitHubClient, basename: string): Promise<string> {
   const base = `wiki/${basename}`;
   if (!(await client.branchExists(base))) return base;
   for (let i = 2; i <= 50; i++) {
@@ -140,7 +187,7 @@ async function findAvailableBranch(client: GitLabClient, basename: string): Prom
   throw new Error(`no available branch name found for ${base} after 50 attempts`);
 }
 
-function buildMrTitle(campaignName: string, sessionDate: string): string {
+function buildPrTitle(campaignName: string, sessionDate: string): string {
   const titleCased = campaignName
     .split('-')
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
@@ -148,7 +195,7 @@ function buildMrTitle(campaignName: string, sessionDate: string): string {
   return `Wiki: ${titleCased} ${sessionDate}`.trimEnd();
 }
 
-function buildMrBody(
+function buildPrBody(
   actions:   CommitAction[],
   proposals: Proposal[],
   stats:     ProposalsFile['stats'],
@@ -200,7 +247,7 @@ function buildMrBody(
 
   const howToReview = [
     '\n## How to Review\n',
-    'Every change in this MR is backed by specific lines in the session transcript. Citation links above open the exact lines. Speculative claims and contradictions are posted as MR comments for human review — they are not applied to the wiki automatically.',
+    'Every change in this PR is backed by specific lines in the session transcript. Citation links above open the exact lines. Speculative claims and contradictions are posted as PR review comments for human review — they are not applied to the wiki automatically.',
   ].join('\n');
 
   return summaryTable + filesTable + howToReview;
@@ -254,8 +301,8 @@ function buildCitationLink(
   filename:      string,
 ): string {
   const [start, end] = citation;
-  const anchor = start === end ? `L${start}` : `L${start}-${end}`;
-  const url = `${webUrl}/-/blob/${defaultBranch}/transcripts/${filename}#${anchor}`;
+  const anchor = start === end ? `L${start}` : `L${start}-L${end}`;
+  const url = `${webUrl}/blob/${defaultBranch}/transcripts/${filename}#${anchor}`;
   const text = start === end ? `${start}` : `${start}–${end}`;
   return `[${text}](${url})`;
 }
