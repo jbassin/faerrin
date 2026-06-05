@@ -68,8 +68,11 @@ quartz is canonical for content.
   **caster CLI only**, not `caster/site`.
 - **TypeScript**: non-Astro apps extend the root **`tsconfig.base.json`**; the Astro apps (quartz,
   caster-site) extend `astro/tsconfigs/strict`.
-- **Env**: copy `.env.example` → `.env` (gitignored). `ANTHROPIC_API_KEY` is shared (caster +
-  heartwood). Bun auto-loads `.env` from the launched process's cwd — run apps from their own dir.
+- **Env**: there is **no root `.env`** — each package that needs env vars has its own
+  `.env.example` (`caster`, `heartwood`, `listener`, `shared-content`); copy it to `.env`
+  (gitignored) in that package. Bun auto-loads `.env` from the launched process's cwd and an
+  inherited env var **overrides** a local `.env` file, so run each app from its own dir to get its
+  own values. `ANTHROPIC_API_KEY` is needed by both caster and heartwood (each in its own `.env`).
 - **LLM calls** go through `@faerrin/llm` (`AnthropicClient`). heartwood wraps it in `complete()`
   (Zod schema + cost logging); don't call the Anthropic SDK directly there.
 - **CI**: GitHub Actions (`.github/workflows/ci.yml`) that just **calls Dagger** — the pipeline is a
