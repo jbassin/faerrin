@@ -1,106 +1,58 @@
+# CLAUDE.md — `caster`
 
-Default to using Bun instead of Node.js.
+Guidance for the **caster** package: a **Bun CLI** that turns Pathfinder 2e session transcripts into a
+three-host, podcast-style **audio recap**, grounded against the campaign's setting wiki. See
+`README.md` for the user-facing walkthrough, prerequisites, and content schema — this file is the
+working contract for editing the code.
 
-- Use `bun <file>` instead of `node <file>` or `ts-node <file>`
-- Use `bun test` instead of `jest` or `vitest`
-- Use `bun build <file.html|file.ts|file.css>` instead of `webpack` or `esbuild`
-- Use `bun install` instead of `npm install` or `yarn install` or `pnpm install`
-- Use `bun run <script>` instead of `npm run <script>` or `yarn run <script>` or `pnpm run <script>`
-- Use `bunx <package> <command>` instead of `npx <package> <command>`
-- Bun automatically loads .env, so don't use dotenv.
+## Pipeline (five cached stages)
 
-## APIs
+The CLI entrypoint is **`src/cli.ts`**; each stage is a directory under `src/` and caches its output to
+`out/`, so re-running a stage is cheap and a later stage reads the earlier one's cache.
 
-- `Bun.serve()` supports WebSockets, HTTPS, and routes. Don't use `express`.
-- `bun:sqlite` for SQLite. Don't use `better-sqlite3`.
-- `Bun.redis` for Redis. Don't use `ioredis`.
-- `Bun.sql` for Postgres. Don't use `pg` or `postgres.js`.
-- `WebSocket` is built-in. Don't use `ws`.
-- Prefer `Bun.file` over `node:fs`'s readFile/writeFile
-- Bun.$`ls` instead of execa.
-
-## Testing
-
-Use `bun test` to run tests.
-
-```ts#index.test.ts
-import { test, expect } from "bun:test";
-
-test("hello world", () => {
-  expect(1).toBe(1);
-});
+```
+ingest → distill → script → tts → assemble
 ```
 
-## Frontend
+| Stage | Script | Does | LLM / tool |
+|---|---|---|---|
+| ingest   | `bun run ingest [id]`   | parse transcript + resolve speakers + build wiki link-graph | — |
+| distill  | `bun run distill <id>`  | transcript → ordered story beats | Claude (Opus) via `@faerrin/llm` |
+| script   | `bun run script <id>`   | beats → Reed/Quill/Charlotte roundtable (wiki-grounded, inline v3 audio tags) | Claude via `@faerrin/llm` |
+| tts      | `bun run tts <id> --provider=<p>` | script → audio clips | ElevenLabs (default) · Edge (free) · mock (offline) |
+| assemble | `bun run assemble <id>` | clips → `episode.mp3` + `transcript.md` | ffmpeg (concat + loudnorm) |
 
-Use HTML imports with `Bun.serve()`. Don't use `vite`. HTML imports fully support React, CSS, Tailwind.
+Run a stage across the workspace with `bun run --filter caster <stage> <id>`, or from this dir with
+`bun run <stage> <id>`. `bun run typecheck` / `bun test` are the gates.
 
-Server:
+## Content sources (SSOT — read, don't copy)
 
-```ts#index.ts
-import index from "./index.html"
+Defaults live in `src/ingest/index.ts`:
 
-Bun.serve({
-  routes: {
-    "/": index,
-    "/api/users/:id": {
-      GET: (req) => {
-        return new Response(JSON.stringify({ id: req.params.id }));
-      },
-    },
-  },
-  // optional websocket support
-  websocket: {
-    open: (ws) => {
-      ws.send("Hello, world!");
-    },
-    message: (ws, message) => {
-      ws.send(message);
-    },
-    close: (ws) => {
-      // handle close
-    }
-  },
-  development: {
-    hmr: true,
-    console: true,
-  }
-})
-```
+- **transcripts** ← `../shared-content/transcripts` (the monorepo SSOT)
+- **wiki** ← `../shared-content/wiki` (the monorepo SSOT; quartz is canonical). caster **excludes
+  `Script/`** — those are quartz transcript pages, not wiki articles.
+- **shibboleth** ← local `content/shibboleth.json` (the speaker map: `arcTitle → { isMain, roles }`).
+  `content/pronunciations.json` is an optional local lexicon override.
 
-HTML files can import .tsx, .jsx or .js files directly and Bun's bundler will transpile & bundle automatically. `<link>` tags can point to stylesheets and Bun's CSS bundler will bundle.
+Do **not** re-create per-app `wiki/`/`transcripts/` copies here — that's exactly the stale pattern the
+removed `update-content.sh` embodied. Edit content in `shared-content`.
 
-```html#index.html
-<html>
-  <body>
-    <h1>Hello, world!</h1>
-    <script type="module" src="./frontend.tsx"></script>
-  </body>
-</html>
-```
+## Conventions
 
-With the following `frontend.tsx`:
+**Bun-first, and this is a CLI — keep it that way.** Use `bun <file>`, `bun test`, `bun install`,
+`bun run`, `bunx` (not npm/node/npx). Prefer `Bun.file` over `node:fs`; `` Bun.$`…` `` over execa; Bun
+auto-loads `.env` (no dotenv).
 
-```tsx#frontend.tsx
-import React from "react";
-import { createRoot } from "react-dom/client";
+> **"Don't use vite" applies to the caster CLI only.** This package is a CLI with no bundler — never
+> pull Vite/web-bundler tooling into it. The Astro+Solid podcast **site** lives at `caster/site`
+> (`caster-site`), which *is* Vite-under-Astro; that rule does not apply there.
 
-// import .css files directly and it works
-import './index.css';
-
-const root = createRoot(document.body);
-
-export default function Frontend() {
-  return <h1>Hello, world!</h1>;
-}
-
-root.render(<Frontend />);
-```
-
-Then, run index.ts
-
-```sh
-bun --hot ./index.ts
-```
-
-For more information, read the Bun API docs in `node_modules/bun-types/docs/**.mdx`.
+- **LLM calls go through `@faerrin/llm`** (`AnthropicClient`), never the Anthropic SDK directly. Both
+  `distill` and `script` need `ANTHROPIC_API_KEY` in this package's `.env`.
+- **ffmpeg + ffprobe on `PATH`** are required for `assemble` only (Stage 5).
+- **TTS providers** (Stage 4): ElevenLabs is the default (`ELEVENLABS_API_KEY`, paid; on `eleven_v3`
+  uses the Text-to-Dialogue API). `--provider=edge` is free (network only); `--provider=mock` is the
+  offline silent-audio provider the tests use.
+- **Tests** are `bun:test`, co-located (`foo.ts` ↔ `foo.test.ts`). Integration tests
+  (`*.integration.test.ts`) read the real `../shared-content/` data.

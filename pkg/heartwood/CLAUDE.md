@@ -7,7 +7,7 @@ Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-r
 ```
 src/                          ← all pipeline code
   cli/                        ← commander.js entrypoints, one file per command
-  wiki/                       ← content/ parsing, indexing, summarization
+  wiki/                       ← wiki parsing (from ../shared-content/wiki/), indexing, summarization
   transcript/                 ← discovery, ledger, chunking, segmentation, extraction
   reconcile/                  ← entity resolution, candidate match, classify, cluster, propose, validate
   github/                     ← REST client, dry-run, commit/PR apply, submissions ledger, respond
@@ -32,21 +32,21 @@ transform) has been removed.
 ### Stage order
 
 ```
-index-wiki  (one-time / when content/ changes)
+index-wiki  (one-time / when the wiki changes)
    ↓
 segment → extract → resolve → match → propose → submit → respond
 ```
 
-`index-wiki` builds `state/wiki-index.json` from `content/` (summaries, key facts, entities — LLM-generated). The six pipeline stages plus `respond` run per transcript. The orchestrator `process` runs them in order for one or all transcripts.
+`index-wiki` builds `state/wiki-index.json` from the wiki (`../shared-content/wiki/`, the SSOT — quartz canonical; `Script/` excluded) (summaries, key facts, entities — LLM-generated). The six pipeline stages plus `respond` run per transcript. The orchestrator `process` runs them in order for one or all transcripts.
 
 | Stage | CLI | Reads | Writes | Model |
 |---|---|---|---|---|
 | segment | `bun run segment [name]` | transcript + wiki-index | `state/segments/<file>.json` | Haiku (`MODEL_SEGMENT`) |
 | extract | `bun run extract [name]` | segments | `state/claims/<file>.json` (+ `_debug/`) | Sonnet (`MODEL_EXTRACT`), Haiku filter (`MODEL_FILTER`) |
 | resolve | `bun run resolve [name]` | claims + wiki-index | `state/resolutions/<file>.json` | Haiku (`MODEL_RESOLVE`) |
-| match | `bun run match [name]` | resolutions + wiki-index + content/ | `state/matches/<file>.json` (+ `_debug/`) | Sonnet (`MODEL_MATCH`) |
-| propose | `bun run propose [name]` | matches + content/ | `state/proposals/<file>.json` (+ `_debug/`) | Sonnet (`MODEL_PROPOSE`) |
-| submit | `bun run submit [name] [--dry-run]` | proposals + content/ | `state/submissions/<file>.json` or `state/dry-runs/<basename>/`; opens GitHub PR | — |
+| match | `bun run match [name]` | resolutions + wiki-index + wiki | `state/matches/<file>.json` (+ `_debug/`) | Sonnet (`MODEL_MATCH`) |
+| propose | `bun run propose [name]` | matches + wiki | `state/proposals/<file>.json` (+ `_debug/`) | Sonnet (`MODEL_PROPOSE`) |
+| submit | `bun run submit [name] [--dry-run]` | proposals + wiki | `state/submissions/<file>.json` or `state/dry-runs/<basename>/`; opens GitHub PR | — |
 | respond | `bun run respond [name]` | submissions + open PR review threads | replies / revised commits to the PR | Sonnet (`MODEL_VERIFY`) |
 
 End-to-end: `bun run process <name>` (or `bun run process --all`). Flags: `--dry-run`, `--force <stage>`, `--stop-before <stage>`, `--concurrency <n>`. Concurrent workers serialize their ledger writes through a `LedgerMutex` (`src/cli/process.ts`).
@@ -76,8 +76,8 @@ Ignored: `state/runs/*`, `state/{claims,matches,proposals}/_debug/`.
 Bun auto-loads `.env`. Required vars (`src/config.ts` throws if missing):
 
 - `ANTHROPIC_API_KEY`
-- `GITHUB_TOKEN` — PAT (classic `repo` scope, or fine-grained Contents + Pull requests RW) for the repo hosting `content/`
-- `GITHUB_REPO` — `owner/name` of the GitHub repo hosting `content/`
+- `GITHUB_TOKEN` — PAT (classic `repo` scope, or fine-grained Contents + Pull requests RW) for the repo hosting the wiki
+- `GITHUB_REPO` — `owner/name` of the GitHub repo hosting the wiki
 - `GITHUB_API_URL` — **optional**, base API URL (defaults to `https://api.github.com`; set for GitHub Enterprise)
 
 Optional model overrides (defaults in parens):
@@ -114,7 +114,7 @@ Stage functions accept optional `completeFn` and `writeLedgerFn` parameters so t
 
 ### Testing
 
-`bun:test`, co-located with source (`foo.ts` ↔ `foo.test.ts`). No shared fixture or helper modules — each test file defines its own inline factories. Some tests (e.g. `src/wiki/load.test.ts`) read the real `content/` directory.
+`bun:test`, co-located with source (`foo.ts` ↔ `foo.test.ts`). No shared fixture or helper modules — each test file defines its own inline factories. Some tests (e.g. `src/wiki/load.test.ts`) read the real wiki at `../shared-content/wiki/`.
 
 ```ts
 import { test, expect } from "bun:test";
@@ -134,12 +134,12 @@ CLI `*One` functions throw on precondition failures (missing upstream state, sta
 
 ## Content Files
 
-The `content/` directory holds Obsidian-flavored markdown files that form the world wiki. Each file represents a single topic: a place, person, organization, game rule, or cosmic phenomenon. **Proposed edits must match these conventions** — the LLM is given these rules as part of the propose-stage prompt.
+The wiki (`../shared-content/wiki/`, the SSOT — quartz canonical) holds Obsidian-flavored markdown files that form the world wiki. Each file represents a single topic: a place, person, organization, game rule, or cosmic phenomenon. **Proposed edits must match these conventions** — the LLM is given these rules as part of the propose-stage prompt. (heartwood reads this corpus excluding `Script/`, which holds quartz-generated transcript pages.)
 
 ### Directory structure
 
 ```
-content/
+../shared-content/wiki/
 ├── index.md                       ← root article
 ├── Timeline.md                    ← world timeline
 ├── Geography/

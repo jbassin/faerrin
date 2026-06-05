@@ -1,9 +1,10 @@
 # CLAUDE.md
 
 Root guidance for the **Faerrin** monorepo — a Bun-workspaces repo for a Pathfinder 2e
-("Faerrin") TTRPG campaign: two static sites, two CLI pipelines, a shared content platform, and a
-shared LLM package. Each package under `pkg/` also has its own `CLAUDE.md` with local detail —
-**read the one for the directory you're working in**; it takes precedence there.
+("Faerrin") TTRPG campaign: three static sites, three CLI pipelines (one a Python/whisperx + TS
+producer), a shared content platform, and a shared LLM package. Each package under `pkg/` also has its
+own `CLAUDE.md` with local detail — **read the one for the directory you're working in**; it takes
+precedence there. There's a repo-level [`README.md`](./README.md) with the human-facing overview.
 
 ## Version control: Jujutsu (jj), NOT git
 
@@ -41,6 +42,7 @@ bun --filter '*' format          # per-app prettier (no single root config — q
 | `caster` | `caster` | Bun CLI — audio/podcast (TTS) pipeline |
 | `caster/site` | `caster-site` | Astro + Solid static site (nested under caster) |
 | `heartwood` | `heartwood` | Bun CLI — turns session transcripts into wiki-edit GitHub PRs |
+| `listener` | `listener` | Producer (Python/whisperx + TS) — Craig Discord recordings → transcript + audio (upstream of `shared-content`) |
 | `quartz` | `quartz` | Astro + Solid renderer — the campaign wiki site (`heart.iridi.cc`) |
 | `strider` | `strider` | TanStack Start + Vite + React — interactive faction-map site |
 | `faerrin-llm` | `@faerrin/llm` | Shared Anthropic client (`AnthropicClient`) + pricing |
