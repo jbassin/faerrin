@@ -14,5 +14,4 @@ TimeoutStartSec=infinity
 OOMScoreAdjust=-500
 WorkingDirectory=/ruby/data/experiments/faerrin
 EnvironmentFile=/ruby/data/experiments/faerrin/pkg/wretch/.env
-EnvironmentFile=/ruby/data/experiments/faerrin/.env
 ExecStart=/bin/bash -lc 'bun run --filter @faerrin/wretch process'
