@@ -4,6 +4,7 @@
 
 import type { KnownCandidate } from "./known"
 import type { DiscoveryCluster } from "./discover"
+import { color } from "../lib/color"
 
 export interface ReviewDeps {
   /** Prompt and return a single keystroke (no Enter needed) — for actions. */
@@ -94,23 +95,41 @@ export function annotationKey(lineRef: number, span: string): string {
   return `${lineRef} ${span.replace(/\s+/g, " ").trim().toLowerCase()}`
 }
 
+const verdictColor: Record<JudgeNote["verdict"], (s: string) => string> = {
+  confirm: color.green,
+  new: color.yellow,
+  reject: color.red,
+}
+
 function formatNote(n: JudgeNote): string {
   const target = n.verdict === "confirm" && n.suggestedCanonical ? ` → ${n.suggestedCanonical}` : ""
-  return `   judge: ${n.verdict}${target} (${n.confidence.toFixed(2)}) — ${n.reason}`
+  const verdict = verdictColor[n.verdict](n.verdict)
+  return color.dim(`   judge: ${verdict}${target} (${n.confidence.toFixed(2)}) — ${n.reason}`)
 }
 
 function formatKnown(c: KnownCandidate, note?: JudgeNote): string {
   const lines = [
     "",
-    `[${c.lineRef}] ${c.speaker}: "${c.span}"`,
-    `   ${clip(c.lineText)}`,
-    ...c.hypotheses.map((h, i) => `   ${i + 1}) ${h.canonical}  (${h.score.toFixed(2)})`),
+    `${color.gray(`[${c.lineRef}]`)} ${color.cyan(c.speaker)}: ${color.yellow(`"${c.span}"`)}`,
+    color.dim(`   ${clip(c.lineText)}`),
+    ...c.hypotheses.map(
+      (h, i) => `   ${color.bold(`${i + 1})`)} ${color.green(h.canonical)}  ${color.dim(`(${h.score.toFixed(2)})`)}`,
+    ),
   ]
   if (note) lines.push(formatNote(note))
   return lines.join("\n")
 }
 
-const KNOWN_PROMPT = "  a/⏎ approve · 1-N pick · c change · d deny · q quit > "
+const KNOWN_PROMPT =
+  "  " +
+  [
+    `${color.bold("a")}/${color.bold("⏎")} approve`,
+    `${color.bold("1-N")} pick`,
+    `${color.bold("c")} change`,
+    `${color.bold("d")} deny`,
+    `${color.bold("q")} quit`,
+  ].join(" · ") +
+  " > "
 
 /** Review Mode-1 candidates: approve/change/deny each, applying approvals to defs.yaml. */
 export async function reviewKnown(
@@ -123,7 +142,7 @@ export async function reviewKnown(
     deps.out("Nothing to review.")
     return stats
   }
-  deps.out(`Reviewing ${items.length} candidate(s).`)
+  deps.out(color.bold(`Reviewing ${items.length} candidate(s).`))
 
   for (const c of items) {
     deps.out(formatKnown(c, annotations?.get(annotationKey(c.lineRef, c.span))))
@@ -131,7 +150,7 @@ export async function reviewKnown(
     let action: Action | null = null
     while (action === null) {
       action = parseAction(await deps.key(KNOWN_PROMPT), c.hypotheses.length)
-      if (action === null) deps.out("   ? unrecognized — a/enter, 1-N, c, d, or q")
+      if (action === null) deps.out(color.red("   ? unrecognized — a/enter, 1-N, c, d, or q"))
     }
 
     if (action.kind === "quit") {
@@ -148,7 +167,7 @@ export async function reviewKnown(
     if (action.kind === "change") {
       canonical = (await deps.line("   correct form > ")).trim()
       if (!canonical) {
-        deps.out("   (empty — skipped)")
+        deps.out(color.dim("   (empty — skipped)"))
         stats.denied++
         continue
       }
@@ -160,9 +179,9 @@ export async function reviewKnown(
     const res = await deps.apply(canonical, c.span)
     if (res.added) {
       stats.applied++
-      deps.out(`   ✓ "${c.span}" → ${canonical}`)
+      deps.out(color.green(`   ✓ "${c.span}" → ${canonical}`))
     } else {
-      deps.out(`   • not written (${res.reason})`)
+      deps.out(color.dim(`   • not written (${res.reason})`))
     }
   }
 
@@ -170,12 +189,12 @@ export async function reviewKnown(
 }
 
 function formatCluster(c: DiscoveryCluster): string {
-  const variants = c.variants.map((v) => `${v.span}×${v.count}`).join(", ")
+  const variants = c.variants.map((v) => `${color.yellow(v.span)}${color.dim(`×${v.count}`)}`).join(", ")
   const ex = c.examples[0]
   return [
     "",
-    `(${c.count} across ${c.sessions.length} session(s)) ${variants}`,
-    ex ? `   e.g. ${ex.date}[${ex.lineRef}]: ${clip(ex.lineText)}` : "",
+    `${color.cyan(`(${c.count} across ${c.sessions.length} session(s))`)} ${variants}`,
+    ex ? color.dim(`   e.g. ${ex.date}[${ex.lineRef}]: ${clip(ex.lineText)}`) : "",
   ]
     .filter(Boolean)
     .join("\n")
@@ -192,12 +211,16 @@ export async function reviewClusters(clusters: DiscoveryCluster[], deps: ReviewD
     deps.out("No clusters to review.")
     return stats
   }
-  deps.out(`Reviewing ${clusters.length} cluster(s).`)
+  deps.out(color.bold(`Reviewing ${clusters.length} cluster(s).`))
 
   for (const c of clusters) {
     deps.out(formatCluster(c))
     const dflt = c.variants[0]?.span ?? ""
-    const input = (await deps.line(`   canonical [${dflt}] (⏎ accept · name · d deny · q quit) > `)).trim()
+    const prompt =
+      `   canonical [${color.green(dflt)}] (` +
+      [`${color.bold("⏎")} accept`, "name", `${color.bold("d")} deny`, `${color.bold("q")} quit`].join(" · ") +
+      ") > "
+    const input = (await deps.line(prompt)).trim()
     const lower = input.toLowerCase()
 
     if (lower === "q") {
@@ -220,7 +243,7 @@ export async function reviewClusters(clusters: DiscoveryCluster[], deps: ReviewD
       const res = await deps.apply(canonical, v.span)
       if (res.added) {
         stats.applied++
-        deps.out(`   ✓ "${v.span}" → ${canonical}`)
+        deps.out(color.green(`   ✓ "${v.span}" → ${canonical}`))
       }
     }
   }

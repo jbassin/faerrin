@@ -8,6 +8,7 @@
 // Flags: --json (machine-readable output)
 
 import { log } from "./lib/log"
+import { color } from "./lib/color"
 import { buildLexicon } from "./lib/lexicon"
 import type { Annotations, ReviewDeps } from "./surface/interactive"
 
@@ -298,11 +299,11 @@ async function runReview(rest: string[]): Promise<void> {
         }
         const items = dedupeForReview(findKnown(t, lex), seen, foldForMatch, (span) => replace(span) !== span)
         if (items.length === 0) continue
-        console.log(`\n=== ${date} ===`)
+        console.log(color.bold(color.cyan(`\n=== ${date} ===`)))
 
         let annotations: Annotations | undefined
         if (useJudge && items.length > 0) {
-          console.log("  (consulting LLM judge…)")
+          console.log(color.dim("  (consulting LLM judge…)"))
           const verdicts = await judgeSession(t, items.map((c) => ({ lineRef: c.lineRef, span: c.span })), lex)
           annotations = new Map(
             verdicts.map((v) => [
@@ -327,8 +328,9 @@ async function runReview(rest: string[]): Promise<void> {
   }
 
   console.log(
-    `\nDone — ${totals.applied} written to defs.yaml ` +
-      `(${totals.approved} approved, ${totals.denied} denied, ${totals.reviewed} reviewed).`,
+    `\n${color.bold("Done")} — ${color.green(`${totals.applied} written`)} to defs.yaml ` +
+      `(${color.green(`${totals.approved} approved`)}, ${color.yellow(`${totals.denied} denied`)}, ` +
+      `${totals.reviewed} reviewed).`,
   )
 }
 
