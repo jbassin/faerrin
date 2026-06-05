@@ -32,6 +32,18 @@ test("does not flag a word that is part of a multi-word canonical", () => {
   expect(cands.some((c) => c.span === "Hildebrandt")).toBe(false)
 })
 
+test("does not flag a span that differs from a canonical only by a leading article", () => {
+  const lex2 = buildLexiconFrom(["The Master of Ceremonies", "Hildebrandt Corporation"])
+  const cands = findKnown(session("we met the Master of Ceremonies today"), lex2)
+  expect(cands.some((c) => c.hypotheses[0].canonical === "The Master of Ceremonies")).toBe(false)
+})
+
+test("still flags a multi-word span with a real content difference (Corp vs Corporation)", () => {
+  const lex2 = buildLexiconFrom(["The Master of Ceremonies", "Hildebrandt Corporation"])
+  const cands = findKnown(session("the Hildebrandt Corp building burned"), lex2)
+  expect(cands.some((c) => c.hypotheses[0].canonical === "Hildebrandt Corporation")).toBe(true)
+})
+
 test("does not flag ordinary English words", () => {
   expect(findKnown(session("we rode to the castle at dawn"), lex)).toHaveLength(0)
 })

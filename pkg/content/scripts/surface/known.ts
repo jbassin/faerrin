@@ -31,6 +31,24 @@ function possessiveBase(fold: string): string | null {
   return /['’]s$/.test(fold) ? fold.slice(0, -2) : null
 }
 
+// Function words that bound multi-word canonicals ("The Master of Ceremonies",
+// "the Scale"). A span differing from a canonical only by these edge words is the
+// same name minus an article — not a mistranscription.
+const EDGE_STOPWORDS = new Set(["the", "a", "an", "of", "and", "to", "in", "on", "at", "for", "with", "by"])
+
+function stripEdgeStopwords(fold: string): string {
+  const w = fold.split(" ")
+  while (w.length > 0 && EDGE_STOPWORDS.has(w[0])) w.shift()
+  while (w.length > 0 && EDGE_STOPWORDS.has(w[w.length - 1])) w.pop()
+  return w.join(" ")
+}
+
+/** True if two folds are equal once leading/trailing function words are removed. */
+function differsOnlyByEdgeWords(a: string, b: string): boolean {
+  const core = stripEdgeStopwords(a)
+  return core.length > 0 && core === stripEdgeStopwords(b)
+}
+
 /**
  * True if a *proper* contiguous sub-span of the slice is itself an exact canonical.
  * Such an n-gram is just a correct canonical padded with adjacent (correct) words
@@ -92,6 +110,7 @@ export function findKnown(t: Transcript, lex: Lexicon): KnownCandidate[] {
         const span = slice.map((x) => x.span).join(" ")
         let top: Hypothesis | null = null
         for (const e of multiword) {
+          if (differsOnlyByEdgeWords(fold, e.fold)) continue // same name minus an article
           const score = ensembleSim(fold, e.fold)
           if (score >= surface.knownFloorMulti && (!top || score > top.score)) {
             top = { canonical: e.canonical, score }
