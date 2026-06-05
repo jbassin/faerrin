@@ -1,6 +1,6 @@
 # Dependencies — hoisted to the workspace root under bun workspaces.
 # (Per-app .gitignore files remain authoritative for app-specific outputs:
-#  e.g. quartz public/.astro, strider dist/src/generated/routeTree.gen.ts,
+#  e.g. aether public/.astro, strider dist/src/generated/routeTree.gen.ts,
 #  heartwood state/ allow-lists. Do NOT consolidate those up here.)
 node_modules/
 

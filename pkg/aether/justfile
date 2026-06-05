@@ -14,11 +14,11 @@ dev-search *args:
 build:
     bash build.sh
 
-# The content pipeline + review tool live in pkg/shared-content now (the content
+# The content pipeline + review tool live in pkg/content now (the content
 # platform). These are convenience wrappers that run them from there.
 review:
-    cd ../shared-content && bunx tsx scripts/review.ts
+    cd ../content && bunx tsx scripts/review.ts
 
 # Run the content pipeline. Pass a step name to run just one, e.g. `just pipeline ingest`.
 pipeline *args:
-    cd ../shared-content && bunx tsx scripts/run.ts {{ args }}
+    cd ../content && bunx tsx scripts/run.ts {{ args }}

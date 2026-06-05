@@ -128,7 +128,7 @@ export async function loadWiki(wikiDir: string): Promise<WikiCorpus> {
   const pages: WikiPage[] = [];
 
   for await (const rel of glob.scan({ cwd: wikiDir })) {
-    // Script/ holds quartz-generated transcript pages, not wiki articles.
+    // Script/ holds aether-generated transcript pages, not wiki articles.
     if (rel.startsWith("Script/")) continue;
     const raw = await Bun.file(`${wikiDir}/${rel}`).text();
     const cleaned = cleanWiki(raw, rel);

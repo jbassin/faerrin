@@ -39,7 +39,7 @@ export function resolveSpeaker(userId: string): Speaker {
 /**
  * Whether a recording user id belongs to a known player (vs. a guest or the
  * Craig recorder bot). The roster keys are the single source of truth; the
- * listener pipeline uses this to choose which tracks to transcribe — replacing
+ * wretch pipeline uses this to choose which tracks to transcribe — replacing
  * its old, duplicated PLAYERS map.
  */
 export function isPlayer(userId: string): boolean {

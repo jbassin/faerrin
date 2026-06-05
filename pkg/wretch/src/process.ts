@@ -11,17 +11,17 @@ import { writeAtomic } from "./fsx.ts"
 import { dataPath, tmpPath, incomingPath, pythonDir, pkgRoot } from "./paths.ts"
 import type { Segment } from "./types.ts"
 
-// Reconciler for the listener stage. It is *level-triggered*: each run observes
+// Reconciler for the wretch stage. It is *level-triggered*: each run observes
 // desired state (Craig zips present) vs actual state (saved/{date}/script.json
 // present) and materializes the gap — no persisted job state, so any trigger
 // (cron, systemd .path, manual) can call reconcile() at any time, idempotently.
 // The expensive transcription node is the only one with resume discipline; the
-// cheap downstream rebuild (ingest/caster/quartz) is left to the cutover.
+// cheap downstream rebuild (ingest/caster/aether) is left to the cutover.
 //
 // LISTENER_KEEP_ZIP=1 preserves source zips (handy when validating).
 
 function log(msg: string): void {
-  console.log(`[listener] ${msg}`)
+  console.log(`[wretch] ${msg}`)
 }
 
 function listZips(dir: string): string[] {
@@ -158,7 +158,7 @@ function materializeSession(date: string, zip: string): "MATERIALIZED" | "EMPTY"
 }
 
 // Cascade the downstream rebuild for the freshly-materialized sessions: the
-// wiki path (content pipeline + quartz build) and the podcast path
+// wiki path (content pipeline + aether build) and the podcast path
 // (caster). That sequence lives in an editable shell conductor (downstream.sh)
 // rather than hard-coded here, because it spans packages, costs Anthropic
 // credits (caster distill/script), and has creative/provider choices. We run it

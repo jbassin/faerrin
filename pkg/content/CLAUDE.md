@@ -52,6 +52,6 @@ bun run --filter @faerrin/content review            # transcript-correction revi
 
 - Bun-first (`bun run`, `bunx tsx`); the pipeline runs via `tsx` (no build step). Paths derive from
   the package root at runtime — no hardcoded absolute paths.
-- **Never `.split("content/")` on a path** — `"content/"` contains `"content/"`. Split on the
-  real base (`"content/wiki/"`).
+- **Never `.split("content/")` on a path** — the absolute path contains `pkg/content/` too, so a bare
+  `content/` split is ambiguous. Split on the real base (`"content/wiki/"`).
 - Env: copy `.env.example` → `.env` here for the `ingest` source URLs/keys.

@@ -1,17 +1,17 @@
-"""Configuration for the listener pipeline.
+"""Configuration for the wretch pipeline.
 
 Paths derive from this file's location so the pipeline is portable across
-checkouts (mirrors shared-content/scripts/lib/paths.ts). Every path is
+checkouts (mirrors content/scripts/lib/paths.ts). Every path is
 overridable via an env var for host cutover — see ../.env.example.
 
-Defaults resolve to `pkg/listener/{data,tmp}`. INCOMING_PATH defaults to the
+Defaults resolve to `pkg/wretch/{data,tmp}`. INCOMING_PATH defaults to the
 host's Craig sync folder (`~/drive/Craig`); override it on other hosts.
 """
 
 import os
 from pathlib import Path
 
-# pkg/listener/python/consts.py -> pkg/listener
+# pkg/wretch/python/consts.py -> pkg/wretch
 _PKG_ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -30,7 +30,7 @@ MODEL = os.environ.get("LISTENER_MODEL", "large-v3")  # or "distil-large-v3"
 DEVICE = os.environ.get("LISTENER_DEVICE", "cpu")
 COMPUTE_TYPE = os.environ.get("LISTENER_COMPUTE_TYPE", "int8")
 
-# Discord user-id -> display name. Mirrors shared-content/scripts/lib/roster.ts
+# Discord user-id -> display name. Mirrors content/scripts/lib/roster.ts
 # (userToName), the downstream SSOT. Used here to filter which tracks belong to
 # real players. Phase 2 will collapse this to a single shared source.
 PLAYERS = {

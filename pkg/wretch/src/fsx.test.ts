@@ -5,7 +5,7 @@ import path from "node:path"
 import { writeAtomic } from "./fsx.ts"
 
 test("writeAtomic writes the file and leaves no .tmp behind", () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "listener-fsx-"))
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wretch-fsx-"))
   try {
     const target = path.join(dir, "script.json")
     writeAtomic(target, '{"ok":true}')
@@ -17,7 +17,7 @@ test("writeAtomic writes the file and leaves no .tmp behind", () => {
 })
 
 test("writeAtomic overwrites an existing file", () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "listener-fsx-"))
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "wretch-fsx-"))
   try {
     const target = path.join(dir, "out.json")
     writeAtomic(target, "old")

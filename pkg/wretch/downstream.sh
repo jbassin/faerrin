@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Downstream cascade for the listener reconciler: publish freshly-transcribed
+# Downstream cascade for the wretch reconciler: publish freshly-transcribed
 # sessions to the wiki and the podcast. Invoked by src/process.ts as
 # `bash downstream.sh <date> [<date> ...]` after new transcripts are produced
 # (only on materialization, so it never re-spends on idle ticks).
 #
 # Order matters: the wiki pipeline produces the canonical transcripts that caster
 # reads, caster produces the episode, face emits episodes.json, and the
-# final quartz build picks up the podcast links. caster per-session steps are
+# final aether build picks up the podcast links. caster per-session steps are
 # best-effort (a podcast hiccup must not block the wiki publish).
 #
 # Edit this to taste — it is your pipeline made explicit. Env knobs:
@@ -53,15 +53,15 @@ if [[ "${SKIP_PODCAST:-0}" != "1" ]]; then
       || log "WARN: podcast cascade failed for ${id} — continuing"
   done
 
-  # 3. Podcast site → dist/episodes.json (the map quartz reads for episode links).
+  # 3. Podcast site → dist/episodes.json (the map aether reads for episode links).
   log "face build"
   bun run --filter @faerrin/face build || log "WARN: face build failed"
 fi
 
 # 4. Build the live wiki (picks up new Script pages + any new podcast links).
 #    Clear Astro's content-layer cache (kept in two places, not reliably
-#    invalidated) before building, mirroring quartz/build.sh.
-log "quartz build"
+#    invalidated) before building, mirroring aether/build.sh.
+log "aether build"
 rm -rf pkg/quartz/.astro "${ROOT}/node_modules/.astro"
 ( cd pkg/aether && bunx astro build )
 

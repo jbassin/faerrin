@@ -53,7 +53,7 @@ async function getListing(): Promise<ListedSession[]> {
   return res
 }
 
-// Local source: read each session's script.json straight off the listener
+// Local source: read each session's script.json straight off the wretch
 // package's saved/ dir instead of over HTTP. The transform below is shared with
 // the remote path, so output is byte-identical given identical script.json
 // inputs — that equivalence is the migration's parity gate.

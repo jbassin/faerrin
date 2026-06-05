@@ -21,7 +21,7 @@ export const remote = {
 export const ingest = {
   /**
    * Where `ingest` reads sessions from: the static-audio host ("remote",
-   * default) or a local `listener` output dir ("local"). Override with
+   * default) or a local `wretch` output dir ("local"). Override with
    * INGEST_SOURCE. The "local" path reads transcripts off the filesystem (the
    * in-repo producer) instead of over HTTP — the migration's re-wired seam. The
    * audio URL is unchanged either way (the mp3 stays served from `remote.baseUrl`).

@@ -39,7 +39,7 @@ own copies. aether is canonical for wiki content.
 ## Getting started
 
 Requires [Bun](https://bun.sh). Some packages need extra tools (`ffmpeg` for caster; `uv` + `ffmpeg`
-for listener) and their own `.env` — see each package's `CLAUDE.md` / `README.md`.
+for wretch) and their own `.env` — see each package's `CLAUDE.md` / `README.md`.
 
 ```sh
 bun install                      # one root install for the whole workspace
