@@ -40,7 +40,7 @@ bun --filter '*' format          # per-app prettier (no single root config — q
 |-----|---------|------------|
 | `caster` | `caster` | Bun CLI — audio/podcast (TTS) pipeline |
 | `caster/site` | `caster-site` | Astro + Solid static site (nested under caster) |
-| `heartwood` | `heartwood` | Bun CLI — turns session transcripts into wiki-edit GitLab MRs |
+| `heartwood` | `heartwood` | Bun CLI — turns session transcripts into wiki-edit GitHub PRs |
 | `quartz` | `quartz` | Astro + Solid renderer — the campaign wiki site (`heart.iridi.cc`) |
 | `strider` | `strider` | TanStack Start + Vite + React — interactive faction-map site |
 | `faerrin-llm` | `@faerrin/llm` | Shared Anthropic client (`AnthropicClient`) + pricing |
