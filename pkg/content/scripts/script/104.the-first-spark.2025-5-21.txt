@@ -1188,7 +1188,7 @@ Script:
 > Gamemaster: In some respects, depending on where you end up, depending on how you end up, there is a much better life to be had in Hallia than there are in other parts of the world.  
 > Gamemaster: It's not true for everywhere, though.  
 > Gamemaster: That contrast is best seen in the Masque District and Teller's Run.  
-> Gamemaster: Two districts sat... Neighborhoods, boroughs, sat next to each other in Helya.  
+> Gamemaster: Two districts sat... Neighborhoods, boroughs, sat next to each other in Hallia.  
 > Gamemaster: One of them, the Masque District, very wealthy.  
 > Gamemaster: One of them, Teller's Run, not so much.  
 > Gamemaster: The Masque District is...  
@@ -1546,7 +1546,7 @@ Script:
 > Gamemaster: The other thing of note, the other exception to their devoid of life is there are Joker worlds, which are...  
 > Gamemaster: instances of Færrin somewhere on the infinite horizon that are very different from everything else.  
 > Combo: Thank you.  
-> Gamemaster: Ranging from there's a Joker World starward that has roving packs of cannibalistic butterfly, sorry, carnivorous butterflies that exist in the area where Helya used to be, which made it a little difficult to settle there.  
+> Gamemaster: Ranging from there's a Joker World starward that has roving packs of cannibalistic butterfly, sorry, carnivorous butterflies that exist in the area where Hallia used to be, which made it a little difficult to settle there.  
 > Gamemaster: to, like, there is a Færrin somewhere on the horizon that is where the devils live.  
 > Gamemaster: Not sure where that is, but one of them has the devil home, like, on it.  
 > Gamemaster: Because every once in a while, one pops up in Færrin Prime, or where they're, like, areas, and they got there somehow.  
