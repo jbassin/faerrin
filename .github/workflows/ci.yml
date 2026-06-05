@@ -1,5 +1,7 @@
-# Monorepo CI (GitHub Actions — confirmed host). jj is git-colocated, so CI clones
-# the git side normally; no jj-specific handling needed.
+# Monorepo CI (GitHub Actions). The pipeline is defined as a Dagger TypeScript
+# module at the repo root (.dagger/), so the exact same steps run locally
+# (`dagger call check` / `dagger call build`) and in CI — no local-vs-CI drift.
+# jj is git-colocated, so CI clones the git side normally; no jj-specific handling.
 name: CI
 
 on:
@@ -12,38 +14,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      # typecheck → astro check → lint → test for every app, inside a pinned
+      # oven/bun:1.3.14 container provisioned by Dagger (see .dagger/src/index.ts).
+      - name: Check (Dagger)
+        uses: dagger/dagger-for-github@v8
         with:
-          bun-version: 1.3.14
-      - name: Install (frozen lockfile)
-        run: bun install --frozen-lockfile
-      - name: Typecheck (all apps)
-        run: bun --filter '*' typecheck
-      - name: Astro check (quartz, caster-site)
-        run: bun --filter '*' check
-      - name: Lint (strider)
-        run: bun --filter '*' lint
-      - name: Test (all apps)
-        # NOTE: currently RED due to 2 pre-existing caster failures unrelated to
-        # the monorepo migration: real-corpus tests hard-code counts (wiki pages
-        # 93 vs drifted 121; transcript parsing) — Phase-2 data-reconciliation work.
-        run: bun --filter '*' test
+          version: "0.21.4"
+          call: check --source=.
 
   build:
     runs-on: ubuntu-latest
     needs: check
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      # Builds every site (quartz, strider, caster-site). strider's build renders
+      # an OG image via Playwright, so the Dagger build function installs Chromium
+      # inside the container. quartz builds astro against committed content/; the
+      # production remote-ingest pipeline (pkg/quartz/build.sh) is intentionally
+      # NOT run in CI.
+      - name: Build (Dagger)
+        uses: dagger/dagger-for-github@v8
         with:
-          bun-version: 1.3.14
-      - name: Install (frozen lockfile)
-        run: bun install --frozen-lockfile
-      # strider's `build` renders an OG image via Playwright (decision D4: OG-in-CI).
-      - name: Install Playwright Chromium
-        run: bunx playwright install --with-deps chromium
-      - name: Build sites (quartz, strider, caster-site)
-        # NOTE: quartz's `build` here is `astro build` against committed content/.
-        # The production build (pkg/quartz/build.sh) additionally runs the remote
-        # ingest pipeline; that is intentionally NOT run in CI.
-        run: bun --filter '*' build
+          version: "0.21.4"
+          call: build --source=.
