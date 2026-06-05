@@ -12,11 +12,11 @@ import { config } from '../config';
 import type { complete as defaultComplete } from '../llm';
 import type { Command } from 'commander';
 
-const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
+const TRANSCRIPTS_DIR  = '../content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const RESOLUTIONS_DIR  = 'state/resolutions';
 const MATCHES_DIR      = 'state/matches';
-const CONTENT_DIR      = '../shared-content/wiki';
+const CONTENT_DIR      = '../content/wiki';
 const WIKI_INDEX_PATH  = 'state/wiki-index.json';
 
 export interface MatchCliOptions {

@@ -51,7 +51,7 @@ if (process.argv[2] === "script") {
     console.error(`No digest for ${match.id}. Run \`bun run distill ${target}\` first.`);
     process.exit(1);
   }
-  const wiki = await loadWiki("../shared-content/wiki");
+  const wiki = await loadWiki("../content/wiki");
   let result;
   try {
     result = await loadOrGenerateScript(digest, wiki, { force });

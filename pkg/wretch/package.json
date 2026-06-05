@@ -1,0 +1,19 @@
+{
+  "name": "@faerrin/wretch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Craig Discord recordings -> per-session transcript (script.json) + merged audio.mp3 via local whisperx. Hybrid: TS orchestration around a thin Python whisper CLI (see CLAUDE.md).",
+  "scripts": {
+    "process": "bun src/process.ts",
+    "process:py": "mkdir -p \"${LISTENER_DATA_PATH:-data}\" \"${LISTENER_TMP_PATH:-tmp}\" && cd python && uv run process.py",
+    "script": "cd python && uv run script.py",
+    "clean": "cd python && uv run clean.py",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.9.3"
+  }
+}

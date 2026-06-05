@@ -17,13 +17,13 @@ import type { Proposal } from '../reconcile/propose';
 import { config } from '../config';
 import type { Command } from 'commander';
 
-const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
+const TRANSCRIPTS_DIR  = '../content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const RESOLUTIONS_DIR  = 'state/resolutions';
 const MATCHES_DIR      = 'state/matches';
 const SEGMENTS_DIR     = 'state/segments';
 const PROPOSALS_DIR    = 'state/proposals';
-const CONTENT_DIR      = '../shared-content/wiki';
+const CONTENT_DIR      = '../content/wiki';
 const WIKI_INDEX_PATH  = 'state/wiki-index.json';
 const CLAUDE_MD_PATH   = 'CLAUDE.md';
 

@@ -2,7 +2,7 @@ import { loadWikiIndex, writeIndex, diffIndex, mergeIndex } from '../wiki/load';
 import { summarizeWikiPages } from '../wiki/summarize';
 import type { Command } from 'commander';
 
-const CONTENT_DIR = '../shared-content/wiki';
+const CONTENT_DIR = '../content/wiki';
 const INDEX_PATH = 'state/wiki-index.json';
 
 export interface IndexWikiCliOptions {}

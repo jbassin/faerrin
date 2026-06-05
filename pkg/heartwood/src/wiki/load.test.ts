@@ -1,9 +1,9 @@
 import { test, expect } from 'bun:test';
 import { loadWikiIndex, mergeIndex } from './load';
 
-// Wiki corpus is the shared-content SSOT (quartz canonical). Script/ holds
+// Wiki corpus is the content SSOT (quartz canonical). Script/ holds
 // generated transcript pages, which loadWikiIndex excludes — so do the same here.
-const CONTENT_DIR = '../shared-content/wiki';
+const CONTENT_DIR = '../content/wiki';
 
 test('indexes every .md file under content/', async () => {
   const index = await loadWikiIndex({ contentDir: CONTENT_DIR });

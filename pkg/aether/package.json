@@ -1,0 +1,48 @@
+{
+  "name": "@faerrin/aether",
+  "description": "Faerrin TTRPG campaign wiki — Astro + Solid renderer (src/). The content pipeline lives in pkg/content.",
+  "private": true,
+  "version": "4.5.1",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev --port 10114",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check && bunx prettier . --check",
+    "format": "bunx prettier . --write"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^6.0.1",
+    "@floating-ui/dom": "^1.7.6",
+    "@tweenjs/tween.js": "^25.0.0",
+    "astro": "^5.6.0",
+    "astro-pagefind": "^2.0.0",
+    "d3-drag": "^3.0.0",
+    "d3-force": "^3.0.0",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
+    "github-slugger": "^2.0.0",
+    "pixi.js": "^8.18.1",
+    "solid-js": "^1.9.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/d3-drag": "^3.0.7",
+    "@types/d3-force": "^3.0.10",
+    "@types/d3-selection": "^3.0.11",
+    "@types/d3-zoom": "^3.0.8",
+    "@types/node": "^24.2.1",
+    "mdast-util-to-string": "^4.0.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "reading-time": "^1.5.0",
+    "remark-directive": "^4.0.0",
+    "sass": "^1.100.0",
+    "typescript": "^5.9.3",
+    "unist-util-visit": "^5.0.0"
+  }
+}

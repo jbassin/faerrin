@@ -1,0 +1,23 @@
+{
+  "name": "@faerrin/face",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "site:build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^5",
+    "@fontsource-variable/archivo": "^5",
+    "@fontsource/space-mono": "^5",
+    "astro": "^5",
+    "solid-js": "^1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9",
+    "typescript": "^5.9.3"
+  }
+}

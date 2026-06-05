@@ -12,29 +12,29 @@ podcast-style audio recap come out the other.
 
 | Directory | Package | What it is |
 |-----------|---------|------------|
-| [`pkg/shared-content`](./pkg/shared-content) | `shared-content` | **Content platform** — the SSOT wiki + transcripts, and the pipeline that generates them |
-| [`pkg/quartz`](./pkg/quartz) | `quartz` | Astro + Solid renderer — the campaign wiki site ([heart.iridi.cc](https://heart.iridi.cc)) |
-| [`pkg/strider`](./pkg/strider) | `strider` | TanStack Start + Vite + React — interactive faction-map site ([strider.iridi.cc](https://strider.iridi.cc)) |
-| [`pkg/caster`](./pkg/caster) | `caster` | Bun CLI — turns transcripts into a three-host podcast audio recap (TTS) |
-| [`pkg/caster/site`](./pkg/caster/site) | `caster-site` | Astro + Solid podcast site ([caster.iridi.cc](https://caster.iridi.cc)) |
-| [`pkg/heartwood`](./pkg/heartwood) | `heartwood` | Bun CLI — turns transcripts into wiki-edit GitHub PRs for human review |
-| [`pkg/listener`](./pkg/listener) | `listener` | Producer (Python/whisperx + TS) — Craig Discord recordings → transcript + audio |
-| [`pkg/faerrin-llm`](./pkg/faerrin-llm) | `@faerrin/llm` | Shared Anthropic client (`AnthropicClient`) + pricing |
+| [`pkg/content`](./pkg/content) | `@faerrin/content` | **Content platform** — the SSOT wiki + transcripts, and the pipeline that generates them |
+| [`pkg/aether`](./pkg/aether) | `@faerrin/aether` | Astro + Solid renderer — the campaign wiki site ([heart.iridi.cc](https://heart.iridi.cc)) |
+| [`pkg/strider`](./pkg/strider) | `@faerrin/strider` | TanStack Start + Vite + React — interactive faction-map site ([strider.iridi.cc](https://strider.iridi.cc)) |
+| [`pkg/caster`](./pkg/caster) | `@faerrin/caster` | Bun CLI — turns transcripts into a three-host podcast audio recap (TTS) |
+| [`pkg/face`](./pkg/face) | `@faerrin/face` | Astro + Solid podcast site ([caster.iridi.cc](https://caster.iridi.cc)) |
+| [`pkg/heartwood`](./pkg/heartwood) | `@faerrin/heartwood` | Bun CLI — turns transcripts into wiki-edit GitHub PRs for human review |
+| [`pkg/wretch`](./pkg/wretch) | `@faerrin/wretch` | Producer (Python/whisperx + TS) — Craig Discord recordings → transcript + audio |
+| [`pkg/llm`](./pkg/llm) | `@faerrin/llm` | Shared Anthropic client (`AnthropicClient`) + pricing |
 
 ## How the data flows
 
 ```
-Craig recording ─▶ listener ─▶ shared-content (SSOT: wiki/ + transcripts/)
-                                   │
-                 ┌─────────────────┼──────────────────┐
-                 ▼                 ▼                  ▼
-              quartz           heartwood            caster ─▶ caster-site
-           (wiki site)     (wiki-edit PRs)       (podcast audio)
+Craig recording ─▶ wretch ─▶ content (SSOT: wiki/ + transcripts/)
+                                 │
+               ┌─────────────────┼──────────────────┐
+               ▼                 ▼                  ▼
+            aether           heartwood            caster ─▶ face
+         (wiki site)     (wiki-edit PRs)       (podcast audio)
 ```
 
-**`shared-content` is the single source of truth.** The wiki and transcripts live there and only
-there; consumers read them by filesystem path (`../shared-content/...`) — they do **not** keep their
-own copies. quartz is canonical for wiki content.
+**`@faerrin/content` is the single source of truth.** The wiki and transcripts live there and only
+there; consumers read them by filesystem path (`../content/...`) — they do **not** keep their
+own copies. aether is canonical for wiki content.
 
 ## Getting started
 
@@ -49,9 +49,9 @@ Root scripts fan out across every workspace member (each delegates to that packa
 
 ```sh
 bun run typecheck                # tsc --noEmit per app
-bun run check                    # astro check (quartz, caster-site)
+bun run check                    # astro check (aether, face)
 bun run test                     # bun test / vitest per app
-bun run build                    # site builds (quartz, strider, caster-site)
+bun run build                    # site builds (aether, strider, face)
 bun run lint                     # eslint (strider)
 bun run format                   # per-app prettier
 ```
@@ -80,5 +80,5 @@ can corrupt jj state — use `jj`. There are no git hooks; format/lint/test run 
 
 The three sites are served by a [Caddy](https://caddyserver.com) reverse proxy configured in
 `sites.caddyfile` at the repo root (gitignored — it embeds a Cloudflare DNS token). It maps
-`heart.iridi.cc → quartz/public`, `caster.iridi.cc → caster/site/dist`, and
+`heart.iridi.cc → aether/public`, `caster.iridi.cc → face/dist`, and
 `strider.iridi.cc → strider/dist/client`.

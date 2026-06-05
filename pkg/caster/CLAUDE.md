@@ -22,21 +22,21 @@ ingest → distill → script → tts → assemble
 | tts      | `bun run tts <id> --provider=<p>` | script → audio clips | ElevenLabs (default) · Edge (free) · mock (offline) |
 | assemble | `bun run assemble <id>` | clips → `episode.mp3` + `transcript.md` | ffmpeg (concat + loudnorm) |
 
-Run a stage across the workspace with `bun run --filter caster <stage> <id>`, or from this dir with
+Run a stage across the workspace with `bun run --filter @faerrin/caster <stage> <id>`, or from this dir with
 `bun run <stage> <id>`. `bun run typecheck` / `bun test` are the gates.
 
 ## Content sources (SSOT — read, don't copy)
 
 Defaults live in `src/ingest/index.ts`:
 
-- **transcripts** ← `../shared-content/transcripts` (the monorepo SSOT)
-- **wiki** ← `../shared-content/wiki` (the monorepo SSOT; quartz is canonical). caster **excludes
-  `Script/`** — those are quartz transcript pages, not wiki articles.
+- **transcripts** ← `../content/transcripts` (the monorepo SSOT)
+- **wiki** ← `../content/wiki` (the monorepo SSOT; aether is canonical). caster **excludes
+  `Script/`** — those are aether transcript pages, not wiki articles.
 - **shibboleth** ← local `content/shibboleth.json` (the speaker map: `arcTitle → { isMain, roles }`).
   `content/pronunciations.json` is an optional local lexicon override.
 
 Do **not** re-create per-app `wiki/`/`transcripts/` copies here — that's exactly the stale pattern the
-removed `update-content.sh` embodied. Edit content in `shared-content`.
+removed `update-content.sh` embodied. Edit content in `@faerrin/content`.
 
 ## Conventions
 
@@ -45,8 +45,8 @@ removed `update-content.sh` embodied. Edit content in `shared-content`.
 auto-loads `.env` (no dotenv).
 
 > **"Don't use vite" applies to the caster CLI only.** This package is a CLI with no bundler — never
-> pull Vite/web-bundler tooling into it. The Astro+Solid podcast **site** lives at `caster/site`
-> (`caster-site`), which *is* Vite-under-Astro; that rule does not apply there.
+> pull Vite/web-bundler tooling into it. The Astro+Solid podcast **site** is its own package,
+> `pkg/face` (`@faerrin/face`), which *is* Vite-under-Astro; that rule does not apply there.
 
 - **LLM calls go through `@faerrin/llm`** (`AnthropicClient`), never the Anthropic SDK directly. Both
   `distill` and `script` need `ANTHROPIC_API_KEY` in this package's `.env`.
@@ -55,4 +55,4 @@ auto-loads `.env` (no dotenv).
   uses the Text-to-Dialogue API). `--provider=edge` is free (network only); `--provider=mock` is the
   offline silent-audio provider the tests use.
 - **Tests** are `bun:test`, co-located (`foo.ts` ↔ `foo.test.ts`). Integration tests
-  (`*.integration.test.ts`) read the real `../shared-content/` data.
+  (`*.integration.test.ts`) read the real `../content/` data.

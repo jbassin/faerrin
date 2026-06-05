@@ -33,7 +33,7 @@ export class Ci {
     return this.base(source).withExec(["bun", "--filter", "*", "typecheck"]).stdout()
   }
 
-  /** Astro check for quartz and caster-site (`bun --filter '*' check`). */
+  /** Astro check for aether and face (`bun --filter '*' check`). */
   @func()
   async astroCheck(source: Directory): Promise<string> {
     return this.base(source).withExec(["bun", "--filter", "*", "check"]).stdout()
@@ -75,14 +75,14 @@ export class Ci {
   }
 
   /**
-   * The `build` CI job: build every site (quartz, strider, caster-site).
+   * The `build` CI job: build every site (aether, strider, face).
    * strider's build renders an OG image via Playwright, so Chromium + its system
    * deps are installed via apt (needs root) into an explicit browsers path.
    * Everything runs as the oven/bun image's default user (root) — the same user
    * that ran `bun install`, so node_modules ownership stays consistent (a mixed
    * install-as-root / build-as-bun split fails with EACCES on vite's cache dirs).
    * Build output is deterministic site generation, so the user doesn't affect
-   * quartz's byte-identical result.
+   * aether's byte-identical result.
    */
   @func()
   async build(source: Directory): Promise<string> {

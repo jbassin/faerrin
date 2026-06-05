@@ -7,11 +7,11 @@ import { respondOne, type RespondCtx } from '../github/respond';
 import type { GitHubClient } from '../github/client';
 import type { Command } from 'commander';
 
-const TRANSCRIPTS_DIR  = '../shared-content/transcripts';
+const TRANSCRIPTS_DIR  = '../content/transcripts';
 const LEDGER_PATH      = 'state/processed.json';
 const SUBMISSIONS_DIR  = 'state/submissions';
 const PROPOSALS_DIR    = 'state/proposals';
-const CONTENT_DIR      = '../shared-content/wiki';
+const CONTENT_DIR      = '../content/wiki';
 const DRY_RUNS_DIR     = 'state/dry-runs';
 const CONVENTIONS_PATH = 'CLAUDE.md';
 

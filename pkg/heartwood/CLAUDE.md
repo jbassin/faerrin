@@ -1,13 +1,13 @@
 ## Project
 
-Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (read from `../shared-content/transcripts/`, the monorepo SSOT generated from quartz's pipeline) are segmented, mined for factual claims, matched against existing wiki pages (read from `../shared-content/wiki/`, the monorepo SSOT — quartz is canonical), and emitted as proposed edits that ship as GitHub pull requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the PR review).
+Heartwood is a pipeline that turns Pathfinder 2e session transcripts into pull-requested edits on a hand-maintained Obsidian wiki. Raw transcripts (read from `../content/transcripts/`, the monorepo SSOT generated from aether's pipeline) are segmented, mined for factual claims, matched against existing wiki pages (read from `../content/wiki/`, the monorepo SSOT — aether is canonical), and emitted as proposed edits that ship as GitHub pull requests for human review. The two cardinal constraints: keep LLM cost bounded (no shoveling the entire wiki into every call) and let no hallucination reach the wiki without a human gate (the PR review).
 
 ## Repository layout
 
 ```
 src/                          ← all pipeline code
   cli/                        ← commander.js entrypoints, one file per command
-  wiki/                       ← wiki parsing (from ../shared-content/wiki/), indexing, summarization
+  wiki/                       ← wiki parsing (from ../content/wiki/), indexing, summarization
   transcript/                 ← discovery, ledger, chunking, segmentation, extraction
   reconcile/                  ← entity resolution, candidate match, classify, cluster, propose, validate
   github/                     ← REST client, dry-run, commit/PR apply, submissions ledger, respond
@@ -15,15 +15,15 @@ src/                          ← all pipeline code
   llm.ts                      ← single `complete()` wrapping Anthropic SDK; emits structured output via Zod schema
   pricing.ts                  ← USD/1M-token rate table
   log.ts                      ← per-run JSONL cost log writer/summarizer
-# (wiki read from ../shared-content/wiki/ — the SSOT; quartz canonical. See "Content Files" below)
+# (wiki read from ../content/wiki/ — the SSOT; aether canonical. See "Content Files" below)
 state/                        ← pipeline outputs, one file per transcript per stage (see "Pipeline" below)
 tickets/                      ← numbered spec docs (001-…) that drive the work
 thoughts/shared/plans/        ← pre-implementation plans, one per ticket
 index.ts                      ← top-level entrypoint — registers all CLI commands
 ```
 
-Transcripts are read from `../shared-content/transcripts/` (the monorepo SSOT, generated from
-quartz's pipeline via `bun run --filter shared-content build:transcripts`). heartwood no longer keeps
+Transcripts are read from `../content/transcripts/` (the monorepo SSOT, generated from
+aether's pipeline via `bun run --filter @faerrin/content build:transcripts`). heartwood no longer keeps
 its own `transcripts/`, and the old `update-transcripts.sh` (broken `/emerald/` paths + fixed-header
 transform) has been removed.
 
@@ -37,7 +37,7 @@ index-wiki  (one-time / when the wiki changes)
 segment → extract → resolve → match → propose → submit → respond
 ```
 
-`index-wiki` builds `state/wiki-index.json` from the wiki (`../shared-content/wiki/`, the SSOT — quartz canonical; `Script/` excluded) (summaries, key facts, entities — LLM-generated). The six pipeline stages plus `respond` run per transcript. The orchestrator `process` runs them in order for one or all transcripts.
+`index-wiki` builds `state/wiki-index.json` from the wiki (`../content/wiki/`, the SSOT — aether canonical; `Script/` excluded) (summaries, key facts, entities — LLM-generated). The six pipeline stages plus `respond` run per transcript. The orchestrator `process` runs them in order for one or all transcripts.
 
 | Stage | CLI | Reads | Writes | Model |
 |---|---|---|---|---|
@@ -114,7 +114,7 @@ Stage functions accept optional `completeFn` and `writeLedgerFn` parameters so t
 
 ### Testing
 
-`bun:test`, co-located with source (`foo.ts` ↔ `foo.test.ts`). No shared fixture or helper modules — each test file defines its own inline factories. Some tests (e.g. `src/wiki/load.test.ts`) read the real wiki at `../shared-content/wiki/`.
+`bun:test`, co-located with source (`foo.ts` ↔ `foo.test.ts`). No shared fixture or helper modules — each test file defines its own inline factories. Some tests (e.g. `src/wiki/load.test.ts`) read the real wiki at `../content/wiki/`.
 
 ```ts
 import { test, expect } from "bun:test";
@@ -134,12 +134,12 @@ CLI `*One` functions throw on precondition failures (missing upstream state, sta
 
 ## Content Files
 
-The wiki (`../shared-content/wiki/`, the SSOT — quartz canonical) holds Obsidian-flavored markdown files that form the world wiki. Each file represents a single topic: a place, person, organization, game rule, or cosmic phenomenon. **Proposed edits must match these conventions** — the LLM is given these rules as part of the propose-stage prompt. (heartwood reads this corpus excluding `Script/`, which holds quartz-generated transcript pages.)
+The wiki (`../content/wiki/`, the SSOT — aether canonical) holds Obsidian-flavored markdown files that form the world wiki. Each file represents a single topic: a place, person, organization, game rule, or cosmic phenomenon. **Proposed edits must match these conventions** — the LLM is given these rules as part of the propose-stage prompt. (heartwood reads this corpus excluding `Script/`, which holds aether-generated transcript pages.)
 
 ### Directory structure
 
 ```
-../shared-content/wiki/
+../content/wiki/
 ├── index.md                       ← root article
 ├── Timeline.md                    ← world timeline
 ├── Geography/

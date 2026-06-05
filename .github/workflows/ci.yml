@@ -27,10 +27,10 @@ jobs:
     needs: check
     steps:
       - uses: actions/checkout@v4
-      # Builds every site (quartz, strider, caster-site). strider's build renders
+      # Builds every site (aether, strider, face). strider's build renders
       # an OG image via Playwright, so the Dagger build function installs Chromium
-      # inside the container. quartz builds astro against committed content/; the
-      # production remote-ingest pipeline (pkg/quartz/build.sh) is intentionally
+      # inside the container. aether builds astro against committed content/; the
+      # production remote-ingest pipeline (pkg/aether/build.sh) is intentionally
       # NOT run in CI.
       - name: Build (Dagger)
         uses: dagger/dagger-for-github@v8.4.1

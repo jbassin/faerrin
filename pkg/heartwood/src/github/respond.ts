@@ -290,7 +290,7 @@ async function applyDiffComment(
   const firstNote = disc.notes[0]!;
   const filePath  = firstNote.position!.new_path;   // repo-relative, e.g. content/Foo.md
 
-  // The wiki lives at ctx.contentDir (../shared-content/wiki), not heartwood's cwd.
+  // The wiki lives at ctx.contentDir (../content/wiki), not heartwood's cwd.
   // Strip the repo-relative `content/` prefix to read the real file off disk;
   // filePath stays repo-relative for the prompt and the committed CommitAction paths.
   const diskPath = `${ctx.contentDir}/${filePath.replace(/^content\//, '')}`;

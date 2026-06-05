@@ -74,7 +74,7 @@ async function collectPages(contentDir: string): Promise<RawPage[]> {
   const glob = new Bun.Glob('**/*.md');
   const paths: string[] = [];
   for await (const p of glob.scan({ cwd: contentDir, absolute: false })) {
-    // Script/ holds quartz-generated transcript pages (shared-content/wiki/Script),
+    // Script/ holds quartz-generated transcript pages (content/wiki/Script),
     // not hand-maintained wiki articles — exclude them from the wiki index.
     if (p.startsWith('Script/')) continue;
     paths.push(p);

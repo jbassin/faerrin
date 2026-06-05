@@ -5,7 +5,7 @@ import { summarizePage, summarizeWikiPages } from './summarize';
 import type { SummarizeResult } from './summarize';
 import type { PageRecord } from './index-schema';
 
-// Self-contained fixtures: the wiki corpus is the shared-content SSOT, so these
+// Self-contained fixtures: the wiki corpus is the content SSOT, so these
 // tests own their content rather than reading the real (shared) wiki.
 let DIR: string;
 const FIXTURES: Record<string, string> = {

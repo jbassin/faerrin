@@ -3,8 +3,7 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "pkg/*",
-    "pkg/caster/site"
+    "pkg/*"
   ],
   "scripts": {
     "test": "bun --filter '*' test",

@@ -15,8 +15,8 @@ export interface CasterPaths {
 }
 
 export const DEFAULT_PATHS: CasterPaths = {
-  transcripts: "../shared-content/transcripts",
-  wiki: "../shared-content/wiki",
+  transcripts: "../content/transcripts",
+  wiki: "../content/wiki",
   shibboleth: "content/shibboleth.json",
 };
 
