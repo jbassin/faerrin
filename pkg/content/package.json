@@ -6,7 +6,7 @@
     "build:transcripts": "bun scripts/build-transcripts.ts",
     "pipeline": "bunx tsx scripts/run.ts",
     "review": "bunx tsx scripts/review.ts",
-    "surface": "bunx tsx scripts/surface.ts",
+    "surface": "bun scripts/surface.ts",
     "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
