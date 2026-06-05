@@ -21,15 +21,15 @@ just dev-search     # build + preview so Pagefind search works (it indexes built
 
 ## Commands
 
-| Command | What it does |
-|---|---|
-| `just dev` | Astro dev server at `localhost:10114` (search is empty in dev) |
-| `just dev-search` | Build + preview so Pagefind search is exercised against a real build |
-| `bun run check` | `astro check` + Prettier check |
-| `bun run format` | Prettier write |
+| Command                           | What it does                                                                                                                 |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `just dev`                        | Astro dev server at `localhost:10114` (search is empty in dev)                                                               |
+| `just dev-search`                 | Build + preview so Pagefind search is exercised against a real build                                                         |
+| `bun run check`                   | `astro check` + Prettier check                                                                                               |
+| `bun run format`                  | Prettier write                                                                                                               |
 | `bash build.sh` (or `just build`) | **Production build**: runs the `shared-content` pipeline, clears Astro's content-layer cache, then `astro build` → `public/` |
-| `bunx astro build` | Build the site only (skip the content pipeline) → `public/` |
-| `bunx astro preview` | Serve the built site locally |
+| `bunx astro build`                | Build the site only (skip the content pipeline) → `public/`                                                                  |
+| `bunx astro preview`              | Serve the built site locally                                                                                                 |
 
 The content pipeline and the transcript-correction review UI live in `shared-content`; `just pipeline`
 and `just review` are convenience wrappers that run them from there.

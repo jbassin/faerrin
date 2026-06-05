@@ -1,6 +1,6 @@
 # Strider — Project Plan
 
-> **Historical planning document.** This is the *original* plan that drove tickets 01–05; the shipped
+> **Historical planning document.** This is the _original_ plan that drove tickets 01–05; the shipped
 > implementation has since diverged. Notably: the framework is **TanStack Start (Vite)**, not Next.js;
 > the map renderer is **`pixi.js`**, not `react-hexgrid`; and the grid is **radius-35 axial `(q, r)`**,
 > not radius-5. For the current state, read [`../README.md`](../README.md) and
