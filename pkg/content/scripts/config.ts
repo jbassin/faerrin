@@ -62,6 +62,33 @@ export const podcast = {
     resolve(sharedRoot, "..", "face", "dist", "episodes.json"),
 }
 
+export const surface = {
+  /** Max n-gram width when scanning lines for multi-word canonicals. */
+  maxNgram: 3,
+  /** Skip tokens shorter than this (1–2 char noise). */
+  minTokenLen: 3,
+  /** Mode 1: min ensemble score to surface a single-word correction candidate. */
+  knownFloorUnigram: 0.78,
+  /** Mode 1: min ensemble score for a multi-word candidate. */
+  knownFloorMulti: 0.8,
+  /**
+   * Mode 1: a candidate also needs a "namelike" (capitalized, non-line-initial)
+   * token — proper-noun garbles are capitalized; the common false positives are
+   * lowercase function words or sentence-initial words. A unigram may skip this
+   * gate only if its match is extremely strong (≥ this score).
+   */
+  strongScore: 0.88,
+  /**
+   * Mode 2: a token within this score of a known canonical is treated as a
+   * Mode-1 garble (already attributable) and excluded from new-entity discovery.
+   */
+  knownNearFloor: 0.6,
+  /** Mode 2: min occurrences across all sessions for a cluster to surface. */
+  minClusterCount: 3,
+  /** Mode 2: attach an OOV variant to a cluster when ensembleSim ≥ this (leader clustering). */
+  clusterMergeFloor: 0.72,
+}
+
 export const campaign = {
   /**
    * Minimum number of character-name keyword hits in a transcript before it is
