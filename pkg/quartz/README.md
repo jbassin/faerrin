@@ -1,18 +1,54 @@
-# Quartz v4
+# quartz
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+The **Faerrin campaign wiki** renderer — an [Astro](https://astro.build) 5 + [Solid](https://www.solidjs.com)
+static site, deployed at **[heart.iridi.cc](https://heart.iridi.cc)**. It renders the hand-maintained
+Obsidian wiki (Pathfinder 2e setting lore + generated session-transcript pages) with wikilinks,
+backlinks, a graph view, full-text search, and an interactive transcript player.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+> This package is the **renderer only**. The wiki content is the single source of truth in
+> [`pkg/shared-content`](../shared-content) (`wiki/`); quartz reads `../shared-content/wiki` as its
+> Astro content root. To change content, edit `shared-content`.
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+## Getting started
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+Requires [Bun](https://bun.sh) and [`just`](https://github.com/casey/just).
 
-## Sponsors
+```bash
+bun install
+just dev            # Astro dev server → http://localhost:10114
+just dev-search     # build + preview so Pagefind search works (it indexes built HTML)
+```
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## Commands
+
+| Command | What it does |
+|---|---|
+| `just dev` | Astro dev server at `localhost:10114` (search is empty in dev) |
+| `just dev-search` | Build + preview so Pagefind search is exercised against a real build |
+| `bun run check` | `astro check` + Prettier check |
+| `bun run format` | Prettier write |
+| `bash build.sh` (or `just build`) | **Production build**: runs the `shared-content` pipeline, clears Astro's content-layer cache, then `astro build` → `public/` |
+| `bunx astro build` | Build the site only (skip the content pipeline) → `public/` |
+| `bunx astro preview` | Serve the built site locally |
+
+The content pipeline and the transcript-correction review UI live in `shared-content`; `just pipeline`
+and `just review` are convenience wrappers that run them from there.
+
+## How it works
+
+- **`astro.config.mjs`** wires the Solid + Pagefind integrations and the remark plugin chain
+  (directive → callouts → wikilinks → transcript). `publicDir` is `assets/` (committed source static
+  files); `outDir` is `public/`.
+- **`src/content.config.ts`** loads the wiki from `../shared-content/wiki` via a glob loader.
+- **`src/lib/slug.ts`** is the single source of truth for URL slugs; **`src/lib/site.ts`** builds the
+  link/backlink/breadcrumb/Explorer index at build time.
+- **`src/components/islands/*.tsx`** are the Solid islands: Darkmode, Explorer, Graph, Popover,
+  ReaderMode, Search, and the TranscriptPlayer (attached on `Script/` pages).
+
+See [`CLAUDE.md`](./CLAUDE.md) for the full architecture and editing conventions.
+
+## Deployment
+
+The production build emits to `public/`, served by a Caddy reverse proxy (`heart.iridi.cc →
+quartz/public`, configured in the repo-root `sites.caddyfile`). The output must stay byte-identical
+across builds — don't change `outDir`/`publicDir`/`base`.

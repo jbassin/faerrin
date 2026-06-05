@@ -43,11 +43,12 @@ changes:
 Optional body prose — surfaced later in the timeline UI.
 ```
 
-## Ops (session 1)
+## Region ops
 
 - `add` — requires `slug`, `name`, `faction`, `hexes`. Errors if slug already exists.
 - `update` — requires `slug`; any subset of `name`, `faction`, `hexes` replaces those fields. Errors if slug missing.
 - `remove` — requires `slug`. Errors if slug missing.
+- `claim` — requires `hexes` and `faction` (a faction slug, or `null` for explicitly unowned). Sets per-hex territory ownership, overriding the base map. (See `foldFactionOverrides` in `src/lib/regions.ts`.)
 
 All errors throw at module-load time so authoring mistakes fail loudly in dev.
 
@@ -116,9 +117,10 @@ regions and `skein-add`/`skein-connect`/`skein-remove` for the Skein.
 `skein-update` and `skein-disconnect` are written by hand — they're rare
 enough not to warrant their own UI.
 
-## Out of scope (for now)
+## Hex ownership
 
-Hex-to-faction ownership changes are not yet a layer op — the Voronoi
-assignment in `src/lib/hexUtils.ts` is still the source of truth for which
-faction owns which hex. The schema is intentionally forward-compatible so
-ownership ops can be added later without breaking existing layers.
+The Voronoi assignment in `src/lib/hexUtils.ts` is the **base** map — for the ring
+factions that base territory is unowned, and only the Harlequins start with held
+hexes. The `claim` op (above) layers on top of it: `claim` with a faction slug
+marks those hexes owned, and `faction: null` marks them explicitly unowned. Absent
+a `claim`, a hex keeps whatever the base map said.

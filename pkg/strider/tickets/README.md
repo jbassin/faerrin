@@ -1,5 +1,11 @@
 # Strider — Project Plan
 
+> **Historical planning document.** This is the *original* plan that drove tickets 01–05; the shipped
+> implementation has since diverged. Notably: the framework is **TanStack Start (Vite)**, not Next.js;
+> the map renderer is **`pixi.js`**, not `react-hexgrid`; and the grid is **radius-35 axial `(q, r)`**,
+> not radius-5. For the current state, read [`../README.md`](../README.md) and
+> [`../CLAUDE.md`](../CLAUDE.md). The plan below is kept as a record of the initial design intent.
+
 An interactive city map website for the Strider, a city in a Pathfinder 2e campaign. The map shows the 20 factions that control the city, their territorial holdings, and allows players to explore each faction's identity and known members.
 
 ## Tech Stack
