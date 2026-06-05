@@ -9,6 +9,7 @@
 
 import { log } from "./lib/log"
 import { buildLexicon } from "./lib/lexicon"
+import type { ReviewDeps } from "./surface/interactive"
 
 function usage(): void {
   console.log(`Usage: tsx scripts/surface.ts <command> [args]
@@ -17,6 +18,9 @@ function usage(): void {
   discover [--min-count N]    surface recurring unknown entities across all sessions
   judge <date|all> [--mode hybrid|full] [--write]
                               LLM-judge candidates; --write appends confirms to defs.yaml
+  review <date|all>           interactively approve/change/deny candidates → defs.yaml
+  review --discover [--min-count N]
+                              interactively canonicalize discovery clusters → defs.yaml
 
 Flags:
   --json                      emit machine-readable JSON`)
@@ -106,6 +110,99 @@ async function runJudge(rest: string[], json: boolean): Promise<void> {
   if (json) console.log(JSON.stringify(report, null, 2))
 }
 
+/**
+ * Line reader that works for both an interactive TTY and piped stdin: it buffers
+ * lines that arrive ahead of a prompt and treats EOF / Ctrl-D as a quit ("q"), so
+ * a partial scripted input ends the session cleanly instead of throwing.
+ */
+async function makeLineReader(): Promise<{ ask: (p: string) => Promise<string>; close: () => void }> {
+  const readline = await import("node:readline")
+  // @types/bun's readline Interface doesn't surface EventEmitter methods; cast to
+  // the minimal shape we use.
+  const rl = readline.createInterface({ input: process.stdin }) as unknown as {
+    on(event: "line", cb: (line: string) => void): void
+    on(event: "close", cb: () => void): void
+    close(): void
+  }
+  const buffer: string[] = []
+  const waiters: Array<(line: string) => void> = []
+  let closed = false
+  rl.on("line", (line) => {
+    const w = waiters.shift()
+    if (w) w(line)
+    else buffer.push(line)
+  })
+  rl.on("close", () => {
+    closed = true
+    while (waiters.length) (waiters.shift() as (l: string) => void)("q")
+  })
+  return {
+    ask(prompt) {
+      process.stdout.write(prompt)
+      const next = buffer.shift()
+      if (next !== undefined) return Promise.resolve(next)
+      if (closed) return Promise.resolve("q")
+      return new Promise<string>((res) => waiters.push(res))
+    },
+    close: (): void => rl.close(),
+  }
+}
+
+async function runReview(rest: string[]): Promise<void> {
+  const { findKnown } = await import("./surface/known")
+  const { discover } = await import("./surface/discover")
+  const { reviewKnown, reviewClusters } = await import("./surface/interactive")
+  const { readSession, listSessionDates } = await import("./surface/tokens")
+  const { buildLexicon } = await import("./lib/lexicon")
+  const { addCorrection } = await import("./lib/defs")
+
+  const lex = await buildLexicon()
+  const rl = await makeLineReader()
+  const deps: ReviewDeps = {
+    ask: (q) => rl.ask(q),
+    apply: (canonical, span) => addCorrection(canonical, span),
+    out: (s) => console.log(s),
+  }
+
+  const totals = { reviewed: 0, approved: 0, applied: 0, denied: 0 }
+  const add = (s: { reviewed: number; approved: number; applied: number; denied: number }): void => {
+    totals.reviewed += s.reviewed
+    totals.approved += s.approved
+    totals.applied += s.applied
+    totals.denied += s.denied
+  }
+
+  try {
+    if (rest.includes("--discover")) {
+      const mi = rest.indexOf("--min-count")
+      const minCount = mi >= 0 ? Number(rest[mi + 1]) : undefined
+      add(await reviewClusters(await discover(lex, { minCount }), deps))
+    } else {
+      const target = rest.find((a) => !a.startsWith("--")) ?? "all"
+      const dates = target === "all" ? await listSessionDates() : [target]
+      for (const date of dates) {
+        const t = await readSession(date)
+        if (!t) {
+          log.warn(`no session "${date}"`)
+          continue
+        }
+        const items = findKnown(t, lex)
+        if (items.length > 0) console.log(`\n=== ${date} ===`)
+        const stats = await reviewKnown(items, deps)
+        add(stats)
+        if (stats.quit) break
+      }
+    }
+  } finally {
+    rl.close()
+  }
+
+  console.log(
+    `\nDone — ${totals.applied} written to defs.yaml ` +
+      `(${totals.approved} approved, ${totals.denied} denied, ${totals.reviewed} reviewed).`,
+  )
+}
+
 async function main(): Promise<void> {
   const argv = process.argv.slice(2)
   const cmd = argv[0]
@@ -126,6 +223,9 @@ async function main(): Promise<void> {
       return
     case "judge":
       await runJudge(rest, json)
+      return
+    case "review":
+      await runReview(rest)
       return
     default:
       log.error(`unknown command "${cmd}"`)
