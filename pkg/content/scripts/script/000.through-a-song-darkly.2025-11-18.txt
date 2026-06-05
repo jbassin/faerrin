@@ -211,7 +211,7 @@ Script:
 > Argyle: Yeah, Mindbird.  
 > Johnny: Mindbird!  
 > Johnny: He does look like Mindbird.  
-> Benny: If it makes you feel any better, the picture of Edan, the PNG, if I set it exactly to one third of my screen on my Super Ultra Wide, it makes the screen bug the fuck out.  
+> Benny: If it makes you feel any better, the picture or Edan, the PNG, if I set it exactly to one third of my screen on my Super Ultra Wide, it makes the screen bug the fuck out.  
 > Argyle: Yeah.  
 > Benny: I'll take a video.  
 > Gamemaster: I mean, it's like an 100 meg image, which is fun, because that was after compressing it.  
@@ -279,7 +279,7 @@ Script:
 > Gamemaster: That's fine.  
 > Argyle: I think it's way funnier in context for everything Argyle's doing.  
 > Gamemaster: Hmm.  
-> Argyle: This is what happens when you attack his Mr. Whiskas.  
+> Argyle: This is what happens when you attack his Mr. Whiskers.  
 > Gamemaster: Oh.  
 > Benny: my face when they're out of uh myrrh cigarettes or whatever the i've seen quite a bit  
 > Gamemaster: Do you guys want to see something creepy?  
@@ -2647,7 +2647,7 @@ Script:
 > Gamemaster: OK.  
 > Gamemaster: Some of these...  
 > Gamemaster: Some of these you recognize.  
-> Gamemaster: There are a few that look to be orange trees, which you know are native to Tormari in the south.  
+> Gamemaster: There are a few that look to be orange trees, which you know are native to Tormeré in the south.  
 > Gamemaster: They need warmer conditions to grow.  
 > Gamemaster: Some of these aren't fruits that are familiar to you.  
 > Argyle: you  

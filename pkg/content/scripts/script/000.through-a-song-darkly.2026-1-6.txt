@@ -88,7 +88,7 @@ Script:
 > Benny: So,  
 > Benny: I mean, I asked... Oh, my God.  
 > Benny: I asked the... So I asked the AI, I asked Gemini, like, hey, generate this thing.  
-> Benny: Meaning, this thing meaning generate a yeanut butter and jelly sandwich.  
+> Benny: Meaning, this thing meaning generate a Yeenut butter and jelly sandwich.  
 > Anzu: Right.  
 > Benny: And, yeah, so then I...  
 > Anzu: From last week.  
@@ -124,7 +124,7 @@ Script:
 > Gamemaster: Oh, Mr. Grunch, sure.  
 > Gamemaster: I am familiar with him.  
 > Gamemaster: I don't think that's his name, but, I mean, what do I know?  
-> Johnny: No, the Mr. Grunch who's famous for his yee-nut butter and yelly sandwiches.  
+> Johnny: No, the Mr. Grunch who's famous for his Yeenut butter and yelly sandwiches.  
 > Gamemaster: Oh, of course.  
 > Gamemaster: Absolutely.  
 > Benny: Good old eNut butter.  
@@ -1766,7 +1766,7 @@ Script:
 > Arctos: So, yeah.  
 > Gamemaster: Like, where did you... He will ask where this book... Or, like, how you came across the book in some form.  
 > Johnny: you  
-> Arctos: Sorbonne meeting?  
+> Arctos: Zorbon meeting?  
 > Gamemaster: Okay, so you're explaining the entirety of going into the sewers for the Zorbon, meaning finding Grayson's... Fane in the underground?  
 > Arctos: Yeah.  
 > Arctos: We were just... Yeah, we stole the radar dish from the gang, and then he caught us, so we had to agree to that.  
@@ -3153,7 +3153,7 @@ Script:
 > Johnny: Superground.  
 > Gamemaster: I'm checking.  
 > Gamemaster: Attempts to grapple the creature using the body part.  
-> Gamemaster: Yeah, it is against your fort TC.  
+> Gamemaster: Yeah, it is against your Fort DC.  
 > Arctos: Is that 10 plus your save?  
 > Gamemaster: Yes.  
 > Gamemaster: Is that a failure or a critical failure?  
@@ -3390,7 +3390,7 @@ Script:
 > Anzu: That's not going to work.  
 > Gamemaster: No.  
 > Anzu: Okay.  
-> Anzu: We will throw a Psyburst his way.  
+> Anzu: We will throw a Psiburst his way.  
 > Anzu: He can make this basic reflex save.  
 > Gamemaster: I rolled very well.  
 > Johnny: you  

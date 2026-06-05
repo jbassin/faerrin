@@ -778,7 +778,7 @@ Script:
 > Johnny: Oh, no, no, he's probably a Thessian.  
 > Johnny: He's probably someone we've met.  
 > Johnny: Then we were like, all right, we could do a lot of crazy shenanigans to try and get a piece of art.  
-> Johnny: And Johnny was like, listen, guys, I feel like we could just steal the art from Arctos' house.  
+> Johnny: And Johnny was like, listen, guys, I feel like we could just steal the Heart from Arctos' house.  
 > Johnny: Didn't phrase it that way.  
 > Johnny: Gave Arctos a really beautiful speech about how he was the chosen one, which I don't really think penetrated Arctos' fuzzy head, but it kind of worked anyway.  
 > Johnny: Yeah.  
@@ -791,7 +791,7 @@ Script:
 > Benny: you you  
 > Johnny: He's still in an emergency meeting.  
 > Johnny: Probably not good.  
-> Johnny: We got the art, and then we walked out.  
+> Johnny: We got the Heart, and then we walked out.  
 > Johnny: Easy peasy, lemon squeezy.  
 > Johnny: Instead of difficult, difficult, lemon difficult.  
 > Gamemaster: Mm-hmm.  
@@ -848,7 +848,7 @@ Script:
 > Arctos: How big is Sbrtlby?  
 > Gamemaster: Yeah.  
 > Benny: Thank you.  
-> Gamemaster: Sbrtlby himself, I switched it over to the art thing.  
+> Gamemaster: Sbrtlby himself, I switched it over to the Heart thing.  
 > Gamemaster: Let me switch back to the row house.  
 > Arctos: Do you guys want to start growing some weed?  
 > Arctos: Should we grab some?  
@@ -991,7 +991,7 @@ Script:
 > Gamemaster: Because I was going to say you could justify doing crafting here as well.  
 > Gamemaster: Yeah, I think, unfortunately, like, architecture is not your strong suit.  
 > Gamemaster: You do not have one of the backgrounds that gives you, like, masonry lore, which are weirdly common.  
-> Anzu: Because what I really want to do is run through this building real fast, see if there's an office area, and see if Sbrtlby knew about the art thing, and if he's acquired any paintings.  
+> Anzu: Because what I really want to do is run through this building real fast, see if there's an office area, and see if Sbrtlby knew about the Heart thing, and if he's acquired any paintings.  
 > Gamemaster: So, you know, anywhere from one minute to, like, an hour.  
 > Benny: you you  
 > Gamemaster: Okay.  
@@ -1189,7 +1189,7 @@ Script:
 > Gamemaster: It was actually pretty easy for this man.  
 > Gamemaster: He was selling contraband under his full name.  
 > Gamemaster: which made it relatively easy to find him.  
-> Johnny: The Spurtleby Jones illegal drug operation.  
+> Johnny: The Sbrtlby Jones illegal drug operation.  
 > Anzu: All right.  
 > Johnny: Listen, I don't think anyone deserves to die, but this guy kind of had it coming.  
 > Arctos: He's a demon, not a devil, right?  
@@ -1265,10 +1265,10 @@ Script:
 > Benny: This could all be for naught.  
 > Arctos: While he's sorting that out on...  
 > Arctos: What's our plan?  
-> Arctos: Are we going to go to... I say we just go to the art dealer.  
+> Arctos: Are we going to go to... I say we just go to the Heart dealer.  
 > Arctos: Hey, take these paintings.  
 > Johnny: We got this painting.  
-> Anzu: The art dealer being the guy with the heart.  
+> Anzu: the Heart dealer being the guy with the heart.  
 > Johnny: I got it.  
 > Arctos: Yeah.  
 > Arctos: Yeah.  
@@ -1277,7 +1277,7 @@ Script:
 > Anzu: I mean, I could use maybe a brief to treat wounds, but...  
 > Arctos: We could go in the morning, too.  
 > Arctos: We don't have to go tonight.  
-> Johnny: I'm just worried we're going to walk in there and be like, now that you've given me the art, you'll have to fight my army, and then you can get the stone.  
+> Johnny: I'm just worried we're going to walk in there and be like, now that you've given me the Heart, you'll have to fight my army, and then you can get the stone.  
 > Arctos: Yeah, let's go in the morning.  
 > Benny: Yes.  
 > Arctos: Yeah, let's go in the morning.  
@@ -1683,7 +1683,7 @@ Script:
 > Arctos: Does anyone want to go for a jog?  
 > Johnny: Okay.  
 > Johnny: Yeah, sure, I'll go for a jog with you.  
-> Johnny: Tomorrow, our plan, are we saying, hey, it's us, we have the art, or are we just going to be straight up and say, hey, we have art, we have the quinn, we want to trade it for the... Is it a sphere?  
+> Johnny: Tomorrow, our plan, are we saying, hey, it's us, we have the Heart, or are we just going to be straight up and say, hey, we have art, we have the quinn, we want to trade it for the... Is it a sphere?  
 > Arctos: Cool.  
 > Johnny: It's a sphere we're trying to get?  
 > Anzu: A keystone?  
@@ -2630,7 +2630,7 @@ Script:
 > Gamemaster: Okay, so with Arctos' role, I mean, the DC here is not very high to get the original, the basic gist of the place.  
 > Gamemaster: You have been lowered into the Fane of presumably an old and more powerful heart than the ones that you have interacted with previously.  
 > Gamemaster: This is one of, as per your research in Belvedere's archives, one of the three hearts that is used to control the entirety  
-> Gamemaster: of train and bus travel within Hylia by Prime Meridian.  
+> Gamemaster: of train and bus travel within Hallia by Prime Meridian.  
 > Gamemaster: There is the moment the elevators open, the sound of ticking.  
 > Johnny: you you  
 > Gamemaster: of many discrete mechanical components moving forward as if you were inside the interior of a watch.  
@@ -2755,7 +2755,7 @@ Script:
 > Gamemaster: And then...  
 > Gamemaster: There are, it's strange.  
 > Gamemaster: It looks like part of the painting is melting.  
-> Gamemaster: And then you realize that some of the outer layer of the paint is just being abraded off in front of you by some kind of force being generated by the art, which is interesting.  
+> Gamemaster: And then you realize that some of the outer layer of the paint is just being abraded off in front of you by some kind of force being generated by the Heart, which is interesting.  
 > Gamemaster: In multiple ways, perhaps, I'll let you get one perception check as it gets abraded away.  
 > Benny: Who amongst us is the best perceiver?  
 > Arctos: Well, it should be me, but... Oops.  
@@ -2968,7 +2968,7 @@ Script:
 > Benny: These are the last people looking for it, though, so this is great.  
 > Benny: We can take  
 > Benny: Kill them, spartal bees, in hell for the next six months, and no one else is looking for it, so we're good.  
-> Johnny: They gave us... We have to fight Sartleby again.  
+> Johnny: They gave us... We have to fight Sbrtlby again.  
 > Arctos: Hopefully Onik was on the trail and is also here as backup.  
 > Anzu: Why are these two guys absolute freaks?  
 > Anzu: Why are they not just normal people?  
@@ -3006,7 +3006,7 @@ Script:
 > Johnny: This can't be a sign of bad things.  
 > Gamemaster: Can I... That's crazy.  
 > Benny: Yeah yellow versus red.  
-> Gamemaster: Can I ask, out of curiosity, if one of you guys hover over the Submecanators versus one of the people from Concordia, is the border different?  
+> Gamemaster: Can I ask, out of curiosity, if one of you guys hover over the Submechanitor versus one of the people from Concordia, is the border different?  
 > Anzu: It's yellow.  
 > Johnny: Hmm?  
 > Anzu: All right.  
@@ -3161,7 +3161,7 @@ Script:
 > Anzu: Via magical means.  
 > Gamemaster: Okay.  
 > Gamemaster: All right.  
-> Gamemaster: That'll bring us to Submechanic 4.  
+> Gamemaster: That'll bring us to Submechanitor 4.  
 > Gamemaster: So, Mr. Darkmoor, the Archmechanic...  
 > Gamemaster: Can't do combat.  
 > Gamemaster: He's a civilian.  
@@ -3338,7 +3338,7 @@ Script:
 > Gamemaster: Uh, okay.  
 > Benny: All right, maybe.  
 > Benny: That's crazy.  
-> Gamemaster: You, uh, hit him with the Falkata, and you've done a bunch of damage.  
+> Gamemaster: You, uh, hit him with the Falcata, and you've done a bunch of damage.  
 > Gamemaster: Um, and then you deal an additional 16, and in one turn he is mortal, but he is still standing.  
 > Benny: Okay.  
 > Gamemaster: And that one hits two.  
@@ -3471,7 +3471,7 @@ Script:
 > Arctos: That's what they wanted to show us, critical bits.  
 > Gamemaster: Happy Time Enforcer 5 is going to roll this fourth save.  
 > Gamemaster: and succeed, so they're going to take half of this.  
-> Gamemaster: Okay, and then submechanic under 2 is going to do the same thing at number 3, so they're going to roll a fort save.  
+> Gamemaster: Okay, and then Submechanitor under 2 is going to do the same thing at number 3, so they're going to roll a fort save.  
 > Gamemaster: They succeed, so they're going to take half damage.  
 > Gamemaster: Damage.  
 > Gamemaster: Okay.  
@@ -3875,7 +3875,7 @@ Script:
 > Gamemaster: It's fine.  
 > Arctos: Oh, it's a shame it wasn't with the Falcata.  
 > Gamemaster: It's totally fine.  
-> Benny: The Felicata, unfortunately,  
+> Benny: The Falcata, unfortunately,  
 > Gamemaster: He has three hit points.  
 > Benny: Oh, nice.  
 > Benny: Yeah, the Falcata, unfortunately, until next level, is two less than the other weapons I have.  
@@ -4122,7 +4122,7 @@ Script:
 > Johnny: Level 6 is so good.  
 > Johnny: That was so rude.  
 > Gamemaster: And of course, when...  
-> Gamemaster: Six months pass and you go back and the majordome is just like, yeah, I'm sorry.  
+> Gamemaster: Six months pass and you go back and the majordomo is just like, yeah, I'm sorry.  
 > Gamemaster: He's just, he's still there.  
 > Gamemaster: I still have an appointment for a week from now, though, if that's useful.  
 > Benny: you  

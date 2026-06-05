@@ -797,7 +797,7 @@ Script:
 > Gamemaster: Absolutely.  
 > Gamemaster: Looking through this, he says,  
 > Gamemaster: Whose book is this?  
-> Johnny: This is, this is one Benjamin Grayson, sorry, Benjamin Grayson of Ambercall.  
+> Johnny: This is, this is one Benjamin Grayson, sorry, Benjamin Grayson of Amber Call.  
 > Argyle: That's the funny part.  
 > Gamemaster: Are you trying to get me fired?  
 > Gamemaster: And he hands the back book to you.  
@@ -821,7 +821,7 @@ Script:
 > Johnny: A cat.  
 > Gamemaster: Oh, okay.  
 > Gamemaster: Still don't want to know.  
-> Gamemaster: Listen, this is... If I start opening any investigations into Ambercall, it's my neck on the line.  
+> Gamemaster: Listen, this is... If I start opening any investigations into Amber Call, it's my neck on the line.  
 > Gamemaster: And by extension, yours, because I'm the reason that you're being paid this stipend.  
 > Argyle: Uh.  
 > Anzu: Hmm.  
@@ -990,7 +990,7 @@ Script:
 > Johnny: We can go to the bank.  
 > Gamemaster: Okay, you guys can go to a bank.  
 > Gamemaster: That's fine.  
-> Gamemaster: Would you prefer the Commonwealth Treasury of Calaria, Iridite Neutral, or Ledger, Ledger, and Light?  
+> Gamemaster: Would you prefer the Commonwealth Treasury of Calaria, Iridite Mutual, or Ledger, Ledger, and Light?  
 > Gamemaster: It's three different banks.  
 > Gamemaster: There's no difference for you guys.  
 > Anzu: Ledger, ledger, light.  
@@ -1414,7 +1414,7 @@ Script:
 > Benny: They're a gang, right?  
 > Benny: They have like, in some way, it's able to tell outwardly that they're part of that particular gang.  
 > Gamemaster: It's the hats.  
-> Gamemaster: They're the round hat gang.  
+> Gamemaster: They're the Roundhat Gang.  
 > Gamemaster: They have Roundhats.  
 > Benny: Right.  
 > Benny: Of course.  
@@ -1675,13 +1675,13 @@ Script:
 > Gamemaster: So really what you're looking for is just people going in and out.  
 > Gamemaster: With those perception checks, you guys start staking out around after the sun's set.  
 > Gamemaster: So people start filtering in around when you get in.  
-> Gamemaster: Most of the people don't immediately strike you as necessarily members of the Roundhat gang.  
+> Gamemaster: Most of the people don't immediately strike you as necessarily members of the Roundhat Gang.  
 > Gamemaster: This is a gang-owned...  
 > Gamemaster: bar, but it isn't a gang exclusive bar.  
 > Gamemaster: Plenty of these people look like they're just dock workers from around the area just settling in after a hard day at work.  
 > Gamemaster: You do occasionally see people that are very obviously members of the gang.  
 > Gamemaster: The most obvious pieces of them being that they are wearing the signature round bowler hat looking thing.  
-> Gamemaster: The other thing that I think you would notice with those perception checks is you had already noticed this a little bit when you had first dealt with them, but every member that you can identify of the Roundhat gang appears to have some amount of bestial qualities to them.  
+> Gamemaster: The other thing that I think you would notice with those perception checks is you had already noticed this a little bit when you had first dealt with them, but every member that you can identify of the Roundhat Gang appears to have some amount of bestial qualities to them.  
 > Benny: Thank you.  
 > Gamemaster: They all seem to be human-derived, but there's definitely some animal mixed in.  
 > Gamemaster: part of the gang's recruiting requirements.  
@@ -1828,7 +1828,7 @@ Script:
 > Gamemaster: Yeah, so you wait a little bit.  
 > Gamemaster: Just, you know, waiting until the rest of the evening passes.  
 > Gamemaster: You guys can continue to take a look out while you wait.  
-> Gamemaster: You do not see any Roundhat gang members leave over the course of the evening that you are waiting.  
+> Gamemaster: You do not see any Roundhat Gang members leave over the course of the evening that you are waiting.  
 > Gamemaster: And after like that busy period, after like 10-ish, you don't see any more enter either.  
 > Gamemaster: It seems the people that are going to enter for the evening already have.  
 > Gamemaster: A few people enter, quite a few people leave.  
@@ -2294,7 +2294,7 @@ Script:
 > Gamemaster: How many actions is it?  
 > Gamemaster: That's two actions.  
 > Gamemaster: Okay, so if it's going to be two actions to get to Benny, he's not going to do that.  
-> Johnny: Borg.  
+> Johnny: Org.  
 > Gamemaster: Oh, actually, wait, no.  
 > Gamemaster: He can get to Benny, and then Benny will be flanked, because Benny will be between him and Hlarf.  
 > Benny: No!  

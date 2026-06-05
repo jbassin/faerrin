@@ -772,7 +772,7 @@ Script:
 > Arctos: Is there one nearby?  
 > Arctos: Are we not in a host district?  
 > Benny: Thanks.  
-> Gamemaster: Yeah, you can... You're in the capital of Kolaria.  
+> Gamemaster: Yeah, you can... You're in the capital of Calaria.  
 > Arctos: How does that work?  
 > Arctos: I don't know if we're in mini Italy or something.  
 > Gamemaster: You...  
@@ -1479,7 +1479,7 @@ Script:
 > Gamemaster: For those who rolled the perception checks to look at the vehicle, you can see that there are three people.  
 > Gamemaster: There's a driver, and then in the back area there are two other humanoids.  
 > Gamemaster: The windows are...  
-> Gamemaster: I was going to say illegally tinted, but Hallyu would definitely not have laws on how dark you can tint your windows.  
+> Gamemaster: I was going to say illegally tinted, but Hallia would definitely not have laws on how dark you can tint your windows.  
 > Gamemaster: So they're tinted enough that you can see silhouettes, but not enough that you can make out any features.  
 > Gamemaster: You watch as a human man.  
 > Gamemaster: It's dark.  
@@ -2350,12 +2350,12 @@ Script:
 > Gamemaster: Not for Hallia.  
 > Anzu: Mm-hmm.  
 > Gamemaster: There hasn't been enough need for it to expand in that direction, so they haven't.  
-> Gamemaster: You would know, for instance, Valthara, one of the northern mining countries, they make strand cities, which are relatively small footprint cities because they're in...  
+> Gamemaster: You would know, for instance, Velthara, one of the northern mining countries, they make strand cities, which are relatively small footprint cities because they're in...  
 > Gamemaster: mountainous areas where there isn't a lot of uh land for buildings but they're spread across hundreds of worlds on the horizon and those do like they'll just skip past it nobody lives in that particular one but they'll they they exist further beyond um  
 > Anzu: But we are at the farthest stretches of Hallia, basically, right now.  
 > Gamemaster: Correct.  
-> Gamemaster: Yes, there's no more Hylia past this point in this direction.  
-> Gamemaster: You'd also know that that's like one of the more tame Joker worlds.  
+> Gamemaster: Yes, there's no more Hallia past this point in this direction.  
+> Gamemaster: You'd also know that that's like one of the more tame Joker Worlds.  
 > Gamemaster: The further you get away from Prime, the worse they tend to get.  
 > Gamemaster: So it's kind of the feeling of, we don't need to expand in that direction.  
 > Gamemaster: That already sucks.  
@@ -2365,7 +2365,7 @@ Script:
 > Gamemaster: So...  
 > Arctos: This is only voidward.  
 > Gamemaster: Yeah, this is only voidward.  
-> Gamemaster: If you had gone starward, there's a whole different set of Joker worlds and expansion and all of that kind of stuff.  
+> Gamemaster: If you had gone starward, there's a whole different set of Joker Worlds and expansion and all of that kind of stuff.  
 > Gamemaster: But yeah, okay.  
 > Gamemaster: So with a 17, looking around, you've pulled up out front of this log hovel area, a bungalow, say.  
 > Gamemaster: Anouk didn't tell you how Anaïs got here.  
@@ -3236,7 +3236,7 @@ Script:
 > Gamemaster: There was a report from a convox, from one of the convoxes in Hallia that measures these kinds of things, that said that there was a blip that matched the same general harmonic frequencies of the Voidsong this far out.  
 > Arctos: So.  
 > Gamemaster: I figured I would try and hop on that sooner rather than later.  
-> Arctos: Do you know... Do you know that the... Do you know that the Ember Cull also has the same frequency?  
+> Arctos: Do you know... Do you know that the... Do you know that the Embercall also has the same frequency?  
 > Anzu: Was it at that exact location?  
 > Anzu: Like that hut?  
 > Gamemaster: Yes.  
@@ -3560,7 +3560,7 @@ Script:
 > Gamemaster: My lady is Renge, the fickle mistress.  
 > Gamemaster: There is Petr, the threshold.  
 > Gamemaster: There is Insuperlex, the mountain.  
-> Gamemaster: And the Menyr, the heroes.  
+> Gamemaster: And the Menhir, the heroes.  
 > Anzu: Thank you.  
 > Arctos: That one sounds good.  
 > Johnny: What was the one after Renge?  
@@ -3575,14 +3575,14 @@ Script:
 > Gamemaster: They each have different domains that they cover.  
 > Gamemaster: It is just that Lady Renge and Aut's  
 > Gamemaster: Domains kind of overlap more than the others.  
-> Gamemaster: In Superlix and the Menir, similarly clash.  
+> Gamemaster: In Superlix and the Menhir, similarly clash.  
 > Arctos: And what are their things, you know?  
 > Johnny: And Insuperlex is the mountain they have to conquer.  
 > Gamemaster: What?  
 > Arctos: The man here likes to help heroes?  
-> Gamemaster: The Menir is the representation of a heroic party.  
+> Gamemaster: The Menhir is the representation of a heroic party.  
 > Gamemaster: Correct.  
-> Johnny: And so then Pter is the threshold a hero or person crosses when they start a journey.  
+> Johnny: And so then P'ter is the threshold a hero or person crosses when they start a journey.  
 > Gamemaster: But there are many thresholds they cross throughout their journey.  
 > Gamemaster: Both the start and to the end.  
 > Johnny: Interesting.  
@@ -3593,7 +3593,7 @@ Script:
 > Benny: Renge is just the fickle mistress, or does it have a similar...  
 > Arctos: Which one?  
 > Arctos: Obviously, we wouldn't know this, but which one was the bifurcated man?  
-> Gamemaster: And that's in Superlex.  
+> Gamemaster: And that's in Insuperlex.  
 > Arctos: Okay, great.  
 > Arctos: I just realized if that was odd, I was going to shit myself.  
 > Arctos: All right.  
@@ -4038,8 +4038,8 @@ Script:
 > Gamemaster: I wish I could remember.  
 > Gamemaster: I remember I read it in like 11th grade and it's been long enough that most of the details have left my head.  
 > Gamemaster: But the only thing that stands is specifically these guys.  
-> Gamemaster: I don't even know if they were called the Menyir.  
-> Gamemaster: It's just I know the word Menyir and that fit.  
+> Gamemaster: I don't even know if they were called the Menhir.  
+> Gamemaster: It's just I know the word Menhir and that fit.  
 > Arctos: I like how we thought he was possessed, but it turns out he was fully aware of what was happening.  
 > Benny: there he is guys i found him he's like oh god they found me  
 > Arctos: He just thought we were bad.  

@@ -939,7 +939,7 @@ Script:
 > Argyle: Oh.  
 > Argyle: Oh no.  
 > Johnny: Slip.  
-> Gamemaster: It's like as if you had the whole area of where Halley is constructed just without the city itself, as if it had never been built.  
+> Gamemaster: It's like as if you had the whole area of where Hallia is constructed just without the city itself, as if it had never been built.  
 > Gamemaster: Not to say that there aren't some buildings that have been constructed here.  
 > Gamemaster: There is, beyond the platform that you're on, there appears to be a path that leads off from it, kind of closer to where the river itself is.  
 > Gamemaster: And there's a small set of almost like shipping container buildings that have been set up, kind of temporary buildings.  
@@ -1041,7 +1041,7 @@ Script:
 > Argyle: They're using this to get around them.  
 > Argyle: That's how they're funding and powering this tiller's run, right?  
 > Benny: Wouldn't we have seen something come through here in the time that we were here?  
-> Argyle: I'm assuming the Tellur's Run people are using this to bypass all that.  
+> Argyle: I'm assuming the Teller's Run people are using this to bypass all that.  
 > Argyle: And that's why they have shipping containers, because they're just sending stuff from other worlds through here.  
 > Argyle: We're here at an off hour.  
 > Argyle: And there's a settlement on the other side of this wall.  
@@ -1238,7 +1238,7 @@ Script:
 > Anzu: I'm glad this allowed you to clear your mind.  
 > Johnny: Great.  
 > Gamemaster: So Benny breathes in literally the cleanest air he has ever breathed in in his life, because this world is unpolluted by anything, really.  
-> Gamemaster: And looks around, he can see that behind him is just the Opaline Mountains, the mountain range north of Alia, in front of him facing south.  
+> Gamemaster: And looks around, he can see that behind him is just the Opaline Mountains, the mountain range north of Hallia, in front of him facing south.  
 > Gamemaster: is this kind of like dirt gravel path towards the compound of the three buildings and beyond it in the distance, like two miles that away is a Giant figure or the shoulders down of a Giant figure with presumably the head above the cloud line.  
 > Benny: Sure.  
 > Benny: Benny, we'll head towards the three buildings.  
@@ -1455,7 +1455,7 @@ Script:
 > Johnny: you  
 > Gamemaster: Whoever sticks their head out first will pop open the man cover and...  
 > Gamemaster: surprise a number of people.  
-> Gamemaster: It's relatively late at night, but there's still people out because the district south of Tellers Run is the Masque District, which is the most heavily populated with nightlife.  
+> Gamemaster: It's relatively late at night, but there's still people out because the district south of Teller's Run is the Masque District, which is the most heavily populated with nightlife.  
 > Gamemaster: There are a number of bars, casinos, burlesque shows, and the like that happen in this part of the city.  
 > Argyle: Okay.  
 > Gamemaster: That said, most of the people walking around are drunk.  
@@ -1641,8 +1641,8 @@ Script:
 > Johnny: Everybody else is on fire.  
 > Johnny: I think that's why we should go during the party.  
 > Gamemaster: I don't know if you would know that.  
-> Gamemaster: You would know at the very least the people attending the party aren't on fire, because they're not coming from Inside Tellers Run.  
-> Gamemaster: As to what the people Inside Tellers Run living in there look like, you couldn't say.  
+> Gamemaster: You would know at the very least the people attending the party aren't on fire, because they're not coming from Inside Teller's Run.  
+> Gamemaster: As to what the people Inside Teller's Run living in there look like, you couldn't say.  
 > Argyle: Yeah.  
 > Johnny: Because if someone's like, what are you doing walking around?  
 > Johnny: We can be like, we're here for the party.  
@@ -2962,7 +2962,7 @@ Script:
 > Argyle: Yeah.  
 > Gamemaster: So you get Damien Reese.  
 > Gamemaster: You get, oh gosh, what's this man's full name?  
-> Gamemaster: Lark Rowe.  
+> Gamemaster: Lark Crowe.  
 > Gamemaster: You get, what is this man's name?  
 > Gamemaster: Camden Levine.  
 > Gamemaster: And you get Alastair Moss.  
@@ -3116,7 +3116,7 @@ Script:
 > Argyle: Yeah.  
 > Gamemaster: Okay, yes, on failure the result is nothing.  
 > Gamemaster: Absolutely.  
-> Argyle: So the question is, if we follow Banny,  
+> Argyle: So the question is, if we follow Benny,  
 > Argyle: Will something bad happen?  
 > Benny: I think we just described the course of action, which is all of us going in.  
 > Gamemaster: Okay.  

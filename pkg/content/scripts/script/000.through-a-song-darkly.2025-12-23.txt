@@ -925,7 +925,7 @@ Script:
 > Arctos: Hell yeah.  
 > Gamemaster: You can't remove the hole from the trunk, but the inside of the trunk is larger than the exterior.  
 > Gamemaster: searching around trying to find things just like throughout the car of note you've already found you have the keys for the car in addition there is a like a duffel bag a go bag effectively tucked into the expanded trunk that has a set of clothes um  
-> Gamemaster: Some fake IDs associated with, like, flipping through them, you can see there's some with Hlarf's picture on them under different names, and then also some other faces that you would recognize as some of the people that killed you in the bar, as well as a handful of other people that you assume are also part of the Roundhead gang.  
+> Gamemaster: Some fake IDs associated with, like, flipping through them, you can see there's some with Hlarf's picture on them under different names, and then also some other faces that you would recognize as some of the people that killed you in the bar, as well as a handful of other people that you assume are also part of the Roundhat Gang.  
 > Gamemaster: You also find a levered crowbar and a set of infiltrator's theme stools.  
 > Arctos: Benny can take that.  
 > Gamemaster: Sorry, a thieves toolkit infiltrator.  
@@ -1087,7 +1087,7 @@ Script:
 > Anzu: Well, that's not going to help then.  
 > Gamemaster: Yeah, unfortunately you guys cruise around Sableclutch for a little bit, looking for an ATM, and you don't find any.  
 > Arctos: Excellent.  
-> Gamemaster: You could always go to Irodite Mutual's headquarters, because you know there's an ATM there, but you also know that that would be the best guarded.  
+> Gamemaster: You could always go to Iridite Mutual headquarters, because you know there's an ATM there, but you also know that that would be the best guarded.  
 > Gamemaster: If you don't care about there being a guard present, then that's fine.  
 > Gamemaster: That's an easy go.  
 > Arctos: Is there any people on the street that we can ask?  
@@ -1425,7 +1425,7 @@ Script:
 > Johnny: Who's got the card?  
 > Johnny: We need all the money off of this.  
 > Gamemaster: Is there something I should be concerned about when I access it?  
-> Johnny: This is Twelwynn, Leatherhide's first mate, and we killed him last night in an alley.  
+> Johnny: This is Tywelwyn, Leatherhide's first mate, and we killed him last night in an alley.  
 > Gamemaster: Good for you.  
 > Benny: Then we have his car.  
 > Arctos: We hit his body too.  
@@ -2080,7 +2080,7 @@ Script:
 > Gamemaster: You're not quite sure what at this distance, what modifications they're making to the car.  
 > Gamemaster: But it's undergoing some work.  
 > Gamemaster: Looking into the shop from the distance that you're in, just kind of like across the street, casing it, you can identify at least three people moving around in there.  
-> Gamemaster: Nobody's wearing the bowler hats associated with the round hat gang, so you see a few people wearing uniforms, though, that look like they're associated with the...  
+> Gamemaster: Nobody's wearing the bowler hats associated with the Roundhat Gang, so you see a few people wearing uniforms, though, that look like they're associated with the...  
 > Johnny: Thank you.  
 > Gamemaster: Gas-n-Go℠.  
 > Gamemaster: It's not super easy, especially at this distance, to try and figure out if they are associated with the gang or if they just work for the shop.  
@@ -2173,7 +2173,7 @@ Script:
 > Gamemaster: Around...  
 > Gamemaster: 8ish p.m.  
 > Gamemaster: You see the last of the employees for this Gas-n-Go℠ lock up and leave.  
-> Gamemaster: And then about two hours later, another car pulls up and out of it step some very obviously members of the Roundhat gang of different animal flavors who enter the building.  
+> Gamemaster: And then about two hours later, another car pulls up and out of it step some very obviously members of the Roundhat Gang of different animal flavors who enter the building.  
 > Johnny: Thank you.  
 > Arctos: Sorry.  
 > Gamemaster: Yes.  
@@ -2730,7 +2730,7 @@ Script:
 > Gamemaster: There is a throne on a raised altar of some kind.  
 > Arctos: Asshole.  
 > Gamemaster: There are a few people that you would recognize as...  
-> Gamemaster: members of the Roundhat gang.  
+> Gamemaster: members of the Roundhat Gang.  
 > Gamemaster: But there is a figure that you don't... You know what?  
 > Gamemaster: On a crit, I think you probably would recognize.  
 > Gamemaster: You'd have to squint a little bit.  
@@ -2891,7 +2891,7 @@ Script:
 > Gamemaster: Then it's the boar's turn.  
 > Gamemaster: Some of you will recognize this particular boar.  
 > Johnny: Oh, this guy.  
-> Arctos: Fuck that Borg.  
+> Arctos: Fuck that Org.  
 > Gamemaster: He'll look over and say, didn't I fucking kill you?  
 > Johnny: Oh, yeah.  
 > Gamemaster: Which strikes me as very similar to what Hlarf said right before he died.  
@@ -4614,7 +4614,7 @@ Script:
 > Anzu: I think I'm just going to try to agitate him again.  
 > Anzu: Okay.  
 > Gamemaster: Go for it.  
-> Gamemaster: Try and agitate Mr. Twelwin.  
+> Gamemaster: Try and agitate Mr. Tywelwyn.  
 > Gamemaster: That is a success.  
 > Johnny: uh...  
 > Gamemaster: Okay, absolutely.  
@@ -4624,7 +4624,7 @@ Script:
 > Anzu: Use an action to stride or take, it should be a 4d8 mental damage because I cast it at second level.  
 > Gamemaster: All right.  
 > Arctos: You gave me ADHD.  
-> Anzu: Then we will send a Psyburst his way.  
+> Anzu: Then we will send a Psiburst his way.  
 > Gamemaster: Of course.  
 > Johnny: Mind bird!  
 > Arctos: Man, man.  

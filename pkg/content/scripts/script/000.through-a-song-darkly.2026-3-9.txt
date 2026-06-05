@@ -1088,7 +1088,7 @@ Script:
 > Gamemaster: You get a Mythic Point sponsored by Dr. Pepper, the soda with the most aspartame per 12-ounce bottle.  
 > Benny: Woo!  
 > Gamemaster: Good if you're aspartame loving, yeah.  
-> Gamemaster: And so we will start today's session with all of you in the lobby of this Primerudian sub-nexus, surrounded by some dead bodies.  
+> Gamemaster: And so we will start today's session with all of you in the lobby of this Prime Meridian sub-nexus, surrounded by some dead bodies.  
 > Gamemaster: Yes, your hand is raised.  
 > Anzu: The first thing I want to do is more of a mental action.  
 > Anzu: You described a blue flash of light that came from these people as they expired.  
@@ -1152,7 +1152,7 @@ Script:
 > Gamemaster: So, you guys are just kind of, I guess, standing around and recovering from all of this stuff as there's a... whatever.  
 > Argyle: Yeah.  
 > Gamemaster: At this point, the Ark Mechanitor, the...  
-> Gamemaster: the friend that you had made over the course of coming in here and selling some art, he had been the one that had made the connection to the submechanators and were using them as, like, little guys throughout the combat.  
+> Gamemaster: the friend that you had made over the course of coming in here and selling some art, he had been the one that had made the connection to the Submechanitor and were using them as, like, little guys throughout the combat.  
 > Gamemaster: He drops that at this point.  
 > Gamemaster: He no longer needs that control since it seems the threat has passed, and he will walk out and start poking...  
 > Argyle: Yeah.  
@@ -2439,7 +2439,7 @@ Script:
 > Anzu: Okay, okay, okay.  
 > Gamemaster: I apologize.  
 > Gamemaster: But I will also note, like, the callout specifically, the person who was talking about the Pelgrimage said that the keystones were spread in and around Hallia.  
-> Gamemaster: Yeah, I... Ostren is pretty far away from Hallia.  
+> Gamemaster: Yeah, I... Austrene is pretty far away from Hallia.  
 > Argyle: Oh, around.  
 > Argyle: As far as Peltier.  
 > Anzu: I mean...  
@@ -2563,7 +2563,7 @@ Script:
 > Benny: He's a tween.  
 > Johnny: The whole time.  
 > Johnny: The whole time.  
-> Gamemaster: Yeah, Ansu's dad, Adol, will say hi to all of you.  
+> Gamemaster: Yeah, Anzu's dad, Adol, will say hi to all of you.  
 > Gamemaster: Have a little chat.  
 > Gamemaster: Just, you know.  
 > Gamemaster: If anything else, he's just happy that you all don't sound like you're criminals or anti-nobility rebels.  
@@ -2732,14 +2732,14 @@ Script:
 > Johnny: It's not under Johnny Skyfall.  
 > Benny: you you  
 > Johnny: That's one.  
-> Johnny: Second one, pretty quickly, I would like to follow up on the Sable & Sons laser gun thing.  
+> Johnny: Second one, pretty quickly, I would like to follow up on The Scale & Sons laser gun thing.  
 > Johnny: I had a... I believe I had...  
 > Gamemaster: Yes, absolutely.  
 > Anzu: Lark.  
 > Johnny: Yes, Lark Crowe.  
 > Gamemaster: Yes, you can do that.  
 > Gamemaster: Okay, so you actually had two avenues here.  
-> Gamemaster: You could meet up with the Sable and Suns, like, with the contact, and you had asked Hale to look into it on his end.  
+> Gamemaster: You could meet up with The Scale and Sons, like, with the contact, and you had asked Hale to look into it on his end.  
 > Benny: Thank you.  
 > Gamemaster: And I think you'll get two different, like, pieces of information out of those particular avenues.  
 > Gamemaster: What is the plan with luck?  
@@ -2862,7 +2862,7 @@ Script:
 > Gamemaster: Um... Yep.  
 > Gamemaster: Uh, she, uh...  
 > Gamemaster: Starts pulling out another folder.  
-> Gamemaster: Having finished your briefing, she immediately moves on to the next thing, and she starts talking to Flipok about something happening with Althara.  
+> Gamemaster: Having finished your briefing, she immediately moves on to the next thing, and she starts talking to Flipok about something happening with Velthara.  
 > Argyle: Flintlock, and I leave and just start.  
 > Argyle: Guests heading over.  
 > Gamemaster: Flipok tips a non-existent hat to you.  
@@ -3331,7 +3331,7 @@ Script:
 > Gamemaster: I think at most you guys have seen worrying diagrams and the like over the past two weeks in the bar of Arctos sketching out images of glass bottles.  
 > Gamemaster: I don't know.  
 > Gamemaster: Past that, it seems he's very into whatever he's doing right now.  
-> Anzu: I cannot believe that you're out for Arctosis for him to become a drug dealer.  
+> Anzu: I cannot believe that you're out for Arctos' for him to become a drug dealer.  
 > Johnny: I can't believe this.  
 > Johnny: And you brought back.  
 > Johnny: Argyle 2.0.  

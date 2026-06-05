@@ -2199,7 +2199,7 @@ Script:
 > Gamemaster: This is an organization that claimed to world governments that it was in charge of time, and the other governments said, yes, that's fine, that's your job.  
 > Gamemaster: This is not a group to be fucked with, so to speak.  
 > Gamemaster: When bad shit happens, the Scale tries to be one of the first groups on the scene, if for no other reason than to either ensure that they get their hands on whatever's causing the bad shit first, or to get rid of it so nobody else can get their hands on it.  
-> Gamemaster: A few days ago, because there's a bit of a lag time in communication from particularly far-out scouting groups and the Citadel, where the center of the Scales operations are, the organization received a report from a group that was scouting the Infinite Horizon, looking for places of interest, things that might be significant either to the Scale or to the Scale's enemies.  
+> Gamemaster: A few days ago, because there's a bit of a lag time in communication from particularly far-out scouting groups and the Citadel, where the center of the Scale's operations are, the organization received a report from a group that was scouting the Infinite Horizon, looking for places of interest, things that might be significant either to the Scale or to the Scale's enemies.  
 > Gamemaster: And they found a place of interest.  
 > Gamemaster: This particular group noted that far out on the infinite horizon, 221,325 worlds starward, there was an anomaly.  
 > Gamemaster: Traditionally, when you move from one point on the infinite horizon to the next, all you get is more of the same.  
@@ -2212,7 +2212,7 @@ Script:
 > Gamemaster: Questions asked to the gods about why this might be go unanswered.  
 > Gamemaster: Attempts at studying the differences between the two find weird deviations, but never anything conclusive.  
 > Gamemaster: But the one rule is that there isn't any.  
-> Gamemaster: These worlds, called Joker worlds, are different.  
+> Gamemaster: These worlds, called Joker Worlds, are different.  
 > Gamemaster: They're interesting, and no two are alike.  
 > Gamemaster: This particular Joker world was reported as a piece of interest because of a large magical presence, something that the Scout Party thought was interesting enough to spend a little bit of time on this Joker world to investigate.  
 > Gamemaster: In particular, there was an area what would be geographically a little south of Calaria, moving really closer into Raelion territory than anything else.  
@@ -2274,7 +2274,7 @@ Script:
 > Cliff: I mean, he's actually a large creature.  
 > Cliff: So he is over 10 feet tall.  
 > Cliff: He has a great axe on one side.  
-> Cliff: And his armor has paraphernalia from the scales, lots of little Scale iconography.  
+> Cliff: And his armor has paraphernalia from the Scale's, lots of little Scale iconography.  
 > Cliff: And his name is Seer Cliff Vandertrip of the Everchain.  
 > Cliff: I can just send a photo of him that I generated.  
 > Reverend: How are you so big?  
@@ -2296,7 +2296,7 @@ Script:
 > Reverend: The right side of his face is horribly burnt.  
 > Reverend: It looks like the burn scars run down his body.  
 > Reverend: The rest of his body is covered entirely in sort of like a Zorro-looking thing.  
-> Reverend: He's got all like a black suit, black gloves, and then a gold chain with the scales on them.  
+> Reverend: He's got all like a black suit, black gloves, and then a gold chain with the Scale's on them.  
 > Reverend: And then he carries a guisarme, which is like a polearm.  
 > Cliff: Oh yeah.  
 > Cliff: That's what a... Sorry, go ahead.  

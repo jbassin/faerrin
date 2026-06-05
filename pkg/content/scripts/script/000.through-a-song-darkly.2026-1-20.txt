@@ -683,7 +683,7 @@ Script:
 > Johnny: We also learned about the rest of the narrative.  
 > Johnny: We learned about Aut, the writer, who we already know, but now we know his title.  
 > Johnny: Renge, the fickle mistress.  
-> Johnny: Pter, the threshold.  
+> Johnny: P'ter, the threshold.  
 > Johnny: Insuperlex, the bifurcated mountain man.  
 > Johnny: And the Menhir, the heroes.  
 > Johnny: Which seem like a group of people who are dangerous, and then one group of rocks, which is pretty cool.  
@@ -833,10 +833,10 @@ Script:
 > Gamemaster: For the past, it looks like three months that he's had this particular journal.  
 > Gamemaster: Most of them are relatively benign-looking entries talking about how much so-and-so pissed him off today or something like that nature.  
 > Benny: Thank you.  
-> Gamemaster: Leafing through, it looks like he was actually skimming a little bit off the top of the take from the racketeering that he was running in the area in Sableclutch, because he talks about pocketing some coins before they actually make it into the Roundhat Kings.  
+> Gamemaster: Leafing through, it looks like he was actually skimming a little bit off the top of the take from the racketeering that he was running in the area in Sableclutch, because he talks about pocketing some coins before they actually make it into the Roundhat Gang.  
 > Gamemaster: Which you gather is the money that you stole off of him.  
 > Johnny: Is it good?  
-> Gamemaster: That wasn't Roundhead Gang's specific money.  
+> Gamemaster: That wasn't Roundhat Gang's specific money.  
 > Gamemaster: That was Hlarf's personal stash.  
 > Gamemaster: There's some poetry.  
 > Arctos: Thank you.  
@@ -2073,7 +2073,7 @@ Script:
 > Gamemaster: That was two actions.  
 > Gamemaster: He's going to use his third action to do a running reload and run away.  
 > Johnny: Yeah, that sucked.  
-> Gamemaster: Please, Kate, let me move him.  
+> Gamemaster: Please, game, let me move him.  
 > Gamemaster: Okay.  
 > Gamemaster: Johnny, it's your turn.  
 > Johnny: Ow.  
@@ -2711,7 +2711,7 @@ Script:
 > Arctos: Mm hmm.  
 > Anzu: Then I need to stride a little bit.  
 > Anzu: Maybe we'll go here.  
-> Anzu: And we will send a Psyburst at this fella.  
+> Anzu: And we will send a Psiburst at this fella.  
 > Anzu: Boom.  
 > Gamemaster: He succeeds, so he's only going to take half damage.  
 > Anzu: Oh.  

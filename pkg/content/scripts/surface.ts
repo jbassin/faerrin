@@ -20,11 +20,15 @@ function usage(): void {
   judge <date|all> [--mode hybrid|full] [--write]
                               LLM-judge candidates; --write appends confirms to defs.yaml
   review <date|all> [--judge] interactively approve/change/deny candidates → defs.yaml
-                              (--judge annotates each with an LLM verdict; needs ANTHROPIC_API_KEY)
+                              ("all" skips sessions already reviewed; a named date is always shown.
+                               --judge annotates each with an LLM verdict; needs ANTHROPIC_API_KEY)
+  review --campaign <name|idx>
+                              review every unreviewed session of a campaign, oldest-first
   review --discover [--min-count N]
                               interactively canonicalize discovery clusters → defs.yaml
 
 Flags:
+  --force                     include sessions already marked reviewed (reviewed.json)
   --json                      emit machine-readable JSON`)
 }
 
@@ -259,8 +263,13 @@ async function runReview(rest: string[]): Promise<void> {
   const { addCorrection } = await import("./lib/defs")
   const { loadCorrections } = await import("./lib/corrections")
   const { foldForMatch } = await import("./lib/normalize")
+  const { loadCampaigns, matchCampaign, resolveCampaign } = await import("./lib/campaigns")
+  const { loadReviewed, markReviewed } = await import("./surface/reviewed")
 
   const useJudge = rest.includes("--judge")
+  const force = rest.includes("--force")
+  const campaignIdx = rest.indexOf("--campaign")
+  const campaignQuery = campaignIdx >= 0 ? rest[campaignIdx + 1] : undefined
 
   const lex = await buildLexicon()
   const term = await makeTerminal()
@@ -285,8 +294,51 @@ async function runReview(rest: string[]): Promise<void> {
       const minCount = mi >= 0 ? Number(rest[mi + 1]) : undefined
       add(await reviewClusters(await discover(lex, { minCount }), deps))
     } else {
-      const target = rest.find((a) => !a.startsWith("--")) ?? "all"
-      const dates = target === "all" ? await listSessionDates() : [target]
+      const reviewed = await loadReviewed()
+      let dates: string[]
+      let skipReviewed: boolean
+
+      if (campaignQuery !== undefined) {
+        const campaigns = await loadCampaigns()
+        let camp
+        try {
+          camp = resolveCampaign(campaigns, campaignQuery)
+        } catch (e) {
+          log.error(e instanceof Error ? e.message : String(e))
+          return
+        }
+        if (!camp) {
+          log.error(`no campaign matching "${campaignQuery}"`)
+          return
+        }
+        // Match each session to its campaign; keep this campaign's, oldest-first.
+        const matched: string[] = []
+        for (const date of await listSessionDates()) {
+          const t = await readSession(date)
+          if (t && matchCampaign(t, campaigns)?.campaign.name === camp.name) matched.push(date)
+        }
+        dates = matched.sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
+        skipReviewed = true
+        console.log(color.bold(color.cyan(`\nCampaign: ${camp.name} — ${dates.length} session(s)`)))
+      } else {
+        // The arg right after --campaign (if any) is its value, not a positional date.
+        const valueIdx = campaignIdx >= 0 ? campaignIdx + 1 : -1
+        const target = rest.filter((a, i) => !a.startsWith("--") && i !== valueIdx)[0] ?? "all"
+        dates = target === "all" ? await listSessionDates() : [target]
+        skipReviewed = target === "all"
+      }
+
+      // In multi-session modes, skip sessions already reviewed (a named single
+      // date is always re-reviewed); --force includes them anyway.
+      if (skipReviewed && !force) {
+        const before = dates.length
+        dates = dates.filter((d) => !reviewed[d])
+        const skipped = before - dates.length
+        if (skipped > 0) {
+          console.log(color.dim(`  (skipping ${skipped} already-reviewed session(s) — --force to include)`))
+        }
+      }
+
       // Skip spans already corrected in defs.yaml, and any span handled earlier in
       // this review (across all sessions) so the same correction never re-prompts.
       const replace = await loadCorrections()
@@ -298,7 +350,10 @@ async function runReview(rest: string[]): Promise<void> {
           continue
         }
         const items = dedupeForReview(findKnown(t, lex), seen, foldForMatch, (span) => replace(span) !== span)
-        if (items.length === 0) continue
+        if (items.length === 0) {
+          await markReviewed(date) // nothing to flag → counts as reviewed
+          continue
+        }
         console.log(color.bold(color.cyan(`\n=== ${date} ===`)))
 
         let annotations: Annotations | undefined
@@ -320,7 +375,8 @@ async function runReview(rest: string[]): Promise<void> {
 
         const stats = await reviewKnown(items, deps, annotations)
         add(stats)
-        if (stats.quit) break
+        if (stats.quit) break // quit mid-session → don't mark reviewed; resume later
+        await markReviewed(date)
       }
     }
   } finally {

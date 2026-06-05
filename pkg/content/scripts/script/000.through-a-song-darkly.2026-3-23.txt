@@ -538,7 +538,7 @@ Script:
 > Johnny: It's one of Betty's brothers, Barnaby.  
 > Johnny: I feel like I heard... Oh.  
 > Benny: I've already sent Josh the yin ancestry feats.  
-> Gamemaster: One of... One of the Joker worlds on the horizon is the land of the yin.  
+> Gamemaster: One of... One of the Joker Worlds on the horizon is the land of the yin.  
 > Gamemaster: They're just running around.  
 > Gamemaster: Are there any ancestries that would fit as like a yin?  
 > Anzu: Right.  
@@ -702,7 +702,7 @@ Script:
 > Gamemaster: Yeah, you guys are walking through the sewers.  
 > Gamemaster: You are now currently in the royal waterways, the parts of the sewers that were constructed long before Prime Meridian and the Iridescent Church held their coup and deposed the Calarian royal family.  
 > Gamemaster: You are, because you had rolled pretty well last time, so you know geographically roughly where you are.  
-> Gamemaster: You think you're around the edge, maybe slightly past, maybe slightly before the fire partition that separates Taylor's Run from the rest of everything else.  
+> Gamemaster: You think you're around the edge, maybe slightly past, maybe slightly before the fire partition that separates Teller's Run from the rest of everything else.  
 > Gamemaster: As you had come to this larger clearing in this part of the sewer, you saw that there were a handful of blue glowing machinery, that blue color being very similar to what you had seen in some firearms that you had requisitioned from some gas station bandits, as well as an interesting looking shrine to something or other.  
 > Gamemaster: on top of clear pathways further into the sewer past where you are.  
 > Gamemaster: You did see some suspicious puddles, and absolutely fucked one up by dealing 13 points of damage, which did wake up all of the puddles.  
@@ -3512,7 +3512,7 @@ Script:
 > Gamemaster: The architectural style of the shrine, as well as the actual, like, person depicted, don't, with a 30, like, they don't match any of the, like, known religions or religious splinter groups, whatever, that attach to the other gods, as you would understand them.  
 > Benny: you you  
 > Gamemaster: Nor, with that check, do they match any of the known, like, smaller religions, like inner gods and stuff, that are active...  
-> Gamemaster: around Taliyah and Galarian.  
+> Gamemaster: around Taliyah and Calaria.  
 > Gamemaster: With that role, I do think the thing that you notice is, it's not visible on the map, but as you take a closer look, you can see that there are what look to be like...  
 > Johnny: Oh.  
 > Gamemaster: like little dots, like sprinkles almost, around the base of the figure and kind of on the robes near the feet and the legs and stuff.  

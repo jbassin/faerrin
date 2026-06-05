@@ -530,7 +530,7 @@ Script:
 > Mickey: I'll stick to... Yep.  
 > Cedric: You should watch it.  
 > Cedric: It's really uncomfortable.  
-> Mickey: Josh, are the people of Faerin in disagreement on what to call this forest?  
+> Mickey: Josh, are the people of Færrin in disagreement on what to call this forest?  
 > Gamemaster: A little bit.  
 > Gamemaster: It's got a few names.  
 > Gamemaster: It happens.  
@@ -682,13 +682,13 @@ Script:
 > Gamemaster: And yeah, asking around, now that you had a little bit of a target, you found that they had arrived earlier in the day.  
 > Gamemaster: earlier in the day that Mr. Vanderbloom had died, via train coming in from the east.  
 > Gamemaster: You track it down, you follow that path out, and you know that there is actually only one stop he could have come from.  
-> Gamemaster: He could have only come from Renford, which is a small, almost abandoned logging town.  
+> Gamemaster: He could have only come from Wrenford, which is a small, almost abandoned logging town.  
 > Gamemaster: on the edge of the Verdant Expanse, the official Iridescent Church-approved name for that Giant forest on the eastern border of Calaria.  
 > Gamemaster: So, with seemingly no other leads, no other way to stop these murders from continuing, you have to go to the source.  
-> Gamemaster: You have to go to Renford, try and figure out what happened.  
+> Gamemaster: You have to go to Wrenford, try and figure out what happened.  
 > Gamemaster: And so all of you hop on a train, you know, paid for, of course, by yourselves, but will be reimbursed when you return by the church.  
 > Gamemaster: Business class, it's not bad.  
-> Gamemaster: And you take the day-and-a-half-ish train ride out to Renford.  
+> Gamemaster: And you take the day-and-a-half-ish train ride out to Wrenford.  
 > Gamemaster: As you guys are lounging on the train, you've all known each other for a while at this point.  
 > Gamemaster: This is not the first case you've worked before.  
 > Gamemaster: But I'd appreciate it if you could go around and describe yourselves.  
@@ -806,7 +806,7 @@ Script:
 > Gamemaster: No, you're on an express train.  
 > Gamemaster: So actually, roll a society check for me, please.  
 > Krod: So he... So he actually... Oh, yeah, yeah, okay.  
-> Gamemaster: There's a reason why when you figured out that this guy took a train in from the east that you knew that he came from Renford.  
+> Gamemaster: There's a reason why when you figured out that this guy took a train in from the east that you knew that he came from Wrenford.  
 > Krod: Yeah, I guess I remember.  
 > Krod: I was asking for clarification because there's no one else in the train and we're not stopping.  
 > Krod: So is he...  
@@ -851,8 +851,8 @@ Script:
 > Gamemaster: Oh, so bad.  
 > Gamemaster: 19.  
 > Gamemaster: Hi.  
-> Gamemaster: Yeah, you know that, like, this was originally planned to be some big train line going out to Renford, but for whatever reason, plans for it fell through, and there isn't much reason to come out here anymore, so not a lot of people on the train, and there aren't many stops, because most of the distance between Hallia and...  
-> Gamemaster: Renford is mountain, so it's just mostly traveling through or over mountains, but nowhere that, like, a settlement could reside.  
+> Gamemaster: Yeah, you know that, like, this was originally planned to be some big train line going out to Wrenford, but for whatever reason, plans for it fell through, and there isn't much reason to come out here anymore, so not a lot of people on the train, and there aren't many stops, because most of the distance between Hallia and...  
+> Gamemaster: Wrenford is mountain, so it's just mostly traveling through or over mountains, but nowhere that, like, a settlement could reside.  
 > Gamemaster: It's a long and boring train ride.  
 > Gamemaster: I would also take a perception check as the person carrying the trolley and stuff passes by.  
 > Mickey: I think I could do that.  
@@ -872,7 +872,7 @@ Script:
 > Cedric: I beat him by one, and then comes over Mickey!  
 > Gamemaster: So in this particular instance, Mickey's the only one that succeeded the check anyway.  
 > Gamemaster: So...  
-> Gamemaster: The only thing to notice is Renford is technically part of Calaria.  
+> Gamemaster: The only thing to notice is Wrenford is technically part of Calaria.  
 > Gamemaster: It's, like, very out on the border there as you get towards the Verdant Expanse, but it is still part of, like, the Iridescent Church's domain.  
 > Cedric: you  
 > Gamemaster: So most of the people that you bump into here are worshippers of the host, and they have various sizes of that, like, pearlescent rainbow shimmery raiment.  
@@ -893,16 +893,16 @@ Script:
 > Gamemaster: Prime Meridian, the company that runs most of the trains in Calaria, would not arrive late.  
 > Gamemaster: They would rather increase speeds to a dangerous degree to make it on time than they would arrive late.  
 > Mickey: Yes, of course.  
-> Gamemaster: So you pull into what is much too big a station for Renford.  
-> Gamemaster: It seems you pull into one of what look to be maybe eight tracks, despite the fact that you know that there's nothing on this line other than Hallia, and no one's commuting into Hallia from Renford.  
+> Gamemaster: So you pull into what is much too big a station for Wrenford.  
+> Gamemaster: It seems you pull into one of what look to be maybe eight tracks, despite the fact that you know that there's nothing on this line other than Hallia, and no one's commuting into Hallia from Wrenford.  
 > Gamemaster: This is a large train station that sees one train, maybe two, a day.  
 > Gamemaster: But doors open, you're all ushered out, as they know that nobody's staying on the train right now.  
 > Gamemaster: You're greeted by a very elderly, tired-looking train conductor as he's kind of waving people off of the station.  
 > Gamemaster: You pass by the two people that it looks like were waiting for the train to get onto to head back towards Alia.  
 > Gamemaster: Um...  
 > Gamemaster: And as you walk by, you're just kind of handed a pamphlet by, it looks like the conductor's doubling as a tour guide of some kind, because they've just been waiting and they have like a series of pamphlets that they're handing out as people leave.  
-> Gamemaster: that just has a picturesque image, like a drone shot almost, but illustrated of Renford, or of what Renford was supposed to be when they were originally planning it, because it's very idealized in this, as you can tell as soon as you exit the train station.  
-> Gamemaster: I'd like another perception check, or society check, as you guys exit out into the town of Renford.  
+> Gamemaster: that just has a picturesque image, like a drone shot almost, but illustrated of Wrenford, or of what Wrenford was supposed to be when they were originally planning it, because it's very idealized in this, as you can tell as soon as you exit the train station.  
+> Gamemaster: I'd like another perception check, or society check, as you guys exit out into the town of Wrenford.  
 > Gamemaster: And let me know which of the two you roll.  
 > Cedric: And what'd you say, sorry?  
 > Krod: Perception 31.  
@@ -910,7 +910,7 @@ Script:
 > Gamemaster: Perception or society.  
 > Gamemaster: Whichever you prefer.  
 > Cedric: And this is to look around render?  
-> Gamemaster: This is just as you get out of the train station, looking at Renford, at the city in general.  
+> Gamemaster: This is just as you get out of the train station, looking at Wrenford, at the city in general.  
 > Cedric: Okay.  
 > Gamemaster: Just like getting your bearings.  
 > Cedric: So this is not like gathering information.  
@@ -966,7 +966,7 @@ Script:
 > Gamemaster: Just yet, at least.  
 > Gamemaster: You've got to spend a little bit in town and try and figure out what's going on before you start investigating elsewhere.  
 > Gamemaster: So, what do you want to do?  
-> Gamemaster: Now that you made it to Renford, not a hugely populated area, you know that somebody wearing a weird old tiny tunic came from here, showed up, met some guy, and then he died, and then 47 other people died after that over the next three weeks.  
+> Gamemaster: Now that you made it to Wrenford, not a hugely populated area, you know that somebody wearing a weird old tiny tunic came from here, showed up, met some guy, and then he died, and then 47 other people died after that over the next three weeks.  
 > Cedric: So I'd like to gather information.  
 > Gamemaster: Okay.  
 > Gamemaster: Absolutely.  
@@ -1207,7 +1207,7 @@ Script:
 > Gamemaster: And with a 46 crit, do you gather any particular benefit?  
 > Gamemaster: No.  
 > Gamemaster: Okay.  
-> Gamemaster: So, I mean, like, the obvious thing of note as you guys exit the train station or looking around is that the average person in Renford is wearing regular clothes.  
+> Gamemaster: So, I mean, like, the obvious thing of note as you guys exit the train station or looking around is that the average person in Wrenford is wearing regular clothes.  
 > Cedric: Okay.  
 > Gamemaster: It's not like they're all just walking around wearing tunics and stuff.  
 > Gamemaster: Why, was that a bet or something?  
@@ -1217,7 +1217,7 @@ Script:
 > Gamemaster: They're wearing, like, you know, suits are kind of in vogue right now, especially if you're working suits and dresses.  
 > Gamemaster: But, you know, t-shirts, pants...  
 > Gamemaster: No tunics, none of that old-timey leggings, all that kind of stuff.  
-> Gamemaster: But with the 46, you would know that there is a small percentage of people in Renford who are devout worshippers of who they call the Green Father, which...  
+> Gamemaster: But with the 46, you would know that there is a small percentage of people in Wrenford who are devout worshippers of who they call the Green Father, which...  
 > Gamemaster: as best your listeners can tell, is like some kind of...  
 > Gamemaster: representation of the Virgin Expanse, of the Giant forest behind you, instead of necessarily being, like, a specific guy.  
 > Gamemaster: But as part of that kind of getting into worship of the Green Father, they've kind of issued some of the more... I don't know if that's how you say that word.  
@@ -1227,9 +1227,9 @@ Script:
 > Gamemaster: They don't really mess with things that are too far removed from what they perceive as the natural state.  
 > Gamemaster: And so, you know, people asking around, they're like, well, obviously they haven't given us any details to find a specific person.  
 > Cedric: Okay.  
-> Gamemaster: But if I had to put money on some guy in a tunic that came from Renford, I would guess it would be the weird people that don't like cars a little bit out of the city.  
+> Gamemaster: But if I had to put money on some guy in a tunic that came from Wrenford, I would guess it would be the weird people that don't like cars a little bit out of the city.  
 > Gamemaster: And so that's kind of where they point you.  
-> Gamemaster: They point you in the direction you know where the Renford commune, as they call it, is, like on the outskirts of Renford.  
+> Gamemaster: They point you in the direction you know where the Wrenford commune, as they call it, is, like on the outskirts of Wrenford.  
 > Cedric: That's my contribution for the day, if you guys want to do anything else.  
 > Cedric: Otherwise, grab a beer.  
 > Krod: Krod will glance at Mickey and say, the old-fashioned way.  
@@ -1313,7 +1313,7 @@ Script:
 > Krod: I also can't beat it.  
 > Gamemaster: Okay, so with a 40, I think the best you would get is... I imagine your character with alcohol lore has tasted a wide variety of beers, and so would know what notes to expect in different kinds of beers.  
 > Cedric: I'd like to ask someone about this.  
-> Gamemaster: And there's a weird, herbaceous note in the house beer here, in whatever that you know is fermented, like in Renford, that you...  
+> Gamemaster: And there's a weird, herbaceous note in the house beer here, in whatever that you know is fermented, like in Wrenford, that you...  
 > Gamemaster: Had not quite place.  
 > Mickey: Thanks.  
 > Gamemaster: Unfortunately, there's not a lot more about that.  
@@ -1553,7 +1553,7 @@ Script:
 > Gamemaster: The city never really grew large enough to warrant that.  
 > Gamemaster: You guys can just take a nice 20-minute walk out to the outskirts of town.  
 > Gamemaster: It is pretty obvious once you've found...  
-> Gamemaster: the edge of the commune, because the concrete and brick buildings of Renford kind of fade away as you make it to the outskirts and are replaced with wood and thatch-roofed houses.  
+> Gamemaster: the edge of the commune, because the concrete and brick buildings of Wrenford kind of fade away as you make it to the outskirts and are replaced with wood and thatch-roofed houses.  
 > Gamemaster: that look like they were built for some kind of historical reenactment and not necessarily where people are actually living.  
 > Gamemaster: But people are actually living!  
 > Gamemaster: As you get a bit closer, no perception check necessary, the first person you see is an older-looking human man, full-on wearing a tunic, by the looks of it herding some sheep.  

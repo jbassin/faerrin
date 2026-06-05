@@ -388,7 +388,7 @@ Script:
 > Arctos: Mm-hmm.  
 > Gamemaster: I mean...  
 > Benny: Or else it'll flop all over the place because it's so fresh.  
-> Gamemaster: I do like how, because I assume you're feeding in previous images so that whatever model you use knows what to generate, that it's starting to think that the star in the bottom corner is part of the art and is generating its own version of it.  
+> Gamemaster: I do like how, because I assume you're feeding in previous images so that whatever model you use knows what to generate, that it's starting to think that the star in the bottom corner is part of the Heart and is generating its own version of it.  
 > Benny: That is one of my rules.  
 > Benny: I give it the same source image, which is the original Yeen image of Bartleby.  
 > Benny: Bartleby?  
@@ -416,7 +416,7 @@ Script:
 > Anzu: So we researched a couple things, including big booty bears.  
 > Anzu: Didn't find any, but we learned a couple things.  
 > Anzu: We learned that Sir Arctos is a major anomaly and a very interesting piece.  
-> Anzu: We learned about some other strange happenings along the timeline of Ember Calls arising, including a couple months ago some other fire-related cults that kind of burned out quick.  
+> Anzu: We learned about some other strange happenings along the timeline of Embercall's arising, including a couple months ago some other fire-related cults that kind of burned out quick.  
 > Anzu: We also learned about a strider that just kind of started singing and then disappeared.  
 > Anzu: And then...  
 > Anzu: We talked to Anaïs and Anouk, and we told them to kill our rivals.  
@@ -490,7 +490,7 @@ Script:
 > Gamemaster: OK, so you've marked that down.  
 > Gamemaster: You guys are in your car.  
 > Gamemaster: We'll say it's probably around 10 AM.  
-> Gamemaster: You've just pulled out of the commercial loading area of this sub-nexus of Prime Meridians and Sableclutch.  
+> Gamemaster: You've just pulled out of the commercial loading area of this sub-nexus of Prime Meridian's and Sableclutch.  
 > Gamemaster: What is the plan?  
 > Johnny: Do we want to go to an art museum to learn about art?  
 > Benny: Of course the nerd wants to go to the museum.  
@@ -498,7 +498,7 @@ Script:
 > Arctos: No.  
 > Anzu: I think we need to go to the museum.  
 > Arctos: We're not just going to steal art from him.  
-> Benny: No, I think we should go to the art museum and then hopefully, coincidentally, a bad person will own a very nice piece of art and then we can go and take it from them without remorse.  
+> Benny: No, I think we should go to the Heart museum and then hopefully, coincidentally, a bad person will own a very nice piece of art and then we can go and take it from them without remorse.  
 > Arctos: Well, if it makes you feel any better, probably most of the rich people are bad people here.  
 > Johnny: Does that include your friend?  
 > Johnny: Siberian bear.  
@@ -540,14 +540,14 @@ Script:
 > Benny: Let me chance my hero point, please.  
 > Anzu: I got a critical 31.  
 > Gamemaster: Nice.  
-> Gamemaster: You know all of the art galleries and museums in Hallia.  
+> Gamemaster: You know all of the Heart galleries and museums in Hallia.  
 > Anzu: Guys, I had a feeling we might need to go to a museum, so I looked a couple up earlier.  
 > Gamemaster: Honestly, that's fair.  
 > Johnny: pulls up every pamphlet from a tourist stop.  
 > Gamemaster: So there are...  
 > Gamemaster: Um, there are quite a few, uh, art galleries in, or art museums and the like, uh, in Hallia.  
 > Gamemaster: Uh, this is very much the, the cultural center of Calaria.  
-> Gamemaster: Um, but if you're looking for the art museum, like the one that will have the largest breadth of different art and all that kind of stuff, you're, you're looking for the Hallia Metropolitan Conservatory, the MetCon.  
+> Gamemaster: Um, but if you're looking for the Heart museum, like the one that will have the largest breadth of different art and all that kind of stuff, you're, you're looking for the Hallia Metropolitan Conservatory, the MetCon.  
 > Arctos: Hell yeah.  
 > Gamemaster: which is like a multi-story collection of hundreds of years' worth of art.  
 > Johnny: To that museum.  
@@ -635,7 +635,7 @@ Script:
 > Gamemaster: So I think the best you could get is there is currently an exhibit that's being advertised in different parts of the museum as the current big thing, and that sounds like...  
 > Johnny: you  
 > Benny: Thank you.  
-> Gamemaster: it'd be the the the big thing gosh what is it the the barretto exhibit there's an artist from tormoray that's that's currently brought a few of his art pieces along to be displayed in the museum for the next few months um as part of a a partial exhibit um  
+> Gamemaster: it'd be the the the big thing gosh what is it the the barretto exhibit there's an artist from Tormeré that's that's currently brought a few of his art pieces along to be displayed in the museum for the next few months um as part of a a partial exhibit um  
 > Gamemaster: But yeah, you can find a group of fourth graders.  
 > Gamemaster: Can I get either a diplomacy or a diplomacy, deception, or intimidation?  
 > Gamemaster: It's your choice.  
@@ -729,7 +729,7 @@ Script:
 > Johnny: It's the kid from the forest.  
 > Arctos: Wait, wait, wait, so... Just out of clarification, just for my own edification, there's a group of nine-year-olds, there's one with a poncho, who also has a raiment that's, like, five times bigger than the other.  
 > Gamemaster: You do have that arsh enemy.  
-> Gamemaster: And the wrong color for a school kid in Alia.  
+> Gamemaster: And the wrong color for a school kid in Hallia.  
 > Arctos: Yes.  
 > Arctos: Like, everyone else is like, oh, hey, and it's, like, bigger than the chaperones, and they're like...  
 > Arctos: That is a godly kid.  
@@ -812,7 +812,7 @@ Script:
 > Arctos: So.  
 > Gamemaster: I don't know.  
 > Gamemaster: What?  
-> Gamemaster: Since you have a tour guide, I guess you can roll diplomacy to try and get her to talk about, like, the art if you're looking for something in particular.  
+> Gamemaster: Since you have a tour guide, I guess you can roll diplomacy to try and get her to talk about, like, the Heart if you're looking for something in particular.  
 > Gamemaster: You were looking for more of Kellum Quinn's art, but in general.  
 > Gamemaster: Alternatively, you guys can roll either perception or crafting to yourself.  
 > Gamemaster: Like, look at different pieces of art and try and figure stuff out.  
@@ -860,7 +860,7 @@ Script:
 > Gamemaster: But other than that... You know what?  
 > Gamemaster: I was planning on revealing these individually if you asked about them, but I think with a 40, you're just gonna...  
 > Gamemaster: One second.  
-> Gamemaster: You get her to talk about all of the art in the exhibit.  
+> Gamemaster: You get her to talk about all of the Heart in the exhibit.  
 > Johnny: Okay, give me 10 minutes to read these over and see if any of them are interesting.  
 > Arctos: Hell yeah.  
 > Benny: Good gravy.  
@@ -873,8 +873,8 @@ Script:
 > Anzu: this guy's a problem  
 > Johnny: Well, I guess.  
 > Arctos: Oh.  
-> Gamemaster: Uh, the art over in the bottom right is all by Mr. Paolo Barreto.  
-> Gamemaster: Um, he's, he's a famous artist from Tormere.  
+> Gamemaster: Uh, the Heart over in the bottom right is all by Mr. Paolo Barreto.  
+> Gamemaster: Um, he's, he's a famous artist from Tormeré.  
 > Gamemaster: Uh, he is currently in jail for heresy, but he expects to get out soon.  
 > Gamemaster: And then the other stuff I think might be of note to you.  
 > Gamemaster: I don't know if you care about any of it.  
@@ -931,7 +931,7 @@ Script:
 > Gamemaster: But you can steer her that way if you like.  
 > Gamemaster: The answer is that...  
 > Johnny: Well.  
-> Gamemaster: There is like one particular blot of shame on this museum, and that is somebody scammed the museum into thinking that they were a famous artist and used setting up their exhibit within the museum as a chance to enter and take some of the art and swap it out with forgeries and then leave.  
+> Gamemaster: There is like one particular blot of shame on this museum, and that is somebody scammed the museum into thinking that they were a famous artist and used setting up their exhibit within the museum as a chance to enter and take some of the Heart and swap it out with forgeries and then leave.  
 > Benny: you  
 > Arctos: Brilliant.  
 > Gamemaster: And unfortunately, they were never caught.  
@@ -1084,7 +1084,7 @@ Script:
 > Gamemaster: I will say with a 38, this is not a representation you have seen previously.  
 > Gamemaster: surprisingly, it doesn't structurally seem to go against any theories you're aware of on how it works.  
 > Gamemaster: It just seems to be a different representation.  
-> Gamemaster: One that, like, no academics, even in Tormere, the place that this particular artist is from, necessarily ascribe to.  
+> Gamemaster: One that, like, no academics, even in Tormeré, the place that this particular artist is from, necessarily ascribe to.  
 > Gamemaster: It's interesting.  
 > Anzu: Do I find it at all insightful or educational?  
 > Johnny: you  
@@ -1092,7 +1092,7 @@ Script:
 > Anzu: This guy's a no-er, too.  
 > Anzu: All right.  
 > Arctos: Sir Arctos is going to offer to sign any autographs for the children.  
-> Johnny: I thought you were going to say Sir Arctos offers to sign the art.  
+> Johnny: I thought you were going to say Sir Arctos offers to sign the Heart.  
 > Gamemaster: Absolutely.  
 > Arctos: Free of charge.  
 > Gamemaster: You definitely would have people who want your autograph, so that's doable.  
@@ -1113,8 +1113,8 @@ Script:
 > Johnny: Seems super difficult.  
 > Johnny: Two, we steal art from someone else's house.  
 > Johnny: More difficult.  
-> Johnny: Three, we give Arctos a piece of salmon and ice and steal the art from his house.  
-> Benny: Do we know how much the art in his house would go for?  
+> Johnny: Three, we give Arctos a piece of salmon and ice and steal the Heart from his house.  
+> Benny: Do we know how much the Heart in his house would go for?  
 > Benny: I did hear... Well, I mean, I guess everyone heard.  
 > Johnny: Maybe talk to someone around here.  
 > Benny: There's a new larger exhibit from Beretto that is supposed to be coming here.  
@@ -1383,7 +1383,7 @@ Script:
 > Gamemaster: Well, I'll hope whatever ploy he's doing, if that is the issue, ends soon.  
 > Arctos: Yeah, I hope he does not succeed.  
 > Gamemaster: Either way, Minister Vane is healthy, so no need to worry on that front.  
-> Arctos: Didn't we read something that Graystone was trying to do mind control?  
+> Arctos: Didn't we read something that Grayson was trying to do mind control?  
 > Arctos: Did we read that somewhere?  
 > Gamemaster: Yes.  
 > Arctos: I think we did.  
@@ -1629,14 +1629,14 @@ Script:
 > Johnny: Okay, maybe we should wrap art in something.  
 > Gamemaster: Yeah, right now your truck has three pieces of art and 300 gallons of gasoline.  
 > Arctos: The gasoline trunk?  
-> Anzu: They'll never find the art.  
+> Anzu: They'll never find the Heart.  
 > Arctos: Is that safe?  
 > Arctos: Is the gasoline going to ruin all of our art?  
 > Arctos: That'd be so sad.  
 > Anzu: Yeah, it might.  
 > Gamemaster: It's in jerry cans.  
 > Arctos: No, no, don't guess.  
-> Arctos: Can we leave the art in Arctos' room?  
+> Arctos: Can we leave the Heart in Arctos' room?  
 > Arctos: Is that fine?  
 > Anzu: I think maybe let's bring it home to iconoclasm.  
 > Arctos: Or do you guys... You trust Iconoclasm?  
@@ -1698,7 +1698,7 @@ Script:
 > Arctos: Can we also... Who's the lady who builds stuff that owns the car?  
 > Johnny: You're right.  
 > Anzu: All right.  
-> Gamemaster: Dur is the one that maintains the car, the mechanic, that kind of stuff, yeah.  
+> Gamemaster: Dura is the one that maintains the car, the mechanic, that kind of stuff, yeah.  
 > Arctos: Yeah.  
 > Arctos: Hey, Dura, we got some... These are actually legit, but can you, like, booby-trap a door or something to make sure no one opens it?  
 > Gamemaster: It depends.  
@@ -1949,7 +1949,7 @@ Script:
 > Gamemaster: It's very funny that your most nonchalant member of the party is the guy with the big Ringo Starr sunglasses.  
 > Gamemaster: And a poncho.  
 > Gamemaster: Ponchos are not like standard clothing.  
-> Gamemaster: In Alia, people are not walking around all in ponchos.  
+> Gamemaster: in Hallia, people are not walking around all in ponchos.  
 > Gamemaster: Like, if last campaign, which for the first, like, eight levels was fully Western-themed, if you were walking around in ponchos for that, it would have made sense.  
 > Gamemaster: Why did you wait until Cold War-era, like, Metropolitan City to start wearing the ponchos?  
 > Johnny: I tried all denim.  
@@ -2080,7 +2080,7 @@ Script:
 > Gamemaster: You can kill without going into combat.  
 > Arctos: Hmm.  
 > Gamemaster: It's possible.  
-> Gamemaster: Okay, so I'm going to ask that you apply your buffs in the map that we're currently in, in the art gallery.  
+> Gamemaster: Okay, so I'm going to ask that you apply your buffs in the map that we're currently in, in the Heart gallery.  
 > Gamemaster: And then we swap over to the other map when it's time.  
 > Gamemaster: So we've fast-forwarded a little bit.  
 > Gamemaster: So now we're however many seconds before you expect whatever to happen will happen.  
@@ -2168,7 +2168,7 @@ Script:
 > Arctos: Yes, I can do that.  
 > Johnny: Get back here a little bit.  
 > Arctos: Sorry, one second.  
-> Johnny: Arctosis blue.  
+> Johnny: Arctos' blue.  
 > Arctos: Sorry, perception check.  
 > Arctos: Wait, it's in the skills, which is the hands.  
 > Anzu: Oh, he's blue.  
@@ -3317,7 +3317,7 @@ Script:
 > Gamemaster: And then, because he was frenzied, he is clumsy now.  
 > Benny: course.  
 > Gamemaster: Johnny, it's your turn.  
-> Johnny: I will sustain the Spurtleby image.  
+> Johnny: I will sustain the Sbrtlby image.  
 > Gamemaster: Absolutely.  
 > Johnny: So he'll... He'll go for... I'll swing for the Meokton.  
 > Gamemaster: They're both looking pretty bad, but the milk den looks slightly worse.  

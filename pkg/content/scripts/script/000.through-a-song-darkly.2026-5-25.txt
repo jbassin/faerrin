@@ -121,7 +121,7 @@ Script:
 > Anzu: PLS is... Oh, the Pale Lantern Society is pretty big.  
 > Gamemaster: You're the... You can also... You can also click on them.  
 > Argyle: um garrick is so fucked those fucking RunGunners i it makes sense the RunGunners no no that they're making it on their borders so they can traffic goods those smuggling assholes  
-> Anzu: Protectored is big, which makes sense.  
+> Anzu: Protectorate is big, which makes sense.  
 > Anzu: The Scale is relatively big, yeah.  
 > Gamemaster: There's not a lot of info on them yet, but you can click on it, and it brings up a little bit of information on each of the factions.  
 > Gamemaster: I mean, for the most part, you already know them, but... You don't like the RunGunners?  
@@ -167,13 +167,13 @@ Script:
 > Anzu: Looks like Noah got a pretty nice haircut.  
 > Argyle: It does.  
 > Johnny: Thank you.  
-> Argyle: Guys, looking at this base, at this chart, I low-key want to cut ties with the Solari subsurface.  
+> Argyle: Guys, looking at this base, at this chart, I low-key want to cut ties with the Solari Sub-surface.  
 > Argyle: It's kind of embarrassing to have our hearts communicate.  
 > Argyle: Is that like a security risk?  
 > Argyle: Like, is it a security risk?  
 > Argyle: Because they're going to get taken over.  
 > Benny: They don't even have the smallest one.  
-> Gamemaster: the the the Solari subsurface base is only one tile smaller than yours is it's not you know such a huge difference they don't  
+> Gamemaster: the the the Solari Sub-surface base is only one tile smaller than yours is it's not you know such a huge difference they don't  
 > Benny: The handsome chaps at Garrick Textiles do.  
 > Anzu: Yeah, they're screwed.  
 > Anzu: They are absolutely screwed.  
@@ -196,7 +196,7 @@ Script:
 > Benny: And Brick Hall has a huge base.  
 > Anzu: Yeah, that's why I need all the losers, Jorge.  
 > Argyle: Yeah.  
-> Anzu: Look at that base on Ambercall.  
+> Anzu: Look at that base on Amber Call.  
 > Argyle: So I really hope the Pale Lantern Society are good people.  
 > Argyle: I just really don't think they are.  
 > Argyle: So it's unfortunate that I think they're going to be working with the Amber Call.  
@@ -246,7 +246,7 @@ Script:
 > Anzu: And also, they're kind of impartial, I feel, to the conflicts.  
 > Anzu: I could be wrong about that, but... I don't think they'll do that, but you never know.  
 > Benny: This is the thing.  
-> Argyle: We're going to be so fucked if Ambercall takes out the Harlequins.  
+> Argyle: We're going to be so fucked if Amber Call takes out the Harlequins.  
 > Johnny: I don't like what you said at the moment.  
 > Argyle: I don't think they will either.  
 > Gamemaster: At the moment, at least, the Harlequins are the ones running the Strider.  
@@ -256,18 +256,18 @@ Script:
 > Johnny: Yes, you can.  
 > Benny: We can deal...  
 > Benny: This is a great opportunity.  
-> Benny: One of the funny things, we don't like Ambercall.  
-> Benny: I know how to get some people on Ambercall's case.  
-> Benny: Point out to the Iridescent Church that they have a smaller base than the Ambercall.  
+> Benny: One of the funny things, we don't like Amber Call.  
+> Benny: I know how to get some people on Amber Call's case.  
+> Benny: Point out to the Iridescent Church that they have a smaller base than the Amber Call.  
 > Benny: Their whole thing is pride.  
 > Anzu: If we could get them to take over Necrolog, that could be really good.  
 > Argyle: That's true.  
-> Benny: This is nice, but Ambercall's is huge.  
+> Benny: This is nice, but Amber Call's is huge.  
 > Benny: I mean, they're showing out.  
 > Benny: I'm surprised.  
 > Benny: I mean, one of the best showings for any org on this Strider.  
 > Benny: I mean, it's kind of amazing.  
-> Benny: Why do you hate Necrologues so much?  
+> Benny: Why do you hate NecroLog so much?  
 > Anzu: There's the proxy War.  
 > Benny: They're not going to take over Necrolog.  
 > Benny: They're going to rub it in Necrolog's face.  
@@ -275,7 +275,7 @@ Script:
 > Anzu: Thank you.  
 > Benny: I imagine people at Necrolog look like they're dead.  
 > Benny: So it's going to be like one of those... Yeah, exactly.  
-> Gamemaster: The one person at Nekrolag you met is a Dompir.  
+> Gamemaster: The one person at NecroLog you met is a dhampir.  
 > Johnny: Dead.  
 > Benny: And that's probably the best looking person.  
 > Gamemaster: Only half.  
@@ -290,7 +290,7 @@ Script:
 > Johnny: mm-hmm  
 > Argyle: Yeah, yeah, yeah.  
 > Anzu: Because we need to be insulated.  
-> Argyle: Sables and Sons is also really close to the walkways, which I don't know if they're planning to do pop shots and trying to rob us, because they're going to get fucked up if they try robbing people.  
+> Argyle: Sable and Suns is also really close to the walkways, which I don't know if they're planning to do pop shots and trying to rob us, because they're going to get fucked up if they try robbing people.  
 > Argyle: Yeah.  
 > Argyle: Who are the other small ones?  
 > Argyle: Which one do you think has Anzu's sister?  
@@ -314,7 +314,7 @@ Script:
 > Benny: They both have age.  
 > Benny: I think it's Necrolog.  
 > Argyle: Wait, wait.  
-> Argyle: Alka-Heist Freight.  
+> Argyle: Alkahest Freight.  
 > Argyle: What do we know about them?  
 > Johnny: Sounds like they're a freight company.  
 > Anzu: Not a lot, I don't think.  
@@ -763,7 +763,7 @@ Script:
 > Benny: People start arriving a bit more.  
 > Benny: One of the people that didn't show up to the cookout was Grayson's relative.  
 > Benny: Don't know what the issue is there.  
-> Benny: At the cookout, Johnny converses with Salvato from Solari, our strongest and most powerful ally.  
+> Benny: At the cookout, Johnny converses with Salvado from Solari, our strongest and most powerful ally.  
 > Benny: Anzu speaks with an old man.  
 > Benny: Argyle sets up a visit with Scale people.  
 > Benny: We go to the Scale place.  
@@ -935,7 +935,7 @@ Script:
 > Argyle: What do you mean, not a horrible idea?  
 > Argyle: Do you have a better one?  
 > Anzu: That's all.  
-> Argyle: Yeah, yeah, try to have her meet either at our heart or a neutral location, like the Scales headquarters.  
+> Argyle: Yeah, yeah, try to have her meet either at our heart or a neutral location, like the Scale's headquarters.  
 > Anzu: I just don't want to make... I also don't want to make her too suspicious.  
 > Argyle: She probably won't go for that.  
 > Argyle: What do you mean?  
@@ -962,7 +962,7 @@ Script:
 > Argyle: Who are we about to go talk with?  
 > Gamemaster: you haven't attempted to speak with them i don't believe it  
 > Anzu: Sable & Sons, Ætherion Limited, Verdant Holdings, The RunGunners, Radiant Gun, The Pale Lantern Society, Amber Call, and Garrick Textiles.  
-> Argyle: Sable and Son.  
+> Argyle: Sable and Suns.  
 > Argyle: Yeah.  
 > Benny: Woo Gary.  
 > Argyle: We also haven't chatted with the Ministry of Cultural Progress, right?  
@@ -1243,7 +1243,7 @@ Script:
 > Argyle: I'm going to pull them aside.  
 > Argyle: My friends aside will be like, we need to talk him into moving with us because they're going to fucking die.  
 > Gamemaster: Oh.  
-> Argyle: Tell them the Amber Collar is scary.  
+> Argyle: Tell them the Amber Call is scary.  
 > Argyle: I don't know.  
 > Argyle: You guys figure it out.  
 > Johnny: Listen, you know, Mr. I'm so sorry, what was his name again?  
@@ -1361,8 +1361,8 @@ Script:
 > Johnny: My wife is dead!  
 > Johnny: Oh, my secretary is dead!  
 > Argyle: Not wife, just poor secretary.  
-> Anzu: Maybe Amber Cole will just make him an offer he can't refuse instead, and he'll live.  
-> Argyle: Well, I'm worried that Amber Cole is going to mind control him or something.  
+> Anzu: Maybe Amber Call will just make him an offer he can't refuse instead, and he'll live.  
+> Argyle: Well, I'm worried that Amber Call is going to mind control him or something.  
 > Johnny: Oh, no.  
 > Anzu: Oh, that could happen, yeah.  
 > Johnny: Such a nice guy.  
@@ -1456,10 +1456,10 @@ Script:
 > Gamemaster: Okay, so...  
 > Argyle: We'll give a dossier of these people and basically be like, we don't know.  
 > Gamemaster: You get... Okay, sure.  
-> Argyle: We're keeping Anaïs on them because they're next to Amber Cole to let everyone else know.  
+> Argyle: We're keeping Anaïs on them because they're next to Amber Call to let everyone else know.  
 > Argyle: We think they're... Yeah.  
 > Johnny: It's not gonna die.  
-> Gamemaster: So, you get Whirling and Rags hooked up to your Skain network so that you can feasibly have a chat with them if you want to, or if you think that they might die in the middle of the night and send off, like, a death rattle, you can... Okay.  
+> Gamemaster: So, you get Whirling and Rags hooked up to your skein network so that you can feasibly have a chat with them if you want to, or if you think that they might die in the middle of the night and send off, like, a death rattle, you can... Okay.  
 > Argyle: I stress... Yeah.  
 > Argyle: Yeah, I stress that.  
 > Argyle: If they get attacked, don't let us know.  
@@ -1525,7 +1525,7 @@ Script:
 > Gamemaster: And something is directing them, as they set about moving objects, unloading them off of... They didn't try to skirt around the you-get-one-vehicle rule, so they just had one, like, trailer that they are actively pulling boxes off of and unloading into their home.  
 > Benny: Thank you.  
 > Gamemaster: You get, just from the size of this area, multiple houses, any one of which is larger than yours, that when they were putting together this feign,  
-> Gamemaster: They had somebody around who was familiar with the art of constructing fanes from hearts and was able to steer it in a direction that fit whatever they were looking for.  
+> Gamemaster: They had somebody around who was familiar with the Heart of constructing fanes from hearts and was able to steer it in a direction that fit whatever they were looking for.  
 > Anzu: Thank you.  
 > Gamemaster: This is clearly a better outfit group.  
 > Gamemaster: I don't think any of you have necessarily had the chance in your backstories to interact with the Pale Lantern Society all that much.  
@@ -1768,7 +1768,7 @@ Script:
 > Gamemaster: Some of these areas are large.  
 > Gamemaster: There was clearly some know-how in building veins.  
 > Gamemaster: And some of these areas are smaller and were more like you, where they were figuring things out as they go, type deal.  
-> Gamemaster: Alkahast Freight, clearly the latter.  
+> Gamemaster: Alkahest Freight, clearly the latter.  
 > Gamemaster: Their home is, or their base, is approximately the same size as yours.  
 > Gamemaster: It's around the same length.  
 > Gamemaster: I think theirs was more like a line, if I recall.  
@@ -1935,7 +1935,7 @@ Script:
 > Gamemaster: and when you approach, it looks like they are hauling pieces out of the car that they were allowed to build what looks to be a small airplane.  
 > Argyle: Oh, let's just not go.  
 > Gamemaster: They brought all the pieces.  
-> Anzu: Now, before we speak to them, I do want to point out that they, outside of the Strider, their company is very competitively against Hildebrant.  
+> Anzu: Now, before we speak to them, I do want to point out that they, outside of the Strider, their company is very competitively against Hildebrandt.  
 > Gamemaster: They couldn't, like, tow it in, so they brought it in pieces, and now you can see there are two engineers that are currently in the process of what looks like putting it together, while there's another one or two people that are kind of supervising as the whole thing goes up.  
 > Gamemaster: You can see from out far and you're like, no.  
 > Argyle: I'm okay.  
@@ -1959,7 +1959,7 @@ Script:
 > Anzu: No, no, you're absolutely right.  
 > Anzu: That's why I wanted to point it out before we went in.  
 > Argyle: That's good.  
-> Argyle: All right, so we have left the Ministry of Cultural Progress, the Sable & Sons, the Limited, which has Tommy Shelby, and then we have Verdant Holdings.  
+> Argyle: All right, so we have left the Ministry of Cultural Progress, The Scale & Sons, the Limited, which has Tommy Shelby, and then we have Verdant Holdings.  
 > Gamemaster: welcome yeah there's there's a bunch  
 > Benny: Bye.  
 > Anzu: And Radiant Arms, I think, right?  
@@ -2136,7 +2136,7 @@ Script:
 > Gamemaster: and they bring you into what is, for all intents and purposes, a pretty cozy-looking living room, sitting room area.  
 > Gamemaster: They clearly figured out pretty quickly how to put together a home of some kind.  
 > Gamemaster: This does feel like a home.  
-> Gamemaster: It doesn't feel like a forward operating center like the Scales does, or like half of an airstrip like Journey and Heavy Industries is.  
+> Gamemaster: It doesn't feel like a forward operating center like the Scale's does, or like half of an airstrip like Journey and Heavy Industries is.  
 > Gamemaster: This is a house.  
 > Gamemaster: Um, this is a house that actually has a lot of firearms in it.  
 > Gamemaster: Um, both in terms of, like, art pieces and the like.  
@@ -2333,7 +2333,7 @@ Script:
 > Gamemaster: I'm more than happy to be part of your, uh, your little gaggle.  
 > Argyle: What?  
 > Anzu: Yes, actually, our space is not too far from here.  
-> Anzu: And our shared neighbor, Hildebrant, here has also been pretty forthcoming.  
+> Anzu: And our shared neighbor, Hildebrandt, here has also been pretty forthcoming.  
 > Anzu: So it could be a nice block, this area of the Strider.  
 > Gamemaster: Absolutely.  
 > Gamemaster: Happy to participate if you wouldn't mind.  
@@ -2585,7 +2585,7 @@ Script:
 > Argyle: Separately.  
 > Argyle: Yeah.  
 > Gamemaster: Okay, absolutely.  
-> Argyle: Also, generally, Argyle, when he's going to the gym and stuff like that, he's going to pass by Garrix and just double check they haven't been blown up.  
+> Argyle: Also, generally, Argyle, when he's going to the gym and stuff like that, he's going to pass by Garrick and just double check they haven't been blown up.  
 > Johnny: Yeah.  
 > Gamemaster: Absolutely.  
 > Gamemaster: Over the course of this week, you check by every once in a while, and they are both fine.  
@@ -2665,7 +2665,7 @@ Script:
 > Gamemaster: First of all, there is a bar in the back.  
 > Gamemaster: It looks like there's a bartender back there.  
 > Gamemaster: Nobody's actively engaged with them or ordering anything.  
-> Gamemaster: It's the morning, and it seems that the alcoholics have not found this part of the bar yet, although you do know from your interaction with Solari Subspace that they do have some alcohol on tap, and they're probably pretty far into it by now.  
+> Gamemaster: It's the morning, and it seems that the alcoholics have not found this part of the bar yet, although you do know from your interaction with Solari Sub-surface that they do have some alcohol on tap, and they're probably pretty far into it by now.  
 > Argyle: Hmm.  
 > Gamemaster: There are some waiters either like harlequins acting as waiters kind of loitering around in the back.  
 > Gamemaster: And it looks like there are currently two customers already situated when you guys arrive.  
@@ -2724,7 +2724,7 @@ Script:
 > Anzu: Are they around?  
 > Gamemaster: Um, Tengu are, like, just by nature of their general construction, so to speak, they tend to live in higher altitude areas.  
 > Anzu: Is it pretty rare?  
-> Gamemaster: So you get a lot of them over in Austrine, a lot of them in, like, the Opaline Mountains in Brithwyn and the like.  
+> Gamemaster: So you get a lot of them over in Austrene, a lot of them in, like, the Opaline Mountains in Brithwyn and the like.  
 > Benny: you  
 > Anzu: Okay.  
 > Gamemaster: Not so much in Calaria and Hallia.  
@@ -2746,7 +2746,7 @@ Script:
 > Gamemaster: The only thing of note is at some point, depending on how long you wait, if like 15 minutes go by, you'd see another group start to filter in being shepherded along on a floating disc by their butler.  
 > Argyle: I'll sit down with him.  
 > Gamemaster: As they get closer, unfortunately you have to wait until they're basically on the doorstep of the restaurant to identify them.  
-> Gamemaster: It is Paavo and a group of other people from Hildebrant who it looks like are just coming by for brunch.  
+> Gamemaster: It is Paavo and a group of other people from Hildebrandt who it looks like are just coming by for brunch.  
 > Anzu: Hmm.  
 > Anzu: Mm-hmm.  
 > Gamemaster: They stop in.  
@@ -2784,7 +2784,7 @@ Script:
 > Gamemaster: And I'll put out a hand.  
 > Anzu: Yep.  
 > Anzu: I'll shake.  
-> Anzu: I'll say, my name's Ansu.  
+> Anzu: I'll say, my name's Anzu.  
 > Anzu: I'm here with Panaclasm.  
 > Anzu: Who are you here with?  
 > Gamemaster: Lark Crowe.  
@@ -2827,7 +2827,7 @@ Script:
 > Johnny: No, on the hybridization.  
 > Johnny: There it is.  
 > Johnny: Whoa.  
-> Gamemaster: You've seen the name Larkrow pop up in two different locations.  
+> Gamemaster: You've seen the name Lark Crowe pop up in two different locations.  
 > Anzu: Yeah.  
 > Anzu: Because he supplied those stupid bandits, right?  
 > Johnny: He was also the ghost's gun contact for a little bit.  
@@ -2958,11 +2958,11 @@ Script:
 > Gamemaster: Happens to the best of us.  
 > Johnny: Oh, sorry, where are you staying?  
 > Gamemaster: The Ministry of Cultural Progress.  
-> Argyle: How are you Giannis?  
+> Argyle: How are you Giannos?  
 > Gamemaster: MoCA.  
 > Gamemaster: As this is often referred to.  
 > Johnny: What's your name, friend?  
-> Gamemaster: Giannis.  
+> Gamemaster: Giannos.  
 > Johnny: Great to meet you.  
 > Gamemaster: I was doing fine.  
 > Gamemaster: My brunch was interrupted, but I imagine I'll get over it.  
@@ -3018,7 +3018,7 @@ Script:
 > Gamemaster: Okay, so the Ministry of Cultural Progress started out as a convox of the Iridescent Church before it was kind of spun off into its own thing.  
 > Argyle: So they might be.  
 > Gamemaster: Their whole claim to fame is they own...  
-> Gamemaster: the radio waves in Calaria and Tormore and some of Rithwin.  
+> Gamemaster: the radio waves in Calaria and Tormeré and some of Rithwin.  
 > Benny: you you  
 > Gamemaster: And so their whole deal is they manage who can broadcast and when, they fund radio shows to ensure there's stuff going on, that kind of stuff.  
 > Gamemaster: And they are very, very heavily involved with the Calarian government and the Iridescent Church.  
@@ -3095,7 +3095,7 @@ Script:
 > Gamemaster: You got everybody but three.  
 > Gamemaster: Oh, no, sorry.  
 > Gamemaster: The fourth one.  
-> Gamemaster: You see Manus and Brini, the two people from Pell Lantern Society, talking to the Dompir that you had seen at Necrolog and a fourth figure, a taller-looking human, gray slicked-back hair.  
+> Gamemaster: You see Manus and Brini, the two people from Pale Lantern Society, talking to the dhampir that you had seen at Necrolog and a fourth figure, a taller-looking human, gray slicked-back hair.  
 > Gamemaster: He looks to be in his early 20s or so.  
 > Gamemaster: clearly like holding court amongst the four of them like he's telling a story by the looks of it and the other three are standing around listening and that's all of the people you can absolutely do that if you like  
 > Anzu: I roll to attack with my beak.  
@@ -3338,7 +3338,7 @@ Script:
 > Johnny: Oh, I missed that part.  
 > Johnny: No, my guy.  
 > Johnny: He died already.  
-> Johnny: Oh, it is the Kirin.  
+> Johnny: Oh, it is the Ki-Rin.  
 > Johnny: Ki-Rin.  
 > Argyle: Yeah.  
 > Argyle: Can we tame him and use him as horses?  

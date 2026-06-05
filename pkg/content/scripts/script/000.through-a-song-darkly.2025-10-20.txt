@@ -1429,7 +1429,7 @@ Script:
 > Argyle: Yes.  
 > Gamemaster: That is easy to do.  
 > Gamemaster: You haven't been in this area before, and it's not like you have a phone you can use to Google Maps it, but there are directories at Payphones around that you can use to look up the address of it.  
-> Gamemaster: And head down a few blocks to the Scaled Pact Broker office.  
+> Gamemaster: And head down a few blocks to The Scale Pact Broker office.  
 > Gamemaster: The office itself is relatively...  
 > Gamemaster: Quaint is the wrong term.  
 > Gamemaster: It is austere.  
@@ -1444,7 +1444,7 @@ Script:
 > Gamemaster: So you are granted entry in, and if you want, you're made... You're able to use the fax machine and the telephone, if you like.  
 > Gamemaster: They're not going to let you start poking through files and stuff like that.  
 > Gamemaster: That's all confidential.  
-> Argyle: I would like to set up a line with damn Quay.  
+> Argyle: I would like to set up a line with Dame Quay.  
 > Gamemaster: But for communications, sure.  
 > Gamemaster: Okay.  
 > Gamemaster: Key.  
@@ -1491,7 +1491,7 @@ Script:
 > Gamemaster: When you say from the Watcher, do you mean Belvedere?  
 > Gamemaster: Okay.  
 > Gamemaster: Absolutely.  
-> Argyle: And then... And then one of them is... One of the ghosts of Raelio.  
+> Argyle: And then... And then one of them is... One of the Ghosts of Raelion.  
 > Gamemaster: And you do hear, like, very faint screeching on the other end as she's writing down what you're saying.  
 > Gamemaster: Okay.  
 > Gamemaster: Any of them seem particularly dangerous?  
@@ -2130,12 +2130,12 @@ Script:
 > Johnny: I don't know.  
 > Johnny: It's either one, he really wanted a lollipop and really likes it, or two, he's very aware of who he is.  
 > Anzu: Alright, let's go back to the Sin and Tonic.  
-> Gamemaster: The Sim and Tonic?  
+> Gamemaster: The Sin and Tonic?  
 > Gamemaster: Absolutely.  
 > Gamemaster: You take the tram back.  
 > Gamemaster: That's another two silver pieces.  
 > Anzu: Yeah.  
-> Gamemaster: You head over to the Sim and Tonic.  
+> Gamemaster: You head over to the Sin and Tonic.  
 > Argyle: Okay.  
 > Gamemaster: Indeed, look and bar.  
 > Gamemaster: If you recall, there are sensors from the ceiling that are burning tobacco, which are now, I guess, freshly mingling with the very, very strong scent of myrrh that has surrounded your party.  
@@ -2239,7 +2239,7 @@ Script:
 > Gamemaster: We'll see.  
 > Gamemaster: Okay, so...  
 > Gamemaster: I was able to do a little bit of asking around in regards to this dish.  
-> Gamemaster: It is made by a company called EmberCole Incorporated.  
+> Gamemaster: It is made by a company called Embercall Incorporated.  
 > Gamemaster: Relatively small company.  
 > Gamemaster: It was only created like two or three months ago, something like that.  
 > Gamemaster: No owner on file.  
@@ -2247,9 +2247,9 @@ Script:
 > Gamemaster: They're private.  
 > Gamemaster: They paid the extra money for it to not be around.  
 > Gamemaster: So that's a little bit of a dead end.  
-> Gamemaster: But I did find the location of their headquarters is a PO box, which, coincidentally, trying to find the source of the signal that this thing was pointed at, there is a...  
+> Gamemaster: But I did find the location of their headquarters is a P.O. Box, which, coincidentally, trying to find the source of the signal that this thing was pointed at, there is a...  
 > Gamemaster: It appears to be coming from Gryphonline, which is a logistics mail company, something of that nature.  
-> Gamemaster: It's pointed right at a semi-nearby Gryphonline distribution center, which is coincidentally where the PO box is registered.  
+> Gamemaster: It's pointed right at a semi-nearby Gryphonline distribution center, which is coincidentally where the P.O. Box is registered.  
 > Gamemaster: So I imagine that that is relevant in some way.  
 > Gamemaster: I couldn't get any more information about what the signal itself is.  
 > Gamemaster: I tried...  
@@ -2436,7 +2436,7 @@ Script:
 > Anzu: And they've got this Embercall company that they've put together.  
 > Anzu: So, according to my thoughts, we have four possible leads that we could try to chase down.  
 > Anzu: One...  
-> Anzu: is to see if we could find Tywelwyn, which we could do by perhaps finding the rest of his Roundhat gang.  
+> Anzu: is to see if we could find Tywelwyn, which we could do by perhaps finding the rest of his Roundhat Gang.  
 > Anzu: It's a little risky.  
 > Anzu: They're a gang.  
 > Anzu: But if we go in with the thought of we think that Tywelwyn was enchanted or magically manipulated, maybe they'd have... If we go in saying we want to help, they might be amenable.  
@@ -2447,11 +2447,11 @@ Script:
 > Anzu: Um...  
 > Anzu: Seems like the Threshold Authority might be involved somehow, so we could look into them, see if they've got any unethical connections to Pyrelight or Embercall.  
 > Argyle: Okay.  
-> Anzu: And then the newest one, which is fantastic, is we got a location on the signal source of the dish, so that's its PO box and the distribution center that its signal seems to come from.  
+> Anzu: And then the newest one, which is fantastic, is we got a location on the signal source of the dish, so that's its P.O. Box and the distribution center that its signal seems to come from.  
 > Anzu: So those are the four leads that I've got in my brain.  
 > Johnny: I agree.  
 > Johnny: I can't think of any others.  
-> Benny: I thought that anything will be too interesting in the PO box.  
+> Benny: I thought that anything will be too interesting in the P.O. Box.  
 > Argyle: you you  
 > Benny: I mean, maybe we could check on the shipping center that it's a part of and see if anything weird has been happening.  
 > Johnny: Well, it says they said that's where the signal is coming from.  
@@ -2524,7 +2524,7 @@ Script:
 > Anzu: I also don't know how to find them.  
 > Anzu: But I'm sure that there's people that would know in the town.  
 > Benny: Sure.  
-> Johnny: I'm still interested in checking out the PO box, but that could be lower on the list.  
+> Johnny: I'm still interested in checking out the P.O. Box, but that could be lower on the list.  
 > Argyle: we can go to the box you want to just sit on it see who comes or less of you if we go to the p.m  
 > Benny: Yeah, we can just ask at the P.O.  
 > Benny: Box place and also see if anything weird was going on.  
@@ -2542,11 +2542,11 @@ Script:
 > Benny: Yeah, actually, let's go there.  
 > Benny: Because I was thinking that there's going to be nothing interesting.  
 > Benny: But if you mailed yourself something that transmitted a signal, you would have to pick it up.  
-> Benny: They'd be like, hey, there's this thing still in your PO box.  
-> Benny: So it's probably in the building somewhere and not in the PO box.  
+> Benny: They'd be like, hey, there's this thing still in your P.O. Box.  
+> Benny: So it's probably in the building somewhere and not in the P.O. Box.  
 > Argyle: we don't investigate the gang they might not go undercover or they might go underground or die but before we get to killing  
 > Gamemaster: Yes, Tanner.  
-> Anzu: Just a clarification for when you were explaining it before, are the PO box and the distribution center the same thing, or are they just nearby each other?  
+> Anzu: Just a clarification for when you were explaining it before, are the P.O. Box and the distribution center the same thing, or are they just nearby each other?  
 > Gamemaster: There is a P.O.  
 > Gamemaster: box in the distribution center that is listed as the headquarters address of Embercall.  
 > Anzu: Okay.  
@@ -2564,7 +2564,7 @@ Script:
 > Benny: That sounds less fun.  
 > Gamemaster: Thank you.  
 > Johnny: Let's go through the checkbox.  
-> Johnny: One, stop by the PO box.  
+> Johnny: One, stop by the P.O. Box.  
 > Johnny: Two, try and find the gang.  
 > Johnny: Three, Zorbon.  
 > Benny: Mm hmm.  
@@ -2623,7 +2623,7 @@ Script:
 > Gamemaster: Um,  
 > Gamemaster: that if you're looking to meet up with a member of the gang, that's probably where you're most likely to bump into one.  
 > Benny: we the warehouse is probably closed but the bar is probably just getting popping  
-> Argyle: Do you guys want to go or do you want to just go to the PO box?  
+> Argyle: Do you guys want to go or do you want to just go to the P.O. Box?  
 > Johnny: What time of day is it right now?  
 > Gamemaster: The suns have set like an hour or so ago.  
 > Gamemaster: It's probably getting to like 8, 8 p.m.  
@@ -2662,7 +2662,7 @@ Script:
 > Benny: Of course.  
 > Gamemaster: So...  
 > Argyle: Skittle bark.  
-> Gamemaster: so the bar uh the bar is in this neighborhood like the roundhat gang works in this neighborhood so you you don't need to take your car uh you don't have a license for it yet moving away so you couldn't go very far um but no tram or anything either just a quick walk um can i get a nature check uh from someone as you guys start walking to the bar  
+> Gamemaster: so the bar uh the bar is in this neighborhood like the Roundhat Gang works in this neighborhood so you you don't need to take your car uh you don't have a license for it yet moving away so you couldn't go very far um but no tram or anything either just a quick walk um can i get a nature check uh from someone as you guys start walking to the bar  
 > Anzu: I seem to recall we were relatively bad at nature.  
 > Benny: Is it going to have greater than a plus zero?  
 > Anzu: I have a five.  
@@ -2688,7 +2688,7 @@ Script:
 > Gamemaster: Weird weather patterns.  
 > Gamemaster: Unfortunately, none of you rolled high enough to understand why weird weather patterns just...  
 > Gamemaster: It's pouring now.  
-> Anzu: Must be the Sorbonne.  
+> Anzu: Must be The Zorbon.  
 > Gamemaster: Must be the Zorbon.  
 > Johnny: It was a pretty weird weather pattern.  
 > Gamemaster: The Zorbon could cause this.  
@@ -3539,7 +3539,7 @@ Script:
 > Gamemaster: They've got this really nice looking...  
 > Gamemaster: red and orange-leaved tree in the center that kind of serves as a centerpiece for the area.  
 > Johnny: you you  
-> Gamemaster: And there are signs that point out different parts of the distribution center, like if you're looking to self-serve mail and check a PO box, this is over here.  
+> Gamemaster: And there are signs that point out different parts of the distribution center, like if you're looking to self-serve mail and check a P.O. Box, this is over here.  
 > Gamemaster: If you want to come in and mail a package, that's over there.  
 > Gamemaster: And then an employees-only service area on one side of the building.  
 > Gamemaster: There are people I would say milling about.  
@@ -3553,10 +3553,10 @@ Script:
 > Gamemaster: You guys don't attract any particularly weird looks.  
 > Gamemaster: I think you might get one if somebody sees the nine-year-old get out of the driver's seat, but other than that, not really.  
 > Anzu: Yes, did they give us a specific number?  
-> Johnny: So we're looking for the Embercall PO box, right?  
+> Johnny: So we're looking for the Embercall P.O. Box, right?  
 > Johnny: Oh, cool.  
 > Anzu: Were they able to get... Yes, so what are we going to...  
-> Gamemaster: Yeah, there is a particular address for the company on the file, so they can give you the specific PO box for the script of mine.  
+> Gamemaster: Yeah, there is a particular address for the company on the file, so they can give you the specific P.O. Box for the script of mine.  
 > Gamemaster: You're looking for number 9C.  
 > Johnny: Go find that one.  
 > Argyle: Thank you.  
@@ -3644,7 +3644,7 @@ Script:
 > Gamemaster: It can communicate empathically with you as long as it's within a mile of you sharing emotions.  
 > Gamemaster: So yeah, you can have an emotion that's like, haha, I found this person.  
 > Anzu: Right.  
-> Johnny: I really like the idea of this child breaking into this PO box though.  
+> Johnny: I really like the idea of this child breaking into this P.O. Box though.  
 > Gamemaster: That's a lab.  
 > Anzu: So if there's a rafter or something near the ceiling of this room... Yeah.  
 > Gamemaster: So...  
@@ -3723,7 +3723,7 @@ Script:
 > Benny: box at like eight in the morning on a random day?  
 > Anzu: Well, since it's rainy, they're going to figure that not really a lot of people will be out.  
 > Benny: What are they getting from here?  
-> Johnny: whatever's in that PO box.  
+> Johnny: whatever's in that P.O. Box.  
 > Anzu: This is like the address of their business.  
 > Benny: But there's no way their business fits in there, and he'll point to the P.O.  
 > Benny: box.  

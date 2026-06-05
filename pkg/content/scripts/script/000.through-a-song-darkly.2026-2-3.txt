@@ -634,7 +634,7 @@ Script:
 > Benny: Mm hmm.  
 > Anzu: Well, we don't have that one.  
 > Arctos: We always have that as an option.  
-> Arctos: What other ideas do you have, Anzo?  
+> Arctos: What other ideas do you have, Anzu?  
 > Anzu: Well, there's also the dice and poker games and what I think is probably a fairy ring of some kind.  
 > Anzu: I don't know what that means, but...  
 > Anzu: I don't know which one of these four we should do.  
@@ -1394,7 +1394,7 @@ Script:
 > Gamemaster: With a 26, the accent isn't Calarian.  
 > Gamemaster: There's something of a slightly similar lilt to it that makes you think it's part of the same general geographic area.  
 > Arctos: Well, they don't have a works in breath one.  
-> Gamemaster: This is something that you would associate with Brithwen.  
+> Gamemaster: This is something that you would associate with Brithwyn.  
 > Gamemaster: used to be Calaria, kind of has its own accent.  
 > Gamemaster: It's the northern area.  
 > Gamemaster: But this is somebody who was born and raised in Brithwyn.  
@@ -1447,7 +1447,7 @@ Script:
 > Benny: Yeah, we got plenty of room.  
 > Johnny: It's a big car.  
 > Johnny: It's just a really big car.  
-> Arctos: You know the word that won against Galaria?  
+> Arctos: You know the word that won against Calaria?  
 > Arctos: Yeah.  
 > Johnny: Hey, man.  
 > Arctos: Let's not make an enemy of it.  
@@ -1468,7 +1468,7 @@ Script:
 > Anzu: Yeah, true, true, true.  
 > Johnny: Hey, man.  
 > Benny: Thank you.  
-> Johnny: They're not Galarians, so Johnny was like, whatever.  
+> Johnny: They're not Calarians, so Johnny was like, whatever.  
 > Anzu: Or if they try to come after us, we say, listen, we don't got to fight.  
 > Anzu: The two of you can fit with us easy.  
 > Anzu: We'll take a view.  
@@ -1703,7 +1703,7 @@ Script:
 > Benny: Yeah, I also agree.  
 > Arctos: The way I see it is if someone gets to this one first, we should just follow that person, like pick up the trail there.  
 > Arctos: You know?  
-> Benny: I think it's probably a reasonable shortcut to figure out the art beforehand because I feel like it's something that could get us in the door.  
+> Benny: I think it's probably a reasonable shortcut to figure out the Heart beforehand because I feel like it's something that could get us in the door.  
 > Benny: If these people don't want to talk to us at all, like no one that is near the heart,  
 > Benny: It's going to be difficult, but if we're like, we have this porcelain elephant that takes you to a different world, they'll be like, hold on.  
 > Arctos: Hmm.  
@@ -2512,7 +2512,7 @@ Script:
 > Gamemaster: Benny is alert.  
 > Gamemaster: He's absolutely fine as you guys drive down.  
 > Gamemaster: I mean, you effectively just took a highway out of the city, so it's a straight shot for an extended period of time.  
-> Gamemaster: But eventually you do drive in through the southern entrance of Hallia and make your way back to Isin and Tonic.  
+> Gamemaster: But eventually you do drive in through the southern entrance of Hallia and make your way back to Sin and Tonic.  
 > Gamemaster: The way the timing works out is 8 in the morning.  
 > Anzu: Oh, God.  
 > Johnny: 100%.  
@@ -2663,7 +2663,7 @@ Script:
 > Johnny: Anyway, we took it, and we have a couple of the guns, but I thought Donnie might want some more of those.  
 > Gamemaster: That's fair.  
 > Gamemaster: If you want to follow it up yourself, my contact or our contact at Sable & Sons is Lark Crowe.  
-> Gamemaster: Moonlight is an arms dealer, but usually you can find them in the market over in Deosil, which is like one of the other districts in Talia.  
+> Gamemaster: Moonlight is an arms dealer, but usually you can find them in the market over in Deosil, which is like one of the other districts in Hallia.  
 > Johnny: All right.  
 > Johnny: Well, thanks, Red.  
 > Johnny: I guess I'll talk to you soon.  
@@ -2942,7 +2942,7 @@ Script:
 > Benny: He'll roll down Arctos' window.  
 > Gamemaster: 31.  
 > Gamemaster: Okay.  
-> Gamemaster: With the 31, they roll the windows down, and you can see the... Eridian is self-policed, so it's not one of the three police agencies that go around to the rest of the city.  
+> Gamemaster: With the 31, they roll the windows down, and you can see the... Aurideon is self-policed, so it's not one of the three police agencies that go around to the rest of the city.  
 > Johnny: Okay.  
 > Arctos: Hello.  
 > Gamemaster: These are members of the church.  
@@ -3030,7 +3030,7 @@ Script:
 > Benny: you  
 > Gamemaster: sorry, into the marble, like the Path of Ivy, so that it grows into the pattern of the Vale house logo, which is a V with a sword passed through it.  
 > Gamemaster: You drive around the entryway fountain to get up to the front door, where, of course, one of the servants is ready to take the car and park it elsewhere and lead you guys into the home.  
-> Gamemaster: As you're let in, you would meet with the Mayordomo, who is... What is this guy's name?  
+> Gamemaster: As you're let in, you would meet with the majordomo, who is... What is this guy's name?  
 > Johnny: you you  
 > Gamemaster: Where are you?  
 > Gamemaster: Crowley Hart.  
@@ -3325,8 +3325,8 @@ Script:
 > Arctos: Wait a second.  
 > Benny: Salmon.  
 > Gamemaster: Okay, sure.  
-> Arctos: It would have been Austrine.  
-> Arctos: Just different nice pics of Austrine and then probably some Aurora.  
+> Arctos: It would have been Austrene.  
+> Arctos: Just different nice pics of Austrene and then probably some Aurora.  
 > Gamemaster: Sure.  
 > Gamemaster: Yeah, he is, baby.  
 > Arctos: If we don't hear from him in like a week, we'll just come back and take one of my paintings.  

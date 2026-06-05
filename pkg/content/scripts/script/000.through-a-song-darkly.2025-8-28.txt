@@ -600,7 +600,7 @@ Script:
 > Johnny: There was a bit of description that we were all in iconoclasm from our various and sundry backgrounds.  
 > Johnny: We were a bird, a child, a scary doctor, and Ringo Starr.  
 > Johnny: We met Illmari Vaino, who was the founder of Iconoclasm.  
-> Johnny: We met Gin-Soaked Rag, who was the heart of the Sin and Tonic.  
+> Johnny: We met Gin Soaked Rag, who was the heart of the Sin and Tonic.  
 > Johnny: We met Anaïs and Anouk, who were level 11-ish, adventurers of sorts.  
 > Johnny: We met Dura Oil Drinker, who's a mechanic.  
 > Johnny: We played around with a rocket on a hammer and broke a hole in the wall.  
@@ -610,7 +610,7 @@ Script:
 > Johnny: But whatever.  
 > Johnny: We were given our first mission to go find out what happened to Flynn.  
 > Johnny: He was a male sprite.  
-> Johnny: He was investigating a roller rink being opened by the Roundhack gang run by Tywelwyn Leatherhead.  
+> Johnny: He was investigating a roller rink being opened by the Roundhat Gang run by Tywelwyn Leatherhead.  
 > Johnny: It might have been Leatherhide and I might have left off an E. I'm not sure.  
 > Gamemaster: It is Leatherhide.  
 > Johnny: I left off an E. It was so hard to say that name in a sentence.  
@@ -704,7 +704,7 @@ Script:
 > Gamemaster: A note here, the cops in this area are part of the Threshold Authority.  
 > Johnny: Looked around a little bit more.  
 > Gamemaster: That's the name of their particular company.  
-> Johnny: Seems like they might be bought out by either the Roundhack gang or maybe Embercall Industries slash Pyrelight.  
+> Johnny: Seems like they might be bought out by either the Roundhat Gang or maybe Embercall Industries slash Pyrelight.  
 > Johnny: Who knows?  
 > Johnny: We're just going to spitball them.  
 > Anzu: Josh, can you say that name one more time?  
@@ -811,7 +811,7 @@ Script:
 > Benny: E.  
 > Gamemaster: heisted a radar dish off the top of this rollerama, roller skating area.  
 > Gamemaster: And by heisted, I mean you just went when it was kind of dark, and you did get caught immediately, but it's fine, because as best you could tell, the witness is crazy.  
-> Gamemaster: stole the radar dish, packed it into the back of the Volkswagen Beetle, the city tripper that you have, and drove it on back to the Sim and Tonic.  
+> Gamemaster: stole the radar dish, packed it into the back of the Volkswagen Beetle, the city tripper that you have, and drove it on back to the Sin and Tonic.  
 > Gamemaster: You can just keep it in the garage for now until you figure out what you're doing with it, and you'll all bed down for the evening.  
 > Gamemaster: Get the benefits of a long rest, or just a regular rest, because long rests aren't a thing.  
 > Gamemaster: You wake up in the morning as well-rested as one can be.  
@@ -933,7 +933,7 @@ Script:
 > Gamemaster: Yeah.  
 > Argyle: I'd like to walk up.  
 > Argyle: What's the name of the heart again?  
-> Gamemaster: Gin-soaked rag or Ginny?  
+> Gamemaster: Gin Soaked Rag or Ginny?  
 > Argyle: Ginny.  
 > Argyle: Yeah, Ginny.  
 > Argyle: Do you guys have any fire repellent?  
@@ -1218,7 +1218,7 @@ Script:
 > Johnny: Find Twiluin.  
 > Johnny: 6.  
 > Johnny: Learn about the Zorbon.  
-> Gamemaster: If you guys are discussing this, I think Anok will say, if you all are running a little low on funds, there is work to be had in the city.  
+> Gamemaster: If you guys are discussing this, I think Anouk will say, if you all are running a little low on funds, there is work to be had in the city.  
 > Gamemaster: We're not in any particular rush.  
 > Gamemaster: We're just looking to make some money.  
 > Argyle: Oh yeah, let's go do that.  
@@ -1681,7 +1681,7 @@ Script:
 > Argyle: In human years.  
 > Argyle: If I was human.  
 > Gamemaster: But what about in dog years?  
-> Johnny: Yeah, I heard that there's a bunch of pug people sort of somewhere running around Faerin.  
+> Johnny: Yeah, I heard that there's a bunch of pug people sort of somewhere running around Færrin.  
 > Johnny: What if they were to give you numbers?  
 > Argyle: Yeah, I'd be different.  
 > Benny: We check an ID all of a sudden?  
@@ -2140,10 +2140,10 @@ Script:
 > Gamemaster: Actually, cars do exist.  
 > Gamemaster: And as such, tire companies exist.  
 > Argyle: What's the name of a big tire company?  
-> Gamemaster: So... Korath.  
-> Argyle: Like Korath.  
-> Gamemaster: Korath.  
-> Gamemaster: The Korath Guide.  
+> Gamemaster: So... Chorath.  
+> Argyle: Like Chorath.  
+> Gamemaster: Chorath.  
+> Gamemaster: The Chorath Guide.  
 > Argyle: Food chasers.  
 > Johnny: Tora, I've heard about them trying to sell more guides.  
 > Gamemaster: Is that true?  
@@ -2620,8 +2620,8 @@ Script:
 > Gamemaster: Okay, and how can we reach you?  
 > Benny: Thank you.  
 > Johnny: We're kind of moving through town.  
-> Johnny: If you reach out to Coppajaw over at whatever the junkyard was,  
-> Gamemaster: coppers are at the Sableclutch scrap.  
+> Johnny: If you reach out to Copperjaw over at whatever the junkyard was,  
+> Gamemaster: coppers are at The Scale clutch scrap.  
 > Johnny: Yeah, Carpajar, the Sableclutch scrap, he's sort of our boss.  
 > Gamemaster: Okay.  
 > Gamemaster: So if we end up seeing and catching this goblin pickpocket, then you would like us to go to him and then let him know?  
@@ -3308,8 +3308,8 @@ Script:
 > Gamemaster: Oh, I totally just applied that to Benny.  
 > Gamemaster: Ignore that.  
 > Gamemaster: I reverted it.  
-> Gamemaster: Um, Ugathol I takes the seven damage and is afeared and still off guard because it's squished between me two.  
-> Gamemaster: Um, that brings us to Ugathol II, who, you know, we did the whole...  
+> Gamemaster: Um, Ugathal I takes the seven damage and is afeared and still off guard because it's squished between me two.  
+> Gamemaster: Um, that brings us to Ugathal II, who, you know, we did the whole...  
 > Gamemaster: rotating around people thing.  
 > Gamemaster: So I think within that he's also going to take a stride action so that Argyle is also flat-footed.  
 > Johnny: What?  
@@ -3344,7 +3344,7 @@ Script:
 > Gamemaster: Okay, uh, so his, like, weird extended hand goes out, slashes you, and then grabs onto the muscle that he's, uh, cut into.  
 > Gamemaster: Just to keep you in place.  
 > Gamemaster: Is he in a history?  
-> Gamemaster: Ugathol I. He is afeard.  
+> Gamemaster: Ugathal I. He is afeard.  
 > Gamemaster: Loads of stuff.  
 > Gamemaster: I think he's going to... You're already immobilized, or you're grabbed, sorry.  
 > Gamemaster: I should actually apply that.  
@@ -3623,7 +3623,7 @@ Script:
 > Gamemaster: Absolutely.  
 > Johnny: Hmm.  
 > Benny: That's it.  
-> Gamemaster: Okay, that brings us to Ugithul 2's turn.  
+> Gamemaster: Okay, that brings us to Ugathal 2's turn.  
 > Gamemaster: They are frightened.  
 > Gamemaster: They were probably going to say something pithy and say, you know, it's your last chance to hand over the briefcase, small child, and all that kind of stuff.  
 > Gamemaster: But it did watch that small child just murder Mute, so I don't think it's going to do that.  
@@ -3670,7 +3670,7 @@ Script:
 > Argyle: The description that I got is not... Okay.  
 > Gamemaster: No, I... I didn't send the grabbed thing in the chat.  
 > Argyle: Okay.  
-> Argyle: No, it's like the grapple thing from Ukathal said on a success.  
+> Argyle: No, it's like the grapple thing from Ugathal said on a success.  
 > Argyle: It's only until the end of its next turn.  
 > Gamemaster: Oh.  
 > Gamemaster: No, you're still grabbed.  
@@ -3833,7 +3833,7 @@ Script:
 > Argyle: And he dies by just getting... Yeah!  
 > Gamemaster: He is knee-height already.  
 > Gamemaster: So... Yeah, the two of you can swing, and similar as before, it just kind of cripples.  
-> Gamemaster: You have killed the Ukathals that were stalking you through the alleys.  
+> Gamemaster: You have killed the Ugathal that were stalking you through the alleys.  
 > Argyle: Do they have anything on their bodies?  
 > Johnny: Okay.  
 > Argyle: Or they absorbed everything, right?  

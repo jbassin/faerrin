@@ -982,7 +982,7 @@ Script:
 > Gamemaster: recognize them because you're not quite familiar with the logo.  
 > Gamemaster: But Johnny would be most familiar with them.  
 > Johnny: you  
-> Gamemaster: Holopact, which is a firearms manufacturer that used to be in Raelion and what survived of the company has managed to integrate itself and ingratiate itself into Calaria as a moderate firearm supplier.  
+> Gamemaster: Hollowpact, which is a firearms manufacturer that used to be in Raelion and what survived of the company has managed to integrate itself and ingratiate itself into Calaria as a moderate firearm supplier.  
 > Gamemaster: Not one of the biggest ones, but...  
 > Gamemaster: Definitely one on the bleeding edge.  
 > Gamemaster: There are a few symbols that you wouldn't recognize.  
@@ -2383,11 +2383,11 @@ Script:
 > Anzu: Yeah.  
 > Anzu: Okay, okay.  
 > Anzu: Um...  
-> Anzu: And then second action, I'm going to send a Psyburst at the Barbra Zoo, but let me just check something quick.  
+> Anzu: And then second action, I'm going to send a Psiburst at the Barbra Zoo, but let me just check something quick.  
 > Gamemaster: Okay.  
 > Gamemaster: No.  
 > Gamemaster: Okay.  
-> Anzu: All right, we're going to Mind Shift the Psyburst so that it is, instead of a...  
+> Anzu: All right, we're going to Mind Shift the Psiburst so that it is, instead of a...  
 > Anzu: Reflex save.  
 > Anzu: It becomes a will save and becomes mental damage.  
 > Johnny: you  
@@ -3878,7 +3878,7 @@ Script:
 > Johnny: That's my turn.  
 > Gamemaster: You are going to take two points of bleed damage.  
 > Gamemaster: And you critically succeed on your recovery check, so you're no longer bleeding.  
-> Benny: That makes Arctosis turn straightforward.  
+> Benny: That makes Arctos' turn straightforward.  
 > Anzu: Oh, amazing.  
 > Johnny: Finally, there it is.  
 > Johnny: One of us is down.  
@@ -4067,7 +4067,7 @@ Script:
 > Anzu: That is smart.  
 > Anzu: I like that.  
 > Anzu: I'm going to look at the guy real quick.  
-> Arctos: How far does Tellers run from Sinadonic?  
+> Arctos: How far does Teller's Run from Sinadonic?  
 > Gamemaster: Mm-hmm.  
 > Anzu: And I'm going to say, I'd like to ask you a question about the nature of the questions we can ask.  
 > Anzu: Will that count as one of our three questions?  
@@ -4131,7 +4131,7 @@ Script:
 > Anzu: Then we know that it's more like just hidden, just straight hidden.  
 > Arctos: Yeah, let's try it.  
 > Anzu: Who possesses Keystone 14?  
-> Gamemaster: Eastone 14 is currently held by the Hart Rapid Connection.  
+> Gamemaster: Eastone 14 is currently held by the Heart Rapid Connection.  
 > Johnny: Do any of us know rapid connection?  
 > Johnny: Do any of us know rapid connection?  
 > Gamemaster: You guys can make society checks if that's familiar to you.  

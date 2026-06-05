@@ -20,6 +20,25 @@ export async function loadCampaigns(): Promise<Campaign[]> {
   return (yaml.load(raw) ?? []) as Campaign[]
 }
 
+/**
+ * Resolve a CLI campaign argument to a campaign. Accepts a 0-based index
+ * ("1") or a case-insensitive substring of the name ("song" → "Through a Song,
+ * Darkly"). Returns null if nothing matches; throws if a name fragment is
+ * ambiguous, so the caller can report it.
+ */
+export function resolveCampaign(campaigns: Campaign[], query: string): Campaign | null {
+  const q = query.trim()
+  if (/^\d+$/.test(q)) return campaigns[Number(q)] ?? null
+
+  const needle = q.toLowerCase()
+  const matches = campaigns.filter((c) => c.name.toLowerCase().includes(needle))
+  if (matches.length === 1) return matches[0]
+  if (matches.length > 1) {
+    throw new Error(`"${query}" is ambiguous: ${matches.map((c) => c.name).join(", ")}`)
+  }
+  return null
+}
+
 /** All non-GM character names across a campaign (the keyword set for matching). */
 function characterNames(campaign: Campaign): string[] {
   const res: string[] = []

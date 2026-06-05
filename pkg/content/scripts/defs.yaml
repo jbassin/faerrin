@@ -5,6 +5,7 @@ Anouk:
   - Anuk
   - Anik
   - Onyx
+  - Anok
 Anaïs:
   - Anai
   - Danai
@@ -23,15 +24,18 @@ Immix:
 Althane:
   - Ulthane
   - Ossine
+  - Althin
 Feep:
   - Feeb
   - feep
+  - Fiep
 Sundom:
   - Sundump
   - Sun Doom
   - Sundum
   - Sendum
   - Sundub
+  - Sundome
 cadre:
   - Khadra
 SeRaan:
@@ -57,14 +61,23 @@ Hallia:
   - Halia
   - Haleah
   - Helya
+  - Halley
+  - Hylia
+  - Hallyu
+  - Hellia
 in Hallia:
   - Inhalia
+  - in\s*Alia
+  - in\s*Talia
+  - in\s*Hellia
 of Hallia:
   - of Hellion
+  - of\s*Alia
 Dame Quay:
   - Dame Key
   - Dan Key
   - Dame Keeney
+  - damn\s*Quay
 Masque District:
   - Mask District
 Alfie Gallagher:
@@ -72,6 +85,10 @@ Alfie Gallagher:
 Ugathal:
   - Ugothal
   - Oogathal
+  - Ugathol
+  - Ugithul
+  - Ukathal
+  - Ukathals
 Tywelwyn:
   - Twelwyn
   - 12\s*wins?
@@ -80,8 +97,11 @@ Tywelwyn:
   - Dwellwyn
   - 12-1
   - Twelvin
+  - Twelwynn
+  - Twelwin
 Tywelwyn's:
   - Quelwyn's
+  - Twelwins
 Illmari:
   - Omari
   - Old Mari
@@ -89,6 +109,8 @@ Illmari:
   - Ilmari
   - Lomari
   - Elmari
+  - Illumari
+  - Ilmar
 Vaino:
   - Vino
 Vilksnake:
@@ -100,6 +122,8 @@ Færrin:
   - Faerun
   - Feiren
   - Farinar
+  - Faerin
+  - Faeran
 Joker World:
   - Jokerworld
 starward:
@@ -119,10 +143,15 @@ Aurideon:
   - Iridion
   - Iridian
   - Orinion
+  - Eridian
 Embercall:
   - Emperor Call
   - Embracol
   - Ember Call
+  - Ember\s*Cull
+  - Emberfall
+  - Emberco
+  - EmberCole
 Gryphonline:
   - Griffin\s*line
 Gryphon:
@@ -134,6 +163,7 @@ Raelion:
   - Raylian
   - Raylene
   - Rayleon
+  - Raelio
 Rhaedon:
   - Raiden
 Zorbon:
@@ -141,6 +171,9 @@ Zorbon:
   - Zorban
   - Zoroban
   - Zorbont
+  - Sorbonne
+  - Zorbom
+  - Zorbog
 Sigzil Haight:
   - Sigilheit
   - Sigilhite
@@ -153,24 +186,37 @@ Anzu:
   - Antu
   - Anju
   - Onzu
+  - Ansu
+  - Anzo
 Master Grayson:
   - Mr. Grayson
 majordomo:
   - major\s*domo
+  - majordome
+  - Mayordomo
 majordomo Ossain:
   - Major Domo a saint
 nosh on:
   - Noshpaw
 Amber Call:
   - Abracol
+  - Ambercall
+  - Amber\s*Collar
+  - Amber\s*Cole
 Austrene:
   - Austrian
   - Ostrand
+  - Austrine
+  - Ostren
+  - Austren
+  - Ostreen
+  - Austria
 two-timing:
   - too timing
 Flintlock Toboggan:
   - flintlock toboggan
   - Flip lock toboggan
+  - Flint\s*toboggan
 Flintlock:
   - Locke
   - Footlock
@@ -182,6 +228,9 @@ Sin and Tonic:
   - Sinitonic
   - Antonica
   - Simtonic
+  - Synan\s*Tonic
+  - Isin\s*and\s*Tonic
+  - Sim\s*and\s*Tonic
 Bait-and-Tackle Shop:
   - Bain Tackle Shop
   - Bait and tackle shop
@@ -200,11 +249,16 @@ Hlarf:
   - Clark
   - Hulf
   - Blarf
+  - Clarf
+  - Hlarif
 Argyle:
   - Arka
   - Gargoyle
+  - Orgyle
+  - Arkyle
 Benny:
   - Bennett
+  - Banny
 Aut:
   - Ott
   - Auk
@@ -228,10 +282,15 @@ Renge:
 P'ter:
   - Pterr
   - Petter
+  - Pter
 Insuperlex:
   - Insuperlix
+  - Superlex
 Menhir:
   - Menhirs
+  - Menyr
+  - Menir
+  - Menyir
 Syrin:
   - Siren
 Elara Vance:
@@ -243,8 +302,11 @@ Major-Chaplain:
   - major chaplain
 Chorath:
   - Coreth
+  - Korath
 P.O. Box:
   - Geobox
+  - PO\s*box
+  - P\s*O\s*Box
 Firmament:
   - Furman
 Noire:
@@ -259,8 +321,11 @@ Fane:
 Gas-n-Go℠:
   - Gas & Go
   - Gas and go
+  - Gas-n-Go
 Iridite Mutual:
   - Erudite Mutual
+  - Irodite\s*Mutual's
+  - Iridite\s*Neutral
 Arctos:
   - Arctis
   - Arctus
@@ -271,9 +336,11 @@ Arctos':
   - Arctis'
   - Arctus'
   - Arcturus'
+  - Arctosis
 Smiler:
   - Smila
   - Milo
+  - Soiler
 Roundhats:
   - round\s*hats
 '8:15':
@@ -299,6 +366,8 @@ Yeenut:
   - Yee Nut
   - Yeena
   - Enid
+  - yeanut
+  - yee-nut
 Archmechanic:
   - arc mechanic
   - art mechanic
@@ -307,11 +376,19 @@ Archmechanics:
   - Arc Mechanics
 Archmechanic's:
   - Arc Mechanics'
+  - Archmechanics'
 Calaria:
   - Galeria
   - Caleria
+  - Galarian
+  - Galaria
+  - Kolaria
+  - Calera
+  - Calario
+  - Claria
 Calarians:
   - Calerians
+  - Galarians
 Thistle Monroe:
   - Fissel Monroe
 Sableclutch:
@@ -319,13 +396,18 @@ Sableclutch:
 Hildebrandt:
   - Hildebrand
   - Hildebrant
+  - Hildemarant
 or Edan:
   - on a Don
+  - of\s*Edan
 Iridescent Host:
   - iridescent hoax
 Teller's Run:
   - Teller's rod
   - Teller's run
+  - Taylor's\s*run
+  - Tellur's\s*Run
+  - Tellers\s*Run
 Vane:
   - Vayne
 Fae:
@@ -337,20 +419,29 @@ Sbrtlby:
   - Sparrowbeats
   - Sparrowby
   - Spartalby
+  - Spurtleby
+  - Sartleby
 of Iconoclasm:
   - A vicanoclasm
 Iconoclasm:
   - Ilkaniklasm
+  - iconoclism
 the Heart:
   - Seahart
+  - The\s*Art
+  - the\s*art\s*I
+  - the\s*Hart
 Dura:
   - Jura
   - Duro
+  - Dur
 autobody:
   - Autobot
 Sable and Suns:
   - Sable and Sons
   - Sabel and Sons
+  - Sables\s*and\s*Sons
+  - Sable\s*and\s*Son
 Obie and Parmann:
   - Obian Parmen
 Fūlwinter:
@@ -359,6 +450,7 @@ Fūlwinter:
 Lorandris:
   - Laurentius
   - Lorandrus
+  - Larandrus
 Estañion:
   - a Stanion
   - a stanion
@@ -367,11 +459,18 @@ PaSuun:
   - Hasun
 Beats in Time:
   - Beats and Time
-Tormere:
+Tormeré:
+  - Tormere
   - Tourmarais
   - Pomeroy
+  - Tormore
+  - Tormoray
+  - Tormari
+  - Tormure
+  - Dormeray
 Divex:
   - Dybeck
+  - Dive-X
 MetCon:
   - METCOP
 Meridian:
@@ -386,6 +485,9 @@ Roll an arcana check:
   - Roland or Krochek
 Submechanitor:
   - submacanators
+  - submechanators
+  - Submecanators
+  - Submechanic
 Low-Mechanitor Exitum-ρ-15:
   - Lowe McCandler, exit of row 15
   - Loma Canator Exitum Row 15
@@ -395,6 +497,7 @@ Exitum-ρ-15:
   - Exitum Roe
 a Will save:
   - it Wilson
+  - Uh\s*We'll\s*save
 Benny Boy:
   - Benny boy
 ice floes:
@@ -409,12 +512,16 @@ Scrazzy:
   - Skrazi
   - Scrazy
   - Scrazzia
+  - Scrazi
+  - Scrazz
 Foral:
   - Forell
+  - Forl
 Ozzie:
   - Ozzy
 Sedecium:
   - sedicium
+  - Sedesium
 Mutagen:
   - Mutant Jinn
 orts:
@@ -435,27 +542,33 @@ RunGunners:
 Ternion Heavy Industries:
   - Tourney and Heavy Industries
   - Tourney and Heavy Industry
+  - Ternian\s*Heavy\s*Industries
+  - Turnian\s*Heavy\s*Industries
 MoCuP:
   - MOCUP
 Giannos:
   - Janus
+  - Giannis
 Ichel:
   - Eshell
   - Michelle
   - Ixchel
   - Y'shell
+  - Ischel
 Tas:
   - Taz
   - Taz
 Garrick:
   - Garret
   - Garak
+  - Garrix
 Letov:
   - Ledov
   - Latav
 barghests:
   - barguests
   - bar guests
+  - Barkists
 occultism:
   - Occultistborn
   - Heraclitism
@@ -477,8 +590,12 @@ Silven:
   - Sylvan
 dhampir:
   - Dompierre
+  - Dompir
 NecroLog:
   - Necrologue
+  - Necrolug
+  - Necrologues
+  - Nekrolag
 Manus Sudrenus:
   - Manas Adrenas
 Ki-Rin:
@@ -489,6 +606,7 @@ Ki-Rin:
   - Chiron
   - Kyrim
   - Kairin
+  - Kirin
 barghest:
   - Barguest
   - Barghest
@@ -503,6 +621,9 @@ barghest:
   - Barghast
 Falcata:
   - Alcada
+  - Falkata
+  - Felicata
+  - Felcata
 Ki-Rin's:
   - Chiron's
 benediction:
@@ -517,8 +638,10 @@ Iridescent Church:
 Protectorate:
   - protectorate
   - Protector
+  - Protectored
 Scale:
   - scale
+  - Scal
 firearm manufacturer:
   - fire manufacturer
 Jethro:
@@ -529,10 +652,13 @@ parries:
   - Perry's
 Psiburst:
   - Cyburst
+  - Psyburst
 skein:
   - Skeen
+  - Skain
 Bennix:
   - Benix
+  - Bennex
 Bennix's:
   - Benix's
 6d6:
@@ -545,9 +671,107 @@ Verdant:
   - Vernon
 Ternion:
   - tourney
+  - Ternian
+  - Turnian
 Anzu said he's:
   - Aunt Suzette is
 Fort DC:
   - fork, DC
+  - fort\s*TC
 Copperjaw:
   - Cobblejaw
+  - Coppajaw
+Solari Sub-surface:
+  - Solari\s*Subsurface
+  - Solari\s*subspace
+  - Solari\s*Subservice
+the Scale's:
+  - the\s*Scales
+Salvado:
+  - Silvado
+  - Solvado
+  - Silvano
+  - Salvador
+  - Salvato
+Salvado Tarragona:
+  - Solvado\s*Targona
+Brithwyn:
+  - Brithwin
+  - Brithwen
+The Harlequins:
+  - the\s*Harley\s*Quinn's
+Gaspar Caetano:
+  - Gasper\s*Caetano
+Garrick Textiles:
+  - Gary\s*Textiles
+  - Garrett\s*Textiles
+Joker Worlds:
+  - Joker\s*worlds
+Alkahest Freight:
+  - Alka-Heist\s*Freight
+  - Alkahast\s*Freight
+The Scale:
+  - the\s*Sable
+  - the\s*Scaled
+Lark Crowe:
+  - Larkrow
+  - Lark\s*Rowe
+Pale Lantern Society:
+  - Pell\s*Lantern\s*Society
+Children of the Heir:
+  - Children\s*of\s*the
+Velthara:
+  - Valthara
+  - Althara
+Prime Meridian:
+  - Primerudian
+Embercall's:
+  - Ember\s*Calls
+Prime Meridian's:
+  - Prime\s*Meridians
+Grayson:
+  - Graystone
+Sbrtlby and:
+  - Sbrtlbyand
+Sbrtlby will:
+  - Sbrtlbywill
+Yeenut Guy:
+  - YeenutGuy
+Calarian:
+  - Calerian
+Hollowpact:
+  - Holopact
+Roundhat Gang:
+  - Roundhat\s*Kings
+  - Roundhead\s*gang
+  - Round\s*Hat\s*gang
+  - Runtat\s*gang
+  - Roundhack\s*gang
+game:
+  - Kate
+The Crowded Flea:
+  - the\s*Crowded\s*Fleet
+Tywelwyn Leatherhide:
+  - Twelwynn\s*Leatherhide's
+Org:
+  - Borg
+Mr. Whiskers:
+  - Mr\s*Whisker
+  - Mr\s*Whiskas
+Whiskers:
+  - Whiskas
+The Zorbon:
+  - the\s*Sorbonne
+  - the\s*Zorbom
+  - the\s*Zorba
+  - the\s*Zorbog
+sewer:
+  - Syria
+Ghosts of Raelion:
+  - ghosts\s*of\s*Raelio
+Wrenford:
+  - renford
+Verdant Expanse:
+  - Virgent\s*Expanse
+Gin Soaked Rag:
+  - Gin-Soaked\s*Rag

@@ -242,7 +242,7 @@ Script:
 > Gamemaster: Oh, you're looking around the file system.  
 > Gamemaster: You're not looking at the scene selector.  
 > Gamemaster: I gotcha.  
-> Combo: This is under Worlds Faerin Assets Scenes.  
+> Combo: This is under Worlds Færrin Assets Scenes.  
 > Gamemaster: Okay.  
 > Combo: So I imagine it is the scenes.  
 > Gamemaster: Great.  
@@ -1543,7 +1543,7 @@ Script:
 > Gamemaster: But if you find a shoot, you might end up in star 400,613.  
 > Gamemaster: The other... Sure.  
 > Pluckwort: This is on page six of liturgy, by the way.  
-> Gamemaster: The other thing of note, the other exception to their devoid of life is there are Joker worlds, which are...  
+> Gamemaster: The other thing of note, the other exception to their devoid of life is there are Joker Worlds, which are...  
 > Gamemaster: instances of Færrin somewhere on the infinite horizon that are very different from everything else.  
 > Combo: Thank you.  
 > Gamemaster: Ranging from there's a Joker World starward that has roving packs of cannibalistic butterfly, sorry, carnivorous butterflies that exist in the area where Hallia used to be, which made it a little difficult to settle there.  

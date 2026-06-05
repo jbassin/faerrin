@@ -684,7 +684,7 @@ Script:
 > Gamemaster: No, it's not.  
 > Gamemaster: I have a few of these images on the heart.arrity.cc, whatever, just to try and put a face to some of the characters that you've been seeing.  
 > Gamemaster: I will say,  
-> Gamemaster: Gin-soaked rag does not have an image, because try as I might, I could not get it to generate an image that doesn't look either very stupid or uncomfortable.  
+> Gamemaster: Gin Soaked Rag does not have an image, because try as I might, I could not get it to generate an image that doesn't look either very stupid or uncomfortable.  
 > Gamemaster: I will add the best two that I got, which we're not using for obvious reasons.  
 > Anzu: I'm not excited to see these either.  
 > Anzu: I have a moral issue where my wife and brother are both artists.  
@@ -699,7 +699,7 @@ Script:
 > Johnny: The first one felt like a brown paper napkin that got wet.  
 > Gamemaster: I mean... A little bit, yeah.  
 > Gamemaster: Maybe that's his brother.  
-> Gamemaster: Gin-soaked rag's brother is a brown paper napkin that got a little wet.  
+> Gamemaster: Gin Soaked Rag's brother is a brown paper napkin that got a little wet.  
 > Arctos: I don't know if non-pro Gemini has it, but you can make gems where you can give it a base prompt and images and things like that, and then you can activate that gem, and it'll have all that context.  
 > Johnny: Also, the picture that Josh has for Mr. Whiskers looks like one of the characters from the 2020 live-action Cats.  
 > Arctos: So you could use that to create a character.  
@@ -772,7 +772,7 @@ Script:
 > Gamemaster: Yeah, absolutely.  
 > Gamemaster: Roll for bargaining.  
 > Anzu: Three.  
-> Anzu: Looks like I'll be the gin-soaked rag.  
+> Anzu: Looks like I'll be the Gin Soaked Rag.  
 > Gamemaster: Sorry, you're still at anchor.  
 > Johnny: Oh no.  
 > Gamemaster: It happens.  
@@ -926,7 +926,7 @@ Script:
 > Gamemaster: But never out loud.  
 > Gamemaster: Yeah, that's Mr. Flintlock.  
 > Benny: Yeah, no, never mind.  
-> Anzu: Mike, that's Flint toboggan.  
+> Anzu: Mike, that's Flintlock Toboggan.  
 > Benny: Oh.  
 > Gamemaster: Everybody's favorite goat demon.  
 > Benny: I found the package.  
@@ -1844,7 +1844,7 @@ Script:
 > Gamemaster: Just like a bear out of the forest.  
 > Johnny: What?  
 > Gamemaster: Or like off of an iceberg.  
-> Gamemaster: Jorge, can you describe who Illumari is talking to right now, please?  
+> Gamemaster: Jorge, can you describe who Illmari is talking to right now, please?  
 > Arctos: Yeah, so at the moment, he's wearing a trench coat and a wide-brimmed hat.  
 > Anzu: Oh no, pictures.  
 > Arctos: And you can still make it out the polar bear because he has bright white fur, massive, massive paws, and a long snout.  
@@ -1858,7 +1858,7 @@ Script:
 > Arctos: If not, you know.  
 > Gamemaster: You would pick up two pings in this room with you.  
 > Anzu: I guess I cock my head a little bit and approach the table.  
-> Gamemaster: Illumari sees you approach, and not knowing anything of what happened last night, is just like, hey, come, we've got a new friend for you and your group, the sleepyheads.  
+> Gamemaster: Illmari sees you approach, and not knowing anything of what happened last night, is just like, hey, come, we've got a new friend for you and your group, the sleepyheads.  
 > Gamemaster: Anzu, this is Arctos.  
 > Johnny: Whoa.  
 > Gamemaster: Sorry, Sir Arctos.  
@@ -1870,7 +1870,7 @@ Script:
 > Anzu: Arctos, I'm so sorry.  
 > Anzu: Can you give me a minute with Illmari?  
 > Anzu: I mean, no disrespect.  
-> Arctos: Whatever you say to Ilmar, you can say to me.  
+> Arctos: Whatever you say to Illmari, you can say to me.  
 > Gamemaster: Illmari looks at you and then looks at Anzu and is like, yes, we can step away for a moment.  
 > Gamemaster: Order any eggs you like, Sir Arctos.  
 > Gamemaster: You know, first ones on the house.  
@@ -2657,7 +2657,7 @@ Script:
 > Benny: I'm zero in bear years.  
 > Arctos: I was originally not from here, but they kind of brought me here.  
 > Benny: I've never lived a year as a bear.  
-> Gamemaster: Arctos, you would know that you were originally imported from Austria.  
+> Gamemaster: Arctos, you would know that you were originally imported from Austrene.  
 > Arctos: Oh, I know.  
 > Arctos: They didn't ask.  
 > Arctos: Yeah.  

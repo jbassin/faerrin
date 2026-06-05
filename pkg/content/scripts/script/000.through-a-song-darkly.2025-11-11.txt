@@ -431,7 +431,7 @@ Script:
 > Johnny: It's got a pool.  
 > Argyle: So keep that in mind.  
 > Benny: I think that large of a mortgage payment scares me.  
-> Gamemaster: The Art Deco House?  
+> Gamemaster: the Heart Deco House?  
 > Gamemaster: 6.3 is what they're estimating it at.  
 > Argyle: With the solid credit, you got it.  
 > Argyle: Yeah.  
@@ -953,17 +953,17 @@ Script:
 > Anzu: That's crazy.  
 > Anzu: That's still pretty bad, but 17.  
 > Gamemaster: Seventeen's is enough.  
-> Gamemaster: She will say, Oh, are you friends of the Sorbonne?  
+> Gamemaster: She will say, Oh, are you friends of The Zorbon?  
 > Anzu: Well, I think that that's not the way you're supposed to phrase it technically, but we're thinking about it.  
 > Gamemaster: You're looking to be friends with the Zorbon?  
 > Argyle: Time out, time out.  
 > Anzu: No, no.  
-> Argyle: We're not friends with the Zorbom.  
+> Argyle: We're not friends with The Zorbon.  
 > Benny: you  
 > Gamemaster: Oh, okay.  
 > Gamemaster: I just had to check.  
 > Anzu: Right, that's what I was getting at.  
-> Argyle: We're friends with Whiskers, not the Zorbom.  
+> Argyle: We're friends with Whiskers, not The Zorbon.  
 > Anzu: Yeah.  
 > Gamemaster: Gotcha.  
 > Gamemaster: Sure.  
@@ -1022,7 +1022,7 @@ Script:
 > Gamemaster: But it's just, it's gross, but it's not untenable, you know?  
 > Anzu: We put our tinfoil hats on.  
 > Gamemaster: Yes.  
-> Argyle: The Zorbon cannot flood this Syria.  
+> Argyle: The Zorbon cannot flood this sewer.  
 > Argyle: That's what happened.  
 > Gamemaster: Sure.  
 > Gamemaster: Either way, you are down in this pump room.  
@@ -1459,7 +1459,7 @@ Script:
 > Gamemaster: You have run up to agent of the... Absolutely.  
 > Argyle: Yes.  
 > Johnny: hello hello  
-> Benny: Sorbonne.  
+> Benny: Zorbon.  
 > Argyle: And I will take a strike.  
 > Argyle: Delicious.  
 > Gamemaster: A 26 hits.  
@@ -2350,7 +2350,7 @@ Script:
 > Gamemaster: And it looks like somebody loaded them up onto a boat and sailed off downriver.  
 > Johnny: Okay, I got a 26 to rifle through belongings.  
 > Gamemaster: Okay, 26 to rival through belongings.  
-> Gamemaster: The people here, like the members of the Zorbom resistance team, were not particularly well-off individuals.  
+> Gamemaster: The people here, like the members of The Zorbon resistance team, were not particularly well-off individuals.  
 > Gamemaster: They were all, as you, like, rifle through this stuff, they're all homeless.  
 > Gamemaster: Oh, okay.  
 > Johnny: Sorry, not the people here, the dudes we just killed.  
@@ -3642,7 +3642,7 @@ Script:
 > Argyle: He would have just jumped at the last moment.  
 > Johnny: Wait, like as you're falling mid-air, you would have jumped?  
 > Argyle: Yeah, I would double jump.  
-> Gamemaster: Is that a thing Orgyle can do?  
+> Gamemaster: Is that a thing Argyle can do?  
 > Argyle: Well, single jump.  
 > Gamemaster: That's not how that works.  
 > Argyle: I'm allowed to jump, right?  

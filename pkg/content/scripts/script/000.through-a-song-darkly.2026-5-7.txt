@@ -891,7 +891,7 @@ Script:
 > Benny: Divex does not have a hard G. Benny doesn't have pop.  
 > Gamemaster: It's similar.  
 > Benny: Benny's such a fun name.  
-> Gamemaster: Benny actually follows a little bit from Dive-X, because Benny's just short for his full name, which does also have the X in it.  
+> Gamemaster: Benny actually follows a little bit from Divex, because Benny's just short for his full name, which does also have the X in it.  
 > Benny: That's true.  
 > Gamemaster: So, you know, you're keeping with that theme.  
 > Benny: But okay.  
@@ -905,7 +905,7 @@ Script:
 > Benny: I changed one letter of a different name.  
 > Gamemaster: Okay, but...  
 > Benny: And it wasn't the X. True.  
-> Gamemaster: But when I say that you originated it, you were the one that handed me a piece of paper that said Bennex on it.  
+> Gamemaster: But when I say that you originated it, you were the one that handed me a piece of paper that said Bennix on it.  
 > Gamemaster: Like, I didn't come up with the name, you did.  
 > Benny: True.  
 > Benny: But I got Bennix from somewhere.  
@@ -1667,7 +1667,7 @@ Script:
 > Gamemaster: Anything else you guys want to do?  
 > Anzu: I go to sleep.  
 > Gamemaster: OK.  
-> Anzu: Well, if most of it was contained to Taylor's run...  
+> Anzu: Well, if most of it was contained to Teller's Run...  
 > Benny: That it was the bad people.  
 > Benny: You're right.  
 > Benny: Benny is... I don't know how well Benny's going to sleep.  
@@ -3190,7 +3190,7 @@ Script:
 > Gamemaster: So you guys are driving for a while.  
 > Gamemaster: I will then ask, as we're going, can I have, I guess it has to be Benny and Argyle, because you guys are in the front.  
 > Gamemaster: I'm going to need a perception check from you guys as like a kind of watch as you're driving forward.  
-> Benny: 24 for Bennex.  
+> Benny: 24 for Bennix.  
 > Argyle: I got those goggles.  
 > Argyle: I'm going to re-roll that.  
 > Argyle: 29.  
@@ -3200,7 +3200,7 @@ Script:
 > Gamemaster: It is not long after you get off of the main highway before you are almost entirely on the road on your own.  
 > Gamemaster: Not a lot of people are heading out to this part of Hallia, or the outskirts thereof.  
 > Gamemaster: There's not a lot to do here.  
-> Gamemaster: Most transit continues further south, heading towards Tormoray, or what used to be Raelion, and now kind of  
+> Gamemaster: Most transit continues further south, heading towards Tormeré, or what used to be Raelion, and now kind of  
 > Gamemaster: navigates around that area but you're you're kind of headed in the direction of nothing effectively there's this little bit of a dead zone in calaria where people aren't there anymore it's it's it's not there are no resources that are worth building out there so you you very quickly end up like on your own on the road uh i do have uh perhaps a little bit of a flavor question there's no speed limit in in calaria they're not going to restrict you like that how fast would benny be driving  
 > Johnny: you  
 > Benny: Yeah.  

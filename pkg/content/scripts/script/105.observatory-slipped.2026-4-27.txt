@@ -2001,7 +2001,7 @@ Script:
 > Foral: uh-huh  
 > Gamemaster: The only strange thing is that none of you are standing on the same floor.  
 > Gamemaster: None of you are even standing in the same direction.  
-> Gamemaster: Forl, you look around and you can see from your perspective when you look up, Ozzie appears to be standing at like a 45 degree angle from you, a distance away, and Scrazzy is fully upside down.  
+> Gamemaster: Foral, you look around and you can see from your perspective when you look up, Ozzie appears to be standing at like a 45 degree angle from you, a distance away, and Scrazzy is fully upside down.  
 > Gamemaster: It looks like he's on not the ceiling necessarily, but where a ceiling would be if there was stuff here.  
 > Foral: oh  
 > Gamemaster: But besides the weird gravitational anomaly stuff, you find that you can walk around...  
@@ -2021,10 +2021,10 @@ Script:
 > Ozzie: We look like we're inside of a sphere.  
 > Gamemaster: You don't see a sphere outside of you.  
 > Gamemaster: In fact, you don't even see anything that you're necessarily standing on.  
-> Gamemaster: But from the crit from Forl, like looking around and walking around, it's like you're walking on the interior of an invisible sphere where gravity is always pointing down from whatever that perspective is.  
+> Gamemaster: But from the crit from Foral, like looking around and walking around, it's like you're walking on the interior of an invisible sphere where gravity is always pointing down from whatever that perspective is.  
 > Ozzie: Mm-hmm.  
 > Ozzie: Oh.  
-> Gamemaster: So Scrazi is standing on the opposite side of the sphere from you on the interior.  
+> Gamemaster: So Scrazzy is standing on the opposite side of the sphere from you on the interior.  
 > Ozzie: Mm-hmm.  
 > Ozzie: Mm-hmm, mm-hmm.  
 > Foral: Thank you.  
@@ -2033,7 +2033,7 @@ Script:
 > Ozzie: Make it a pretty small sphere.  
 > Gamemaster: Yeah.  
 > Gamemaster: You would guess, like, radius-wise, maybe 100 feet.  
-> Gamemaster: Like, from you to Scrazi on the opposite end, it's 200 feet away.  
+> Gamemaster: Like, from you to Scrazzy on the opposite end, it's 200 feet away.  
 > Ozzie: Do we have any way of knowing if we've passed the barrier?  
 > Scrazzy: Thank you.  
 > Ozzie: Or we just gotta find a portal is kind of it.  
@@ -2099,13 +2099,13 @@ Script:
 > Ozzie: We're going to walk in his direction from where we are and then continue in that direction.  
 > Scrazzy: Yeah.  
 > Foral: Yeah, so it's like making a line.  
-> Gamemaster: Okay, so, I will note, since you are on the interior of a sphere, and you are on the opposite side of the sphere from Scrazi, literally any direction you walk will take you towards Scrazi.  
+> Gamemaster: Okay, so, I will note, since you are on the interior of a sphere, and you are on the opposite side of the sphere from Scrazzy, literally any direction you walk will take you towards Scrazzy.  
 > Foral: Okay.  
 > Scrazzy: But shouldn't we have a line?  
 > Foral: Okay, wait, wait, wait.  
 > Scrazzy: We have three points.  
 > Foral: We should both... Yeah, so we should both... If we both walk, we'll get the...  
-> Gamemaster: Yeah, so, all that I mean to say is, Scrazi is standing here on the interior like a stalactite.  
+> Gamemaster: Yeah, so, all that I mean to say is, Scrazzy is standing here on the interior like a stalactite.  
 > Gamemaster: You guys are here, so if you walk this way or you walk this way or you walk this way, regardless of the direction that you walk, you will eventually make it too scrazzy.  
 > Foral: Wait, but we came from different angles.  
 > Foral: So if we go there and then we will have like a gram like this, we then go here.  
@@ -2114,9 +2114,9 @@ Script:
 > Gamemaster: No, I don't.  
 > Gamemaster: I... Okay.  
 > Foral: So it.  
-> Foral: So if Tanner is on one spot and walks this direction and I walk this way and then we we both meet at Scrazi.  
+> Foral: So if Tanner is on one spot and walks this direction and I walk this way and then we we both meet at Scrazzy.  
 > Gamemaster: Yeah.  
-> Gamemaster: Eventually you will meet up at Scrazi.  
+> Gamemaster: Eventually you will meet up at Scrazzy.  
 > Gamemaster: Yes.  
 > Foral: Yeah.  
 > Foral: But if we keep going, we both go this way.  
@@ -2124,7 +2124,7 @@ Script:
 > Foral: Cut it.  
 > Gamemaster: You can do that.  
 > Gamemaster: Okay.  
-> Gamemaster: So step one is you guys are walking in opposite directions so that you meet up at Scrazi at the same time.  
+> Gamemaster: So step one is you guys are walking in opposite directions so that you meet up at Scrazzy at the same time.  
 > Foral: Yeah?  
 > Gamemaster: Okay.  
 > Gamemaster: Absolutely.  
@@ -2153,7 +2153,7 @@ Script:
 > Gamemaster: Like, as he walks, it takes a little bit of time for it to catch up to him.  
 > Foral: All right.  
 > Gamemaster: as he gets to you.  
-> Gamemaster: It's a barely discernible amount of sluggishness, but given how good Scrazi is at reading magic energy, it does stand out to him.  
+> Gamemaster: It's a barely discernible amount of sluggishness, but given how good Scrazzy is at reading magic energy, it does stand out to him.  
 > Gamemaster: To the other point, looking at Thoril going counterclockwise...  
 > Gamemaster: The magic flow there is exceptionally snappy.  
 > Gamemaster: It's actually snappier than you'd expect.  
@@ -2386,7 +2386,7 @@ Script:
 > Foral: Oh, cognitive self.  
 > Gamemaster: And then he makes his way back to your position.  
 > Gamemaster: He has apparently, it looks like, made this thread kind of wrap around the sphere in some way.  
-> Gamemaster: Forl, at this point, you have six minutes remaining on your timer.  
+> Gamemaster: Foral, at this point, you have six minutes remaining on your timer.  
 > Gamemaster: The two of you have eight.  
 > Foral: Does Snazzy have more, though, because he waited one cycle?  
 > Gamemaster: You're correct.  
@@ -2401,7 +2401,7 @@ Script:
 > Gamemaster: Similarly, at this point, he seems to be treading more of this, like, gossamer thread behind him.  
 > Gamemaster: It's interesting.  
 > Gamemaster: That's like a phenomenon that you hadn't seen before.  
-> Foral: And Scrazi should have lower momentum because he skipped two cycles around.  
+> Foral: And Scrazzy should have lower momentum because he skipped two cycles around.  
 > Gamemaster: You don't know if it's because you've walked far enough, or it's because of some other thing that, like, has been happening.  
 > Gamemaster: But it is a change, which feels promising.  
 > Ozzie: you  
@@ -2507,7 +2507,7 @@ Script:
 > Gamemaster: Scrazzy, you feel as your legs are...  
 > Gamemaster: twisted into a small, like, spaghetti extruder shape as you are pulled through this hole that you jumped into.  
 > Gamemaster: You are going to take some bludgeoning damage as you get stretched into this weird distortion that you found.  
-> Gamemaster: With a 23, Forl soon follows.  
+> Gamemaster: With a 23, Foral soon follows.  
 > Gamemaster: managing to only take half damage from this bludgeoning.  
 > Gamemaster: But similarly, Ozzie, you standing there, watch your two companions jump into this puddle of water, get spaghettified, and then disappear.  
 > Ozzie: I was just waiting to make sure they both made it through.  
@@ -2524,7 +2524,7 @@ Script:
 > Foral: He actually was just waiting for us.  
 > Foral: He cannonballs.  
 > Foral: Oh, I should hold my feet together.  
-> Gamemaster: 23 points of bludgeoning damage halved for Forl, who succeeded on his check.  
+> Gamemaster: 23 points of bludgeoning damage halved for Foral, who succeeded on his check.  
 > Foral: Can you make my character appear somewhere just so I can click F?  
 > Gamemaster: Uh, sure.  
 > Foral: Thank you.  
@@ -3377,7 +3377,7 @@ Script:
 > Gamemaster: He's going to use his third action to... He's a spider.  
 > Scrazzy: attack of opportunity oh it does i wish  
 > Ozzie: My god, how fast is he?  
-> Gamemaster: It's Forl's turn.  
+> Gamemaster: It's Foral's turn.  
 > Foral: So I'm going to reload.  
 > Gamemaster: Bob doesn't have an attack of opportunity, right?  
 > Gamemaster: You were just saying that?  

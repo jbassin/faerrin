@@ -16,3 +16,6 @@ export const scriptContentDir = resolve(contentDir, "Script")
 export const defsPath = resolve(scriptsDir, "defs.yaml")
 export const campaignsPath = resolve(scriptsDir, "campaigns.yaml")
 export const shibbolethJsonPath = resolve(scriptsDir, "shibboleth.json")
+// Ledger of sessions the surfacer has been reviewed for (so `review` can skip
+// them). A committed artifact, like data/, so review progress is durable.
+export const reviewedPath = resolve(scriptsDir, "reviewed.json")

@@ -114,7 +114,7 @@ Script:
 > Arctos: Yeah.  
 > Gamemaster: Of course.  
 > Arctos: Yeah, so.  
-> Anzu: We're going to have to siphon some of this heart's power so that our gin-soaked rag can add another couple garage slots.  
+> Anzu: We're going to have to siphon some of this heart's power so that our Gin Soaked Rag can add another couple garage slots.  
 > Gamemaster: No, you don't need two garages.  
 > Arctos: Yeah, yeah.  
 > Gamemaster: What you need is a second floor so that you can truthfully say I go upstairs.  
@@ -1446,7 +1446,7 @@ Script:
 > Gamemaster: But I like this place.  
 > Gamemaster: There's way more room to expand under this gas station than there was under that tavern.  
 > Gamemaster: So, works out for me.  
-> Johnny: So back to this art, back to the art on the doors.  
+> Johnny: So back to this art, back to the Heart on the doors.  
 > Arctos: So what are you like doing?  
 > Arctos: Yeah, as a heart.  
 > Arctos: Oh, yeah.  
@@ -1800,7 +1800,7 @@ Script:
 > Benny: It's literally like, is anyone looking at me within 30 feet?  
 > Gamemaster: Yep.  
 > Benny: All right, Benny will invest in that one too.  
-> Gamemaster: It's handy if, like, you need to break into a PO box.  
+> Gamemaster: It's handy if, like, you need to break into a P.O. Box.  
 > Gamemaster: And you're trying to not be suspicious about it.  
 > Arctos: Oh, sorry.  
 > Arctos: I thought you misspoke and it was a medicine check.  
@@ -3472,7 +3472,7 @@ Script:
 > Arctos: We close the doors.  
 > Arctos: Can we loot them and the cars?  
 > Gamemaster: Yeah, I'm not even going to make you roll a perception check for this one.  
-> Gamemaster: These guys were not carrying, like, it's the same as the roundhat gang members that you had found downstairs that weren't Dwellin.  
+> Gamemaster: These guys were not carrying, like, it's the same as the Roundhat Gang members that you had found downstairs that weren't Dwellin.  
 > Gamemaster: So the only real thing of note you find on their bodies is the car keys.  
 > Gamemaster: There are also some Roundhats, if you want.  
 > Johnny: Do they go with the Roundhats go with our ponchos?  
@@ -3545,7 +3545,7 @@ Script:
 > Benny: Yeah.  
 > Gamemaster: Like, from your bookkeeping, you know at least two other members of the Roundhat Gang still exist.  
 > Arctos: I think we should... So I think maybe we should get all the information, get all the papers we can out of the heart now, and then immediately drive over and report it.  
-> Gamemaster: Sorry, you know at least three other members of the Roundhat Gang, because there was also the Bouncer of the Crowded Fleet that he did not engage with.  
+> Gamemaster: Sorry, you know at least three other members of the Roundhat Gang, because there was also the Bouncer of The Crowded Flea that he did not engage with.  
 > Arctos: I would report it to Magic Ops and then the Inquisitors, but it's up to you guys.  
 > Johnny: No, I think that's fair.  
 > Johnny: We should just make sure that we are aware Grayson probably knows about this.  
@@ -3990,7 +3990,7 @@ Script:
 > Arctos: to the group oh we yeah  
 > Gamemaster: I think the only thing you would note there is that these are... Because it's like actual cash that's here, it is...  
 > Gamemaster: such that it wouldn't be associated with a bank account or anything like that.  
-> Gamemaster: I think Calera... Yeah, Calera is probably in this transitionary period where they're printing money that can't be traced, but there's still so much of the old gold pieces that used to be used that they're still accepted everywhere.  
+> Gamemaster: I think Calaria... Yeah, Calaria is probably in this transitionary period where they're printing money that can't be traced, but there's still so much of the old gold pieces that used to be used that they're still accepted everywhere.  
 > Gamemaster: That's like an established currency still.  
 > Arctos: Cool.  
 > Johnny: um um  
@@ -4031,7 +4031,7 @@ Script:
 > Gamemaster: It might be worth like two gold pieces.  
 > Gamemaster: Sorry, I guess it would be a vial of quicksilver.  
 > Gamemaster: If anything, this kind of feels like a passion project.  
-> Gamemaster: of Twelwins.  
+> Gamemaster: of Tywelwyn's.  
 > Johnny: Carly pulled, that's a deep one.  
 > Gamemaster: You can see he was in the midst of making a bowler hat with holes in it for antlers.  
 > Arctos: Alright, we'll take the Quicksilver and then we'll go to the Augury.  
@@ -4600,7 +4600,7 @@ Script:
 > Gamemaster: Yeah.  
 > Benny: Because he currently has a pick that has deadly d10.  
 > Benny: Or I think fatal d10.  
-> Benny: But his goal is a Felcata that has...  
+> Benny: But his goal is a Falcata that has...  
 > Benny: Fatal D12.  
 > Arctos: My dog is requesting I take him out.  
 > Anzu: Yeah, props.  

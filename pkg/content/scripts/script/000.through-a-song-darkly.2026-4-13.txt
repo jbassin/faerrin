@@ -2289,7 +2289,7 @@ Script:
 > Benny: I got my one.  
 > Johnny: I'll come for you on Zoom.  
 > Gamemaster: I'm sorry, you got left alone.  
-> Benny: Anzu, besting even Johnny in the art of distraction.  
+> Benny: Anzu, besting even Johnny in the Heart of distraction.  
 > Anzu: Smoke and mirrors.  
 > Benny: Oh no!  
 > Gamemaster: Okay.  
@@ -2497,7 +2497,7 @@ Script:
 > Gamemaster: All right, Anzu, it's still your turn.  
 > Anzu: Yeah, I've got two more actions.  
 > Argyle: Alright, since you're going to fear one, I'm not going to stop that.  
-> Anzu: So we're going to hit this guy with a Psyburst.  
+> Anzu: So we're going to hit this guy with a Psiburst.  
 > Gamemaster: Okay.  
 > Anzu: I'm just trying to think.  
 > Anzu: I think we'll have him do the will save.  

@@ -828,7 +828,7 @@ Script:
 > Ozzie: I unlock the door.  
 > Gamemaster: Okay, absolutely.  
 > Gamemaster: You unlock the door, and with a silent sliding motion, the door in the front of the capsule slides away from you to reveal the interior of an airlock, one that still appears intact, albeit dark, from here.  
-> Gamemaster: You would all, I don't know if you guys have dark vision, you would, as part of the standard Sedesium field agent kit, have access to flashlights.  
+> Gamemaster: You would all, I don't know if you guys have dark vision, you would, as part of the standard Sedecium field agent kit, have access to flashlights.  
 > Gamemaster: So if you need that for light, you can use it.  
 > Gamemaster: You just, you don't have to if you don't have to.  
 > Foral: Darkvision.  
@@ -978,7 +978,7 @@ Script:
 > Gamemaster: It is a little unfortunate for the lieutenant because he is behind and in front of two different entities making a bunch of noise.  
 > Foral: Yeah.  
 > Gamemaster: But that's what happens.  
-> Gamemaster: Old man Scrazi is gone.  
+> Gamemaster: Old man Scrazzy is gone.  
 > Gamemaster: No one knows where he went.  
 > Foral: The old man died.  
 > Gamemaster: He blends in with the wall.  
@@ -1030,7 +1030,7 @@ Script:
 > Scrazzy: He completely ejects.  
 > Scrazzy: And unfired.  
 > Scrazzy: He puts it back in.  
-> Ozzie: All right, Scrazz, follow me closely.  
+> Ozzie: All right, Scrazzy, follow me closely.  
 > Scrazzy: Yeah.  
 > Scrazzy: It's like a magazine.  
 > Scrazzy: So he has to put it back in.  
@@ -1414,7 +1414,7 @@ Script:
 > Gamemaster: There is a divot that you know would normally take a cave orb to activate it, but the trick is you don't need a cave orb if you don't want a cave to interact with the system.  
 > Gamemaster: You literally just ball your hand into a fist and press it into the divot and it will activate the system.  
 > Gamemaster: um  
-> Scrazzy: Can an old man Scrazi just grab the back of Bob's head and put his head into it?  
+> Scrazzy: Can an old man Scrazzy just grab the back of Bob's head and put his head into it?  
 > Ozzie: Thank you.  
 > Gamemaster: Yeah, absolutely.  
 > Gamemaster: So the two other members of this party watch as Scrazzy grabs Bob and contorts him in a way that you would not expect a person to be able to turn.  
@@ -1709,7 +1709,7 @@ Script:
 > Foral: I'm not getting that close so I'm not rolling.  
 > Gamemaster: With a 27 looking inside at one of the pods that are closest to the entrance.  
 > Gamemaster: These look like, honestly, better than you would expect from a bare-bones operation.  
-> Gamemaster: Like, sedesium ships, for ones that are still kind of economical about space, getting an individual berth in its own right is a bit of a luxury.  
+> Gamemaster: Like, Sedecium ships, for ones that are still kind of economical about space, getting an individual berth in its own right is a bit of a luxury.  
 > Gamemaster: Normally you would expect to bunk with other people in a tighter area just because it's not worth giving everybody their own room.  
 > Gamemaster: But these rooms themselves, even if they were individual rooms, are pretty nice.  
 > Gamemaster: There's enough room for a kind of hammock that you would gather works as a crash couch if the ship were under acceleration, but also works just as a bed if you're stationary.  
@@ -1722,7 +1722,7 @@ Script:
 > Ozzie: What's in the locker?  
 > Gamemaster: Looking through the locker, there are a set of what look to be three identical uniforms, all for somebody much larger than you, like maybe eight or nine feet tall.  
 > Ozzie: Whoa.  
-> Gamemaster: You know that there are a handful of races that were part of the Sundome that kind of match that description, so that isn't particularly surprising.  
+> Gamemaster: You know that there are a handful of races that were part of the Sundom that kind of match that description, so that isn't particularly surprising.  
 > Gamemaster: But with a really good perception while looking around, there are a handful...  
 > Gamemaster: of personal accoutrements, like what looks to be a photo of what you gather is whoever used to live in this particular habitation.  
 > Foral: you  
@@ -1787,9 +1787,9 @@ Script:
 > Ozzie: Scraz.  
 > Gamemaster: Scrasmataz.  
 > Scrazzy: Could be better.  
-> Gamemaster: Scrazz gets a 24.  
+> Gamemaster: Scrazzy gets a 24.  
 > Gamemaster: Okay.  
-> Gamemaster: With a 24, this... Scrazz has seen this particular phenomenon before.  
+> Gamemaster: With a 24, this... Scrazzy has seen this particular phenomenon before.  
 > Gamemaster: He's old.  
 > Gamemaster: Not in person, but in literature.  
 > Gamemaster: Especially because this phenomenon was of note to...  
@@ -2088,7 +2088,7 @@ Script:
 > Gamemaster: Damn.  
 > Gamemaster: With the 27, you hear it before you see it.  
 > Gamemaster: As you guys are returning from the bridge and getting ready to head over to the observatory, you hear this kind of agitated, maybe excited-sounding... You're assigning emotions to kind of what sounds like a bunch of rocks hitting each other.  
-> Gamemaster: I don't know if you would necessarily recognize it, but pointing it out, I think Scrazi would.  
+> Gamemaster: I don't know if you would necessarily recognize it, but pointing it out, I think Scrazzy would.  
 > Gamemaster: I think this is one of the languages you know.  
 > Gamemaster: They appear to be... Actually, I can tell... We'll check.  
 > Scrazzy: Josh is frozen.  
@@ -2696,7 +2696,7 @@ Script:
 > Scrazzy: Bob will hang out there then.  
 > Gamemaster: Anything else?  
 > Scrazzy: No.  
-> Gamemaster: Then it is Lieutenant Forl's turn.  
+> Gamemaster: Then it is Lieutenant Foral's turn.  
 > Foral: All right, great.  
 > Foral: I'm actually not going to activate my bullet just because of action economy.  
 > Foral: So if it has an effect, should I just unload it?  
@@ -3098,7 +3098,7 @@ Script:
 > Scrazzy: Yes.  
 > Ozzie: Bye.  
 > Scrazzy: Better beta formation.  
-> Gamemaster: Forl, do you have anything you can do?  
+> Gamemaster: Foral, do you have anything you can do?  
 > Gamemaster: Or do you have a one-action thing that Bob can do?  
 > Foral: I didn't take the... There's a gunslinger feat that you can stabilize with the hot end barrel of the gun.  
 > Scrazzy: I think Bob spent both his actions.  

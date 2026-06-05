@@ -477,7 +477,7 @@ Script:
 > Johnny: Oh.  
 > Argyle: Oh, yes, we homies.  
 > Anzu: Like, in real life.  
-> Argyle: Yeah, we're homies with Hildemarant.  
+> Argyle: Yeah, we're homies with Hildebrandt.  
 > Benny: real life.  
 > Argyle: we saw the Pale Lantern.  
 > Johnny: Yeah.  
@@ -706,7 +706,7 @@ Script:
 > Gamemaster: I'm trying to think if there's anybody else that's particularly strange.  
 > Gamemaster: Manus is maybe a little bit weird.  
 > Anzu: The other ones are all like, yeah, but I had that pretty close.  
-> Gamemaster: Giannis, maybe?  
+> Gamemaster: Giannos, maybe?  
 > Gamemaster: I'll take just Kadou, being strange.  
 > Johnny: Oh, you know what it is?  
 > Anzu: I think, yeah.  
@@ -779,7 +779,7 @@ Script:
 > Gamemaster: Red with a fiery effect.  
 > Argyle: Okay.  
 > Gamemaster: Which you would place as making him a devotee of the air of the plague.  
-> Argyle: OK, so it looks like, and then who is Ischel again?  
+> Argyle: OK, so it looks like, and then who is Ichel again?  
 > Gamemaster: Ichel is the firearms manufacturer from Radiant Arms, the android.  
 > Johnny: Okay.  
 > Argyle: OK, OK, so top right, homies.  
@@ -2158,7 +2158,7 @@ Script:
 > Anzu: Okay, then I get 15 temporary hit points as I extract his thermal energy and use it to bolster myself.  
 > Gamemaster: Nice.  
 > Benny: What?  
-> Anzu: Then we will send a Psyburst at him.  
+> Anzu: Then we will send a Psiburst at him.  
 > Johnny: I feel like dogs are nimble.  
 > Anzu: Oh, guys, do we think it should make a reflex save or a will save?  
 > Argyle: Oh.  
@@ -2425,8 +2425,8 @@ Script:
 > Gamemaster: 500 feet?  
 > Gamemaster: Yeah, he'll cast Chain Lightning as well.  
 > Benny: he is not outside of benny's sprinting distance i just need him to understand the ben gas  
-> Gamemaster: He's attacking these Barkists.  
-> Gamemaster: He doesn't want the Barkists getting him.  
+> Gamemaster: He's attacking these barghests.  
+> Gamemaster: He doesn't want the barghests getting him.  
 > Johnny: Well, that's a lot of damage.  
 > Gamemaster: That is a critical failure, so this guy's going to take double damage.  
 > Argyle: Well, at least if we jump him now, he's probably losing two of his highest level spell slots.  
@@ -2685,7 +2685,7 @@ Script:
 > Johnny: No.  
 > Anzu: No way.  
 > Johnny: Jethro.  
-> Anzu: Josh, I'm going to throw a Psyburst at the Vicious Spargus that's right here.  
+> Anzu: Josh, I'm going to throw a Psiburst at the Vicious Spargus that's right here.  
 > Gamemaster: Absolutely.  
 > Anzu: It's a will.  
 > Gamemaster: Reflex or Will?  
@@ -3283,8 +3283,8 @@ Script:
 > Gamemaster: It is no longer... It is no more magically or physically intensive to move from, like, Void 1 to Void 2 than it is from Void 1,000,000 to Void 1,000,001.  
 > Gamemaster: The complications are some kind of logistics because you need some way of feeding yourself and actually making the transfer because it's assumed that whatever vehicle you're taking takes some kind of energy.  
 > Gamemaster: And...  
-> Gamemaster: Joker worlds tend to get both larger and more intense the further you go out, which makes it more dangerous, not more difficult.  
-> Gamemaster: Um, especially because, uh, the further you get out, you start to see multi-world Joker worlds.  
+> Gamemaster: Joker Worlds tend to get both larger and more intense the further you go out, which makes it more dangerous, not more difficult.  
+> Gamemaster: Um, especially because, uh, the further you get out, you start to see multi-world Joker Worlds.  
 > Gamemaster: Like, very early on, you see, oh, this world's weird.  
 > Gamemaster: Or, like, you move forward and this world has some weird quirk or something like that.  
 > Gamemaster: Uh, you get further along and you see, uh, a Joker world that is from, like, Void 1,000,000 to Void 1,112,000.  

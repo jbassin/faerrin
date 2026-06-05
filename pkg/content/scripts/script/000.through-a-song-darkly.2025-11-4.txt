@@ -791,7 +791,7 @@ Script:
 > Gamemaster: That's fine.  
 > Benny: All right.  
 > Benny: We start the session staking out.  
-> Benny: We're going to assume that this illegitimate business uses a legitimate PO box.  
+> Benny: We're going to assume that this illegitimate business uses a legitimate P.O. Box.  
 > Benny: When the kid goes in, and actually, I guess before we go in, we hear on the radio, the most pertinent information is that you can now short the rain via shorting rain stocks.  
 > Gamemaster: That was the most pertinent information.  
 > Benny: We send the child in.  
@@ -861,7 +861,7 @@ Script:
 > Benny: Credit union.  
 > Benny: Dishes.  
 > Benny: We're going to see who will pay us to end of the reign, and then we're going to kill Tywelwyn.  
-> Gamemaster: from the Round Hat gang said that he had recently, as per the directions of somebody higher than him in the gang, helped install radar dishes at a local credit union, a family restaurant, and a car park.  
+> Gamemaster: from the Roundhat Gang said that he had recently, as per the directions of somebody higher than him in the gang, helped install radar dishes at a local credit union, a family restaurant, and a car park.  
 > Gamemaster: Indeed, give you the locations of those.  
 > Gamemaster: Not to say that, like, I don't think you guys were planning on going to take them down or anything.  
 > Gamemaster: It was more just, like, plotting them out on a map to make sure that they were equidistant and covering.  
@@ -1693,7 +1693,7 @@ Script:
 > Gamemaster: Oggers.  
 > Anzu: Well, that'll do it.  
 > Anzu: And they seem like they killed a person also in doing this as part of their ritual.  
-> Anzu: And actually, we believe we may have been, or at least iconoclism was the target of at least this particular instance of augury.  
+> Anzu: And actually, we believe we may have been, or at least Iconoclasm was the target of at least this particular instance of augury.  
 > Argyle: you  
 > Anzu: We had kind of a shared...  
 > Anzu: dream where we were attacked.  
@@ -1746,7 +1746,7 @@ Script:
 > Gamemaster: It's the same looking fire, effectively.  
 > Gamemaster: It's like this bright white fire, almost.  
 > Gamemaster: Yes.  
-> Anzu: Is Tellers Run Uptown?  
+> Anzu: Is Teller's Run Uptown?  
 > Gamemaster: Teller's Run is uptown.  
 > Anzu: Okay.  
 > Gamemaster: I don't have a map for you, although I really should at this point, but just pretend like if it's about a circle, there is a river that runs diagonally through the city.  
@@ -1838,7 +1838,7 @@ Script:
 > Gamemaster: that's all very useful connected how because  
 > Argyle: It was connected to the Gryphon shipping company.  
 > Argyle: All the dishes point there.  
-> Argyle: They have a PO box with  
+> Argyle: They have a P.O. Box with  
 > Argyle: Quick question.  
 > Argyle: This might be crazy.  
 > Argyle: I could swear, and I describe in as much detail as I can, the tree.  
@@ -1965,7 +1965,7 @@ Script:
 > Gamemaster: I'm just going to do red.  
 > Benny: OK.  
 > Gamemaster: Compelled is silver.  
-> Gamemaster: Scal is gold.  
+> Gamemaster: Scale is gold.  
 > Gamemaster: Compelled is silver.  
 > Gamemaster: Host is rainbow.  
 > Gamemaster: Watcher is white.  
@@ -2111,7 +2111,7 @@ Script:
 > Gamemaster: But if you do anything that actually leads to the apprehension or... I know how you adventuring types are.  
 > Gamemaster: Apprehension or...  
 > Gamemaster: stopping the person doing the bad thing, regardless of how that actually happens.  
-> Argyle: we would read them the scales, the field Scale rights.  
+> Argyle: we would read them the Scale's, the field Scale rights.  
 > Gamemaster: We will pay.  
 > Gamemaster: That doesn't actually apply if the Scale hasn't already marked them for death.  
 > Gamemaster: But in this particular instance, Tywelwyn is a known gang leader, so I'm not particularly worried about a court finding him guilty.  
@@ -2250,7 +2250,7 @@ Script:
 > Benny: Yeah.  
 > Gamemaster: Was there anything you guys wanted to do in between?  
 > Gamemaster: You had like open threads or whatever that you wanted to look into, I think.  
-> Anzu: If nothing else, we could go for one of the radar dishes in the Sableclutch.  
+> Anzu: If nothing else, we could go for one of the radar dishes in The Scale clutch.  
 > Argyle: Yeah, or we can go beat up some gang members, get some intel.  
 > Johnny: You guys want to grab a panini and decide on our next move?  
 > Argyle: Sure.  
@@ -2413,7 +2413,7 @@ Script:
 > Gamemaster: But also...  
 > Gamemaster: None of you have been to a bank yet, so none of you have a debit card or anything equivalent to that.  
 > Gamemaster: But you would know that a bunch of cash passes hands in a restaurant.  
-> Gamemaster: So it also isn't a terrible place to do some kind of laundering, if that's something the Runtat gang needs.  
+> Gamemaster: So it also isn't a terrible place to do some kind of laundering, if that's something the Roundhat Gang needs.  
 > Gamemaster: So there is a realm of possibility where the gang actually does own the restaurant.  
 > Gamemaster: There's also a different possibility where they're just forcing the restaurant to install the radar initiative.  
 > Gamemaster: You need more information to be able to tell.  
@@ -2594,7 +2594,7 @@ Script:
 > Johnny: Dead.  
 > Argyle: I will use... Give me one second.  
 > Benny: I believe we lost the character this quick.  
-> Argyle: Rebalance the scales, or whatever that thing's called.  
+> Argyle: Rebalance the Scale's, or whatever that thing's called.  
 > Argyle: That's how we roll this.  
 > Gamemaster: 25.  
 > Argyle: 25.  
@@ -3035,7 +3035,7 @@ Script:
 > Benny: The radar dish caused the attention to subside.  
 > Benny: It's not like the attention popped, Benny was just paying attention to it, and then felt it subside.  
 > Benny: That's probably what Benny would conclude.  
-> Gamemaster: So, Batsu is currently being hoisted up the side of the building by Arkyle.  
+> Gamemaster: So, Batsu is currently being hoisted up the side of the building by Argyle.  
 > Benny: Because everyone else would feel it if it just swung over.  
 > Benny: It's not like Benny.  
 > Argyle: Big boiling frog.  
@@ -3053,7 +3053,7 @@ Script:
 > Argyle: Benny, you want to come up here too?  
 > Benny: No, I'm waiting.  
 > Benny: I think Johnny is about to start banging pots and pans in there or causing an international incident, and I'm going to see if I can get access to the filing cabinets in the manager's room.  
-> Gamemaster: Also, Benny is substantially heavier than Ansu, so the DC would be higher.  
+> Gamemaster: Also, Benny is substantially heavier than Anzu, so the DC would be higher.  
 > Johnny: at that exact moment, at that exact moment.  
 > Argyle: All right.  
 > Argyle: I think Benny could climb.  
@@ -3443,9 +3443,9 @@ Script:
 > Gamemaster: Because if I recall, the original reason you went to this place was to discuss the plan.  
 > Anzu: Well, we went here to get this dish and to pass the time until we need to go to our meeting tonight.  
 > Benny: Oh, no, this one.  
-> Benny: With the Zorba.  
+> Benny: With The Zorbon.  
 > Gamemaster: Oh, okay.  
-> Gamemaster: So this was your thing to do in between going to the Zorbog meeting.  
+> Gamemaster: So this was your thing to do in between going to The Zorbon meeting.  
 > Anzu: Right.  
 > Gamemaster: Okay.  
 > Gamemaster: I mean, it's still, it's not bright out because the rain cover is so heavy, but it's not quite time.  
@@ -3561,7 +3561,7 @@ Script:
 > Johnny: See where that leads.  
 > Johnny: Then we gear up.  
 > Johnny: We get ready.  
-> Johnny: And we assault the Roundhat gang.  
+> Johnny: And we assault the Roundhat Gang.  
 > Anzu: We're going to be going up against a lot of gangsters, including probably the actual Tywelwyn, who's probably more powerful than his simulacrum.  
 > Johnny: alternate assault plan.  
 > Johnny: Maybe... The sewers are sort of underwater right now, so that plan... I was going to say we could go underground into their basement, but it's probably underwater right now.  

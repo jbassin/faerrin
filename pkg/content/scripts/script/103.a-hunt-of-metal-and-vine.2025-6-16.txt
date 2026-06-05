@@ -3970,7 +3970,7 @@ Script:
 > Gamemaster: The mage has been demoralized.  
 > Reverend: That mage is... That mage is very demoralizing.  
 > Gamemaster: Don't do that.  
-> Reverend: Following that, I will... I will strike Kate's mage.  
+> Reverend: Following that, I will... I will strike game's mage.  
 > Gamemaster: No, you won't.  
 > Reverend: I get a hero point, though.  
 > Reverend: I will follow up and attempt to strike again, but with multiple attack penalty.  
