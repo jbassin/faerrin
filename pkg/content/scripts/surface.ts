@@ -111,15 +111,22 @@ async function runJudge(rest: string[], json: boolean): Promise<void> {
   if (json) console.log(JSON.stringify(report, null, 2))
 }
 
+interface Terminal {
+  /** Read a single keystroke (no Enter) — for actions. */
+  key(prompt: string): Promise<string>
+  /** Read a full Enter-terminated line — for typed text. */
+  line(prompt: string): Promise<string>
+  close(): void
+}
+
 /**
- * Line reader that works for both an interactive TTY and piped stdin: it buffers
- * lines that arrive ahead of a prompt and treats EOF / Ctrl-D as a quit ("q"), so
- * a partial scripted input ends the session cleanly instead of throwing.
+ * Line-buffered reader for piped stdin / tests: buffers lines that arrive ahead of
+ * a prompt and treats EOF / Ctrl-D as a quit ("q"). `key` and `line` are the same
+ * here — single keystrokes aren't possible without a TTY.
  */
-async function makeLineReader(): Promise<{ ask: (p: string) => Promise<string>; close: () => void }> {
+async function makeLineTerminal(): Promise<Terminal> {
   const readline = await import("node:readline")
-  // @types/bun's readline Interface doesn't surface EventEmitter methods; cast to
-  // the minimal shape we use.
+  // @types/bun's readline Interface doesn't surface EventEmitter methods; cast.
   const rl = readline.createInterface({ input: process.stdin }) as unknown as {
     on(event: "line", cb: (line: string) => void): void
     on(event: "close", cb: () => void): void
@@ -137,15 +144,98 @@ async function makeLineReader(): Promise<{ ask: (p: string) => Promise<string>; 
     closed = true
     while (waiters.length) (waiters.shift() as (l: string) => void)("q")
   })
+  const ask = (prompt: string): Promise<string> => {
+    process.stdout.write(prompt)
+    const next = buffer.shift()
+    if (next !== undefined) return Promise.resolve(next)
+    if (closed) return Promise.resolve("q")
+    return new Promise<string>((res) => waiters.push(res))
+  }
+  return { key: ask, line: ask, close: () => rl.close() }
+}
+
+/**
+ * Raw-mode terminal: single keystrokes for actions (no Enter) and line editing for
+ * typed text. Falls back to line-buffered reads when stdin is not a TTY.
+ */
+async function makeTerminal(): Promise<Terminal> {
+  const stdin = process.stdin
+  if (stdin.isTTY !== true) return makeLineTerminal()
+
+  const tty = stdin as unknown as {
+    setRawMode(m: boolean): void
+    resume(): void
+    pause(): void
+    setEncoding(e: string): void
+    once(ev: "data", cb: (chunk: unknown) => void): void
+  }
+  tty.setRawMode(true)
+  tty.resume()
+  tty.setEncoding("utf8")
+
+  let pending = ""
+  const readChar = (): Promise<string> => {
+    if (pending.length > 0) {
+      const c = pending[0]
+      pending = pending.slice(1)
+      return Promise.resolve(c)
+    }
+    return new Promise<string>((resolve) => {
+      tty.once("data", (chunk) => {
+        const s = String(chunk)
+        pending = s.slice(1)
+        resolve(s[0] ?? "")
+      })
+    })
+  }
+
+  const close = (): void => {
+    try {
+      tty.setRawMode(false)
+    } catch {
+      /* already closed */
+    }
+    tty.pause()
+  }
+  const abortOnCtrlC = (ch: string): void => {
+    if (ch === "\x03") {
+      process.stdout.write("\n")
+      close()
+      process.exit(130)
+    }
+  }
+
   return {
-    ask(prompt) {
+    async key(prompt) {
       process.stdout.write(prompt)
-      const next = buffer.shift()
-      if (next !== undefined) return Promise.resolve(next)
-      if (closed) return Promise.resolve("q")
-      return new Promise<string>((res) => waiters.push(res))
+      const ch = await readChar()
+      abortOnCtrlC(ch)
+      const norm = ch === "\r" || ch === "\n" ? "" : ch
+      process.stdout.write((norm || "⏎") + "\n") // echo the keystroke
+      return norm
     },
-    close: (): void => rl.close(),
+    async line(prompt) {
+      process.stdout.write(prompt)
+      let buf = ""
+      for (;;) {
+        const ch = await readChar()
+        abortOnCtrlC(ch)
+        if (ch === "\r" || ch === "\n") {
+          process.stdout.write("\n")
+          return buf
+        }
+        if (ch === "\x7f" || ch === "\b") {
+          if (buf.length > 0) {
+            buf = buf.slice(0, -1)
+            process.stdout.write("\b \b")
+          }
+          continue
+        }
+        buf += ch
+        process.stdout.write(ch)
+      }
+    },
+    close,
   }
 }
 
@@ -172,9 +262,10 @@ async function runReview(rest: string[]): Promise<void> {
   const useJudge = rest.includes("--judge")
 
   const lex = await buildLexicon()
-  const rl = await makeLineReader()
+  const term = await makeTerminal()
   const deps: ReviewDeps = {
-    ask: (q) => rl.ask(q),
+    key: (q) => term.key(q),
+    line: (q) => term.line(q),
     apply: (canonical, span) => addCorrection(canonical, span),
     out: (s) => console.log(s),
   }
@@ -232,7 +323,7 @@ async function runReview(rest: string[]): Promise<void> {
       }
     }
   } finally {
-    rl.close()
+    term.close()
   }
 
   console.log(

@@ -6,8 +6,10 @@ import type { KnownCandidate } from "./known"
 import type { DiscoveryCluster } from "./discover"
 
 export interface ReviewDeps {
-  /** Prompt the user and return their line of input. */
-  ask(prompt: string): Promise<string>
+  /** Prompt and return a single keystroke (no Enter needed) — for actions. */
+  key(prompt: string): Promise<string>
+  /** Prompt and return a full line (Enter-terminated) — for typed text. */
+  line(prompt: string): Promise<string>
   /** Persist a correction; returns whether a new entry was written. */
   apply(canonical: string, span: string): Promise<{ added: boolean; reason?: string }>
   /** Emit a line of output. */
@@ -128,7 +130,7 @@ export async function reviewKnown(
 
     let action: Action | null = null
     while (action === null) {
-      action = parseAction(await deps.ask(KNOWN_PROMPT), c.hypotheses.length)
+      action = parseAction(await deps.key(KNOWN_PROMPT), c.hypotheses.length)
       if (action === null) deps.out("   ? unrecognized — a/enter, 1-N, c, d, or q")
     }
 
@@ -144,7 +146,7 @@ export async function reviewKnown(
 
     let canonical: string
     if (action.kind === "change") {
-      canonical = (await deps.ask("   correct form > ")).trim()
+      canonical = (await deps.line("   correct form > ")).trim()
       if (!canonical) {
         deps.out("   (empty — skipped)")
         stats.denied++
@@ -195,7 +197,7 @@ export async function reviewClusters(clusters: DiscoveryCluster[], deps: ReviewD
   for (const c of clusters) {
     deps.out(formatCluster(c))
     const dflt = c.variants[0]?.span ?? ""
-    const input = (await deps.ask(`   canonical [${dflt}] (⏎ accept · name · d deny · q quit) > `)).trim()
+    const input = (await deps.line(`   canonical [${dflt}] (⏎ accept · name · d deny · q quit) > `)).trim()
     const lower = input.toLowerCase()
 
     if (lower === "q") {

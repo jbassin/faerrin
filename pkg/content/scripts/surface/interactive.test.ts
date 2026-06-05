@@ -44,8 +44,10 @@ test("dedupeForReview drops spans already covered by defs.yaml", () => {
 function makeDeps(answers: string[]) {
   const applied: { canonical: string; span: string }[] = []
   const q = [...answers]
+  const next = async () => q.shift() ?? "q"
   const deps: ReviewDeps = {
-    ask: async () => q.shift() ?? "q",
+    key: next,
+    line: next,
     apply: async (canonical, span) => {
       applied.push({ canonical, span })
       return { added: true }
@@ -101,7 +103,8 @@ test("reviewKnown re-prompts on unrecognized input", async () => {
 test("reviewKnown shows the LLM judge note when annotations are supplied", async () => {
   const out: string[] = []
   const deps: ReviewDeps = {
-    ask: async () => "d", // deny so we just inspect the rendered output
+    key: async () => "d", // deny so we just inspect the rendered output
+    line: async () => "d",
     apply: async () => ({ added: true }),
     out: (s) => out.push(s),
   }
