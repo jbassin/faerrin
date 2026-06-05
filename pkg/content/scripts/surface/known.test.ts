@@ -38,6 +38,14 @@ test("does not flag a span that differs from a canonical only by a leading artic
   expect(cands.some((c) => c.hypotheses[0].canonical === "The Master of Ceremonies")).toBe(false)
 })
 
+test("does not flag a span that differs from a canonical only by a leading determiner", () => {
+  // "other Harlequins" is the canonical "The Harlequins" with a swapped determiner,
+  // not a mistranscription — the distinctive word "Harlequins" is spelled correctly.
+  const lex2 = buildLexiconFrom(["The Harlequins"])
+  const cands = findKnown(session("it looks like the other Harlequins were there"), lex2)
+  expect(cands.some((c) => c.hypotheses[0].canonical === "The Harlequins")).toBe(false)
+})
+
 test("still flags a multi-word span with a real content difference (Corp vs Corporation)", () => {
   const lex2 = buildLexiconFrom(["The Master of Ceremonies", "Hildebrandt Corporation"])
   const cands = findKnown(session("the Hildebrandt Corp building burned"), lex2)

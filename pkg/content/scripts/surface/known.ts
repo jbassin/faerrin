@@ -32,9 +32,15 @@ function possessiveBase(fold: string): string | null {
 }
 
 // Function words that bound multi-word canonicals ("The Master of Ceremonies",
-// "the Scale"). A span differing from a canonical only by these edge words is the
-// same name minus an article — not a mistranscription.
-const EDGE_STOPWORDS = new Set(["the", "a", "an", "of", "and", "to", "in", "on", "at", "for", "with", "by"])
+// "the Scale") plus determiners/quantifiers that can front a name in running speech
+// ("other Harlequins", "those Wretches"). A span differing from a canonical only by
+// these edge words is the same name with a swapped/added article or determiner — not
+// a mistranscription of the name itself.
+const EDGE_STOPWORDS = new Set([
+  "the", "a", "an", "of", "and", "to", "in", "on", "at", "for", "with", "by",
+  "other", "another", "these", "those", "this", "that", "some", "any", "such",
+  "many", "few", "several", "more", "most", "every", "each", "both", "all",
+])
 
 function stripEdgeStopwords(fold: string): string {
   const w = fold.split(" ")
