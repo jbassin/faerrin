@@ -8,7 +8,7 @@
     "build": "vite build && bun run scripts/build-og-image.ts",
     "build:og": "bun run scripts/build-og-image.ts",
     "lint": "eslint .",
-    "typecheck": "bun run scripts/generate-routes.ts && tsc --noEmit",
+    "typecheck": "bun run scripts/generate-routes.ts && bun run scripts/build-content.ts && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test --pass-with-no-tests",
