@@ -9,7 +9,7 @@
 
 import { log } from "./lib/log"
 import { buildLexicon } from "./lib/lexicon"
-import type { ReviewDeps } from "./surface/interactive"
+import type { Annotations, ReviewDeps } from "./surface/interactive"
 
 function usage(): void {
   console.log(`Usage: tsx scripts/surface.ts <command> [args]
@@ -18,7 +18,8 @@ function usage(): void {
   discover [--min-count N]    surface recurring unknown entities across all sessions
   judge <date|all> [--mode hybrid|full] [--write]
                               LLM-judge candidates; --write appends confirms to defs.yaml
-  review <date|all>           interactively approve/change/deny candidates → defs.yaml
+  review <date|all> [--judge] interactively approve/change/deny candidates → defs.yaml
+                              (--judge annotates each with an LLM verdict; needs ANTHROPIC_API_KEY)
   review --discover [--min-count N]
                               interactively canonicalize discovery clusters → defs.yaml
 
@@ -151,10 +152,13 @@ async function makeLineReader(): Promise<{ ask: (p: string) => Promise<string>; 
 async function runReview(rest: string[]): Promise<void> {
   const { findKnown } = await import("./surface/known")
   const { discover } = await import("./surface/discover")
-  const { reviewKnown, reviewClusters } = await import("./surface/interactive")
+  const { reviewKnown, reviewClusters, annotationKey } = await import("./surface/interactive")
+  const { judgeSession } = await import("./surface/judge")
   const { readSession, listSessionDates } = await import("./surface/tokens")
   const { buildLexicon } = await import("./lib/lexicon")
   const { addCorrection } = await import("./lib/defs")
+
+  const useJudge = rest.includes("--judge")
 
   const lex = await buildLexicon()
   const rl = await makeLineReader()
@@ -188,7 +192,25 @@ async function runReview(rest: string[]): Promise<void> {
         }
         const items = findKnown(t, lex)
         if (items.length > 0) console.log(`\n=== ${date} ===`)
-        const stats = await reviewKnown(items, deps)
+
+        let annotations: Annotations | undefined
+        if (useJudge && items.length > 0) {
+          console.log("  (consulting LLM judge…)")
+          const verdicts = await judgeSession(t, items.map((c) => ({ lineRef: c.lineRef, span: c.span })), lex)
+          annotations = new Map(
+            verdicts.map((v) => [
+              annotationKey(v.lineRef, v.span),
+              {
+                verdict: v.verdict,
+                confidence: v.confidence,
+                reason: v.reason,
+                suggestedCanonical: v.suggestedCanonical,
+              },
+            ]),
+          )
+        }
+
+        const stats = await reviewKnown(items, deps, annotations)
         add(stats)
         if (stats.quit) break
       }

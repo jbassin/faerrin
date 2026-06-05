@@ -54,20 +54,45 @@ function clip(s: string, n = 100): string {
   return s.length <= n ? s : s.slice(0, n - 1) + "…"
 }
 
-function formatKnown(c: KnownCandidate): string {
+/** An LLM judge's take on a candidate, shown inline when `--judge` is used. */
+export interface JudgeNote {
+  verdict: "confirm" | "new" | "reject"
+  confidence: number
+  reason: string
+  suggestedCanonical: string | null
+}
+
+export type Annotations = Map<string, JudgeNote>
+
+/** Stable key matching a candidate span to its judge note (lineRef + folded span). */
+export function annotationKey(lineRef: number, span: string): string {
+  return `${lineRef} ${span.replace(/\s+/g, " ").trim().toLowerCase()}`
+}
+
+function formatNote(n: JudgeNote): string {
+  const target = n.verdict === "confirm" && n.suggestedCanonical ? ` → ${n.suggestedCanonical}` : ""
+  return `   judge: ${n.verdict}${target} (${n.confidence.toFixed(2)}) — ${n.reason}`
+}
+
+function formatKnown(c: KnownCandidate, note?: JudgeNote): string {
   const lines = [
     "",
     `[${c.lineRef}] ${c.speaker}: "${c.span}"`,
     `   ${clip(c.lineText)}`,
     ...c.hypotheses.map((h, i) => `   ${i + 1}) ${h.canonical}  (${h.score.toFixed(2)})`),
   ]
+  if (note) lines.push(formatNote(note))
   return lines.join("\n")
 }
 
 const KNOWN_PROMPT = "  a/⏎ approve · 1-N pick · c change · d deny · q quit > "
 
 /** Review Mode-1 candidates: approve/change/deny each, applying approvals to defs.yaml. */
-export async function reviewKnown(items: KnownCandidate[], deps: ReviewDeps): Promise<ReviewStats> {
+export async function reviewKnown(
+  items: KnownCandidate[],
+  deps: ReviewDeps,
+  annotations?: Annotations,
+): Promise<ReviewStats> {
   const stats = emptyStats()
   if (items.length === 0) {
     deps.out("Nothing to review.")
@@ -76,7 +101,7 @@ export async function reviewKnown(items: KnownCandidate[], deps: ReviewDeps): Pr
   deps.out(`Reviewing ${items.length} candidate(s).`)
 
   for (const c of items) {
-    deps.out(formatKnown(c))
+    deps.out(formatKnown(c, annotations?.get(annotationKey(c.lineRef, c.span))))
 
     let action: Action | null = null
     while (action === null) {

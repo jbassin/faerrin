@@ -1,5 +1,12 @@
 import { test, expect } from "bun:test"
-import { parseAction, reviewKnown, reviewClusters, type ReviewDeps } from "./interactive"
+import {
+  parseAction,
+  reviewKnown,
+  reviewClusters,
+  annotationKey,
+  type Annotations,
+  type ReviewDeps,
+} from "./interactive"
 import type { KnownCandidate } from "./known"
 import type { DiscoveryCluster } from "./discover"
 
@@ -69,6 +76,23 @@ test("reviewKnown re-prompts on unrecognized input", async () => {
   const { deps, applied } = makeDeps(["zzz", "a"])
   await reviewKnown([cand("Twelwyn", "Tywelwyn")], deps)
   expect(applied).toHaveLength(1)
+})
+
+test("reviewKnown shows the LLM judge note when annotations are supplied", async () => {
+  const out: string[] = []
+  const deps: ReviewDeps = {
+    ask: async () => "d", // deny so we just inspect the rendered output
+    apply: async () => ({ added: true }),
+    out: (s) => out.push(s),
+  }
+  const ann: Annotations = new Map([
+    [
+      annotationKey(0, "Twelwyn"),
+      { verdict: "confirm", confidence: 0.92, reason: "phonetic + context", suggestedCanonical: "Tywelwyn" },
+    ],
+  ])
+  await reviewKnown([cand("Twelwyn", "Tywelwyn")], deps, ann)
+  expect(out.join("\n")).toContain("judge: confirm → Tywelwyn (0.92)")
 })
 
 function cluster(variants: [string, number][]): DiscoveryCluster {
