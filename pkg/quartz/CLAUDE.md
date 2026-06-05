@@ -1,145 +1,95 @@
-# CLAUDE.md
+# CLAUDE.md — `quartz`
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for the **quartz** package: the campaign wiki renderer for the _Faerrin_ TTRPG setting
+(`heart.iridi.cc`). It is an **Astro 5 + Solid-islands** app (`astro.config.mjs` + `src/`). It is the
+**renderer only** — the content pipeline and the wiki/transcript data are the SSOT in
+**`pkg/shared-content`**; quartz reads `../shared-content/wiki` as its Astro content root.
+
+> Bun-first, like the rest of the monorepo: use `bun`/`bunx`, not npm/npx/node. The package extends
+> `astro/tsconfigs/strict` (see `tsconfig.json`).
 
 ## Commands
-
-# NOTE: The site renders with **Astro + Solid islands**, an app that lives at the
-
-# repo root (`astro.config.mjs` + `src/`). The vendored Quartz SSG has been removed
-
-# (see "Rendering layer" below + docs/refactor-plan.md).
 
 ```bash
 # Local Astro dev server (http://localhost:10114). Pagefind search is empty in
 # dev (it indexes built HTML) — use `just dev-search` to test search.
-just dev
-just dev-search              # build + preview so Pagefind search works
+just dev                      # = bunx astro dev --port 10114
+just dev-search               # build + preview so Pagefind search works
 
-# Type-check + prettier check (root; covers scripts/ + migration/)
-npm run check
+# Type-check (astro check) + prettier check, and auto-format:
+bun run check                 # = astro check && bunx prettier . --check
+bun run format                # = bunx prettier . --write
 
-# Auto-format
-npm run format
+# Full content pipeline + Astro build → public/ (what the reverse proxy serves).
+# This is the production build.
+bash build.sh                 # or: just build
 
-# Run tests
-npm run test
-
-# Full content pipeline + Astro build → publishes to public/ (what the reverse
-# proxy serves). This is the production build.
-bash build.sh                # or: just build
-
-# Content pipeline (TypeScript, run via tsx)
-npm run pipeline             # run all steps in order (ingest → export → script)
-npm run pipeline ingest      # fetch transcripts from remote API → scripts/data/*.json
-npm run pipeline export      # render transcript directive pages → content/Script/*.md
-npm run pipeline script      # generate per-campaign LLM script files + shibboleth.json
-# (equivalently: npx tsx scripts/run.ts [step], or `just pipeline [step]`)
-
-# Transcript-correction review UI (http://localhost:10116)
-npm run review               # or: just review
-
-# Build the site only (skip content pipeline):
-npx astro build              # → public/ (Astro's outDir; what the proxy serves)
-npx astro preview            # serve the built site locally
-
-# Migration parity gates (must stay green): slug, link-graph, full URL set
-npx tsx migration/parity-slugs.ts
-npx tsx migration/parity-graph.ts
-npx tsx migration/parity-urls.ts
+# Build / preview the site only (skip the content pipeline):
+bunx astro build              # → public/ (Astro's outDir; what the proxy serves)
+bunx astro preview            # serve the built site locally
 ```
 
-## Architecture
+The content pipeline and the transcript-correction **review** UI live in `pkg/shared-content` now.
+The justfile has convenience wrappers that run them from there:
 
-### Rendering layer — Astro + Solid islands (repo root) — ACTIVE
+```bash
+just pipeline [step]          # = (cd ../shared-content && bunx tsx scripts/run.ts [step])
+just review                   # = (cd ../shared-content && bunx tsx scripts/review.ts)
+# Or directly: bun run --filter shared-content pipeline
+```
 
-The site is rendered by an **Astro 5 app at the repo root** (the Quartz→Astro
-rebuild; see `docs/refactor-plan.md`). `build.sh` runs the content pipeline then
-`astro build`, which emits directly into `public/` (proxy-served) — there is no
-separate copy step. Key files:
+There is **no `test` script** here — quartz has no unit tests; correctness is the `astro check` +
+prettier gates plus the byte-parity build check (see Gotchas in the root `CLAUDE.md`).
 
-- **`astro.config.mjs`** — integrations (Solid, Pagefind) + the ported remark
-  plugins (`src/lib/remark-{callouts,wikilinks,transcript}.mjs`). `publicDir` is
-  `assets/` (committed source static files: favicon, og-image, icon); `outDir` is
-  `public/`.
-- **`src/layouts/PageLayout.astro`** — the grid shell + sidebar chrome.
-- **`src/lib/site.ts`** — build-time index (resolved links/backlinks, git
-  dates, breadcrumbs, Explorer tree) reusing the isomorphic **`src/lib/slug.ts`**
-  (the single source of truth for URL slugs — ported verbatim from Quartz).
-- **`src/components/islands/*.tsx`** — Solid islands (TranscriptPlayer,
-  Darkmode, ReaderMode, Explorer, Search, Popover, Graph).
-- **`migration/`** — the parity harness + frozen golden baseline. The three gates
-  (slug/graph/url) must stay green.
+## Architecture — Astro + Solid islands
 
-The vendored Quartz SSG (`quartz/`, `quartz.config.ts`, `quartz.layout.ts`) has been
-**removed** — the Astro app (`astro.config.mjs` + `src/`) is the sole renderer. See
-`docs/refactor-plan.md` for the full Quartz→Astro migration history (parity harness,
-island ports, cutover).
+The site is rendered by the Astro app in this package. `build.sh` runs the `shared-content` pipeline,
+clears Astro's content-layer cache (kept in both `.astro/` and the hoisted `${ROOT}/node_modules/.astro/`,
+not reliably invalidated on remark-plugin edits), then `astro build`, which emits directly into
+`public/` (proxy-served) — there is **no** separate copy/rsync step. Key files:
 
-#### Astro config & layout entry points
+- **`astro.config.mjs`** — integrations (Solid, `astro-pagefind`) + the ported remark plugin chain
+  (directive → callouts → wikilinks → transcript), Shiki/markdown settings. `publicDir` is `assets/`
+  (committed source static files: favicon, og-image, icon); `outDir` is `public/`.
+- **`src/content.config.ts`** — the `docs` content collection. Its glob loader's `base` is
+  **`../shared-content/wiki`** (the SSOT wiki, including generated `Script/` pages); the loader uses
+  the raw relative path as the entry ID to keep the Quartz-faithful slug logic working. The
+  frontmatter schema is lenient (`title/tags/aliases/img`, everything optional, `.passthrough()`).
+- **`src/lib/slug.ts`** — the isomorphic URL-slug logic, **the single source of truth for URL slugs**
+  (ported verbatim from Quartz; `github-slugger` lives in this package because of it).
+- **`src/lib/site.ts`** — build-time index (resolved links/backlinks, git dates, breadcrumbs,
+  Explorer tree), reusing `slug.ts`.
+- **`src/lib/remark-{callouts,wikilinks,transcript}.mjs`** + `directive-handlers.mjs` /
+  `content-paths.mjs` — the remark layer wired in `astro.config.mjs`.
+- **`src/layouts/PageLayout.astro`** — the grid shell, head, and sidebar chrome (which islands appear
+  where).
+- **`src/components/islands/*.tsx`** — Solid islands: `Darkmode`, `Explorer`, `Graph`, `Popover`,
+  `ReaderMode`, `Search`, `TranscriptPlayer`.
+- **`src/pages/`** — routes: `[...slug].astro` (content + folder + alias), `tags/[...tag].astro`,
+  `index.xml.ts` (RSS), `sitemap.xml.ts`, `static/contentIndex.json.ts` (graph data), `404.astro`.
 
-- **`astro.config.mjs`** — integrations + remark plugin order (directive →
-  callouts → wikilinks → transcript) + Shiki/markdown settings.
-- **`src/layouts/PageLayout.astro`** — the grid shell, head, and sidebar chrome
-  (which islands appear where). `src/content.config.ts` is the frontmatter (zod) schema.
-- **`src/pages/`** — routes: `[...slug].astro` (content + folder + alias),
-  `tags/[...tag].astro`, `index.xml.ts` (RSS), `sitemap.xml.ts`, `static/contentIndex.json.ts`
-  (graph data), `404.astro`.
+The vendored Quartz SSG and the Quartz→Astro migration scaffolding (the `quartz/` SSG,
+`migration/` parity harness, `docs/refactor-plan.md`) have all been **removed** — the Astro app
+(`astro.config.mjs` + `src/`) is the sole renderer.
 
-### Content pipeline — MOVED to `pkg/shared-content`
+## Transcript rendering
 
-> The content pipeline (ingest → export → script) and its `lib/` now live in
-> **`pkg/shared-content/scripts/`** (the monorepo content platform), not here. It writes the
-> wiki Script pages into `shared-content/wiki/Script`, which this site reads as its astro content
-> root. Run it via `bun run --filter shared-content pipeline` (or `just pipeline [step]`). The
-> isomorphic URL-slug logic (`slug.ts`) stayed with the renderer at **`src/lib/slug.ts`**; the
-> shared `folder-index.ts` lives in `shared-content/scripts/lib/`. The detail below is retained for
-> reference but the code paths are now under `shared-content`.
+Transcript rendering is split across two subsystems: the `shared-content` pipeline's `export` step
+emits semantic directives (`:::transcript-line{…}` / `::transcript-audio{…}`) into the wiki's
+`Script/` pages, and the **`remark-transcript`** plugin (`src/lib/remark-transcript.mjs`) expands them
+into line + audio markup at build time. The interactive player is the **`TranscriptPlayer` Solid
+island** (`src/components/islands/TranscriptPlayer.tsx`, attached on Script pages). Styles live in
+`src/styles/custom.scss` (speaker colors reference the `--text<Name>` vars in `src/styles/theme.scss`).
 
-### Content pipeline (historical — see shared-content)
+## Gotchas
 
-This repo hosts a TTRPG campaign wiki for the _Faerrin_ setting. A custom TypeScript
-pipeline (run with `tsx`, no build step) generates content from external sources before
-the Astro build. The CLI entrypoint is **`scripts/run.ts`** (`npm run pipeline [step]`),
-which dispatches to one module per step in `scripts/pipeline/`:
-
-| Step (`scripts/pipeline/`) | Input                                                 | Output                                                                                                                          |
-| -------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `ingest.ts`                | `static-audio.iridi.cc` API (transcript JSON + audio) | `scripts/data/*.json`                                                                                                           |
-| `export.ts`                | `scripts/data/*.json` + `campaigns.yaml`              | `content/Script/<campaign>/*.md` (per-campaign folders; unmatched → `Unsorted/`; transcript directives — see Transcript plugin) |
-| `script.ts`                | `scripts/data/*.json` + `campaigns.yaml`              | `scripts/script/*.txt`, `scripts/shibboleth.json`                                                                               |
-
-Shared logic lives in `scripts/lib/` (`paths`, `content` walker, `corrections`, `linker`,
-`roster`, `campaigns`, `http` with retry, `log`, `types`). Operational config
-(URLs, ports, thresholds) is centralized in
-**`scripts/config.ts`**. Paths are derived from the repo root at runtime — there are no
-hardcoded absolute paths.
-
-**Campaign/character config** lives in **`scripts/campaigns.yaml`** (the source of truth for
-player↔character mappings and campaign descriptions, used to generate LLM context headers).
-`scripts/shibboleth.json` is a **generated artifact** derived from it by the `script` step.
-
-**Speaker roster** (recording user ID → display name + color) lives in `scripts/lib/roster.ts`.
-
-**Transcript corrections** in `scripts/defs.yaml` map mis-transcribed words/names to their
-correct forms (regex fragments, applied during `ingest`). The `npm run review` UI appends to it.
-
-**Auto-linking** (`scripts/lib/linker.ts`, used by `export`): scans all other content files and
-replaces plain-text mentions of their titles/aliases with Obsidian-style wikilinks (`[[title|match]]`).
-
-**Transcript rendering** is split across two subsystems: `export` emits semantic
-directives (`:::transcript-line{…}` / `::transcript-audio{…}`) into `content/Script/*.md`,
-and the **`remark-transcript`** plugin (`src/lib/remark-transcript.mjs`, wired in
-`astro.config.mjs`) expands them into the line + audio markup at build time. The
-interactive player is the **`TranscriptPlayer` Solid island**
-(`src/components/islands/TranscriptPlayer.tsx`, attached on Script pages). Styles live in
-`src/styles/custom.scss` (speaker colors reference the `--text<Name>` vars in
-`src/styles/theme.scss`). `export` still runs the auto-linker so `[[wikilinks]]` are
-present for `remark-wikilinks` to resolve.
-
-### Generated files (do not edit manually)
-
-- `content/Script/**/*.md` — generated by `export` (the whole `content/Script/` tree is wiped and rebuilt each run; sessions are foldered by campaign, unmatched into `Unsorted/`)
-- `scripts/data/*.json` — generated by `ingest`
-- `scripts/shibboleth.json` — generated by `script` (edit `campaigns.yaml` instead)
-- `scripts/script/*.txt` — generated by the `script` step
+- **This is a live site behind a Caddy reverse proxy** (`heart.iridi.cc` → `quartz/public`). The build
+  output must stay byte-identical — do **not** change `outDir`/`publicDir`/`base`. Validate big changes
+  with a build + file-set diff. See the root `CLAUDE.md`.
+- **Content is read, not owned, here.** The wiki and transcripts are the SSOT in `pkg/shared-content`;
+  never re-create per-app copies. quartz reads `../shared-content/wiki`. To change content or the
+  pipeline, edit `shared-content` (see its `CLAUDE.md`).
+- **`Script/` pages are quartz-only** transcript pages generated into `shared-content/wiki/Script` by
+  the pipeline; heartwood and caster exclude `Script/` when reading the wiki.
+- **Never `.split("content/")` on a path** — `"shared-content/"` contains `"content/"`. Split on the
+  real base (`"shared-content/wiki/"`).
