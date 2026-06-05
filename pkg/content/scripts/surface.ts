@@ -15,7 +15,8 @@ function usage(): void {
 
   known <date|all>            surface known-entity correction candidates
   discover [--min-count N]    surface recurring unknown entities across all sessions
-  judge <date|all>            (Phase 2) LLM judge over candidates
+  judge <date|all> [--mode hybrid|full] [--write]
+                              LLM-judge candidates; --write appends confirms to defs.yaml
 
 Flags:
   --json                      emit machine-readable JSON`)
@@ -57,6 +58,54 @@ async function runDiscover(rest: string[], json: boolean): Promise<void> {
   else console.log(renderClusters(clusters))
 }
 
+async function runJudge(rest: string[], json: boolean): Promise<void> {
+  const { findKnown } = await import("./surface/known")
+  const { judgeSession } = await import("./surface/judge")
+  const { readSession, listSessionDates } = await import("./surface/tokens")
+  const { buildLexicon } = await import("./lib/lexicon")
+  const { addCorrection } = await import("./lib/defs")
+  const { surface } = await import("./config")
+
+  const mode = rest.includes("--mode")
+    ? (rest[rest.indexOf("--mode") + 1] as "hybrid" | "full")
+    : "hybrid"
+  const write = rest.includes("--write")
+  const lex = await buildLexicon()
+  const target = rest.find((a) => !a.startsWith("--") && a !== mode) ?? "all"
+  const dates = target === "all" ? await listSessionDates() : [target]
+
+  const report: Record<string, unknown> = {}
+  for (const date of dates) {
+    const t = await readSession(date)
+    if (!t) {
+      log.warn(`no session "${date}"`)
+      continue
+    }
+    const flagged = mode === "full" ? [] : findKnown(t, lex).map((c) => ({ lineRef: c.lineRef, span: c.span }))
+    const verdicts = await judgeSession(t, flagged, lex, { mode })
+    const confirms = verdicts.filter((v) => v.verdict === "confirm" && v.confidence >= surface.confidenceFloor)
+
+    let written = 0
+    if (write) {
+      for (const c of confirms) {
+        if (!c.suggestedCanonical) continue
+        const res = await addCorrection(c.suggestedCanonical, c.span)
+        if (res.added) written++
+      }
+    }
+
+    if (json) {
+      report[date] = { verdicts, written }
+    } else {
+      console.log(`${date}: ${confirms.length} confirm(s), ${verdicts.length} judged${write ? `, ${written} written` : ""}`)
+      for (const c of confirms) {
+        console.log(`  [${c.lineRef}] "${c.span}" → ${c.suggestedCanonical} (${c.confidence.toFixed(2)}) ${c.reason}`)
+      }
+    }
+  }
+  if (json) console.log(JSON.stringify(report, null, 2))
+}
+
 async function main(): Promise<void> {
   const argv = process.argv.slice(2)
   const cmd = argv[0]
@@ -76,7 +125,7 @@ async function main(): Promise<void> {
       await runDiscover(rest, json)
       return
     case "judge":
-      log.info("`judge` arrives in Phase 2 (LLM).")
+      await runJudge(rest, json)
       return
     default:
       log.error(`unknown command "${cmd}"`)

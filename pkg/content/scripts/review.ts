@@ -2,8 +2,8 @@ import http from "node:http"
 import type { IncomingMessage, ServerResponse } from "node:http"
 import fs from "node:fs/promises"
 import path from "node:path"
-import yaml from "js-yaml"
-import { dataDir, defsPath } from "./lib/paths"
+import { dataDir } from "./lib/paths"
+import { addCorrection } from "./lib/defs"
 import { review } from "./config"
 import { log } from "./lib/log"
 
@@ -23,17 +23,6 @@ async function getSession(date: string): Promise<unknown | null> {
   } catch {
     return null
   }
-}
-
-async function addCorrection(correction: string, misTranscription: string): Promise<void> {
-  const raw = await fs.readFile(defsPath, "utf8")
-  const doc = (yaml.load(raw) ?? {}) as Record<string, string[]>
-  if (Array.isArray(doc[correction])) {
-    doc[correction].push(misTranscription)
-  } else {
-    doc[correction] = [misTranscription]
-  }
-  await fs.writeFile(defsPath, yaml.dump(doc, { lineWidth: -1 }))
 }
 
 function json(res: ServerResponse, status: number, body: unknown): void {

@@ -87,6 +87,25 @@ export const surface = {
   minClusterCount: 3,
   /** Mode 2: attach an OOV variant to a cluster when ensembleSim ≥ this (leader clustering). */
   clusterMergeFloor: 0.72,
+
+  // --- Phase 2: LLM judge ---
+  /** Default judge model (cheap first pass). */
+  judgeModel: process.env.SURFACE_MODEL_JUDGE ?? "claude-haiku-4-5-20251001",
+  /**
+   * Escalation model for ambiguous confirms. Sonnet 4.6 (not Opus 4.8) because the
+   * shared client always sends `temperature`, which Opus 4.x rejects with a 400.
+   */
+  escalateModel: process.env.SURFACE_MODEL_ESCALATE ?? "claude-sonnet-4-6",
+  /** Lines per LLM window, and overlap between consecutive windows. */
+  judgeChunkSize: 150,
+  judgeOverlap: 10,
+  /** A confirm with confidence in [escalateLow, escalateHigh] is re-judged by escalateModel. */
+  escalateLow: 0.4,
+  escalateHigh: 0.75,
+  /** Min confidence for a confirm to be written back to defs.yaml. */
+  confidenceFloor: 0.6,
+  /** Max output tokens per judge call. */
+  judgeMaxTokens: 4096,
 }
 
 export const campaign = {

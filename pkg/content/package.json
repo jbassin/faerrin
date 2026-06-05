@@ -7,9 +7,11 @@
     "pipeline": "bunx tsx scripts/run.ts",
     "review": "bunx tsx scripts/review.ts",
     "surface": "bunx tsx scripts/surface.ts",
+    "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@faerrin/llm": "workspace:*",
     "an-array-of-english-words": "^2.0.0",
     "damerau-levenshtein": "^1.0.8",
     "dice-coefficient": "^2.1.1",
@@ -17,7 +19,9 @@
     "gray-matter": "^4.0.3",
     "jaro-winkler": "^0.2.8",
     "js-yaml": "^4.1.0",
-    "mnemonist": "^0.40.4"
+    "mnemonist": "^0.40.4",
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.23.0"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
