@@ -24,6 +24,14 @@ test("matches a diacritic canonical from a folded garble, preserving glyphs", ()
   expect(cands.some((c) => c.hypotheses[0].canonical === "Færrin")).toBe(true)
 })
 
+test("does not flag a word that is part of a multi-word canonical", () => {
+  // "Hildebrandt" is a token of "Hildebrandt Corporation", so it's correct even
+  // though the near-identical "Hildebrant" is also a canonical.
+  const lex2 = buildLexiconFrom(["Hildebrandt Corporation", "Hildebrant"])
+  const cands = findKnown(session("the Hildebrandt offices were quiet"), lex2)
+  expect(cands.some((c) => c.span === "Hildebrandt")).toBe(false)
+})
+
 test("does not flag ordinary English words", () => {
   expect(findKnown(session("we rode to the castle at dawn"), lex)).toHaveLength(0)
 })

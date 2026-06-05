@@ -68,7 +68,7 @@ export function findKnown(t: Transcript, lex: Lexicon): KnownCandidate[] {
     for (let i = 0; i < toks.length; i++) {
       const tok = toks[i]
       if (tok.fold.length < surface.minTokenLen) continue
-      if (!isOov(tok.fold) || lex.has(tok.fold)) continue
+      if (!isOov(tok.fold) || lex.has(tok.fold) || lex.isToken(tok.fold)) continue
       const pb = possessiveBase(tok.fold)
       if (pb && lex.has(pb)) continue // correct possessive of a canonical, not an error
       const hyps = lex.nearest(tok.fold, 5, surface.knownFloorUnigram)

@@ -22,8 +22,14 @@ export interface Hypothesis {
 }
 
 export interface Lexicon {
-  /** True if a folded token exactly matches a canonical form. */
+  /** True if a folded token exactly matches a whole canonical form. */
   has(fold: string): boolean
+  /**
+   * True if a folded token is a WORD within any canonical (single- or multi-word) —
+   * e.g. "hildebrandt" is a token of "Hildebrandt Corporation", so it's correct
+   * vocabulary even though it isn't a whole canonical on its own.
+   */
+  isToken(fold: string): boolean
   /** Top-k canonical hypotheses for an OOV fold, by ensembleSim, above `floor`. */
   nearest(fold: string, k?: number, floor?: number): Hypothesis[]
   entries: LexEntry[]
@@ -52,10 +58,15 @@ export function buildLexiconFrom(forms: string[]): Lexicon {
     entries.push({ canonical, fold, codes: phoneticCodes(fold) })
   }
   const folds = new Set(entries.map((e) => e.fold))
+  const tokens = new Set<string>()
+  for (const e of entries) {
+    for (const t of e.fold.split(" ")) if (t) tokens.add(t)
+  }
 
   return {
     entries,
     has: (fold) => folds.has(fold),
+    isToken: (fold) => tokens.has(fold),
     nearest(fold, k = 5, floor = 0.5) {
       return entries
         .map((e) => ({ canonical: e.canonical, score: ensembleSim(fold, e.fold) }))

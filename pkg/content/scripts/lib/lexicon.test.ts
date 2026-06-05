@@ -28,6 +28,14 @@ test("nearest returns nothing for clearly unrelated tokens", () => {
   expect(lex.nearest("computer", 5, 0.5)).toHaveLength(0)
 })
 
+test("isToken recognizes words inside multi-word canonicals", () => {
+  const lex = buildLexiconFrom(["Hildebrandt Corporation", "Hildebrant"])
+  expect(lex.isToken("hildebrandt")).toBe(true) // token of the wiki canonical
+  expect(lex.isToken("corporation")).toBe(true)
+  expect(lex.has("hildebrandt")).toBe(false) // not a whole canonical on its own
+  expect(lex.isToken("nonsense")).toBe(false)
+})
+
 test("buildLexicon reads the real defs + wiki and yields a substantial lexicon", async () => {
   const lex = await buildLexicon()
   expect(lex.entries.length).toBeGreaterThan(100)

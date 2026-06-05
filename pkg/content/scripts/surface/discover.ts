@@ -68,7 +68,7 @@ export async function collectOov(
       for (const tok of tokenize(line.text)) {
         const fold = tok.fold
         if (fold.length < surface.minTokenLen) continue
-        if (!isOov(fold) || lex.has(fold)) continue
+        if (!isOov(fold) || lex.has(fold) || lex.isToken(fold)) continue
         if (looksLikeNoise(fold)) continue
         // Near a known canonical → a Mode-1 garble, not a new entity. Skip.
         if (lex.nearest(fold, 1, surface.knownNearFloor).length > 0) continue
