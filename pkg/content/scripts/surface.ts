@@ -150,6 +150,15 @@ async function makeLineReader(): Promise<{ ask: (p: string) => Promise<string>; 
 }
 
 async function runReview(rest: string[]): Promise<void> {
+  if (!process.stdin.isTTY) {
+    console.log(
+      "Note: stdin is not a terminal. Interactive review needs a TTY — the `--filter`\n" +
+        "wrapper captures stdin, so it will exit immediately. Run it directly instead:\n" +
+        "    cd pkg/content && bun run surface review " + (rest[0] && !rest[0].startsWith("--") ? rest[0] : "<date>") + "\n" +
+        "(Piped input still works for scripting.)\n",
+    )
+  }
+
   const { findKnown } = await import("./surface/known")
   const { discover } = await import("./surface/discover")
   const { reviewKnown, reviewClusters, annotationKey } = await import("./surface/interactive")
