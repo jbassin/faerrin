@@ -272,10 +272,12 @@ Turn a transcript into reviewable, cited, entity-resolved proposals with provena
 - **Setting-fact filter (spec §5):** mine extracts durable world-state facts and **excludes
   session-event / party-action narrative**, pulling the standing fact out of an event. This is
   orthogonal to modality and was the dominant false-positive in label drafting (worldbuilder
-  kept 80/142, cutting exactly the event entries). Two further bars from review: **no game
-  mechanics** (physical/personality traits yes; abilities/stats/spells/weapons no) and **prefer
-  canonical proper names** over generic referents (referent canonicalization is Resolve's job,
-  AC-20). Encode in the mine prompt; the eval coverage/false-canon scoring measures it.
+  kept 80/142, cutting exactly the event entries). Further bars from three review rounds: **no
+  game mechanics** (physical/personality traits yes; abilities/stats/spells/weapons no); **prefer
+  canonical proper names** over generic referents (canonicalization is Resolve's job, AC-20);
+  **skip combat sections wholesale** (concentrated mechanics + events, no durable value); and a
+  **precision bias** ("when in doubt, leave it out" — slop wastes reviewer time; recall is
+  recoverable in review). Encode in the mine prompt; eval false-canon/precision scoring measures it.
 - **In-character fiction (D-10):** `in-character-fiction`/GM-voiced claims are minted as
   **attributed** ("X claimed Y"), not bare propositions.
 

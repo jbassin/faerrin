@@ -16,7 +16,8 @@
           "start": 337,
           "end": 337
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d002",
@@ -30,7 +31,8 @@
           "start": 340,
           "end": 340
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d003",
@@ -44,7 +46,8 @@
           "start": 340,
           "end": 349
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d004",
@@ -58,7 +61,8 @@
           "start": 341,
           "end": 343
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d005",
@@ -72,7 +76,8 @@
           "start": 345,
           "end": 349
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d006",
@@ -85,7 +90,8 @@
           "start": 351,
           "end": 351
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d007",
@@ -99,7 +105,8 @@
           "start": 357,
           "end": 361
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d008",
@@ -113,7 +120,8 @@
           "start": 361,
           "end": 362
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d009",
@@ -126,7 +134,8 @@
           "start": 362,
           "end": 365
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d010",
@@ -139,7 +148,8 @@
           "start": 364,
           "end": 367
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d011",
@@ -152,7 +162,8 @@
           "start": 364,
           "end": 366
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d012",
@@ -165,35 +176,8 @@
           "start": 367,
           "end": 367
         }
-      ]
-    },
-    {
-      "id": "d013",
-      "statement": "A series of mysterious events have been affecting Iomenei, including fires, the killings of clan leaders of various Undercroft groups under apparently natural circumstances, and the partial seizing of the Strider's legs.",
-      "entities": [
-        "Iomenei",
-        "Undercroft"
       ],
-      "citations": [
-        {
-          "start": 370,
-          "end": 376
-        }
-      ]
-    },
-    {
-      "id": "d014",
-      "statement": "Iomenei has experienced a series of mysterious sabotage events including fires, the killings of clan leaders in the Undercroft under apparently natural circumstances, and a six-second seizure of two of its six legs.",
-      "entities": [
-        "Iomenei",
-        "Undercroft"
-      ],
-      "citations": [
-        {
-          "start": 371,
-          "end": 376
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d015",
@@ -206,7 +190,8 @@
           "start": 371,
           "end": 371
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d016",
@@ -219,7 +204,8 @@
           "start": 373,
           "end": 373
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d017",
@@ -232,20 +218,8 @@
           "start": 373,
           "end": 373
         }
-      ]
-    },
-    {
-      "id": "d018",
-      "statement": "The most recent sabotage of Iomenei involved a large piece of scrap metal wedged into a lubricant line of one of the Strider's legs, causing it to seize for six seconds.",
-      "entities": [
-        "Iomenei"
       ],
-      "citations": [
-        {
-          "start": 373,
-          "end": 580
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d019",
@@ -259,22 +233,8 @@
           "start": 377,
           "end": 377
         }
-      ]
-    },
-    {
-      "id": "d020",
-      "statement": "The Seneschal issued a command to Undercrofters to find and bring to justice whoever is sabotaging Iomenei, with the reward of a spot on the upper decks.",
-      "entities": [
-        "Seneschal",
-        "Iomenei",
-        "Undercroft"
       ],
-      "citations": [
-        {
-          "start": 378,
-          "end": 381
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d021",
@@ -288,35 +248,8 @@
           "start": 381,
           "end": 386
         }
-      ]
-    },
-    {
-      "id": "d022",
-      "statement": "Subdeck 15B is a location within Iomenei and is the site of recent sabotage.",
-      "entities": [
-        "Iomenei",
-        "Subdeck 15B"
       ],
-      "citations": [
-        {
-          "start": 389,
-          "end": 389
-        }
-      ]
-    },
-    {
-      "id": "d023",
-      "statement": "Subdeck 15B is the site of the most recent sabotage of Iomenei.",
-      "entities": [
-        "Iomenei",
-        "Subdeck 15B"
-      ],
-      "citations": [
-        {
-          "start": 389,
-          "end": 389
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d024",
@@ -329,7 +262,8 @@
           "start": 391,
           "end": 396
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d025",
@@ -342,7 +276,8 @@
           "start": 391,
           "end": 393
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d026",
@@ -355,7 +290,8 @@
           "start": 393,
           "end": 396
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d027",
@@ -369,7 +305,8 @@
           "start": 397,
           "end": 398
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d028",
@@ -383,7 +320,8 @@
           "start": 397,
           "end": 398
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d029",
@@ -396,7 +334,8 @@
           "start": 403,
           "end": 411
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d030",
@@ -409,7 +348,8 @@
           "start": 406,
           "end": 409
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d031",
@@ -423,7 +363,8 @@
           "start": 412,
           "end": 412
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d032",
@@ -436,7 +377,8 @@
           "start": 428,
           "end": 435
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d033",
@@ -449,7 +391,8 @@
           "start": 430,
           "end": 430
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d034",
@@ -463,21 +406,8 @@
           "start": 451,
           "end": 451
         }
-      ]
-    },
-    {
-      "id": "d035",
-      "statement": "The Strider Iomenei is governed by a figure known as the Host, though some Undercrofters regard the Host as a myth.",
-      "entities": [
-        "Iomenei",
-        "Host"
       ],
-      "citations": [
-        {
-          "start": 451,
-          "end": 462
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d036",
@@ -491,7 +421,8 @@
           "start": 478,
           "end": 486
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d037",
@@ -505,34 +436,8 @@
           "start": 546,
           "end": 550
         }
-      ]
-    },
-    {
-      "id": "d038",
-      "statement": "Strider Leg Armature Containment Unit 14 is a large, roughly 300-foot-across domed space near the bottom of Iomenei where one of the Strider's legs enters the body for maintenance and repair.",
-      "entities": [
-        "Iomenei",
-        "Strider Leg Armature Containment Unit 14"
       ],
-      "citations": [
-        {
-          "start": 562,
-          "end": 573
-        }
-      ]
-    },
-    {
-      "id": "d039",
-      "statement": "Strider Leg Armature Containment Unit 14 contains rigging, toolboxes, shelving for materials, scrap areas, hoses for maintenance fluids, and approximately 80–85 workers.",
-      "entities": [
-        "Strider Leg Armature Containment Unit 14"
-      ],
-      "citations": [
-        {
-          "start": 571,
-          "end": 579
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d040",
@@ -545,7 +450,8 @@
           "start": 766,
           "end": 799
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d041",
@@ -560,7 +466,8 @@
           "start": 774,
           "end": 774
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d042",
@@ -575,7 +482,8 @@
           "start": 775,
           "end": 777
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d043",
@@ -588,60 +496,8 @@
           "start": 777,
           "end": 777
         }
-      ]
-    },
-    {
-      "id": "d044",
-      "statement": "The foreman of the sabotaged area is named Morgris.",
-      "entities": [
-        "Morgris"
       ],
-      "citations": [
-        {
-          "start": 812,
-          "end": 812
-        }
-      ]
-    },
-    {
-      "id": "d045",
-      "statement": "The person who committed the sabotage appears to be an androgynous, probably male elf whose jaw hangs slightly off and is split in the middle to resemble mandibles, and who has multiple small secondary eyelids spotted around their eyes that are closed when not in use. They acted with a feeling of religious fervor and complete devotion, as if performing a holy act.",
-      "entities": [
-        "Undercroft"
-      ],
-      "citations": [
-        {
-          "start": 891,
-          "end": 909
-        }
-      ]
-    },
-    {
-      "id": "d046",
-      "statement": "The workers who had authorized access to the sabotaged lubricant junction on the day of the incident were fluid masters — the official title for workers who handle lubricant checks and swaps on the strider's joints.",
-      "entities": [
-        "Undercroft"
-      ],
-      "citations": [
-        {
-          "start": 1027,
-          "end": 1028
-        }
-      ]
-    },
-    {
-      "id": "d047",
-      "statement": "Two fluid masters named Remiel and Gerhardt had access to the sabotaged lubricant junction on the day of the incident.",
-      "entities": [
-        "Remiel",
-        "Gerhardt"
-      ],
-      "citations": [
-        {
-          "start": 1033,
-          "end": 1033
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d048",
@@ -654,7 +510,8 @@
           "start": 1044,
           "end": 1044
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d049",
@@ -669,7 +526,8 @@
           "start": 1083,
           "end": 1085
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d050",
@@ -683,33 +541,8 @@
           "start": 1083,
           "end": 1085
         }
-      ]
-    },
-    {
-      "id": "d051",
-      "statement": "The lubricant intake tubes for the strider's legs are located on rafters/scaffolding platforms inside the strider, where the leg extends outward from the body.",
-      "entities": [
-        "Undercroft"
       ],
-      "citations": [
-        {
-          "start": 1103,
-          "end": 1103
-        }
-      ]
-    },
-    {
-      "id": "d052",
-      "statement": "The sabotage of the strider leg was caused by a piece of scrap metal stuffed into the lubricant intake tube, blocking lubricant flow and causing the leg to seize up.",
-      "entities": [
-        "Undercroft"
-      ],
-      "citations": [
-        {
-          "start": 1106,
-          "end": 1110
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d053",
@@ -722,7 +555,8 @@
           "start": 1128,
           "end": 1138
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d054",
@@ -735,20 +569,8 @@
           "start": 1143,
           "end": 1146
         }
-      ]
-    },
-    {
-      "id": "d055",
-      "statement": "Gerhard is a fluid master who is known among his neighbors as friendly and good at his work, but has no close friends and keeps his personal life entirely private.",
-      "entities": [
-        "Gerhard"
       ],
-      "citations": [
-        {
-          "start": 1203,
-          "end": 1209
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d056",
@@ -762,7 +584,8 @@
           "start": 1215,
           "end": 1223
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d057",
@@ -775,7 +598,8 @@
           "start": 1231,
           "end": 1237
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d058",
@@ -788,7 +612,8 @@
           "start": 1265,
           "end": 1269
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d059",
@@ -801,7 +626,8 @@
           "start": 1332,
           "end": 1341
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d060",
@@ -814,7 +640,8 @@
           "start": 1340,
           "end": 1348
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d061",
@@ -827,7 +654,8 @@
           "start": 1342,
           "end": 1347
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d062",
@@ -840,7 +668,8 @@
           "start": 1367,
           "end": 1405
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d063",
@@ -853,7 +682,8 @@
           "start": 1388,
           "end": 1415
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d064",
@@ -866,20 +696,8 @@
           "start": 1431,
           "end": 1431
         }
-      ]
-    },
-    {
-      "id": "d065",
-      "statement": "The party investigating the strider sabotage are not official agents or law enforcement; they are ordinary crew members acting on an open bounty during their off-shift hours.",
-      "entities": [
-        "Iomenei"
       ],
-      "citations": [
-        {
-          "start": 1466,
-          "end": 1474
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d066",
@@ -893,7 +711,8 @@
           "start": 1614,
           "end": 1639
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d067",
@@ -907,7 +726,8 @@
           "start": 1639,
           "end": 1639
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d068",
@@ -920,7 +740,8 @@
           "start": 1684,
           "end": 1684
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d069",
@@ -933,7 +754,8 @@
           "start": 1686,
           "end": 1688
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d070",
@@ -946,7 +768,8 @@
           "start": 1689,
           "end": 1692
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d071",
@@ -959,7 +782,8 @@
           "start": 1693,
           "end": 1715
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d072",
@@ -972,7 +796,8 @@
           "start": 1697,
           "end": 1701
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d073",
@@ -986,7 +811,8 @@
           "start": 1699,
           "end": 1699
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d074",
@@ -1000,7 +826,8 @@
           "start": 1761,
           "end": 1801
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d075",
@@ -1013,34 +840,8 @@
           "start": 1823,
           "end": 1825
         }
-      ]
-    },
-    {
-      "id": "d076",
-      "statement": "The Unfailing Bow is one of Gage's Exemplar icons.",
-      "entities": [
-        "Gage",
-        "Unfailing Bow"
       ],
-      "citations": [
-        {
-          "start": 1840,
-          "end": 1870
-        }
-      ]
-    },
-    {
-      "id": "d077",
-      "statement": "Gage is an Exemplar whose icons include the Unfailing Bow, the Eye-catching Spot, and a face-related icon called 'Gaze Sharp as Steel'.",
-      "entities": [
-        "Gage"
-      ],
-      "citations": [
-        {
-          "start": 1870,
-          "end": 1903
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d078",
@@ -1053,33 +854,8 @@
           "start": 1889,
           "end": 1889
         }
-      ]
-    },
-    {
-      "id": "d079",
-      "statement": "Swarmchildren have a weakness to splash damage and area-of-effect attacks.",
-      "entities": [
-        "Swarmchildren"
       ],
-      "citations": [
-        {
-          "start": 1955,
-          "end": 1955
-        }
-      ]
-    },
-    {
-      "id": "d080",
-      "statement": "Barlow wields a weapon called the Leo Mano.",
-      "entities": [
-        "Barlow"
-      ],
-      "citations": [
-        {
-          "start": 1974,
-          "end": 1974
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d081",
@@ -1092,7 +868,8 @@
           "start": 2116,
           "end": 2118
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d082",
@@ -1105,68 +882,8 @@
           "start": 2120,
           "end": 2120
         }
-      ]
-    },
-    {
-      "id": "d083",
-      "statement": "Barlow knows an ability called Inspiring Martial Stance, which grants allies a +1 status bonus to attack rolls and saves against fear.",
-      "entities": [
-        "Barlow"
       ],
-      "citations": [
-        {
-          "start": 2177,
-          "end": 2184
-        }
-      ]
-    },
-    {
-      "id": "d084",
-      "statement": "Gage's full title or epithet is 'Gage the Cunning', with a comma separating the name from the epithet.",
-      "entities": [
-        "Gage"
-      ],
-      "citations": [
-        {
-          "start": 2310,
-          "end": 2318
-        }
-      ]
-    },
-    {
-      "id": "d085",
-      "statement": "Grant possesses healer's gloves.",
-      "entities": [
-        "Grant"
-      ],
-      "citations": [
-        {
-          "start": 2488,
-          "end": 2505
-        }
-      ]
-    },
-    {
-      "id": "d086",
-      "statement": "The area the party entered first contains a number of crates.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2553,
-          "end": 2553
-        }
-      ]
-    },
-    {
-      "id": "d087",
-      "statement": "The bottom-right room of the area the party is exploring contains lockers and appears to have been a space for workers to store belongings before proceeding further into the sector.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2555,
-          "end": 2556
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d088",
@@ -1179,7 +896,8 @@
           "start": 2563,
           "end": 2576
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d089",
@@ -1192,84 +910,8 @@
           "start": 2575,
           "end": 2579
         }
-      ]
-    },
-    {
-      "id": "d090",
-      "statement": "Ration slips approximately 200 years old were found in the sector's worker locker room; that style of ration slip has since gone out of use because it was easier to counterfeit than current ration slips.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2599,
-          "end": 2600
-        }
-      ]
-    },
-    {
-      "id": "d091",
-      "statement": "The sector's worker locker room has not been actively used for approximately 200 years, based on the age of the ration slips found there.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2599,
-          "end": 2603
-        }
-      ]
-    },
-    {
-      "id": "d092",
-      "statement": "Sacred unguents, magical seals, and similar ritual materials associated with tending to an engine heart are stored in the sector's worker lockers.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2626,
-          "end": 2626
-        }
-      ]
-    },
-    {
-      "id": "d093",
-      "statement": "Engine hearts are spirits that power the city and handle some of its logistics as it moves.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2626,
-          "end": 2626
-        }
-      ]
-    },
-    {
-      "id": "d094",
-      "statement": "Some of the ritual materials found in the sector's lockers do not match those normally used with a standard engine heart, suggesting either a change in practice over time or a different kind of engine heart.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2627,
-          "end": 2630
-        }
-      ]
-    },
-    {
-      "id": "d095",
-      "statement": "The insectoid creatures inhabiting the forbidden sector do not have fingers and therefore cannot manipulate tools or lockers.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2695,
-          "end": 2695
-        }
-      ]
-    },
-    {
-      "id": "d096",
-      "statement": "The party consists of a thaumaturge champion, a thaumaturge exemplar, and an exemplar.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2748,
-          "end": 2748
-        }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d097",
@@ -1282,162 +924,50 @@
           "start": 2760,
           "end": 2763
         }
-      ]
-    },
-    {
-      "id": "d098",
-      "statement": "The party is investigating a person described as an elvish individual with a bug-hybrid appearance, who is suspected of inserting metal into one of the legs of the Strider.",
-      "entities": [
-        "Strider"
       ],
-      "citations": [
-        {
-          "start": 2804,
-          "end": 2804
-        }
-      ]
-    },
-    {
-      "id": "d099",
-      "statement": "A part of the city has been forbidden from entry for approximately two centuries due to a dangerous entity or condition living within it.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2833,
-          "end": 2833
-        }
-      ]
-    },
-    {
-      "id": "d100",
-      "statement": "The room adjacent to the forbidden sector's deeper area functions as an airlock-type antechamber separating the rest of the sector from where an engine heart is stored.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2857,
-          "end": 2859
-        }
-      ]
-    },
-    {
-      "id": "d101",
-      "statement": "The city travels between worlds by stepping along the horizon one world at a time; it is possible but dangerous to attempt to skip one or more worlds per step to travel faster.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2887,
-          "end": 2888
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d102",
       "statement": "Traveling on the Horizon sometimes involves attempting to skip one or more worlds per step in order to make a journey faster, but the greater the distance skipped, the more dangerous the transition becomes.",
       "entities": [
-        "Horizon"
+        "Infinite Horizon"
       ],
       "citations": [
         {
           "start": 2887,
           "end": 2888
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d103",
       "statement": "Attempting to skip worlds during a horizon transition becomes more dangerous the greater the distance skipped; failed transitions can cause vehicles to lose pieces, warp, or shift matter, and may be a source of mutants.",
-      "entities": [],
+      "entities": [
+        "Infinite Horizon"
+      ],
       "citations": [
         {
           "start": 2888,
           "end": 2893
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d104",
       "statement": "Failed or partial Horizon jumps can cause pieces of a vehicle to be lost, warped, or shifted during the transition.",
       "entities": [
-        "Horizon"
+        "Infinite Horizon"
       ],
       "citations": [
         {
           "start": 2890,
           "end": 2892
         }
-      ]
-    },
-    {
-      "id": "d105",
-      "statement": "Some of the mutants found around the city may originate from failed or partial Horizon jumps.",
-      "entities": [
-        "Horizon"
       ],
-      "citations": [
-        {
-          "start": 2893,
-          "end": 2893
-        }
-      ]
-    },
-    {
-      "id": "d106",
-      "statement": "Large cities generally avoid making long-distance horizon jumps because of the danger involved.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2896,
-          "end": 2897
-        }
-      ]
-    },
-    {
-      "id": "d107",
-      "statement": "Large cities on the Horizon generally try to avoid making long-distance jumps because of the danger involved.",
-      "entities": [
-        "Horizon"
-      ],
-      "citations": [
-        {
-          "start": 2896,
-          "end": 2896
-        }
-      ]
-    },
-    {
-      "id": "d108",
-      "statement": "The forbidden sector shows severe warping in its metal flooring and piping consistent with a particularly bad long-distance horizon jump, concentrated most heavily past the airlock antechamber deeper into the sector.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2897,
-          "end": 2900
-        }
-      ]
-    },
-    {
-      "id": "d109",
-      "statement": "A particular sector of the city shows severe warping damage consistent with a badly failed long-distance Horizon jump, concentrated past an airlock area.",
-      "entities": [
-        "Horizon"
-      ],
-      "citations": [
-        {
-          "start": 2897,
-          "end": 2900
-        }
-      ]
-    },
-    {
-      "id": "d110",
-      "statement": "The airlock door leading into the cathedral sector has not been maintained in approximately 200 years.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2953,
-          "end": 2953
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d111",
@@ -1450,79 +980,8 @@
           "start": 2957,
           "end": 2957
         }
-      ]
-    },
-    {
-      "id": "d112",
-      "statement": "Grant FireEye is the name of one of the player characters.",
-      "entities": [
-        "Grant FireEye"
       ],
-      "citations": [
-        {
-          "start": 2986,
-          "end": 2986
-        }
-      ]
-    },
-    {
-      "id": "d113",
-      "statement": "The sector beyond the airlock contains a room approximately 500 feet across, built in the style of a cathedral with flat side walls curving into a rounded back.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2997,
-          "end": 3000
-        }
-      ]
-    },
-    {
-      "id": "d114",
-      "statement": "The cathedral-like room has stained glass frescoes along its walls and back, placed for aesthetic effect.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 3001,
-          "end": 3003
-        }
-      ]
-    },
-    {
-      "id": "d115",
-      "statement": "At the back of the cathedral-like room, between two stained glass windows, stands a massive player's organ: a giant wheel with indents that, as it rotates, pushes air through organ pipes twisting throughout the room.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 3005,
-          "end": 3009
-        }
-      ]
-    },
-    {
-      "id": "d116",
-      "statement": "The player's organ in the cathedral room is a form of Engine Heart, more ornate and decorated than other Engine Hearts the party has encountered.",
-      "entities": [
-        "Engine Heart"
-      ],
-      "citations": [
-        {
-          "start": 3011,
-          "end": 3011
-        }
-      ]
-    },
-    {
-      "id": "d117",
-      "statement": "The Engine Heart in the cathedral room is dead or out of commission, and no Fane presence is felt there.",
-      "entities": [
-        "Engine Heart"
-      ],
-      "citations": [
-        {
-          "start": 3013,
-          "end": 3013
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d118",
@@ -1535,7 +994,8 @@
           "start": 3014,
           "end": 3018
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d119",
@@ -1548,7 +1008,8 @@
           "start": 3014,
           "end": 3014
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d120",
@@ -1561,7 +1022,8 @@
           "start": 3024,
           "end": 3026
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d121",
@@ -1574,7 +1036,8 @@
           "start": 3135,
           "end": 3135
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d122",
@@ -1587,7 +1050,8 @@
           "start": 3138,
           "end": 3138
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d123",
@@ -1600,7 +1064,8 @@
           "start": 3146,
           "end": 3146
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d124",
@@ -1613,61 +1078,8 @@
           "start": 3270,
           "end": 3270
         }
-      ]
-    },
-    {
-      "id": "d125",
-      "statement": "Barlow wields a weapon called a Leomano.",
-      "entities": [
-        "Barlow"
       ],
-      "citations": [
-        {
-          "start": 3363,
-          "end": 3464
-        }
-      ]
-    },
-    {
-      "id": "d126",
-      "statement": "The Hivemother's lowest save is Fortitude.",
-      "entities": [
-        "Hivemother"
-      ],
-      "citations": [
-        {
-          "start": 3469,
-          "end": 3472
-        }
-      ]
-    },
-    {
-      "id": "d127",
-      "statement": "The Hivemother is a creature capable of spraying acid in an area, inflicting persistent acid damage on those it hits.",
-      "entities": [
-        "Hivemother"
-      ],
-      "citations": [
-        {
-          "start": 3479,
-          "end": 3501
-        }
-      ]
-    },
-    {
-      "id": "d128",
-      "statement": "Archie is being compensated with rations for his participation.",
-      "entities": [
-        "Archie",
-        "Grant",
-        "Gage"
-      ],
-      "citations": [
-        {
-          "start": 3628,
-          "end": 3638
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d129",
@@ -1680,7 +1092,8 @@
           "start": 3782,
           "end": 3789
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d130",
@@ -1693,20 +1106,8 @@
           "start": 3785,
           "end": 3787
         }
-      ]
-    },
-    {
-      "id": "d131",
-      "statement": "An elven insectoid person was responsible for sabotage within Iomenei and remained at large after the Hivemother was slain.",
-      "entities": [
-        "Iomenei"
       ],
-      "citations": [
-        {
-          "start": 3788,
-          "end": 3789
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d132",
@@ -1719,105 +1120,8 @@
           "start": 3794,
           "end": 3794
         }
-      ]
-    },
-    {
-      "id": "d133",
-      "statement": "The Hivemother was a level 8 creature with an AC of 29.",
-      "entities": [
-        "Hivemother"
       ],
-      "citations": [
-        {
-          "start": 3809,
-          "end": 3825
-        }
-      ]
-    },
-    {
-      "id": "d134",
-      "statement": "The bug swarms associated with the Hivemother were level 3 creatures.",
-      "entities": [
-        "Iomenei"
-      ],
-      "citations": [
-        {
-          "start": 3826,
-          "end": 3826
-        }
-      ]
-    },
-    {
-      "id": "d135",
-      "statement": "A pilgrimage exists that involves riding inside a strider, and obtaining a crystal is a prerequisite for participating in it.",
-      "entities": [
-        "Iomenei"
-      ],
-      "citations": [
-        {
-          "start": 3835,
-          "end": 3837
-        }
-      ]
-    },
-    {
-      "id": "d136",
-      "statement": "The one-shot session featuring Archie, Barlow, Gage, and Grant takes place a few months before the main campaign.",
-      "entities": [
-        "Archie",
-        "Barlow",
-        "Gage",
-        "Grant"
-      ],
-      "citations": [
-        {
-          "start": 3848,
-          "end": 3849
-        }
-      ]
-    },
-    {
-      "id": "d137",
-      "statement": "After the events of the one-shot, Archie joins up with the Velvet Mark.",
-      "entities": [
-        "Archie",
-        "Velvet Mark"
-      ],
-      "citations": [
-        {
-          "start": 3849,
-          "end": 3849
-        }
-      ]
-    },
-    {
-      "id": "d138",
-      "statement": "Archie has a history of involvement with multiple factions or figures, including the Herald and Pyre.",
-      "entities": [
-        "Archie",
-        "Herald",
-        "Pyre"
-      ],
-      "citations": [
-        {
-          "start": 3866,
-          "end": 3870
-        }
-      ]
-    },
-    {
-      "id": "d139",
-      "statement": "Archie is canonically from Brooklyn.",
-      "entities": [
-        "Archie",
-        "Brooklyn"
-      ],
-      "citations": [
-        {
-          "start": 3890,
-          "end": 3890
-        }
-      ]
+      "reviewed": true
     }
   ],
   "goodSentences": [],

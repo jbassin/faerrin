@@ -55,3 +55,17 @@ transcript provides and resolve obvious in-chunk referents ("the forest" → the
 real pipeline this is **entity resolution (AC-20)**: surface forms and generic referents resolve to
 the canonical wiki entity (using the wiki's titles/`aliases:` index). The draft-labels script has no
 wiki context, so it can only do the prompt-level best-effort.
+
+## Further refinements (worldbuilder review of interred-in-iomenei, 3rd round)
+
+**Skip combat sections wholesale.** Combat encounters / fight scenes (initiative, attacks, damage,
+tactics, who-hit-whom, monsters fought) are almost entirely mechanics + momentary events with **no
+durable setting value** — do not mine them. Only if combat reveals a standing world-fact (a
+creature's nature/origin) keep that single fact, never the fight. This is a high-leverage heuristic
+because combat concentrates exactly the two noise classes (mechanics + events).
+
+**Events and mechanics need AGGRESSIVE exclusion + a precision bias.** Across three review rounds the
+recurring leftover noise was (1) session-event facts and (2) weapon/ability/stat facts — the prompt
+must lead with these as the top mistakes and instruct "when in doubt, leave it out; precision over
+volume." Mining should err toward fewer, cleaner setting facts; recall is recoverable via the human
+review, but slop wastes the reviewer's time (the rejected-tool failure mode).

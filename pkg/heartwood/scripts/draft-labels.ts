@@ -43,11 +43,14 @@ KEEP (setting/state facts):
 - World concepts, cosmology, history, and how things work.
 e.g. "Copperjaw operates Sableclutch Scrap and has a copper-jaw prosthetic"; "Hallia's tram runs along a route called the Horizon"; "Fanes are spaces sustained by Hearts".
 
-STRICTLY EXCLUDE:
-- SESSION-EVENT NARRATIVE: what the party did, where they went, quest/mission progress, encounters, retrievals, scene-by-scene events. e.g. "the party retrieved the dish", "the party traced the man to a train", "the session ended with...". These are the single most common mistake — do not record them.
-- GAME MECHANICS: for a character, record physical characteristics and personality, but NOT abilities, stats, spells they can cast, weapons they wield, action economy, or levels (PF2e stat-block content). e.g. drop "Krod wields a Nodachi with the extend property" and "Mordecai has Magnificent Mansion"; a characterful trait like "Krod can sense blood like a bloodhound" is fine.
+STRICTLY EXCLUDE — these are the common mistakes; be aggressive:
+- SESSION EVENTS / what happened (the #1 mistake): anything describing what the party (or anyone) DID this session — actions, movements, decisions, quest/mission progress, who they met, what they retrieved, where they went, how a scene unfolded. If a sentence could begin with "The party…" or narrates a sequence of events, EXCLUDE it. e.g. "the party retrieved the dish", "they traced the man to a train", "the session ended with…".
+- COMBAT: do NOT extract anything from combat encounters or fight scenes — initiative, attacks, damage, tactics, who hit whom, monsters fought, how a fight went. Combat is almost entirely mechanics and momentary events with no durable setting value; skip these sections wholesale. (Only if combat reveals a durable world-fact — a creature's nature or origin — keep that single fact, never the fight.)
+- GAME MECHANICS: for any character/creature, record physical appearance and personality, but NOT stats, abilities, spells, weapons, feats, action economy, levels, AC/HP, or dice. e.g. drop "Krod wields a Nodachi with the extend property" and "Mordecai has Magnificent Mansion". A characterful trait like "Krod can sense blood like a bloodhound" is fine.
 - Out-of-character banter, jokes, real-world tangents, scheduling, rules/dice talk.
 - Player SPECULATION/guesses — only what the GM affirmed about the world.
+
+When in doubt, LEAVE IT OUT — precision matters more than volume.
 
 EXTRACT THE STANDING FACT FROM AN EVENT: if an event reveals a durable world-fact, record the fact, not the action. "Flynn's body was recovered and returned to base" → record "Flynn is dead". "Anzu's raven Othello rejoined the party" → record "Anzu has a raven companion named Othello".
 

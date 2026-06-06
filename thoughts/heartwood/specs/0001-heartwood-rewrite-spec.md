@@ -161,7 +161,11 @@ click.
   **(a) no game mechanics** — record a character's physical characteristics and personality, but
   **not** PF2e stat-block content (abilities, stats, spells, weapons, action economy, levels);
   **(b) canonical names** — prefer the specific proper name over generic referents ("the forest"
-  → the Verdant Expanse), resolving referents to named entities (this is `Resolve`'s job, AC-20).
+  → the Verdant Expanse), resolving referents to named entities (this is `Resolve`'s job, AC-20);
+  **(c) skip combat** — combat encounters are almost all mechanics + momentary events with no
+  durable setting value, so mining skips them wholesale (keeping only a standing world-fact a
+  fight happens to reveal); **(d) precision bias** — "when in doubt, leave it out", since slop
+  wastes the reviewer's time (the rejected-tool failure mode) and recall is recoverable in review.
   See `wiki-is-setting-not-session-log` memory.
 - **Sentence anchor** — a durable handle identifying *which* wiki sentence a provenance record
   attaches to, robust to surrounding edits (not a raw character offset, which breaks on the
