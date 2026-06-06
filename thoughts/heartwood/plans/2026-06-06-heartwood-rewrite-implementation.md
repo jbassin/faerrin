@@ -26,6 +26,22 @@ pen on the prose.** This plan maps every task to spec acceptance criteria (AC-*)
 > may replace `heartwood-review` later — it does not affect the plan. The app depends on the
 > core via the workspace (`@faerrin/heartwood`) and calls it from **server functions**.
 
+## Progress (updated 2026-06-06)
+
+- **Phase 0a (spikes/scaffold):** sentence-anchor module ✅ done & tested. Render wrapper + app
+  skeleton + server-function spike ⏳ deferred to Phase 2 (need a browser).
+- **Phase 0b (eval harness):** ✅ done — label schema, draft-labels + review-labels CLIs, eval
+  runner with **LLM-judge** scoring; **3 hand-reviewed sessions** labeled (80/47/78 facts).
+- **Phase 1 (headless core):** ✅ **COMPLETE & green (132 tests).** mine → triage → resolve →
+  assemble → conflict, all DI-tested with inspection CLIs. Provenance sidecar module built;
+  *writes on approval* pending the app. Eval: ~81% recall / ~61% precision.
+- **Phase 2 (review app):** ⏭️ **NEXT — not started.**
+- **Phases 3–4:** corrections/multi-page/page-types, quality loop — pending (much of the
+  pipeline groundwork exists: conflict, modality, entity resolution).
+
+All work is committed and pushed to `main`. See `pkg/heartwood/CLAUDE.md` for the current layout
+and the `heartwood-rewrite-progress` memory.
+
 ## Current State Analysis
 
 The existing `pkg/heartwood` is a Commander CLI implementing `index-wiki → segment → extract →
