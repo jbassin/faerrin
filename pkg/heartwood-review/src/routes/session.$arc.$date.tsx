@@ -40,6 +40,7 @@ function SessionPage() {
       initialDecision={review.decisions[p.id]?.decision ?? "pending"}
       initialText={review.decisions[p.id]?.authoredText ?? ""}
       initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
+      initialWeave={review.decisions[p.id]?.weave}
       pageType={pageTypes[p.id] ?? "lore"}
       allSlugs={allSlugs}
       onSaved={setReview}

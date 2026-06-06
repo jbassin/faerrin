@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { slugForPath } from "../render/remark-wikilinks-injected.ts";
+import type { WeaveTarget } from "@faerrin/heartwood/src/state/review.ts";
 
 // Static imports are client-safe (slugForPath is pure). The node:fs content readers and
 // the heavy unified renderer are dynamic-imported inside handlers (server-only).
@@ -52,4 +53,24 @@ export const renderMarkdown = createServerFn({ method: "POST" })
       srcSlug: slugForPath(data.srcPath),
       allSlugs,
     });
+  });
+
+const stripFm = (s: string) => s.replace(/^---\n[\s\S]*?\n---\n?/, "");
+
+/**
+ * Render an amend page with the authored prose woven IN PLACE at the chosen location and
+ * highlighted (AC-12), so the reviewer judges seam/rhythm in true context. The authored
+ * span is wrapped in <mark class="woven"> before weaving so it stands out in the render.
+ */
+export const renderWovenPreview = createServerFn({ method: "POST" })
+  .inputValidator((data: { path: string; authoredText: string; weave?: WeaveTarget }) => data)
+  .handler(async ({ data }): Promise<string> => {
+    const { loadAllSlugs, readWikiPage } = await import("./content.ts");
+    const { renderWikiMarkdown } = await import("../render/renderWikiMarkdown.ts");
+    const { applyWeave } = await import("./commit.ts");
+    const body = stripFm(await readWikiPage(data.path));
+    const marked = `<mark class="woven">${data.authoredText.trim()}</mark>`;
+    const woven = applyWeave(body, marked, data.weave).body;
+    const allSlugs = await loadAllSlugs();
+    return renderWikiMarkdown(woven, { srcSlug: slugForPath(data.path), allSlugs });
   });

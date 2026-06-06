@@ -22,8 +22,8 @@ import {
 import { writeFileAtomic } from "@faerrin/heartwood/src/state/atomic.ts";
 import { PROV_ROOT, REPO_ROOT, REVIEW_DIR, SESSIONS_DIR, WIKI_DIR, within } from "./paths.ts";
 import {
-  appendAuthoredParagraph,
   applySupersede,
+  applyWeave,
   commitMessage,
   newPageContent,
   normalizeWikiPath,
@@ -150,7 +150,8 @@ export async function performCommit(
         newBody = r.body;
         isCorrection = r.located;
       } else {
-        newBody = appendAuthoredParagraph(existing, text);
+        // Weave at the reviewer's chosen location (AC-12); defaults to append-at-end.
+        newBody = applyWeave(existing, text, dec.weave).body;
       }
       await writeFileAtomic(abs, newBody);
       written.push(`pkg/content/wiki/${p.targetPath}`);

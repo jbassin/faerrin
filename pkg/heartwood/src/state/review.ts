@@ -15,6 +15,16 @@ export type Decision = (typeof DECISIONS)[number];
 
 const SessionIdSchema = z.object({ arc: z.string(), date: z.string() });
 
+/** Where approved amend prose is woven into the page (AC-12). */
+export const WEAVE_MODES = ['end', 'into', 'after'] as const;
+export type WeaveMode = (typeof WEAVE_MODES)[number];
+export const WeaveTargetSchema = z.object({
+  mode: z.enum(WEAVE_MODES),
+  /** The target paragraph's current text (located at commit) for 'into'/'after'. */
+  anchorText: z.string().optional(),
+});
+export type WeaveTarget = z.infer<typeof WeaveTargetSchema>;
+
 export const ProposalDecisionSchema = z.object({
   proposalId: z.string(),
   decision: z.enum(DECISIONS),
@@ -28,6 +38,8 @@ export const ProposalDecisionSchema = z.object({
   rejectionReason: z.string().optional(),
   /** Content-relative path for an approved `create` proposal (chosen by the reviewer, AC-10). */
   targetPath: z.string().optional(),
+  /** Where to weave approved amend prose (AC-12); absent ⇒ append at end. */
+  weave: WeaveTargetSchema.optional(),
   /** Set once the proposal's prose has been committed to the wiki — guards against re-committing. */
   committedAt: z.string().optional(),
   decidedAt: z.string(), // ISO

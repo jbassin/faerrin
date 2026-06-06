@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { renderMarkdown, renderPagePreview } from "@/server/render";
+import { renderMarkdown, renderWovenPreview } from "@/server/render";
 import { saveDecision, type SessionView } from "@/server/sessions";
-import type { Decision, ReviewState } from "@faerrin/heartwood/src/state/review.ts";
+import type { Decision, ReviewState, WeaveTarget } from "@faerrin/heartwood/src/state/review.ts";
 import { CitationChip } from "./CitationChip.tsx";
 import { CreatePagePicker } from "./CreatePagePicker.tsx";
+import { WeavePicker } from "./WeavePicker.tsx";
 import { voiceWarnings } from "@/lib/voice-warnings.ts";
 import type { PageType } from "@/lib/page-type.ts";
 import "@/styles/wiki-render.css";
@@ -18,6 +19,7 @@ interface Props {
   initialDecision: Decision;
   initialText: string;
   initialTargetPath: string;
+  initialWeave: WeaveTarget | undefined;
   pageType: PageType;
   allSlugs: string[];
   onSaved: (state: ReviewState) => void;
@@ -30,13 +32,13 @@ const DECISION_COLORS: Record<Decision, string> = {
   deferred: "#b06000",
 };
 
-export function ProposalCard({ arc, date, proposal, initialDecision, initialText, initialTargetPath, pageType, allSlugs, onSaved }: Props) {
+export function ProposalCard({ arc, date, proposal, initialDecision, initialText, initialTargetPath, initialWeave, pageType, allSlugs, onSaved }: Props) {
   const [authored, setAuthored] = useState(initialText);
   const [targetPath, setTargetPath] = useState(initialTargetPath);
+  const [weave, setWeave] = useState<WeaveTarget | undefined>(initialWeave);
   const [decision, setDecision] = useState<Decision>(initialDecision);
   const [view, setView] = useState<"edit" | "reading" | "diff">("edit");
   const [previewHtml, setPreviewHtml] = useState<string | null>(null);
-  const [existingHtml, setExistingHtml] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
   const warnings = voiceWarnings(authored, { pageType, allSlugs });
@@ -44,11 +46,16 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
   const srcPath = proposal.targetPath ?? `${proposal.canonicalName}.md`;
 
   async function refreshPreview() {
-    const html = await renderMarkdown({ data: { md: authored || "*(no prose yet)*", srcPath } });
-    setPreviewHtml(html);
-    if (proposal.kind === "amend" && proposal.targetPath && existingHtml === null) {
-      const page = await renderPagePreview({ data: { path: proposal.targetPath } });
-      setExistingHtml(page.html);
+    // Amend → render the page with the prose woven in place + highlighted (AC-12).
+    // Create → render the new page body.
+    if (proposal.kind === "amend" && proposal.targetPath) {
+      setPreviewHtml(
+        await renderWovenPreview({
+          data: { path: proposal.targetPath, authoredText: authored || "*(no prose yet)*", weave },
+        }),
+      );
+    } else {
+      setPreviewHtml(await renderMarkdown({ data: { md: authored || "*(no prose yet)*", srcPath } }));
     }
   }
 
@@ -68,6 +75,7 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
           decision: d,
           authoredText: authored || undefined,
           targetPath: proposal.kind === "create" ? targetPath || undefined : undefined,
+          weave: proposal.kind === "amend" ? weave : undefined,
         },
       });
       setDecision(d);
@@ -139,6 +147,9 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
               onChange={setTargetPath}
             />
           )}
+          {proposal.kind === "amend" && proposal.targetPath && (
+            <WeavePicker targetPath={proposal.targetPath} initial={initialWeave} onChange={setWeave} />
+          )}
           <textarea
             value={authored}
             onChange={(e) => setAuthored(e.target.value)}
@@ -169,26 +180,13 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
 
       {view === "reading" && (
         <div>
-          {existingHtml && (
-            <div className="wiki-article" dangerouslySetInnerHTML={{ __html: existingHtml }} />
-          )}
-          <div
-            style={{
-              marginTop: "0.6rem",
-              padding: "0.5rem 0.75rem",
-              background: "rgba(19,115,51,0.08)",
-              borderLeft: "3px solid #137333",
-              borderRadius: 4,
-            }}
-          >
-            <div style={{ fontSize: "0.72rem", color: "#137333", fontWeight: 600 }}>
-              proposed {proposal.kind === "amend" ? "addition" : "page"}
-            </div>
-            <div
-              className="wiki-article"
-              dangerouslySetInnerHTML={{ __html: previewHtml ?? "" }}
-            />
+          <div style={{ fontSize: "0.72rem", color: "#137333", fontWeight: 600, marginBottom: "0.3rem" }}>
+            {proposal.kind === "amend"
+              ? "page with your prose woven in (highlighted) — judge the seam"
+              : "new page as it will render"}
           </div>
+          {/* Rendered in aether-faithful context (AC-2/AC-12); woven prose highlighted. */}
+          <div className="wiki-article" dangerouslySetInnerHTML={{ __html: previewHtml ?? "" }} />
         </div>
       )}
 

@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { assertSessionId } from "./sessions.ts";
+import type { WeaveMode, WeaveTarget } from "@faerrin/heartwood/src/state/review.ts";
 
 // CLIENT-SAFE shell: pure helpers + types + the server-fn declaration only. The actual
 // commit implementation (Node fs + jj + core ledger) lives in commit-impl.ts and is
@@ -29,6 +30,35 @@ export function appendAuthoredParagraph(body: string, text: string): string {
 /** New-page content: plain prose body, no frontmatter (matches many existing wiki pages). */
 export function newPageContent(text: string): string {
   return `${text.trim()}\n`;
+}
+
+/**
+ * Weave approved amend prose into the page at the reviewer's chosen location (AC-12):
+ * - `end` (or no target): a new paragraph at the end (the old default).
+ * - `into`: appended to the target paragraph so it reads as one continuous paragraph.
+ * - `after`: a new paragraph immediately after the target.
+ * The target paragraph is located by its current text (`anchorText`); if it can't be found
+ * the prose is appended at the end (never lost). Returns the effective mode used.
+ */
+export function applyWeave(
+  body: string,
+  text: string,
+  weave?: WeaveTarget,
+): { body: string; mode: WeaveMode } {
+  const prose = text.trim();
+  if (!weave || weave.mode === "end" || !weave.anchorText) {
+    return { body: appendAuthoredParagraph(body, prose), mode: "end" };
+  }
+  const blocks = body.replace(/\n+$/, "").split(/\n{2,}/);
+  const anchor = weave.anchorText.trim();
+  const idx = blocks.findIndex((b) => b.trim() === anchor);
+  if (idx === -1) return { body: appendAuthoredParagraph(body, prose), mode: "end" };
+  if (weave.mode === "into") {
+    blocks[idx] = `${blocks[idx]!.trim()} ${prose}`;
+  } else {
+    blocks.splice(idx + 1, 0, prose);
+  }
+  return { body: `${blocks.join("\n\n")}\n`, mode: weave.mode };
 }
 
 export function commitMessage(

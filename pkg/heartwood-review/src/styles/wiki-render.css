@@ -83,6 +83,15 @@
   font-weight: 600;
 }
 
+/* Woven amend prose, highlighted in place for seam judgment (AC-12). */
+.wiki-article mark.woven {
+  background: rgba(19, 115, 51, 0.16);
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 0.15em;
+  box-shadow: 0 0 0 1px rgba(19, 115, 51, 0.3);
+}
+
 .wiki-article pre {
   background: rgba(0, 0, 0, 0.05);
   padding: 0.8em;

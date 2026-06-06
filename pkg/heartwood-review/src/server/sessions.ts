@@ -10,6 +10,7 @@ import type {
   Decision,
   ReviewState,
   ReviewStatus,
+  WeaveTarget,
 } from "@faerrin/heartwood/src/state/review.ts";
 
 // Arc/date are interpolated into a `${arc}@${date}.json` filename, so validate their
@@ -126,6 +127,7 @@ export const saveDecision = createServerFn({ method: "POST" })
       authoredText?: string;
       rejectionReason?: string;
       targetPath?: string;
+      weave?: WeaveTarget;
     }) => data,
   )
   .handler(async ({ data }): Promise<ReviewState> => {
@@ -140,9 +142,35 @@ export const saveDecision = createServerFn({ method: "POST" })
       authoredText: data.authoredText,
       rejectionReason: data.rejectionReason,
       targetPath: data.targetPath,
+      weave: data.weave,
     });
     await writeReviewState(REVIEW_DIR, next);
     return next;
+  });
+
+export interface PageParagraph {
+  /** Full paragraph text — used as the weave anchor (AC-12). */
+  text: string;
+  /** Short preview for the picker. */
+  preview: string;
+}
+
+// Non-prose block starts (headings, HTML, quotes, lists, code fences, deity `::` stat lines).
+const NON_PROSE = /^(#|<|>|\||[-*]\s|\d+\.\s|```|.+ :: )/;
+
+/** Prose paragraphs of a page, for the weave-location picker (AC-12). */
+export const getPageParagraphs = createServerFn({ method: "GET" })
+  .inputValidator((data: { path: string }) => data)
+  .handler(async ({ data }): Promise<PageParagraph[]> => {
+    const { readWikiPage } = await import("./content.ts");
+    const body = (await readWikiPage(data.path)).replace(/^---\n[\s\S]*?\n---\n?/, "");
+    const out: PageParagraph[] = [];
+    for (const block of body.replace(/\n+$/, "").split(/\n{2,}/)) {
+      const t = block.trim();
+      if (!t || NON_PROSE.test(t)) continue;
+      out.push({ text: t, preview: t.length > 80 ? `${t.slice(0, 80)}…` : t });
+    }
+    return out;
   });
 
 /** Existing wiki folders (for the create-page folder picker, AC-10/D-6). */

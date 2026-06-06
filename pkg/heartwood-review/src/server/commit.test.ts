@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { appendAuthoredParagraph, applySupersede, commitMessage, newPageContent } from "./commit.ts";
+import {
+  appendAuthoredParagraph,
+  applySupersede,
+  applyWeave,
+  commitMessage,
+  newPageContent,
+} from "./commit.ts";
 
 describe("appendAuthoredParagraph (v1 amend strategy)", () => {
   it("appends as a new paragraph with a blank-line separator", () => {
@@ -55,5 +61,33 @@ describe("applySupersede (AC-21)", () => {
     const r = applySupersede("Existing prose.", "a statement not present", "New fact.");
     expect(r.located).toBe(false);
     expect(r.body).toBe("Existing prose.\n\nNew fact.\n");
+  });
+});
+
+describe("applyWeave (AC-12)", () => {
+  const body = "First para about the docks.\n\nSecond para about the river.\n";
+
+  it("end (default) appends a new paragraph", () => {
+    const r = applyWeave(body, "A new note.");
+    expect(r.mode).toBe("end");
+    expect(r.body).toMatch(/Second para about the river\.\n\nA new note\.\n$/);
+  });
+
+  it("into merges the prose into the chosen paragraph", () => {
+    const r = applyWeave(body, "It teems with gulls.", { mode: "into", anchorText: "First para about the docks." });
+    expect(r.mode).toBe("into");
+    expect(r.body).toContain("First para about the docks. It teems with gulls.");
+    expect(r.body).toContain("Second para about the river.");
+  });
+
+  it("after inserts a new paragraph following the chosen one", () => {
+    const r = applyWeave(body, "An aside.", { mode: "after", anchorText: "First para about the docks." });
+    expect(r.body).toBe("First para about the docks.\n\nAn aside.\n\nSecond para about the river.\n");
+  });
+
+  it("falls back to end when the anchor paragraph is gone", () => {
+    const r = applyWeave(body, "Lost prose.", { mode: "into", anchorText: "a paragraph not here" });
+    expect(r.mode).toBe("end");
+    expect(r.body).toMatch(/Lost prose\.\n$/);
   });
 });
