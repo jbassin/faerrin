@@ -362,10 +362,10 @@ Script:
 > Gamemaster: Yeah, I'll do that when you guys are introducing yourselves.  
 > Gamemaster: Okay.  
 > Gamemaster: So,  
-> Gamemaster: We begin today's session in the man-made hulk of a mountain, a moving city with 100,000 residents, the largest of the striders of Istria, Iomene.  
+> Gamemaster: We begin today's session in the man-made hulk of a mountain, a moving city with 100,000 residents, the largest of the striders of Istria, Iomenei.  
 > Gage: you  
 > Grant: you you  
-> Gamemaster: Iominae has walked through Istria avoiding curses, avoiding ancient beasts, weapons of War from wizards from before the Fracture, ancient magics, and effectively anything that could pose danger to a city of treasure hunters.  
+> Gamemaster: Iomenei has walked through Istria avoiding curses, avoiding ancient beasts, weapons of War from wizards from before the Fracture, ancient magics, and effectively anything that could pose danger to a city of treasure hunters.  
 > Gamemaster: This city was built almost immediately after the gods first came to Færrin.  
 > Gamemaster: It is hundreds of years old.  
 > Gamemaster: It's one of the oldest still operating structures on Færrin.  
@@ -378,7 +378,7 @@ Script:
 > Gamemaster: It is a symbiotic mass.  
 > Gamemaster: The heroes, the upper class, literally upper in this case because they live on the upper floors, are showered with gifts for their heroic deeds as they're the ones who delve into these ancient dungeons, clear it of all of the dangers that live within and come back with the spoils.  
 > Grant: Thank you.  
-> Gamemaster: But these heroes don't operate Iominae.  
+> Gamemaster: But these heroes don't operate Iomenei.  
 > Gamemaster: They aren't the ones that keep the Strider moving.  
 > Gamemaster: This is an ancient behemoth of a machine, and it requires constant maintenance.  
 > Gamemaster: That's where all of you come in.  
@@ -402,10 +402,10 @@ Script:
 > Gamemaster: Not quite enough for the stillness to catch up.  
 > Grant: Thank you.  
 > Gamemaster: but enough to cause concern, because if whatever caused them to seize up for six seconds isn't resolved, then what's to say it doesn't get worse next time?  
-> Gamemaster: The Seneschal, the second-in-command of Iomene, feels that there's foul play involved.  
+> Gamemaster: The Seneschal, the second-in-command of Iomenei, feels that there's foul play involved.  
 > Gamemaster: Not wishing to endanger the heroes that live above decks, he has instead put out a command for the Undercrofters.  
 > Grant: Peace.  
-> Gamemaster: Find whatever's causing these issues, the traitor that is sabotaging Iomene, and bring them to justice.  
+> Gamemaster: Find whatever's causing these issues, the traitor that is sabotaging Iomenei, and bring them to justice.  
 > Gamemaster: Do so, and you earn a spot on the upper decks.  
 > Gamemaster: The three of you, for the purposes of this one shot, we're assuming that you know each other.  
 > Gamemaster: Perhaps you're all in the same clan.  
@@ -1357,7 +1357,7 @@ Script:
 > Gage: Fighting Pit.  
 > Gamemaster: Okay, absolutely.  
 > Gamemaster: You're told which part of the, like, which section the fighting pit is in.  
-> Gamemaster: Fighting pits aren't completely legal within the bounds of Iominae.  
+> Gamemaster: Fighting pits aren't completely legal within the bounds of Iomenei.  
 > Gamemaster: They are allowed because they're...  
 > Gamemaster: Excuse me, because they're generally a pretty good vessel for stress relief.  
 > Gamemaster: Amongst the crew.  
@@ -1367,7 +1367,7 @@ Script:
 > Gamemaster: So if they get too dangerous, enforcers from other parts of the building tend to come and break them up.  
 > Gamemaster: As such, fighting pits tend to try to go to areas that are less trafficked.  
 > Gamemaster: so they're less likely to draw the ire of the enforcers.  
-> Gamemaster: This particular fighting ring happens to be very close, if not quite inside of what's called a forsaken sector, which is a part of Iominae that for one reason or another, people are forbidden from entering.  
+> Gamemaster: This particular fighting ring happens to be very close, if not quite inside of what's called a forsaken sector, which is a part of Iomenei that for one reason or another, people are forbidden from entering.  
 > Gage: you  
 > Gamemaster: Maybe there was an accident there that rendered that part of the ship just unlivable.  
 > Gamemaster: Maybe there's dangerous technology in there that it was deemed not worth the risk of working with.  
@@ -3807,7 +3807,7 @@ Script:
 > Grant: Good.  
 > Grant: Otherwise, it would have been really bad.  
 > Grant: We were really hoping for that.  
-> Gamemaster: And with that, you have slain this strange bug creature that had taken a hold in a part of Iominae.  
+> Gamemaster: And with that, you have slain this strange bug creature that had taken a hold in a part of Iomenei.  
 > Gamemaster: We're at the end of our time slot here, so just to go through the last pieces.  
 > Gage: Thank you.  
 > Gamemaster: You guys search through the interior of this cathedral area.  
@@ -3857,7 +3857,7 @@ Script:
 > Gamemaster: Sometimes a bug spits acid at you.  
 > Barlow: Okay, next time we come here, Barlow will return to crit.  
 > Archie: Heck yeah.  
-> Gamemaster: I hope you guys liked the setting of the interior of Iomine, because if you get the...  
+> Gamemaster: I hope you guys liked the setting of the interior of Iomenei, because if you get the...  
 > Barlow: This was a really cool setting.  
 > Barlow: This is pretty cool.  
 > Gamemaster: If you get the crystal, you guys are riding along in a strider for the pilgrimage.  
