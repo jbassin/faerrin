@@ -10,7 +10,7 @@ commit one batched **jj** revision per session. No GitHub PRs. Spec:
 
 ## Build status (2026-06-06)
 
-**Phases 2 and 3 COMPLETE. Phase 4 (quality loop + deferred voice assist) is next.**
+**Phases 2, 3, and 4 COMPLETE.** (Phase 5 = deferred v2 structured-canon graph.)
 - **Phase 2 (P0 loop):** session list → narrative (AC-23) → triage (AC-1) → proposal review
   rendered-in-context with Reading/Diff toggle (AC-2), citation-on-hover (AC-3), edit-in-place
   (AC-4), voice warnings (AC-9), approve/reject/defer with nothing-written-until-commit (AC-6) +
@@ -23,18 +23,29 @@ commit one batched **jj** revision per session. No GitHub PRs. Spec:
   via `renderWovenPreview`); AC-13 wikilink validation; AC-24 page-type-aware voice bar
   (`page-type.ts`); AC-14 noise spot-check (promote, `promotedClaims`); AC-22 multi-page event
   grouping by citation overlap (`event-groups.ts`).
+- **Phase 4 (quality loop + voice assist):** AC-16 tagged reject reasons (`ProposalCard` reason
+  picker; `lib/rejection-reasons.ts` client-safe mirror) → core rejection store; AC-26 cross-session
+  rejection-memory **tray** (`getSession` computes suppression; collapsed "previously rejected");
+  AC-17 **non-circular slop-rate** (`@faerrin/heartwood/src/eval/slop.ts` — from reviewer DECISIONS,
+  not the §9 warnings); AC-18 live tally; AC-19 **/dashboard** route + `server/dashboard.ts`
+  (coverage from eval `--save` + live slop/reason tally); **D-5** deferred in-voice draft +
+  warn-only critic (`server/draft.ts` shell → core `pipeline/draft.ts`; "✨ draft in voice" fills
+  the editor as an editable starting point — never auto-commits).
 
-**Counts:** app 53 tests, core 143 tests; typecheck + lint green. Verified over SSR; the real
-end-to-end browser commit + aether build-diff is the worldbuilder's outstanding verification.
+**Counts:** app 53 tests, core 167 tests; typecheck + lint green. Server-fn client-safety re-verified
+via curl for `dashboard.ts` + `draft.ts`. **Still outstanding (worldbuilder): the real end-to-end
+browser commit on a live session + the aether build-diff check** — the product bet.
 
 ## Layout
 
 ```
 src/
   router.tsx, routes/__root.tsx
-  routes/index.tsx                 ← session list (status badges)
+  routes/index.tsx                 ← session list (status badges) + dashboard/preview links
   routes/session.$arc.$date.tsx    ← the review surface: narrative → conflicts → tabs
-                                     (Proposals grouped by event / Triage) → commit bar
+                                     (Proposals grouped by event + "previously rejected" tray /
+                                     Triage) → live tally → commit bar
+  routes/dashboard.tsx             ← coverage (eval harness) + non-circular slop + reason tally (AC-19)
   routes/preview.tsx               ← render-fidelity preview (sample pages)
   server/                          ← CLIENT-SAFE server-fn shells + pure helpers (see split rule)
     paths.ts        ← path constants + within() (node:path only, client-safe)
@@ -46,6 +57,8 @@ src/
     commit.ts       ← commitSession (shell) + pure helpers (appendAuthoredParagraph,
                       applyWeave, applySupersede, newPageContent, commitMessage, normalizeWikiPath)
     commit-impl.ts  ← performCommit (SERVER-ONLY; dynamic-imported by commitSession)
+    dashboard.ts    ← getDashboard shell (eval results + live slop/reason tally) (AC-19)
+    draft.ts        ← draftProposal shell → core pipeline/draft.ts (D-5; LLM, never commits)
   render/
     renderWikiMarkdown.ts          ← aether-faithful unified() chain
     remark-wikilinks-injected.ts   ← parameterized wikilinks (injected allSlugs) + slugForPath
@@ -55,6 +68,7 @@ src/
     voice-warnings.ts   ← §9 automatable checks (AC-9) + wikilink validation (AC-13), page-type-aware
     page-type.ts        ← lore/deity-statblock/timeline/flavor-pre/stub (AC-24)
     event-groups.ts     ← group proposals by citation overlap (AC-22)
+    rejection-reasons.ts ← CLIENT-SAFE mirror of the core's reject-reason tags (AC-16)
   components/  CitationChip, ProposalCard, TriageView, ConflictCard, CreatePagePicker, WeavePicker
   styles/wiki-render.css   ← checkpoint-grade article CSS (callouts, links, transcript, .woven)
 scripts/  generate-routes.ts, dev-fixture.ts
@@ -113,8 +127,13 @@ provenance into `wiki/`.
 - `SessionArtifact` (`@faerrin/heartwood/src/state/store.ts`) — narrative, triage buckets, proposals,
   entities, conflicts. Written by `ingest`, read by the app. Under `pkg/heartwood/state/sessions/`.
 - `ReviewState` (`@faerrin/heartwood/src/state/review.ts`) — `decisions` (per proposal: decision +
-  authoredText + targetPath + weave + committedAt), `conflictResolutions` (by claimId),
-  `promotedClaims`. Under `pkg/heartwood/state/review/`. Both dirs gitignored.
+  authoredText + rejectionReason + targetPath + weave + committedAt), `conflictResolutions` (by
+  claimId), `promotedClaims`. Under `pkg/heartwood/state/review/`. Both dirs gitignored.
+- `RejectionStore` (`@faerrin/heartwood/src/state/quality.ts`) — cross-session rejection memory +
+  quality log (AC-16/AC-26): signature-keyed (sha256 of normalized claim text) `bySession` map of
+  reason + timestamp. `saveDecision` records on a tagged reject / undoes on un-reject; `getSession`
+  uses `isSuppressed` (other-session-only) to fill the tray. Under `pkg/heartwood/state/quality/`
+  (gitignored). The dashboard reads it for the reason tally.
 
 ## Commands
 
@@ -130,5 +149,7 @@ Real review data: `bun run --filter @faerrin/heartwood ingest <arc> <date>` (LLM
 ## Conventions
 
 Bun to launch, Node at runtime in server fns. React 19, strict TS + `noUncheckedIndexedAccess`. LLM
-(when added, Phase 4) only via the core's `complete()` with DI. **jj, not git** (`--no-pager`, `-m`;
-push main directly). Not Caddy-served. Content read cwd-relative from `../content`; `Script/` excluded.
+only via the core's `complete()` with DI — the only LLM call is `pipeline/draft.ts` (D-5), reached
+through the `server/draft.ts` shell; it needs `ANTHROPIC_API_KEY` in the app env and never commits.
+**jj, not git** (`--no-pager`, `-m`; push main directly). Not Caddy-served. Content read cwd-relative
+from `../content`; `Script/` excluded.

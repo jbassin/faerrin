@@ -28,19 +28,21 @@ pen on the prose.** This plan maps every task to spec acceptance criteria (AC-*)
 
 ## Progress (updated 2026-06-06)
 
-- **Phase 0a (spikes/scaffold):** sentence-anchor module ✅ done & tested. Render wrapper + app
-  skeleton + server-function spike ⏳ deferred to Phase 2 (need a browser).
-- **Phase 0b (eval harness):** ✅ done — label schema, draft-labels + review-labels CLIs, eval
-  runner with **LLM-judge** scoring; **3 hand-reviewed sessions** labeled (80/47/78 facts).
-- **Phase 1 (headless core):** ✅ **COMPLETE & green (132 tests).** mine → triage → resolve →
-  assemble → conflict, all DI-tested with inspection CLIs. Provenance sidecar module built;
-  *writes on approval* pending the app. Eval: ~81% recall / ~61% precision.
-- **Phase 2 (review app):** ⏭️ **NEXT — not started.**
-- **Phases 3–4:** corrections/multi-page/page-types, quality loop — pending (much of the
-  pipeline groundwork exists: conflict, modality, entity resolution).
+- **Phase 0a/0b:** ✅ done — sentence-anchor module, render wrapper, app skeleton, server-fn model;
+  eval harness (LLM-judge) + 3 hand-reviewed sessions (80/47/78 facts).
+- **Phase 1 (headless core):** ✅ **COMPLETE & green.** mine → triage → resolve → assemble →
+  conflict, all DI-tested with inspection CLIs. Provenance sidecar; eval ~81% recall / ~61% precision.
+- **Phase 2 (review app MVP):** ✅ **COMPLETE.** P0 loop (AC-1..9, AC-23) in `@faerrin/heartwood-review`.
+- **Phase 3 (depth):** ✅ **COMPLETE** (AC-10..14, AC-21, AC-22, AC-24).
+- **Phase 4 (quality loop + voice assist):** ✅ **COMPLETE** (AC-16 reject reasons/quality log,
+  AC-26 rejection-memory tray, AC-17 non-circular slop-rate, AC-18 tally, AC-19 dashboard, D-5
+  in-voice draft + warn-only critic). **Counts: core 167 tests, app 53.**
 
-All work is committed and pushed to `main`. See `pkg/heartwood/CLAUDE.md` for the current layout
-and the `heartwood-rewrite-progress` memory.
+**ALL acceptance criteria (AC-1..AC-26, D-1..D-12) implemented.** All work committed + pushed to
+`main`. Remaining is the worldbuilder's verification only: a real end-to-end **browser commit on a
+live session + the aether build-diff check** (C6 byte-stable 763-file guard). Phase 5 (v2 structured
+canon graph) deferred. See `pkg/heartwood/CLAUDE.md`, `pkg/heartwood-review/CLAUDE.md`, and the
+`heartwood-rewrite-progress` memory.
 
 ## Current State Analysis
 

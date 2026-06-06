@@ -1,6 +1,6 @@
 ---
 name: heartwood-rewrite-progress
-description: Build status of the heartwood rewrite — headless Phase-1 pipeline COMPLETE; Phase 2 (review app) is next
+description: Build status of the heartwood rewrite — Phases 1-4 COMPLETE (core 167 tests, app 53); only the worldbuilder's live browser-commit + aether build-diff remain
 metadata:
   type: project
 ---
@@ -56,13 +56,34 @@ leave other working changes alone), idempotent via `committedAt`. App: 32 tests;
   rule is load-bearing for any new server fn (see [[heartwood-review-app-architecture]]).
 
 **Phase 3 is COMPLETE (AC-10/11/12/13/14/21/22/24).** Amend default is now a weave with `end` mode
-(replaced the old append-only). **Counts:** core 143 tests, app 53.
+(replaced the old append-only).
 
-**NEXT — Phase 4 (quality loop + deferred voice assist):** AC-16 rejection-reason log, AC-17 slop
-pre-filters surfaced (the §9 automatable checks already exist as voice warnings), AC-18 session
-tally (commit message already carries it), AC-19 coverage dashboard, AC-26 rejection-memory tray,
-and the deferred D-5 in-voice draft + warn-only critic. Also still pending: a real end-to-end
-browser commit + aether build-diff (worldbuilder verification).
+**Phase 4 COMPLETE & pushed (2026-06-06)** — quality loop + deferred voice assist. Five steps, each
+its own commit + green gate:
+- **AC-16** tagged reject reasons → cross-session **rejection store** (`src/state/quality.ts`,
+  signature = sha256 of normalized claim text; `bySession` map; node:crypto/node:fs). `saveDecision`
+  records on a tagged reject / undoes on un-reject. UI: `ProposalCard` reason picker;
+  `lib/rejection-reasons.ts` is the CLIENT-SAFE mirror (don't statically import quality.ts into a
+  client component — it pulls node:crypto).
+- **AC-26** rejection-memory **tray** (D-7): `getSession` marks a still-pending proposal suppressed
+  iff EVERY backing claim's signature was rejected in ANOTHER session (`isSuppressed` excludes the
+  current session); session route renders a collapsed "previously rejected" `<details>`.
+- **AC-17** non-circular **slop-rate** (`src/eval/slop.ts`): from reviewer accept/reject DECISIONS
+  (voice-tagged rejections + approved-rewritten-from-draft), NEVER from the §9 warnings.
+- **AC-18** live approved/rejected/deferred/pending tally in the session route.
+- **AC-19** **/dashboard** route + `server/dashboard.ts` shell: coverage from eval `--save`
+  (now also writes `.score.json`) + live slop + reason tally.
+- **D-5** in-voice **draft** assist: core `src/pipeline/draft.ts` (DI completeFn, `MODEL_DRAFT`,
+  §9-calibrated anti-slop prompt) → `server/draft.ts` shell → "✨ draft in voice" button fills the
+  editor as an EDITABLE starting point; returns text only, never commits (human is the gate). The §9
+  voice warnings are the warn-only critic. Needs `ANTHROPIC_API_KEY` in the app env.
+
+Server-fn client-safety re-verified via curl for both new shells (`dashboard.ts`, `draft.ts`):
+`createClientRpc`, no static node/core import, no "externalized" error. **Counts:** core 167, app 53.
+
+**ALL acceptance criteria (AC-1..AC-26, D-1..D-12) implemented.** Only remaining: a real end-to-end
+**browser commit on a live session + the aether build-diff check** (worldbuilder verification, the
+product bet) — not a coding task. Phase 5 (v2 structured-canon graph) is deferred.
 
 **Key facts for continuity:** Bun+TS, strict `noUncheckedIndexedAccess`; LLM only via `complete()`
 with DI `completeFn`; jj not git (push main directly); pkg/heartwood/CLAUDE.md is now accurate.

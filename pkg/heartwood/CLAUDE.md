@@ -14,8 +14,8 @@ names an entity).
 
 ## Build status (2026-06-06)
 
-**Headless Phase-1 pipeline: COMPLETE and green (132 tests).** The interactive review app
-(Phase 2) is **not started** — that's the next work.
+**Headless core + review app: Phases 1–4 COMPLETE and green (core 167 tests).** The review app is
+`@faerrin/heartwood-review` (Phases 2–4 done). Phase 5 (v2 structured-canon graph) is deferred.
 
 ```
 mine ──▶ triage ──▶ resolve ──▶ assemble ──▶ conflict
@@ -26,7 +26,10 @@ facts     noise      pages|new   + narrative
 
 Each stage: a pure module under `src/pipeline/` with DI (`completeFn`) for hermetic tests, plus an
 inspection CLI under `scripts/`. Current eval: ~81% recall / ~61% precision (LLM-judge scored
-against 3 hand-labeled sessions).
+against 3 hand-labeled sessions). Phase-4 quality loop lives partly here: `src/state/quality.ts`
+(rejection memory + quality log), `src/eval/slop.ts` (non-circular slop-rate from reviewer
+decisions), `src/pipeline/draft.ts` (D-5 in-voice draft assist; LLM via `complete()`, returns text
+only — never commits).
 
 ## Layout
 
@@ -40,7 +43,8 @@ src/
     provenance.ts   ← render-invisible per-page provenance sidecar, re-anchors on read (AC-15)
     atomic.ts       ← writeFileAtomic (tmp → rename, node:fs + Web Crypto)
     store.ts        ← SessionArtifact persistence (narrative+triage+proposals+entities+conflicts), Zod + drift guards [Phase 2]
-    review.ts       ← resumable ReviewState: decisions (authoredText/targetPath/weave/committedAt), conflictResolutions, promotedClaims [Phase 2-3]
+    review.ts       ← resumable ReviewState: decisions (authoredText/rejectionReason/targetPath/weave/committedAt), conflictResolutions, promotedClaims [Phase 2-3]
+    quality.ts      ← cross-session rejection memory + quality log: signature-keyed store, REJECTION_REASONS, isSuppressed (AC-16/AC-26) [Phase 4]
   transcript/       ← filename (PURE parseFilename, no Bun), discover (Bun.Glob scan), speakers, chunk, ledger
   wiki/             ← loadWikiIndex, frontmatter, wikilinks, index-schema, hash, summarize [salvaged]
   pipeline/
@@ -51,11 +55,13 @@ src/
     resolve.ts      ← entity surface forms → wiki pages (exact + LLM referents), flags merges (AC-20)
     assemble.ts     ← canon claims → per-page proposals (amend|create) + session narrative (AC-23, D-5)
     conflict.ts     ← amend proposals vs existing wiki page → contradictions (AC-11, entity-scoped)
+    draft.ts        ← D-5 in-voice draft assist: facts → one editable starting-point passage (DI completeFn, MODEL_DRAFT) [Phase 4]
   eval/
     labels.ts       ← EvalLabel schema (hand-labeled canon facts) + reviewed flag
     score.ts        ← coverage/precision/false-canon; injectable Matcher (token default)
     judge.ts        ← LLM-judge Matcher (semantic claim↔fact matching) — trustworthy numbers
     run.ts          ← scoreSession + formatScore
+    slop.ts         ← non-circular slop-rate from reviewer DECISIONS (not the §9 warnings) (AC-17, §12) [Phase 4]
     review.ts       ← interactive eval-label triage loop (DI), used by review-labels CLI
   util/pool.ts      ← bounded-concurrency helper
   cli/              ← hello, cost-report (commander); index.ts registers them
@@ -91,7 +97,7 @@ only the CLIs use `Bun.Glob`.
 - **Bun + TypeScript.** `bun test`, `bun run`. Strict tsconfig (extends root `tsconfig.base.json`;
   note `noUncheckedIndexedAccess` is on — guard array access).
 - **LLM via `complete()`** (`src/llm.ts`) only — never the SDK directly. Pass a Zod schema; every
-  call is cost-logged. Models from `config()` (`MODEL_MINE/TRIAGE/RESOLVE/SUMMARIZE/CONFLICT`).
+  call is cost-logged. Models from `config()` (`MODEL_MINE/TRIAGE/RESOLVE/SUMMARIZE/CONFLICT/DRAFT`).
 - **Dependency injection for tests:** every LLM-calling fn takes an optional `completeFn`; tests
   pass a stub (no network). No module mocking.
 - **Zod at I/O boundaries;** plain TS interfaces internally. **Atomic writes** (`writeFileAtomic`).
@@ -101,15 +107,15 @@ only the CLIs use `Bun.Glob`.
   `(transcript, lineId)`; entity = canonical id + aliases.
 - **Cost bounded (C1):** per-chunk/per-page LLM calls, never the whole wiki.
 
-## What's next (Phase 2 — the review app)
+## The review app (Phases 2–4, DONE)
 
-A **standalone local-first TanStack Start (SSR) + React** app (new package, e.g.
-`pkg/heartwood-review`), mirroring strider's scaffold (declare `@tanstack/router-generator` +
-`@eslint/js`; exclude `scripts/` from tsconfig). It consumes the pipeline (mine→…→conflict) via
-**server functions** (the chosen I/O model — strider uses a Bun sidecar, but we use
-`createServerFn` SSR). Renders wiki pages **aether-faithfully** by reusing aether's remark plugins
-(`pkg/aether/src/lib/remark-*.mjs` + `slug.ts`) in a `renderWikiMarkdown()` wrapper (inject
-`allSlugs`; copy callout/link CSS). Review loop per the spec: session narrative → triage →
-rendered-in-context proposal review → citation-on-hover → edit-in-place → approve/reject/defer →
-**provenance sidecar write + one batched jj commit** (AC-1..AC-9, AC-23). See plan §Phase 2 and
-spec §6/§11.
+The interactive review surface is **`@faerrin/heartwood-review`** (`pkg/heartwood-review`) — a
+standalone local-first **TanStack Start (SSR) + React** app that consumes this core via
+**server functions** (`createServerFn`), renders wiki pages **aether-faithfully**, and ships
+approved prose + provenance as one batched **jj** commit. See its `CLAUDE.md` for the layout and
+the two load-bearing server-fn rules. All P0/P1/P2 acceptance criteria (AC-1..AC-26, D-1..D-12) are
+implemented across Phases 1–4.
+
+**Still owed by the worldbuilder (not code):** one real end-to-end browser commit on a live session
++ the aether build-diff check (the byte-stable 763-file guard, C6) — the product bet. Phase 5 (v2
+structured-canon graph + aether renderer inversion, spec §15) is deferred.
