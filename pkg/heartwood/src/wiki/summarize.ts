@@ -9,7 +9,10 @@ const cap = (max: number) =>
 
 const SummarySchema = z.object({
   summary:  cap(200),
-  keyFacts: z.array(cap(120)).max(8),
+  // The model occasionally returns a single fact as a bare string instead of a
+  // one-element array. Coerce it so one malformed page doesn't fail the whole
+  // index run — deterministic at temperature:0, so it would never self-heal.
+  keyFacts: z.preprocess((v) => (typeof v === 'string' ? [v] : v), z.array(cap(120)).max(8)).default([]),
   entities: z.object({
     people: z.array(z.string()).default([]),
     places: z.array(z.string()).default([]),
