@@ -1,0 +1,414 @@
+{
+  "filename": "000.through-a-song-darkly.2025-8-11.txt",
+  "contentHash": "4ae549a1bbe803e16b92b4e84f3a5d1bbada10b35a7246c4876e19fff78bc5a6",
+  "totalLines": 3787,
+  "windowCount": 11,
+  "segments": [
+    {
+      "startLine": 1,
+      "endLine": 380,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players chat about Hades 2, water bottles, canning, cork sustainability, and engagement photo outfit choices"
+    },
+    {
+      "startLine": 381,
+      "endLine": 606,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players discuss engagement photo outfit drama, Miami Vice suits, phishing scams, and tangential stories about tan suits and David E. Shaw"
+    },
+    {
+      "startLine": 607,
+      "endLine": 672,
+      "label": "recap",
+      "confidence": "high",
+      "oneLineSummary": "Johnny recaps previous session: spider lair, suspicious tree, meeting Archmage Brightbuckle, learning about priest of Slumber in Palomar"
+    },
+    {
+      "startLine": 673,
+      "endLine": 740,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party receives supplies and feather tokens from Bastion, discusses terrain hazards and hot air balloon ideas before departing for Palomar"
+    },
+    {
+      "startLine": 741,
+      "endLine": 774,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players discuss hot air balloons, fans, crossbows, and spell mechanics; GM clarifies rules about Leomin's Tiny Hut opacity"
+    },
+    {
+      "startLine": 775,
+      "endLine": 912,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party travels south from settlement, makes survival checks, sets up Tangle Hut for night, takes watches, hears distant howls, continues journey next morning"
+    },
+    {
+      "startLine": 913,
+      "endLine": 976,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party navigates rocky terrain, Wise falls into 100-foot crevice, casts Feather Fall, encounters gargoyles emerging from cracks, rolls initiative"
+    },
+    {
+      "startLine": 977,
+      "endLine": 1004,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players and GM discuss initiative rolling and debate the spelling/pronunciation of a Dragon Ball Z character name (Whis)."
+    },
+    {
+      "startLine": 1005,
+      "endLine": 1047,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Initiative order established; GM describes tactical map layout with elevation levels and gargoyle positions emerging from crevices."
+    },
+    {
+      "startLine": 1048,
+      "endLine": 1100,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Combat round: Wise casts Fireball on two gargoyles for 28 damage; Glint attacks with Eldritch Blast; party discusses tactics and spell levels"
+    },
+    {
+      "startLine": 1101,
+      "endLine": 1157,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Glint's turn: attacks gargoyles, uses Misty Escape reaction to avoid second attack and deal psychic damage"
+    },
+    {
+      "startLine": 1158,
+      "endLine": 1251,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Seven gargoyles attack party members; Glint, Amada, Wise, and Strong take damage from claws"
+    },
+    {
+      "startLine": 1252,
+      "endLine": 1386,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Strong (Argyle) drops feather fall token, grapples gargoyle, jumps into crevice dealing 34 damage, attacks with zealot hit"
+    },
+    {
+      "startLine": 1387,
+      "endLine": 1425,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Wise casts Maximilian's Earthen Grasp on gargoyle 6, restains it, then Misty Steps away"
+    },
+    {
+      "startLine": 1426,
+      "endLine": 1428,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Anzu steps away briefly; Benny makes a joke; GM prompts next player."
+    },
+    {
+      "startLine": 1429,
+      "endLine": 1440,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Players and GM discuss tactical positioning and enemy counts during active combat encounter."
+    },
+    {
+      "startLine": 1441,
+      "endLine": 1468,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Party discusses tactical positioning and spell usage before Glint's turn in combat"
+    },
+    {
+      "startLine": 1469,
+      "endLine": 1519,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Glint casts Hex on Argyle 3, fires two beams dealing 15 and 20 damage, bloodying one gargoyle"
+    },
+    {
+      "startLine": 1520,
+      "endLine": 1568,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Amada melts into stone to avoid combat; four gargoyles surround Glint instead"
+    },
+    {
+      "startLine": 1569,
+      "endLine": 1640,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Gargoyles attack Glint; Glint teleports away, triggering Wisdom saves and negating four attacks"
+    },
+    {
+      "startLine": 1641,
+      "endLine": 1710,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Argyle 3 hits Glint once; Argyle 5 attacks from above; Argyle 6 is restrained by Wise's hand"
+    },
+    {
+      "startLine": 1711,
+      "endLine": 1777,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Argyle drops grapple, stands, hits Argyle 5 with reckless strike and Divine Fury, shattering it"
+    },
+    {
+      "startLine": 1778,
+      "endLine": 1804,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Wise restrains Argyle 6 again with hand, dealing 3 damage; Glint misses two attacks on Argyle 3"
+    },
+    {
+      "startLine": 1805,
+      "endLine": 1820,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Amada emerges from stone, considers repositioning to support topside gargoyles within 30 feet"
+    },
+    {
+      "startLine": 1821,
+      "endLine": 1876,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Combat round: Johnny checks on Argyle, Glint attacks and misses, Amada casts Faerie Fire on gargoyles, gargoyles attack party members"
+    },
+    {
+      "startLine": 1877,
+      "endLine": 1940,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Gargoyles attack Glint and Amada with mixed results; Argyle 4 flees upward; Argyle 6 remains restrained"
+    },
+    {
+      "startLine": 1941,
+      "endLine": 2000,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Strong climbs and teleports 75 feet up cliff face chasing Argyle 4; Wise casts Fireball then Chromatic Orb, destroying Argyle 6"
+    },
+    {
+      "startLine": 2001,
+      "endLine": 2108,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Glint disengages and moves; Amada casts Spirit Guardians, killing Argyle 7 and damaging Argyle 4"
+    },
+    {
+      "startLine": 2109,
+      "endLine": 2180,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Gargoyles attack Glint and Amada with poor rolls; Argyle 3 and 7 fail wisdom saves to Spirit Guardians, taking damage"
+    },
+    {
+      "startLine": 2181,
+      "endLine": 2235,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Gargoyles attack party members; Spirit Guardians deal damage; Argyle 4 flies away from hole, takes damage from aura"
+    },
+    {
+      "startLine": 2236,
+      "endLine": 2296,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Strong climbs out of hole, uses Cloud Jaunt, attacks Gargoyle 1 twice for 24 damage, fails to prone it"
+    },
+    {
+      "startLine": 2297,
+      "endLine": 2314,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Wise casts Fly and Misty Step to ascend 90 feet from crevice; Glint uses Shadow Warp to reposition"
+    },
+    {
+      "startLine": 2315,
+      "endLine": 2441,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Glint taunts Gargoyle 1, blasts Gargoyle 2 for 12 damage; Amada casts Command to make gargoyles grovel; gargoyles attack"
+    },
+    {
+      "startLine": 2442,
+      "endLine": 2531,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Strong kills groveling Gargoyle 1; Wise casts Chromatic Orb on Gargoyle 2 for 12 thunder damage, positions overhead"
+    },
+    {
+      "startLine": 2532,
+      "endLine": 2540,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Glint kills Gargoyle 3 with Eldritch Blast; Amada prepares to cast Inflict Wounds on Gargoyle 7"
+    },
+    {
+      "startLine": 2541,
+      "endLine": 2650,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Continued combat: Johnny positions, gargoyles attack, Amada blesses party, Strong kills gargoyle with critical strike, Johnny casts Hideous Laughter on remaining gargoyle."
+    },
+    {
+      "startLine": 2651,
+      "endLine": 2780,
+      "label": "combat",
+      "confidence": "high",
+      "oneLineSummary": "Final combat round: Strong attacks laughing gargoyle twice, killing it; battlefield quiets after all enemies defeated."
+    },
+    {
+      "startLine": 2781,
+      "endLine": 2799,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players banter about character ages and make movie/comedy references unrelated to active gameplay."
+    },
+    {
+      "startLine": 2800,
+      "endLine": 2830,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players discuss past one-shot campaigns and reminisce about previous D&D sessions; meta-conversation about game history."
+    },
+    {
+      "startLine": 2831,
+      "endLine": 2900,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party travels toward settlement, arrives at walled fort town of Palomar; GM describes town layout with knot, gardens, vigil building, barracks; older human commander approaches."
+    },
+    {
+      "startLine": 2901,
+      "endLine": 2906,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "GM describes Palomar fort settlement, walls, knot, buildings, and training grounds; players ask clarifying questions about settlement size"
+    },
+    {
+      "startLine": 2907,
+      "endLine": 2927,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party enters Palomar gate, Captain Yannick Ruda greets them and asks why they've come"
+    },
+    {
+      "startLine": 2928,
+      "endLine": 2965,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party shakes hands with captain, discusses blue knot phenomenon, learns about Warren the Slumber priest"
+    },
+    {
+      "startLine": 2966,
+      "endLine": 3034,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Captain leads party through settlement square to Warren's hut; party discusses why captain stays at Palomar"
+    },
+    {
+      "startLine": 3035,
+      "endLine": 3064,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "GM describes NPC's hut and players introduce themselves; NPC shares experience with blue knot and strange feeling from Slumber."
+    },
+    {
+      "startLine": 3065,
+      "endLine": 3090,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party questions Slumber after waking; players make insight checks to determine if he's hiding information about an attack."
+    },
+    {
+      "startLine": 3091,
+      "endLine": 3163,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Warren explains Slumber was trapped in the Scar by Tynans; party theorizes about Slumber reaching out; Johnny urges Warren to join quest"
+    },
+    {
+      "startLine": 3164,
+      "endLine": 3186,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party asks Warren for boons, books, and artifacts; Warren mentions Karwenian historians at Palomar who study recovered items"
+    },
+    {
+      "startLine": 3187,
+      "endLine": 3232,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players and GM banter about travel direction to the Scar, world geography, and whether the planet is round—mostly comedic off-topic discussion."
+    },
+    {
+      "startLine": 3233,
+      "endLine": 3260,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players and GM discuss campaign logistics, travel planning, and joke about software engineering metaphors; meta-discussion about scope and timing."
+    },
+    {
+      "startLine": 3261,
+      "endLine": 3271,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party discusses meeting with the Phoenicians and the captain's departure, deciding to go speak with them."
+    },
+    {
+      "startLine": 3272,
+      "endLine": 3291,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players discuss Branch Davidians and Waco standoff as real-world reference for a game faction, with banter about the comparison."
+    },
+    {
+      "startLine": 3292,
+      "endLine": 3467,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party travels to Carwinian longhouse, meets Tobin; learns of maps to Karwin library and temple ruins"
+    },
+    {
+      "startLine": 3468,
+      "endLine": 3480,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Palomar knot turns midnight blue and stays blue; Warren shows fear; screams heard across fort; cliffhanger"
+    },
+    {
+      "startLine": 3481,
+      "endLine": 3529,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players discuss vampire speculation, D&D vs. Pathfinder mechanics, proficiency without level rule, big numbers"
+    },
+    {
+      "startLine": 3530,
+      "endLine": 3600,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Session wrap-up: praise for world-building and travel difficulty; GM discusses next session in Colorado, character builds/backstories needed"
+    },
+    {
+      "startLine": 3601,
+      "endLine": 3642,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "GM and players discuss next session in Colorado, character builds, backstories, and logistics"
+    },
+    {
+      "startLine": 3643,
+      "endLine": 3787,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players discuss Friday park event, Denver altitude effects on alcohol, D&D scheduling, and in-person session logistics"
+    }
+  ]
+}

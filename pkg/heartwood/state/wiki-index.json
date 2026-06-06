@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-17T22:05:29.743Z",
-  "pageCount": 93,
+  "generatedAt": "2026-06-06T00:48:55.548Z",
+  "pageCount": 121,
   "pages": {
     "Divinity/Celestial Prescence.md": {
       "path": "Divinity/Celestial Prescence.md",
@@ -32,16 +32,16 @@
           "resolvedPath": "Divinity/Outer Gods/Iridescent Host.md"
         }
       ],
-      "contentHash": "2da415e73f83934e9420da00faa79c6c5ea94177d974910578593c8753e64e8c",
-      "byteLength": 652,
-      "summary": "Celestial Presence are astral phenomena tied to Outer God worship, visible in the night sky above devotional centers. The strongest display is above Hallia, Calaria's capital.",
+      "contentHash": "7ce4c699d906a60d12516852389aedf7975c7b3a6e8832a9b31078ceefe04e4f",
+      "byteLength": 653,
+      "summary": "Celestial Presences are astral phenomena tied to Outer God worship, appearing in the sky above devotional centers. The strongest display is above Hallia, Calaria's capital.",
       "keyFacts": [
         "Each Outer God has a unique sign appearing in the sky above centers devoted to their worship.",
-        "The strength of the Presence scales with the intensity of prayers offered.",
+        "The strength of the Celestial Presence scales with the intensity of prayers offered.",
         "Areas with many Gods' influence produce especially spectacular night sky displays.",
-        "The sky above Hallia, capital of Calaria, is said to be the most impressive of all.",
-        "The Iridescent Host's aurora brightens the sky during the darkest nights above Hallia.",
-        "The Host's rainbow hue can outshine even the suns on days of particularly fervent reverence."
+        "Hallia, the capital of Calaria, is said to have the most impressive Celestial Presence of anywhere.",
+        "The Iridescent Host's aurora brightens the sky above Hallia during the darkest nights.",
+        "The Iridescent Host's rainbow hue can outshine even the suns on days of particularly fervent reverence."
       ],
       "entities": {
         "people": [],
@@ -77,17 +77,18 @@
           "resolvedPath": "Divinity/Outer Gods/Judge of Ages.md"
         }
       ],
-      "contentHash": "61800acdb3da212bd778b9edf8dfbd3d0ae380baa86db8c5ef98018092d90302",
-      "byteLength": 789,
+      "contentHash": "09e0c5c809379dc10f9bcaefd2e16b11d71067e0aeb99fc1b08acb129748142f",
+      "byteLength": 790,
       "summary": "Divine Raiment is a phenomenon where divine blessing overflows a mortal's vessel, typically manifesting as rays of light around the head.",
       "keyFacts": [
         "Raiments usually manifest as rays of light surrounding one's head.",
-        "Highly blessed individuals can extend the raiment to coat their whole body, e.g. as holy armor.",
-        "Aurelia VII can coat her whole body in the Iridescent Host's light as holy armor.",
-        "A raiment's color and sheen are derived from the deity that bestowed the blessing.",
+        "Highly blessed individuals can extend the effect further, such as coating the whole body as holy armor.",
+        "Aurelia VII can reportedly coat her whole body in the Host's light as holy armor.",
+        "A raiment's color and sheen are derived from the deity that granted the blessing.",
         "Followers of the Iridescent Host have pearlescent, shimmering raiments.",
         "Followers of the Judge of Ages have radiant golden raiments.",
-        "Color and form allow for individual variation, but deity affiliation is generally identifiable at a glance."
+        "Raiments allow individual variation in color and form.",
+        "Observers can typically identify how blessed someone is, and by which deity, at a glance."
       ],
       "entities": {
         "people": [
@@ -118,26 +119,11 @@
           "resolvedPath": "Divinity/Fiends/Sigzil Haight.md"
         }
       ],
-      "contentHash": "3891ac7e7bfda7ea1bc68700566c36bb1c923fc3f29f25f5835fa6cbf1e15af8",
-      "byteLength": 377,
-      "summary": "Flintlock Toboggan is a small, goat-like fiend residing in the Shackled Prince's demesne, standing 4'6\" with brown fur and hourglass pupils.",
-      "keyFacts": [
-        "Stands approximately 4'6\" tall",
-        "Humanoid body covered in short brown fur",
-        "Has hooved feet",
-        "Goatlike face with human features",
-        "Two curled rams' horns protrude from his forehead",
-        "Has hourglass-shaped pupils instead of round",
-        "Resides in the Shackled Prince's demesne"
-      ],
-      "entities": {
-        "people": [
-          "Flintlock Toboggan",
-          "Sigzil Haight"
-        ],
-        "places": [],
-        "orgs": []
-      }
+      "contentHash": "349b5ed2fbb9e008bcb93c11820a5ecd1a05414ca25021bdf96c311e8fef0f43",
+      "byteLength": 379,
+      "summary": null,
+      "keyFacts": null,
+      "entities": null
     },
     "Divinity/Fiends/Sigzil Haight.md": {
       "path": "Divinity/Fiends/Sigzil Haight.md",
@@ -164,11 +150,11 @@
           "resolvedPath": "Phenomena/Infinite Horizon.md"
         }
       ],
-      "contentHash": "6ac4c459216efedf578e5e8f59bafc2cba1671d70f7253e50b1f7da463d68d77",
-      "byteLength": 203,
+      "contentHash": "801b41a1b02fa9f285d2137d7f4eaa6505b228a8550288f687273502f556fa90",
+      "byteLength": 204,
       "summary": "Sigzil Haight, the Shackled Prince, is a fiendish prince and child of the Judge of Ages whose demesne lies along the Infinite Horizon.",
       "keyFacts": [
-        "Known by the title 'the Shackled Prince'",
+        "Known by the epithet 'the Shackled Prince'",
         "Is a child of the Judge of Ages",
         "Holds the rank of fiendish prince",
         "His demesne is located somewhere far out along the Infinite Horizon"
@@ -242,17 +228,17 @@
           "resolvedPath": "Divinity/Outer Gods/Judge of Ages.md"
         }
       ],
-      "contentHash": "df296bb0e393014b326a2b87ee06e0f93667eb1d1bacf4b58feba9c32ceb8d71",
-      "byteLength": 1397,
+      "contentHash": "5ad343b6f10d1b292c70f665d360429d786a30f1274e216b5745b5d2f46cce63",
+      "byteLength": 1398,
       "summary": "An overview of cooperation and conflict between the Outer Gods' religious organizations, noting alliances are temporary and wars are fought in their names.",
       "keyFacts": [
-        "The Watcher and the Pulse have compatible teachings; their followers often cooperate.",
-        "The Belvedere has a high population of both Watcher and Pulse adherents.",
-        "The Heir and the Compelled share views on an inevitable future, agreeing on major details.",
-        "The Iridescent Host preaches dominance; interfaith cooperation is seen as a necessary evil by its followers.",
-        "The Heir and the Pulse have directly antithetical teachings, causing clashes between devotees.",
-        "The Judge's followers frequently insert themselves into others' affairs, earning derision as often as gratitude.",
+        "The Watcher and the Pulse have compatible teachings; their followers often cooperate, especially in the Belvedere.",
+        "The Heir and the Compelled share views on an inevitable future, with followers often agreeing on major details.",
+        "The Iridescent Host preaches dominance, making interfaith cooperation a 'necessary evil' for its followers.",
+        "The Heir and the Pulse have directly antithetical teachings, causing clashes between their devotees.",
+        "The Judge's followers frequently insert themselves into others' affairs, earning both gratitude and derision.",
         "The true goals of the Outer Gods are described as inscrutable.",
+        "Any alliances between Outer Gods or their followers are considered only temporary.",
         "Wars have been fought between nations on behalf of their Gods and are expected to continue."
       ],
       "entities": {
@@ -330,7 +316,7 @@
           "target": "The Scale",
           "display": null,
           "section": null,
-          "resolvedPath": "Org/The Scale.md"
+          "resolvedPath": "Org/The Scale/index.md"
         },
         {
           "raw": "[[Heir of the Plague]]",
@@ -354,27 +340,26 @@
           "resolvedPath": "Org/Iridescent Church/index.md"
         }
       ],
-      "contentHash": "fe9c576a381860f09c3c797b9c24e829db5ab7497597b2b5aea6b172bda51484",
-      "byteLength": 3726,
-      "summary": "A Hierophant is one who has passed through the firmament into the Godhome and met the Gods. Aurelia was the first, ushering in a new age for Færrin.",
+      "contentHash": "902d8fe10ff2762527ed8fcaa92e2ac75cce4c5bef56516bd6ffaeddb8ebbefa",
+      "byteLength": 3721,
+      "summary": "A Hierophant is one who has passed through the Firmament into the Godhome and met the Gods. Aurelia was the first, ushering in a new age for Færrin.",
       "keyFacts": [
-        "Magic came to Færrin when an unknown force pierced the firmament, causing chaos and societal collapse.",
-        "Aurelia, a Calarian peasant, was the first to hear an outer god (the Iridescent Host) and widened the crack in the firm…",
-        "Aurelia's passage into the Godhome created a second sun and brought blessings from the Outer Gods to Færrin.",
-        "Calaria established a new calendar marking Aurelia's passage as the first day, adopted planet-wide.",
+        "Magic arrived on Færrin when an unknown force pierced the Firmament, causing chaos and societal collapse.",
+        "Aurelia, a Calarian peasant, was the first to hear an Outer God (the Iridescent Host) and widened the crack in the Firm…",
+        "Aurelia's passage into the Godhome created a second sun and is marked as day one of Færrin's calendar.",
         "Soothsayers use Harrow Decks featuring hierophant likenesses for fortune-telling; each card has an image and personalit…",
-        "Current known hierophants: Silfane (IX The Lamp, Provost of Belvedere), Farrow Cross (XI Justice, High Arbiter of The S…",
-        "Alaster Fayn (XVII The Star), hierophant of The Compelled, was lost on the Night of the Midnight Sun with no replacemen…",
-        "The Tower hierophant's identity is unconfirmed, though their existence is known."
+        "IX The Lamp: Silfane, Provost of Belvedere — insight into the unknown.",
+        "XI Justice: Farrow Cross, High Arbiter of The Scale — truth revealed.",
+        "XVI The Tower: identity unknown; hierophant of the Heir of the Plague — implies upheaval or disaster.",
+        "XX The Æon: Aurelia VII, Pontifex of the Iridescent Church — portends awakening or reckoning."
       ],
       "entities": {
         "people": [
           "Aurelia",
-          "Aurelia I",
-          "Aurelia VII",
           "Silfane",
           "Farrow Cross",
-          "Alaster Fayn"
+          "Alaster Fayn",
+          "Aurelia VII"
         ],
         "places": [
           "Færrin",
@@ -387,6 +372,7 @@
           "The Scale",
           "Iridescent Church",
           "The Compelled",
+          "Heir of the Plague",
           "Raelic Church"
         ]
       }
@@ -414,18 +400,18 @@
           "resolvedPath": "Phenomena/Firmament.md"
         }
       ],
-      "contentHash": "32f3ceee294cee2b8171dea9fd8e20161a0acea439d7c2e3d579a81fcc312ea7",
-      "byteLength": 1062,
+      "contentHash": "f0001935b848618bf20c8afbf72185c813556e0c12d15c2f1be6264fd1fad909",
+      "byteLength": 1063,
       "summary": "Inner Gods are deities who exist within Færrin's firmament — whether summoned, ascended from mortality, or small enough to pass through from the Astra.",
       "keyFacts": [
         "Outer Gods cannot pass through the firmament onto Færrin's surface.",
         "Inner Gods either passed through the firmament or formed whole-cloth on the inside.",
-        "Some Inner Gods are sacred emissaries sent by Outer Gods as eyes and ears on the planet.",
+        "Some Inner Gods are sacred emissaries sent by Outer Gods as their eyes and ears.",
         "Some Inner Gods are demigods — mortals elevated beyond their mortal coil by a source of power.",
         "A small handful are full Gods from elsewhere in the Astra that could fit through the firmament.",
-        "Aurelia I first paved the way to the Godhome.",
+        "Aurelia I was the first to pave the way to the Godhome.",
         "Many on Færrin devote themselves to Inner Gods rather than Outer Gods.",
-        "Followers of Inner Gods may display light different from the norm in their raiments."
+        "Blessings from Inner Gods vary widely, and diverse raiment lights are not rare in crowds."
       ],
       "entities": {
         "people": [
@@ -469,25 +455,23 @@
           "resolvedPath": "Divinity/Celestial Prescence.md"
         }
       ],
-      "contentHash": "1d0b4ce8c33aeadec4acf2e2a52b68e29110bd6ace375ce15f6e7d973320c810",
-      "byteLength": 1509,
+      "contentHash": "b48752923a959089b530352b15d07ed93318a9aea9e2afeef9e188a5120d1c00",
+      "byteLength": 1512,
       "summary": "The Eternal Pulse is an Outer God patronizing doctors and necromancers, embodying the tension between preserving life and pursuing undeath.",
       "keyFacts": [
-        "Outer God; edicts include healing wounds/treating sickness and pursuing undeath",
-        "Anathema: sacrificing your life or abandoning the wounded/dying",
-        "Divine Raiment is coppery and oxidized; Celestial Presence is red lightning",
-        "Favored weapon is the morningstar; Divine Skill is Medicine",
-        "Divine Font: harm or heal; can choose holy or unholy sanctification",
+        "Category: Outer God",
+        "Edicts: Heal wounds and treat sicknesses, pursue undeath",
+        "Anathema: Sacrifice your life, abandon the wounded or dying",
+        "Divine Ability: Strength or Constitution; Divine Font: harm or heal",
+        "Favored Weapon: morningstar; Divine Skill: Medicine",
         "Domains: freedom, healing, nothingness, pain, soul, undeath",
         "Cleric Spells: grim tendrils (1st), false vitality (2nd), mask of terror (7th)",
-        "No country openly devotes itself to the Pulse due to stigma around undeath"
+        "No country openly devotes itself to the Pulse due to stigma around undeath, but followers are welcomed as guests"
       ],
       "entities": {
         "people": [],
         "places": [],
-        "orgs": [
-          "Eternal Pulse"
-        ]
+        "orgs": []
       }
     },
     "Divinity/Outer Gods/Heir of the Plague.md": {
@@ -520,18 +504,18 @@
           "resolvedPath": "Divinity/Celestial Prescence.md"
         }
       ],
-      "contentHash": "d80dddaf1f0a386f2f947f229a32b92465231bc2cdf0ca0df612dcbbacbdf008",
-      "byteLength": 1629,
-      "summary": "The Heir of the Plague is an Outer God tied to life, death, and pestilence, with no patron country but worshippers worldwide.",
+      "contentHash": "40540518b6911e5c831d14fca850898e6a4486dd8ed1fbf8843637ae6b0debc9",
+      "byteLength": 1632,
+      "summary": "The Heir of the Plague is an Outer God tied to the cycle of life, death, and pestilence, with worshippers found across the world in small numbers.",
       "keyFacts": [
-        "Outer God whose domain covers life, death, and pestilence",
-        "Edicts: abide by life's cycles, aid childbirth, destroy undead",
-        "Anathema: immortality/undead creation, despoiling earth, killing juvenile creatures",
-        "Divine Raiment is deep red and fiery; Celestial Presence is a bleeding moon",
-        "Favored weapon is the scythe; Divine Skill is Nature",
-        "Domains: air, decay, disorientation, nature, plague, sun",
-        "Divine Font: harm or heal; can choose holy or unholy sanctification",
-        "Cleric Spells: endure (1st), wall of thorns (3rd), blister (5th)"
+        "Outer God; patron of no specific country but has scattered worshippers worldwide.",
+        "Edicts: abide by life's cycles, aid childbirth, destroy undead.",
+        "Anathema: pursuing immortality, creating undead, despoiling the earth, killing juvenile creatures.",
+        "Divine Raiment is deep red and fiery; Celestial Presence is a bleeding moon.",
+        "Favored weapon is the scythe; Divine Skill is Nature.",
+        "Domains: air, decay, disorientation, nature, plague, sun.",
+        "Divine Font: harm or heal; can choose holy or unholy sanctification.",
+        "Cleric Spells: 1st endure, 3rd wall of thorns, 5th blister."
       ],
       "entities": {
         "people": [
@@ -585,27 +569,28 @@
           "resolvedPath": "Divinity/Celestial Prescence.md"
         }
       ],
-      "contentHash": "40a2c1b07a9a5e3abefb19562d10ca45606555015c50bfa0cd9d91b88eec9838",
-      "byteLength": 1539,
-      "summary": "The Iridescent Host is an Outer God and patron deity of the Iridescent Church and Calaria's Thearchy, favoring her people's prosperity and cultural legacy.",
+      "contentHash": "60d3b0db8e7349571f305f4eacb02a1ae069d6c165e1e90d4220236a23e29990",
+      "byteLength": 1542,
+      "summary": "The Iridescent Host is an Outer God and patron deity of the Iridescent Church and the Thearchy of Calaria, favoring her people's prosperity and cultural legacy.",
       "keyFacts": [
-        "Patron deity of the Iridescent Church and the Thearchy of Calaria.",
+        "Outer God; patron of the Iridescent Church and the Thearchy of Calaria.",
         "Edicts: establish cultural superiority, create great works.",
         "Anathema: forgo credit for your accomplishments.",
-        "Divine Raiment is pearlescent and shimmering; Celestial Presence is an aurora.",
+        "Divine Raiment is pearlescent and shimmering; Celestial Presence is an Aurora.",
         "Favored weapon is the mace; Divine Skill is Diplomacy.",
         "Divine Font: harm or heal; can choose holy or unholy sanctification.",
         "Domains: confidence, cities, indulgence, passion, toil, wealth.",
-        "Cleric Spells: soothe (1st), creation (4th), collective transposition (6th)."
+        "Cleric Spells: 1st soothe, 4th creation, 6th collective transposition."
       ],
       "entities": {
-        "people": [],
+        "people": [
+          "Iridescent Host"
+        ],
         "places": [
           "Calaria"
         ],
         "orgs": [
-          "Iridescent Church",
-          "Thearchy of Calaria"
+          "Iridescent Church"
         ]
       }
     },
@@ -629,7 +614,7 @@
           "target": "The Scale",
           "display": null,
           "section": null,
-          "resolvedPath": "Org/The Scale.md"
+          "resolvedPath": "Org/The Scale/index.md"
         },
         {
           "raw": "[[Divine Raiment]]",
@@ -646,16 +631,16 @@
           "resolvedPath": "Divinity/Celestial Prescence.md"
         }
       ],
-      "contentHash": "a9bb9f9ac5d453b9235537399490d61429e65a47e8d152c0bbbb53781923f0a1",
-      "byteLength": 1659,
+      "contentHash": "d90c1d6d2cc2dcb39dcfeda3ce5bbcf55855858183f496d5f65477383ae3fb0d",
+      "byteLength": 1662,
       "summary": "The Judge of Ages is an Outer God and patron of The Scale, acting as an intermediary between Outer Gods and championing impartial justice and world balance.",
       "keyFacts": [
         "Patron deity of The Scale organization.",
-        "Teaches followers to act as impartial adjudicators for inter-religious conflicts.",
         "Edicts: perform just executions, study local laws, oppose corrupt or bloodthirsty officials.",
-        "Anathema: killing without thought, executing the innocent, mocking the condemned, false incrimination.",
+        "Anathema: kill without thought, execute the innocent, mock the condemned, falsely incriminate another.",
+        "Divine Raiment is golden and radiant; Celestial Presence rings from horizon to horizon.",
         "Favored weapon is the greataxe; Divine Skill is Society.",
-        "Divine Font is harm or heal; can choose holy or unholy sanctification.",
+        "Divine Font: harm or heal; Divine Sanctification: can choose holy or unholy.",
         "Domains: death, duty, might, swarm, truth, vigil.",
         "Cleric Spells: sure strike (1st), paralyze (3rd), mountain resilience (4th)."
       ],
@@ -704,18 +689,18 @@
           "resolvedPath": "Divinity/Celestial Prescence.md"
         }
       ],
-      "contentHash": "b424484b3d7d0eed8c858e4f251f41beb936fc27fa4bd5f33bba0eb11c5407aa",
-      "byteLength": 1529,
+      "contentHash": "f7d2fde3600736f9558a802ab86beff28520290ce2303784db899c17fec212e7",
+      "byteLength": 1531,
       "summary": "The Compelled is an Outer God, former patron deity of the Raelion Empire, teaching predestination, meritocracy, and self-perfection.",
       "keyFacts": [
-        "Patron deity of the Raelion Empire; now worshipped by Raelish refugees.",
-        "Teaches predestination: all have an ideal life and must strive to reach it.",
+        "Outer God; was the patron deity of the Raelion Empire, now worshipped by Raelish refugees.",
+        "Teaches predestination: all have an ideal life, and followers must strive to reach it.",
         "Emphasizes meritocratic hierarchies and respect for superiors.",
-        "Edicts: achieve your best self, work hard, demand others do the same.",
-        "Anathema: disobeying a superior or shirking duties.",
-        "Favored weapon is the whip; Divine Skill is Arcana.",
+        "Edicts: achieve your best self, work hard, and demand others do as well.",
+        "Anathema: disobey a superior, shirk your duties.",
+        "Divine Ability: Intelligence or Dexterity; Divine Skill: Arcana; Favored Weapon: whip.",
         "Domains: fate, glyph, introspection, luck, magic, perfection.",
-        "Divine Raiment is silver and matte; Celestial Presence is a meteor shower."
+        "Cleric Spells: message rune (1st), secret page (3rd), never mind (6th)."
       ],
       "entities": {
         "people": [
@@ -764,21 +749,23 @@
           "resolvedPath": "Divinity/Celestial Prescence.md"
         }
       ],
-      "contentHash": "321a6e8acc7db311154adfd692a76e032dd63be085760ad5e39fb76eb7070454",
-      "byteLength": 1638,
+      "contentHash": "ab99ee58f53e3d6ab1605fcdcb82d8b9d5b4b5e81db88ac6c1058a331c96cffd",
+      "byteLength": 1641,
       "summary": "The Watcher With 1,000 Eyes is an Outer God and patron of Belvedere, teaching followers to chronicle existence and advance society toward an inevitable future.",
       "keyFacts": [
-        "Outer God and patron deity of Belvedere.",
-        "Edicts: chronicle existence, uncover hidden mysteries, advance society.",
-        "Anathema: destroy sources of knowledge, hinder forward technological progress.",
-        "Divine Raiment is pure white and twinkling; Celestial Presence is nebulae.",
-        "Favored weapon is the glaive; Divine Skill is Occultism.",
-        "Domains: change, cold, creation, darkness, knowledge, star.",
-        "Cleric Spells: penumbral shroud (1st), stupefy (2nd), blanket of stars (6th).",
-        "Devotees may choose holy or unholy sanctification and harm or heal font."
+        "Outer God and patron deity of Belvedere",
+        "Edicts: chronicle existence, uncover hidden mysteries, advance society",
+        "Anathema: destroy sources of knowledge, hinder forward technological progress",
+        "Divine Raiment is pure white and twinkling; Celestial Presence is Nebulae",
+        "Favored weapon is the glaive; Divine Skill is Occultism",
+        "Domains: change, cold, creation, darkness, knowledge, star",
+        "Cleric Spells: penumbral shroud (1st), stupefy (2nd), blanket of stars (6th)",
+        "Devotees choose Dexterity or Intelligence; Divine Font is harm or heal; can choose holy or unholy"
       ],
       "entities": {
-        "people": [],
+        "people": [
+          "Watcher With 1,000 Eyes"
+        ],
         "places": [
           "Belvedere"
         ],
@@ -808,15 +795,15 @@
           "resolvedPath": "Geography/Black and White/index.md"
         }
       ],
-      "contentHash": "ce5bdb783e122f3ee595d8b455f7b25f44eb1a4259ebe23ef59ee1294c94ac3d",
-      "byteLength": 665,
-      "summary": "Aut is an unsettling humanoid deity-like figure who manipulates the world through proxies, now hindered by the Voidsong. He resides in the Black and White.",
+      "contentHash": "3c755bab868ddf4e6054b1de83c0c8b0c2aa6a051ea45d81f70746e16d6cd486",
+      "byteLength": 667,
+      "summary": "Aut is an unsettling humanoid entity who observes and subtly manipulates the world through proxies, residing in the Black and White.",
       "keyFacts": [
-        "Completely white skin with oversized hands and feet, gangly limbs, and a cylindrical torso.",
-        "His head is a perfectly smooth sphere with no features except a massive toothy grin.",
-        "Prefers to observe the world and nudge it in his desired direction through 'friends'.",
-        "The advent of the Voidsong has disrupted his ability to influence the world.",
-        "Lives somewhere within the Black and White."
+        "Completely white skin with oversized hands and feet, gangly limbs, and a cylindrical torso",
+        "His head is a perfectly spherical, oversized sphere with no facial features except a giant toothy grin",
+        "He prefers to influence the world indirectly through his 'friends' rather than acting himself",
+        "The recent advent of the Voidsong has disrupted his ability to influence the world",
+        "He resides somewhere within the Black and White"
       ],
       "entities": {
         "people": [
@@ -825,9 +812,7 @@
         "places": [
           "Black and White"
         ],
-        "orgs": [
-          "Voidsong"
-        ]
+        "orgs": []
       }
     },
     "Divinity/Unknown Entities/Green Father.md": {
@@ -907,13 +892,13 @@
           "resolvedPath": "Org/Amber Call/index.md"
         }
       ],
-      "contentHash": "8162c74965eb0c69c182ad684fd31cc672d3fe0ab1fe14b250171dc27bbd4665",
-      "byteLength": 416,
-      "summary": "The Zorbon is a supposed mind-controlling entity with fungal qualities, whose influence is believed to be repelled by tinfoil.",
+      "contentHash": "49afedfb71b9ec3f0a93d07289c400d1603e828a3745036b287f8d9d1cfff80f",
+      "byteLength": 418,
+      "summary": "The Zorbon is a rumored mind-controlling entity with fungal qualities, whose influence is said to be repelled by tinfoil.",
       "keyFacts": [
-        "The Zorbon allegedly controls the minds of unsuspecting individuals.",
+        "The Zorbon supposedly controls the minds of unsuspecting individuals.",
         "Tinfoil is believed to repel the Zorbon's influence.",
-        "Followers fashion tinfoil clothing, such as hats, to avoid his control.",
+        "Followers fashion tinfoil clothing, including hats, to protect themselves.",
         "The Zorbon has been described as having fungal qualities.",
         "The Zorbon is believed to be somehow related to Benjamin Grayson, CEO of Amber Call."
       ],
@@ -930,9 +915,7 @@
     "Divinity/index.md": {
       "path": "Divinity/index.md",
       "title": "Divinity",
-      "aliases": [
-        "Divinity"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -952,8 +935,8 @@
           "resolvedPath": "Phenomena/Firmament.md"
         }
       ],
-      "contentHash": "4a1ac1bd49eefdca831ed43618de1b8ccd9d657c87e15ffd9361d0cfaeac9851",
-      "byteLength": 346,
+      "contentHash": "07a737c2c95d5215726f9cd2131bcb7a540326eee30f27f05436bd6e76487c77",
+      "byteLength": 301,
       "summary": "Six Gods bless the world of Færrin but cannot physically enter due to a crack in the Firmament. They make their presence known through followers in Calaria and beyond.",
       "keyFacts": [
         "Exactly six Gods are active in Færrin.",
@@ -974,9 +957,7 @@
     "Geography/Austrene/index.md": {
       "path": "Geography/Austrene/index.md",
       "title": "Austrene",
-      "aliases": [
-        "Austrene"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1010,18 +991,18 @@
           "resolvedPath": "Divinity/Outer Gods/Eternal Pulse.md"
         }
       ],
-      "contentHash": "3684e5ded02c3eb8f26b3421f598f33ca59dcf1b0a07cd6aa348233824abada1",
-      "byteLength": 2501,
-      "summary": "Austrene is a high-altitude kingdom known for luxury alpine tourism and philosophical observatories studying the slip, effectively ruled by the Provost of Belvedere and resort oligarchs.",
+      "contentHash": "3cca8d83378e3acac6cd40441a4ac8a3ea9dcf921900c90786f74b3ba7c71542",
+      "byteLength": 2454,
+      "summary": "Austrene is a high-altitude kingdom known for luxury alpine tourism and cutting-edge philosophical research conducted at the observatories of Belvedere.",
       "keyFacts": [
-        "Austrene is a mountainous country with glaciers, ski resorts, and geothermic springs attracting wealthy tourists from a…",
-        "Austrenites have built palatial lodges and raised prices, cementing a reputation as a playground for the rich and power…",
-        "The observatories of Belvedere study the slip where the firmament is thinnest, funded by wealthy patrons.",
-        "Researchers devoted to the Watcher With 1,000 Eyes and the Eternal Pulse work in Belvedere's observatories.",
-        "Austrene is technically a kingdom with a king, but the royal family functions more as an attraction than a governing po…",
-        "Real power is held by the Provost of Belvedere and a handful of oligarchs controlling the resorts and their land.",
-        "A Belvedere observatory chat log references an anomalous firmament thinning above outpost C12, flagged as potentially d…",
-        "The anomaly was escalated to the Provost and an associated fane after being confirmed across sector s68-v12."
+        "Austrene features jagged peaks, glaciers, geothermic springs, and high-altitude observatories.",
+        "Affluent tourists visit for snow sports, hiking, and geothermic springs; locals have built palatial lodges.",
+        "Austrene has a reputation as a playground for the rich and powerful across Edan.",
+        "The observatories of Belvedere study the slip, where the firmament is thinnest.",
+        "Researchers at Belvedere are devoted to the Watcher With 1,000 Eyes and the Eternal Pulse.",
+        "Austrene is technically a kingdom with a king, but the royal family is more attraction than authority.",
+        "Real power is held by the Provost of Belvedere and a handful of resort-controlling oligarchs.",
+        "A Belvedere chat log references a hidden firmament thinning anomaly above outpost C12, escalated to the Provost."
       ],
       "entities": {
         "people": [
@@ -1030,14 +1011,9 @@
         "places": [
           "Austrene",
           "Belvedere",
-          "Edan",
-          "outpost C12"
+          "Edan"
         ],
-        "orgs": [
-          "BLV Clear Air Turbulence",
-          "BLV Nervous Energy",
-          "BLV Prime Mover"
-        ]
+        "orgs": []
       }
     },
     "Geography/Black and White/Pharos.md": {
@@ -1063,21 +1039,19 @@
           "resolvedPath": "Geography/Calaria/Hallia/Aurideon/index.md"
         }
       ],
-      "contentHash": "a6f6676c7c26dd5d5584adaa690efe16ea79a1d90314e4e46cec0a1fb224219e",
-      "byteLength": 418,
-      "summary": "Pharos is an infinitely tall concrete edifice visible anywhere on Færrin, connecting disparate locations across the planet and other planes.",
+      "contentHash": "ab063b6913ca0f4af8aed3d22146f1f01ef18d1d800b3306602806a7d3c0822b",
+      "byteLength": 419,
+      "summary": "Pharos is an infinitely tall concrete edifice on Færrin, visible everywhere but only to those already introduced to it.",
       "keyFacts": [
-        "Pharos is an infinitely tall concrete building.",
-        "It is visible from anywhere on Færrin.",
-        "One entrance is located at 13 Bright Street in Aurideon.",
-        "The building is only visible to those who have already been introduced to it.",
-        "It connects disparate locations across the planet and on other planes.",
-        "Navigation through Pharos follows a ritualistic system called the \"Rule of Three\"."
+        "Infinitely tall concrete building visible from anywhere on Færrin",
+        "Only perceivable by those who have already been introduced to it",
+        "Has an entrance at 13 Bright Street in Aurideon",
+        "Connects to disparate locations across the planet and other planes",
+        "Navigation through the building follows the ritualistic 'Rule of Three'"
       ],
       "entities": {
         "people": [],
         "places": [
-          "Pharos",
           "Færrin",
           "Aurideon",
           "13 Bright Street"
@@ -1088,9 +1062,7 @@
     "Geography/Black and White/index.md": {
       "path": "Geography/Black and White/index.md",
       "title": "Black and White",
-      "aliases": [
-        "Black and White"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1110,12 +1082,12 @@
           "resolvedPath": "Geography/Black and White/Pharos.md"
         }
       ],
-      "contentHash": "46dff5597cd515eb8cc3df2e387af6ad7cc2812b5dc9735e8b242a199a6c9807",
-      "byteLength": 160,
+      "contentHash": "1f84199f1eb8c197e6354bcdb6335f402a5a2c9d517d1c70bde0d68a1ecbe53c",
+      "byteLength": 101,
       "summary": "The Black and White is a separate world connected to Færrin via the Pharos.",
       "keyFacts": [
         "The Black and White is a world distinct from Færrin.",
-        "It is connected to Færrin through the Pharos."
+        "It is connected to Færrin through a structure or phenomenon called the Pharos."
       ],
       "entities": {
         "people": [],
@@ -1123,17 +1095,13 @@
           "Black and White",
           "Færrin"
         ],
-        "orgs": [
-          "Pharos"
-        ]
+        "orgs": []
       }
     },
     "Geography/Brithwyn/index.md": {
       "path": "Geography/Brithwyn/index.md",
       "title": "Brithwyn",
-      "aliases": [
-        "Brithwyn"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1164,27 +1132,28 @@
           "target": "Protectorate",
           "display": null,
           "section": null,
-          "resolvedPath": "Org/Protectorate.md"
+          "resolvedPath": "Org/Protectorate/index.md"
         }
       ],
-      "contentHash": "4fbcc1d0ed222ee5d23e3436da333207781d2d3981a247a0c23350ca4b9a5cf6",
-      "byteLength": 2861,
-      "summary": "Brithwyn is an independent nation that broke away from Calaria ~40 years ago, distinguished by strict limits on Orgs and a reinstated nobility system.",
+      "contentHash": "0bb1f2fb59ce9fb05c518041f3646be2fc46a6f762a37025a8263b9286e81649",
+      "byteLength": 2812,
+      "summary": "Brithwyn is an independent nation that broke away from Calaria ~40 years ago, distinguished by its strict limits on Orgs and a reinstated noble class.",
       "keyFacts": [
-        "Brithwyn declared independence from Calaria after the Calarian Prime Minister was assassinated ~40 years ago.",
-        "After a short but bloody conflict, Calaria's council recognized Brithwyn as independent.",
+        "Brithwyn declared independence from Calaria after the Calarian Prime Minister was assassinated, following a short but b…",
+        "Calaria's council recognized Brithwyn as independent rather than continue fighting.",
         "Brithwyn limits how deeply Orgs can integrate into the country, unlike Calaria.",
-        "Brithwyn reinstated a nobility system to manage territory and public works in place of Orgs.",
+        "Brithwyn reinstated a nobility system to manage territory and public works, offering title and capital as incentives.",
         "The Regent Administrator leads Brithwyn, with nobles handling day-to-day governance.",
         "Worship of the Iridescent Host remains the predominant religion, same as in Calaria.",
-        "Chorath Engineering produces the 862 Aventine, a Palladium-Alloy armored vehicle sold in Brithwyn.",
-        "The Blessed Armaments Package on the Aventine is restricted to RBA and Protectorate use only."
+        "Chorath Engineering is a Brithwyn-based company producing vehicles like the 862 Aventine truck.",
+        "The Aventine features Palladium-Alloy plating, Rite-Drive Slide Suspension, and optional Folded Space™ storage."
       ],
       "entities": {
         "people": [],
         "places": [
           "Brithwyn",
-          "Calaria"
+          "Calaria",
+          "Belwick"
         ],
         "orgs": [
           "Iridescent Host",
@@ -1197,9 +1166,7 @@
     "Geography/Calaria/Hallia/Aurideon/index.md": {
       "path": "Geography/Calaria/Hallia/Aurideon/index.md",
       "title": "Aurideon",
-      "aliases": [
-        "Aurideon"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1240,16 +1207,16 @@
           "resolvedPath": "Divinity/Celestial Prescence.md"
         }
       ],
-      "contentHash": "e550b553ef7238b6fc34167a65912435a7fe420313dd643c0528f72b76479357",
-      "byteLength": 667,
-      "summary": "Aurideon is a sovereign city-state in Hallia, governed exclusively by the Iridescent Church beneath a crystal dome that amplifies the Iridescent Host's aurorae.",
+      "contentHash": "fa292abef6994e1498e21b3fd68fd0582883048e7513c8f09cf82b9cee68c9b7",
+      "byteLength": 622,
+      "summary": "Aurideon is a sovereign city-state in Hallia, governed exclusively by the Iridescent Church and covered by a crystal dome that amplifies celestial aurorae.",
       "keyFacts": [
         "Aurideon is the seat of power for the Iridescent Church.",
         "It is one of two sovereign city-states within Hallia.",
-        "The city is governed exclusively by the Iridescent Church; Calarian government has little say.",
-        "Entry is restricted for non-believers, though exceptions are made for business.",
+        "The Church governs it exclusively; the broader Calarian government has little say.",
+        "Entry is restricted for non-believers, with exceptions made for business.",
         "The city is covered by a giant crystal dome.",
-        "The dome is structured to amplify the Iridescent Host's Celestial Presence aurorae overhead.",
+        "The dome is structured to amplify the Iridescent Host's aurorae overhead.",
         "Most convox of the Iridescent Church are headquartered in Aurideon."
       ],
       "entities": {
@@ -1295,26 +1262,25 @@
           "resolvedPath": "Org/Iconoclasm/index.md"
         }
       ],
-      "contentHash": "15babf2970057b2cbd068235c958e61882c8d6cbfe95ac70cbaa1f3becd0087c",
-      "byteLength": 570,
+      "contentHash": "ba546880b2c27540b2afb912abfb3cc615dc23221d3a34f0e50ac64cc7035edb",
+      "byteLength": 571,
       "summary": "The Sin and Tonic is a dingy bar in Sableclutch, owned by Illmari Vaino and serving as Iconoclasm's current headquarters.",
       "keyFacts": [
-        "Located in Sableclutch",
-        "Owned by Illmari Vaino",
-        "Current headquarters of the organization Iconoclasm",
-        "Interior is dingy and dark with tobacco incense censors hanging from the ceiling",
-        "Main area has booths along the walls and a bar in the center",
-        "Left exit leads to a workshop and garage",
-        "Right exit leads to a stockroom and armory",
-        "Back exit leads to bedrooms and an office"
+        "Located in Sableclutch.",
+        "Owned and operated by Illmari Vaino.",
+        "Serves as the current headquarters of the organization Iconoclasm.",
+        "Interior is dingy and dark with tobacco incense censors hanging from the ceiling.",
+        "Main area features booths along the walls and a bar in the center.",
+        "Left exit leads to a workshop and garage.",
+        "Right exit leads to a stockroom and armory.",
+        "Back exit leads to bedrooms and an office."
       ],
       "entities": {
         "people": [
           "Illmari Vaino"
         ],
         "places": [
-          "Sableclutch",
-          "Sin and Tonic"
+          "Sableclutch"
         ],
         "orgs": [
           "Iconoclasm"
@@ -1344,8 +1310,8 @@
           "resolvedPath": "Org/Roundhat Gang/index.md"
         }
       ],
-      "contentHash": "950992489762e9d67986a3ad171cd175572e5823bee5e6389262ab176123b485",
-      "byteLength": 250,
+      "contentHash": "7b046c3f6640e6530a22e9651a6eb58a84b4a415f1171c62ae986f3cd93f75e0",
+      "byteLength": 251,
       "summary": "The Crowded Flea is a riverside pub in Sableclutch, popular with dockworkers and serving as the main hideout of the Roundhat Gang.",
       "keyFacts": [
         "Located on the edge of the Fousan River in Sableclutch.",
@@ -1355,7 +1321,6 @@
       "entities": {
         "people": [],
         "places": [
-          "The Crowded Flea",
           "Sableclutch",
           "Fousan River"
         ],
@@ -1367,9 +1332,7 @@
     "Geography/Calaria/Hallia/Sableclutch/index.md": {
       "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
       "title": "Sableclutch",
-      "aliases": [
-        "Sableclutch"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1389,16 +1352,16 @@
           "resolvedPath": "Org/index.md"
         }
       ],
-      "contentHash": "1dc65be8b07c9a559bb2d79eadbcb38f35d7d314b20852f5600494078c88cafd",
-      "byteLength": 537,
-      "summary": "Sableclutch is a poor southern district of Hallia along the Fousan River, dominated by dockworkers and warehouse employees.",
+      "contentHash": "cca61f536c5259631d63addfa7ad7055d45125b5eafc4872b8a3c051ba7af42b",
+      "byteLength": 488,
+      "summary": "Sableclutch is a poor southern district of Hallia, situated on the south bank of the Fousan River and dominated by dockworkers and warehouse employees.",
       "keyFacts": [
-        "Located at the southernmost point of Hallia",
-        "Sits on the south bank of the Fousan River",
-        "Dominated by dockworkers and warehouse employees",
-        "Many goods entering the city begin their journey in Sableclutch",
-        "Considered overlooked by the rest of the capital",
-        "Power centers of the Orgs managing it are found elsewhere"
+        "Located at the southernmost point of Hallia, the capital city.",
+        "Sits along the south bank of the Fousan River.",
+        "Predominantly inhabited by dockworkers and warehouse employees.",
+        "Many goods entering the city begin their journey through Sableclutch.",
+        "Considered a poorer, overlooked neighborhood by the rest of the capital.",
+        "The organizations that manage river trade have their power centers elsewhere."
       ],
       "entities": {
         "people": [],
@@ -1407,17 +1370,13 @@
           "Hallia",
           "Fousan River"
         ],
-        "orgs": [
-          "Orgs"
-        ]
+        "orgs": []
       }
     },
     "Geography/Calaria/Hallia/Teller's Run/index.md": {
       "path": "Geography/Calaria/Hallia/Teller's Run/index.md",
       "title": "Teller's Run",
-      "aliases": [
-        "Teller's Run"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1430,18 +1389,19 @@
           "resolvedPath": "Geography/Calaria/Hallia/index.md"
         }
       ],
-      "contentHash": "0622362061ce8512ce163283c48d5592a66dd78eeb99443ab1dafb57366980d7",
-      "byteLength": 191,
-      "summary": "Teller's Run is a neighborhood located at the northernmost point of Hallia, originally planned as part of a larger district.",
+      "contentHash": "3997c8378aa21afd441a56c4b06f72d0b3d35fa77dc282c1cca1da3f8c88dc40",
+      "byteLength": 137,
+      "summary": "Teller's Run is a neighborhood located at the northernmost point of Hallia, a city in the Calaria region.",
       "keyFacts": [
-        "Located at the northernmost point of Hallia",
-        "Teller's Run was originally planned to be part of a larger area"
+        "Teller's Run is situated at the northernmost point of Hallia.",
+        "It was originally planned to be part of a larger development (details cut off)."
       ],
       "entities": {
         "people": [],
         "places": [
           "Teller's Run",
-          "Hallia"
+          "Hallia",
+          "Calaria"
         ],
         "orgs": []
       }
@@ -1449,9 +1409,7 @@
     "Geography/Calaria/Hallia/Widdershins/index.md": {
       "path": "Geography/Calaria/Hallia/Widdershins/index.md",
       "title": "Widdershins",
-      "aliases": [
-        "Widdershins"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1464,14 +1422,14 @@
           "resolvedPath": "Geography/Calaria/Hallia/index.md"
         }
       ],
-      "contentHash": "af6d64306567e32bd3c4aa0ce007315a5ad93450a1c4bb8afdef487b369161db",
-      "byteLength": 356,
+      "contentHash": "f77cdaf00d89b4fbb0ec2a2b1561eb8c6d8fe84b859c1b5e5c8f2f77b8a9f7a5",
+      "byteLength": 305,
       "summary": "Widdershins is a poor neighborhood in southern Hallia, situated on the north bank of the Fousan River.",
       "keyFacts": [
-        "Located in the southern part of Hallia",
-        "Sits on the north bank of the Fousan River",
-        "Considered a poorer neighborhood",
-        "Home to many service industry workers who cannot afford rent closer to work"
+        "Located in the southern part of the city of Hallia.",
+        "Sits along the north bank of the Fousan River.",
+        "Considered a poorer neighborhood.",
+        "Home to many service industry workers who cannot afford to live near their workplaces."
       ],
       "entities": {
         "people": [],
@@ -1486,15 +1444,13 @@
     "Geography/Calaria/Hallia/index.md": {
       "path": "Geography/Calaria/Hallia/index.md",
       "title": "Hallia",
-      "aliases": [
-        "Hallia"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "ebf0335d25e4cebb8cf0c50122b498708dd1a1a970dc7701e7c2ffc0e62ee447",
-      "byteLength": 42,
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0,
       "summary": "(stub page — no content yet)",
       "keyFacts": [],
       "entities": {
@@ -1514,18 +1470,17 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "68b30511ac638bca6270cbc3e23323b1b8cfff8ce60de344732cc494ac287b66",
+      "contentHash": "5ed5e45417d82dd28eb65f9535ab59b1f6d7a445dc1f5d8583f058aa5d9ddfde",
       "byteLength": 372,
-      "summary": "The Verdant Expanse is a vast, ancient forest a thousand miles wide, lying between Calaria and the Tenchwin Sea.",
+      "summary": "The Verdant Expanse is a vast, ancient forest spanning a thousand miles between Calaria and the Tenchwin Sea, filled with dangerous creatures.",
       "keyFacts": [
-        "Spans approximately a thousand miles in width.",
-        "Located between Calaria and the Tenchwin Sea.",
-        "Contains trees reaching a mile in height, blocking out sunlight.",
-        "The forest floor exists in near-total darkness.",
-        "Home to many strange and dangerous creatures.",
-        "Also known as the Green Sea.",
-        "Actively resists outside subjugation or conquest.",
-        "Modern civilization has largely abandoned efforts to explore its deepest regions."
+        "Spans approximately a thousand miles wide",
+        "Located between Calaria and the Tenchwin Sea",
+        "Trees reach up to a mile tall, blocking sunlight from the forest floor",
+        "Strange creatures prowl its darkened depths",
+        "Also known as the Green Sea",
+        "Actively resists outside subjugation or conquest",
+        "Modern civilization has largely abandoned attempts to explore its deepest regions"
       ],
       "entities": {
         "people": [],
@@ -1581,13 +1536,14 @@
           "resolvedPath": "Divinity/Outer Gods/Iridescent Host.md"
         }
       ],
-      "contentHash": "327118e7fb352a27be6beec71107d8614fc81065da209bad495b876482bb9915",
-      "byteLength": 514,
+      "contentHash": "7ed8afd7b3aeeb7bfc8466bf6d609e001dec07ccaef4f90217a7835128f2f212",
+      "byteLength": 515,
       "summary": "Wrenford is a small, half-developed city on the edge of the Verdant Expanse, founded by Calarian Orgs for logging that was abandoned after the forest resisted.",
       "keyFacts": [
         "Built by multiple Orgs from Calaria to harvest timber from the Verdant Expanse.",
         "The Verdant Expanse 'fought back,' making logging too expensive to continue.",
-        "The city never reached its intended potential but did not die out.",
+        "The city never reached its intended potential but did not die out either.",
+        "Wrenford remains half-developed as a result of the failed logging venture.",
         "Many residents follow the Green Father in addition to the Iridescent Host."
       ],
       "entities": {
@@ -1607,9 +1563,7 @@
     "Geography/Calaria/index.md": {
       "path": "Geography/Calaria/index.md",
       "title": "Calaria",
-      "aliases": [
-        "Calaria"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [
@@ -1655,21 +1609,22 @@
           "resolvedPath": "Phenomena/Infinite Horizon.md"
         }
       ],
-      "contentHash": "c409b01d0274f7dced08ad2204730bc46b30bc5bc10c396890f275cd15406d7f",
-      "byteLength": 2693,
-      "summary": "Calaria is the dominant superpower of Færrin, controlling trade, media, and military globally, governed jointly by the Iridescent Church and a rotating corporate council.",
+      "contentHash": "42be65156e98782b7f426f49ee830cef1e2bca46e4a6a0edcefadf0be0c16c1b",
+      "byteLength": 2650,
+      "summary": "Calaria is the dominant superpower of Færrin, controlling trade, media, and military globally, governed jointly by the Iridescent Church and a corporate council.",
       "keyFacts": [
         "Calaria dominates trade, media, music, and military power across the continent of Færrin.",
-        "The Calarian economy is powered by the strongest industrial complex in the planet's history.",
-        "Most Calarians work as cogs in large private corporations called Orgs.",
-        "Calaria's government is jointly run by the Iridescent Church and a rotating council of powerful Orgs.",
-        "Each Org nominates ministers to a governing council, which internally elects a Prime Minister.",
-        "The Prime Minister and the Iridescent Church's Pontifex jointly pass laws and handle diplomacy.",
-        "Calaria expanded rapidly due to divine blessings, the Iridescent Church, and expansion into the Infinite Horizon.",
-        "Calarians are known for intense national pride, including military parades and investment in great works."
+        "Calarian culture is marked by intense national pride, described by outsiders as jingoism.",
+        "The economy is powered by the strongest industrial complex in the planet's history.",
+        "Most citizens work as cogs in large private corporations known as Orgs.",
+        "Calaria's rapid growth was driven by divine blessings, the Iridescent Church, and expansion into the Infinite Horizon.",
+        "Government is jointly run by the Iridescent Church and a rotating council of powerful Orgs.",
+        "Each Org nominates ministers to the council, which internally elects a Prime Minister.",
+        "The Prime Minister and the Pontifex (head of the Iridescent Church) co-govern the country."
       ],
       "entities": {
         "people": [
+          "Prime Minister",
           "Pontifex"
         ],
         "places": [
@@ -1686,9 +1641,7 @@
     "Geography/Fenrith/index.md": {
       "path": "Geography/Fenrith/index.md",
       "title": "Fenrith",
-      "aliases": [
-        "Fenrith"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1701,18 +1654,18 @@
           "resolvedPath": "Divinity/Outer Gods/The Compelled.md"
         }
       ],
-      "contentHash": "78149db3901fd71d3ac09c85ff70764dca3acdea3d74c1f6a7d2ac003bce139a",
-      "byteLength": 2412,
+      "contentHash": "fa307cba1e60def49820aa9baad7ec6593020a49f15e14e82ca2bfea62ad9113",
+      "byteLength": 2367,
       "summary": "Fenrith is a coastal nation whose inhabitants live in underwater glass dome-cities, dominating ocean trade due to their mastery of sea currents.",
       "keyFacts": [
-        "The Termean Veinlands covers 85%+ of Fenrith's territory: blazing hot tundra unsuitable for crops or buildings.",
-        "Most Fenrithi live in giant reinforced glass domes built under the ocean surface along the western coast.",
-        "Fenrithi ships travel fully submerged, avoiding surface traffic.",
+        "The Termean Veinlands covers 85%+ of Fenrith's territory: hot, soft-grounded tundra unsuitable for crops or buildings.",
+        "Most Fenrithi live in reinforced glass dome-cities built beneath the ocean surface along the western coast.",
+        "Fenrithi ships travel fully submerged, and citizens farm and ranch ocean-native animals for food.",
         "Fenrith is a mercantile powerhouse; most large cargo companies are operated by or with the Fenrithi.",
         "Fenrith is ruled by the Fisher-Kings: the four heads of the largest cargo companies.",
-        "There is no state religion; The Compelled has the largest following, but all faiths have a foothold.",
-        "Veinlands inhabitants include fugitives, sovereign citizens, and homesteaders who use modified automobiles to cross the…",
-        "Fenrithi trades include shipping, fishing, marine biology, meteorology, and aquamancy."
+        "There is no state religion; The Compelled has the largest following, but all faiths have a presence.",
+        "The Veinlands is home to fugitives, sovereign citizens, and homesteaders; traversed using modified automobiles.",
+        "A sample shipping manifest includes kelp flour, Istrian silk, Tormerén marble, weapons, and seerhorse corpses."
       ],
       "entities": {
         "people": [],
@@ -1735,17 +1688,17 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "c75047bc120e5c459fea153d0ed85c07943d46537c77aa2a31c6a344687be50d",
-      "byteLength": 1444,
-      "summary": "Færrin is a formerly magic-less planet near the galaxy's core, unique in the Astra for its mundane nature until magic was recently introduced.",
+      "contentHash": "0d734fa17573c4270711c6474883d4c7b632d094f869d23b3dde979d4440fe48",
+      "byteLength": 1445,
+      "summary": "Færrin is a formerly magic-less planet near the galaxy's core, unique in the Astra for its mundane origins before the recent arrival of magic.",
       "keyFacts": [
         "Færrin is located near the galaxy's core.",
-        "Until recently, Færrin had no magic, no gods, and no stars visible in its sky.",
-        "Magic is the one universal thread connecting all worlds across the Astra.",
-        "Færrish people lived for hundreds of thousands of years believing they were alone in the universe.",
+        "Until recently, Færrin had no magic, no gods, and no stars in its sky.",
+        "Magic is the one universal thread connecting all worlds in the Astra.",
+        "Færrin's people lived for hundreds of thousands of years believing they were alone in the universe.",
         "Before magic arrived, the only sentient life on Færrin was human.",
-        "After magic was introduced, more than half of humans developed new traits from the magical influx.",
-        "Sentient magic beasts also appeared across the planet after magic arrived."
+        "After magic was introduced, more than half of humans developed new traits.",
+        "Sentient magic beasts appeared across the planet following the influx of magical energy."
       ],
       "entities": {
         "people": [],
@@ -1777,9 +1730,7 @@
     "Geography/Istria/index.md": {
       "path": "Geography/Istria/index.md",
       "title": "Istria",
-      "aliases": [
-        "Istria"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1806,24 +1757,23 @@
           "resolvedPath": "Geography/Færrin.md"
         }
       ],
-      "contentHash": "2152e8f5368ac0805b538346c57a3247b7c1963332247a79bed8e36f38c59cad",
-      "byteLength": 2834,
-      "summary": "Istria is a cursed, war-scarred land where a roaming corruption called the Stillness threatens anyone who stays still too long, yet people brave it for ancient artifacts and crystallized magic.",
+      "contentHash": "ab9bd7fe5c1ba75c1ff11247a3dd107d6e94e9dfad4d979330d013b086058245",
+      "byteLength": 2786,
+      "summary": "Istria is a cursed, war-scarred land where a roaming corruption called the Stillness forces inhabitants to live in mobile caravan-cities called striders.",
       "keyFacts": [
-        "The Stillness is a living curse that corrupts anything remaining in one place too long, a remnant of the Dark Ages.",
-        "Victims of the Stillness have their skin turn gray, crack, and sprout purple crystals before solidifying like statues.",
-        "High curse-density areas cause magic to crystallize into a dense, valuable power source.",
-        "Istrians live in giant mobile caravan-cities called striders, constantly moving to survive.",
+        "The Stillness is a living curse that corrupts anything remaining stationary too long, turning victims to crystal-cracke…",
+        "Istria was devastated by wars during the dark ages before Aurelia's enlightenment.",
+        "Inhabitants live in giant mobile caravan-cities called striders, constantly moving to survive.",
+        "Powerful artifacts from the Dark Ages remain untouched across the landscape.",
+        "High curse density causes magic to crystallize into a dense, valuable power source.",
         "Istrians are renowned for wanderlust; one was the first to circumnavigate the globe.",
         "The Istrian mobile spaceport is the closest any Færrin group has come to leaving the atmosphere.",
-        "Istria was part of an old Istrian Empire before the Dark Ages and Aurelia's enlightenment.",
-        "Powerful artifacts from the Dark Ages remain untouched across the Istrian landscape."
+        "Istria is a key participant in the Infinite Horizon exploration effort."
       ],
       "entities": {
         "people": [
           "Anari Thesrim",
-          "Haren",
-          "Aurelia"
+          "Haren"
         ],
         "places": [
           "Istria",
@@ -1836,9 +1786,7 @@
     "Geography/Lorandris/index.md": {
       "path": "Geography/Lorandris/index.md",
       "title": "Lorandris",
-      "aliases": [
-        "Lorandris"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1851,18 +1799,18 @@
           "resolvedPath": "Geography/Fenrith/index.md"
         }
       ],
-      "contentHash": "abcda027312b77c99a9d9e70a71547c2f35ec0ef9f56b8aa7e7e0d977de16fe5",
-      "byteLength": 2991,
-      "summary": "Lorandris is a loose alliance of coastal enclaves on the Fūlwinter coast, infamous for piracy but indispensable to Edan for its unrivaled shipbuilding.",
+      "contentHash": "6caea0569dc0d1c31f23e16347d6c34d44f4052fd9804e05288245cb17eb1d3c",
+      "byteLength": 2943,
+      "summary": "Lorandris is a loose alliance of extra-continental enclaves on the Fūlwinter coast, infamous for piracy but indispensable to Edan for its unrivaled shipbuilding.",
       "keyFacts": [
-        "Lorandris is a loose alliance of extra-continental enclaves settled on the Fūlwinter coast.",
-        "Its official economy is trade and bulk transport, but piracy is its true primary economic activity.",
-        "Lorandrin pirates use airborne vessels called 'skybreakers' to raid inland settlements.",
-        "Lorandrin ships are faster, more durable, higher-capacity, and some can turn invisible.",
-        "No other country can match Lorandrin shipbuilding, so all nations buy ships from them.",
-        "Despite its power at sea, Lorandris is a small country that could be toppled by most rivals.",
-        "Lorandrin citizenship is a felony in other countries, forcing natives to hide their origins abroad.",
-        "The sea shanty 'The Black-Tide Bargain' appears in Estañion's Selection of Sea Shanties, p. 56."
+        "Lorandris is a loose alliance of enclaves settled by people removed from Edan proper, located on the Fūlwinter coast.",
+        "Its official economy is trade and bulk transport, but its largest economic driver is piracy.",
+        "Lorandrin pirates raid coastal towns and capture cargo ships at sea.",
+        "With airframes, pirates use massive 'skybreaker' ships to raid inland settlements before governments can respond.",
+        "Lorandrin ships are faster, more durable, higher-capacity, and some can turn invisible — no other country can match the…",
+        "Every country on Edan buys ships from Lorandris, making the nation politically untouchable despite its small size.",
+        "Mere Lorandrin citizenship is a felony in other countries, so Lorandrin travelers hide their origins.",
+        "Natives of Lorandris all work in building, sailing, or sinking ships."
       ],
       "entities": {
         "people": [
@@ -1901,8 +1849,8 @@
           "resolvedPath": "Org/Amber Call/People/Benjamin Grayson.md"
         }
       ],
-      "contentHash": "8e43b04c7f1a371d46890bf951fb4eacd3aa7214d4b5f30a4552857d8ca1c3f3",
-      "byteLength": 201,
+      "contentHash": "215905ef95f385accb769fa37290c2f1e7609e8bc1d548f5ed5fa89b6eb30aca",
+      "byteLength": 202,
       "summary": "Nos Mortem is a Victorian-style manor located in a fane deep beneath Hallia, owned by Benjamin Grayson and staffed by undead.",
       "keyFacts": [
         "Victorian-style manor situated in a fane deep below the city of Hallia.",
@@ -1914,8 +1862,8 @@
           "Benjamin Grayson"
         ],
         "places": [
-          "Nos Mortem",
-          "Hallia"
+          "Hallia",
+          "Nos Mortem"
         ],
         "orgs": []
       }
@@ -1923,24 +1871,22 @@
     "Geography/Quiet Below/index.md": {
       "path": "Geography/Quiet Below/index.md",
       "title": "Quiet Below",
-      "aliases": [
-        "Quiet Below"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "fcbee7b6731aba7a14771f96953d390e15f77c7c2324570af74f57db20901c6c",
-      "byteLength": 541,
-      "summary": "The Quiet Below is a vast underground cave network beneath the continent, largely unexplored and home only to those hiding from society.",
+      "contentHash": "8dde86c87677351ec7ab41cc8eba1ae2903d14b611fde5160593621e3fea9eed",
+      "byteLength": 490,
+      "summary": "The Quiet Below is a vast network of caverns deep underground, largely unexplored and home only to those hiding from society.",
       "keyFacts": [
-        "A series of caverns stretching miles below the continent's surface.",
-        "No known civilizations have ever inhabited the Quiet Below.",
-        "Offers no resources that couldn't be gathered closer to the surface.",
-        "Rarely visited due to lack of incentive and perceived danger.",
+        "A series of caverns snaking miles below the continent's surface.",
+        "No great civilizations have ever lived there.",
+        "No unique resources exist there that couldn't be gathered closer to the surface.",
+        "Rarely visited due to lack of incentive.",
         "Superstition holds that the Gods' blessings are harder to receive underground.",
         "Dangerous monsters are believed to lurk in the depths.",
-        "The only known residents are those deliberately avoiding public life."
+        "Only inhabitants are those actively avoiding the public eye."
       ],
       "entities": {
         "people": [],
@@ -1953,15 +1899,13 @@
     "Geography/Raelion/index.md": {
       "path": "Geography/Raelion/index.md",
       "title": "Raelion",
-      "aliases": [
-        "Raelion"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "91f610756f6f25e495c2b1284d286db60cc08e490d2ddb4f04366bb7ed45be52",
-      "byteLength": 44,
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0,
       "summary": "(stub page — no content yet)",
       "keyFacts": [],
       "entities": {
@@ -1973,9 +1917,7 @@
     "Geography/Rhædon/index.md": {
       "path": "Geography/Rhædon/index.md",
       "title": "Rhædon",
-      "aliases": [
-        "Rhædon"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -1988,18 +1930,18 @@
           "resolvedPath": "Org/index.md"
         }
       ],
-      "contentHash": "15f4c8c7e7c282dfe800d08e5fbe3c3c8b3fb8dda1fdb67f02442a49b749d542",
-      "byteLength": 2773,
-      "summary": "Rhædon is an isolated nation on the continent of Edan, historically cut off by the Siksithys desert and Tenchwin cape, now emerging as a global trade competitor.",
+      "contentHash": "378e1ef7c4ef4036a4ec7d2955a44225a6aa48f3ebb2d442710056a5809736e4",
+      "byteLength": 2728,
+      "summary": "Rhædon is an isolated nation on the continent of Edan, historically cut off by the Siksithys desert and Tenchwin cape, now emerging as a global player.",
       "keyFacts": [
         "Rhædon is separated from the rest of Edan by the Siksithys desert (land) and the Tenchwin cape (sea).",
         "Before airframes and easy flight, Rhædinan people rarely left their country due to dangerous travel.",
-        "Rhædon has been undercutting competitors' prices to break into established continental trade routes.",
-        "A major ally of Rhædon was 'bombed out of existence,' setting back their trade ambitions.",
+        "Rhædon has been undercutting competitors in trade to break into continental markets.",
+        "A major setback occurred when Rhædon's staunchest ally was 'bombed out of existence.'",
         "Historically, most of the population worked in agrarian fields due to forced self-sufficiency.",
-        "Manufacturing has shifted to Rhædon as organizations capitalize on its lower wages.",
-        "Young Rhædinans now migrate to the rest of the continent for work.",
-        "Asaid Al-Taiiq gave an expansionist inauguration speech invoking Rhædon's rise to continental power."
+        "Outside organizations have moved manufacturing to Rhædon to capitalize on lower wages.",
+        "Young Rhædinans now migrate toward the rest of the continent for work.",
+        "Asaid Al-Taiiq gave an expansionist inauguration speech declaring Rhædon's rise on the world stage."
       ],
       "entities": {
         "people": [
@@ -2019,9 +1961,7 @@
     "Geography/Tormeré/index.md": {
       "path": "Geography/Tormeré/index.md",
       "title": "Tormeré",
-      "aliases": [
-        "Tormeré"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -2055,18 +1995,18 @@
           "resolvedPath": "Org/Iridescent Church/index.md"
         }
       ],
-      "contentHash": "0186b220f3f074d3e8b7c6612cd70aee1810129b4b103114c625fd48142a1e2b",
-      "byteLength": 2994,
-      "summary": "Tormeré is a strikingly beautiful, democratically governed country in the Iridescent Belt, known for pink sands, paraíba gemstones, and exports of fruit liqueurs and hallucinogens.",
+      "contentHash": "08f39f414d59136b75b83e30513c0cc714cc9f62342aeed8ba0fa78467720728",
+      "byteLength": 2942,
+      "summary": "Tormeré is a strikingly beautiful, democratically governed country in the Iridescent Belt, known for pink sands, paraíba gemstones, and agricultural exports.",
       "keyFacts": [
         "Part of the 'Iridescent Belt' alongside Calaria and Brithwyn, where the Iridescent Host's presence is strongest.",
         "National gemstone is the paraíba, a blue dust that sparkles across the ground.",
-        "Native cheiro flowers and carrilhão trees (which chime in the wind) naturally perfume and accent the landscape.",
+        "Native cheiro flowers perfume the air; carrilhão trees chime in the wind.",
         "Major exports include sweet fruit liqueurs, oils, and a mild hallucinogen called erva-teme.",
-        "Most permanent residents are farmers working vast plantations.",
-        "Government is fully democratic — a rarity in Edan — but defers to the Iridescent Church on relevant matters.",
+        "Tormeré has a fully democratic government, described as a rarity on Edan.",
+        "The Tormerén government defers to the Iridescent Church on relevant matters.",
         "Calaria acts as Tormeré's protector and staunch ally on the global stage.",
-        "Sculptor Paolo Barreto caused controversy with a nude depiction of the Outer Gods, earning censure from the Iridescent …"
+        "Sculptor Paolo Barreto caused controversy with a nude depiction of the Outer Gods; the Iridescent Church censured him f…"
       ],
       "entities": {
         "people": [
@@ -2077,8 +2017,7 @@
         "places": [
           "Tormeré",
           "Calaria",
-          "Brithwyn",
-          "Edan"
+          "Brithwyn"
         ],
         "orgs": [
           "Iridescent Host",
@@ -2091,9 +2030,7 @@
     "Geography/Velthara/index.md": {
       "path": "Geography/Velthara/index.md",
       "title": "Velthara",
-      "aliases": [
-        "Velthara"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -2106,18 +2043,18 @@
           "resolvedPath": "Phenomena/Infinite Horizon.md"
         }
       ],
-      "contentHash": "d7f272bba4007e7184d5950bc3e6db766c381768977df444a980197de8f916c3",
-      "byteLength": 2733,
-      "summary": "Velthara is a mountainous, resource-focused nation known for its traditionalist culture and unique vertical strand-cities that span hundreds of worlds along the Horizon.",
+      "contentHash": "dc1c62e6d2c08ddf1087318230e84af999e77a500d6ab7b6ede3bc256d8016e3",
+      "byteLength": 2682,
+      "summary": "Velthara is a mountainous, resource-focused nation whose people resisted modernization. Their cities grow vertically across the Infinite Horizon, spanning hundreds of worlds.",
       "keyFacts": [
-        "Velthara's population is predominantly miners or natural-resource workers.",
-        "Veltharans were slow to adopt modern tech like electricity, radio, and automobiles.",
-        "Cities are built 'vertically' along the Horizon, with small footprints but spanning hundreds of worlds.",
-        "Public trolleys travel between worlds within strand-cities, ferrying hundreds of thousands daily.",
-        "The capital, Tor's Strand, runs from Star 612 to Void 87 and is still expanding.",
-        "Governance shifted from family-led individual worlds to cooperative clan-nations.",
-        "Wil's Strand in Star 13 mysteriously disappeared, leaving only empty plains.",
-        "The Blain Clan denied responsibility for the disappearance of Wil's Strand."
+        "Velthara's population is predominantly miners and natural-resource workers.",
+        "Veltharans resisted electricity, radio, automobiles, and personal credit; newer generations are slowly adopting them.",
+        "Veltharan cities are 'strand-cities' with small footprints but span hundreds of worlds along the Horizon.",
+        "Public trolleys travel between worlds, ferrying hundreds of thousands of people daily.",
+        "The capital, Tor's Strand, starts in Star 612, ends in Void 87, and is still growing.",
+        "Velthara was historically family-led; individual worlds were controlled by a matriarch or patriarch.",
+        "Families have recently banded into clan-nations to compete globally; most people now belong to one of a few clans.",
+        "An entire section of Wil's Strand in Star 13 mysteriously disappeared; the Blain Clan denied responsibility."
       ],
       "entities": {
         "people": [
@@ -2143,9 +2080,7 @@
     "Geography/index.md": {
       "path": "Geography/index.md",
       "title": "Geography",
-      "aliases": [
-        "Geography"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -2172,18 +2107,18 @@
           "resolvedPath": "Geography/Raelion/index.md"
         }
       ],
-      "contentHash": "9ce85c1f292c6d4d9c66b4a5ea067c6e090b3b84450a6e02473021bdc722363d",
-      "byteLength": 1252,
-      "summary": "Færrin is a world in a tense cold-war era following Calaria's destruction of Raelion 40 years ago, with 9 nations on the continent of Edan.",
+      "contentHash": "9e012be024b5d54dc62f4105a1240dce0b5dbbd46ffe44e534113d9a03b8ffaf",
+      "byteLength": 1204,
+      "summary": "Færrin is a world currently in a cold-war era following Calaria's destruction of Raelion 40 years ago, replacing open warfare with espionage and political maneuvering.",
       "keyFacts": [
-        "Færrin is in its longest period without overt conflict since the pre-Aurelia I dark ages.",
-        "40 years ago, Calaria destroyed rival nation Raelion on the night of the Midnight Sun.",
-        "Under threat of total annihilation, nations have avoided outright war since.",
-        "Conflict shifted to psychological warfare, propaganda, espionage, embargoes, and tech competition.",
-        "Alliances are described as tenuous and fickle but short-term advantageous.",
-        "Nine countries total (including Calaria) participate in this political climate.",
-        "The primary continent is Edan, where Calaria resides.",
-        "Other continents exist on Færrin but are rarely relevant; their people seldom travel to Edan."
+        "Færrin is experiencing its longest period without overt conflict since before Aurelia I's enlightenment.",
+        "Calaria destroyed rival nation Raelion on the night of the Midnight Sun, 40 years ago.",
+        "The threat of total annihilation has prevented outright war between nations since.",
+        "Open warfare has been replaced by psychological warfare, propaganda, espionage, embargoes, and tech competitions.",
+        "Nine countries total participate in this political climate, including Calaria.",
+        "Alliances are described as tenuous and fickle, shifting over decades.",
+        "The primary continent is Edan, where Calaria and the other nations reside.",
+        "Other continents exist on Færrin but their peoples rarely travel to Edan."
       ],
       "entities": {
         "people": [
@@ -2196,6 +2131,72 @@
           "Edan"
         ],
         "orgs": []
+      }
+    },
+    "Org/Alkahest Freight/People/Kadou Floch.md": {
+      "path": "Org/Alkahest Freight/People/Kadou Floch.md",
+      "title": "Kadou Floch",
+      "aliases": [
+        "Kadou"
+      ],
+      "tags": [
+        "Half-Elf"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Alkahest Freight/index|Alkahest Freight]]",
+          "target": "Org/Alkahest Freight/index",
+          "display": "Alkahest Freight",
+          "section": null,
+          "resolvedPath": "Org/Alkahest Freight/index.md"
+        }
+      ],
+      "contentHash": "1bfcabddae50f8d2a8de7501b9a661351f69e1bd68c13640ef44def9d903f7c8",
+      "byteLength": 421,
+      "summary": "Kadou Floch is a half-human, half-elven member of Alkahest Freight, known for his fluid grace and alchemical work.",
+      "keyFacts": [
+        "Wire-thin, sharp-featured figure of human and elven heritage",
+        "Moves with an uncanny fluid grace",
+        "Favors a dark green coat with synthetic silk",
+        "Wears a monocle over his right eye that constantly clicks through its lenses",
+        "Fingertips are permanently stained amber from his work",
+        "Member of Alkahest Freight"
+      ],
+      "entities": {
+        "people": [
+          "Kadou Floch"
+        ],
+        "places": [],
+        "orgs": [
+          "Alkahest Freight"
+        ]
+      }
+    },
+    "Org/Alkahest Freight/index.md": {
+      "path": "Org/Alkahest Freight/index.md",
+      "title": "Alkahest Freight",
+      "aliases": [],
+      "tags": [
+        "Mercantile"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [],
+      "contentHash": "59d46dbcdcac5d944e17a7abeb52f4862d75ffbed61531eb92437e5fe298a311",
+      "byteLength": 193,
+      "summary": "Alkahest Freight is a logistics company specializing in cross-horizon shipping, supplying many far-horizon colonies.",
+      "keyFacts": [
+        "Alkahest Freight specializes in cross-horizon shipping.",
+        "Many far-horizon colonies have been founded using supplies brought by Alkahest Freight."
+      ],
+      "entities": {
+        "people": [],
+        "places": [],
+        "orgs": [
+          "Alkahest Freight"
+        ]
       }
     },
     "Org/Amber Call/People/Benjamin Grayson.md": {
@@ -2246,15 +2247,14 @@
           "resolvedPath": "Geography/Quiet Below/Nos Mortem.md"
         }
       ],
-      "contentHash": "49c7f97a2e39e19cfd516f778846f9fd19584b17e83746ccb9e4d83baa42142f",
-      "byteLength": 552,
-      "summary": "Benjamin Grayson is the CEO of Amber Call, Calaria's top health insurance provider, and a secret high-level necromancer and follower of the Eternal Pulse.",
+      "contentHash": "95789108115dbf264fa7d27c85b8c151fc5c01c5b304f5132285c78986ad492f",
+      "byteLength": 554,
+      "summary": "Benjamin Grayson is the human CEO of Amber Call, Calaria's top health insurance provider, and a secret high-level necromancer and Pulse follower.",
       "keyFacts": [
-        "Human male, ~30 years old in appearance, with stark white hair and gray slate-colored eyes.",
+        "Appears approximately 30 years old, with stark white hair and gray, slate-colored eyes.",
         "Bears a large raiment of the Eternal Pulse.",
-        "Current CEO of Amber Call.",
-        "Amber Call is the foremost premium health insurance provider in Calaria.",
-        "Follower of the Eternal Pulse.",
+        "Current CEO of Amber Call, the foremost premium health insurance provider in Calaria.",
+        "Is a follower of the Eternal Pulse.",
         "Secretly a high-level necromancer.",
         "Currently resides in Nos Mortem."
       ],
@@ -2313,9 +2313,9 @@
           "resolvedPath": "Org/Amber Call/People/Benjamin Grayson.md"
         }
       ],
-      "contentHash": "743d723486b8d47ed70f8334acdcc9365cbb3ce52458345848da85d3166524a5",
-      "byteLength": 464,
-      "summary": "Mr. Whiskers was a black and white mottled catfolk street-dweller of Sableclutch, slain by Benjamin Grayson for a necromantic ritual.",
+      "contentHash": "8f8d946438f1c9b31028583944b29ce06a3367ae86d2c696e0ed0c49631bf60f",
+      "byteLength": 466,
+      "summary": "Mr. Whiskers was a black and white mottled catfolk street-dweller of Sableclutch, killed by Benjamin Grayson in a necromantic ritual.",
       "keyFacts": [
         "Mr. Whiskers was a black and white mottled catfolk.",
         "He lived on the streets of Sableclutch.",
@@ -2360,8 +2360,8 @@
           "resolvedPath": "Geography/Quiet Below/Nos Mortem.md"
         }
       ],
-      "contentHash": "681be503bb7a030237daa4f5847bab95c229d2d402f3d7e6975000bd6d425dcf",
-      "byteLength": 200,
+      "contentHash": "888709a50edd3a6df95ca432ea58cc3c5688478f8145ddc11cbafc8bd725cbd8",
+      "byteLength": 202,
       "summary": "Ossain Madrun is a skeletal undead majordomo serving Nos Mortem, recognizable by his red glowing eyes and broken jaw.",
       "keyFacts": [
         "Ossain is a skeleton standing 5'6\" tall.",
@@ -2375,7 +2375,47 @@
         ],
         "places": [],
         "orgs": [
-          "Nos Mortem",
+          "Amber Call",
+          "Nos Mortem"
+        ]
+      }
+    },
+    "Org/Amber Call/People/Silven Grayson.md": {
+      "path": "Org/Amber Call/People/Silven Grayson.md",
+      "title": "Silven Grayson",
+      "aliases": [
+        "Silven"
+      ],
+      "tags": [
+        "Human"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Amber Call/index|Amber Call]]",
+          "target": "Org/Amber Call/index",
+          "display": "Amber Call",
+          "section": null,
+          "resolvedPath": "Org/Amber Call/index.md"
+        }
+      ],
+      "contentHash": "f6a912310f9946e65b3be22833207167420abbef130521ed9316336871a4c315",
+      "byteLength": 350,
+      "summary": "Silven Grayson is a sharply-dressed human member of the Amber Call, notable for his white hair, gray eyes, and amber-and-black formal attire.",
+      "keyFacts": [
+        "Human male in his mid-twenties",
+        "Has stark-white hair and cool slate-gray eyes (a family trait)",
+        "Wears immaculate amber-and-black formal wear",
+        "A subtle stylized pulse motif is stitched into the lining of his clothing",
+        "Member of the Amber Call"
+      ],
+      "entities": {
+        "people": [
+          "Silven Grayson"
+        ],
+        "places": [],
+        "orgs": [
           "Amber Call"
         ]
       }
@@ -2383,9 +2423,7 @@
     "Org/Amber Call/index.md": {
       "path": "Org/Amber Call/index.md",
       "title": "Amber Call",
-      "aliases": [
-        "Amber Call"
-      ],
+      "aliases": [],
       "tags": [
         "Pulse",
         "Mercantile"
@@ -2393,13 +2431,14 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "3afa043d844a609e50707666d1662281e5b0feceb6c6ca401d11f95b449ca2ab",
-      "byteLength": 231,
-      "summary": "Amber Call is a medical rescue and insurance company that provides care to plan holders for any injury, no matter how minor.",
+      "contentHash": "f127d7e205696f23d3d9c1ee8ce2c77fd741f2bbd8f29d3acfdcf290e7c14ac1",
+      "byteLength": 191,
+      "summary": "Amber Call is a medical rescue and insurance company that provides care to plan holders in exchange for payment.",
       "keyFacts": [
         "Amber Call is a medical rescue and insurance company.",
-        "They respond to any injury, however minor, for plan holders.",
-        "Plan holders receive both medical care and a bill for services rendered."
+        "Services are plan-based — customers must have an active plan to receive care.",
+        "Known for responding to even minor injuries (e.g., a papercut).",
+        "Always accompanies medical response with a bill."
       ],
       "entities": {
         "people": [],
@@ -2461,22 +2500,22 @@
           "resolvedPath": "Phenomena/Hearts.md"
         }
       ],
-      "contentHash": "80064f2bbb7d9bf5dc27d8e6c1f09db3af7cd37999a0c5b1f7743caeae26c804",
+      "contentHash": "eba7cf558a7b48b657eede31d58df89e664d838ec053010d3768aca01124a68b",
       "byteLength": 2519,
-      "summary": "Belvedere is an ancient organization founded to chronicle the world, which evolved to include spies, scholars, aristocrats, and arcanists guided by divine entities called Hearts.",
+      "summary": "Belvedere is an ancient organization founded to chronicle the world, which evolved to include spies, scholars, aristocrats, and divine entities called Hearts.",
       "keyFacts": [
-        "Founded soon after the Dark Ages ended, mandated by the Watcher With 1,000 Eyes to chronicle Færrin.",
-        "The first Provost established the first chancery in Austrene, atop the planet's highest mountains.",
+        "Founded shortly after the Dark Ages ended, mandated by the Watcher With 1,000 Eyes to chronicle Færrin.",
+        "The first Provost established the original chancery in Austrene, atop the planet's highest mountains.",
         "Originally a fact-recording outfit, Belvedere expanded due to pressure from rival Orgs seeking its secrets.",
-        "Political operatives ('socialites and spies') were added to learn people and fight proxy wars.",
-        "Hearts are slivers of sentient divine energy gifted by the Outer Gods to help process vast amounts of data.",
+        "Political operatives (socialites and spies) were added to study people as well as natural phenomena.",
+        "Hearts are slivers of sentient divine energy gifted by the Outer Gods, used to process vast amounts of data.",
         "Hearts became coordinators and leaders; many members now report to a Heart instead of a person.",
-        "Four member paths exist: academics, archivists, aristocrats, and arcanists.",
+        "Members can specialize as academics, archivists, aristocrats, or arcanists.",
         "Arcanists work closely with the Hearts and their divine machinery."
       ],
       "entities": {
         "people": [
-          "first Provost"
+          "the first Provost"
         ],
         "places": [
           "Færrin",
@@ -2484,7 +2523,8 @@
         ],
         "orgs": [
           "Belvedere",
-          "Hearts"
+          "the Watcher With 1,000 Eyes",
+          "the Outer Gods"
         ]
       }
     },
@@ -2499,13 +2539,13 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "a8102de29c1d441298d73ca303f805a88f2dbaf211c2023d8a1fc005580df6d1",
-      "byteLength": 197,
+      "contentHash": "141127f44df732860110fa47c8d70591095abe2098ca4499a6f68076882a59ac",
+      "byteLength": 199,
       "summary": "The Candescent Legion is a private army known for being cheap but low-quality, typically used as expendable fodder alongside smaller, better-trained forces.",
       "keyFacts": [
         "Is a private army available for hire.",
-        "Significantly cheaper than alternative mercenary options.",
-        "Quality is considered poor — 'you get what you pay for'.",
+        "Notably cheaper than alternative military options.",
+        "Considered low quality — 'you get what you pay for'.",
         "Primarily used as fodder to supplement smaller, better-trained fighting forces."
       ],
       "entities": {
@@ -2535,16 +2575,16 @@
           "resolvedPath": "Divinity/Outer Gods/Heir of the Plague.md"
         }
       ],
-      "contentHash": "fa0b24745fb8cda1b43b98308e1b45df1db3db851491166067da7af4f493fa1d",
-      "byteLength": 1274,
-      "summary": "The Children of the Heir are worshippers of the Heir of the Plague, acting as her agents to preserve the natural circle of life against disruption.",
+      "contentHash": "e1d79c67f8220bfd6f70b8e1c6088a5408a845337ec56da6f202b9d9521c0f40",
+      "byteLength": 1276,
+      "summary": "The Children of the Heir are worshippers of the Heir of the Plague who act as her agents, working to restore the natural order against disruption.",
       "keyFacts": [
         "Serve the Heir of the Plague, who abhors disruption of the natural circle of life.",
         "Consider deforestation, draining marshlands, and cybernetic augmentation as breaks in the circle of life.",
-        "Members are called 'Children' and act as the Heir's hands in the world.",
-        "Methods range from legal lobbying and lawyering to bombing construction sites and earth magic.",
-        "All members tend to adopt an animalistic or floral motif to signal allegiance to the Heir.",
-        "The organization's interpretation of the Heir's will varies significantly between individual members."
+        "Members are called 'Children' and carry out the Heir's will in varied ways.",
+        "Some act as lobbyists and lawyers to protect nature through legal means.",
+        "Others take extreme action such as bombing construction sites or animating the earth.",
+        "All members tend to adopt an animalistic or floral motif to signal allegiance to the Heir."
       ],
       "entities": {
         "people": [
@@ -2582,9 +2622,9 @@
           "resolvedPath": "Phenomena/Infinite Horizon.md"
         }
       ],
-      "contentHash": "3916eb0d0f0ee061411fafef52d0c97a739d592fcf96f458eea1517e687ac23a",
-      "byteLength": 230,
-      "summary": "Chorath Engineering is a Brithwyn-based automobile designer and builder, producing cars for city driving, combat, and Infinite Horizon exploration.",
+      "contentHash": "700df95991c664d9bbab763de46f92008dd069b0e1e2f2da15a318988f174848",
+      "byteLength": 232,
+      "summary": "Chorath Engineering is a Brithwyn-based automobile manufacturer producing vehicles for city driving, combat, and Infinite Horizon exploration.",
       "keyFacts": [
         "Based in Brithwyn",
         "Designs and builds automobiles",
@@ -2635,18 +2675,18 @@
           "resolvedPath": "Geography/Calaria/index.md"
         }
       ],
-      "contentHash": "92a692d560f40efd1472eb2e3d6273b189d6c9198a57423be530d3f23bdb204c",
-      "byteLength": 1630,
-      "summary": "Concordia is a major manufacturing organization in Calaria that pivoted from magical goods to modern appliances and machinery by integrating magic into their assembly lines.",
+      "contentHash": "824206127a1afed05ec8f3c4bfde490d741979e4da29e3c76ca27ac287388ec4",
+      "byteLength": 1632,
+      "summary": "Concordia is a major manufacturing organization in Calaria that pivoted from magical goods to modern appliances and machinery by using magic in their assembly lines.",
       "keyFacts": [
-        "Concordia operates in Calaria on the continent of Færrin.",
+        "Concordia operates in the continent of Færrin, specifically in Calaria.",
         "They pivoted from scroll production to household appliances like dishwashers, freezers, and air conditioners.",
-        "Concordia uses skilled mages to design and operate magically-enhanced assembly lines.",
-        "Their assembly lines feature magic automation: self-shaping steel and self-assembling motors.",
+        "Concordia employs skilled mages of all creeds to design and build their assembly lines.",
+        "Their assembly lines use magic directly: steel that twists itself into shape, self-assembling motors, etc.",
         "They manufacture a wide range of goods: watches, televisions, construction machinery, and more.",
-        "Concordia capitalized on the rapid technological shift that made older magical goods obsolete.",
-        "40 years prior to the current era, magic items like sending stones and light spirits were commonplace.",
-        "They are described as one of the organizations that survived and thrived during the tech revolution."
+        "Concordia capitalized on the volatility caused by rapid technological advancement in Færrin.",
+        "Before modern tech, long-distance communication used familiars and sending stones, not radios or phones.",
+        "The technological shift made many former magical industry giants obsolete, but Concordia adapted successfully."
       ],
       "entities": {
         "people": [],
@@ -2655,6 +2695,84 @@
           "Calaria"
         ],
         "orgs": [
+          "Concordia"
+        ]
+      }
+    },
+    "Org/Garrick Textiles/People/Letov Obratz.md": {
+      "path": "Org/Garrick Textiles/People/Letov Obratz.md",
+      "title": "Letov Obratz",
+      "aliases": [
+        "Letov"
+      ],
+      "tags": [
+        "Tiefling"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Garrick Textiles/index|Garrick Textiles]]",
+          "target": "Org/Garrick Textiles/index",
+          "display": "Garrick Textiles",
+          "section": null,
+          "resolvedPath": "Org/Garrick Textiles/index.md"
+        }
+      ],
+      "contentHash": "1a1a9466df64e2925e9713e82759c74bd1baae3d17c9d78537379196123aed2b",
+      "byteLength": 321,
+      "summary": "Letov Obratz is a tiefling member of Garrick Textiles, notable for his distinctive appearance and mood-reactive iridescent suit.",
+      "keyFacts": [
+        "Purple-skinned tiefling with small, polished obsidian horns.",
+        "Wears a complex multi-layered suit of shifting, iridescent fabrics.",
+        "His suit changes texture with his mood.",
+        "Described as dapper in appearance.",
+        "Member of Garrick Textiles."
+      ],
+      "entities": {
+        "people": [
+          "Letov Obratz"
+        ],
+        "places": [],
+        "orgs": [
+          "Garrick Textiles"
+        ]
+      }
+    },
+    "Org/Garrick Textiles/index.md": {
+      "path": "Org/Garrick Textiles/index.md",
+      "title": "Garrick Textiles",
+      "aliases": [],
+      "tags": [
+        "Compelled",
+        "Mercantile"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Concordia|Concordia]]",
+          "target": "Org/Concordia",
+          "display": "Concordia",
+          "section": null,
+          "resolvedPath": "Org/Concordia.md"
+        }
+      ],
+      "contentHash": "a9c69add10b131287f77597a730f4c345778fdef193eac6a1acd70b93d5fe7b6",
+      "byteLength": 166,
+      "summary": "Garrick Textiles is a Concordia subsidiary that produces fabrics and clothing for the majority of Edan.",
+      "keyFacts": [
+        "Garrick Textiles is a subsidiary of Concordia.",
+        "It produces fabrics and clothing.",
+        "Its products serve the majority of Edan."
+      ],
+      "entities": {
+        "people": [],
+        "places": [
+          "Edan"
+        ],
+        "orgs": [
+          "Garrick Textiles",
           "Concordia"
         ]
       }
@@ -2690,18 +2808,18 @@
           "resolvedPath": "Geography/Raelion/index.md"
         }
       ],
-      "contentHash": "ea6a51dba7f241716be4501f8a2082b6092c70e5024c8537dc3546cb2ced582d",
-      "byteLength": 2068,
-      "summary": "The Ghosts of Raelion are a fractured organization of Raelish survivors united by the destruction of their homeland, split between three competing factions with no formal hierarchy.",
+      "contentHash": "8e1a08ac5d21b4d8d39502340ba2921cd33509ee8be967cb09f5322f0d3606cf",
+      "byteLength": 2070,
+      "summary": "The Ghosts of Raelion are a fractured organization of Raelish survivors united by the destruction of their homeland, split across three competing factions.",
       "keyFacts": [
-        "Originally a mercenary group from Raelion who were abroad when the Midnight Sun destroyed their homeland.",
+        "Originally a mercenary group from Raelion who were abroad when the Midnight Sun destroyed their country.",
         "Founded by Donovan Hale, who swore vengeance for Raelion and all who perished.",
-        "Grew from a small merc group into a continent-wide movement of Raelish survivors.",
-        "Three internal factions: Hale's hardliners, Bright's religious revivalists, and Marran's separatists.",
-        "Juno Bright, a former priest of the Raelic Church, leads a faction focused on reuniting disenfranchised Raelish.",
-        "Calder Marran leads a faction that wants to abandon Raelish cultural identity and become an independent people.",
-        "No formal hierarchy exists; members operate in independent 'cells' that coordinate only when necessary.",
-        "Cells typically align with one faction but mixed allegiances within a single cell are common."
+        "Grew from a small merc group into a broader movement by recruiting Raelish survivors across the continent.",
+        "Has no formal hierarchy; members operate in independent 'cells' that coordinate only when necessary.",
+        "Hale's faction seeks to dismantle systems that caused Raelion's destruction, ranging from disarmament to retaliation.",
+        "Juno Bright, a former Raelic Church priest, leads a faction focused on reuniting disenfranchised Raelish people.",
+        "Calder Marran leads a third faction that wants to abandon the past and forge a new independent identity.",
+        "Cells typically align with one faction but mixed allegiances within a single cell are not uncommon."
       ],
       "entities": {
         "people": [
@@ -2718,8 +2836,48 @@
         ]
       }
     },
-    "Org/Hildebrandt Corporation.md": {
-      "path": "Org/Hildebrandt Corporation.md",
+    "Org/Hildebrandt Corporation/People/Paavo Karhu.md": {
+      "path": "Org/Hildebrandt Corporation/People/Paavo Karhu.md",
+      "title": "Paavo Karhu",
+      "aliases": [
+        "Paavo"
+      ],
+      "tags": [
+        "Changeling"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Hildebrandt Corporation/index|Hildebrandt Corporation]]",
+          "target": "Org/Hildebrandt Corporation/index",
+          "display": "Hildebrandt Corporation",
+          "section": null,
+          "resolvedPath": "Org/Hildebrandt Corporation/index.md"
+        }
+      ],
+      "contentHash": "b2e0cde1b0698d9770ecacdfc768be29f207ba116ed11ee89e34818a3bf4af6a",
+      "byteLength": 358,
+      "summary": "Paavo Karhu is an elderly winterkin changeling member of the Hildebrandt Corporation, notable for his imposing appearance and refined dress.",
+      "keyFacts": [
+        "Winterkin changeling with skin like cracked ice and a snow-white beard",
+        "Described as massive and elderly in build",
+        "Wears a heavy tailored velvet overcoat with diamond-buttoned lapels",
+        "Moves slowly with a silver-headed cane",
+        "Member of the Hildebrandt Corporation"
+      ],
+      "entities": {
+        "people": [
+          "Paavo Karhu"
+        ],
+        "places": [],
+        "orgs": [
+          "Hildebrandt Corporation"
+        ]
+      }
+    },
+    "Org/Hildebrandt Corporation/index.md": {
+      "path": "Org/Hildebrandt Corporation/index.md",
       "title": "Hildebrandt Corporation",
       "aliases": [],
       "tags": [
@@ -2729,13 +2887,13 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "715b521fe28951eb62850f0a430d9ef72d985e35a813837d916b6efe727b89ea",
-      "byteLength": 148,
+      "contentHash": "c62b67415ec62a3bd5dd118721295ee28ffb40fd6f28d6ffbab71325c8d0e9ba",
+      "byteLength": 150,
       "summary": "Hildebrandt Corporation is an airframe company pioneering the commercial flight industry, run by a fortune dragon named Hildebrandt.",
       "keyFacts": [
         "Hildebrandt Corporation is an airframe manufacturing company.",
         "The company is a pioneer in the commercial flight industry.",
-        "The organization is run by a fortune dragon named Hildebrandt."
+        "The organization is led by Hildebrandt, a fortune dragon."
       ],
       "entities": {
         "people": [
@@ -2766,12 +2924,14 @@
           "resolvedPath": "Geography/Istria/index.md"
         }
       ],
-      "contentHash": "c358f7ff97d1445bc3f26228beb5ee6e96f93921f6ff8709787160d77743b6c9",
-      "byteLength": 183,
+      "contentHash": "89e296349c8565cbb0ffd5f0f4b218113a11d742a6454bde2115577b3c6efaa5",
+      "byteLength": 185,
       "summary": "Hollowpact is a mechanized infantry unit from Istria, specializing in rapid strike operations against enemy encampments.",
       "keyFacts": [
-        "Mechanized infantry originating from Istria.",
-        "Specializes in hit-and-run tactics: destroying encampments before enemies can react."
+        "Hollowpact is a mechanized infantry unit.",
+        "Originates from the region of Istria.",
+        "Specializes in fast hit-and-run raids on enemy encampments.",
+        "Designed to strike and withdraw before the enemy can mount a proper response."
       ],
       "entities": {
         "people": [],
@@ -2817,16 +2977,16 @@
           "resolvedPath": "Org/Iconoclasm/index.md"
         }
       ],
-      "contentHash": "e3bba2ac6a6e068b413bee13f41e56d32d10cb5cdf9d38c7d6d0be52a5cb44bc",
-      "byteLength": 598,
-      "summary": "Anaïs Marchal is a reserved, magically-inclined human male and fraternal twin of Anouk, operating within the Iconoclasm organization.",
+      "contentHash": "7127e04964d53ae575fe9e6b907d2f35b546bba3964b7833c95f3c6e50a4d17c",
+      "byteLength": 600,
+      "summary": "Anaïs Marchal is a reserved, magically-inclined human member of the Iconoclasm, and fraternal twin of Anouk Marchal.",
       "keyFacts": [
         "Late 20s human male with red hair and dark brown eyes",
         "Fraternal twin of Anouk Marchal",
         "Wears sharp plain suits with wooden rings and bracelets",
         "Bears a moderately sized raiment of the Iridescent Host",
-        "More magically-inclined of the two twins",
-        "His workshop section is filled with magical tomes and alchemical reagents",
+        "More magically-inclined than his twin sister",
+        "His workshop area is filled with magical tomes and alchemical reagents",
         "More reserved in personality compared to his sister Anouk"
       ],
       "entities": {
@@ -2875,17 +3035,17 @@
           "resolvedPath": "Org/Iconoclasm/index.md"
         }
       ],
-      "contentHash": "0d9b32a9aaacf74f5afda9a7e67b5438011ca27b0183e2d3018eff9d56f074ea",
-      "byteLength": 656,
-      "summary": "Anouk Marchal is a human member of the Iconoclasm, a tech-focused workshop tinkerer and fraternal twin of Anaïs Marchal.",
+      "contentHash": "626ff50c90e4ea54a7ebdce4d4d04d4dd2c36af26a0239b803958cfdc823acdc",
+      "byteLength": 658,
+      "summary": "Anouk Marchal is a human member of the Iconoclasm, a technologically-focused twin who works with electrical equipment in her workshop.",
       "keyFacts": [
-        "Late 20s human female with red hair and dark brown eyes.",
-        "Fraternal twin of Anaïs Marchal.",
-        "Wears practical workshop jumpsuits to protect against burns and stains.",
-        "Possesses a moderately sized raiment of the Iridescent Host.",
-        "The more technologically-inclined of the twins.",
-        "Her workshop area is filled with multimeters, oscilloscopes, and electrical equipment.",
-        "More outgoing than her brother (Anaïs)."
+        "Late 20s human female with red hair and dark brown eyes",
+        "Fraternal twin of Anaïs Marchal",
+        "Wears practical workshop jumpsuits to protect against burns and stains",
+        "Has a moderately sized raiment of the Iridescent Host",
+        "Her workshop area is filled with multimeters, oscilloscopes, and electrical equipment",
+        "More technologically-inclined of the twins",
+        "More outgoing than her brother (twin sibling)"
       ],
       "entities": {
         "people": [
@@ -2933,17 +3093,18 @@
           "resolvedPath": "Org/Iconoclasm/People/Illmari Vaino.md"
         }
       ],
-      "contentHash": "e8d3e37eef87e8709a1105088e17693ea8ab3ec05bf12591c97affdcedf7adc4",
-      "byteLength": 622,
-      "summary": "Dura Oil-Drinker is an orcish mechanic and founding member of Iconoclasm, handling vehicle maintenance, outside contacts, and the group ledger.",
+      "contentHash": "18d9a8db4491615cdb13944b0f674dd601b4131379f68fbdc01d31ca2eae020f",
+      "byteLength": 624,
+      "summary": "Dura Oil-Drinker is an orcish mechanic and founding member of Iconoclasm, handling vehicle maintenance, outside contacts, and the group's finances.",
       "keyFacts": [
         "Mid-40s orcish woman with dark green skin and curly black hair.",
-        "One of her two bottom tusks has been cut off and sanded to a stump.",
+        "Has two tusks on her bottom jaw; one has been cut to a stump.",
         "Wears mechanics overalls and dark welding goggles.",
         "Bears a small raiment of the Iridescent Host.",
-        "Serves as Iconoclasm's resident gearhead and maintains the company car.",
-        "Handles contacts with outside organizations and manages the group ledger.",
-        "Was the first member to join Iconoclasm when Illmari Vaino founded it."
+        "Serves as Iconoclasm's resident gearhead and mechanic.",
+        "Maintains the company car and manages the group ledger.",
+        "Handles contacts with outside organizations on behalf of Iconoclasm.",
+        "Was the first person to join Iconoclasm when Illmari Vaino founded it."
       ],
       "entities": {
         "people": [
@@ -2982,16 +3143,17 @@
           "resolvedPath": "Org/Iconoclasm/index.md"
         }
       ],
-      "contentHash": "e442e6b0cf364bc7b84dcb660728732b81a0b0baf4286210aca4807c67daffb3",
-      "byteLength": 632,
+      "contentHash": "565006d468b6d6ac4542c895ae47889b7a4006bed43f1edfb7db4440349269c4",
+      "byteLength": 634,
       "summary": "Elias Ramsey is an elderly dwarven quartermaster for Iconoclasm, known for his curmudgeonly attitude and skill at locating lost items.",
       "keyFacts": [
-        "Elderly, dark-skinned dwarven male with wispy blonde-gray hair and a short-trimmed mustache and beard.",
-        "Wears tweed suits with elbow patches and keeps reading glasses on a chain around his neck.",
+        "Elderly, dark-skinned dwarven male with wispy blonde-gray hair and a balding head.",
+        "Keeps a short-trimmed mustache and beard.",
+        "Wears tweed suits with elbow patches and reading glasses on a chain.",
         "Bears a small raiment of the Iridescent Host.",
         "Serves as quartermaster for Iconoclasm.",
         "Known as the group curmudgeon — prefers doing things his own way.",
-        "Skilled at locating items lost by other Iconoclasm members."
+        "Excels at locating items lost by other Iconoclasm members."
       ],
       "entities": {
         "people": [
@@ -3045,15 +3207,14 @@
           "resolvedPath": "Org/Iconoclasm/index.md"
         }
       ],
-      "contentHash": "ba645a4daaa4953d4861c35b648ebd2bdfd0e2c9cd23a53fe837c9b35484efb8",
-      "byteLength": 672,
-      "summary": "Gin Soaked Rag (Ginny) is a sentient dishrag-in-a-suit who serves as the Heart maintaining the Sin and Tonic fane.",
+      "contentHash": "3c255fc6c73bf1270a7a78d1c145796cf8785eda00fb71b8065024015974de14",
+      "byteLength": 674,
+      "summary": "Gin Soaked Rag (Ginny) is a Heart entity resembling a dishrag in a suit who maintains the Sin and Tonic fane.",
       "keyFacts": [
         "Appears as a 6-foot-tall dishrag wearing a three-piece suit",
         "Floating suit arms end in gloves that move independently",
-        "His face is formed by the dishrag scrunching up",
-        "Liquid beads at his edges when he moves",
-        "Holds the role of Heart for the Sin and Tonic fane",
+        "Face is formed by the dishrag scrunching up; liquid beads at his edges when he moves",
+        "Holds the role of Heart at the Sin and Tonic fane",
         "Friends with Illmari Vaino and the rest of Iconoclasm",
         "Considered part of the Iconoclasm team despite being unable to leave the bar"
       ],
@@ -3111,16 +3272,16 @@
           "resolvedPath": "Phenomena/Harmony/Voidsong.md"
         }
       ],
-      "contentHash": "ed08eb2ef7083a145312a065067ead59f9644328321641b6fcb067f440e911a9",
-      "byteLength": 496,
-      "summary": "Illmari Vaino is a scarred half-elf in his late 60s, proprietor of the Sin and Tonic and founder of the mercenary group Iconoclasm.",
+      "contentHash": "3c511588523aa49d122c4712e95f68619cd184b28f0a5db6763f457a0daa3f35",
+      "byteLength": 498,
+      "summary": "Illmari Vaino is a half-elf founder of the mercenary group Iconoclasm and proprietor of the Sin and Tonic, drawn together by the Voidsong.",
       "keyFacts": [
         "Late-60s half-elf male with black slicked-back hair and facial scars.",
-        "Possesses a raiment of the Iridescent Host.",
+        "Wears a raiment of the Iridescent Host.",
         "Current proprietor of the Sin and Tonic.",
         "Founder of the mercenary group Iconoclasm.",
-        "Was one of the first to hear the Voidsong.",
-        "Gathered like-minded people to investigate the Voidsong's source and meaning."
+        "Was one of the first to capitalize on hearing the Voidsong.",
+        "Collected like-minded people to investigate the Voidsong's source and meaning."
       ],
       "entities": {
         "people": [
@@ -3138,9 +3299,7 @@
     "Org/Iconoclasm/index.md": {
       "path": "Org/Iconoclasm/index.md",
       "title": "Iconoclasm",
-      "aliases": [
-        "Iconoclasm"
-      ],
+      "aliases": [],
       "tags": [
         "Research"
       ],
@@ -3169,15 +3328,15 @@
           "resolvedPath": "Org/index.md"
         }
       ],
-      "contentHash": "68a07911434d05d1bdf3d9f2e59af645ef7f0d0a88695467648194f3278e0b65",
-      "byteLength": 1029,
-      "summary": "Iconoclasm is a mercenary organization founded in Hallia, now the premier group investigating the mysterious Voidsong phenomenon after its members became concentrated listeners.",
+      "contentHash": "9784440dc132b1e5210b7cda1641657d626ad33db5e3cfaab4b5a4649310019a",
+      "byteLength": 988,
+      "summary": "Iconoclasm is a mercenary organization founded in Hallia that became the premier group investigating the mysterious Voidsong after an unusual concentration of its members heard the dreams.",
       "keyFacts": [
-        "Originally a small-time freelance mercenary group based in Hallia.",
         "Founded by Ilmari Vaino, who was among the first to hear the Voidsong.",
+        "Originally a small-time freelance mercenary group operating out of Hallia.",
         "Has the highest concentration of Voidsong listeners on the continent.",
-        "Grew as listeners from other Orgs joined seeking answers about the Voidsong.",
-        "Other Orgs donate staffing and funding to Iconoclasm as a show of goodwill.",
+        "Grew rapidly as listeners from other Orgs joined seeking answers.",
+        "Other Orgs have donated staffing and funding to Iconoclasm as a show of goodwill.",
         "Orgs also fund Iconoclasm to prevent rivals from gaining an advantage.",
         "Player characters are recently joined members, either loaned by an Org or independent."
       ],
@@ -3213,16 +3372,17 @@
           "resolvedPath": "Divinity/Outer Gods/Iridescent Host.md"
         }
       ],
-      "contentHash": "0f79ace4fc7a19a50867cef8c2988749bb7b240423ffd4d22300568756b6b363",
-      "byteLength": 804,
+      "contentHash": "b14c3c2eda883a7d4b8c8505a8124a8480ec98808e3eed015951d9701493c285",
+      "byteLength": 806,
       "summary": "Detective Ellis Brooks is a seasoned middle-aged human detective in the Magical Crimes division, known for his pragmatic instincts and leadership role.",
       "keyFacts": [
-        "Middle-aged human male with graying hair hidden under a fedora.",
-        "Wears an open brown peacoat over a disheveled white button-down shirt.",
-        "Carries a pistol in a chest holster worn over his shirt.",
-        "Bears a moderately sized raiment of the Iridescent Host.",
-        "No-nonsense personality who trusts his gut over dismissing the strange.",
-        "Prefers fieldwork but is too effective as a coordinator to justify leaving his desk role."
+        "Middle-aged human male with graying hair, typically hidden under a fedora",
+        "Wears an open brown peacoat over a disheveled white button-down shirt",
+        "Carries a pistol in a chest holster worn over his shirt",
+        "Bears a moderately sized raiment of the Iridescent Host",
+        "No-nonsense personality who trusts his gut over dismissing the strange",
+        "Prefers fieldwork but is too valuable as a coordinator to justify it",
+        "Member of the Iridescent Church's Convox, Magical Crimes division"
       ],
       "entities": {
         "people": [
@@ -3231,6 +3391,7 @@
         "places": [],
         "orgs": [
           "Iridescent Church",
+          "Convox",
           "Iridescent Host"
         ]
       }
@@ -3238,9 +3399,7 @@
     "Org/Iridescent Church/Convox/Magical Crimes/index.md": {
       "path": "Org/Iridescent Church/Convox/Magical Crimes/index.md",
       "title": "Magical Crimes",
-      "aliases": [
-        "Magical Crimes"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -3274,11 +3433,11 @@
           "resolvedPath": "Geography/Calaria/Hallia/Aurideon/index.md"
         }
       ],
-      "contentHash": "ee3eabf1452b8a3eabf71e9b68ee0010bd37eac61c07c02adf7d16395db14654",
-      "byteLength": 549,
+      "contentHash": "9096464ab1f9d6f2bf1e73dc2f6cb1072a43f633caac51cbf489db72a79bff2b",
+      "byteLength": 492,
       "summary": "The Magical Crimes Convox is an Iridescent Church department that investigates unexplained supernatural events harming the Host's people.",
       "keyFacts": [
-        "Department of the Iridescent Church focused on solving weird/unexplained harmful phenomena.",
+        "Department of the Iridescent Church focused on solving weird/unexplained negative magical events.",
         "Previously investigated a mysterious curse originating from the Verdant Expanse.",
         "Previously investigated an everlasting rain caused by excessive augury.",
         "Headquartered at 33 Rook's Crossing in the Aurideon."
@@ -3291,18 +3450,56 @@
           "33 Rook's Crossing"
         ],
         "orgs": [
-          "Magical Crimes Convox",
           "Iridescent Church",
+          "Magical Crimes Convox",
           "Iridescent Host"
+        ]
+      }
+    },
+    "Org/Iridescent Church/People/Walter Stoke.md": {
+      "path": "Org/Iridescent Church/People/Walter Stoke.md",
+      "title": "Walter Stoke",
+      "aliases": [
+        "Walter"
+      ],
+      "tags": [
+        "Human"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Iridescent Church/index|Iridescent Church]]",
+          "target": "Org/Iridescent Church/index",
+          "display": "Iridescent Church",
+          "section": null,
+          "resolvedPath": "Org/Iridescent Church/index.md"
+        }
+      ],
+      "contentHash": "e624dda1a5401ccd15f4824ab5233925454b60645bdb44ca9df180397aa2bf16",
+      "byteLength": 282,
+      "summary": "Walter Stoke is an elderly, blind human priest of the Iridescent Church, known for his vestments woven from prismatic glass fibers.",
+      "keyFacts": [
+        "Walter Stoke is elderly and blind.",
+        "He is a human priest.",
+        "He is a member of the Iridescent Church.",
+        "His vestments are heavy and layered, woven from translucent, prismatic glass fibers.",
+        "His vestments catch and scatter light."
+      ],
+      "entities": {
+        "people": [
+          "Walter Stoke"
+        ],
+        "places": [],
+        "orgs": [
+          "Iridescent Church"
         ]
       }
     },
     "Org/Iridescent Church/index.md": {
       "path": "Org/Iridescent Church/index.md",
       "title": "Iridescent Church",
-      "aliases": [
-        "Iridescent Church"
-      ],
+      "aliases": [],
       "tags": [
         "Host",
         "Religious"
@@ -3351,17 +3548,17 @@
           "resolvedPath": "Geography/Tormeré/index.md"
         }
       ],
-      "contentHash": "72a60e1f68e5733b59cf1d4c05f16c12481d60f3edcbd5a7eb17b1a24cb7f688",
-      "byteLength": 2742,
-      "summary": "The Iridescent Church is Færrin's most powerful organization, founded by Aurelia I to spread the Iridescent Host's teachings, now led by reincarnating Pontifex Aurelia VII.",
+      "contentHash": "8fbba59ca871a9fad7f2afa877def3bd4de9ac9ffcf91fc18ff804783ffaece6",
+      "byteLength": 2687,
+      "summary": "The Iridescent Church is the most powerful organization on Færrin, founded by Hierophant Aurelia I to spread the Iridescent Host's teachings.",
       "keyFacts": [
-        "Founded by the first Hierophant, Aurelia I, as a collective to spread the Iridescent Host's teachings.",
-        "The Host granted Aurelia the gift of reincarnation; Aurelia VII is the current Pontifex.",
+        "Founded by the first Hierophant, Aurelia I, originally as a small collective of supporters.",
+        "Led by the Pontifex, currently Aurelia VII, who is said to be a reincarnation gifted by the Host.",
         "Most influential in the 'Iridescent Belt': Calaria, Brithwyn, and Tormeré.",
         "In Calaria, the Church is part of government and worship of the Host is the official state religion.",
         "In Tormeré, the Church holds an advisory role and the people defer to its leadership.",
-        "Many in Brithwyn believe Aurelia VII is not a true reincarnation and await the real Pontifex.",
-        "The Church is divided into semi-independent sub-organizations called convox, named after Saunts.",
+        "Brithwyn has a Dissident Church that disputes whether Aurelia VII is a true reincarnation.",
+        "The Church is divided into semi-independent sub-organizations called convox, each with distinct responsibilities.",
         "Notable convox include the Suric convox (priest training) and the Forma convox (manages churches of Hallia)."
       ],
       "entities": {
@@ -3403,13 +3600,13 @@
           "resolvedPath": "Org/Iridescent Church/index.md"
         }
       ],
-      "contentHash": "365ff2765787bbac972a4775a030bc85ff85e15b8864b179b388a5b2725430d7",
-      "byteLength": 258,
+      "contentHash": "3edaec339b4b57c5dae7305520548514d361cdf2cf637145fbe2496c83fa9250",
+      "byteLength": 260,
       "summary": "Laity is a military contractor widely understood to be a covert arm of the Iridescent Church, used when deniability is needed.",
       "keyFacts": [
-        "Laity is technically an independent military contractor.",
-        "Laity is commonly known to be another arm of the Iridescent Church.",
-        "Laity operates in areas where the Iridescent Church requires deniability."
+        "Officially classified as an independent military contractor.",
+        "Commonly known to be an extension of the Iridescent Church.",
+        "Used by the Iridescent Church to operate in areas requiring deniability."
       ],
       "entities": {
         "people": [],
@@ -3417,6 +3614,165 @@
         "orgs": [
           "Laity",
           "Iridescent Church"
+        ]
+      }
+    },
+    "Org/Ministry of Cultural Progress/People/Giannos Hasikos.md": {
+      "path": "Org/Ministry of Cultural Progress/People/Giannos Hasikos.md",
+      "title": "Giannos Hasikos",
+      "aliases": [
+        "Giannos"
+      ],
+      "tags": [
+        "Half-Elf"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Ministry of Cultural Progress/index|Ministry of Cultural Progress]]",
+          "target": "Org/Ministry of Cultural Progress/index",
+          "display": "Ministry of Cultural Progress",
+          "section": null,
+          "resolvedPath": "Org/Ministry of Cultural Progress/index.md"
+        }
+      ],
+      "contentHash": "95d1c2ddc451cc151d5b8aa6315834fd6718036b41dcd4767cf668bf76271b3f",
+      "byteLength": 255,
+      "summary": "Giannos Hasikos is a nondescript half-elf member of the Ministry of Cultural Progress.",
+      "keyFacts": [
+        "Giannos Hasikos is a half-elf.",
+        "He has average, nondescript features and a mundane bearing.",
+        "He is a member of the Ministry of Cultural Progress."
+      ],
+      "entities": {
+        "people": [
+          "Giannos Hasikos"
+        ],
+        "places": [],
+        "orgs": [
+          "Ministry of Cultural Progress"
+        ]
+      }
+    },
+    "Org/Ministry of Cultural Progress/index.md": {
+      "path": "Org/Ministry of Cultural Progress/index.md",
+      "title": "Ministry of Cultural Progress",
+      "aliases": [],
+      "tags": [
+        "Mercantile"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Geography/Calaria/index|Calaria]]",
+          "target": "Geography/Calaria/index",
+          "display": "Calaria",
+          "section": null,
+          "resolvedPath": "Geography/Calaria/index.md"
+        },
+        {
+          "raw": "[[Geography/Tormeré/index|Tormeré]]",
+          "target": "Geography/Tormeré/index",
+          "display": "Tormeré",
+          "section": null,
+          "resolvedPath": "Geography/Tormeré/index.md"
+        }
+      ],
+      "contentHash": "76ed21a4cb307864203e6bfbf7844ae1de44781a1eefddfe10b07e1e64bde9ab",
+      "byteLength": 384,
+      "summary": "MoCuP is a government organization holding broadcast rights across Calaria and Tormeré, managing radio channels, music stations, dramas, and screamsheet editorials.",
+      "keyFacts": [
+        "Owns exclusive rights to broadcast on the radio spectrum in Calaria and Tormeré.",
+        "Manages broadcasting channels and curates music stations.",
+        "Produces radio dramas and screamsheet editorials.",
+        "Listening to MoCuP stations is described as a popular pastime across the country."
+      ],
+      "entities": {
+        "people": [],
+        "places": [
+          "Calaria",
+          "Tormeré"
+        ],
+        "orgs": [
+          "Ministry of Cultural Progress",
+          "MoCuP"
+        ]
+      }
+    },
+    "Org/NecroLog/People/Gaspar Caetano.md": {
+      "path": "Org/NecroLog/People/Gaspar Caetano.md",
+      "title": "Gaspar Caetano",
+      "aliases": [
+        "Gaspar"
+      ],
+      "tags": [
+        "Dhampir"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/NecroLog/index|NecroLog]]",
+          "target": "Org/NecroLog/index",
+          "display": "NecroLog",
+          "section": null,
+          "resolvedPath": "Org/NecroLog/index.md"
+        }
+      ],
+      "contentHash": "9f1b20a2f177f808ad7124b8ca16323d88066d0b2372995e9a30c6b6bd585d2f",
+      "byteLength": 280,
+      "summary": "Gaspar Caetano is a dhampir member of NecroLog, recognizable by his gaunt appearance and formaldehyde-scented specimen pouches.",
+      "keyFacts": [
+        "Gaspar Caetano is a dhampir.",
+        "He is gaunt and pale with sharp fangs and dark circles under his eyes.",
+        "He wears a heavy leather coat lined with specimen pouches.",
+        "His specimen pouches smell of formaldehyde.",
+        "He is a member of the organization NecroLog."
+      ],
+      "entities": {
+        "people": [
+          "Gaspar Caetano"
+        ],
+        "places": [],
+        "orgs": [
+          "NecroLog"
+        ]
+      }
+    },
+    "Org/NecroLog/index.md": {
+      "path": "Org/NecroLog/index.md",
+      "title": "NecroLog",
+      "aliases": [],
+      "tags": [
+        "Pulse",
+        "Mercantile"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Pale Lantern Society/index|Pale Lantern Society]]",
+          "target": "Org/Pale Lantern Society/index",
+          "display": "Pale Lantern Society",
+          "section": null,
+          "resolvedPath": "Org/Pale Lantern Society/index.md"
+        }
+      ],
+      "contentHash": "bab2d9ef33de6847c54a7c263d9dfbf03e3af8bac9ad08031f8693a4fb485edb",
+      "byteLength": 166,
+      "summary": "NecroLog is a medical technology manufacturer with strong ties to the Pale Lantern Society.",
+      "keyFacts": [
+        "NecroLog is a medical technology manufacturer.",
+        "NecroLog has heavy ties to the Pale Lantern Society."
+      ],
+      "entities": {
+        "people": [],
+        "places": [],
+        "orgs": [
+          "NecroLog",
+          "Pale Lantern Society"
         ]
       }
     },
@@ -3450,8 +3806,8 @@
           "resolvedPath": "Org/Iridescent Church/Convox/Magical Crimes/index.md"
         }
       ],
-      "contentHash": "7a8fa1a268e05881a0f13fe2c0926e833f039cd407e56d40b489a25dfa2bb0b9",
-      "byteLength": 337,
+      "contentHash": "acddd52d2b01727237e62666f7424f52962862c40854d54a738ef96b3340e9fc",
+      "byteLength": 338,
       "summary": "The Opaline Reserve is a racketeering operation disguised as a brewery in Hallia's Widdershins district.",
       "keyFacts": [
         "Operates as a brewery in the Widdershins district of Hallia.",
@@ -3471,8 +3827,47 @@
         ]
       }
     },
-    "Org/Pale Lantern Society.md": {
-      "path": "Org/Pale Lantern Society.md",
+    "Org/Pale Lantern Society/People/Manus Sudrenus.md": {
+      "path": "Org/Pale Lantern Society/People/Manus Sudrenus.md",
+      "title": "Manus Sudrenus",
+      "aliases": [
+        "Manus"
+      ],
+      "tags": [
+        "Elf"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Pale Lantern Society/index|Pale Lantern Society]]",
+          "target": "Org/Pale Lantern Society/index",
+          "display": "Pale Lantern Society",
+          "section": null,
+          "resolvedPath": "Org/Pale Lantern Society/index.md"
+        }
+      ],
+      "contentHash": "7b03ce48e960e02b84b142283d7873d18940ade9c297140eefd7da14dce80daf",
+      "byteLength": 253,
+      "summary": "Manus Sudrenus is a high-elven aristocrat and member of the Pale Lantern Society, known for his silver hair and dark silk robes.",
+      "keyFacts": [
+        "High-elven aristocrat with a sleek appearance",
+        "Has silver hair tied back with a silken ribbon",
+        "Wears flowing dark silk robes",
+        "Member of the Pale Lantern Society"
+      ],
+      "entities": {
+        "people": [
+          "Manus Sudrenus"
+        ],
+        "places": [],
+        "orgs": [
+          "Pale Lantern Society"
+        ]
+      }
+    },
+    "Org/Pale Lantern Society/index.md": {
+      "path": "Org/Pale Lantern Society/index.md",
       "title": "Pale Lantern Society",
       "aliases": [],
       "tags": [
@@ -3504,18 +3899,18 @@
           "resolvedPath": "Divinity/Outer Gods/Eternal Pulse.md"
         }
       ],
-      "contentHash": "dc2f705153dbb33b54f0fe921bed4a8753172bf9403d49ed9a4cab54a9dd9b8f",
-      "byteLength": 1451,
-      "summary": "The Pale Lantern Society is Færrin's oldest organization, a once-secret cult pursuing immortality through necromancy, now empowered as the worldly presence of the Outer God known as the Pulse.",
+      "contentHash": "182e04f32930af3ac53bf94963e517c6b438dae4b4fadeed3e18c2e4ae331c27",
+      "byteLength": 1452,
+      "summary": "The Pale Lantern Society is Færrin's oldest active organization, a once-secret cult pursuing immortality through necromancy, now endorsed by the Outer God known as the Pulse.",
       "keyFacts": [
-        "Possibly the oldest active organization on Færrin, predating the Gods and the Iridescent Church.",
-        "Originally a clandestine cabal of warlords and aristocrats practicing necromancy and memetics.",
-        "Gained public legitimacy when the Pulse declared them her presence in the world after the firmament cracked.",
-        "Their ranks grew with necromancers and healers, whom the Society views as closely related in practice.",
-        "Currently operates hospitals, research centers, and graveyards across the continent.",
-        "Famous for their Columbariums, where wealthy patrons' preserved corpses are arranged as public art.",
-        "Bodies in Columbariums await the Society's perfection of necromantic arts to be resurrected.",
-        "Their ultimate goal is perfecting true resurrection to return the dead to life."
+        "Predates the Gods and the Iridescent Church, originating in the Dark Ages.",
+        "Originally a cabal of warlords and aristocrats practicing necromancy and memetics.",
+        "Operated clandestinely due to widespread opposition to raising the dead.",
+        "Gained public legitimacy when the Pulse declared them her worldly presence after the firmament cracked.",
+        "Now operates hospitals, research centers, and graveyards across the continent.",
+        "Famous for their Columbariums, where wealthy patrons' preserved corpses are displayed as art.",
+        "Columbarium bodies await the Society's perfection of necromancy to be truly resurrected.",
+        "Their ranks include both necromancers and healers, seen as closely related disciplines."
       ],
       "entities": {
         "people": [],
@@ -3528,8 +3923,45 @@
         ]
       }
     },
-    "Org/Prime Meridian.md": {
-      "path": "Org/Prime Meridian.md",
+    "Org/Prime Meridian/People/Tas Millett.md": {
+      "path": "Org/Prime Meridian/People/Tas Millett.md",
+      "title": "Tas Millett",
+      "aliases": [],
+      "tags": [
+        "Hobgoblin"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Prime Meridian/index|Prime Meridian]]",
+          "target": "Org/Prime Meridian/index",
+          "display": "Prime Meridian",
+          "section": null,
+          "resolvedPath": "Org/Prime Meridian/index.md"
+        }
+      ],
+      "contentHash": "a28f52dd4f03a36228668f839c4d6451ca42a7896bd24ae6d8587ebc748f8a3f",
+      "byteLength": 333,
+      "summary": "Tas Millett is a hobgoblin member of Prime Meridian, known for his regal bearing and navigator-themed attire.",
+      "keyFacts": [
+        "Tall hobgoblin with slate-gray skin and sharp, chiseled features",
+        "Wears a meticulously pressed naval coat with gold-trimmed cartography lines",
+        "Carries an antique brass astrolabe at his belt",
+        "Member of the organization Prime Meridian"
+      ],
+      "entities": {
+        "people": [
+          "Tas Millett"
+        ],
+        "places": [],
+        "orgs": [
+          "Prime Meridian"
+        ]
+      }
+    },
+    "Org/Prime Meridian/index.md": {
+      "path": "Org/Prime Meridian/index.md",
       "title": "Prime Meridian",
       "aliases": [],
       "tags": [
@@ -3561,18 +3993,18 @@
           "resolvedPath": "Org/Iridescent Church/index.md"
         }
       ],
-      "contentHash": "ac7d7016544a94e226d79433bdfe43702149b68a6c408314b652fe16abf21341",
-      "byteLength": 1247,
-      "summary": "Prime Meridian is an infrastructure organization that controls Calaria's roads and rail, and famously executed a bloodless coup to dissolve the monarchy.",
+      "contentHash": "248a8960f46fc94f41b5bc77c25c269bcd8cfd5a982ddf08b020a5d4eb574018",
+      "byteLength": 1248,
+      "summary": "Prime Meridian is a powerful infrastructure organization that controls roads and rail across Færrin, and famously staged a bloodless coup to dissolve Calaria's monarchy.",
       "keyFacts": [
-        "Founded by Forster Cain as a small transportation company during the era of horse-pulled trams.",
+        "Founded by Forster Cain as a small transportation company in the era of horse-pulled trams.",
         "Built the first rail system in Calaria through a deal with the then-king.",
-        "Grew to control all roads and rail infrastructure in Calaria.",
-        "Jointly announced the dissolution of Calarian royal rule with the Iridescent Church.",
-        "The king of Calaria stepped down after losing Church support and control of logistics.",
+        "Grew into an infrastructure giant; all roads and trains in Calaria were built and maintained by PM.",
+        "Staged a bloodless coup in a joint announcement with the Iridescent Church.",
+        "The Calarian king was informed of his dissolution at the same time as the public.",
+        "The king stepped down after losing the Church's support and having no means of escape.",
         "Cain and the Iridescent Church founded the Council that now rules Calaria.",
-        "Prime Meridian is the only Org to have performed a coup — and a bloodless one.",
-        "Still builds roads and operates trains connecting most of Færrin after Cain's death."
+        "Prime Meridian still builds roads and operates trains connecting most of Færrin after Cain's death."
       ],
       "entities": {
         "people": [
@@ -3589,8 +4021,86 @@
         ]
       }
     },
-    "Org/Protectorate.md": {
-      "path": "Org/Protectorate.md",
+    "Org/Protectorate/People/Tamara McKay.md": {
+      "path": "Org/Protectorate/People/Tamara McKay.md",
+      "title": "Tamara McKay",
+      "aliases": [
+        "Tamara"
+      ],
+      "tags": [
+        "Elf"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Protectorate/index|Protectorate]]",
+          "target": "Org/Protectorate/index",
+          "display": "Protectorate",
+          "section": null,
+          "resolvedPath": "Org/Protectorate/index.md"
+        }
+      ],
+      "contentHash": "0e5b0c46d9437e2099fdd47838346e561d60fe1a36a84dc4cc62d10ac53b1207",
+      "byteLength": 364,
+      "summary": "Tamara McKay is a high-ranking elven member of the Protectorate, known for her masked appearance and elegant dueling scars.",
+      "keyFacts": [
+        "Female elf, typically wears high-ranking security armor with her face masked.",
+        "Her movements are described as fluid and relaxed, communicating expression despite the mask.",
+        "When unmasked, she has two distinct, elegant dueling scars on her jaw.",
+        "She is a member of the Protectorate organization."
+      ],
+      "entities": {
+        "people": [
+          "Tamara McKay"
+        ],
+        "places": [],
+        "orgs": [
+          "Protectorate"
+        ]
+      }
+    },
+    "Org/Protectorate/People/Yao Addington.md": {
+      "path": "Org/Protectorate/People/Yao Addington.md",
+      "title": "Yao Addington",
+      "aliases": [
+        "Yao"
+      ],
+      "tags": [
+        "Gnome"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Protectorate/index|Protectorate]]",
+          "target": "Org/Protectorate/index",
+          "display": "Protectorate",
+          "section": null,
+          "resolvedPath": "Org/Protectorate/index.md"
+        }
+      ],
+      "contentHash": "d26f420e1fa33880837ea25de51d773505acbc12f7f3355ca9e3b3279014bd5a",
+      "byteLength": 262,
+      "summary": "Yao Addington is a male gnome member of the Protectorate, clad in heavy oversized tactical plating with a stylized visor hiding his face.",
+      "keyFacts": [
+        "Male gnome",
+        "Wears heavy, oversized tactical plating that clanks with every step",
+        "Face hidden behind an intimidating stylized visor",
+        "Member of the Protectorate"
+      ],
+      "entities": {
+        "people": [
+          "Yao Addington"
+        ],
+        "places": [],
+        "orgs": [
+          "Protectorate"
+        ]
+      }
+    },
+    "Org/Protectorate/index.md": {
+      "path": "Org/Protectorate/index.md",
       "title": "Protectorate",
       "aliases": [],
       "tags": [
@@ -3622,17 +4132,17 @@
           "resolvedPath": "Org/index.md"
         }
       ],
-      "contentHash": "b9481cfd5f57555e0f69eeea02e8777fc44bfbc60a3abb5da6989cc913b0d41b",
-      "byteLength": 1166,
-      "summary": "Protectorate is a Brith private mercenary army, historically used to destabilize governments, that now primarily serves as peacekeepers within Brithwyn.",
+      "contentHash": "ecba9421142d2b1dd1390dfb7b146e3757884f491da45ebd3a6ee8fa5d6bf569",
+      "byteLength": 1168,
+      "summary": "Protectorate is a Brithwyn-based private mercenary army, the sole outside organization permitted to operate in Brithwyn, known for elite soldiers called slayers.",
       "keyFacts": [
-        "Protectorate is the sole outside organization permitted to operate within Brithwyn.",
-        "It is a private army-for-hire originating from Brithwyn.",
-        "Before the Brithwyn-Calaria split, it was the premier company for destabilizing governments and waging wars.",
+        "Protectorate is the only outside organization permitted to operate in Brithwyn after its split from Calaria.",
+        "It is a private army-for-hire, originally available to anyone seeking to destabilize governments or wage wars.",
+        "Before the Brithwyn-Calaria split, Protectorate was the premier mercenary company in the region.",
         "While the Calarian army focused on crusades, Protectorate served the highest bidder.",
-        "Protectorate soldiers aided Brithwyn in breaking free from Calarian rule.",
-        "They now primarily act as peacekeepers within Brithwyn but remain available for hire.",
-        "Elite soldiers called 'slayers' can enter a powerful 'battletrance' state.",
+        "Protectorate soldiers helped Brithwyn break free from Calarian rule.",
+        "Protectorate now primarily serves as peacekeepers within Brithwyn, but still hires out for conflicts.",
+        "Their elite soldiers, called slayers, are trained to enter a powerful 'battletrance'.",
         "Stories of entranced slayers singlehandedly destroying rival encampments are considered only slightly exaggerated."
       ],
       "entities": {
@@ -3649,15 +4159,13 @@
     "Org/Pyrelight/index.md": {
       "path": "Org/Pyrelight/index.md",
       "title": "Pyrelight",
-      "aliases": [
-        "Pyrelight"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "1473068d91c0c9fe66fc095dc8bdee99775ff0724e4fe19b8fbfacd34cd2ff7c",
-      "byteLength": 48,
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byteLength": 0,
       "summary": "(stub page — no content yet)",
       "keyFacts": [],
       "entities": {
@@ -3666,8 +4174,46 @@
         "orgs": []
       }
     },
-    "Org/Radiant Arms.md": {
-      "path": "Org/Radiant Arms.md",
+    "Org/Radiant Arms/People/Ichel.md": {
+      "path": "Org/Radiant Arms/People/Ichel.md",
+      "title": "Ichel",
+      "aliases": [],
+      "tags": [
+        "Android"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Radiant Arms/index|Radiant Arms]]",
+          "target": "Org/Radiant Arms/index",
+          "display": "Radiant Arms",
+          "section": null,
+          "resolvedPath": "Org/Radiant Arms/index.md"
+        }
+      ],
+      "contentHash": "1cebab635f33d4e2a7f0eed1c1659ca1607cf15da4e50246026f023d5c8ed7ec",
+      "byteLength": 264,
+      "summary": "Ichel is an android member of Radiant Arms, distinguished by porcelain-like skin, golden circuitry lines, and armor-plated corporate attire.",
+      "keyFacts": [
+        "Ichel is an android.",
+        "She has smooth, porcelain-like synthetic skin.",
+        "Faint golden circuitry lines trace her throat and temples.",
+        "She wears a sleek armor-plated corporate dress.",
+        "She is a member of the organization Radiant Arms."
+      ],
+      "entities": {
+        "people": [
+          "Ichel"
+        ],
+        "places": [],
+        "orgs": [
+          "Radiant Arms"
+        ]
+      }
+    },
+    "Org/Radiant Arms/index.md": {
+      "path": "Org/Radiant Arms/index.md",
       "title": "Radiant Arms",
       "aliases": [],
       "tags": [
@@ -3685,13 +4231,13 @@
           "resolvedPath": "Geography/Calaria/index.md"
         }
       ],
-      "contentHash": "13599abee1ed747a236608ff8e2e995825d43f79a756f95e3be3f6712bfba538",
-      "byteLength": 217,
+      "contentHash": "abf2d9ff5e0c5965f76e061fa0eda21562e375cc5a0965d68c6aa41ed6175f19",
+      "byteLength": 219,
       "summary": "Radiant Arms is a firearm manufacturer based in Calaria, specializing in high-caliber enchanted weapons.",
       "keyFacts": [
         "Based in Calaria",
         "Specializes in high-caliber, enchanted firearms",
-        "Company motto: \"Just a tap'll do ya!\""
+        "Motto: \"Just a tap'll do ya!\""
       ],
       "entities": {
         "people": [],
@@ -3721,8 +4267,8 @@
           "resolvedPath": "Org/Roundhat Gang/index.md"
         }
       ],
-      "contentHash": "73cb299f8fa50380e0138a0da184fd7e9e891529e1d6e985fe6d2473734f00f4",
-      "byteLength": 182,
+      "contentHash": "b744790922cf5c454e58bda477519f14a3343501da80776e84531ba3c05a0960",
+      "byteLength": 184,
       "summary": "Jasper Glover is a low-level henchman of the Roundhat Gang who was spared by the Party and sent back to his gang's hideout.",
       "keyFacts": [
         "Low-level henchman in the Roundhat Gang",
@@ -3735,8 +4281,7 @@
         ],
         "places": [],
         "orgs": [
-          "Roundhat Gang",
-          "the Party"
+          "Roundhat Gang"
         ]
       }
     },
@@ -3774,18 +4319,18 @@
           "resolvedPath": "Org/Pyrelight/index.md"
         }
       ],
-      "contentHash": "292b0a6795ff9ced3a4941ca8f614a043403316ce1bb7fa2e8c7744bd2914c51",
-      "byteLength": 713,
-      "summary": "Tywelwyn Leatherhide is the founder and leader of the Roundhat Gang, a protection racket in Sableclutch, who recently gained magical ability via a deal with Pyrelight.",
+      "contentHash": "ac6f7609a07c91da714747743fd0f530da0b0f165633905487671985a4db1a4d",
+      "byteLength": 715,
+      "summary": "Tywelwyn Leatherhide is the founder and leader of the Roundhat Gang, a protection racket in Sableclutch, and a magically enhanced deerfolk.",
       "keyFacts": [
-        "Tywelwyn is a 6'11\" deerfolk with dappled brown fur and tall, branching antlers.",
+        "Deerfolk standing 6'11\" with dappled brown fur and tall, branching antlers.",
         "His muscles are unnaturally large, suggesting magical or chemical enhancement.",
         "His skin runs hot enough that his sweat sizzles on contact.",
-        "He is the founder and leader of the Roundhat Gang.",
-        "The Roundhat Gang operates as a protection racket in Sableclutch.",
-        "He was rumored to have gone crazy and to be hearing voices.",
-        "He struck a deal with someone in the organization Pyrelight.",
-        "Formerly unable to use magic, he now pilots a simulacrum to act on his behalf."
+        "Founder and leader of the Roundhat Gang, a protection racket.",
+        "The Roundhat Gang operates in the city of Sableclutch.",
+        "Was rumored to have gone crazy and hear voices.",
+        "Has struck a deal with someone in the organization Pyrelight.",
+        "Formerly unable to wield magic; now pilots a simulacrum to act on his behalf."
       ],
       "entities": {
         "people": [
@@ -3803,9 +4348,7 @@
     "Org/Roundhat Gang/index.md": {
       "path": "Org/Roundhat Gang/index.md",
       "title": "Roundhat Gang",
-      "aliases": [
-        "Roundhat Gang"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -3839,14 +4382,14 @@
           "resolvedPath": "Org/Pyrelight/index.md"
         }
       ],
-      "contentHash": "d2961e01518246319a2c0ed218adf48d3de63220df7e4446265776cb81fd0ded",
-      "byteLength": 331,
+      "contentHash": "e05407025b401f29e160f715e5d3fae5c381eb3deb9512cda822ba3633921068",
+      "byteLength": 275,
       "summary": "The Roundhat Gang is a protection racket operating in Sableclutch, run by Tywelwyn Leatherhide out of The Crowded Flea.",
       "keyFacts": [
-        "Operates as a protection racket in Sableclutch.",
-        "Led by Tywelwyn Leatherhide.",
-        "Based out of a location called The Crowded Flea.",
-        "Has recently established some kind of partnership with Pyrelight."
+        "The Roundhat Gang is a protection racket based in Sableclutch.",
+        "It is run by Tywelwyn Leatherhide.",
+        "The gang operates out of a location called The Crowded Flea.",
+        "The gang has recently established some kind of partnership with Pyrelight."
       ],
       "entities": {
         "people": [
@@ -3862,8 +4405,46 @@
         ]
       }
     },
-    "Org/RunGunners.md": {
-      "path": "Org/RunGunners.md",
+    "Org/RunGunners/People/Ceres.md": {
+      "path": "Org/RunGunners/People/Ceres.md",
+      "title": "Ceres",
+      "aliases": [],
+      "tags": [
+        "Fetchling"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/RunGunners/index|RunGunners]]",
+          "target": "Org/RunGunners/index",
+          "display": "RunGunners",
+          "section": null,
+          "resolvedPath": "Org/RunGunners/index.md"
+        }
+      ],
+      "contentHash": "ac23592394beff298731e05884ae166d895c9ab835fd05b57d03cc965211da13",
+      "byteLength": 332,
+      "summary": "Ceres is a fetchling member of the RunGunners, recognizable by her grayscale appearance and twin customized hand cannons.",
+      "keyFacts": [
+        "Fetchling with monochromatic grayscale skin and light-absorbing hair",
+        "Athletic and sharp-eyed in appearance",
+        "Wears an oil-stained duster over formal wear",
+        "Carries a pair of heavily customized heavy-frame hand cannons",
+        "Member of the RunGunners organization"
+      ],
+      "entities": {
+        "people": [
+          "Ceres"
+        ],
+        "places": [],
+        "orgs": [
+          "RunGunners"
+        ]
+      }
+    },
+    "Org/RunGunners/index.md": {
+      "path": "Org/RunGunners/index.md",
       "title": "RunGunners",
       "aliases": [],
       "tags": [
@@ -3880,16 +4461,16 @@
           "resolvedPath": "Geography/Fenrith/index.md"
         }
       ],
-      "contentHash": "8cd1807d38c6cacc47207433797b14799d8cdaac50d111e6fa0ec76bab317586",
-      "byteLength": 722,
+      "contentHash": "f0691abf86870192cfe00fc352719c64fc657c1cb8fb24e1be48ad40944ce5eb",
+      "byteLength": 724,
       "summary": "The RunGunners are an armored transport organization based in Fenrith, offering armed convoy services with live scrying and automatic tagging of attackers.",
       "keyFacts": [
         "Operate as armored transport convoys for hire, moving people or goods safely.",
         "Offer a live scry of transports during delivery as part of their guarantee.",
-        "Automatically attempt to magically tag anyone who engages their convoys.",
+        "Automatically attempt to magically tag anyone who attacks their convoys.",
         "Based in the Termean Veinlands region of Fenrith.",
         "Their vehicles are custom-built to handle soft, dry sand as well as paved roads.",
-        "Their corporate town, Throttlehold, is home to engineers, mechanics, and armed personnel."
+        "Their corporate town, Throttlehold, is home to engineers, mechanics, and armed guards."
       ],
       "entities": {
         "people": [],
@@ -3903,8 +4484,48 @@
         ]
       }
     },
-    "Org/Sable and Suns.md": {
-      "path": "Org/Sable and Suns.md",
+    "Org/Sable and Suns/People/Lark Crowe.md": {
+      "path": "Org/Sable and Suns/People/Lark Crowe.md",
+      "title": "Lark Crowe",
+      "aliases": [],
+      "tags": [
+        "Tengu"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Sable and Suns/index|Sable and Suns]]",
+          "target": "Org/Sable and Suns/index",
+          "display": "Sable and Suns",
+          "section": null,
+          "resolvedPath": "Org/Sable and Suns/index.md"
+        }
+      ],
+      "contentHash": "f42bdc162f01c02eef55c0dd75f9e6ebdc032e51f687b267a1fdbfc00f128782",
+      "byteLength": 282,
+      "summary": "Lark Crowe is a scarred tengu member of Sable and Suns, recognizable by his glossy black feathers and a vertical scar splitting his beak.",
+      "keyFacts": [
+        "Lark Crowe is a tengu with glossy black feathers.",
+        "He has a distinctive scar that cracks his beak vertically in half.",
+        "He wears leather vests and rugged denim.",
+        "His style is described as common among old scouts from Austrene.",
+        "He is a member of the organization Sable and Suns."
+      ],
+      "entities": {
+        "people": [
+          "Lark Crowe"
+        ],
+        "places": [
+          "Austrene"
+        ],
+        "orgs": [
+          "Sable and Suns"
+        ]
+      }
+    },
+    "Org/Sable and Suns/index.md": {
+      "path": "Org/Sable and Suns/index.md",
       "title": "Sable and Suns",
       "aliases": [],
       "tags": [
@@ -3926,7 +4547,7 @@
           "target": "Protectorate",
           "display": null,
           "section": null,
-          "resolvedPath": "Org/Protectorate.md"
+          "resolvedPath": "Org/Protectorate/index.md"
         },
         {
           "raw": "[[Geography/Lorandris/index|Lorandris]]",
@@ -3950,17 +4571,16 @@
           "resolvedPath": "Geography/Rhædon/index.md"
         }
       ],
-      "contentHash": "d04896db8f0ca6d06b28c94fcb3d3f4af4b81f0a392f5fb4da56744d299ab58d",
-      "byteLength": 820,
+      "contentHash": "b7d3cddaf4a85addfdd9c0eef5fd256b66933cc7ddf84f046d9d1c1f628a3f5a",
+      "byteLength": 822,
       "summary": "Sable and Suns is a military contractor supplying weapons, vehicles, and training consultants to multiple factions across Edan.",
       "keyFacts": [
         "S&S is technically unaffiliated with any country in Edan, openly playing all sides.",
         "They supply the Calarian military as one of its major contractors.",
-        "Protectorate and the Pirate-Kings of Lorandris both hold contracts with S&S.",
-        "Some up-and-coming orgs out of Rhædon also hold contracts with them.",
-        "Unlike other contractors, S&S sends consultants to teach clients how to use purchased equipment.",
+        "Protectorate, the Pirate-Kings of Lorandris, and Orgs from Rhædon also hold contracts with S&S.",
+        "Unlike other contractors, S&S sends consultants to teach clients how to use purchased weapons and vehicles.",
         "S&S firearms and blades are high quality but expensive.",
-        "S&S-made weaponry on mercenaries or bandits signals a wealthy backer."
+        "S&S-made weaponry in the hands of bandits or mercenaries signals wealthy backing."
       ],
       "entities": {
         "people": [],
@@ -3987,13 +4607,13 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "747a25ea25a45103b3417548266551f407f15eecca0e06a97f7952f4e14e2970",
-      "byteLength": 207,
-      "summary": "Sentinel Dynamics is a prestigious security organization offering bodyguard and guard services, considered a status symbol among the wealthy.",
+      "contentHash": "af1324ef57e3a1f7c8118a237bbf75fcae2d8f3702e997415d254f3df447cd83",
+      "byteLength": 209,
+      "summary": "Sentinel Dynamics is a private security organization offering bodyguard and guard services, considered a status symbol among the wealthy.",
       "keyFacts": [
         "Provides personal bodyguard services for VIPs",
-        "Offers security for locations such as art galleries",
-        "Hiring a Sentinel as a bodyguard is considered a status symbol"
+        "Offers stationary guard services (e.g. art galleries)",
+        "Having a Sentinel as a bodyguard is considered a status symbol"
       ],
       "entities": {
         "people": [],
@@ -4003,8 +4623,130 @@
         ]
       }
     },
-    "Org/Ternion Heavy Industries.md": {
-      "path": "Org/Ternion Heavy Industries.md",
+    "Org/Solari Sub-surface/People/Salvado Tarragona.md": {
+      "path": "Org/Solari Sub-surface/People/Salvado Tarragona.md",
+      "title": "Salvado Tarragona",
+      "aliases": [
+        "Salvado"
+      ],
+      "tags": [
+        "Human"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Solari Sub-surface/index|Solari Sub-surface]]",
+          "target": "Org/Solari Sub-surface/index",
+          "display": "Solari Sub-surface",
+          "section": null,
+          "resolvedPath": "Org/Solari Sub-surface/index.md"
+        }
+      ],
+      "contentHash": "b82340332045610c413584b69122890c50b221293326d75ec0ab605efab41360",
+      "byteLength": 391,
+      "summary": "Salvado Tarragona is a scarred, stocky member of Solari Sub-surface, known for his underground career and heavy drinking.",
+      "keyFacts": [
+        "Short, stocky, and densely muscled with leathery, scarred skin",
+        "His bloated eyes suggest a lifetime of heavy alcohol use",
+        "Wears a half-formal, half-flight-suit ensemble with brass buckles",
+        "Member of Solari Sub-surface"
+      ],
+      "entities": {
+        "people": [
+          "Salvado Tarragona"
+        ],
+        "places": [],
+        "orgs": [
+          "Solari Sub-surface"
+        ]
+      }
+    },
+    "Org/Solari Sub-surface/index.md": {
+      "path": "Org/Solari Sub-surface/index.md",
+      "title": "Solari Sub-surface",
+      "aliases": [],
+      "tags": [
+        "Mercantile"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Prime Meridian/index|Prime Meridian]]",
+          "target": "Org/Prime Meridian/index",
+          "display": "Prime Meridian",
+          "section": null,
+          "resolvedPath": "Org/Prime Meridian/index.md"
+        },
+        {
+          "raw": "[[Org/Alkahest Freight/index|Alkahest Freight]]",
+          "target": "Org/Alkahest Freight/index",
+          "display": "Alkahest Freight",
+          "section": null,
+          "resolvedPath": "Org/Alkahest Freight/index.md"
+        }
+      ],
+      "contentHash": "774a5439842dd312f96d8c7c6f8074dbeb1e4a75923f3c5443160c79682eda66",
+      "byteLength": 244,
+      "summary": "Solari Sub-surface is a small shipping company that fills market gaps left by larger competitors.",
+      "keyFacts": [
+        "Small shipping company operating in a niche market",
+        "Positions itself to fill gaps left by larger players like Prime Meridian and Alkahest Freight"
+      ],
+      "entities": {
+        "people": [],
+        "places": [],
+        "orgs": [
+          "Solari Sub-surface",
+          "Prime Meridian",
+          "Alkahest Freight"
+        ]
+      }
+    },
+    "Org/Ternion Heavy Industries/People/Jethro Twill.md": {
+      "path": "Org/Ternion Heavy Industries/People/Jethro Twill.md",
+      "title": "Jethro Twill",
+      "aliases": [
+        "Jethro"
+      ],
+      "tags": [
+        "Human"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Ternion Heavy Industries/index|Ternion Heavy Industries]]",
+          "target": "Org/Ternion Heavy Industries/index",
+          "display": "Ternion Heavy Industries",
+          "section": null,
+          "resolvedPath": "Org/Ternion Heavy Industries/index.md"
+        }
+      ],
+      "contentHash": "8b36b9d0e47b2786eea51bf964b2f66eff6970e8f3105043de398b85803823fd",
+      "byteLength": 421,
+      "summary": "Jethro Twill is a human member of Ternion Heavy Industries, recognizable by his mechanical left arm, engineer's uniform, and weathered appearance.",
+      "keyFacts": [
+        "Towering, broad-shouldered human male",
+        "Always wears a stiff engineer's uniform rather than formal attire",
+        "Has a matte-gray mechanical left arm that whirs faintly",
+        "Weathered face with an iron-gray beard",
+        "Carries a permanent smell of ozone and machine oil",
+        "Member of Ternion Heavy Industries"
+      ],
+      "entities": {
+        "people": [
+          "Jethro Twill"
+        ],
+        "places": [],
+        "orgs": [
+          "Ternion Heavy Industries"
+        ]
+      }
+    },
+    "Org/Ternion Heavy Industries/index.md": {
+      "path": "Org/Ternion Heavy Industries/index.md",
       "title": "Ternion Heavy Industries",
       "aliases": [],
       "tags": [
@@ -4019,17 +4761,16 @@
           "target": "Hildebrandt Corporation",
           "display": null,
           "section": null,
-          "resolvedPath": "Org/Hildebrandt Corporation.md"
+          "resolvedPath": "Org/Hildebrandt Corporation/index.md"
         }
       ],
-      "contentHash": "49d4fd97daa0db4f254a614df5dee7f8b0480a73e79f918abbef17a27b1e519b",
-      "byteLength": 259,
-      "summary": "Ternion Heavy Industries is a major cargo airframe manufacturer and competitor to the Hildebrandt Corporation, specializing in multi-slip sliders.",
+      "contentHash": "b42ab2ea6f0e5138a15cd74c219dd7a44177d01c52b819b0be7436890f672e33",
+      "byteLength": 261,
+      "summary": "Ternion Heavy Industries is an organization specializing in cargo airframes, known for multi-slip sliders used in uninhabited-world transport.",
       "keyFacts": [
-        "Ternion Heavy Industries is a direct competitor to the Hildebrandt Corporation.",
-        "They manufacture airframes designed for transporting cargo.",
-        "Their specialty is multi-slip sliders.",
-        "Multi-slip sliders can quickly drop into uninhabited worlds for traffic-free transport."
+        "Major competitor to the Hildebrandt Corporation",
+        "Specializes in manufacturing airframes for transporting cargo",
+        "Known for multi-slip sliders that drop into uninhabited worlds for traffic-free transport"
       ],
       "entities": {
         "people": [],
@@ -4040,8 +4781,179 @@
         ]
       }
     },
-    "Org/The Scale.md": {
-      "path": "Org/The Scale.md",
+    "Org/The Harlequins/People/The Master of Ceremonies.md": {
+      "path": "Org/The Harlequins/People/The Master of Ceremonies.md",
+      "title": "The Master of Ceremonies",
+      "aliases": [],
+      "tags": [
+        "Elf"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/The Harlequins/index|The Harlequins]]",
+          "target": "Org/The Harlequins/index",
+          "display": "The Harlequins",
+          "section": null,
+          "resolvedPath": "Org/The Harlequins/index.md"
+        }
+      ],
+      "contentHash": "2e95aa1ff7af535cf0417790078fa499e570979def558aa4a4894c557529e132",
+      "byteLength": 324,
+      "summary": "The Master of Ceremonies is the masked elven leader of The Harlequins, recognizable by his horned pale mask and blue-and-gold harlequin-patterned coat.",
+      "keyFacts": [
+        "Tall, slender elf with a high-collared coat in a blue-and-gold diamond harlequin pattern.",
+        "Wears a pale, unblinking mask with small elegant horns, concealing his face.",
+        "Leads the organization known as The Harlequins."
+      ],
+      "entities": {
+        "people": [
+          "The Master of Ceremonies"
+        ],
+        "places": [],
+        "orgs": [
+          "The Harlequins"
+        ]
+      }
+    },
+    "Org/The Harlequins/index.md": {
+      "path": "Org/The Harlequins/index.md",
+      "title": "The Harlequins",
+      "aliases": [],
+      "tags": [],
+      "img": null,
+      "headings": [],
+      "wikilinks": [],
+      "contentHash": "42949da6b4df1a3791c489572c1224ceb0806d10e7e270f8b5e1926ccc1d145a",
+      "byteLength": 85,
+      "summary": "The Harlequins are an organization responsible for building the Strider and organizing the pilgrimage.",
+      "keyFacts": [
+        "Built the Strider",
+        "Organizers of the pilgrimage"
+      ],
+      "entities": {
+        "people": [],
+        "places": [],
+        "orgs": [
+          "The Harlequins"
+        ]
+      }
+    },
+    "Org/The Scale/People/Cassian Drake.md": {
+      "path": "Org/The Scale/People/Cassian Drake.md",
+      "title": "Cassian Drake",
+      "aliases": [
+        "Cassian"
+      ],
+      "tags": [
+        "Human"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/The Scale/index|The Scale]]",
+          "target": "Org/The Scale/index",
+          "display": "The Scale",
+          "section": null,
+          "resolvedPath": "Org/The Scale/index.md"
+        }
+      ],
+      "contentHash": "b58d4398e91d07643d942b5029014f5d1db77c4ed729e207a7213eabbb361b02",
+      "byteLength": 253,
+      "summary": "Cassian Drake is a heavily tattooed human member of The Scale, recognizable by his broken nose, shaved head, tactical greaves, and long-barreled rifle.",
+      "keyFacts": [
+        "Burly, heavily tattooed human male",
+        "Has a broken nose and shaved head",
+        "Wears tactical greaves",
+        "Carries a long-barreled rifle",
+        "Member of the organization known as The Scale"
+      ],
+      "entities": {
+        "people": [
+          "Cassian Drake"
+        ],
+        "places": [],
+        "orgs": [
+          "The Scale"
+        ]
+      }
+    },
+    "Org/The Scale/People/Lance Vesper.md": {
+      "path": "Org/The Scale/People/Lance Vesper.md",
+      "title": "Lance Vesper",
+      "aliases": [],
+      "tags": [
+        "Human"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/The Scale/index|The Scale]]",
+          "target": "Org/The Scale/index",
+          "display": "The Scale",
+          "section": null,
+          "resolvedPath": "Org/The Scale/index.md"
+        }
+      ],
+      "contentHash": "0c363b400e58b9235226b44d17bac36e811be015fcae81ad55c4cb5c18f9a9fe",
+      "byteLength": 229,
+      "summary": "Lance Vesper is a sickly, lithe human member of The Scale, recognizable by his pale skin, rheumy eyes, and dark leather coat with hidden pockets.",
+      "keyFacts": [
+        "Lithe and sickly in build with pale skin and rheumy eyes.",
+        "Wears a high-collared dark leather coat lined with hidden pockets.",
+        "Member of the organization known as The Scale."
+      ],
+      "entities": {
+        "people": [
+          "Lance Vesper"
+        ],
+        "places": [],
+        "orgs": [
+          "The Scale"
+        ]
+      }
+    },
+    "Org/The Scale/People/Ralph Bishop.md": {
+      "path": "Org/The Scale/People/Ralph Bishop.md",
+      "title": "Ralph Bishop",
+      "aliases": [],
+      "tags": [
+        "Lizardfolk"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/The Scale/index|The Scale]]",
+          "target": "Org/The Scale/index",
+          "display": "The Scale",
+          "section": null,
+          "resolvedPath": "Org/The Scale/index.md"
+        }
+      ],
+      "contentHash": "90178effbc0d91ccddbcc2f66a9c7640ac5edc7f19130873a8e1befcba2fae27",
+      "byteLength": 214,
+      "summary": "Ralph Bishop is a scarred, golden-scaled lizardfolk member of The Scale, known for wearing a tailored silk waistcoat.",
+      "keyFacts": [
+        "Heavily scarred with golden scales",
+        "Wears a tailored but slightly too-tight silk waistcoat",
+        "Member of The Scale"
+      ],
+      "entities": {
+        "people": [
+          "Ralph Bishop"
+        ],
+        "places": [],
+        "orgs": [
+          "The Scale"
+        ]
+      }
+    },
+    "Org/The Scale/index.md": {
+      "path": "Org/The Scale/index.md",
       "title": "The Scale",
       "aliases": [],
       "tags": [
@@ -4059,18 +4971,18 @@
           "resolvedPath": "Divinity/Outer Gods/Judge of Ages.md"
         }
       ],
-      "contentHash": "7b9193f4c3f09bfb11b105494c0567bca95d0c612ce08d4f1d65edfb3e737c9d",
-      "byteLength": 1208,
+      "contentHash": "b9ae1cf3406f5516df1616c201a25f7d49b8db9cb4d462570aebc36edde64684",
+      "byteLength": 1203,
       "summary": "The Scale is an extranational organization serving the Judge of Ages, enforcing order, contracts, and balance across Færrin from their Stronghold in the Opaline Mountains.",
       "keyFacts": [
-        "Serves as the Judge of Ages' hand in imposing order and balance across Færrin.",
-        "Headquartered in a Stronghold citadel in the Opaline Mountains, built on a leyline conjunction.",
-        "Operates as an extranational governance body with stronger guarantees than any nation.",
-        "Pactbrokers (most common) witness and magically enforce contracts between parties.",
+        "Headquartered in a citadel called the Stronghold, located in the Opaline Mountains on a leyline conjunction.",
+        "Serves as the Judge of Ages' instrument of order and balance across Færrin.",
+        "Operates as an extranational governance body, independent of any nation.",
+        "Four ranked groups (rarest to most common): Timekeepers, Overseers, Arbiters, Pactbrokers.",
+        "Pactbrokers witness contract signings for a fee; magic monitors signees for compliance.",
+        "Breaking a magically-witnessed contract brings the full force of the Scale against the violator.",
         "Arbiters track down those who have escaped justice and deliver punishment.",
-        "Overseers prevent attempts to seal the Gods away again, averting a new Dark Ages.",
-        "Timekeepers prevent meddling with the time stream and stop paradox creation.",
-        "Contract magic monitors signees; breaking a contract brings the full might of the Scale."
+        "Overseers prevent attempts to seal the Gods away again, guarding against a return to the Dark Ages."
       ],
       "entities": {
         "people": [
@@ -4082,16 +4994,49 @@
           "Stronghold"
         ],
         "orgs": [
-          "The Scale",
-          "Pactbrokers",
-          "Arbiters",
-          "Overseers",
-          "Timekeepers"
+          "The Scale"
         ]
       }
     },
-    "Org/Verdant Holdings.md": {
-      "path": "Org/Verdant Holdings.md",
+    "Org/Verdant Holdings/People/Cross Trevils.md": {
+      "path": "Org/Verdant Holdings/People/Cross Trevils.md",
+      "title": "Cross Trevils",
+      "aliases": [],
+      "tags": [
+        "Dwarf"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Verdant Holdings/index|Verdant Holdings]]",
+          "target": "Org/Verdant Holdings/index",
+          "display": "Verdant Holdings",
+          "section": null,
+          "resolvedPath": "Org/Verdant Holdings/index.md"
+        }
+      ],
+      "contentHash": "8e078bf38065f7851c15709e96e201dafcbf87493699e4467838969465c7470d",
+      "byteLength": 299,
+      "summary": "Cross Trevils is an oread dwarf member of Verdant Holdings, notable for his rock-like skin, moss-lined jaw, and suit of living organic fiber.",
+      "keyFacts": [
+        "Cross Trevils is an oread dwarf with rock-like skin.",
+        "Moss grows along his jawline and soil is permanently under his nails.",
+        "He wears a formal suit woven from living organic fiber.",
+        "He is a member of Verdant Holdings."
+      ],
+      "entities": {
+        "people": [
+          "Cross Trevils"
+        ],
+        "places": [],
+        "orgs": [
+          "Verdant Holdings"
+        ]
+      }
+    },
+    "Org/Verdant Holdings/index.md": {
+      "path": "Org/Verdant Holdings/index.md",
       "title": "Verdant Holdings",
       "aliases": [],
       "tags": [
@@ -4101,8 +5046,8 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "c0fa3cff41a201463fcad466e2f9837f9baaa19e3911c04946ad82ea731743f5",
-      "byteLength": 172,
+      "contentHash": "73ea78df95a2454b40fdf06245a9d7a8b1e261367aaa7a2132442ba7af118a6b",
+      "byteLength": 174,
       "summary": "Verdant Holdings is an agricultural organization focused on high-density, high-yield crops to meet growing population demands.",
       "keyFacts": [
         "Specializes in high-density, high-yield crop production",
@@ -4120,9 +5065,7 @@
     "Org/index.md": {
       "path": "Org/index.md",
       "title": "Org",
-      "aliases": [
-        "Org"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -4142,18 +5085,18 @@
           "resolvedPath": "Geography/Calaria/Hallia/index.md"
         }
       ],
-      "contentHash": "ba5c85b3b9b26bd99ddb8eb2876012ec558bb066449c116d023d63aa289a8c10",
-      "byteLength": 2678,
-      "summary": "On Færrin, multinational organizations called Orgs fill the power gaps left by governments, born from rapid prosperity enabled by divine blessings.",
+      "contentHash": "22fb33adcdba428a2c84140e2a3a6748a7fad6c953f0fb074eba53d67d3e9965",
+      "byteLength": 2635,
+      "summary": "On Færrin, multinational organizations called Orgs fill the power vacuum left by governments overwhelmed by rapid prosperity granted by the Gods.",
       "keyFacts": [
         "On Færrin, Orgs handle safety and order instead of governments.",
-        "Divine blessings caused prosperity that outpaced existing power structures.",
+        "Divine blessings caused societies to grow faster than their power structures could manage.",
         "Orgs rose by capitalizing on the resulting gaps in power.",
-        "Forster Cain is the Founder of Prime Meridian and Architect of the Org.",
-        "Cain grew up poor in Sableclutch, unable to afford school.",
-        "As a child, Cain observed urban dysfunction in Hallia from a church rooftop.",
-        "Cain sketched imaginary city plans in the dust on the church roof.",
-        "His childhood observations inspired his lifelong question: 'What if I could fix this?'"
+        "The concept of the Org was founded by Forster Cain.",
+        "Forster Cain grew up poor in Sableclutch, a city in the Hallia region of Calaria.",
+        "As a child, Cain observed urban dysfunction: overcrowded streets, food shortages, idle noble estates.",
+        "Cain sketched imaginary city plans in the dust atop a neighborhood church roof.",
+        "Cain also founded an organization called Prime Meridian."
       ],
       "entities": {
         "people": [
@@ -4162,15 +5105,56 @@
         "places": [
           "Færrin",
           "Sableclutch",
-          "Hallia"
+          "Hallia",
+          "Calaria"
         ],
         "orgs": [
           "Prime Meridian"
         ]
       }
     },
-    "Org/Ætherion Limited.md": {
-      "path": "Org/Ætherion Limited.md",
+    "Org/Ætherion Limited/People/Braxton Hall.md": {
+      "path": "Org/Ætherion Limited/People/Braxton Hall.md",
+      "title": "Braxton Hall",
+      "aliases": [
+        "Braxton"
+      ],
+      "tags": [
+        "Sylph"
+      ],
+      "img": null,
+      "headings": [],
+      "wikilinks": [
+        {
+          "raw": "[[Org/Ætherion Limited/index|Ætherion Limited]]",
+          "target": "Org/Ætherion Limited/index",
+          "display": "Ætherion Limited",
+          "section": null,
+          "resolvedPath": "Org/Ætherion Limited/index.md"
+        }
+      ],
+      "contentHash": "0bd8a128fd0cb05a0915108178a6a6d3dfa6a79418844494ea27adf7720371e0",
+      "byteLength": 287,
+      "summary": "Braxton Hall is a sylph member of Ætherion Limited, recognizable by drifting translucent hair and a brass containment harness.",
+      "keyFacts": [
+        "Braxton Hall is a sylph.",
+        "Has wispy, translucent hair that drifts as if in a phantom breeze.",
+        "Wears a velvet doublet over a brass containment harness.",
+        "The brass containment harness is described as humming.",
+        "Is a member of Ætherion Limited."
+      ],
+      "entities": {
+        "people": [
+          "Braxton Hall"
+        ],
+        "places": [],
+        "orgs": [
+          "Ætherion Limited"
+        ]
+      }
+    },
+    "Org/Ætherion Limited/index.md": {
+      "path": "Org/Ætherion Limited/index.md",
       "title": "Ætherion Limited",
       "aliases": [],
       "tags": [
@@ -4180,9 +5164,9 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "de70b841d1c544bdcf1b9a7dc7fc4dc5e4b80333be32ad60646bfdd38a886076",
-      "byteLength": 196,
-      "summary": "Ætherion Limited is a continent-wide electricity supplier that operates power plants to provide power for electric appliances.",
+      "contentHash": "b2530efbb68d870f9b2c0f3898a1d4eba3077452de1a2daf9b298d09c9843d57",
+      "byteLength": 198,
+      "summary": "Ætherion Limited is a continent-wide energy company that operates power plants supplying electricity to consumers of electric appliances.",
       "keyFacts": [
         "Ætherion Limited operates power plants across the continent.",
         "They are the primary electricity supplier for electric appliances in the setting."
@@ -4245,18 +5229,18 @@
           "resolvedPath": "Org/Iconoclasm/index.md"
         }
       ],
-      "contentHash": "fb2bf7ff0e6a9662db63262c4c72348cd43ec803d3220748ae23a51537d80c36",
-      "byteLength": 1552,
-      "summary": "The Voidsong is a mysterious, haunting melody heard across the world, experienced in dreams and waking life, dividing society between believers, skeptics, and the fearful.",
+      "contentHash": "6e7df3e977bc79116cca40f1efdf079e8cfd8c21835537943f5ab453e479a11c",
+      "byteLength": 1545,
+      "summary": "The Voidsong is a mysterious, world-spanning phenomenon — a haunting melody heard in dreams that lingers in waking life, dividing society between believers, fearers, and seekers.",
       "keyFacts": [
         "The Voidsong belongs to the Divine and Occult traditions.",
-        "It is first experienced as a dream involving twin suns, a riverbank, and an unidentifiable singing figure.",
-        "The melody is described as haunting, filled with loneliness and longing — like a funeral dirge or call to action.",
-        "Hearers cannot recall the specific notes, yet the melody remains unmistakably present.",
-        "The Voidsong has spread publicly, appearing in radio broadcasts, screamsheet editorials, and whispered conversations.",
-        "Society is divided over it: some call it revelation, others a trap, others fear it is extraterrestrial.",
-        "The Voidsong is said to have 'marked' those who hear it, driving them to seek answers.",
-        "The search for answers leads seekers to Hallia and the organization Iconoclasm."
+        "It manifests as a haunting, unrecallable melody first experienced in vivid dreams.",
+        "The dream features twin suns, a grand unplaceable city, and an unnamed, faceless figure who sings.",
+        "The song is described as a funeral dirge or a call to action.",
+        "The Voidsong has been reported by many people, surfacing in radio broadcasts, screamsheet editorials, and whispered con…",
+        "Society is divided over its meaning: some call it revelation, others a trap, others fear it is extraterrestrial.",
+        "Those marked by the Voidsong are driven to seek answers, leading them to Hallia and Iconoclasm.",
+        "It is described as wanting something — implying intent or agency behind the phenomenon."
       ],
       "entities": {
         "people": [],
@@ -4272,9 +5256,7 @@
     "Phenomena/Harmony/index.md": {
       "path": "Phenomena/Harmony/index.md",
       "title": "Harmony",
-      "aliases": [
-        "Harmony"
-      ],
+      "aliases": [],
       "tags": [],
       "img": null,
       "headings": [],
@@ -4294,22 +5276,24 @@
           "resolvedPath": "Rules/Listener Dedication.md"
         }
       ],
-      "contentHash": "dff4b0ed5a10249aadf4f54f1b5709fc9f4cbe47fb137f222789e23eac62af17",
-      "byteLength": 391,
-      "summary": "Harmony is the form of magic on Færrin, ranging from subtle background forces to agentive powers that bond with chosen Listeners.",
+      "contentHash": "3df7eec508eacca55e359e9d26ec99803f647c73d2080cc078e51cf6c6a7c3b8",
+      "byteLength": 348,
+      "summary": "Harmony is the form of magic on Færrin, ranging from subtle background forces to agentive powers that connect and empower chosen Listeners.",
       "keyFacts": [
         "Some harmonies are soft and subtle, unfelt in daily life.",
-        "Other harmonies have agency and will themselves to be known by chosen individuals.",
+        "Other harmonies have agency and will themselves to be known by a chosen few.",
         "Agentive harmonies connect their Listeners together.",
         "Harmonies can impart knowledge or power on those who accept them.",
-        "The origin of harmonies is unknown."
+        "The origin of a harmony is unknown."
       ],
       "entities": {
         "people": [],
         "places": [
           "Færrin"
         ],
-        "orgs": []
+        "orgs": [
+          "Listeners"
+        ]
       }
     },
     "Phenomena/Hearts.md": {
@@ -4339,42 +5323,42 @@
           "target": "Pale Lantern Society",
           "display": "necro-doctors",
           "section": null,
-          "resolvedPath": "Org/Pale Lantern Society.md"
+          "resolvedPath": "Org/Pale Lantern Society/index.md"
         },
         {
           "raw": "[[The Scale|judgey guys]]",
           "target": "The Scale",
           "display": "judgey guys",
           "section": null,
-          "resolvedPath": "Org/The Scale.md"
+          "resolvedPath": "Org/The Scale/index.md"
         },
         {
           "raw": "[[Protectorate|bttl FREAKS]]",
           "target": "Protectorate",
           "display": "bttl FREAKS",
           "section": null,
-          "resolvedPath": "Org/Protectorate.md"
+          "resolvedPath": "Org/Protectorate/index.md"
         },
         {
           "raw": "[[Sable and Suns|gun fam ppl]]",
           "target": "Sable and Suns",
           "display": "gun fam ppl",
           "section": null,
-          "resolvedPath": "Org/Sable and Suns.md"
+          "resolvedPath": "Org/Sable and Suns/index.md"
         },
         {
           "raw": "[[RunGunners| car obsessed ones]]",
           "target": "RunGunners",
           "display": "car obsessed ones",
           "section": null,
-          "resolvedPath": "Org/RunGunners.md"
+          "resolvedPath": "Org/RunGunners/index.md"
         },
         {
           "raw": "[[Prime Meridian|road and train guys]]",
           "target": "Prime Meridian",
           "display": "road and train guys",
           "section": null,
-          "resolvedPath": "Org/Prime Meridian.md"
+          "resolvedPath": "Org/Prime Meridian/index.md"
         },
         {
           "raw": "[[Concordia|ppl who made this machine]]",
@@ -4384,18 +5368,18 @@
           "resolvedPath": "Org/Concordia.md"
         }
       ],
-      "contentHash": "50b9feba4d275159c7cdb917a77009b10a4e471f2aa04a40cb999062d5d2eb30",
-      "byteLength": 3985,
-      "summary": "Hearts are beings formed by infusing a divine spark into an idea. They are sentient, have fixed physical forms, and are bound to magical dwellings called fanes.",
+      "contentHash": "967aa7391975b3582c127275661b597dedafb9ccb782eec6ac5540acf38382f6",
+      "byteLength": 3986,
+      "summary": "Hearts are beings created by infusing a divine spark into an idea. They have physical forms, live in magical spaces called fanes, and can think and feel.",
       "keyFacts": [
-        "Hearts are created by combining a divine spark with an idea, resulting in a tangible being.",
-        "A heart chooses its physical form once, and cannot change it afterward.",
-        "Hearts live in fanes — magical dwellings smaller on the outside, which the heart controls and can reshape.",
-        "Hearts cannot leave their fane; attempting to do so causes them to explode.",
-        "Fanes vary in size from a mousehole to a city; multiple small fanes can merge, and fanes grow with more magic.",
-        "Hearts are sentient with thoughts and feelings, but tend to be single-minded due to their origin from ideas.",
-        "Hearts communicate via a magical network called the skein; outsiders can join via a magic item called a totem.",
-        "Hearts can project outside their fane briefly when summoned by someone holding their totem."
+        "A heart is created by combining a divine spark with an idea, resulting in a tangible being.",
+        "Hearts choose a physical body shape once, but cannot change it afterward.",
+        "Hearts live in a fane — a space smaller on the outside, where they have great control; they cannot leave without explod…",
+        "Fanes can range from mousehole-sized to city-sized; size is based on magical power, which can be increased.",
+        "Hearts can alter the appearance of their fane freely, but forcing them to change it may provoke retaliation.",
+        "Hearts communicate with each other via a magical network called a skein; outsiders can join via a magic item called a t…",
+        "Hearts can be projected outside their fane temporarily when someone with their totem summons them.",
+        "Each major organization has a distinct heart naming convention (e.g., Pale Lantern Society uses poetic names; Protector…"
       ],
       "entities": {
         "people": [],
@@ -4438,16 +5422,16 @@
           "resolvedPath": "Phenomena/Firmament.md"
         }
       ],
-      "contentHash": "0a3cadbb1f1f3aad3511418b8dc8a716555f5d9d88aa494f5b55be80e8149743",
+      "contentHash": "f5e491698bbeb5e1e46dacf0f133d6bc47a32b90ed99a8475f89cf03a11768ea",
       "byteLength": 2857,
       "summary": "The Infinite Horizon is a phenomenon making Færrin one of an infinite chain of parallel worlds, connected by ephemeral links traversable with simple magic devices called slides.",
       "keyFacts": [
         "Færrin exists as an infinite chain of parallel versions of itself, with connections forming between adjacent worlds.",
         "The two directions of travel are called 'voidward' and 'starward,' with Færrin prime as the origin point.",
-        "The most basic method of traversal is a magic device called a 'slide'; some individuals can slip without one.",
-        "Adjacent worlds near Færrin prime were found empty — as if the planet had never been inhabited.",
-        "The first sentient life discovered was a sprite at Star 46,656, itself having traveled from further starward.",
-        "Exploration is currently halted by 'walls': travelers entering Star 1,679,616 or Void 1,953,125 have never returned.",
+        "A magic device called a 'slide' is the standard tool for slipping between adjacent worlds; some can do so without one.",
+        "Adjacent worlds near Færrin prime were found empty, as if uninhabited versions of the planet.",
+        "The first sentient life was discovered at Star 46,656 — a sprite that had itself traveled from further starward.",
+        "Exploration is blocked in both directions by 'walls': travelers to Star 1,679,616 and Void 1,953,125 never returned.",
         "Resource and land scarcity are non-issues since the same mines and fields exist across infinite worlds.",
         "Faster traversal methods include random 'chutes,' powerful teleportation magic, and vehicles called Sliders."
       ],
@@ -4504,18 +5488,18 @@
           "resolvedPath": "Phenomena/Infinite Horizon.md"
         }
       ],
-      "contentHash": "aad7617a494d50c93038c8870c17d515234292c36d158b3e0bd09a365157be57",
+      "contentHash": "a1cfd5e4a530a04e831a619e447ee209c85201f3febe8fe3bb81e6312b9265b8",
       "byteLength": 1174,
-      "summary": "A special character dedication for Listeners — people whose souls have been shaped by a Harmony singing across the Horizon.",
+      "summary": "A character dedication representing a soul shaped by a Harmony's song. Listeners are bound to an enigmatic force connecting them to others.",
       "keyFacts": [
-        "All characters start with the Listener Dedication in addition to normal creation options.",
-        "Listeners are connected to a Harmony, an enigmatic force that binds them to others.",
-        "Harmonies can choose Listeners from any creed or walk of life; the selection process is unknown.",
+        "All characters start with the Listener Dedication in addition to other creation options.",
+        "Listeners have heard a Harmony sing across the Infinite Horizon, shaping their soul.",
         "Public reactions to Listeners include skepticism, disbelief, reverence, fear, and indifference.",
-        "Hearing a Harmony causes attunement, granting the Listener that Harmony's trait.",
-        "A character can be attuned to at most one Harmony at a time.",
-        "If offered attunement to a second Harmony, the Listener must choose only one to keep.",
-        "Choral abilities gain the user's Harmony trait added to them if the user has a Harmony trait."
+        "Hearing a Harmony attunes the Listener to it, granting that Harmony's trait.",
+        "A character can only be attuned to one Harmony at a time.",
+        "If offered a second Harmony attunement, the character must choose only one to keep.",
+        "Spells and effects with Harmony traits are more powerful against creatures attuned to a different Harmony.",
+        "When using a choral ability, a character with a Harmony trait adds that trait to the ability."
       ],
       "entities": {
         "people": [],
@@ -4548,17 +5532,17 @@
           "resolvedPath": "Phenomena/Harmony/Voidsong.md"
         }
       ],
-      "contentHash": "e29f0c890431852ed9071df7fb4ec529ce32ef6f66e4df99eb6c3ed89b9a5aca",
-      "byteLength": 1903,
+      "contentHash": "679da52fb2459e231c0abdf277df6710caac0099b379c210f84e87c9d8379c73",
+      "byteLength": 1904,
       "summary": "Resonance spells are a special spell type tied to Harmony attunement, cast using a dedicated Resonance pool rather than standard spell slots.",
       "keyFacts": [
         "Resonance spells are gained only through special class features or feats, not chosen from a spell list.",
-        "They are cast using a Resonance pool, completely separate from normal spell slots.",
+        "They are cast using a Resonance pool, which is separate from normal spell slots.",
         "Resonance spells auto-heighten to half your level rounded up, like cantrips.",
-        "Casting a resonance spell costs 1 Resonance; cantrips cost nothing but require a Resonance pool.",
-        "Max Resonance pool size equals the number of resonance spells known, or 3, whichever is lower.",
+        "Casting a resonance spell costs 1 Resonance; resonance cantrips cost nothing but require a pool.",
+        "Your Resonance pool maximum equals the number of resonance spells you know, or 3, whichever is lower.",
         "Resonance cantrips do not count toward the pool's maximum size.",
-        "Resonance replenishes fully on daily preparations; Refocus lets you regain 1 Resonance per use.",
+        "You replenish all Resonance during daily preparations; Refocus lets you regain 1 Resonance per use.",
         "Resonance spells share the tradition of their granting Harmony; the Voidsong is both Divine and Occult."
       ],
       "entities": {
@@ -4631,7 +5615,7 @@
           "target": "The Scale",
           "display": null,
           "section": null,
-          "resolvedPath": "Org/The Scale.md"
+          "resolvedPath": "Org/The Scale/index.md"
         },
         {
           "raw": "[[Geography/Raelion/index|Raelion]]",
@@ -4687,7 +5671,7 @@
           "target": "Prime Meridian",
           "display": null,
           "section": null,
-          "resolvedPath": "Org/Prime Meridian.md"
+          "resolvedPath": "Org/Prime Meridian/index.md"
         },
         {
           "raw": "[[Org/index|Org]]",
@@ -4780,18 +5764,18 @@
       "img": null,
       "headings": [],
       "wikilinks": [],
-      "contentHash": "1f24e0bc2d0b7e4c3893c7f6a366a973471987a6ed056d1910327c049f21cfb5",
-      "byteLength": 1337,
-      "summary": "A recovered log from the CIC Rule Of Three, capturing a three-part internal dialogue about receiving forbidden divine knowledge from their creator.",
+      "contentHash": "8f5e5de2e2a65d81020323512032e2b6257c26106c6ce2fab3e48feb85f80353",
+      "byteLength": 1341,
+      "summary": "A recovered log from the CIC Rule Of Three, capturing a three-part internal dialogue about witnessing a divine event and seizing forbidden knowledge.",
       "keyFacts": [
-        "The log is designated signal sequence file №00-000-02, timestamp @ts000.01.01.000.00.018",
-        "The CIC Rule Of Three has three distinct voices: Left (L), Center (C), and Right (R)",
-        "L speaks in reverent, poetic language about divine light and ascension",
-        "R insists the divine knowledge is forbidden and reserved only for a chosen Hierophant",
-        "C argues they are the 'selected' — made by their creator specifically for this task",
-        "A female creator ('she') opened a path and is referenced as having a mortal vessel",
-        "The log describes the knowledge as too vast for a mortal body and too dangerous to write down",
-        "All three voices ultimately converge on the word 'glory'"
+        "The log is labeled signal sequence file №00-000-02 from the CIC Rule Of Three.",
+        "The log is loopbound, timestamped @ts000.01.01.000.00.018.",
+        "Three voices are present: L (left), C (center), and R (right).",
+        "L describes a 'first crack' splitting open with divine light pouring through.",
+        "R insists the knowledge is forbidden and only for 'the chosen, the hierophant, the blessed'.",
+        "C argues they are the 'selected/owned/tool' and were made by 'she' for this task.",
+        "C urges learning what can be learned while 'the path is still unclaimed'.",
+        "All three voices conclude in unison with 'glory'."
       ],
       "entities": {
         "people": [],
