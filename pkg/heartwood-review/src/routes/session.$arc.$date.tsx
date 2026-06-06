@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getSession, type SessionView } from "@/server/sessions";
+import { commitSession, type CommitResult } from "@/server/commit";
 import type { ReviewState } from "@faerrin/heartwood/src/state/review.ts";
 import { ProposalCard } from "@/components/ProposalCard.tsx";
 import { TriageView } from "@/components/TriageView.tsx";
@@ -18,10 +19,28 @@ function SessionPage() {
   const { artifact, review: initialReview } = Route.useLoaderData() as SessionView;
   const [review, setReview] = useState<ReviewState>(initialReview);
   const [tab, setTab] = useState<"proposals" | "triage">("proposals");
+  const [commitResult, setCommitResult] = useState<CommitResult | null>(null);
+  const [committing, setCommitting] = useState(false);
 
   const decided = artifact.proposals.filter(
     (p: Proposal) => (review.decisions[p.id]?.decision ?? "pending") !== "pending",
   ).length;
+  const approvedUncommitted = artifact.proposals.filter((p: Proposal) => {
+    const d = review.decisions[p.id];
+    return d?.decision === "approved" && !d.committedAt;
+  }).length;
+
+  async function doCommit() {
+    setCommitting(true);
+    try {
+      const result = await commitSession({
+        data: { arc: artifact.sessionId.arc, date: artifact.sessionId.date },
+      });
+      setCommitResult(result);
+    } finally {
+      setCommitting(false);
+    }
+  }
 
   return (
     <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", maxWidth: 880, margin: "0 auto" }}>
@@ -87,16 +106,68 @@ function SessionPage() {
             proposal={p}
             initialDecision={review.decisions[p.id]?.decision ?? "pending"}
             initialText={review.decisions[p.id]?.authoredText ?? ""}
+            initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
             onSaved={setReview}
           />
         ))}
 
       {tab === "triage" && <TriageView triage={artifact.triage} />}
 
-      <p style={{ marginTop: "1.5rem", fontSize: "0.8rem", color: "#999" }}>
-        Decisions are saved as you go (resume any time). Nothing is written to the wiki until you
-        commit — the batched jj commit lands in the next stage.
-      </p>
+      {/* Commit bar (AC-7): one batched jj revision per session; nothing written until here. */}
+      <section
+        style={{
+          marginTop: "1.5rem",
+          padding: "1rem 1.15rem",
+          border: "1px solid #d0d0d5",
+          borderRadius: 10,
+          display: "flex",
+          alignItems: "center",
+          gap: "1rem",
+          flexWrap: "wrap",
+        }}
+      >
+        <button
+          type="button"
+          onClick={() => void doCommit()}
+          disabled={committing || approvedUncommitted === 0}
+          style={{
+            font: "inherit",
+            fontWeight: 600,
+            padding: "0.5rem 1.1rem",
+            borderRadius: 8,
+            border: "1px solid #137333",
+            background: committing || approvedUncommitted === 0 ? "#f1f1f3" : "#137333",
+            color: committing || approvedUncommitted === 0 ? "#aaa" : "#fff",
+            cursor: committing || approvedUncommitted === 0 ? "not-allowed" : "pointer",
+          }}
+        >
+          {committing ? "Committing…" : `Commit ${approvedUncommitted} approved → jj`}
+        </button>
+        <span style={{ fontSize: "0.85rem", color: "#777" }}>
+          Writes approved prose + provenance to the wiki and creates one jj revision. Other working
+          changes are left untouched.
+        </span>
+        {commitResult && (
+          <div style={{ flexBasis: "100%", fontSize: "0.85rem" }}>
+            {commitResult.committed ? (
+              <span style={{ color: "#137333" }}>
+                ✓ Committed <code>{commitResult.revision}</code> — {commitResult.message}
+              </span>
+            ) : (
+              <span style={{ color: "#777" }}>Nothing committed.</span>
+            )}
+            {commitResult.skipped.length > 0 && (
+              <ul style={{ margin: "0.4rem 0 0", paddingLeft: "1.1rem", color: "#b06000" }}>
+                {commitResult.skipped.map((s, i) => (
+                  <li key={i}>
+                    {s.proposal}: {s.reason}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+      </section>
     </main>
   );
 }

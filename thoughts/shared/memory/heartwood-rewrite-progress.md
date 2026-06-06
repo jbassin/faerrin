@@ -20,21 +20,26 @@ incrementally on `main` (pushed directly). As of **2026-06-06**:
 - Full pipeline on one session = 112 mined → 98 canon → 40 proposals (19 amend/21 create) +
   narrative + 6 real conflicts vs the live wiki.
 
-**IN PROGRESS — Phase 2: the interactive review app.** New package `pkg/heartwood-review`
+**Phase 2 P0 COMPLETE — the interactive review app.** New package `pkg/heartwood-review`
 (`@faerrin/heartwood-review`) — standalone local-first **TanStack Start (SSR) + React 19**.
-**Stages A–E done & pushed to main (2026-06-06):** SSR scaffold; server-fn I/O; `renderWikiMarkdown()`
+**Stages A–F done & pushed to main (2026-06-06):** SSR scaffold; server-fn I/O; `renderWikiMarkdown()`
 **byte-faithful** to aether's build; core persistence (`state/store.ts` SessionArtifact +
 `state/review.ts` resumable decisions, node:fs-portable) + `ingest` CLI; server fns
 (`listSessions`/`getSession`/`getTranscriptLines`/`saveDecision`); and the full review UI —
 session list → narrative (AC-23) → triage (AC-1) → proposal review with edit-in-place (AC-4),
 Reading/Diff rendered-in-context (AC-2), citation hover (AC-3), voice warnings (AC-9),
 approve/reject/defer persisted, nothing-until-commit (AC-6) + resume (AC-8). A team-mode
-code-reviewer pass hardened it (path-traversal guards, loopback bind, pure `transcript/filename.ts`
-to kill a latent Bun import) — see [[heartwood-review-phase2-stage-a-d]] and
-[[heartwood-review-app-architecture]]. **NEXT — Stage F:** `commitSession` — write approved prose to
-`pkg/content/wiki/**` + provenance sidecar (AC-15), one batched **jj** revision (AC-7), aether
-763-file byte-diff guard (C6); then Phase 3 (conflict resolution UI, create-page picker, page-types).
-Browser checkpoint (full loop) hands to the worldbuilder before/at Stage F.
+code-reviewer pass hardened it (path-traversal guards, LAN bind kept-by-choice, pure
+`transcript/filename.ts` to kill a latent Bun import) — see [[heartwood-review-phase2-stage-a-d]]
+and [[heartwood-review-app-architecture]]. **Stage F (commit) done:** `commitSession`/`performCommit`
+writes approved prose (amend=append paragraph at end of body, the chosen v1 strategy; create=plain
+page at a reviewer-chosen path) + provenance sidecar at `pkg/content/.heartwood/provenance/`
+(outside wiki/, so aether's build is untouched), then ONE path-scoped **jj** revision (verified to
+leave other working changes alone), idempotent via `committedAt`. App: 32 tests; core: 140.
+**NEXT — Phase 3:** conflict-resolution UI (Supersede/Coexist/Reject), create-page folder picker,
+seamless amend (AC-12), wikilink validation, page-type-aware voice bar, corrections/retractions,
+multi-page events. A real end-to-end browser commit + aether build-diff is the worldbuilder's
+verification step.
 
 **Key facts for continuity:** Bun+TS, strict `noUncheckedIndexedAccess`; LLM only via `complete()`
 with DI `completeFn`; jj not git (push main directly); pkg/heartwood/CLAUDE.md is now accurate.

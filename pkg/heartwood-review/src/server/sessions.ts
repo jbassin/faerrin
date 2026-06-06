@@ -30,7 +30,7 @@ const REVIEW_DIR = join(CORE_STATE, "review");
 // shape before they touch the filesystem (path-traversal guard, mirrors `within`).
 const ARC_RE = /^[a-z0-9][a-z0-9-]*$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-function assertSessionId(arc: string, date: string): { arc: string; date: string } {
+export function assertSessionId(arc: string, date: string): { arc: string; date: string } {
   if (!ARC_RE.test(arc)) throw new Error(`invalid arc: ${arc}`);
   if (!DATE_RE.test(date)) throw new Error(`invalid date: ${date}`);
   return { arc, date };
@@ -115,6 +115,7 @@ export const saveDecision = createServerFn({ method: "POST" })
       decision: Decision;
       authoredText?: string;
       rejectionReason?: string;
+      targetPath?: string;
     }) => data,
   )
   .handler(async ({ data }): Promise<ReviewState> => {
@@ -125,6 +126,7 @@ export const saveDecision = createServerFn({ method: "POST" })
       decision: data.decision,
       authoredText: data.authoredText,
       rejectionReason: data.rejectionReason,
+      targetPath: data.targetPath,
     });
     await writeReviewState(REVIEW_DIR, next);
     return next;

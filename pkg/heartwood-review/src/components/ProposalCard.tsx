@@ -15,6 +15,7 @@ interface Props {
   proposal: Proposal;
   initialDecision: Decision;
   initialText: string;
+  initialTargetPath: string;
   onSaved: (state: ReviewState) => void;
 }
 
@@ -25,8 +26,9 @@ const DECISION_COLORS: Record<Decision, string> = {
   deferred: "#b06000",
 };
 
-export function ProposalCard({ arc, date, proposal, initialDecision, initialText, onSaved }: Props) {
+export function ProposalCard({ arc, date, proposal, initialDecision, initialText, initialTargetPath, onSaved }: Props) {
   const [authored, setAuthored] = useState(initialText);
+  const [targetPath, setTargetPath] = useState(initialTargetPath);
   const [decision, setDecision] = useState<Decision>(initialDecision);
   const [view, setView] = useState<"edit" | "reading" | "diff">("edit");
   const [previewHtml, setPreviewHtml] = useState<string | null>(null);
@@ -61,6 +63,7 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
           proposalId: proposal.id,
           decision: d,
           authoredText: authored || undefined,
+          targetPath: proposal.kind === "create" ? targetPath || undefined : undefined,
         },
       });
       setDecision(d);
@@ -125,6 +128,26 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
 
       {view === "edit" && (
         <>
+          {proposal.kind === "create" && (
+            <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.85rem", color: "#555" }}>
+              New page path (content-relative, under wiki/):
+              <input
+                type="text"
+                value={targetPath}
+                onChange={(e) => setTargetPath(e.target.value)}
+                placeholder={`e.g. People/${proposal.canonicalName}.md`}
+                style={{
+                  width: "100%",
+                  font: "inherit",
+                  fontSize: "0.9rem",
+                  padding: "0.4rem",
+                  marginTop: "0.25rem",
+                  borderRadius: 6,
+                  border: "1px solid #ccc",
+                }}
+              />
+            </label>
+          )}
           <textarea
             value={authored}
             onChange={(e) => setAuthored(e.target.value)}
@@ -189,7 +212,12 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
 
       {/* Decisions (AC-6: persisted, but nothing written to the wiki until commit). */}
       <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.75rem" }}>
-        <DecideBtn label="Approve" tone="#137333" disabled={busy || !authored.trim()} onClick={() => decide("approved")} />
+        <DecideBtn
+          label="Approve"
+          tone="#137333"
+          disabled={busy || !authored.trim() || (proposal.kind === "create" && !targetPath.trim())}
+          onClick={() => decide("approved")}
+        />
         <DecideBtn label="Reject" tone="#c5221f" disabled={busy} onClick={() => decide("rejected")} />
         <DecideBtn label="Defer" tone="#b06000" disabled={busy} onClick={() => decide("deferred")} />
       </div>

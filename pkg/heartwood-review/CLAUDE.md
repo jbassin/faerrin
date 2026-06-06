@@ -11,7 +11,7 @@ and `thoughts/heartwood/plans/2026-06-06-heartwood-rewrite-implementation.md`
 
 ## Build status (2026-06-06)
 
-**Stages A–E done. Stage F (commit + provenance write) is next.**
+**Stages A–F done — Phase 2 (P0 review→commit loop) is complete.**
 - **A. Scaffold** — TanStack Start SSR + React, mirrors strider (declares
   `@tanstack/router-generator` + `@eslint/js`; extends `tsconfig.base.json`;
   excludes `scripts/`). Runs in **SSR** mode (no prerender) so server functions work.
@@ -28,10 +28,25 @@ and `thoughts/heartwood/plans/2026-06-06-heartwood-rewrite-implementation.md`
   nothing-written-until-commit (AC-6) + resume (AC-8). Components in `src/components/`,
   voice checks in `src/lib/voice-warnings.ts`.
 
-**Next — Stage F:** `commitSession` — write approved authored prose to
-`pkg/content/wiki/**` + the provenance sidecar (AC-15), one batched **jj** revision
-(AC-7); aether 763-file byte-diff guard (C6). Then the conflict-resolution UI
-(Supersede/Coexist/Reject) + create-page path picker are Phase 3.
+- **F. Commit + provenance** (`src/server/commit.ts`) — `commitSession`/`performCommit`
+  writes approved authored prose (amend = append paragraph at end of body; create = plain-prose
+  page at a reviewer-chosen path) + the provenance sidecar (AC-15), then ONE path-scoped **jj**
+  revision (AC-7, D-2) that leaves unrelated working changes alone. Idempotent via a `committedAt`
+  guard. `performCommit(sid, deps)` takes injectable I/O roots + jj runner (integration-tested
+  against a temp tree; real `jj commit <paths>` isolation verified separately).
+
+**Next — Phase 3:** conflict-resolution UI (Supersede/Coexist/Reject, AC-11), create-page
+folder-tree picker (AC-10/D-6), seamless in-paragraph amend (AC-12), wikilink validation (AC-13),
+page-type-aware voice bar (AC-24), corrections/retractions (AC-21), multi-page events (AC-22).
+
+## Provenance ledger & the aether byte-stability guard (C6)
+
+Provenance sidecars live at `pkg/content/.heartwood/provenance/<wikiPath>.prov.json` — a dot-dir
+**outside `wiki/`**, so aether's content walk skips it and committing the ledger never changes
+aether's build. A commit only mutates the targeted `.md` pages (amends add a paragraph; creates add
+a file) — those render changes are intended. Before a *real* session commit, validate with a build +
+file-set diff: only the touched pages (and any new page) should differ; the renderer/other 763
+files must not. Don't relocate provenance into `wiki/`.
 
 ## Security / hardening (a code-reviewer pass enforced these — keep them)
 

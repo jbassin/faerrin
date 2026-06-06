@@ -26,6 +26,10 @@ export const ProposalDecisionSchema = z.object({
   authoredText: z.string().optional(),
   /** Optional tagged reason for a rejection (feeds the Phase-4 quality log, AC-16). */
   rejectionReason: z.string().optional(),
+  /** Content-relative path for an approved `create` proposal (chosen by the reviewer, AC-10). */
+  targetPath: z.string().optional(),
+  /** Set once the proposal's prose has been committed to the wiki — guards against re-committing. */
+  committedAt: z.string().optional(),
   decidedAt: z.string(), // ISO
 });
 export type ProposalDecision = z.infer<typeof ProposalDecisionSchema>;
