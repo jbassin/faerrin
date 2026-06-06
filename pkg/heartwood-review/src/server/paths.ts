@@ -18,7 +18,13 @@ export const REVIEW_DIR = join(CORE_STATE, "review");
 /** Cross-session rejection memory + quality log (AC-16/AC-26). */
 export const QUALITY_DIR = join(CORE_STATE, "quality");
 /** Eval harness output (coverage/precision/false-canon score JSONs) for the dashboard (AC-19). */
-export const EVAL_RESULTS_DIR = join(process.cwd(), "..", "heartwood", "eval", "results");
+export const EVAL_RESULTS_DIR = join(
+  process.cwd(),
+  "..",
+  "heartwood",
+  "eval",
+  "results",
+);
 
 /** Durable provenance ledger — OUTSIDE wiki/ so aether's build is untouched (C6/D-1). */
 export const PROV_ROOT = join(CONTENT_ROOT, ".heartwood", "provenance");

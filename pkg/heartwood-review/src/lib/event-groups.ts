@@ -35,10 +35,14 @@ function linked(a: Span[], b: Span[], gap: number): boolean {
  * Partition proposals into event groups (connected components by citation proximity).
  * Returns groups in input order; singletons included. `gap` is the line-proximity window.
  */
-export function groupProposalsByEvent(proposals: ProposalLike[], gap = 15): string[][] {
+export function groupProposalsByEvent(
+  proposals: ProposalLike[],
+  gap = 15,
+): string[][] {
   const n = proposals.length;
   const parent = Array.from({ length: n }, (_, i) => i);
-  const find = (i: number): number => (parent[i] === i ? i : (parent[i] = find(parent[i]!)));
+  const find = (i: number): number =>
+    parent[i] === i ? i : (parent[i] = find(parent[i]!));
   const union = (i: number, j: number) => {
     parent[find(i)] = find(j);
   };
@@ -54,7 +58,9 @@ export function groupProposalsByEvent(proposals: ProposalLike[], gap = 15): stri
   const groups = new Map<number, string[]>();
   for (let i = 0; i < n; i++) {
     const root = find(i);
-    (groups.get(root) ?? groups.set(root, []).get(root)!).push(proposals[i]!.id);
+    (groups.get(root) ?? groups.set(root, []).get(root)!).push(
+      proposals[i]!.id,
+    );
   }
   return [...groups.values()];
 }

@@ -5,13 +5,15 @@ const types = (t: string) => voiceWarnings(t).map((w) => w.type);
 
 describe("voiceWarnings (§9 automatable subset, AC-9)", () => {
   it("flags the encyclopedia opener", () => {
-    expect(types("Sablecrux is a large scrapyard located in the district.")).toContain(
-      "encyclopedia-opener",
-    );
+    expect(
+      types("Sablecrux is a large scrapyard located in the district."),
+    ).toContain("encyclopedia-opener");
   });
 
   it("flags filler intensifiers", () => {
-    expect(types("The vast, expansive yard holds many things.")).toContain("intensifier");
+    expect(types("The vast, expansive yard holds many things.")).toContain(
+      "intensifier",
+    );
   });
 
   it('flags an "It is …" second sentence', () => {
@@ -37,7 +39,9 @@ describe("voiceWarnings (§9 automatable subset, AC-9)", () => {
 
   it("suppresses literary checks on non-prose page types (AC-24)", () => {
     const statline = "Foo is a large thing.";
-    expect(voiceWarnings(statline, { pageType: "deity-statblock" })).toEqual([]);
+    expect(voiceWarnings(statline, { pageType: "deity-statblock" })).toEqual(
+      [],
+    );
     // but still applies on a stub (graduates to prose)
     expect(
       voiceWarnings(statline, { pageType: "stub" }).map((w) => w.type),

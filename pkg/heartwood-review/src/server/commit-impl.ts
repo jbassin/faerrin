@@ -5,13 +5,19 @@
 import { execFile } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { promisify } from "node:util";
-import { readSessionArtifact, type SessionArtifact } from "@faerrin/heartwood/src/state/store.ts";
+import {
+  readSessionArtifact,
+  type SessionArtifact,
+} from "@faerrin/heartwood/src/state/store.ts";
 import {
   readReviewState,
   writeReviewState,
   type ProposalDecision,
 } from "@faerrin/heartwood/src/state/review.ts";
-import { parsePageSentences, anchorForSentence } from "@faerrin/heartwood/src/anchor/anchor.ts";
+import {
+  parsePageSentences,
+  anchorForSentence,
+} from "@faerrin/heartwood/src/anchor/anchor.ts";
 import {
   addRecords,
   makeRecord,
@@ -20,7 +26,14 @@ import {
   writePageProvenance,
 } from "@faerrin/heartwood/src/state/provenance.ts";
 import { writeFileAtomic } from "@faerrin/heartwood/src/state/atomic.ts";
-import { PROV_ROOT, REPO_ROOT, REVIEW_DIR, SESSIONS_DIR, WIKI_DIR, within } from "./paths.ts";
+import {
+  PROV_ROOT,
+  REPO_ROOT,
+  REVIEW_DIR,
+  SESSIONS_DIR,
+  WIKI_DIR,
+  within,
+} from "./paths.ts";
 import {
   applySupersede,
   applyWeave,
@@ -80,7 +93,14 @@ async function writeProvenanceFor(
     const idx = all.findIndex((b) => b.norm === a.norm);
     if (idx === -1) continue;
     records.push(
-      makeRecord({ anchor: anchorForSentence(all, idx), arc: sid.arc, date: sid.date, citations, claimId, entityIds }),
+      makeRecord({
+        anchor: anchorForSentence(all, idx),
+        arc: sid.arc,
+        date: sid.date,
+        citations,
+        claimId,
+        entityIds,
+      }),
     );
   }
   if (records.length === 0) return null;
@@ -117,7 +137,8 @@ export async function performCommit(
   // Supersede resolutions (AC-21): map a conflicting claimId → the existing statement to replace.
   const supersededByClaim = new Map<string, string>();
   for (const c of artifact.conflicts) {
-    if (review.conflictResolutions[c.claimId] === "supersede") supersededByClaim.set(c.claimId, c.existingStatement);
+    if (review.conflictResolutions[c.claimId] === "supersede")
+      supersededByClaim.set(c.claimId, c.existingStatement);
   }
 
   const written: string[] = [];
@@ -133,7 +154,10 @@ export async function performCommit(
     if (dec.committedAt) continue; // already committed (idempotent)
     const text = (dec.authoredText ?? "").trim();
     if (!text) {
-      skipped.push({ proposal: p.canonicalName, reason: "approved but no prose authored" });
+      skipped.push({
+        proposal: p.canonicalName,
+        reason: "approved but no prose authored",
+      });
       continue;
     }
 
@@ -142,7 +166,9 @@ export async function performCommit(
       const existing = await readFile(abs, "utf8");
       // If a fact on this proposal has a Supersede resolution, REPLACE the existing statement
       // (a correction, AC-21); otherwise append the new prose.
-      const supersedeStmt = p.facts.map((f) => supersededByClaim.get(f.claimId)).find(Boolean);
+      const supersedeStmt = p.facts
+        .map((f) => supersededByClaim.get(f.claimId))
+        .find(Boolean);
       let newBody: string;
       let isCorrection = false;
       if (supersedeStmt) {
@@ -155,7 +181,14 @@ export async function performCommit(
       }
       await writeFileAtomic(abs, newBody);
       written.push(`pkg/content/wiki/${p.targetPath}`);
-      const sc = await writeProvenanceFor(deps.provRoot, p.targetPath, newBody, text, p, sid);
+      const sc = await writeProvenanceFor(
+        deps.provRoot,
+        p.targetPath,
+        newBody,
+        text,
+        p,
+        sid,
+      );
       if (sc) written.push(sc);
       if (isCorrection) corrected++;
       else amend++;
@@ -163,24 +196,40 @@ export async function performCommit(
     } else if (p.kind === "create") {
       const tp = dec.targetPath?.trim();
       if (!tp) {
-        skipped.push({ proposal: p.canonicalName, reason: "create needs a target path (set it on the proposal)" });
+        skipped.push({
+          proposal: p.canonicalName,
+          reason: "create needs a target path (set it on the proposal)",
+        });
         continue;
       }
       const wikiPath = normalizeWikiPath(tp);
       const abs = within(deps.wikiDir, wikiPath);
       if (await pathExists(abs)) {
-        skipped.push({ proposal: p.canonicalName, reason: `page already exists: ${wikiPath}` });
+        skipped.push({
+          proposal: p.canonicalName,
+          reason: `page already exists: ${wikiPath}`,
+        });
         continue;
       }
       const newBody = newPageContent(text);
       await writeFileAtomic(abs, newBody);
       written.push(`pkg/content/wiki/${wikiPath}`);
-      const sc = await writeProvenanceFor(deps.provRoot, wikiPath, newBody, text, p, sid);
+      const sc = await writeProvenanceFor(
+        deps.provRoot,
+        wikiPath,
+        newBody,
+        text,
+        p,
+        sid,
+      );
       if (sc) written.push(sc);
       create++;
       committedIds.push(p.id);
     } else {
-      skipped.push({ proposal: p.canonicalName, reason: "amend proposal has no target path" });
+      skipped.push({
+        proposal: p.canonicalName,
+        reason: "amend proposal has no target path",
+      });
     }
   }
 
@@ -190,7 +239,16 @@ export async function performCommit(
 
   const message = commitMessage(sid.arc, sid.date, amend, create, corrected);
   await deps.runJj(["commit", "-m", message, ...written]);
-  const revision = (await deps.runJj(["log", "-r", "@-", "--no-graph", "-T", "commit_id.short()"])).trim();
+  const revision = (
+    await deps.runJj([
+      "log",
+      "-r",
+      "@-",
+      "--no-graph",
+      "-T",
+      "commit_id.short()",
+    ])
+  ).trim();
 
   // Mark committed proposals so a second commit doesn't re-append (idempotency).
   const now = new Date().toISOString();
@@ -199,7 +257,20 @@ export async function performCommit(
     const d = decisions[id];
     if (d) decisions[id] = { ...d, committedAt: now };
   }
-  await writeReviewState(deps.reviewDir, { ...review, decisions, updatedAt: now });
+  await writeReviewState(deps.reviewDir, {
+    ...review,
+    decisions,
+    updatedAt: now,
+  });
 
-  return { committed: true, revision, message, written, skipped, amend, create, corrected };
+  return {
+    committed: true,
+    revision,
+    message,
+    written,
+    skipped,
+    amend,
+    create,
+    corrected,
+  };
 }

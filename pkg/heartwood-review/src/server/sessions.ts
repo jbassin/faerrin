@@ -2,9 +2,18 @@ import { createServerFn } from "@tanstack/react-start";
 // Static imports are CLIENT-SAFE only: pure path helpers, pure local helpers, types, and
 // the pure page-type detector. All node:fs / core-IO is dynamic-imported inside handlers
 // (server-only) so it never lands in the client bundle. See paths.ts for the rationale.
-import { SESSIONS_DIR, REVIEW_DIR, QUALITY_DIR, TRANSCRIPTS_DIR, within } from "./paths.ts";
+import {
+  SESSIONS_DIR,
+  REVIEW_DIR,
+  QUALITY_DIR,
+  TRANSCRIPTS_DIR,
+  within,
+} from "./paths.ts";
 import { detectPageType, type PageType } from "../lib/page-type.ts";
-import type { SessionArtifact, SessionSummary } from "@faerrin/heartwood/src/state/store.ts";
+import type {
+  SessionArtifact,
+  SessionSummary,
+} from "@faerrin/heartwood/src/state/store.ts";
 import type {
   ConflictResolution,
   Decision,
@@ -17,7 +26,10 @@ import type {
 // shape before they touch the filesystem (path-traversal guard, mirrors `within`).
 const ARC_RE = /^[a-z0-9][a-z0-9-]*$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-export function assertSessionId(arc: string, date: string): { arc: string; date: string } {
+export function assertSessionId(
+  arc: string,
+  date: string,
+): { arc: string; date: string } {
   if (!ARC_RE.test(arc)) throw new Error(`invalid arc: ${arc}`);
   if (!DATE_RE.test(date)) throw new Error(`invalid date: ${date}`);
   return { arc, date };
@@ -30,8 +42,10 @@ export interface SessionListItem extends SessionSummary {
 /** Session list with review status (Unreviewed / Partial / Reviewed) — AC-23 entry. */
 export const listSessions = createServerFn({ method: "GET" }).handler(
   async (): Promise<SessionListItem[]> => {
-    const { listSessionArtifacts } = await import("@faerrin/heartwood/src/state/store.ts");
-    const { readReviewState, reviewStatus } = await import("@faerrin/heartwood/src/state/review.ts");
+    const { listSessionArtifacts } =
+      await import("@faerrin/heartwood/src/state/store.ts");
+    const { readReviewState, reviewStatus } =
+      await import("@faerrin/heartwood/src/state/review.ts");
     const summaries = await listSessionArtifacts(SESSIONS_DIR);
     const out: SessionListItem[] = [];
     for (const s of summaries) {
@@ -68,12 +82,15 @@ export const getSession = createServerFn({ method: "GET" })
   .inputValidator((data: { arc: string; date: string }) => data)
   .handler(async ({ data }): Promise<SessionView> => {
     const sessionId = assertSessionId(data.arc, data.date);
-    const { readSessionArtifact } = await import("@faerrin/heartwood/src/state/store.ts");
-    const { readReviewState } = await import("@faerrin/heartwood/src/state/review.ts");
+    const { readSessionArtifact } =
+      await import("@faerrin/heartwood/src/state/store.ts");
+    const { readReviewState } =
+      await import("@faerrin/heartwood/src/state/review.ts");
     const { loadAllSlugs, readWikiPage } = await import("./content.ts");
 
     const artifact = await readSessionArtifact(SESSIONS_DIR, sessionId);
-    if (!artifact) throw new Error(`Session ${data.arc}@${data.date} not ingested`);
+    if (!artifact)
+      throw new Error(`Session ${data.arc}@${data.date} not ingested`);
     const review = await readReviewState(REVIEW_DIR, sessionId);
 
     const allSlugs = await loadAllSlugs();
@@ -81,7 +98,10 @@ export const getSession = createServerFn({ method: "GET" })
     for (const p of artifact.proposals) {
       if (p.kind === "amend" && p.targetPath) {
         try {
-          pageTypes[p.id] = detectPageType(p.targetPath, await readWikiPage(p.targetPath));
+          pageTypes[p.id] = detectPageType(
+            p.targetPath,
+            await readWikiPage(p.targetPath),
+          );
         } catch {
           pageTypes[p.id] = "lore"; // missing page → treat as prose
         }
@@ -93,10 +113,14 @@ export const getSession = createServerFn({ method: "GET" })
     // AC-26/D-7: a still-pending proposal whose EVERY backing claim was rejected in an
     // earlier session is moved to the collapsed "previously rejected" tray (never discarded,
     // never re-nagging). Decided proposals stay in the main flow.
-    const { sessionKey } = await import("@faerrin/heartwood/src/state/identity.ts");
-    const { readRejectionStore, isSuppressed, rejectionEntryFor, rejectionSummary } = await import(
-      "@faerrin/heartwood/src/state/quality.ts"
-    );
+    const { sessionKey } =
+      await import("@faerrin/heartwood/src/state/identity.ts");
+    const {
+      readRejectionStore,
+      isSuppressed,
+      rejectionEntryFor,
+      rejectionSummary,
+    } = await import("@faerrin/heartwood/src/state/quality.ts");
     const store = await readRejectionStore(QUALITY_DIR);
     const key = sessionKey(sessionId);
     const suppressedProposalIds: string[] = [];
@@ -111,7 +135,14 @@ export const getSession = createServerFn({ method: "GET" })
       rejectionInfo[p.id] = entry ? rejectionSummary(entry) : { sessions: 1 };
     }
 
-    return { artifact, review, pageTypes, allSlugs, suppressedProposalIds, rejectionInfo };
+    return {
+      artifact,
+      review,
+      pageTypes,
+      allSlugs,
+      suppressedProposalIds,
+      rejectionInfo,
+    };
   });
 
 export interface TranscriptLine {
@@ -143,10 +174,15 @@ export function parseTranscriptRange(
 
 /** Local transcript line lookup for citation-on-hover (AC-3) — no LLM, instant. */
 export const getTranscriptLines = createServerFn({ method: "GET" })
-  .inputValidator((data: { transcript: string; start: number; end: number }) => data)
+  .inputValidator(
+    (data: { transcript: string; start: number; end: number }) => data,
+  )
   .handler(async ({ data }): Promise<TranscriptLine[]> => {
     const { readFile } = await import("node:fs/promises");
-    const raw = await readFile(within(TRANSCRIPTS_DIR, data.transcript), "utf8");
+    const raw = await readFile(
+      within(TRANSCRIPTS_DIR, data.transcript),
+      "utf8",
+    );
     return parseTranscriptRange(raw, data.start, data.end);
   });
 
@@ -166,9 +202,8 @@ export const saveDecision = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }): Promise<ReviewState> => {
     const sessionId = assertSessionId(data.arc, data.date);
-    const { readReviewState, writeReviewState, applyDecision } = await import(
-      "@faerrin/heartwood/src/state/review.ts"
-    );
+    const { readReviewState, writeReviewState, applyDecision } =
+      await import("@faerrin/heartwood/src/state/review.ts");
     const current = await readReviewState(REVIEW_DIR, sessionId);
     const prevDecision = current.decisions[data.proposalId]?.decision;
     const next = applyDecision(current, {
@@ -186,19 +221,31 @@ export const saveDecision = createServerFn({ method: "POST" })
     // changes a previously-rejected proposal to something else. Only touch the store when the
     // rejected-ness actually changed.
     if (data.decision === "rejected" || prevDecision === "rejected") {
-      const { readSessionArtifact } = await import("@faerrin/heartwood/src/state/store.ts");
-      const { sessionKey } = await import("@faerrin/heartwood/src/state/identity.ts");
-      const { readRejectionStore, writeRejectionStore, recordRejection, removeRejection } =
-        await import("@faerrin/heartwood/src/state/quality.ts");
+      const { readSessionArtifact } =
+        await import("@faerrin/heartwood/src/state/store.ts");
+      const { sessionKey } =
+        await import("@faerrin/heartwood/src/state/identity.ts");
+      const {
+        readRejectionStore,
+        writeRejectionStore,
+        recordRejection,
+        removeRejection,
+      } = await import("@faerrin/heartwood/src/state/quality.ts");
       const artifact = await readSessionArtifact(SESSIONS_DIR, sessionId);
-      const proposal = artifact?.proposals.find((p) => p.id === data.proposalId);
+      const proposal = artifact?.proposals.find(
+        (p) => p.id === data.proposalId,
+      );
       if (proposal) {
         const key = sessionKey(sessionId);
         let store = await readRejectionStore(QUALITY_DIR);
         for (const f of proposal.facts) {
           store =
             data.decision === "rejected"
-              ? recordRejection(store, { text: f.text, reason: data.rejectionReason, sessionKey: key })
+              ? recordRejection(store, {
+                  text: f.text,
+                  reason: data.rejectionReason,
+                  sessionKey: key,
+                })
               : removeRejection(store, f.text, key);
         }
         await writeRejectionStore(QUALITY_DIR, store);
@@ -222,7 +269,10 @@ export const getPageParagraphs = createServerFn({ method: "GET" })
   .inputValidator((data: { path: string }) => data)
   .handler(async ({ data }): Promise<PageParagraph[]> => {
     const { readWikiPage } = await import("./content.ts");
-    const body = (await readWikiPage(data.path)).replace(/^---\n[\s\S]*?\n---\n?/, "");
+    const body = (await readWikiPage(data.path)).replace(
+      /^---\n[\s\S]*?\n---\n?/,
+      "",
+    );
     const out: PageParagraph[] = [];
     for (const block of body.replace(/\n+$/, "").split(/\n{2,}/)) {
       const t = block.trim();
@@ -240,7 +290,8 @@ export const getWikiFolders = createServerFn({ method: "GET" }).handler(
     const dirs = new Set<string>([""]); // "" = wiki root
     for (const f of files) {
       const parts = f.split("/");
-      for (let i = 1; i < parts.length; i++) dirs.add(parts.slice(0, i).join("/"));
+      for (let i = 1; i < parts.length; i++)
+        dirs.add(parts.slice(0, i).join("/"));
     }
     return [...dirs].sort();
   },
@@ -257,7 +308,8 @@ export interface InboundSuggestions {
 export const suggestInboundLinks = createServerFn({ method: "GET" })
   .inputValidator((data: { name: string }) => data)
   .handler(async ({ data }): Promise<InboundSuggestions> => {
-    const { listWikiMarkdownFiles, readWikiPage } = await import("./content.ts");
+    const { listWikiMarkdownFiles, readWikiPage } =
+      await import("./content.ts");
     const name = data.name.trim();
     if (name.length < 3) return { mentions: [], orphan: true };
     const needle = name.toLowerCase();
@@ -266,7 +318,8 @@ export const suggestInboundLinks = createServerFn({ method: "GET" })
     for (const f of files) {
       if (f.startsWith("Script/")) continue; // generated transcript pages aren't edit targets
       try {
-        if ((await readWikiPage(f)).toLowerCase().includes(needle)) mentions.push(f);
+        if ((await readWikiPage(f)).toLowerCase().includes(needle))
+          mentions.push(f);
       } catch {
         /* skip unreadable */
       }
@@ -277,13 +330,20 @@ export const suggestInboundLinks = createServerFn({ method: "GET" })
 
 /** Promote/unpromote a claim from Uncertain/Noise back to Canon (AC-14). */
 export const togglePromotion = createServerFn({ method: "POST" })
-  .inputValidator((data: { arc: string; date: string; claimId: string }) => data)
+  .inputValidator(
+    (data: { arc: string; date: string; claimId: string }) => data,
+  )
   .handler(async ({ data }): Promise<ReviewState> => {
     const sessionId = assertSessionId(data.arc, data.date);
-    const { readReviewState, writeReviewState, togglePromotion: toggle } = await import(
-      "@faerrin/heartwood/src/state/review.ts"
+    const {
+      readReviewState,
+      writeReviewState,
+      togglePromotion: toggle,
+    } = await import("@faerrin/heartwood/src/state/review.ts");
+    const next = toggle(
+      await readReviewState(REVIEW_DIR, sessionId),
+      data.claimId,
     );
-    const next = toggle(await readReviewState(REVIEW_DIR, sessionId), data.claimId);
     await writeReviewState(REVIEW_DIR, next);
     return next;
   });
@@ -292,19 +352,29 @@ const CONFLICT_RESOLUTIONS = ["supersede", "coexist", "reject"] as const;
 
 /** Record a conflict resolution (Supersede / Coexist / Reject) by claimId (AC-11). */
 export const saveConflictResolution = createServerFn({ method: "POST" })
-  .inputValidator((data: { arc: string; date: string; claimId: string; resolution: ConflictResolution }) => {
-    if (!CONFLICT_RESOLUTIONS.includes(data.resolution)) {
-      throw new Error(`invalid resolution: ${data.resolution}`);
-    }
-    return data;
-  })
+  .inputValidator(
+    (data: {
+      arc: string;
+      date: string;
+      claimId: string;
+      resolution: ConflictResolution;
+    }) => {
+      if (!CONFLICT_RESOLUTIONS.includes(data.resolution)) {
+        throw new Error(`invalid resolution: ${data.resolution}`);
+      }
+      return data;
+    },
+  )
   .handler(async ({ data }): Promise<ReviewState> => {
     const sessionId = assertSessionId(data.arc, data.date);
-    const { readReviewState, writeReviewState, applyConflictResolution } = await import(
-      "@faerrin/heartwood/src/state/review.ts"
-    );
+    const { readReviewState, writeReviewState, applyConflictResolution } =
+      await import("@faerrin/heartwood/src/state/review.ts");
     const current = await readReviewState(REVIEW_DIR, sessionId);
-    const next = applyConflictResolution(current, data.claimId, data.resolution);
+    const next = applyConflictResolution(
+      current,
+      data.claimId,
+      data.resolution,
+    );
     await writeReviewState(REVIEW_DIR, next);
     return next;
   });

@@ -14,6 +14,7 @@ commit). This `CLAUDE.md` is the developer/internals view.
 ## Build status (2026-06-06)
 
 **Phases 2, 3, and 4 COMPLETE.** (Phase 5 = deferred v2 structured-canon graph.)
+
 - **Phase 2 (P0 loop):** session list → narrative (AC-23) → triage (AC-1) → proposal review
   rendered-in-context with Reading/Diff toggle (AC-2), citation-on-hover (AC-3), edit-in-place
   (AC-4), voice warnings (AC-9), approve/reject/defer with nothing-written-until-commit (AC-6) +
@@ -99,6 +100,7 @@ scripts/  generate-routes.ts, dev-fixture.ts
 to `heart.iridi.cc`: `remarkParse → remarkGfm → remarkDirective → remarkCallouts →
 remarkWikilinksInjected → remarkTranscript → remarkSmartypants → remarkRehype(directiveHandlers) →
 rehypeHeadingIds → rehypeStringify` (both rehype steps `allowDangerousHtml`).
+
 - Reuses aether's `.mjs` directly (relative import `../../../aether/src/lib/`): callouts, transcript,
   directive-handlers (untyped JS). Wikilinks are a parameterized port with **injected allSlugs**.
 - **`slug.ts` is VENDORED** (`vendor/aether-slug.ts`, `@ts-nocheck`) because importing the .ts source
@@ -111,7 +113,7 @@ rehypeHeadingIds → rehypeStringify` (both rehype steps `allowDangerousHtml`).
 
 Provenance sidecars: `pkg/content/.heartwood/provenance/<wikiPath>.prov.json` — a dot-dir **outside
 `wiki/`**, so aether's content walk skips it and committing the ledger never changes aether's build.
-A commit only mutates targeted `.md` pages (intended). Before a *real* commit, validate with a build +
+A commit only mutates targeted `.md` pages (intended). Before a _real_ commit, validate with a build +
 file-set diff: only touched/new pages differ; the renderer + other 763 files must not. Don't relocate
 provenance into `wiki/`.
 
@@ -147,6 +149,7 @@ bun run typecheck    # generate routes → tsc --noEmit
 bun run test         # vitest
 bun run lint         # eslint
 ```
+
 Real review data: `bun run --filter @faerrin/heartwood ingest <arc> <date>` (LLM-backed).
 
 ## Conventions

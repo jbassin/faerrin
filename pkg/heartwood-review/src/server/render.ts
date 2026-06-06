@@ -28,7 +28,8 @@ export const renderPagePreview = createServerFn({ method: "GET" })
   .inputValidator((data: { path: string }) => data)
   .handler(async ({ data }): Promise<PagePreview> => {
     const { loadAllSlugs, readWikiPage } = await import("./content.ts");
-    const { renderWikiMarkdown } = await import("../render/renderWikiMarkdown.ts");
+    const { renderWikiMarkdown } =
+      await import("../render/renderWikiMarkdown.ts");
     const raw = await readWikiPage(data.path);
     const allSlugs = await loadAllSlugs();
     const html = await renderWikiMarkdown(stripFrontmatter(raw), {
@@ -47,7 +48,8 @@ export const renderMarkdown = createServerFn({ method: "POST" })
   .inputValidator((data: { md: string; srcPath: string }) => data)
   .handler(async ({ data }): Promise<string> => {
     const { loadAllSlugs } = await import("./content.ts");
-    const { renderWikiMarkdown } = await import("../render/renderWikiMarkdown.ts");
+    const { renderWikiMarkdown } =
+      await import("../render/renderWikiMarkdown.ts");
     const allSlugs = await loadAllSlugs();
     return renderWikiMarkdown(data.md, {
       srcSlug: slugForPath(data.srcPath),
@@ -63,14 +65,20 @@ const stripFm = (s: string) => s.replace(/^---\n[\s\S]*?\n---\n?/, "");
  * span is wrapped in <mark class="woven"> before weaving so it stands out in the render.
  */
 export const renderWovenPreview = createServerFn({ method: "POST" })
-  .inputValidator((data: { path: string; authoredText: string; weave?: WeaveTarget }) => data)
+  .inputValidator(
+    (data: { path: string; authoredText: string; weave?: WeaveTarget }) => data,
+  )
   .handler(async ({ data }): Promise<string> => {
     const { loadAllSlugs, readWikiPage } = await import("./content.ts");
-    const { renderWikiMarkdown } = await import("../render/renderWikiMarkdown.ts");
+    const { renderWikiMarkdown } =
+      await import("../render/renderWikiMarkdown.ts");
     const { applyWeave } = await import("./commit.ts");
     const body = stripFm(await readWikiPage(data.path));
     const marked = `<mark class="woven">${data.authoredText.trim()}</mark>`;
     const woven = applyWeave(body, marked, data.weave).body;
     const allSlugs = await loadAllSlugs();
-    return renderWikiMarkdown(woven, { srcSlug: slugForPath(data.path), allSlugs });
+    return renderWikiMarkdown(woven, {
+      srcSlug: slugForPath(data.path),
+      allSlugs,
+    });
   });

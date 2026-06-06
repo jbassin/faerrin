@@ -12,7 +12,9 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
-import remarkRehype, { type Options as RemarkRehypeOptions } from "remark-rehype";
+import remarkRehype, {
+  type Options as RemarkRehypeOptions,
+} from "remark-rehype";
 import remarkSmartypants from "remark-smartypants";
 import rehypeStringify from "rehype-stringify";
 // Cross-package reuse of aether's live renderer internals (plan: "reuse aether's

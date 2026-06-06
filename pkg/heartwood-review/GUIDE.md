@@ -4,9 +4,9 @@ A complete, start-from-nothing guide to reviewing Pathfinder 2e session transcri
 worldbuilding-wiki edits with **Heartwood Review** (`@faerrin/heartwood-review`).
 
 This guide assumes **no prior knowledge of the repo**. If you can open a terminal and a web
-browser, you can follow it. For the *why* behind the design, see the spec
+browser, you can follow it. For the _why_ behind the design, see the spec
 (`thoughts/heartwood/specs/0001-heartwood-rewrite-spec.md`); for developer/internals detail, see
-[`CLAUDE.md`](./CLAUDE.md). This guide is about *using* the tool.
+[`CLAUDE.md`](./CLAUDE.md). This guide is about _using_ the tool.
 
 ---
 
@@ -17,8 +17,8 @@ After a tabletop session is recorded and transcribed, you have a long, messy tra
 are facts about the game world: who someone is, what a place is like, what changed. Those facts
 belong in a hand-maintained Obsidian **wiki** (rendered as the live site `heart.iridi.cc`).
 
-Doing that by hand is slow. Heartwood automates the *mechanical* half and keeps **you** on the
-*creative* half:
+Doing that by hand is slow. Heartwood automates the _mechanical_ half and keeps **you** on the
+_creative_ half:
 
 - A **headless pipeline** (`@faerrin/heartwood`) reads one transcript, throws out the banter,
   extracts atomic **facts** (each cited back to exact transcript lines), figures out which wiki page
@@ -46,15 +46,15 @@ reaches the wiki without your explicit, per-change click.
 
 You need four things installed/available. Check each:
 
-| Need | Why | Check it |
-|---|---|---|
-| **[Bun](https://bun.sh)** ≥ 1.3 | Runs everything (this is a Bun repo, not Node/npm). | `bun --version` |
-| **[jj (Jujutsu)](https://github.com/jj-vcs/jj)** | The app commits approved edits through jj. | `jj --version` |
-| **The `faerrin` repo, cloned** | Holds the wiki, transcripts, and this app. | `ls pkg/heartwood-review` |
-| **An Anthropic API key** | Needed to **ingest** a session (the AI step) and to use the optional "draft in voice" button. *Not* needed just to browse the UI. | a key from [console.anthropic.com](https://console.anthropic.com) |
+| Need                                             | Why                                                                                                                               | Check it                                                          |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| **[Bun](https://bun.sh)** ≥ 1.3                  | Runs everything (this is a Bun repo, not Node/npm).                                                                               | `bun --version`                                                   |
+| **[jj (Jujutsu)](https://github.com/jj-vcs/jj)** | The app commits approved edits through jj.                                                                                        | `jj --version`                                                    |
+| **The `faerrin` repo, cloned**                   | Holds the wiki, transcripts, and this app.                                                                                        | `ls pkg/heartwood-review`                                         |
+| **An Anthropic API key**                         | Needed to **ingest** a session (the AI step) and to use the optional "draft in voice" button. _Not_ needed just to browse the UI. | a key from [console.anthropic.com](https://console.anthropic.com) |
 
 > **Why jj and not git?** This repo is managed with Jujutsu (git-colocated). Running raw `git`
-> commands can corrupt its state. You don't have to *learn* jj to use this app — the app runs jj for
+> commands can corrupt its state. You don't have to _learn_ jj to use this app — the app runs jj for
 > you — but it must be installed.
 
 ---
@@ -77,7 +77,7 @@ That's it. You do **not** need to configure a database, a server, or any GitHub 
 are none.
 
 > **Optional — the "draft in voice" button.** The review app can ask the AI for a first-draft
-> sentence (see §6.4). That single feature also needs the key *in the app's own environment*. If you
+> sentence (see §6.4). That single feature also needs the key _in the app's own environment_. If you
 > want it, either create `pkg/heartwood-review/.env` with the same `ANTHROPIC_API_KEY=…` line, or
 > `export ANTHROPIC_API_KEY=…` in the terminal before you launch the app. Everything else works
 > without it.
@@ -162,7 +162,7 @@ Click a session to open the **review surface**.
 ### Step ③ — The review surface, top to bottom
 
 **Session narrative (top).** A short, plain-language summary of what the session revealed about the
-world — your orientation before diving into individual edits. (This is *not* wiki prose; it's a
+world — your orientation before diving into individual edits. (This is _not_ wiki prose; it's a
 reading aid.)
 
 **Conflicts (if any, pulled to the top).** When a new fact contradicts something already on the wiki
@@ -193,7 +193,7 @@ Each card is one proposed change to one wiki page. It shows:
   A fact whose modality isn't plain canon is tagged (e.g. `[player-speculation]`,
   `[in-character-fiction]`) so a guess is never mistaken for established fact.
 - Three **view tabs**: **Edit**, **Reading**, **Diff**.
-- A **prose editor** (in Edit view) — *this is where you write*.
+- A **prose editor** (in Edit view) — _this is where you write_.
 - **Voice warnings** under the editor (non-blocking; see §6.5).
 - **Decision buttons**: Approve / Reject / Defer.
 
@@ -206,7 +206,7 @@ Each card is one proposed change to one wiki page. It shows:
 
 #### 6.3 Writing the prose (edit-in-place)
 
-The tool deliberately does **not** auto-write wiki prose — *you* do, because the wiki has a real
+The tool deliberately does **not** auto-write wiki prose — _you_ do, because the wiki has a real
 literary voice an AI can't reliably match. To help you start:
 
 - **scaffold from facts** — drops the raw fact sentences into the editor as a rough starting lump to
@@ -214,7 +214,7 @@ literary voice an AI can't reliably match. To help you start:
 - **✨ draft in voice** — asks the AI for a short first-draft passage in the wiki's voice (see §6.4).
 
 Edit freely until the **Reading** view reads like something you'd have written by hand. For an
-**amend**, a **Weave** picker lets you choose *where* the prose lands on the page — at the **end**,
+**amend**, a **Weave** picker lets you choose _where_ the prose lands on the page — at the **end**,
 folded **into** an existing paragraph (one continuous paragraph), or as a new paragraph **after** a
 chosen one — so the seam reads naturally. For a **create**, a **folder-tree picker** lets you choose
 the new page's title and path, and the app suggests existing pages that mention the subject (so the
@@ -234,7 +234,7 @@ editor with it, outlined in purple. It is **a starting point only**:
 #### 6.5 Voice warnings (the prose critic)
 
 As you type, lightweight, **non-blocking** warnings appear — e.g. an "encyclopedia opener" (`X is a
-large … located in …`), filler intensifiers (*large/vast/numerous*), a broken `[[wikilink]]` target.
+large … located in …`), filler intensifiers (_large/vast/numerous_), a broken `[[wikilink]]` target.
 They direct your eye toward the house style; they never stop you from approving. On non-prose pages
 (deity stat blocks, `<pre>` flavor docs, the HTML Timeline), the literary checks are automatically
 suppressed and only structural checks apply.
@@ -243,12 +243,12 @@ suppressed and only structural checks apply.
 
 - **Approve** — your authored prose for this change is locked in (but still **not written to the
   wiki** until you Commit).
-- **Reject** — opens a small **reason picker**: *out of voice · not canon · wrong page ·
-  hallucinated · already known*. The tag feeds the quality dashboard and the rejection memory
+- **Reject** — opens a small **reason picker**: _out of voice · not canon · wrong page ·
+  hallucinated · already known_. The tag feeds the quality dashboard and the rejection memory
   (below). You can also "reject without a reason."
 - **Defer** — skip it for now; it stays pending and you can come back.
 
-**Previously rejected (the rejection-memory tray).** If a claim you rejected in an *earlier* session
+**Previously rejected (the rejection-memory tray).** If a claim you rejected in an _earlier_ session
 shows up again, the app doesn't re-nag you with it — it tucks the proposal into a collapsed
 **"Previously rejected"** tray at the bottom of the Proposals tab. Nothing is ever silently
 discarded: expand the tray and act on it if you change your mind.
@@ -317,14 +317,14 @@ From the session list, click **coverage & slop** (or visit `/dashboard`). It sho
 
 ## 10. Where everything lives
 
-| Thing | Location | Committed to git? |
-|---|---|---|
-| The wiki (your edits land here) | `pkg/content/wiki/` | yes |
-| Transcripts (the source) | `pkg/content/transcripts/` | yes |
-| Provenance sidecar | `pkg/content/.heartwood/provenance/` | yes (outside `wiki/`) |
-| Ingested session artifacts | `pkg/heartwood/state/sessions/` | no (regenerate via `ingest`) |
-| Your review decisions | `pkg/heartwood/state/review/` | no (local) |
-| Rejection memory + quality log | `pkg/heartwood/state/quality/` | no (local) |
+| Thing                           | Location                             | Committed to git?            |
+| ------------------------------- | ------------------------------------ | ---------------------------- |
+| The wiki (your edits land here) | `pkg/content/wiki/`                  | yes                          |
+| Transcripts (the source)        | `pkg/content/transcripts/`           | yes                          |
+| Provenance sidecar              | `pkg/content/.heartwood/provenance/` | yes (outside `wiki/`)        |
+| Ingested session artifacts      | `pkg/heartwood/state/sessions/`      | no (regenerate via `ingest`) |
+| Your review decisions           | `pkg/heartwood/state/review/`        | no (local)                   |
+| Rejection memory + quality log  | `pkg/heartwood/state/quality/`       | no (local)                   |
 
 ---
 
@@ -335,11 +335,11 @@ From the session list, click **coverage & slop** (or visit `/dashboard`). It sho
   `ls pkg/content/transcripts/`. The arc is the name part, not the leading number.
 - **`ingest` fails with a missing-key error.** You haven't set `ANTHROPIC_API_KEY` in
   `pkg/heartwood/.env` (§3).
-- **"draft in voice" fails** with a key error. The *app* also needs the key (§3, optional note).
+- **"draft in voice" fails** with a key error. The _app_ also needs the key (§3, optional note).
   This affects only that button; reviewing and committing work without it.
 - **Port 3001 already in use.** Stop whatever else is on 3001 (often a stray earlier `dev`), or
   change the port in `pkg/heartwood-review/vite.config.ts` (`server.port`).
-- **Commit did nothing.** You have no *approved, uncommitted* proposals — approve at least one, or
+- **Commit did nothing.** You have no _approved, uncommitted_ proposals — approve at least one, or
   they were already committed.
 - **I rejected something and it vanished from the list.** It moved to the **Previously rejected**
   tray at the bottom of the Proposals tab (§6.6). Nothing is lost.
@@ -372,10 +372,10 @@ bun run --filter @faerrin/heartwood eval <arc> <date> --save   # populate the co
 ## 13. Glossary
 
 - **Arc** — a distinct campaign storyline (the named part of a transcript filename). The world's
-  canon is *shared* across arcs, so a fact in one arc can conflict with another.
+  canon is _shared_ across arcs, so a fact in one arc can conflict with another.
 - **Session** — one recorded transcript of one arc, identified by **(arc, date)**.
 - **Claim / fact** — one atomic in-world fact mined from the transcript, with line citations and a
-  *modality* (canon vs guess vs in-character speech).
+  _modality_ (canon vs guess vs in-character speech).
 - **Proposal** — one reviewable unit: create a page, amend a page, or correct/retract a prior fact.
 - **Provenance** — the machine-readable link from a wiki sentence back to the session + transcript
   lines that justify it, stored in a render-invisible sidecar.

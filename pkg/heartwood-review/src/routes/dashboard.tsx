@@ -14,7 +14,14 @@ function Dashboard() {
   const reasons = Object.entries(reasonTally).sort((a, b) => b[1] - a[1]);
 
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", maxWidth: 880, margin: "0 auto" }}>
+    <main
+      style={{
+        fontFamily: "system-ui, sans-serif",
+        padding: "2rem",
+        maxWidth: 880,
+        margin: "0 auto",
+      }}
+    >
       <p>
         <Link to="/">← sessions</Link>
       </p>
@@ -27,18 +34,26 @@ function Dashboard() {
       <section style={cardStyle}>
         <h2 style={h2Style}>Slop rate (reviewer decisions)</h2>
         <div style={{ display: "flex", gap: "2rem", alignItems: "baseline" }}>
-          <div style={{ fontSize: "2.4rem", fontWeight: 700, color: slop.aggregate.slop > 0 ? "#c5221f" : "#137333" }}>
+          <div
+            style={{
+              fontSize: "2.4rem",
+              fontWeight: 700,
+              color: slop.aggregate.slop > 0 ? "#c5221f" : "#137333",
+            }}
+          >
             {pct(slop.aggregate.slopRate)}
           </div>
           <div style={{ fontSize: "0.85rem", color: "#777" }}>
             {slop.aggregate.slop} slop / {slop.aggregate.decided} decided
             <br />
-            {slop.aggregate.voiceRejections} voice rejections · {slop.aggregate.rewrites} rewrites
+            {slop.aggregate.voiceRejections} voice rejections ·{" "}
+            {slop.aggregate.rewrites} rewrites
           </div>
         </div>
         <p style={{ fontSize: "0.78rem", color: "#999", marginBottom: 0 }}>
-          Share of decided proposals rejected for voice/quality (or rewritten away from a draft) —
-          computed from your accept/reject decisions, never from the automated warnings.
+          Share of decided proposals rejected for voice/quality (or rewritten
+          away from a draft) — computed from your accept/reject decisions, never
+          from the automated warnings.
         </p>
         {slop.perSession.length > 0 && (
           <table style={tableStyle}>
@@ -86,9 +101,12 @@ function Dashboard() {
         {coverage.length === 0 ? (
           <p style={{ fontSize: "0.85rem", color: "#999", marginBottom: 0 }}>
             No eval results yet. Run{" "}
-            <code>bun run --filter @faerrin/heartwood eval &lt;arc&gt; &lt;date&gt; --save</code> to
-            populate coverage / precision / false-canon against the hand-labeled set (baseline to
-            beat ~52%).
+            <code>
+              bun run --filter @faerrin/heartwood eval &lt;arc&gt; &lt;date&gt;
+              --save
+            </code>{" "}
+            to populate coverage / precision / false-canon against the
+            hand-labeled set (baseline to beat ~52%).
           </p>
         ) : (
           <table style={tableStyle}>
@@ -110,7 +128,12 @@ function Dashboard() {
                   </Td>
                   <Td>{r.labeledFacts}</Td>
                   <Td>{r.producedClaims}</Td>
-                  <Td style={{ color: r.coverage >= 0.52 ? "#137333" : "#c5221f", fontWeight: 600 }}>
+                  <Td
+                    style={{
+                      color: r.coverage >= 0.52 ? "#137333" : "#c5221f",
+                      fontWeight: 600,
+                    }}
+                  >
                     {pct(r.coverage)}
                   </Td>
                   <Td>{pct(r.precision)}</Td>
@@ -131,7 +154,11 @@ const cardStyle: React.CSSProperties = {
   border: "1px solid #e2e2e5",
   borderRadius: 10,
 };
-const h2Style: React.CSSProperties = { marginTop: 0, fontSize: "1rem", color: "#555" };
+const h2Style: React.CSSProperties = {
+  marginTop: 0,
+  fontSize: "1rem",
+  color: "#555",
+};
 const tableStyle: React.CSSProperties = {
   width: "100%",
   borderCollapse: "collapse",
@@ -141,11 +168,35 @@ const tableStyle: React.CSSProperties = {
 
 function Th({ children }: { children: React.ReactNode }) {
   return (
-    <th style={{ textAlign: "left", padding: "0.3rem 0.5rem", borderBottom: "1px solid #e2e2e5", color: "#777", fontWeight: 600 }}>
+    <th
+      style={{
+        textAlign: "left",
+        padding: "0.3rem 0.5rem",
+        borderBottom: "1px solid #e2e2e5",
+        color: "#777",
+        fontWeight: 600,
+      }}
+    >
       {children}
     </th>
   );
 }
-function Td({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return <td style={{ padding: "0.3rem 0.5rem", borderBottom: "1px solid #f0f0f2", ...style }}>{children}</td>;
+function Td({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <td
+      style={{
+        padding: "0.3rem 0.5rem",
+        borderBottom: "1px solid #f0f0f2",
+        ...style,
+      }}
+    >
+      {children}
+    </td>
+  );
 }

@@ -6,7 +6,10 @@ import "@/styles/wiki-render.css";
 // the rendered article against the live page on heart.iridi.cc. Defaults to a
 // page exercising prose + internal links; the SAMPLES cover the other page types.
 const SAMPLES: { label: string; path: string }[] = [
-  { label: "Prose + links (Sableclutch)", path: "Geography/Calaria/Hallia/Sableclutch/index.md" },
+  {
+    label: "Prose + links (Sableclutch)",
+    path: "Geography/Calaria/Hallia/Sableclutch/index.md",
+  },
   { label: "Callout (Voidsong)", path: "Phenomena/Harmony/Voidsong.md" },
   { label: "Deity :: stat block (Hierophant)", path: "Divinity/Hierophant.md" },
 ];
@@ -32,7 +35,14 @@ function PreviewPage() {
   const page = Route.useLoaderData();
   return (
     <div style={{ padding: "1.5rem", maxWidth: 880, margin: "0 auto" }}>
-      <nav style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+      <nav
+        style={{
+          display: "flex",
+          gap: "0.75rem",
+          flexWrap: "wrap",
+          marginBottom: "1rem",
+        }}
+      >
         <Link to="/" style={{ fontSize: "0.9rem" }}>
           ← home
         </Link>

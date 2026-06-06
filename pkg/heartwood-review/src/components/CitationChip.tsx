@@ -18,7 +18,11 @@ export function CitationChip({ citation }: { citation: Citation }) {
     if (lines || error) return;
     try {
       const got = await getTranscriptLines({
-        data: { transcript: citation.transcript, start: citation.start, end: citation.end },
+        data: {
+          transcript: citation.transcript,
+          start: citation.start,
+          end: citation.end,
+        },
       });
       setLines(got);
     } catch (e) {
@@ -74,7 +78,13 @@ export function CitationChip({ citation }: { citation: Citation }) {
             fontSize: "0.85rem",
           }}
         >
-          <div style={{ color: "#888", fontSize: "0.72rem", marginBottom: "0.4rem" }}>
+          <div
+            style={{
+              color: "#888",
+              fontSize: "0.72rem",
+              marginBottom: "0.4rem",
+            }}
+          >
             {citation.transcript}
           </div>
           {error && <div style={{ color: "#c0392b" }}>{error}</div>}
@@ -84,7 +94,9 @@ export function CitationChip({ citation }: { citation: Citation }) {
           )}
           {lines?.map((l) => (
             <div key={l.id} style={{ marginBottom: "0.3rem" }}>
-              <span style={{ color: "#999", fontVariantNumeric: "tabular-nums" }}>
+              <span
+                style={{ color: "#999", fontVariantNumeric: "tabular-nums" }}
+              >
                 {String(l.id).padStart(6, "0")}{" "}
               </span>
               <strong>{l.speaker}:</strong> {l.text}

@@ -17,11 +17,15 @@ export interface DraftResponse {
  * nothing). The §9 voice warnings already shown on the editor are the warn-only "voice critic".
  */
 export const draftProposal = createServerFn({ method: "POST" })
-  .inputValidator((data: { arc: string; date: string; proposalId: string }) => data)
+  .inputValidator(
+    (data: { arc: string; date: string; proposalId: string }) => data,
+  )
   .handler(async ({ data }): Promise<DraftResponse> => {
     const sessionId = assertSessionId(data.arc, data.date);
-    const { readSessionArtifact } = await import("@faerrin/heartwood/src/state/store.ts");
-    const { draftProse } = await import("@faerrin/heartwood/src/pipeline/draft.ts");
+    const { readSessionArtifact } =
+      await import("@faerrin/heartwood/src/state/store.ts");
+    const { draftProse } =
+      await import("@faerrin/heartwood/src/pipeline/draft.ts");
     const { readWikiPage } = await import("./content.ts");
 
     const artifact = await readSessionArtifact(SESSIONS_DIR, sessionId);

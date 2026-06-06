@@ -17,7 +17,8 @@ import {
 // Kept byte-identical to aether's remark-wikilinks.mjs regex (the in-char-class
 // escapes are redundant but match aether exactly — do not "simplify").
 // eslint-disable-next-line no-useless-escape
-const wikilinkRegex = /(!?)\[\[([^\[\]\|\#]+)?(#+[^\[\]\|\#]+)?(\|[^\[\]\#]+)?\]\]/g;
+const wikilinkRegex =
+  /(!?)\[\[([^\[\]\|\#]+)?(#+[^\[\]\|\#]+)?(\|[^\[\]\#]+)?\]\]/g;
 
 function escapeHtml(s: string): string {
   return s

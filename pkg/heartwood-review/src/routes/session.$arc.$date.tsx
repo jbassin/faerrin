@@ -18,22 +18,35 @@ type Conflict = SessionView["artifact"]["conflicts"][number];
 type Proposal = SessionView["artifact"]["proposals"][number];
 
 function SessionPage() {
-  const { artifact, review: initialReview, pageTypes, allSlugs, suppressedProposalIds, rejectionInfo } =
-    Route.useLoaderData() as SessionView;
+  const {
+    artifact,
+    review: initialReview,
+    pageTypes,
+    allSlugs,
+    suppressedProposalIds,
+    rejectionInfo,
+  } = Route.useLoaderData() as SessionView;
   const [review, setReview] = useState<ReviewState>(initialReview);
   const [tab, setTab] = useState<"proposals" | "triage">("proposals");
   const [commitResult, setCommitResult] = useState<CommitResult | null>(null);
   const [committing, setCommitting] = useState(false);
 
   const decided = artifact.proposals.filter(
-    (p: Proposal) => (review.decisions[p.id]?.decision ?? "pending") !== "pending",
+    (p: Proposal) =>
+      (review.decisions[p.id]?.decision ?? "pending") !== "pending",
   ).length;
 
-  const proposalById = new Map(artifact.proposals.map((p: Proposal) => [p.id, p]));
+  const proposalById = new Map(
+    artifact.proposals.map((p: Proposal) => [p.id, p]),
+  );
   const suppressed = new Set(suppressedProposalIds);
   // AC-26: previously-rejected proposals are kept out of the main flow (shown in a tray below).
-  const shownProposals = artifact.proposals.filter((p: Proposal) => !suppressed.has(p.id));
-  const suppressedProposals = artifact.proposals.filter((p: Proposal) => suppressed.has(p.id));
+  const shownProposals = artifact.proposals.filter(
+    (p: Proposal) => !suppressed.has(p.id),
+  );
+  const suppressedProposals = artifact.proposals.filter((p: Proposal) =>
+    suppressed.has(p.id),
+  );
   const eventGroups = groupProposalsByEvent(shownProposals);
 
   const renderCard = (p: Proposal) => (
@@ -76,7 +89,14 @@ function SessionPage() {
   }
 
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", maxWidth: 880, margin: "0 auto" }}>
+    <main
+      style={{
+        fontFamily: "system-ui, sans-serif",
+        padding: "2rem",
+        maxWidth: 880,
+        margin: "0 auto",
+      }}
+    >
       <p>
         <Link to="/">← sessions</Link>
       </p>
@@ -86,8 +106,17 @@ function SessionPage() {
       </div>
 
       {/* AC-23: narrative overview first. */}
-      <section style={{ marginTop: "1.25rem", padding: "1rem 1.25rem", background: "#f6f7f9", borderRadius: 8 }}>
-        <h2 style={{ marginTop: 0, fontSize: "1rem", color: "#555" }}>Session narrative</h2>
+      <section
+        style={{
+          marginTop: "1.25rem",
+          padding: "1rem 1.25rem",
+          background: "#f6f7f9",
+          borderRadius: 8,
+        }}
+      >
+        <h2 style={{ marginTop: 0, fontSize: "1rem", color: "#555" }}>
+          Session narrative
+        </h2>
         <p style={{ marginBottom: 0 }}>{artifact.narrative}</p>
       </section>
 
@@ -102,7 +131,9 @@ function SessionPage() {
             borderRadius: 8,
           }}
         >
-          <strong style={{ color: "#b06000" }}>⚠ {artifact.conflicts.length} potential conflict(s)</strong>
+          <strong style={{ color: "#b06000" }}>
+            ⚠ {artifact.conflicts.length} potential conflict(s)
+          </strong>
           {artifact.conflicts.map((c: Conflict, i: number) => (
             <ConflictCard
               key={`${c.claimId}:${i}`}
@@ -118,19 +149,37 @@ function SessionPage() {
 
       {/* Tabs. */}
       <nav style={{ display: "flex", gap: "0.5rem", margin: "1.25rem 0 1rem" }}>
-        <Tab label={`Proposals (${artifact.proposals.length})`} active={tab === "proposals"} onClick={() => setTab("proposals")} />
+        <Tab
+          label={`Proposals (${artifact.proposals.length})`}
+          active={tab === "proposals"}
+          onClick={() => setTab("proposals")}
+        />
         <Tab
           label={`Triage (${artifact.triage.canon.length}/${artifact.triage.uncertain.length}/${artifact.triage.noise.length})`}
           active={tab === "triage"}
           onClick={() => setTab("triage")}
         />
-        <span style={{ marginLeft: "auto", alignSelf: "center", fontSize: "0.85rem", color: "#777" }}>
+        <span
+          style={{
+            marginLeft: "auto",
+            alignSelf: "center",
+            fontSize: "0.85rem",
+            color: "#777",
+          }}
+        >
           {decided}/{artifact.proposals.length} decided
         </span>
       </nav>
 
       {/* AC-18: live tally — drives the commit message. */}
-      <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem", fontSize: "0.8rem" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "0.75rem",
+          marginBottom: "1rem",
+          fontSize: "0.8rem",
+        }}
+      >
         <TallyPill label="approved" n={tally.approved} color="#137333" />
         <TallyPill label="rejected" n={tally.rejected} color="#c5221f" />
         <TallyPill label="deferred" n={tally.deferred} color="#b06000" />
@@ -154,9 +203,16 @@ function SessionPage() {
                   background: "rgba(154,160,166,0.06)",
                 }}
               >
-                <div style={{ fontSize: "0.8rem", color: "#5f6368", fontWeight: 600, marginBottom: "0.5rem" }}>
-                  ⛓ Event group · {proposals.length} pages — these edits share transcript moments; keep
-                  them consistent
+                <div
+                  style={{
+                    fontSize: "0.8rem",
+                    color: "#5f6368",
+                    fontWeight: 600,
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  ⛓ Event group · {proposals.length} pages — these edits share
+                  transcript moments; keep them consistent
                 </div>
                 {proposals.map(renderCard)}
               </div>
@@ -166,20 +222,41 @@ function SessionPage() {
           {/* AC-26 / D-7: previously-rejected claims, collapsed — never silently discarded. */}
           {suppressedProposals.length > 0 && (
             <details style={{ marginTop: "0.5rem" }}>
-              <summary style={{ cursor: "pointer", color: "#777", fontSize: "0.9rem", fontWeight: 600 }}>
-                Previously rejected ({suppressedProposals.length}) — suppressed from earlier sessions
+              <summary
+                style={{
+                  cursor: "pointer",
+                  color: "#777",
+                  fontSize: "0.9rem",
+                  fontWeight: 600,
+                }}
+              >
+                Previously rejected ({suppressedProposals.length}) — suppressed
+                from earlier sessions
               </summary>
-              <p style={{ fontSize: "0.8rem", color: "#999", margin: "0.4rem 0 0.75rem" }}>
-                These match claims you rejected before. They&rsquo;re kept here so nothing is lost — act on
-                one to bring it back into canon.
+              <p
+                style={{
+                  fontSize: "0.8rem",
+                  color: "#999",
+                  margin: "0.4rem 0 0.75rem",
+                }}
+              >
+                These match claims you rejected before. They&rsquo;re kept here
+                so nothing is lost — act on one to bring it back into canon.
               </p>
               {suppressedProposals.map((p: Proposal) => {
                 const info = rejectionInfo[p.id];
                 return (
                   <div key={p.id}>
                     {info && (
-                      <div style={{ fontSize: "0.75rem", color: "#c5221f", marginBottom: "-0.4rem" }}>
-                        ⊘ rejected in {info.sessions} earlier session{info.sessions === 1 ? "" : "s"}
+                      <div
+                        style={{
+                          fontSize: "0.75rem",
+                          color: "#c5221f",
+                          marginBottom: "-0.4rem",
+                        }}
+                      >
+                        ⊘ rejected in {info.sessions} earlier session
+                        {info.sessions === 1 ? "" : "s"}
                         {info.reason ? ` · ${info.reason}` : ""}
                       </div>
                     )}
@@ -225,28 +302,41 @@ function SessionPage() {
             padding: "0.5rem 1.1rem",
             borderRadius: 8,
             border: "1px solid #137333",
-            background: committing || approvedUncommitted === 0 ? "#f1f1f3" : "#137333",
+            background:
+              committing || approvedUncommitted === 0 ? "#f1f1f3" : "#137333",
             color: committing || approvedUncommitted === 0 ? "#aaa" : "#fff",
-            cursor: committing || approvedUncommitted === 0 ? "not-allowed" : "pointer",
+            cursor:
+              committing || approvedUncommitted === 0
+                ? "not-allowed"
+                : "pointer",
           }}
         >
-          {committing ? "Committing…" : `Commit ${approvedUncommitted} approved → jj`}
+          {committing
+            ? "Committing…"
+            : `Commit ${approvedUncommitted} approved → jj`}
         </button>
         <span style={{ fontSize: "0.85rem", color: "#777" }}>
-          Writes approved prose + provenance to the wiki and creates one jj revision. Other working
-          changes are left untouched.
+          Writes approved prose + provenance to the wiki and creates one jj
+          revision. Other working changes are left untouched.
         </span>
         {commitResult && (
           <div style={{ flexBasis: "100%", fontSize: "0.85rem" }}>
             {commitResult.committed ? (
               <span style={{ color: "#137333" }}>
-                ✓ Committed <code>{commitResult.revision}</code> — {commitResult.message}
+                ✓ Committed <code>{commitResult.revision}</code> —{" "}
+                {commitResult.message}
               </span>
             ) : (
               <span style={{ color: "#777" }}>Nothing committed.</span>
             )}
             {commitResult.skipped.length > 0 && (
-              <ul style={{ margin: "0.4rem 0 0", paddingLeft: "1.1rem", color: "#b06000" }}>
+              <ul
+                style={{
+                  margin: "0.4rem 0 0",
+                  paddingLeft: "1.1rem",
+                  color: "#b06000",
+                }}
+              >
                 {commitResult.skipped.map((s, i) => (
                   <li key={i}>
                     {s.proposal}: {s.reason}
@@ -261,7 +351,15 @@ function SessionPage() {
   );
 }
 
-function TallyPill({ label, n, color }: { label: string; n: number; color: string }) {
+function TallyPill({
+  label,
+  n,
+  color,
+}: {
+  label: string;
+  n: number;
+  color: string;
+}) {
   return (
     <span style={{ color: n > 0 ? color : "#bbb", fontWeight: 600 }}>
       {n} {label}
@@ -269,7 +367,15 @@ function TallyPill({ label, n, color }: { label: string; n: number; color: strin
   );
 }
 
-function Tab({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
+function Tab({
+  label,
+  active,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+}) {
   return (
     <button
       type="button"

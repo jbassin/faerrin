@@ -15,8 +15,21 @@ const STATUS_LABEL: Record<SessionListItem["status"], string> = {
 function SessionList() {
   const sessions = Route.useLoaderData();
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", maxWidth: 820, margin: "0 auto" }}>
-      <header style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
+    <main
+      style={{
+        fontFamily: "system-ui, sans-serif",
+        padding: "2rem",
+        maxWidth: 820,
+        margin: "0 auto",
+      }}
+    >
+      <header
+        style={{
+          display: "flex",
+          alignItems: "baseline",
+          justifyContent: "space-between",
+        }}
+      >
         <h1 style={{ margin: 0 }}>Heartwood Review</h1>
         <nav style={{ display: "flex", gap: "1rem", fontSize: "0.85rem" }}>
           <Link to="/dashboard">coverage &amp; slop</Link>
@@ -32,9 +45,12 @@ function SessionList() {
       {sessions.length === 0 ? (
         <p style={{ marginTop: "2rem", color: "#888" }}>
           No ingested sessions yet. Run{" "}
-          <code>bun run --filter @faerrin/heartwood ingest &lt;arc&gt; &lt;date&gt;</code>{" "}
-          (or <code>bun run --filter @faerrin/heartwood-review dev:fixture</code> for an
-          offline sample).
+          <code>
+            bun run --filter @faerrin/heartwood ingest &lt;arc&gt; &lt;date&gt;
+          </code>{" "}
+          (or{" "}
+          <code>bun run --filter @faerrin/heartwood-review dev:fixture</code>{" "}
+          for an offline sample).
         </p>
       ) : (
         <ul style={{ listStyle: "none", padding: 0, marginTop: "1.5rem" }}>
@@ -75,9 +91,17 @@ function SessionList() {
 
 function StatusBadge({ status }: { status: SessionListItem["status"] }) {
   const bg =
-    status === "reviewed" ? "#e6f4ea" : status === "partial" ? "#fef7e0" : "#eef0f3";
+    status === "reviewed"
+      ? "#e6f4ea"
+      : status === "partial"
+        ? "#fef7e0"
+        : "#eef0f3";
   const fg =
-    status === "reviewed" ? "#137333" : status === "partial" ? "#b06000" : "#5f6368";
+    status === "reviewed"
+      ? "#137333"
+      : status === "partial"
+        ? "#b06000"
+        : "#5f6368";
   return (
     <span
       style={{

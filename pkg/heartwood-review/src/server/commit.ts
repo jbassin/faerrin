@@ -1,6 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { assertSessionId } from "./sessions.ts";
-import type { WeaveMode, WeaveTarget } from "@faerrin/heartwood/src/state/review.ts";
+import type {
+  WeaveMode,
+  WeaveTarget,
+} from "@faerrin/heartwood/src/state/review.ts";
 
 // CLIENT-SAFE shell: pure helpers + types + the server-fn declaration only. The actual
 // commit implementation (Node fs + jj + core ledger) lives in commit-impl.ts and is
@@ -52,7 +55,8 @@ export function applyWeave(
   const blocks = body.replace(/\n+$/, "").split(/\n{2,}/);
   const anchor = weave.anchorText.trim();
   const idx = blocks.findIndex((b) => b.trim() === anchor);
-  if (idx === -1) return { body: appendAuthoredParagraph(body, prose), mode: "end" };
+  if (idx === -1)
+    return { body: appendAuthoredParagraph(body, prose), mode: "end" };
   if (weave.mode === "into") {
     blocks[idx] = `${blocks[idx]!.trim()} ${prose}`;
   } else {
@@ -94,7 +98,8 @@ export function applySupersede(
     return { body: appendAuthoredParagraph(body, replacement), located: false };
   }
   return {
-    body: body.slice(0, idx) + replacement.trim() + body.slice(idx + target.length),
+    body:
+      body.slice(0, idx) + replacement.trim() + body.slice(idx + target.length),
     located: true,
   };
 }

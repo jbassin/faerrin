@@ -75,7 +75,9 @@ function Bucket({
   async function promote(claimId: string) {
     setBusy(claimId);
     try {
-      onChanged!(await togglePromotion({ data: { arc: arc!, date: date!, claimId } }));
+      onChanged!(
+        await togglePromotion({ data: { arc: arc!, date: date!, claimId } }),
+      );
     } finally {
       setBusy(null);
     }
@@ -86,7 +88,15 @@ function Bucket({
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        style={{ font: "inherit", fontWeight: 600, color: tone, background: "none", border: "none", cursor: "pointer", padding: 0 }}
+        style={{
+          font: "inherit",
+          fontWeight: 600,
+          color: tone,
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: 0,
+        }}
       >
         {open ? "▾" : "▸"} {title} ({claims.length})
       </button>
@@ -101,15 +111,28 @@ function Bucket({
                   <CitationChip key={i} citation={cit} />
                 ))}
                 {c.modality !== "gm-stated" && (
-                  <em style={{ color: "#b06000", fontSize: "0.78rem" }}> [{c.modality}]</em>
+                  <em style={{ color: "#b06000", fontSize: "0.78rem" }}>
+                    {" "}
+                    [{c.modality}]
+                  </em>
                 )}
                 {canPromote &&
                   (isPromoted ? (
-                    <button type="button" disabled={busy === c.id} onClick={() => void promote(c.id)} style={promotedBtn}>
+                    <button
+                      type="button"
+                      disabled={busy === c.id}
+                      onClick={() => void promote(c.id)}
+                      style={promotedBtn}
+                    >
                       ✓ promoted (undo)
                     </button>
                   ) : (
-                    <button type="button" disabled={busy === c.id} onClick={() => void promote(c.id)} style={promoteBtn}>
+                    <button
+                      type="button"
+                      disabled={busy === c.id}
+                      onClick={() => void promote(c.id)}
+                      style={promoteBtn}
+                    >
                       promote to canon
                     </button>
                   ))}
@@ -134,4 +157,8 @@ const promoteBtn: React.CSSProperties = {
   padding: "0 0.3rem",
   cursor: "pointer",
 };
-const promotedBtn: React.CSSProperties = { ...promoteBtn, background: "#137333", color: "#fff" };
+const promotedBtn: React.CSSProperties = {
+  ...promoteBtn,
+  background: "#137333",
+  color: "#fff",
+};

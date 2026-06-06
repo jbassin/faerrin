@@ -11,7 +11,10 @@ export type PageType =
   | "stub"; // frontmatter-only placeholder — graduates to the prose bar on first paragraph
 
 /** Page types that face the literary prose bar. A stub graduates to prose on its first paragraph. */
-export const PROSE_PAGE_TYPES: ReadonlySet<PageType> = new Set(["lore", "stub"]);
+export const PROSE_PAGE_TYPES: ReadonlySet<PageType> = new Set([
+  "lore",
+  "stub",
+]);
 
 const stripFrontmatter = (s: string) => s.replace(/^---\n[\s\S]*?\n---\n?/, "");
 
@@ -30,7 +33,10 @@ export function detectPageType(path: string, body: string): PageType {
 
   // Heavy hand-authored HTML lists (Timeline-like pages not named Timeline.md).
   const htmlTags = (content.match(/<(ul|li|div|br\s*\/?)>/gi) ?? []).length;
-  const proseText = content.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+  const proseText = content
+    .replace(/<[^>]+>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
   if (htmlTags >= 4 && proseText.length < htmlTags * 20) return "timeline";
 
   if (content.length < 40) return "stub";

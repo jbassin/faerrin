@@ -12,7 +12,9 @@ describe("renderWikiMarkdown — aether-faithful structures", () => {
   it("resolves [[wikilinks]] to internal anchors (shortest strategy)", async () => {
     const html = await render("See [[Hallia]] for more.");
     expect(html).toContain('class="internal"');
-    expect(html).toMatch(/<a href="[^"]*Hallia[^"]*" class="internal">Hallia<\/a>/);
+    expect(html).toMatch(
+      /<a href="[^"]*Hallia[^"]*" class="internal">Hallia<\/a>/,
+    );
   });
 
   it("renders Obsidian callouts to Quartz callout DOM", async () => {
@@ -50,7 +52,10 @@ const goldens: Array<{ rel: string; built: string }> = [
     rel: "Geography/Calaria/Hallia/Sableclutch/index.md",
     built: "Geography/Calaria/Hallia/Sableclutch/index.html",
   },
-  { rel: "Phenomena/Harmony/Voidsong.md", built: "Phenomena/Harmony/Voidsong.html" },
+  {
+    rel: "Phenomena/Harmony/Voidsong.md",
+    built: "Phenomena/Harmony/Voidsong.html",
+  },
   { rel: "Divinity/Hierophant.md", built: "Divinity/Hierophant.html" },
 ];
 
@@ -72,7 +77,9 @@ describe.skipIf(!existsSync(PUBLIC))(
         const { loadAllSlugs } = await import("../server/content.ts");
         const { slugForPath } = await import("./remark-wikilinks-injected.ts");
         const allSlugs = await loadAllSlugs();
-        const body = stripFrontmatter(readFileSync(join(wikiDir, g.rel), "utf8"));
+        const body = stripFrontmatter(
+          readFileSync(join(wikiDir, g.rel), "utf8"),
+        );
         const mine = await renderWikiMarkdown(body, {
           srcSlug: slugForPath(g.rel),
           allSlugs,

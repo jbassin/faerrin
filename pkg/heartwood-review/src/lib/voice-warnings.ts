@@ -62,7 +62,10 @@ export interface VoiceWarningOptions {
  * Returns zero or more non-blocking warnings. Page-type-aware (AC-24): the literary
  * checks are suppressed on non-prose pages. Wikilink validation (AC-13) runs on all types.
  */
-export function voiceWarnings(text: string, opts: VoiceWarningOptions = {}): VoiceWarning[] {
+export function voiceWarnings(
+  text: string,
+  opts: VoiceWarningOptions = {},
+): VoiceWarning[] {
   const out: VoiceWarning[] = [];
   const trimmed = text.trim();
   if (!trimmed) {
@@ -84,7 +87,8 @@ export function voiceWarnings(text: string, opts: VoiceWarningOptions = {}): Voi
       if (!raw) continue;
       const slug = slugForPath(raw);
       const fname = slug.split("/").pop();
-      if (!slugSet.has(slug) && (fname === undefined || !basenames.has(fname))) broken.push(raw);
+      if (!slugSet.has(slug) && (fname === undefined || !basenames.has(fname)))
+        broken.push(raw);
     }
     if (broken.length > 0) {
       out.push({

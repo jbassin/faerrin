@@ -40,7 +40,11 @@ function artifact(): SessionArtifact {
     contentHash: "h",
     generatedAt: "2026-06-06T00:00:00.000Z",
     narrative: "n",
-    triage: { canon: [claim("c1", "a"), claim("c2", "b")], uncertain: [], noise: [] },
+    triage: {
+      canon: [claim("c1", "a"), claim("c2", "b")],
+      uncertain: [],
+      noise: [],
+    },
     proposals: [
       {
         id: "prop:e1",
@@ -83,11 +87,19 @@ async function setup() {
   // existing amend target
   const amendAbs = join(deps.wikiDir, AMEND_PATH);
   await mkdir(dirname(amendAbs), { recursive: true });
-  await writeFile(amendAbs, "Sableclutch is overlooked by the capital.\n", "utf8");
+  await writeFile(
+    amendAbs,
+    "Sableclutch is overlooked by the capital.\n",
+    "utf8",
+  );
   await writeSessionArtifact(deps.sessionsDir, artifact());
   // approve both; create gets a target path
   let rs = emptyReviewState(SID);
-  rs = applyDecision(rs, { proposalId: "prop:e1", decision: "approved", authoredText: "A levy now bites the wharves." });
+  rs = applyDecision(rs, {
+    proposalId: "prop:e1",
+    decision: "approved",
+    authoredText: "A levy now bites the wharves.",
+  });
   rs = applyDecision(rs, {
     proposalId: "prop:e2",
     decision: "approved",
@@ -114,7 +126,10 @@ describe("performCommit (Stage F, AC-7/AC-15)", () => {
       expect(amended).toMatch(/A levy now bites the wharves\.\n$/);
 
       // create page written (plain prose, no frontmatter)
-      const created = await readFile(join(deps.wikiDir, "People/Maren Dock.md"), "utf8");
+      const created = await readFile(
+        join(deps.wikiDir, "People/Maren Dock.md"),
+        "utf8",
+      );
       expect(created).toBe("Maren Dock keeps the warehouses honest.\n");
 
       // provenance sidecars written outside wiki/
@@ -122,11 +137,19 @@ describe("performCommit (Stage F, AC-7/AC-15)", () => {
         await readFile(join(deps.provRoot, `${AMEND_PATH}.prov.json`), "utf8"),
       );
       expect(prov.records.length).toBeGreaterThan(0);
-      expect(prov.records[0].citations[0]).toMatchObject({ transcript: TX, start: 50, end: 52 });
+      expect(prov.records[0].citations[0]).toMatchObject({
+        transcript: TX,
+        start: 50,
+        end: 52,
+      });
 
       // one jj commit with exactly the written paths, then a log read
       const commitCall = deps.jjCalls.find((c) => c[0] === "commit")!;
-      expect(commitCall.slice(0, 3)).toEqual(["commit", "-m", expect.stringContaining("heartwood:")]);
+      expect(commitCall.slice(0, 3)).toEqual([
+        "commit",
+        "-m",
+        expect.stringContaining("heartwood:"),
+      ]);
       expect(commitCall).toContain(`pkg/content/wiki/${AMEND_PATH}`);
       expect(commitCall).toContain("pkg/content/wiki/People/Maren Dock.md");
     } finally {
@@ -169,7 +192,11 @@ describe("performCommit (Stage F, AC-7/AC-15)", () => {
       await writeSessionArtifact(deps.sessionsDir, art);
       // approve the amend + resolve the conflict as Supersede
       let rs = emptyReviewState(SID);
-      rs = applyDecision(rs, { proposalId: "prop:e1", decision: "approved", authoredText: "The wharves now pay a levy." });
+      rs = applyDecision(rs, {
+        proposalId: "prop:e1",
+        decision: "approved",
+        authoredText: "The wharves now pay a levy.",
+      });
       rs = applyConflictResolution(rs, "c1", "supersede");
       await writeReviewState(deps.reviewDir, rs);
 
@@ -189,7 +216,11 @@ describe("performCommit (Stage F, AC-7/AC-15)", () => {
     try {
       // overwrite review: create approved WITHOUT a target path
       let rs = emptyReviewState(SID);
-      rs = applyDecision(rs, { proposalId: "prop:e2", decision: "approved", authoredText: "text" });
+      rs = applyDecision(rs, {
+        proposalId: "prop:e2",
+        decision: "approved",
+        authoredText: "text",
+      });
       await writeReviewState(deps.reviewDir, rs);
       const r = await performCommit(SID, deps);
       expect(r.committed).toBe(false);
