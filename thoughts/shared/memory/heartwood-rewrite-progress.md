@@ -36,10 +36,19 @@ writes approved prose (amend=append paragraph at end of body, the chosen v1 stra
 page at a reviewer-chosen path) + provenance sidecar at `pkg/content/.heartwood/provenance/`
 (outside wiki/, so aether's build is untouched), then ONE path-scoped **jj** revision (verified to
 leave other working changes alone), idempotent via `committedAt`. App: 32 tests; core: 140.
-**NEXT — Phase 3:** conflict-resolution UI (Supersede/Coexist/Reject), create-page folder picker,
-seamless amend (AC-12), wikilink validation, page-type-aware voice bar, corrections/retractions,
-multi-page events. A real end-to-end browser commit + aether build-diff is the worldbuilder's
-verification step.
+**Phase 3 IN PROGRESS** (depth). Done & pushed: **AC-24** page-type-aware voice bar
+(`src/lib/page-type.ts`: lore/deity-statblock/timeline/flavor-pre/stub; literary checks
+suppressed on non-prose, stub graduates); **AC-13** wikilink validation (broken `[[targets]]`
+vs allSlugs, aether slug resolution); **AC-11** conflict-resolution UI (Supersede/Coexist/Reject,
+persisted by claimId in ReviewState, `ConflictCard`). Also a **critical fix**: server-only I/O was
+leaking into the client bundle (hydration crash, latent since Stage D) — server-fn modules are now
+client-safe shells that dynamic-import Node code; see [[heartwood-review-app-architecture]] (the
+client-safe/server-only rule is load-bearing for any new server fn).
+**REMAINING Phase 3:** AC-10 create-page folder-tree picker + inbound-link suggestions; AC-12
+seamless in-paragraph amend; AC-14 noise spot-check (promote a buried fact); AC-21 corrections/
+retractions (Supersede → locate prior sentence via provenance, update prose + ledger); AC-22
+multi-page event grouping. A real end-to-end browser commit + aether build-diff remains the
+worldbuilder's verification step.
 
 **Key facts for continuity:** Bun+TS, strict `noUncheckedIndexedAccess`; LLM only via `complete()`
 with DI `completeFn`; jj not git (push main directly); pkg/heartwood/CLAUDE.md is now accurate.
