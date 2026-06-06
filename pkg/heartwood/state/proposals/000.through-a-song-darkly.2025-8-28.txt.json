@@ -1,0 +1,541 @@
+{
+  "filename": "000.through-a-song-darkly.2025-8-28.txt",
+  "contentHash": "55bcf42dcbf3a93a73aa498c61fe47e94fdc0d1e73f38cc151087afa5cce3170",
+  "matchesContentHash": "55bcf42dcbf3a93a73aa498c61fe47e94fdc0d1e73f38cc151087afa5cce3170",
+  "stats": {
+    "totalClusters": 36,
+    "updateClusters": 8,
+    "createClusters": 16,
+    "aliasEditClusters": 5,
+    "commentClusters": 7,
+    "proposalsByKind": {
+      "edit": 11,
+      "append": 2,
+      "create": 12,
+      "comment": 7
+    },
+    "droppedByReason": {
+      "parent-directory-missing": 3,
+      "llm-error": 1
+    },
+    "llmCalls": 24
+  },
+  "proposals": [
+    {
+      "kind": "append",
+      "path": "Geography/Calaria/Hallia/index.md",
+      "afterHeading": null,
+      "content": "---\ntitle: Hallia\n---\nHallia is a city in [[Geography/Calaria/index|Calaria]] divided into numbered districts, connected by a public transit network that residents are required to use for inter-district travel.\n\n### Districts & Layout\n\nHallia is organized into numbered districts (e.g., Star 12) and oriented along a voidward–zenithward axis. The voidward end of the city passes through slums before giving way to undeveloped land that feels like the far outskirts despite being geographically close to the city center. Factories are concentrated in the voidward strata, situated there to minimize legal liability and harm to residents; many dump waste into the river that runs through the city.\n\nThe **Masque District** is a more affluent area containing hotels and catering to tourists.\n\n[[Sableclutch]] is a neighborhood located near the party's base of operations.\n\n### Transportation\n\nParticularly strong magic set up by the host prevents residents from teleporting or sliding freely between city districts; all inter-district travel must be made via public transit.\n\nHallia's primary public transit network is a trolley (tram) system that runs along a fixed route called **the Horizon**, connecting the city's numbered districts. Trams arrive periodically at designated stops. Stations follow a numbered or tiered naming convention — known stops include **Void 2** and **Zero** (also called **Prime**). A trolley station serves the voidward industrial district near the factories and scrapyards.\n\n### Points of Interest\n\n- **Sableclutch Scrap** — a scrapyard in the voidward industrial district, characterized by mountains of trash and large metal-crushing machinery. Accessible by tram.\n\n### Law Enforcement\n\n**[[Org/Black Line/index|Black Line]]** (also written *Blackline*) is a private law enforcement company that polices at least some districts of the city, generally operating in the nicer, more affluent areas. Black Line officers are considered unusual when present in less affluent parts of the city.",
+      "citations": [
+        [
+          1230,
+          1230
+        ],
+        [
+          1877,
+          1878
+        ],
+        [
+          1879,
+          1879
+        ],
+        [
+          1911,
+          1911
+        ],
+        [
+          1912,
+          1914
+        ],
+        [
+          1915,
+          1915
+        ],
+        [
+          1919,
+          1924
+        ],
+        [
+          2552,
+          2554
+        ],
+        [
+          2554,
+          2555
+        ],
+        [
+          2648,
+          2652
+        ],
+        [
+          2763,
+          2768
+        ],
+        [
+          2803,
+          2822
+        ],
+        [
+          2887,
+          2887
+        ],
+        [
+          2894,
+          2895
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+      "oldText": "Sableclutch is a poorer neighborhood at the southernmost point of [[Geography/Calaria/Hallia/index|Hallia]]. Hugging the south bank of the Fousan River, Sableclutch is dominated by the dockworkers and warehouse employees that ply their trade on the river. The district is somewhat overlooked by the rest of the capital -- whilst many of the goods that enter into the city start their journey in Sableclutch, the power centers of the [[Org/index|Orgs]] that manage it are found elsewhere.",
+      "newText": "Sableclutch is a poorer neighborhood at the southernmost point of [[Geography/Calaria/Hallia/index|Hallia]]. Hugging the south bank of the Fousan River, Sableclutch is dominated by the dockworkers and warehouse employees that ply their trade on the river. The district is somewhat overlooked by the rest of the capital -- whilst many of the goods that enter into the city start their journey in Sableclutch, the power centers of the [[Org/index|Orgs]] that manage it are found elsewhere.\n\nThe streets of Sableclutch are winding and largely ungoverned — traffic enforcement is absent, as there is no clear party willing to fund it. Trucks carting goods in and out of factories and scrapyards are a constant presence, particularly near the district's trolley station. Goblinoid creatures are commonly employed as factory workers and are a visible part of the working population.\n\nSableclutch is also notable for its numerous religious areas, including many churches. The majority of these are dedicated to the [[Iridescent Host]], with a smattering of other gods also represented.\n\n### Notable Locations\n\n**Sableclutch Scrap** is a scrapyard operating within the neighborhood. It is run by an old friend of [[Anouk Marchal]] and regularly takes on couriers and other workers.",
+      "citations": [
+        [
+          1877,
+          1878
+        ],
+        [
+          1881,
+          1882
+        ],
+        [
+          1883,
+          1883
+        ],
+        [
+          2763,
+          2768
+        ],
+        [
+          2765,
+          2765
+        ],
+        [
+          2766,
+          2766
+        ],
+        [
+          2817,
+          2819
+        ],
+        [
+          1196,
+          1199
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Anaïs Marchal.md",
+      "oldText": "His portion of the [[Org/Iconoclasm/index|Iconoclasm]] workshop is dominated by magical tomes and alchemical reagents.",
+      "newText": "His portion of the [[Org/Iconoclasm/index|Iconoclasm]] workshop is dominated by magical tomes and alchemical reagents. The twins do not run a magic item shop — they are simply two people who happen to be particularly skilled at crafting.",
+      "citations": [
+        [
+          988,
+          989
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+      "oldText": "Anouk is the more technologically-inclined of the twins. Her portion of the [[Org/Iconoclasm/index|Iconoclasm]] workshop is covered by multimeters, oscilloscopes, and other electrical accoutrement. She tends to be more outgoing than her brother.",
+      "newText": "Anouk is the more technologically-inclined of the twins. Her portion of the [[Org/Iconoclasm/index|Iconoclasm]] workshop is covered by multimeters, oscilloscopes, and other electrical accoutrement. She tends to be more outgoing than her brother. Neither Anouk nor Anaïs runs a magic item shop — they are simply two people who happen to be particularly good at crafting.\n\nAnouk keeps a Rolodex-like collection of index cards containing contacts and job leads, which she uses to refer people to work opportunities.",
+      "citations": [
+        [
+          988,
+          989
+        ],
+        [
+          1192,
+          1198
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+      "oldText": "Ginny is the [[Hearts|Heart]] that maintains the [[Sin and Tonic]] fane. He's friends with [[Illmari Vaino|Illmari]] and the rest of [[Org/Iconoclasm/index|Iconoclasm]], and is considered by most to be part of the team, despite his inability to leave his position behind the bar.",
+      "newText": "Ginny is the [[Hearts|Heart]] that maintains the [[Sin and Tonic]] fane. He works the bar and cooking station, serving as staff in the absence of [[Illmari Vaino|Illmari]]. He's friends with Illmari and the rest of [[Org/Iconoclasm/index|Iconoclasm]], and is considered by most to be part of the team, despite his inability to leave his position behind the bar.",
+      "citations": [
+        [
+          919,
+          921
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Illmari Vaino.md",
+      "oldText": "Illmari is the current proprietor of the [[Sin and Tonic]] and the founder of the mercenary group [[Org/Iconoclasm/index|Iconoclasm]]. He was one of the first to capitalize on hearing the [[Voidsong]], collecting like-minded people to investigate its source and meaning.",
+      "newText": "Illmari is the current proprietor of the [[Sin and Tonic]] and the founder of the mercenary group [[Org/Iconoclasm/index|Iconoclasm]]. He was one of the first to capitalize on hearing the [[Voidsong]], collecting like-minded people to investigate its source and meaning. He is normally responsible for cooking at the establishment, and is more skilled at preparing human food than [[Ginny]].",
+      "citations": [
+        [
+          929,
+          929
+        ]
+      ]
+    },
+    {
+      "kind": "append",
+      "path": "Org/Pyrelight/index.md",
+      "afterHeading": null,
+      "content": "Pyrelight is a faction that operates a front company called [[Embercall Industries]].",
+      "citations": [
+        [
+          613,
+          613
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Roundhat Gang/People/Tywelwyn Leatherhide.md",
+      "oldText": "He is the founder and leader of the [[Org/Roundhat Gang/index|Roundhat Gang]], a protection racket in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]]. He was rumored to have gone crazy, hearing voices, but it appears that he's struck a deal with someone in [[Org/Pyrelight/index|Pyrelight]]. Formerly unable to wield magic, he now pilots a simulacrum to work on his behalf.",
+      "newText": "He is the founder and leader of the [[Org/Roundhat Gang/index|Roundhat Gang]], a protection racket in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]]. He was rumored to have gone crazy, hearing voices, but it appears that he's struck a deal with someone in [[Org/Pyrelight/index|Pyrelight]]. He has ordered materials from Embercall Industries, a company associated with Pyrelight. Formerly unable to wield magic, he now pilots a simulacrum to work on his behalf.",
+      "citations": [
+        [
+          610,
+          613
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Ætherion Limited/People/Anzu.md",
+      "content": "---\ntitle: Anzu\n---\nAnzu owns a normal-sized raven named Othello.\n",
+      "citations": [
+        [
+          1264,
+          1274
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Ætherion Limited/People/Argyle.md",
+      "content": "---\ntitle: Argyle\n---\nArgyle's eyes are normally gold in color, but can shift to a bright white or bluish color under certain conditions.\n",
+      "citations": [
+        [
+          1576,
+          1582
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Roundhat Gang/People/Copperjaw.md",
+      "content": "---\ntags:\n  - Dwarf\n---\nA battered dwarven man of late middle age — by dwarven reckoning, somewhere around 120–130 years old. His most distinctive feature is his bottom jaw, which has been replaced with a crude copper prosthetic roughly shaped like a jaw, the origin of his name. His nose is mashed-up and misshapen, and he frequently sports a black eye, both signs of a man who gets into fights regularly.\n\nCopperjaw operates a scrapyard, where he keeps a Giant Crusher — both a working tool and a deterrent to unwanted visitors. He is not the sort to make allowances for age when sizing someone up; his handshake alone makes that clear.\n\nHe has been known to hire people, including children, to deliver important items or cases on his behalf. His name is known to [[Org/Protectorate/index|Blackline]] agents, who have reason to keep track of him.\n",
+      "citations": [
+        [
+          1971,
+          1973
+        ],
+        [
+          1975,
+          1976
+        ],
+        [
+          1977,
+          1979
+        ],
+        [
+          1980,
+          1981
+        ],
+        [
+          2003,
+          2004
+        ],
+        [
+          2087,
+          2088
+        ],
+        [
+          2087,
+          2088
+        ],
+        [
+          2672,
+          2672
+        ],
+        [
+          2693,
+          2696
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Geography/Helya.md",
+      "content": "---\ntitle: Helya\n---\nHelya is a city notable for its three police organizations, each of which posts bounties for outstanding warrants.\n\n### Districts\n\nThe starward districts of Helya are characterized by older, poorly maintained buildings constructed when the tram line was first built, raised in anticipation of a boom that never materialized.\n",
+      "citations": [
+        [
+          1211,
+          1211
+        ],
+        [
+          1235,
+          1238
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Phenomena/Korath Guide.md",
+      "content": "---\ntitle: Korath Guide\n---\nThe Korath Guide is a publication in wide circulation, serving as a restaurant and travel guide for the setting.\n",
+      "citations": [
+        [
+          2106,
+          2109
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Ætherion Limited/People/Mute.md",
+      "content": "---\ntags:\n  - Shapeshifter\n---\nMute is the name given by the party to one of two shapeshifting figures, the other being [[Smith]], encountered together. In their disguised form they appear unremarkable, but are capable of growing approximately a foot and a half in size and shedding their disguised appearance during transformation, at which point their clothes melt into their bodies.\n\nIn their true form, Mute and Smith appear as large, pink, fleshy, naked mole rat-like creatures. Their facial features largely melt back into the skin, with the eyes sinking into the head and leaving only empty sockets.\n",
+      "citations": [
+        [
+          3073,
+          3074
+        ],
+        [
+          3073,
+          3074
+        ],
+        [
+          3081,
+          3081
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Protectorate/People/Officer Smith.md",
+      "content": "---\ntitle: Officer Smith\n---\nAn officer of the local law enforcement.\n",
+      "citations": [
+        [
+          2704,
+          2708
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Phenomena/radar dish.md",
+      "content": "---\ntitle: Radar Dish\n---\nA radar dish known for dangerous anomalous behaviour. When previously activated, it caused things in the vicinity to come alive and attack.\n",
+      "citations": [
+        [
+          1006,
+          1006
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Phenomena/rocket hammers.md",
+      "content": "---\ntitle: Rocket Hammers\n---\nRocket hammers are crafted in an NPC crafter's workshop.\n",
+      "citations": [
+        [
+          1011,
+          1011
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Phenomena/Skinwalkers.md",
+      "content": "---\ntitle: Skinwalkers\n---\nSkinwalkers are difficult to identify by sight alone, requiring a significantly higher DC check than simply determining whether someone is mute.\n",
+      "citations": [
+        [
+          2864,
+          2866
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/The Harlequins/People/Smiler.md",
+      "content": "---\ntitle: Smiler\n---\nSmiler is adorned with extensive jewelry: multiple yellowish metal bands on both arms, gems braided into his tail, flare gauges in his ears with gems embedded in them, and a long beard braided in the same style as his tail with gems throughout.\n\nSmiler is acquainted with [[Org/The Harlequins/People/Donnie|Donnie]] and [[Org/The Harlequins/People/Red|Red]], and is willing to pass messages between them.\n",
+      "citations": [
+        [
+          1385,
+          1391
+        ],
+        [
+          1570,
+          1575
+        ]
+      ]
+    },
+    {
+      "kind": "create",
+      "path": "Org/Threshold Authority.md",
+      "content": "---\ntitle: Threshold Authority\naliases:\n  - TA\ntags:\n  - Law Enforcement\n---\nThe Threshold Authority (commonly abbreviated **TA**) is the law enforcement body operating in the area.\n\nOfficers of the Threshold Authority wear a distinctive greenish uniform bearing a large **TA** insignia.",
+      "citations": [
+        [
+          667,
+          677
+        ],
+        [
+          2551,
+          2551
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Divinity/Outer Gods/Iridescent Host.md",
+      "oldText": "aliases:\n  - Host\n",
+      "newText": "aliases:\n  - Host\n  - the Host\n",
+      "citations": [
+        [
+          1883,
+          1883
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+      "oldText": "aliases:\n  - Anouk\n",
+      "newText": "aliases:\n  - Anouk\n  - Anok\n",
+      "citations": [
+        [
+          1192,
+          1198
+        ],
+        [
+          1196,
+          1199
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Iconoclasm/People/Elias Ramsey.md",
+      "oldText": "---\ntags:\n  - Dwarf\nimg: https://i.imgur.com/rkEMbUm.png\n---\n",
+      "newText": "---\ntags:\n  - Dwarf\nimg: https://i.imgur.com/rkEMbUm.png\naliases:\n  - Elias\n---\n",
+      "citations": [
+        [
+          570,
+          570
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/Roundhat Gang/index.md",
+      "oldText": "The Roundhat Gang is a protection racket in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]]. Its run by [[Tywelwyn Leatherhide]] out of [[The Crowded Flea]]. Recently, it appears to have established some kind of partnership with [[Org/Pyrelight/index|Pyrelight]].\n",
+      "newText": "---\naliases:\n  - Roundhack\n---\nThe Roundhat Gang is a protection racket in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]]. Its run by [[Tywelwyn Leatherhide]] out of [[The Crowded Flea]]. Recently, it appears to have established some kind of partnership with [[Org/Pyrelight/index|Pyrelight]].\n",
+      "citations": [
+        [
+          576,
+          578
+        ],
+        [
+          670,
+          671
+        ]
+      ]
+    },
+    {
+      "kind": "edit",
+      "path": "Org/The Scale/index.md",
+      "oldText": "---\ntags:\n  - Judge\n  - Religious\n---\n",
+      "newText": "---\ntags:\n  - Judge\n  - Religious\naliases:\n  - Scale\n---\n",
+      "citations": [
+        [
+          1205,
+          1208
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": "Geography/Calaria/Hallia/Sableclutch/Sin and Tonic.md",
+      "message": "Claim: Gin-Soaked Rag is associated with the Sin and Tonic.\nRationale: The page makes no mention of any entity or item called 'Gin-Soaked Rag' in connection with the Sin and Tonic, so this would be new information to add.",
+      "citations": [
+        [
+          566,
+          566
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "speculative",
+      "relatedPath": null,
+      "message": "Claim: Augers are creatures created through a divination ritual and are an offshoot of that process; they can be fed to enhance divination.\nRationale: No candidate wiki page matched this claim.",
+      "citations": [
+        [
+          697,
+          698
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+      "message": "Claim: Ginny's physical appearance consists of a suit vest and dress pants, but instead of a head, has a twisted-up dish rag that can twist to face different directions and appears to squeeze out liquid as it moves.\nRationale: The page describes Ginny as wearing a three-piece suit (not just a vest and dress pants), and states the dishrag occupies the center of the suit and forms his face by scrunching up — not that it acts as a separate head that twists to face directions; additionally the page says liquid beads at the edges when he moves, which is consistent but the overall description of the appearance conflicts in key details.\nPage excerpt: Gin Soaked Rag, or Ginny for short, appears as a 6-foot-tall dishrag wearing a three-piece suit. The arms of the suit float in the air and end in gloves with mobility, despite the fact that the dishrag only occupies the center of the suit. His face is formed by the dishrag scrunching up, and when he moves some liquid appears to bead at the edges.",
+      "citations": [
+        [
+          903,
+          906
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Org/The Scale/index.md",
+      "message": "Claim: Arbiters are empowered by the The Scale to conduct bounty hunting, and the The Scale does not hire outside individuals for such work.\nRationale: The page states that Arbiters 'track down those who have escaped justice and deliver them their due,' which is consistent with bounty hunting, but the claim that the Scale does not hire outside individuals for such work is not supported and contradicts the implication of the page, which describes Pactbrokers as available to 'the average person' for a fee — suggesting the Scale does engage with outside parties for its functions.\nPage excerpt: **Arbiters** track down those who have escaped justice and deliver them their due.",
+      "citations": [
+        [
+          1205,
+          1208
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Geography/Calaria/Hallia/Sableclutch/Sin and Tonic.md",
+      "message": "Claim: The neighborhood where the Sin and Tonic is located is a commercialized, generally poor but not seedy area of Helya.\nRationale: The page states the Sin and Tonic is located in Sableclutch, not in a place called Helya, making the claim's location detail conflict with the page.\nPage excerpt: The Sin and Tonic is a bar in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]].",
+      "citations": [
+        [
+          1231,
+          1234
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Org/Belvedere.md",
+      "message": "Claim: Belvedere is a place where children receive an education, and it functions as a school amongst other things.\nRationale: The wiki page describes Belvedere as an Org with roles for academics, archivists, aristocrats, and arcanists, but makes no mention of it functioning as a school or providing education to children; the claim introduces a purpose not supported by the page.\nPage excerpt: Now, a member of Belvedere has a few paths to take. They could join the ranks of the academics, studying natural phenomena. They could become archivists, recording history's ebb and flow. They could be aristocrats, moving through polite society like a fish through water. Finally, they could be arcanists, working closely with the Hearts and their divine machinery.",
+      "citations": [
+        [
+          1701,
+          1702
+        ]
+      ]
+    },
+    {
+      "kind": "comment",
+      "reason": "contradict",
+      "relatedPath": "Geography/Færrin.md",
+      "message": "Claim: The setting is described as a magical society where bird people and other non-human races are a common sight and do not attract unusual attention.\nRationale: The wiki page states that before magic arrived, the only sentient life on Færrin was human, and that non-human traits only emerged afterward due to magical energy — implying non-human races are a relatively recent and notable development, not a long-established 'common sight' that attracts no attention.\nPage excerpt: Before magic was introduced to Færrin, the only sentient life on the planet was human. Afterward, more than half of the humans found themselves taking on new traits, spurred by the sudden influx of magical energy. Magic beasts with sentience also appeared throughout the planet.",
+      "citations": [
+        [
+          2375,
+          2375
+        ]
+      ]
+    }
+  ]
+}

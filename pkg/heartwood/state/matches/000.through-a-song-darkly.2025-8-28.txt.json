@@ -1,0 +1,3678 @@
+{
+  "filename": "000.through-a-song-darkly.2025-8-28.txt",
+  "contentHash": "55bcf42dcbf3a93a73aa498c61fe47e94fdc0d1e73f38cc151087afa5cce3170",
+  "claimsContentHash": "55bcf42dcbf3a93a73aa498c61fe47e94fdc0d1e73f38cc151087afa5cce3170",
+  "stats": {
+    "totalClaims": 101,
+    "standaloneNew": 44,
+    "pagesLoaded": 23,
+    "bytesLoaded": 22074,
+    "candidateBatches": 0,
+    "classifierBatches": 0
+  },
+  "matches": [
+    {
+      "claim": {
+        "claim": "Illmari Vaino is the founder of Iconoclasm.",
+        "lines": [
+          565,
+          565
+        ],
+        "speaker": "Johnny",
+        "role": "player",
+        "confidence": "speculative",
+        "entities": [
+          "Illmari Vaino",
+          "Iconoclasm"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Illmari Vaino",
+            "canonical": "Illmari Vaino",
+            "page": "Org/Iconoclasm/People/Illmari Vaino.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Iconoclasm",
+            "canonical": "Iconoclasm",
+            "page": "Org/Iconoclasm/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Illmari Vaino.md",
+          "relation": "consistent",
+          "rationale": "The page explicitly states that Illmari is 'the founder of the mercenary group Iconoclasm.'",
+          "excerpt": "Illmari is the current proprietor of the [[Sin and Tonic]] and the founder of the mercenary group [[Org/Iconoclasm/index|Iconoclasm]]."
+        },
+        {
+          "path": "Org/Iconoclasm/index.md",
+          "relation": "consistent",
+          "rationale": "The page explicitly states that Ilmari Vaino is the founder of Iconoclasm, consistent with the claim (noting only a minor spelling variation).",
+          "excerpt": "its founder Ilmari Vaino was among the first to hear the song"
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Gin-Soaked Rag is associated with the Sin and Tonic.",
+        "lines": [
+          566,
+          566
+        ],
+        "speaker": "Johnny",
+        "role": "player",
+        "confidence": "speculative",
+        "entities": [
+          "Gin-Soaked Rag",
+          "Sin and Tonic"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Gin-Soaked Rag",
+            "canonical": "Gin Soaked Rag",
+            "page": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Sin and Tonic",
+            "canonical": "Sin and Tonic",
+            "page": "Geography/Calaria/Hallia/Sableclutch/Sin and Tonic.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/Sin and Tonic.md",
+          "relation": "update",
+          "rationale": "The page makes no mention of any entity or item called 'Gin-Soaked Rag' in connection with the Sin and Tonic, so this would be new information to add.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Dura Oil Drinker is a mechanic associated with Iconoclasm.",
+        "lines": [
+          568,
+          568
+        ],
+        "speaker": "Johnny",
+        "role": "player",
+        "confidence": "speculative",
+        "entities": [
+          "Dura Oil Drinker",
+          "Iconoclasm"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Dura Oil Drinker",
+            "canonical": "Dura Oil-Drinker",
+            "page": "Org/Iconoclasm/People/Dura Oil-Drinker.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Iconoclasm",
+            "canonical": "Iconoclasm",
+            "page": "Org/Iconoclasm/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/index.md",
+          "relation": "new",
+          "rationale": "The page makes no mention of any individual named Dura Oil Drinker or any mechanic role within Iconoclasm.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Elias Ramsey serves as the quartermaster of Iconoclasm.",
+        "lines": [
+          570,
+          570
+        ],
+        "speaker": "Johnny",
+        "role": "player",
+        "confidence": "speculative",
+        "entities": [
+          "Elias Ramsey",
+          "Iconoclasm"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Iconoclasm",
+            "canonical": "Iconoclasm",
+            "page": "Org/Iconoclasm/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Elias",
+            "canonical": "Elias Ramsey",
+            "page": "Org/Iconoclasm/People/Elias Ramsey.md",
+            "method": "llm",
+            "suggestAlias": true
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Elias Ramsey.md",
+          "relation": "consistent",
+          "rationale": "The wiki page explicitly states that Elias serves as an excellent quartermaster for Iconoclasm.",
+          "excerpt": "he serves as an excellent quartermaster for the group, able to locate things that had been well lost by the other members of Iconoclasm."
+        },
+        {
+          "path": "Org/Iconoclasm/index.md",
+          "relation": "new",
+          "rationale": "The page makes no mention of any individual named Elias Ramsey or a quartermaster position within Iconoclasm.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Roundhat Gang gang is run by Tywelwyn Leatherhide.",
+        "lines": [
+          576,
+          578
+        ],
+        "speaker": "Johnny",
+        "role": "gm",
+        "confidence": "speculative",
+        "entities": [
+          "Roundhat Gang",
+          "Tywelwyn Leatherhide"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Tywelwyn Leatherhide",
+            "canonical": "Tywelwyn Leatherhide",
+            "page": "Org/Roundhat Gang/People/Tywelwyn Leatherhide.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Roundhack",
+            "canonical": "Roundhat Gang",
+            "page": "Org/Roundhat Gang/index.md",
+            "method": "llm",
+            "suggestAlias": true
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Roundhat Gang/index.md",
+          "relation": "consistent",
+          "rationale": "The page explicitly states that the Roundhat Gang is run by Tywelwyn Leatherhide.",
+          "excerpt": "Its run by [[Tywelwyn Leatherhide]] out of [[The Crowded Flea]]."
+        },
+        {
+          "path": "Org/Roundhat Gang/People/Tywelwyn Leatherhide.md",
+          "relation": "consistent",
+          "rationale": "The page explicitly states that Tywelwyn is the founder and leader of the Roundhat Gang.",
+          "excerpt": "He is the founder and leader of the Roundhat Gang, a protection racket in Sableclutch."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Tywelwyn Leatherhide ordered materials from Embercall Industries, which is associated with the Pyrelight faction.",
+        "lines": [
+          610,
+          613
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Tywelwyn Leatherhide",
+          "Embercall Industries",
+          "Pyrelight"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Tywelwyn Leatherhide",
+            "canonical": "Tywelwyn Leatherhide",
+            "page": "Org/Roundhat Gang/People/Tywelwyn Leatherhide.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Pyrelight",
+            "canonical": "Pyrelight",
+            "page": "Org/Pyrelight/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Embercall Industries",
+            "canonical": "Embercall Industries",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Roundhat Gang/People/Tywelwyn Leatherhide.md",
+          "relation": "update",
+          "rationale": "While the page mentions a deal with someone in Pyrelight, it does not mention Embercall Industries or any order of materials from them.",
+          "excerpt": "it appears that he's struck a deal with someone in Pyrelight"
+        },
+        {
+          "path": "Org/Pyrelight/index.md",
+          "relation": "new",
+          "rationale": "The wiki page for Pyrelight contains no content at all, so there is no information about Tywelwyn Leatherhide, Embercall Industries, or any orders placed between them.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The faction known as Pyrelight operates a front company called Embercall Industries.",
+        "lines": [
+          613,
+          613
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Pyrelight",
+          "Embercall Industries"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Pyrelight",
+            "canonical": "Pyrelight",
+            "page": "Org/Pyrelight/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Embercall Industries",
+            "canonical": "Embercall Industries",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Pyrelight/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Pyrelight is entirely empty, so the claim that Pyrelight operates a front company called Embercall Industries is new information that would need to be added.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The law enforcement body operating in the area is called the Threshold Authority, also known as the TA.",
+        "lines": [
+          667,
+          677
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Threshold Authority"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Threshold Authority",
+            "canonical": "Threshold Authority",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Threshold Authority is suspected of being bought out by either the Roundhat Gang gang or Embercall Industries slash Pyrelight.",
+        "lines": [
+          670,
+          671
+        ],
+        "speaker": "Johnny",
+        "role": "player",
+        "confidence": "speculative",
+        "entities": [
+          "Threshold Authority",
+          "Roundhat Gang",
+          "Embercall Industries",
+          "Pyrelight"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Threshold Authority",
+            "canonical": "Threshold Authority",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Pyrelight",
+            "canonical": "Pyrelight",
+            "page": "Org/Pyrelight/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Roundhack",
+            "canonical": "Roundhat Gang",
+            "page": "Org/Roundhat Gang/index.md",
+            "method": "llm",
+            "suggestAlias": true
+          },
+          {
+            "original": "Embercall Industries",
+            "canonical": "Embercall Industries",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Roundhat Gang/index.md",
+          "relation": "new",
+          "rationale": "The claim is about the Threshold Authority, an entity not mentioned on this page, so it does not belong here.",
+          "excerpt": null
+        },
+        {
+          "path": "Org/Pyrelight/index.md",
+          "relation": "new",
+          "rationale": "The wiki page for Pyrelight contains no content, and the claim concerns the Threshold Authority and the Roundhat Gang — entities not referenced on this page — making it more appropriate for a different page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Augers are creatures created through a divination ritual and are an offshoot of that process; they can be fed to enhance divination.",
+        "lines": [
+          697,
+          698
+        ],
+        "speaker": "Johnny",
+        "role": "player",
+        "confidence": "speculative",
+        "entities": [
+          "augers"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "augers",
+            "canonical": "augers",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Iconoclasm possesses a company car available for use on missions.",
+        "lines": [
+          706,
+          707
+        ],
+        "speaker": "Johnny",
+        "role": "player",
+        "confidence": "speculative",
+        "entities": [
+          "Iconoclasm"
+        ],
+        "sourceSegmentStartLine": 547,
+        "entityResolutions": [
+          {
+            "original": "Iconoclasm",
+            "canonical": "Iconoclasm",
+            "page": "Org/Iconoclasm/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/index.md",
+          "relation": "new",
+          "rationale": "The page contains no information about Iconoclasm possessing a company car or any vehicles for missions.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Ginny's physical appearance consists of a suit vest and dress pants, but instead of a head, has a twisted-up dish rag that can twist to face different directions and appears to squeeze out liquid as it moves.",
+        "lines": [
+          903,
+          906
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Ginny"
+        ],
+        "sourceSegmentStartLine": 897,
+        "entityResolutions": [
+          {
+            "original": "Ginny",
+            "canonical": "Gin Soaked Rag",
+            "page": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+          "relation": "contradict",
+          "rationale": "The page describes Ginny as wearing a three-piece suit (not just a vest and dress pants), and states the dishrag occupies the center of the suit and forms his face by scrunching up — not that it acts as a separate head that twists to face directions; additionally the page says liquid beads at the edges when he moves, which is consistent but the overall description of the appearance conflicts in key details.",
+          "excerpt": "Gin Soaked Rag, or Ginny for short, appears as a 6-foot-tall dishrag wearing a three-piece suit. The arms of the suit float in the air and end in gloves with mobility, despite the fact that the dishrag only occupies the center of the suit. His face is formed by the dishrag scrunching up, and when he moves some liquid appears to bead at the edges."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Ginny works the bar and cooking station at the establishment, serving as staff in the absence of Illmari.",
+        "lines": [
+          919,
+          921
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Ginny",
+          "Illmari"
+        ],
+        "sourceSegmentStartLine": 897,
+        "entityResolutions": [
+          {
+            "original": "Ginny",
+            "canonical": "Gin Soaked Rag",
+            "page": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Illmari",
+            "canonical": "Illmari Vaino",
+            "page": "Org/Iconoclasm/People/Illmari Vaino.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+          "relation": "update",
+          "rationale": "The page only states Ginny maintains the Sin and Tonic fane and cannot leave his position behind the bar, but does not specify that he works a cooking station or serves as staff in Illmari's absence.",
+          "excerpt": "Ginny is the Heart that maintains the Sin and Tonic fane. He's friends with Illmari and the rest of Iconoclasm, and is considered by most to be part of the team, despite his inability to leave his position behind the bar."
+        },
+        {
+          "path": "Org/Iconoclasm/People/Illmari Vaino.md",
+          "relation": "new",
+          "rationale": "The page makes no mention of a character named Ginny or any staff working at the establishment, so this claim belongs on a different page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Illmari is normally responsible for cooking food at the establishment and is more skilled at preparing human food than Ginny.",
+        "lines": [
+          929,
+          929
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Illmari",
+          "Ginny"
+        ],
+        "sourceSegmentStartLine": 897,
+        "entityResolutions": [
+          {
+            "original": "Illmari",
+            "canonical": "Illmari Vaino",
+            "page": "Org/Iconoclasm/People/Illmari Vaino.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Ginny",
+            "canonical": "Gin Soaked Rag",
+            "page": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Illmari Vaino.md",
+          "relation": "update",
+          "rationale": "While the page identifies Illmari as the proprietor of the Sin and Tonic, it contains no information about his cooking responsibilities or culinary skills, so this adds new detail about him.",
+          "excerpt": "Illmari is the current proprietor of the [[Sin and Tonic]] and the founder of the mercenary group [[Org/Iconoclasm/index|Iconoclasm]]."
+        },
+        {
+          "path": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+          "relation": "new",
+          "rationale": "The page contains no information about Illmari's cooking responsibilities or relative skill at preparing human food compared to Ginny, so this claim is about details not covered on this page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The twins are not running a magic item shop, but are two people who happen to be particularly good at crafting.",
+        "lines": [
+          988,
+          989
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "the twins"
+        ],
+        "sourceSegmentStartLine": 971,
+        "entityResolutions": [
+          {
+            "original": "the twins",
+            "canonical": "the twins",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+          "relation": "update",
+          "rationale": "The page describes Anouk and Anaïs as part of the Iconoclasm workshop with crafting-related equipment, but does not explicitly clarify whether or not they run a magic item shop; this distinction adds new context not present on the page.",
+          "excerpt": "Her portion of the Iconoclasm workshop is covered by multimeters, oscilloscopes, and other electrical accoutrement."
+        },
+        {
+          "path": "Org/Iconoclasm/People/Anaïs Marchal.md",
+          "relation": "update",
+          "rationale": "The page describes Anaïs and his twin's workshop but does not specify whether they run a magic item shop or are simply skilled crafters, so this claim adds clarifying information not present on the page.",
+          "excerpt": "His portion of the Iconoclasm workshop is dominated by magical tomes and alchemical reagents."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The radar dish previously caused things to come alive and attack when activated.",
+        "lines": [
+          1006,
+          1006
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "radar dish"
+        ],
+        "sourceSegmentStartLine": 971,
+        "entityResolutions": [
+          {
+            "original": "radar dish",
+            "canonical": "radar dish",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The NPC crafter's workshop is the room where rocket hammers are made.",
+        "lines": [
+          1011,
+          1011
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "rocket hammers"
+        ],
+        "sourceSegmentStartLine": 971,
+        "entityResolutions": [
+          {
+            "original": "rocket hammers",
+            "canonical": "rocket hammers",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The radar dish is believed to be a device for receiving a signal.",
+        "lines": [
+          1027,
+          1028
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "radar dish"
+        ],
+        "sourceSegmentStartLine": 971,
+        "entityResolutions": [
+          {
+            "original": "radar dish",
+            "canonical": "radar dish",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Phenomena/Harmony/Voidsong.md",
+          "relation": "new",
+          "rationale": "The wiki page makes no mention of a radar dish or any signal-receiving device; it is about the Voidsong phenomenon and has no relevant content for this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Anouk Marchal keeps a Rolodex-like collection of index cards containing contacts and job leads, which she uses to refer people to work opportunities.",
+        "lines": [
+          1192,
+          1198
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Anouk Marchal"
+        ],
+        "sourceSegmentStartLine": 1184,
+        "entityResolutions": [
+          {
+            "original": "Anok",
+            "canonical": "Anouk Marchal",
+            "page": "Org/Iconoclasm/People/Anouk Marchal.md",
+            "method": "llm",
+            "suggestAlias": true
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+          "relation": "update",
+          "rationale": "The page contains no mention of Anouk keeping a Rolodex-like collection of index cards for contacts and job leads, so this is new information that would add to the page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "There is a scrapyard located one district over from the party's current location in Sableclutch, run by an old friend of Anouk Marchal's who regularly hires couriers and other workers.",
+        "lines": [
+          1196,
+          1199
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch",
+          "Anouk Marchal"
+        ],
+        "sourceSegmentStartLine": 1184,
+        "entityResolutions": [
+          {
+            "original": "Sableclutch",
+            "canonical": "Sableclutch",
+            "page": "Geography/Calaria/Hallia/Sableclutch/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Anok",
+            "canonical": "Anouk Marchal",
+            "page": "Org/Iconoclasm/People/Anouk Marchal.md",
+            "method": "llm",
+            "suggestAlias": true
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page mentions Sableclutch as a district but does not reference a scrapyard, Anouk Marchal, or a hiring operation run by her friend.",
+          "excerpt": "Sableclutch is a poorer neighborhood at the southernmost point of Hallia."
+        },
+        {
+          "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+          "relation": "new",
+          "rationale": "This claim is about a scrapyard in Sableclutch and its operator, not about Anouk Marchal herself; it belongs on a location or NPC page rather than Anouk's page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Arbiters are empowered by the The Scale to conduct bounty hunting, and the The Scale does not hire outside individuals for such work.",
+        "lines": [
+          1205,
+          1208
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "The Scale",
+          "arbiters"
+        ],
+        "sourceSegmentStartLine": 1184,
+        "entityResolutions": [
+          {
+            "original": "arbiters",
+            "canonical": "arbiters",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Scale",
+            "canonical": "The Scale",
+            "page": "Org/The Scale/index.md",
+            "method": "llm",
+            "suggestAlias": true
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/The Scale/index.md",
+          "relation": "contradict",
+          "rationale": "The page states that Arbiters 'track down those who have escaped justice and deliver them their due,' which is consistent with bounty hunting, but the claim that the Scale does not hire outside individuals for such work is not supported and contradicts the implication of the page, which describes Pactbrokers as available to 'the average person' for a fee — suggesting the Scale does engage with outside parties for its functions.",
+          "excerpt": "**Arbiters** track down those who have escaped justice and deliver them their due."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The city of Helya has three police organizations that post bounties for outstanding warrants.",
+        "lines": [
+          1211,
+          1211
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Helya"
+        ],
+        "sourceSegmentStartLine": 1184,
+        "entityResolutions": [
+          {
+            "original": "Helya",
+            "canonical": "Helya",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "In Hallia, particularly strong magic set up by the host prevents people from teleporting or sliding freely between city districts; residents must use public transit to travel between areas.",
+        "lines": [
+          1230,
+          1230
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1225,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about anti-teleportation magic and mandatory public transit adds new information about the city.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Hallia has a trolley system that travels along a route called the Horizon, connecting different numbered districts such as Star 12.",
+        "lines": [
+          1230,
+          1230
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Hallia",
+          "Horizon",
+          "Star 12"
+        ],
+        "sourceSegmentStartLine": 1225,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Horizon",
+            "canonical": "Infinite Horizon",
+            "page": "Phenomena/Infinite Horizon.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Star 12",
+            "canonical": "Star 12",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about a trolley system called the Horizon connecting numbered districts adds new information.",
+          "excerpt": null
+        },
+        {
+          "path": "Phenomena/Infinite Horizon.md",
+          "relation": "new",
+          "rationale": "The claim is about a trolley system in a place called Hallia with districts named after Horizon directions, which is an entirely different entity/topic from the Infinite Horizon phenomenon described on this page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The neighborhood where the Sin and Tonic is located is a commercialized, generally poor but not seedy area of Helya.",
+        "lines": [
+          1231,
+          1234
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sin and Tonic",
+          "Helya"
+        ],
+        "sourceSegmentStartLine": 1225,
+        "entityResolutions": [
+          {
+            "original": "Sin and Tonic",
+            "canonical": "Sin and Tonic",
+            "page": "Geography/Calaria/Hallia/Sableclutch/Sin and Tonic.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Helya",
+            "canonical": "Helya",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/Sin and Tonic.md",
+          "relation": "contradict",
+          "rationale": "The page states the Sin and Tonic is located in Sableclutch, not in a place called Helya, making the claim's location detail conflict with the page.",
+          "excerpt": "The Sin and Tonic is a bar in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]]."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The starward districts of Helya feature older, poorly maintained buildings that were constructed when the tram line was first built, in anticipation of a boom that never materialized.",
+        "lines": [
+          1235,
+          1238
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Helya"
+        ],
+        "sourceSegmentStartLine": 1225,
+        "entityResolutions": [
+          {
+            "original": "Helya",
+            "canonical": "Helya",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Undertable is a pawn shop located in the Star 12 district of Helya, tucked away enough to avoid drawing attention but accessible enough to reach.",
+        "lines": [
+          1252,
+          1253
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Undertable",
+          "Star 12",
+          "Helya"
+        ],
+        "sourceSegmentStartLine": 1225,
+        "entityResolutions": [
+          {
+            "original": "Undertable",
+            "canonical": "Undertable",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Star 12",
+            "canonical": "Star 12",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Helya",
+            "canonical": "Helya",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Anzu owns a normal-sized raven named Othello.",
+        "lines": [
+          1264,
+          1274
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Anzu",
+          "Othello"
+        ],
+        "sourceSegmentStartLine": 1225,
+        "entityResolutions": [
+          {
+            "original": "Anzu",
+            "canonical": "Anzu",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Othello",
+            "canonical": "Othello",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Undertable is a shop squeezed into a narrow gap between two buildings, too large to be an alleyway but too small for a standard building, resulting in a weirdly narrow, squished structure.",
+        "lines": [
+          1342,
+          1347
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Undertable"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Undertable",
+            "canonical": "Undertable",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Undertable has no windows facing the street like a regular shop front, only a door with a handwritten sign reading 'under table' accompanied by a crude drawing of a table.",
+        "lines": [
+          1348,
+          1352
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Undertable"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Undertable",
+            "canonical": "Undertable",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The interior of the Undertable is a cramped room with tables along the walls and a large central table, all stacked with a wide variety of goods including kitchen appliances, loose jewelry, radios in various states of deconstruction, and a large number of firearms.",
+        "lines": [
+          1354,
+          1363
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Undertable"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Undertable",
+            "canonical": "Undertable",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Undertable stocks enough firearms that a license would normally be required, but it is implied the proprietor does not hold one.",
+        "lines": [
+          1362,
+          1363
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Undertable",
+          "Smiler"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Undertable",
+            "canonical": "Undertable",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Smiler",
+            "canonical": "Smiler",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Smiler is a centaur and the proprietor of the Undertable, as well as a fence known to Johnny.",
+        "lines": [
+          1365,
+          1371
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Smiler",
+          "Undertable",
+          "Johnny"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Smiler",
+            "canonical": "Smiler",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Undertable",
+            "canonical": "Undertable",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Johnny",
+            "canonical": "Johnny",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Smiler stands approximately nine feet tall at full centaur height, tall enough that he must stoop beneath the ceiling of the Undertable.",
+        "lines": [
+          1382,
+          1383
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Smiler",
+          "Undertable"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Smiler",
+            "canonical": "Smiler",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Undertable",
+            "canonical": "Undertable",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Smiler's appearance is characterized by extensive jewelry: multiple yellowish metal bands on both arms, gems braided into his tail, flare gauges in his ears with gems embedded in them, and a long beard braided in the same style as his tail with gems throughout.",
+        "lines": [
+          1385,
+          1391
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Smiler"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Smiler",
+            "canonical": "Smiler",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Smiler extends a friends-and-associates discount to Johnny's companions in Iconoclasm as a personal favor to Johnny.",
+        "lines": [
+          1426,
+          1430
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Smiler",
+          "Johnny",
+          "Iconoclasm"
+        ],
+        "sourceSegmentStartLine": 1341,
+        "entityResolutions": [
+          {
+            "original": "Smiler",
+            "canonical": "Smiler",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Johnny",
+            "canonical": "Johnny",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Iconoclasm",
+            "canonical": "Iconoclasm",
+            "page": "Org/Iconoclasm/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/index.md",
+          "relation": "new",
+          "rationale": "The page contains no mention of a character named Smiler, Johnny, or any discount arrangements associated with Iconoclasm members.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Smiler is acquainted with individuals named Donnie and Red, and is willing to pass messages between them.",
+        "lines": [
+          1570,
+          1575
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Smiler",
+          "Donnie",
+          "Red"
+        ],
+        "sourceSegmentStartLine": 1442,
+        "entityResolutions": [
+          {
+            "original": "Smiler",
+            "canonical": "Smiler",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Donnie",
+            "canonical": "Donnie",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Red",
+            "canonical": "Red",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Argyle's eyes, normally gold in color, can shift to a bright white or bluish color under certain conditions.",
+        "lines": [
+          1576,
+          1582
+        ],
+        "speaker": "Argyle",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Argyle"
+        ],
+        "sourceSegmentStartLine": 1442,
+        "entityResolutions": [
+          {
+            "original": "Argyle",
+            "canonical": "Argyle",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Belvedere is a place where children receive an education, and it functions as a school amongst other things.",
+        "lines": [
+          1701,
+          1702
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Belvedere"
+        ],
+        "sourceSegmentStartLine": 1668,
+        "entityResolutions": [
+          {
+            "original": "Belvedere",
+            "canonical": "Belvedere",
+            "page": "Org/Belvedere.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Belvedere.md",
+          "relation": "contradict",
+          "rationale": "The wiki page describes Belvedere as an Org with roles for academics, archivists, aristocrats, and arcanists, but makes no mention of it functioning as a school or providing education to children; the claim introduces a purpose not supported by the page.",
+          "excerpt": "Now, a member of Belvedere has a few paths to take. They could join the ranks of the academics, studying natural phenomena. They could become archivists, recording history's ebb and flow. They could be aristocrats, moving through polite society like a fish through water. Finally, they could be arcanists, working closely with the Hearts and their divine machinery."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Children in Belvedere do not ordinarily receive permission to travel out into the field hundreds of miles away from Belvedere; such cases are considered special exceptions.",
+        "lines": [
+          1704,
+          1706
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Belvedere"
+        ],
+        "sourceSegmentStartLine": 1668,
+        "entityResolutions": [
+          {
+            "original": "Belvedere",
+            "canonical": "Belvedere",
+            "page": "Org/Belvedere.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Belvedere.md",
+          "relation": "new",
+          "rationale": "The wiki page contains no information about children in Belvedere, field travel permissions, or policies regarding exceptions for travel, so this claim cannot be classified against any existing page content.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Sableclutch is a neighborhood located near the party's base of operations, in the city of Hallia.",
+        "lines": [
+          1877,
+          1878
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch",
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1869,
+        "entityResolutions": [
+          {
+            "original": "Sableclutch",
+            "canonical": "Sableclutch",
+            "page": "Geography/Calaria/Hallia/Sableclutch/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "consistent",
+          "rationale": "The page confirms Sableclutch is a neighborhood in the city of Hallia.",
+          "excerpt": "Sableclutch is a poorer neighborhood at the southernmost point of Hallia."
+        },
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about Sableclutch being a neighborhood in Hallia adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Sableclutch Scrap is a scrapyard located in the Sableclutch neighborhood.",
+        "lines": [
+          1877,
+          1878
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch Scrap",
+          "Sableclutch"
+        ],
+        "sourceSegmentStartLine": 1869,
+        "entityResolutions": [
+          {
+            "original": "Sableclutch",
+            "canonical": "Sableclutch",
+            "page": "Geography/Calaria/Hallia/Sableclutch/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Sableclutch Scrap",
+            "canonical": "Sableclutch Scrap",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page describes Sableclutch as a district but makes no mention of a specific business called Sableclutch Scrap.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Hallia has a public tram transportation system.",
+        "lines": [
+          1879,
+          1879
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1869,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about a public tram transportation system adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Sableclutch is not a prosperous part of town.",
+        "lines": [
+          1880,
+          1880
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch"
+        ],
+        "sourceSegmentStartLine": 1869,
+        "entityResolutions": [
+          {
+            "original": "Sableclutch",
+            "canonical": "Sableclutch",
+            "page": "Geography/Calaria/Hallia/Sableclutch/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "consistent",
+          "rationale": "The page explicitly describes Sableclutch as a 'poorer neighborhood' that is 'somewhat overlooked by the rest of the capital.'",
+          "excerpt": "Sableclutch is a poorer neighborhood at the southernmost point of Hallia."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Sableclutch is notable for having numerous religious areas, including many churches.",
+        "lines": [
+          1881,
+          1882
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch"
+        ],
+        "sourceSegmentStartLine": 1869,
+        "entityResolutions": [
+          {
+            "original": "Sableclutch",
+            "canonical": "Sableclutch",
+            "page": "Geography/Calaria/Hallia/Sableclutch/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page contains no mention of religious areas or churches in Sableclutch.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The churches in Sableclutch are mostly dedicated to Iridescent Host, with a smattering of other gods also represented.",
+        "lines": [
+          1883,
+          1883
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch",
+          "Iridescent Host"
+        ],
+        "sourceSegmentStartLine": 1869,
+        "entityResolutions": [
+          {
+            "original": "Sableclutch",
+            "canonical": "Sableclutch",
+            "page": "Geography/Calaria/Hallia/Sableclutch/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "the Host",
+            "canonical": "Iridescent Host",
+            "page": "Divinity/Outer Gods/Iridescent Host.md",
+            "method": "llm",
+            "suggestAlias": true
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page makes no reference to churches, the Iridescent Host, or any religious presence in Sableclutch.",
+          "excerpt": null
+        },
+        {
+          "path": "Divinity/Outer Gods/Iridescent Host.md",
+          "relation": "new",
+          "rationale": "The claim is about the religious makeup of churches in Sableclutch, a specific location not mentioned anywhere on this page, which focuses solely on the Iridescent Host deity's attributes and devotee benefits.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The scrapyard is located on the voidward strata of the city of Hallia, accessible by tram.",
+        "lines": [
+          1911,
+          1911
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1910,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about a scrapyard on the voidward strata accessible by tram adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The voidward direction of Hallia passes through slums before reaching undeveloped land that feels like the far outskirts, despite being geographically close to the city center.",
+        "lines": [
+          1912,
+          1914
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1910,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about the voidward direction passing through slums into undeveloped outskirt-like land adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The voidward part of Hallia is home primarily to factories that dump waste into the river running through the city, situated there to avoid legal liability and harm to residents.",
+        "lines": [
+          1915,
+          1915
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1910,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about voidward factories dumping waste into the city river adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "A river runs through the city of Hallia.",
+        "lines": [
+          1915,
+          1915
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1910,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about a river running through Hallia adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Sableclutch Scrap is a scrapyard located in the voidward industrial district of Hallia, characterized by mountains of trash and large metal-crushing machinery.",
+        "lines": [
+          1919,
+          1924
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch Scrap",
+          "Hallia"
+        ],
+        "sourceSegmentStartLine": 1910,
+        "entityResolutions": [
+          {
+            "original": "Hallia",
+            "canonical": "Hallia",
+            "page": "Geography/Calaria/Hallia/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Sableclutch Scrap",
+            "canonical": "Sableclutch Scrap",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about Sableclutch Scrap being a scrapyard in the voidward industrial district adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "A contact named Copperjaw operates at or is associated with Sableclutch Scrap, and is known to the character Anouk.",
+        "lines": [
+          1928,
+          1928
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw",
+          "Sableclutch Scrap",
+          "Anouk"
+        ],
+        "sourceSegmentStartLine": 1910,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Anouk",
+            "canonical": "Anouk Marchal",
+            "page": "Org/Iconoclasm/People/Anouk Marchal.md",
+            "method": "exact",
+            "suggestAlias": false
+          },
+          {
+            "original": "Sableclutch Scrap",
+            "canonical": "Sableclutch Scrap",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Anouk Marchal.md",
+          "relation": "new",
+          "rationale": "This claim is primarily about a contact named Copperjaw and their association with Sableclutch Scrap, which is a separate entity/NPC not described on Anouk's page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw is a dwarven man who operates a Crusher.",
+        "lines": [
+          1971,
+          1973
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw",
+          "Crusher"
+        ],
+        "sourceSegmentStartLine": 1969,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Crusher",
+            "canonical": "Crusher",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw has a mashed-up, misshapen nose and a black eye, indicating he regularly gets into fights.",
+        "lines": [
+          1975,
+          1976
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw"
+        ],
+        "sourceSegmentStartLine": 1969,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw appears to be at the end of middle age or beginning of elderly, which by dwarven reckoning is approximately 120–130 years old.",
+        "lines": [
+          1977,
+          1979
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw"
+        ],
+        "sourceSegmentStartLine": 1969,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "In dwarven society, the end of middle age corresponds to roughly 120–130 years of age.",
+        "lines": [
+          1977,
+          1979
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 1969,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw's bottom jaw has been replaced with a crude copper prosthetic, roughly shaped like a jaw, which is the origin of his name.",
+        "lines": [
+          1980,
+          1981
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw"
+        ],
+        "sourceSegmentStartLine": 1969,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "A person named Anaïs directed the party to seek out Copperjaw for work, indicating Copperjaw regularly hires people for jobs.",
+        "lines": [
+          1987,
+          1990
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Copperjaw",
+          "Anaïs"
+        ],
+        "sourceSegmentStartLine": 1969,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Anaïs",
+            "canonical": "Anaïs Marchal",
+            "page": "Org/Iconoclasm/People/Anaïs Marchal.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Iconoclasm/People/Anaïs Marchal.md",
+          "relation": "new",
+          "rationale": "The claim introduces a character named Copperjaw and describes Anaïs directing the party toward them for work, which is not mentioned anywhere on this page and concerns a different entity.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw is the kind of person who does not make allowances for age when testing someone's strength in a handshake.",
+        "lines": [
+          2003,
+          2004
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw"
+        ],
+        "sourceSegmentStartLine": 1969,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The employer operates out of a converted storage container used as an office.",
+        "lines": [
+          2039,
+          2039
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2015,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The handcuffs used to secure the suitcase are magical in nature.",
+        "lines": [
+          2048,
+          2048
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2015,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": "Phenomena/Harmony/index.md",
+          "relation": "new",
+          "rationale": "The claim is about magical handcuffs securing a suitcase, which is entirely unrelated to the wiki page's topic of Harmony magic on Færrin.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The locked metal suitcase is extraordinarily heavy — heavy enough that dropping it would make a small crater in the ground.",
+        "lines": [
+          2066,
+          2069
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2015,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw operates a scrapyard.",
+        "lines": [
+          2087,
+          2088
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw"
+        ],
+        "sourceSegmentStartLine": 2079,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw has a Giant Crusher available at his scrapyard, which he uses to deter unwanted visitors.",
+        "lines": [
+          2087,
+          2088
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw",
+          "Giant Crusher"
+        ],
+        "sourceSegmentStartLine": 2079,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Giant Crusher",
+            "canonical": "Giant Crusher",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Automobiles exist in this setting, and as a consequence tire companies also exist.",
+        "lines": [
+          2103,
+          2104
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2079,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Chorath Engineering.md",
+          "relation": "new",
+          "rationale": "While the page confirms automobiles exist (Chorath makes cars), the claim about tire companies existing is about a different entity/topic not covered or implied on this page.",
+          "excerpt": "An automobile designer and builder. Based in [[Geography/Brithwyn/index|Brithwyn]], Chorath makes cars for any occasion -- city driving, shootouts, and exploring the [[Infinite Horizon|Horizon]]."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "A publication called the Korath Guide exists in this setting, analogous to a restaurant/travel guide.",
+        "lines": [
+          2106,
+          2109
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Korath Guide",
+          "Korath"
+        ],
+        "sourceSegmentStartLine": 2079,
+        "entityResolutions": [
+          {
+            "original": "Korath Guide",
+            "canonical": "Korath Guide",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Korath",
+            "canonical": "Korath",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Diamond District is a relatively upscale part of the city, known for jewelers and fine metal shops, and is located near high-end residential areas.",
+        "lines": [
+          2135,
+          2147
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Diamond District"
+        ],
+        "sourceSegmentStartLine": 2125,
+        "entityResolutions": [
+          {
+            "original": "Diamond District",
+            "canonical": "Diamond District",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The setting does not have television; radio shows exist instead.",
+        "lines": [
+          2348,
+          2349
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2334,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Ministry of Cultural Progress/index.md",
+          "relation": "new",
+          "rationale": "The page describes MoCuP's radio broadcasting activities but makes no mention of television or its absence in the setting; this claim is about a broader world-building fact not covered by this page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Tarv is a cross-sphere entity or concept, meaning it exists across multiple spheres/worlds.",
+        "lines": [
+          2357,
+          2358
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Tarv"
+        ],
+        "sourceSegmentStartLine": 2334,
+        "entityResolutions": [
+          {
+            "original": "Tarv",
+            "canonical": "Tarv",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Phenomena/Infinite Horizon.md",
+          "relation": "new",
+          "rationale": "The claim is about an entity called Tarv and its cross-sphere nature, which is not mentioned anywhere on this page about the Infinite Horizon phenomenon.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Tarv's presence in this sphere is explained as convergent evolution — the setting independently developed the same concept rather than through direct cross-sphere transmission.",
+        "lines": [
+          2359,
+          2361
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Tarv"
+        ],
+        "sourceSegmentStartLine": 2334,
+        "entityResolutions": [
+          {
+            "original": "Tarv",
+            "canonical": "Tarv",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Phenomena/Infinite Horizon.md",
+          "relation": "new",
+          "rationale": "The claim is about Tarv's origin being explained through convergent evolution across spheres, a topic entirely unrelated to the Infinite Horizon page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The setting is described as a magical society where bird people and other non-human races are a common sight and do not attract unusual attention.",
+        "lines": [
+          2375,
+          2375
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2371,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Færrin.md",
+          "relation": "contradict",
+          "rationale": "The wiki page states that before magic arrived, the only sentient life on Færrin was human, and that non-human traits only emerged afterward due to magical energy — implying non-human races are a relatively recent and notable development, not a long-established 'common sight' that attracts no attention.",
+          "excerpt": "Before magic was introduced to Færrin, the only sentient life on the planet was human. Afterward, more than half of the humans found themselves taking on new traits, spurred by the sudden influx of magical energy. Magic beasts with sentience also appeared throughout the planet."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The party's route back passes through a trolley area, suggesting the city has a trolley transit system.",
+        "lines": [
+          2398,
+          2398
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [],
+        "sourceSegmentStartLine": 2371,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "A goblin pickpocket was encountered in an alley; the goblin has a greenish skin tone, appears to be in their late 20s, and is shorter than a human adult.",
+        "lines": [
+          2450,
+          2453
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2428,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Threshold Authority officers wear a greenish uniform with a large 'TA' insignia on it.",
+        "lines": [
+          2551,
+          2551
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Threshold Authority"
+        ],
+        "sourceSegmentStartLine": 2541,
+        "entityResolutions": [
+          {
+            "original": "Threshold Authority",
+            "canonical": "Threshold Authority",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Black Line is a law enforcement organization that generally polices the nicer parts of the city.",
+        "lines": [
+          2552,
+          2554
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Black Line"
+        ],
+        "sourceSegmentStartLine": 2541,
+        "entityResolutions": [
+          {
+            "original": "Black Line",
+            "canonical": "Black Line",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "new",
+          "rationale": "The page does not mention Black Line or any law enforcement organization; this claim is about a different entity.",
+          "excerpt": null
+        },
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about Black Line being a law enforcement organization policing nicer parts of the city adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Black Line officers stand out as unusual when present in less affluent parts of the city, as their jurisdiction covers nicer districts.",
+        "lines": [
+          2554,
+          2555
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Black Line"
+        ],
+        "sourceSegmentStartLine": 2541,
+        "entityResolutions": [
+          {
+            "original": "Black Line",
+            "canonical": "Black Line",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "new",
+          "rationale": "The page does not reference Black Line officers or their jurisdiction, so this claim concerns a different entity not covered on this page.",
+          "excerpt": null
+        },
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about Black Line officers being unusual in less affluent areas adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Black Line officers wear full uniforms and carry batons as their standard sidearm, rather than firearms.",
+        "lines": [
+          2556,
+          2558
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Black Line"
+        ],
+        "sourceSegmentStartLine": 2541,
+        "entityResolutions": [
+          {
+            "original": "Black Line",
+            "canonical": "Black Line",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Blackline is an organization or service that offers paid subscriptions, and law enforcement officers are associated with it — implying policing services are provided on a subscription basis in this setting.",
+        "lines": [
+          2571,
+          2574
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Blackline"
+        ],
+        "sourceSegmentStartLine": 2560,
+        "entityResolutions": [
+          {
+            "original": "Blackline",
+            "canonical": "Blackline",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/index.md",
+          "relation": "new",
+          "rationale": "The wiki page makes no mention of Blackline or subscription-based policing services; this claim is about a different entity not covered on this page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Sableclutch Scrap is a junkyard or scrap business located in the area where the officers regularly patrol.",
+        "lines": [
+          2587,
+          2594
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Sableclutch Scrap"
+        ],
+        "sourceSegmentStartLine": 2560,
+        "entityResolutions": [
+          {
+            "original": "Sableclutch Scrap",
+            "canonical": "Sableclutch Scrap",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "new",
+          "rationale": "The page does not mention Sableclutch Scrap or any officer patrol areas, so this claim introduces entities not present on the page.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Blackline agents carry identification badges bearing an identification number.",
+        "lines": [
+          2629,
+          2630
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Blackline"
+        ],
+        "sourceSegmentStartLine": 2627,
+        "entityResolutions": [
+          {
+            "original": "Blackline",
+            "canonical": "Blackline",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Blackline badges are not commonly encountered by local law enforcement, suggesting the company does not frequently operate in the same areas.",
+        "lines": [
+          2648,
+          2648
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Blackline"
+        ],
+        "sourceSegmentStartLine": 2627,
+        "entityResolutions": [
+          {
+            "original": "Blackline",
+            "canonical": "Blackline",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "new",
+          "rationale": "The page makes no reference to Blackline badges or local law enforcement interactions, so this claim is about a different entity.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Blackline is a private law enforcement company that operates in at least some districts of the city.",
+        "lines": [
+          2648,
+          2652
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Blackline"
+        ],
+        "sourceSegmentStartLine": 2627,
+        "entityResolutions": [
+          {
+            "original": "Blackline",
+            "canonical": "Blackline",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/index.md",
+          "relation": "new",
+          "rationale": "The wiki page does not reference Blackline or any private law enforcement company operating in city districts; this claim belongs to a different entity or topic.",
+          "excerpt": null
+        },
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about Blackline being a private law enforcement company operating in some districts adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw is a named individual known to Blackline agents, who report to or communicate with them.",
+        "lines": [
+          2672,
+          2672
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Copperjaw",
+          "Blackline"
+        ],
+        "sourceSegmentStartLine": 2627,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Blackline",
+            "canonical": "Blackline",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Copperjaw has been known to hire people, including children, to deliver important items or cases.",
+        "lines": [
+          2693,
+          2696
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Copperjaw"
+        ],
+        "sourceSegmentStartLine": 2679,
+        "entityResolutions": [
+          {
+            "original": "Copperjaw",
+            "canonical": "Copperjaw",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Officer Smith is a named officer of the local law enforcement.",
+        "lines": [
+          2704,
+          2708
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Officer Smith"
+        ],
+        "sourceSegmentStartLine": 2679,
+        "entityResolutions": [
+          {
+            "original": "Officer Smith",
+            "canonical": "Officer Smith",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Officer Smith's partner, known as Mute, is unable to speak due to a bad accident sustained in a scuffle with a local gang.",
+        "lines": [
+          2715,
+          2721
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Mute",
+          "Officer Smith"
+        ],
+        "sourceSegmentStartLine": 2679,
+        "entityResolutions": [
+          {
+            "original": "Mute",
+            "canonical": "Mute",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Officer Smith",
+            "canonical": "Officer Smith",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "new",
+          "rationale": "The page contains no mention of Officer Smith, a partner called Mute, or any individuals; this claim is about different entities entirely.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "A trolley station is located in or near the industrial district with factories and scrapyards.",
+        "lines": [
+          2763,
+          2768
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [],
+        "sourceSegmentStartLine": 2739,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page describes Sableclutch as an industrial/dockworker district but does not mention a trolley station.",
+          "excerpt": "Sableclutch is dominated by the dockworkers and warehouse employees that ply their trade on the river."
+        },
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about a trolley station near the industrial district adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The area the party is traveling through has winding streets with no traffic cops, because traffic enforcement would cost money and there is no clear party to fund it.",
+        "lines": [
+          2765,
+          2765
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2739,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page does not describe the street layout or traffic enforcement (or lack thereof) in Sableclutch.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The area near the trolley station is characterized by trucks carting goods in and out of factories and scrapyards.",
+        "lines": [
+          2766,
+          2766
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2739,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page references dockworkers and warehouse employees but does not specifically mention trucks carting goods near a trolley station or scrapyards.",
+          "excerpt": "Sableclutch is dominated by the dockworkers and warehouse employees that ply their trade on the river."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The station has a tram (trolley) system that operates on a fixed route, with trams arriving periodically at designated stops.",
+        "lines": [
+          2803,
+          2822
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "tram",
+          "trolley",
+          "station"
+        ],
+        "sourceSegmentStartLine": 2798,
+        "entityResolutions": [
+          {
+            "original": "tram",
+            "canonical": "tram",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "trolley",
+            "canonical": "trolley",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "station",
+            "canonical": "station",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about the tram system operating on a fixed route with periodic arrivals adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Goblinoid creatures are commonly employed as workers in the factories of the area, and are a visible presence among the working population.",
+        "lines": [
+          2817,
+          2819
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "goblinoid"
+        ],
+        "sourceSegmentStartLine": 2798,
+        "entityResolutions": [
+          {
+            "original": "goblinoid",
+            "canonical": "goblinoid",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/Sableclutch/index.md",
+          "relation": "update",
+          "rationale": "The page describes the workforce in Sableclutch generally but makes no mention of goblinoid creatures as workers in the factories.",
+          "excerpt": "Sableclutch is dominated by the dockworkers and warehouse employees that ply their trade on the river."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "Skinwalkers are difficult to identify by sight alone, requiring a significantly higher DC check than simply determining whether someone is mute.",
+        "lines": [
+          2864,
+          2866
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Skinwalkers"
+        ],
+        "sourceSegmentStartLine": 2852,
+        "entityResolutions": [
+          {
+            "original": "Skinwalkers",
+            "canonical": "Skinwalkers",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The Masque District is an area of the city that contains hotels and serves as a destination for tourists.",
+        "lines": [
+          2887,
+          2887
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Masque District"
+        ],
+        "sourceSegmentStartLine": 2852,
+        "entityResolutions": [
+          {
+            "original": "Masque District",
+            "canonical": "Masque District",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about the Masque District containing hotels and serving tourists adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The tram system has named stations, including at least 'Void 2' and 'Zero' (also called 'Prime'), suggesting a numbered or tiered station naming convention.",
+        "lines": [
+          2894,
+          2895
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "inferred",
+        "entities": [
+          "Void 2",
+          "Zero",
+          "Prime"
+        ],
+        "sourceSegmentStartLine": 2890,
+        "entityResolutions": [
+          {
+            "original": "Void 2",
+            "canonical": "Void 2",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Zero",
+            "canonical": "Zero",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Prime",
+            "canonical": "Prime",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Geography/Calaria/Hallia/index.md",
+          "relation": "update",
+          "rationale": "The wiki page for Hallia is empty, so this claim about named tram stations such as 'Void 2' and 'Zero'/'Prime' adds new information.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The tram line is operated by Prime Meridian.",
+        "lines": [
+          2933,
+          2933
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Prime Meridian"
+        ],
+        "sourceSegmentStartLine": 2925,
+        "entityResolutions": [
+          {
+            "original": "Prime Meridian",
+            "canonical": "Prime Meridian",
+            "page": "Org/Prime Meridian/index.md",
+            "method": "exact",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": "Org/Prime Meridian/index.md",
+          "relation": "consistent",
+          "rationale": "The page states that Prime Meridian 'operates the trains that connect most of Færrin,' which is consistent with the claim that the tram line is operated by Prime Meridian.",
+          "excerpt": "Prime Meridian still build the roads and operates the trains that connect most of Færrin."
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The tram stop the party disembarks at is the central location on its line, making it a high-traffic stop.",
+        "lines": [
+          2945,
+          2946
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2925,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The residential district the party is heading to is wealthy enough that all residents can afford private cars, meaning public transport does not service that part of the city.",
+        "lines": [
+          2950,
+          2951
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2925,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "A taxi fare into the wealthy residential district costs approximately three silver pieces.",
+        "lines": [
+          2956,
+          2956
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [],
+        "sourceSegmentStartLine": 2925,
+        "entityResolutions": []
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "The two figures, referred to by the party as Smith and Mute, were shapeshifters capable of growing approximately a foot and a half in size and shedding their disguised appearance.",
+        "lines": [
+          3073,
+          3074
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Smith",
+          "Mute"
+        ],
+        "sourceSegmentStartLine": 3003,
+        "entityResolutions": [
+          {
+            "original": "Smith",
+            "canonical": "Smith",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Mute",
+            "canonical": "Mute",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "In their true form, Smith and Mute appear as large, pink, fleshy, naked mole rat-like creatures whose clothes melt into their bodies during transformation.",
+        "lines": [
+          3073,
+          3074
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Smith",
+          "Mute"
+        ],
+        "sourceSegmentStartLine": 3003,
+        "entityResolutions": [
+          {
+            "original": "Smith",
+            "canonical": "Smith",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Mute",
+            "canonical": "Mute",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "claim": {
+        "claim": "In their true form, Smith and Mute have faces where the eyes sink into the head leaving only empty sockets, and most other facial features melt back into the skin.",
+        "lines": [
+          3081,
+          3081
+        ],
+        "speaker": "Gamemaster",
+        "role": "gm",
+        "confidence": "stated",
+        "entities": [
+          "Smith",
+          "Mute"
+        ],
+        "sourceSegmentStartLine": 3003,
+        "entityResolutions": [
+          {
+            "original": "Smith",
+            "canonical": "Smith",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          },
+          {
+            "original": "Mute",
+            "canonical": "Mute",
+            "page": null,
+            "method": "none",
+            "suggestAlias": false
+          }
+        ]
+      },
+      "candidatePages": [
+        {
+          "path": null,
+          "relation": "new",
+          "rationale": "No candidate wiki page matched this claim.",
+          "excerpt": null
+        }
+      ]
+    }
+  ]
+}
