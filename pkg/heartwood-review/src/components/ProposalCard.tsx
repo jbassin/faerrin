@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { renderMarkdown, renderWovenPreview } from "@/server/render";
 import { saveDecision, type SessionView } from "@/server/sessions";
+import { draftProposal } from "@/server/draft";
 import type { Decision, ReviewState, WeaveTarget } from "@faerrin/heartwood/src/state/review.ts";
 import { CitationChip } from "./CitationChip.tsx";
 import { CreatePagePicker } from "./CreatePagePicker.tsx";
@@ -44,6 +45,9 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
   const [view, setView] = useState<"edit" | "reading" | "diff">("edit");
   const [previewHtml, setPreviewHtml] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [drafting, setDrafting] = useState(false);
+  const [draftError, setDraftError] = useState<string | null>(null);
+  const [isDraft, setIsDraft] = useState(false);
 
   const warnings = voiceWarnings(authored, { pageType, allSlugs });
   // A new page targets its (proposed) path; amend targets the existing page.
@@ -66,6 +70,22 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
   async function showReading() {
     await refreshPreview();
     setView("reading");
+  }
+
+  // D-5: fetch an in-voice draft as an editable starting point. Never auto-approves.
+  async function doDraft() {
+    setDrafting(true);
+    setDraftError(null);
+    try {
+      const { draft } = await draftProposal({ data: { arc, date, proposalId: proposal.id } });
+      setAuthored(draft);
+      setIsDraft(true);
+      setView("edit");
+    } catch (e) {
+      setDraftError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setDrafting(false);
+    }
   }
 
   async function decide(d: Decision, rejectionReason?: string) {
@@ -138,12 +158,29 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
         />
         <button
           type="button"
-          onClick={() => setAuthored(proposal.facts.map((f) => f.text).join(" "))}
-          style={{ marginLeft: "auto", ...linkBtn }}
+          disabled={drafting}
+          onClick={() => void doDraft()}
+          title="Generate an in-voice draft as an editable starting point (never auto-committed)"
+          style={{ marginLeft: "auto", ...linkBtn, opacity: drafting ? 0.5 : 1 }}
+        >
+          {drafting ? "drafting…" : "✨ draft in voice"}
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setAuthored(proposal.facts.map((f) => f.text).join(" "));
+            setIsDraft(false);
+          }}
+          style={linkBtn}
         >
           scaffold from facts
         </button>
       </div>
+      {draftError && (
+        <div style={{ color: "#c5221f", fontSize: "0.78rem", marginBottom: "0.4rem" }}>
+          Draft failed: {draftError} (needs ANTHROPIC_API_KEY in the app environment)
+        </div>
+      )}
 
       {view === "edit" && (
         <>
@@ -157,9 +194,18 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
           {proposal.kind === "amend" && proposal.targetPath && (
             <WeavePicker targetPath={proposal.targetPath} initial={initialWeave} onChange={setWeave} />
           )}
+          {isDraft && (
+            <div style={{ fontSize: "0.75rem", color: "#7b1fa2", marginBottom: "0.25rem" }}>
+              ✨ machine draft — edit it into your voice before approving; it is never committed as-is.
+              The warnings below are the voice critic.
+            </div>
+          )}
           <textarea
             value={authored}
-            onChange={(e) => setAuthored(e.target.value)}
+            onChange={(e) => {
+              setAuthored(e.target.value);
+              setIsDraft(false);
+            }}
             placeholder="Write the wiki prose in your voice, drawing on the cited facts above…"
             rows={5}
             style={{
@@ -168,7 +214,7 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
               fontSize: "0.95rem",
               padding: "0.6rem",
               borderRadius: 6,
-              border: "1px solid #ccc",
+              border: isDraft ? "1px solid #7b1fa2" : "1px solid #ccc",
               resize: "vertical",
             }}
           />
