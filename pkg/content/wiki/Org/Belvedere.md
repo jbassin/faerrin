@@ -18,4 +18,4 @@ Second came the [[Hearts]], slivers of sentient divine energy gifted by the Oute
 
 Now, a member of Belvedere has a few paths to take. They could join the ranks of the academics, studying natural phenomena. They could become archivists, recording history's ebb and flow. They could be aristocrats, moving through polite society like a fish through water. Finally, they could be arcanists, working closely with the Hearts and their divine machinery.
 
-Belvedere also functions as a school, providing education to children within its walls. Children are not ordinarily granted permission to travel hundreds of miles away into the field — such cases are treated as special exceptions.
+Belvedere's deep integration of Hearts into its hierarchy means that [[Fanes]] are more common here than in most other places — a natural consequence of an Org that has made divine intelligence a structural part of how it operates.
