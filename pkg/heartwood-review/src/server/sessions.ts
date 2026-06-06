@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 // Static imports are CLIENT-SAFE only: pure path helpers, pure local helpers, types, and
 // the pure page-type detector. All node:fs / core-IO is dynamic-imported inside handlers
 // (server-only) so it never lands in the client bundle. See paths.ts for the rationale.
-import { SESSIONS_DIR, REVIEW_DIR, TRANSCRIPTS_DIR, within } from "./paths.ts";
+import { SESSIONS_DIR, REVIEW_DIR, QUALITY_DIR, TRANSCRIPTS_DIR, within } from "./paths.ts";
 import { detectPageType, type PageType } from "../lib/page-type.ts";
 import type { SessionArtifact, SessionSummary } from "@faerrin/heartwood/src/state/store.ts";
 import type {
@@ -136,6 +136,7 @@ export const saveDecision = createServerFn({ method: "POST" })
       "@faerrin/heartwood/src/state/review.ts"
     );
     const current = await readReviewState(REVIEW_DIR, sessionId);
+    const prevDecision = current.decisions[data.proposalId]?.decision;
     const next = applyDecision(current, {
       proposalId: data.proposalId,
       decision: data.decision,
@@ -145,6 +146,30 @@ export const saveDecision = createServerFn({ method: "POST" })
       weave: data.weave,
     });
     await writeReviewState(REVIEW_DIR, next);
+
+    // Rejection memory + quality log (AC-16/AC-26): record the backing claims' signatures on a
+    // tagged rejection so later sessions can suppress identical claims; undo them if the reviewer
+    // changes a previously-rejected proposal to something else. Only touch the store when the
+    // rejected-ness actually changed.
+    if (data.decision === "rejected" || prevDecision === "rejected") {
+      const { readSessionArtifact } = await import("@faerrin/heartwood/src/state/store.ts");
+      const { sessionKey } = await import("@faerrin/heartwood/src/state/identity.ts");
+      const { readRejectionStore, writeRejectionStore, recordRejection, removeRejection } =
+        await import("@faerrin/heartwood/src/state/quality.ts");
+      const artifact = await readSessionArtifact(SESSIONS_DIR, sessionId);
+      const proposal = artifact?.proposals.find((p) => p.id === data.proposalId);
+      if (proposal) {
+        const key = sessionKey(sessionId);
+        let store = await readRejectionStore(QUALITY_DIR);
+        for (const f of proposal.facts) {
+          store =
+            data.decision === "rejected"
+              ? recordRejection(store, { text: f.text, reason: data.rejectionReason, sessionKey: key })
+              : removeRejection(store, f.text, key);
+        }
+        await writeRejectionStore(QUALITY_DIR, store);
+      }
+    }
     return next;
   });
 

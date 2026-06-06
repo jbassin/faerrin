@@ -7,6 +7,7 @@ import { CreatePagePicker } from "./CreatePagePicker.tsx";
 import { WeavePicker } from "./WeavePicker.tsx";
 import { voiceWarnings } from "@/lib/voice-warnings.ts";
 import type { PageType } from "@/lib/page-type.ts";
+import { REJECTION_REASONS, REJECTION_REASON_LABELS, type RejectionReason } from "@/lib/rejection-reasons.ts";
 import "@/styles/wiki-render.css";
 
 type Proposal = SessionView["artifact"]["proposals"][number];
@@ -20,6 +21,7 @@ interface Props {
   initialText: string;
   initialTargetPath: string;
   initialWeave: WeaveTarget | undefined;
+  initialReason: string;
   pageType: PageType;
   allSlugs: string[];
   onSaved: (state: ReviewState) => void;
@@ -32,11 +34,13 @@ const DECISION_COLORS: Record<Decision, string> = {
   deferred: "#b06000",
 };
 
-export function ProposalCard({ arc, date, proposal, initialDecision, initialText, initialTargetPath, initialWeave, pageType, allSlugs, onSaved }: Props) {
+export function ProposalCard({ arc, date, proposal, initialDecision, initialText, initialTargetPath, initialWeave, initialReason, pageType, allSlugs, onSaved }: Props) {
   const [authored, setAuthored] = useState(initialText);
   const [targetPath, setTargetPath] = useState(initialTargetPath);
   const [weave, setWeave] = useState<WeaveTarget | undefined>(initialWeave);
   const [decision, setDecision] = useState<Decision>(initialDecision);
+  const [reason, setReason] = useState<string>(initialReason);
+  const [picking, setPicking] = useState(false);
   const [view, setView] = useState<"edit" | "reading" | "diff">("edit");
   const [previewHtml, setPreviewHtml] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -64,7 +68,7 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
     setView("reading");
   }
 
-  async function decide(d: Decision) {
+  async function decide(d: Decision, rejectionReason?: string) {
     setBusy(true);
     try {
       const state = await saveDecision({
@@ -74,11 +78,14 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
           proposalId: proposal.id,
           decision: d,
           authoredText: authored || undefined,
+          rejectionReason: d === "rejected" ? rejectionReason : undefined,
           targetPath: proposal.kind === "create" ? targetPath || undefined : undefined,
           weave: proposal.kind === "amend" ? weave : undefined,
         },
       });
       setDecision(d);
+      setReason(d === "rejected" ? rejectionReason ?? "" : "");
+      setPicking(false);
       onSaved(state);
     } finally {
       setBusy(false);
@@ -207,9 +214,61 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
           disabled={busy || !authored.trim() || (proposal.kind === "create" && !targetPath.trim())}
           onClick={() => decide("approved")}
         />
-        <DecideBtn label="Reject" tone="#c5221f" disabled={busy} onClick={() => decide("rejected")} />
+        <DecideBtn
+          label="Reject"
+          tone="#c5221f"
+          disabled={busy}
+          onClick={() => setPicking((p) => !p)}
+        />
         <DecideBtn label="Defer" tone="#b06000" disabled={busy} onClick={() => decide("deferred")} />
+        {decision === "rejected" && reason && (
+          <span style={{ alignSelf: "center", fontSize: "0.78rem", color: "#c5221f" }}>
+            rejected: {REJECTION_REASON_LABELS[reason as RejectionReason] ?? reason}
+          </span>
+        )}
       </div>
+
+      {/* AC-16: a tagged reason on Reject → quality log + rejection memory. */}
+      {picking && (
+        <div
+          style={{
+            marginTop: "0.6rem",
+            padding: "0.6rem 0.75rem",
+            background: "rgba(197,34,31,0.06)",
+            border: "1px solid rgba(197,34,31,0.25)",
+            borderRadius: 8,
+          }}
+        >
+          <div style={{ fontSize: "0.78rem", color: "#c5221f", fontWeight: 600, marginBottom: "0.4rem" }}>
+            Why reject? (tags the quality log; an identical claim is suppressed next session)
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
+            {REJECTION_REASONS.map((r) => (
+              <button
+                key={r}
+                type="button"
+                disabled={busy}
+                onClick={() => decide("rejected", r)}
+                style={{
+                  font: "inherit",
+                  fontSize: "0.8rem",
+                  padding: "0.25rem 0.7rem",
+                  borderRadius: 999,
+                  border: "1px solid #c5221f",
+                  background: "#fff",
+                  color: "#c5221f",
+                  cursor: busy ? "not-allowed" : "pointer",
+                }}
+              >
+                {REJECTION_REASON_LABELS[r]}
+              </button>
+            ))}
+            <button type="button" onClick={() => decide("rejected")} disabled={busy} style={{ ...linkBtn }}>
+              reject without a reason
+            </button>
+          </div>
+        </div>
+      )}
     </article>
   );
 }

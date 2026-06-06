@@ -15,6 +15,8 @@ export const TRANSCRIPTS_DIR = join(CONTENT_ROOT, "transcripts");
 export const CORE_STATE = join(process.cwd(), "..", "heartwood", "state");
 export const SESSIONS_DIR = join(CORE_STATE, "sessions");
 export const REVIEW_DIR = join(CORE_STATE, "review");
+/** Cross-session rejection memory + quality log (AC-16/AC-26). */
+export const QUALITY_DIR = join(CORE_STATE, "quality");
 
 /** Durable provenance ledger — OUTSIDE wiki/ so aether's build is untouched (C6/D-1). */
 export const PROV_ROOT = join(CONTENT_ROOT, ".heartwood", "provenance");

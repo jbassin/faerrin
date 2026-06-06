@@ -44,6 +44,8 @@ state/proposals/_debug/
 # per-session review artifacts + decisions (regenerable via `ingest`; decisions are local)
 state/sessions/
 state/review/
+# cross-session rejection memory + quality log (local tuning data)
+state/quality/
 
 # eval runner output (regenerable)
 eval/results/

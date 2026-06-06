@@ -41,6 +41,7 @@ function SessionPage() {
       initialText={review.decisions[p.id]?.authoredText ?? ""}
       initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
       initialWeave={review.decisions[p.id]?.weave}
+      initialReason={review.decisions[p.id]?.rejectionReason ?? ""}
       pageType={pageTypes[p.id] ?? "lore"}
       allSlugs={allSlugs}
       onSaved={setReview}
