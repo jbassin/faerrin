@@ -1,11 +1,1917 @@
 {
-  "session": { "arc": "through-a-song-darkly", "date": "2025-08-28" },
+  "session": {
+    "arc": "through-a-song-darkly",
+    "date": "2025-08-28"
+  },
   "canonFacts": [
     {
-      "id": "EXAMPLE-replace-me",
-      "statement": "Sableclutch Scrap is a scrapyard run by Copperjaw, who hires anyone willing to work.",
-      "entities": ["Sableclutch Scrap", "Copperjaw"],
-      "citations": [{ "start": 1877, "end": 1924 }]
+      "id": "d001",
+      "statement": "Elias is a dwarf who serves as quartermaster for Iconoclasm, working in the storeroom sorting spears.",
+      "entities": [
+        "Elias",
+        "Iconoclasm"
+      ],
+      "citations": [
+        {
+          "start": 543,
+          "end": 571
+        }
+      ]
+    },
+    {
+      "id": "d002",
+      "statement": "Illmari Vaino is the founder of Iconoclasm.",
+      "entities": [
+        "Illmari Vaino",
+        "Iconoclasm"
+      ],
+      "citations": [
+        {
+          "start": 565,
+          "end": 565
+        }
+      ]
+    },
+    {
+      "id": "d003",
+      "statement": "Gin Soaked Rag is associated with the Sin and Tonic.",
+      "entities": [
+        "Gin Soaked Rag",
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 566,
+          "end": 566
+        }
+      ]
+    },
+    {
+      "id": "d004",
+      "statement": "Anaïs and Anouk are adventurers of approximately level 11.",
+      "entities": [
+        "Anaïs",
+        "Anouk"
+      ],
+      "citations": [
+        {
+          "start": 567,
+          "end": 567
+        }
+      ]
+    },
+    {
+      "id": "d005",
+      "statement": "Dura Oil Drinker is a mechanic.",
+      "entities": [
+        "Dura Oil Drinker"
+      ],
+      "citations": [
+        {
+          "start": 568,
+          "end": 568
+        }
+      ]
+    },
+    {
+      "id": "d006",
+      "statement": "The party's first mission was to find out what happened to Flynn, a male sprite who was investigating a roller rink being opened by the Roundhat Gang.",
+      "entities": [
+        "Flynn",
+        "Roundhat Gang"
+      ],
+      "citations": [
+        {
+          "start": 574,
+          "end": 576
+        }
+      ]
+    },
+    {
+      "id": "d007",
+      "statement": "The Roundhat Gang is run by Tywelwyn Leatherhide.",
+      "entities": [
+        "Roundhat Gang",
+        "Tywelwyn Leatherhide"
+      ],
+      "citations": [
+        {
+          "start": 576,
+          "end": 578
+        }
+      ]
+    },
+    {
+      "id": "d008",
+      "statement": "Tywelwyn Leatherhide ordered material from Embercall Industries, which is associated with the Pyrelight faction.",
+      "entities": [
+        "Tywelwyn Leatherhide",
+        "Embercall Industries",
+        "Pyrelight"
+      ],
+      "citations": [
+        {
+          "start": 610,
+          "end": 613
+        }
+      ]
+    },
+    {
+      "id": "d009",
+      "statement": "Pyrelight is a faction whose associated company name is Embercall Industries.",
+      "entities": [
+        "Pyrelight",
+        "Embercall Industries"
+      ],
+      "citations": [
+        {
+          "start": 613,
+          "end": 613
+        }
+      ]
+    },
+    {
+      "id": "d010",
+      "statement": "The law enforcement authority in the area is called the Threshold Authority, also known as the TA.",
+      "entities": [
+        "Threshold Authority"
+      ],
+      "citations": [
+        {
+          "start": 667,
+          "end": 677
+        }
+      ]
+    },
+    {
+      "id": "d011",
+      "statement": "Flynn was found dead in a spooky underground area filled with bones, apparently having been dead for some time before the party arrived.",
+      "entities": [
+        "Flynn"
+      ],
+      "citations": [
+        {
+          "start": 695,
+          "end": 696
+        }
+      ]
+    },
+    {
+      "id": "d012",
+      "statement": "Augers are creatures created through a divination ritual; they are an offshoot of that ritual and can be fed to improve divination.",
+      "entities": [
+        "Augers"
+      ],
+      "citations": [
+        {
+          "start": 697,
+          "end": 698
+        }
+      ]
+    },
+    {
+      "id": "d013",
+      "statement": "Flynn's body was recovered and returned to the Sin and Tonic, where the party reported their findings to Illmari Vaino.",
+      "entities": [
+        "Flynn",
+        "Sin and Tonic",
+        "Illmari Vaino"
+      ],
+      "citations": [
+        {
+          "start": 705,
+          "end": 706
+        }
+      ]
+    },
+    {
+      "id": "d014",
+      "statement": "Iconoclasm has a company vehicle (referred to as a company car) available for use by its members.",
+      "entities": [
+        "Iconoclasm"
+      ],
+      "citations": [
+        {
+          "start": 706,
+          "end": 707
+        }
+      ]
+    },
+    {
+      "id": "d015",
+      "statement": "A conspiracy theorist known as Whiskers told the party about an entity or phenomenon called the Zorbon, claiming it is connected to mushrooms and radio signals, and that tinfoil hats provide protection.",
+      "entities": [
+        "Whiskers",
+        "Zorbon"
+      ],
+      "citations": [
+        {
+          "start": 717,
+          "end": 727
+        }
+      ]
+    },
+    {
+      "id": "d016",
+      "statement": "The party is obligated to attend a meeting about the Zorbon on the coming Saturday.",
+      "entities": [
+        "Zorbon"
+      ],
+      "citations": [
+        {
+          "start": 717,
+          "end": 717
+        }
+      ]
+    },
+    {
+      "id": "d017",
+      "statement": "The party retrieved a receiver/satellite dish from the roller rink rooftop and returned it to the Sin and Tonic as their base.",
+      "entities": [
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 728,
+          "end": 728
+        }
+      ]
+    },
+    {
+      "id": "d018",
+      "statement": "The party took a satellite/radar dish back to their base at the Sin and Tonic after stealing it from a rollerama (roller skating area).",
+      "entities": [
+        "Sin and Tonic",
+        "rollerama"
+      ],
+      "citations": [
+        {
+          "start": 728,
+          "end": 778
+        }
+      ]
+    },
+    {
+      "id": "d019",
+      "statement": "The party transported the radar dish in a Volkswagen Beetle called the 'city tripper'.",
+      "entities": [
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 777,
+          "end": 777
+        }
+      ]
+    },
+    {
+      "id": "d020",
+      "statement": "The radar dish is being stored in the garage of the Sin and Tonic.",
+      "entities": [
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 778,
+          "end": 778
+        }
+      ]
+    },
+    {
+      "id": "d021",
+      "statement": "The Sin and Tonic is described as roughly a two-star establishment — not luxurious, but not the worst either.",
+      "entities": [
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 781,
+          "end": 783
+        }
+      ]
+    },
+    {
+      "id": "d022",
+      "statement": "The Sin and Tonic is a single-story building; it has no second floor, with sleeping quarters at the back of the pub.",
+      "entities": [
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 831,
+          "end": 833
+        }
+      ]
+    },
+    {
+      "id": "d023",
+      "statement": "A Fane is a space whose existence and size are sustained by a magical object called a Heart; the size of a Fane is directly related to the amount of magical energy available to the Heart maintaining it.",
+      "entities": [
+        "Fane",
+        "Heart"
+      ],
+      "citations": [
+        {
+          "start": 836,
+          "end": 840
+        }
+      ]
+    },
+    {
+      "id": "d024",
+      "statement": "Multiple Hearts can jointly maintain a single Fane, a technique used by large organizations to sustain large-footprint headquarters.",
+      "entities": [
+        "Fane",
+        "Heart"
+      ],
+      "citations": [
+        {
+          "start": 841,
+          "end": 842
+        }
+      ]
+    },
+    {
+      "id": "d025",
+      "statement": "Belvedere has integrated Hearts into its civic hierarchy more than most places, and Fanes are especially numerous there.",
+      "entities": [
+        "Belvedere"
+      ],
+      "citations": [
+        {
+          "start": 858,
+          "end": 862
+        }
+      ]
+    },
+    {
+      "id": "d026",
+      "statement": "Concordia is a major corporation in this world, equivalent to consumer-electronics giants like LG or Samsung, producing appliances and home-facing goods. They standardize the branding of their consumer-facing Hearts so that all Fanes they maintain appear consistent.",
+      "entities": [
+        "Concordia"
+      ],
+      "citations": [
+        {
+          "start": 867,
+          "end": 872
+        }
+      ]
+    },
+    {
+      "id": "d027",
+      "statement": "The RunGunners are a particularly famous group of mercenaries and guns-for-hire who maintain an entire city in the middle of a desert, sustained as one very large Fane powered by many Hearts of different personalities, resulting in a clashing, mishmash environment.",
+      "entities": [
+        "RunGunners"
+      ],
+      "citations": [
+        {
+          "start": 875,
+          "end": 879
+        }
+      ]
+    },
+    {
+      "id": "d028",
+      "statement": "When Hearts of different origins jointly maintain a Fane, the areas where their influences meet appear strange and patchwork.",
+      "entities": [
+        "Fane",
+        "Heart"
+      ],
+      "citations": [
+        {
+          "start": 882,
+          "end": 882
+        }
+      ]
+    },
+    {
+      "id": "d029",
+      "statement": "The Heart of the Sin and Tonic is named Ginny (also called 'Gin Soaked Rag'). Ginny's physical form is a suit vest and dress pants, with a twisted-up dish rag in place of a head.",
+      "entities": [
+        "Ginny",
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 899,
+          "end": 906
+        }
+      ]
+    },
+    {
+      "id": "d030",
+      "statement": "Ginny tends bar at the Sin and Tonic and can cook food, though he is less skilled at cooking human food than Illmari.",
+      "entities": [
+        "Ginny",
+        "Illmari",
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 919,
+          "end": 929
+        }
+      ]
+    },
+    {
+      "id": "d031",
+      "statement": "There is a supermarket a few blocks from the Sin and Tonic.",
+      "entities": [
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 948,
+          "end": 948
+        }
+      ]
+    },
+    {
+      "id": "d032",
+      "statement": "A person named Tywelwyn ran the roller rink that the party visited; he was not present at the scene and is believed to have gone mad, likely due to sounds being broadcast into his head via the radar dish.",
+      "entities": [
+        "Tywelwyn"
+      ],
+      "citations": [
+        {
+          "start": 960,
+          "end": 961
+        }
+      ]
+    },
+    {
+      "id": "d033",
+      "statement": "The twins at the Sin and Tonic are skilled crafters capable of making healing potions, but they do not run a shop; they require the party to supply components.",
+      "entities": [
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 985,
+          "end": 988
+        }
+      ]
+    },
+    {
+      "id": "d034",
+      "statement": "The party possesses a fragile arcane item called a Sentience Distributor, which appears to spread a received signal more broadly and may have been applied to the radar dish setup at the roller rink.",
+      "entities": [
+        "Sentience Distributor"
+      ],
+      "citations": [
+        {
+          "start": 1015,
+          "end": 1018
+        }
+      ]
+    },
+    {
+      "id": "d035",
+      "statement": "The radar dish is believed to be a device for receiving a signal, not broadcasting one.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 1027,
+          "end": 1028
+        }
+      ]
+    },
+    {
+      "id": "d036",
+      "statement": "Anouk told the party that there is work available in the city and that she has an old friend who runs a scrapyard one district over in Sableclutch, who regularly hires couriers and other workers rather than using a formal service.",
+      "entities": [
+        "Anouk",
+        "Sableclutch"
+      ],
+      "citations": [
+        {
+          "start": 1184,
+          "end": 1199
+        }
+      ]
+    },
+    {
+      "id": "d037",
+      "statement": "The Scale empowers its arbiters to conduct bounty hunting; the Scale does not hire random individuals for such work, as arbiters must be formally empowered by the Scale to act in that capacity.",
+      "entities": [
+        "the Scale"
+      ],
+      "citations": [
+        {
+          "start": 1205,
+          "end": 1208
+        }
+      ]
+    },
+    {
+      "id": "d038",
+      "statement": "Three police organizations operate in Hallia and post bounties for outstanding warrants that independent bounty hunters can pursue.",
+      "entities": [
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 1211,
+          "end": 1211
+        }
+      ]
+    },
+    {
+      "id": "d039",
+      "statement": "In Hallia, particularly strong magic set up by the Host prevents people from sliding between city districts freely; residents must use public transit to travel between districts.",
+      "entities": [
+        "Hallia",
+        "the Host"
+      ],
+      "citations": [
+        {
+          "start": 1230,
+          "end": 1230
+        }
+      ]
+    },
+    {
+      "id": "d040",
+      "statement": "Hallia has a trolley/tram system that runs along a route called 'the Horizon', connecting different districts of the city.",
+      "entities": [
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 1230,
+          "end": 1230
+        }
+      ]
+    },
+    {
+      "id": "d041",
+      "statement": "The Undertable is a pawn shop located in the Star 12 district of Hallia, situated starward down the Horizon from the Sin and Tonic neighborhood.",
+      "entities": [
+        "Undertable",
+        "Hallia",
+        "Star 12"
+      ],
+      "citations": [
+        {
+          "start": 1230,
+          "end": 1253
+        }
+      ]
+    },
+    {
+      "id": "d042",
+      "statement": "The district around the Sin and Tonic is a commercialized, generally poorer area of Hallia where people earn enough to get by but are not well-to-do.",
+      "entities": [
+        "Hallia",
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 1231,
+          "end": 1234
+        }
+      ]
+    },
+    {
+      "id": "d043",
+      "statement": "Further starward in Hallia, buildings become older and less well-maintained; they were built when a tram line was first constructed in anticipation of a boom that never materialized, and have been neglected for decades.",
+      "entities": [
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 1235,
+          "end": 1238
+        }
+      ]
+    },
+    {
+      "id": "d044",
+      "statement": "Anzu has a raven named Othello who followed him from Belvedere to Hallia and rejoined the party outside the Sin and Tonic.",
+      "entities": [
+        "Anzu",
+        "Othello",
+        "Belvedere",
+        "Hallia",
+        "Sin and Tonic"
+      ],
+      "citations": [
+        {
+          "start": 1263,
+          "end": 1300
+        }
+      ]
+    },
+    {
+      "id": "d045",
+      "statement": "Anzu is a member of the Belvedere faction; his family has multiple members involved in Belvedere across different areas.",
+      "entities": [
+        "Anzu",
+        "Belvedere"
+      ],
+      "citations": [
+        {
+          "start": 1310,
+          "end": 1312
+        }
+      ]
+    },
+    {
+      "id": "d046",
+      "statement": "Anzu's father is an archivist within Belvedere.",
+      "entities": [
+        "Anzu",
+        "Belvedere"
+      ],
+      "citations": [
+        {
+          "start": 1314,
+          "end": 1314
+        }
+      ]
+    },
+    {
+      "id": "d047",
+      "statement": "Anzu's mother is not a member of Belvedere; she manages the family's affairs, as the family is relatively well-off.",
+      "entities": [
+        "Anzu",
+        "Belvedere"
+      ],
+      "citations": [
+        {
+          "start": 1317,
+          "end": 1319
+        }
+      ]
+    },
+    {
+      "id": "d048",
+      "statement": "The Undertable is a narrow, windowless shop squeezed between two former homes, identified by a handwritten sign reading 'Under Table' with a crude drawing of a table.",
+      "entities": [
+        "Undertable"
+      ],
+      "citations": [
+        {
+          "start": 1342,
+          "end": 1352
+        }
+      ]
+    },
+    {
+      "id": "d049",
+      "statement": "The Undertable's interior is crammed with a wide variety of goods including kitchen appliances, loose jewelry, eight different radios in various states of deconstruction, and a large unlicensed collection of firearms.",
+      "entities": [
+        "Undertable"
+      ],
+      "citations": [
+        {
+          "start": 1354,
+          "end": 1363
+        }
+      ]
+    },
+    {
+      "id": "d050",
+      "statement": "Smiler is the proprietor of the Undertable and also operates as a fence; he is a centaur standing approximately nine feet tall.",
+      "entities": [
+        "Smiler",
+        "Undertable"
+      ],
+      "citations": [
+        {
+          "start": 1364,
+          "end": 1382
+        }
+      ]
+    },
+    {
+      "id": "d051",
+      "statement": "Johnny has a prior working relationship with Smiler and has dealt with him at the Undertable on at least a couple of occasions before the current session.",
+      "entities": [
+        "Johnny",
+        "Smiler",
+        "Undertable"
+      ],
+      "citations": [
+        {
+          "start": 1370,
+          "end": 1378
+        }
+      ]
+    },
+    {
+      "id": "d052",
+      "statement": "Smiler is heavily adorned with jewelry: multiple yellowish metal bands on both arms, gems braided into his tail, flare gauges in his ears with gems embedded in them, and a long beard braided in the same style as his tail with gems throughout.",
+      "entities": [
+        "Smiler"
+      ],
+      "citations": [
+        {
+          "start": 1385,
+          "end": 1391
+        }
+      ]
+    },
+    {
+      "id": "d053",
+      "statement": "Johnny is currently affiliated with Iconoclasm and has been lent over to them, a fact he discloses to Smiler.",
+      "entities": [
+        "Johnny",
+        "Iconoclasm"
+      ],
+      "citations": [
+        {
+          "start": 1393,
+          "end": 1393
+        }
+      ]
+    },
+    {
+      "id": "d054",
+      "statement": "Smiler extends his friends discount to Johnny's companions on the basis that a friend of Johnny's would not inform on him to the authorities.",
+      "entities": [
+        "Smiler",
+        "Johnny"
+      ],
+      "citations": [
+        {
+          "start": 1426,
+          "end": 1430
+        }
+      ]
+    },
+    {
+      "id": "d055",
+      "statement": "Smiler is a pawn shop owner who buys and sells goods, including radios and equipment such as a poly tool priced at nine gold pieces.",
+      "entities": [
+        "Smiler"
+      ],
+      "citations": [
+        {
+          "start": 1441,
+          "end": 1601
+        }
+      ]
+    },
+    {
+      "id": "d056",
+      "statement": "Full plate armor costs 30 gold pieces at standard price, reduced to 27 gold with Smiler's friends discount (10% off).",
+      "entities": [
+        "Smiler",
+        "Undertable"
+      ],
+      "citations": [
+        {
+          "start": 1463,
+          "end": 1467
+        }
+      ]
+    },
+    {
+      "id": "d057",
+      "statement": "Argyle purchased full plate armor, which costs 30 gold pieces (discounted to 27 gold with a 10% reduction).",
+      "entities": [
+        "Argyle"
+      ],
+      "citations": [
+        {
+          "start": 1463,
+          "end": 1467
+        }
+      ]
+    },
+    {
+      "id": "d058",
+      "statement": "Johnny passed along a message to Smiler asking him to tell 'Donnie' to stop by and talk to 'Red', indicating Red has been receiving updates.",
+      "entities": [
+        "Johnny",
+        "Smiler",
+        "Donnie",
+        "Red"
+      ],
+      "citations": [
+        {
+          "start": 1570,
+          "end": 1575
+        }
+      ]
+    },
+    {
+      "id": "d059",
+      "statement": "Argyle's eyes shifted from gold to a bright white, almost bluish color after acquiring his new armor.",
+      "entities": [
+        "Argyle"
+      ],
+      "citations": [
+        {
+          "start": 1576,
+          "end": 1578
+        }
+      ]
+    },
+    {
+      "id": "d060",
+      "statement": "Benny is nine years old and came from Belvedere, called there by the Voidsong as the other party members were.",
+      "entities": [
+        "Benny",
+        "Belvedere",
+        "Voidsong"
+      ],
+      "citations": [
+        {
+          "start": 1606,
+          "end": 1659
+        }
+      ]
+    },
+    {
+      "id": "d061",
+      "statement": "Johnny is half-Elven.",
+      "entities": [
+        "Johnny"
+      ],
+      "citations": [
+        {
+          "start": 1632,
+          "end": 1632
+        }
+      ]
+    },
+    {
+      "id": "d062",
+      "statement": "Argyle is approximately 20 years old in human years.",
+      "entities": [
+        "Argyle"
+      ],
+      "citations": [
+        {
+          "start": 1637,
+          "end": 1644
+        }
+      ]
+    },
+    {
+      "id": "d063",
+      "statement": "Benny's father is named Atum, who is associated with Belvedere and may be an archivist.",
+      "entities": [
+        "Benny",
+        "Atum",
+        "Belvedere"
+      ],
+      "citations": [
+        {
+          "start": 1675,
+          "end": 1710
+        }
+      ]
+    },
+    {
+      "id": "d064",
+      "statement": "Belvedere functions as a school and place of education, among other things, and children there receive an education.",
+      "entities": [
+        "Belvedere"
+      ],
+      "citations": [
+        {
+          "start": 1698,
+          "end": 1703
+        }
+      ]
+    },
+    {
+      "id": "d065",
+      "statement": "Children from Belvedere do not normally receive permission to travel hundreds of miles into the field; Benny's case is considered a special exception.",
+      "entities": [
+        "Benny",
+        "Belvedere"
+      ],
+      "citations": [
+        {
+          "start": 1704,
+          "end": 1706
+        }
+      ]
+    },
+    {
+      "id": "d066",
+      "statement": "Anzu was born in a nest.",
+      "entities": [
+        "Anzu"
+      ],
+      "citations": [
+        {
+          "start": 1726,
+          "end": 1726
+        }
+      ]
+    },
+    {
+      "id": "d067",
+      "statement": "Johnny was born in a small village residential hospital.",
+      "entities": [
+        "Johnny"
+      ],
+      "citations": [
+        {
+          "start": 1729,
+          "end": 1731
+        }
+      ]
+    },
+    {
+      "id": "d068",
+      "statement": "Johnny is originally from Raelion, which has since been destroyed.",
+      "entities": [
+        "Johnny",
+        "Raelion"
+      ],
+      "citations": [
+        {
+          "start": 1737,
+          "end": 1739
+        }
+      ]
+    },
+    {
+      "id": "d069",
+      "statement": "Anzu and Benny are from Austrene.",
+      "entities": [
+        "Anzu",
+        "Benny",
+        "Austrene"
+      ],
+      "citations": [
+        {
+          "start": 1745,
+          "end": 1746
+        }
+      ]
+    },
+    {
+      "id": "d070",
+      "statement": "Johnny lived in a small mountain town called Helmstier, located right on the border between two countries.",
+      "entities": [
+        "Johnny",
+        "Helmstier"
+      ],
+      "citations": [
+        {
+          "start": 1753,
+          "end": 1755
+        }
+      ]
+    },
+    {
+      "id": "d071",
+      "statement": "Johnny ran a tavern called The Last Stop in Helmstier, named for being the last stop before leaving or entering either bordering country.",
+      "entities": [
+        "Johnny",
+        "The Last Stop",
+        "Helmstier"
+      ],
+      "citations": [
+        {
+          "start": 1757,
+          "end": 1764
+        }
+      ]
+    },
+    {
+      "id": "d072",
+      "statement": "The Pulse communicated with Benny overnight, warning him to be more careful and expressing a desire to keep him alive, and empowered his pick weapon, causing it to glow.",
+      "entities": [
+        "Benny",
+        "The Pulse"
+      ],
+      "citations": [
+        {
+          "start": 1776,
+          "end": 1799
+        }
+      ]
+    },
+    {
+      "id": "d073",
+      "statement": "The party's raiments (clothing/gear) grew slightly larger overnight, implying the characters physically grew.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 1808,
+          "end": 1809
+        }
+      ]
+    },
+    {
+      "id": "d074",
+      "statement": "Argyle received a new business card with 'Doctor' bolded after his licensing came through, and the card was covered as a complimentary benefit by his parents through the Scale.",
+      "entities": [
+        "Argyle",
+        "the Scale"
+      ],
+      "citations": [
+        {
+          "start": 1810,
+          "end": 1824
+        }
+      ]
+    },
+    {
+      "id": "d075",
+      "statement": "Argyle's parents are operatives of the Scale, and their identities are classified.",
+      "entities": [
+        "Argyle",
+        "the Scale"
+      ],
+      "citations": [
+        {
+          "start": 1825,
+          "end": 1829
+        }
+      ]
+    },
+    {
+      "id": "d076",
+      "statement": "Argyle's parents are operatives of the Scale.",
+      "entities": [
+        "Argyle",
+        "Aaron Cross",
+        "Joran Davinrock",
+        "the Scale"
+      ],
+      "citations": [
+        {
+          "start": 1829,
+          "end": 1829
+        }
+      ]
+    },
+    {
+      "id": "d077",
+      "statement": "Argyle's parents are named Aaron Cross and Joran Davinrock; they have different last names.",
+      "entities": [
+        "Argyle",
+        "Aaron Cross",
+        "Joran Davinrock"
+      ],
+      "citations": [
+        {
+          "start": 1847,
+          "end": 1854
+        }
+      ]
+    },
+    {
+      "id": "d078",
+      "statement": "Sableclutch is a neighborhood in Hallia, located somewhat near the city center but on the voidward horizon, and contains a number of religious areas including several churches, mostly dedicated to the Host but also to a smattering of other gods.",
+      "entities": [
+        "Sableclutch",
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 1877,
+          "end": 1883
+        }
+      ]
+    },
+    {
+      "id": "d079",
+      "statement": "Sableclutch Scrap is a scrapyard located in the Sableclutch neighborhood of Hallia, situated voidward and down the horizon from the city center, in an area near factories that dump waste into the river running through Hallia.",
+      "entities": [
+        "Sableclutch Scrap",
+        "Sableclutch",
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 1877,
+          "end": 1919
+        }
+      ]
+    },
+    {
+      "id": "d080",
+      "statement": "Hallia has a public tram system that the party uses to travel between neighborhoods.",
+      "entities": [
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 1879,
+          "end": 1911
+        }
+      ]
+    },
+    {
+      "id": "d081",
+      "statement": "The voidward part of Hallia is mostly factories that dump waste into the river running through the city, with little residential population in that direction.",
+      "entities": [
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 1915,
+          "end": 1918
+        }
+      ]
+    },
+    {
+      "id": "d082",
+      "statement": "Copperjaw was referred to the party by Anouk (also called Onnick), who told them he always needs people for jobs.",
+      "entities": [
+        "Copperjaw",
+        "Anouk"
+      ],
+      "citations": [
+        {
+          "start": 1928,
+          "end": 1987
+        }
+      ]
+    },
+    {
+      "id": "d083",
+      "statement": "Copperjaw is a dwarven man who operates Sableclutch Scrap; he has a mashed-up, misshapen nose, a black eye, and his lower jaw has been replaced with a crude copper prosthetic, which is the origin of his name.",
+      "entities": [
+        "Copperjaw",
+        "Sableclutch Scrap"
+      ],
+      "citations": [
+        {
+          "start": 1971,
+          "end": 1981
+        }
+      ]
+    },
+    {
+      "id": "d084",
+      "statement": "Copperjaw appears to be near the end of middle age or beginning of elderly by dwarven standards, which corresponds to roughly 120–130 years old.",
+      "entities": [
+        "Copperjaw"
+      ],
+      "citations": [
+        {
+          "start": 1977,
+          "end": 1979
+        }
+      ]
+    },
+    {
+      "id": "d085",
+      "statement": "Copperjaw offered the party 100 gold pieces to deliver a locked metal suitcase handcuffed to a carrier, and 70 gold pieces for a separate guarding job.",
+      "entities": [
+        "Copperjaw"
+      ],
+      "citations": [
+        {
+          "start": 2025,
+          "end": 2035
+        }
+      ]
+    },
+    {
+      "id": "d086",
+      "statement": "The locked metal suitcase Copperjaw wants delivered is extremely heavy — heavy enough that dropping it would make a small crater in the ground.",
+      "entities": [
+        "Copperjaw"
+      ],
+      "citations": [
+        {
+          "start": 2066,
+          "end": 2069
+        }
+      ]
+    },
+    {
+      "id": "d087",
+      "statement": "Two people (always coming in pairs, though different individuals each time) have been visiting Sableclutch Scrap and showing interest in the suitcase Copperjaw wants delivered; he expects them to intercept the delivery party en route.",
+      "entities": [
+        "Copperjaw",
+        "Sableclutch Scrap"
+      ],
+      "citations": [
+        {
+          "start": 2086,
+          "end": 2096
+        }
+      ]
+    },
+    {
+      "id": "d088",
+      "statement": "A tire/guide company called Chorath exists in the world, and its guide (the Chorath Guide) rates food establishments similarly to a real-world restaurant guide.",
+      "entities": [
+        "Chorath"
+      ],
+      "citations": [
+        {
+          "start": 2106,
+          "end": 2109
+        }
+      ]
+    },
+    {
+      "id": "d089",
+      "statement": "The delivery destination is an address in the Diamond District of Hallia, a relatively upscale part of the city known for jewelers, fine metal shops, and high-end residential areas.",
+      "entities": [
+        "Diamond District",
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 2135,
+          "end": 2147
+        }
+      ]
+    },
+    {
+      "id": "d090",
+      "statement": "The suitcase is to be handed to a doorman at the Diamond District building; the doorman will use a wax-seal device to unlock it and take it, while the actual client will not show his face to the delivery party.",
+      "entities": [
+        "Diamond District"
+      ],
+      "citations": [
+        {
+          "start": 2170,
+          "end": 2178
+        }
+      ]
+    },
+    {
+      "id": "d091",
+      "statement": "The client receiving the delivery would not show his face to the couriers; instead, a specific doorman would authenticate the handoff using a wax seal-like device that unlocks the delivery.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2173,
+          "end": 2178
+        }
+      ]
+    },
+    {
+      "id": "d092",
+      "statement": "Copperjaw fabricated the contents of the suitcase himself and was already paid for making it; the party is being paid only for delivery.",
+      "entities": [
+        "Copperjaw"
+      ],
+      "citations": [
+        {
+          "start": 2184,
+          "end": 2187
+        }
+      ]
+    },
+    {
+      "id": "d093",
+      "statement": "Benny carried a suitcase handcuffed to his arm during the delivery mission.",
+      "entities": [
+        "Benny"
+      ],
+      "citations": [
+        {
+          "start": 2204,
+          "end": 2205
+        }
+      ]
+    },
+    {
+      "id": "d094",
+      "statement": "Benny was equipped with two picks, a longsword, a silver knife stolen from silverware, a coat pistol, and the briefcase as a bludgeoning object.",
+      "entities": [
+        "Benny"
+      ],
+      "citations": [
+        {
+          "start": 2218,
+          "end": 2221
+        }
+      ]
+    },
+    {
+      "id": "d095",
+      "statement": "Anzu's animal companion Othello is a bird that follows the party in the sky at roughly 100 feet altitude and can communicate with Anzu empathically (without words).",
+      "entities": [
+        "Anzu",
+        "Othello"
+      ],
+      "citations": [
+        {
+          "start": 2240,
+          "end": 2244
+        }
+      ]
+    },
+    {
+      "id": "d096",
+      "statement": "The city is a magical society where bird-people and similar non-human folk are common enough not to draw attention.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2375,
+          "end": 2375
+        }
+      ]
+    },
+    {
+      "id": "d097",
+      "statement": "A goblin pickpocket in tattered workman's overalls attempted to steal from Johnny's jacket pocket as the party walked through the streets.",
+      "entities": [
+        "Johnny"
+      ],
+      "citations": [
+        {
+          "start": 2450,
+          "end": 2455
+        }
+      ]
+    },
+    {
+      "id": "d098",
+      "statement": "The goblin pickpocket fled back into the alley they had been lurking in after being caught.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2495,
+          "end": 2512
+        }
+      ]
+    },
+    {
+      "id": "d099",
+      "statement": "Two Black Line officers were spotted approaching the party after the commotion caused by the pickpocket encounter; their presence in this part of the city was notable because Black Line typically operates in wealthier districts.",
+      "entities": [
+        "Black Line"
+      ],
+      "citations": [
+        {
+          "start": 2547,
+          "end": 2555
+        }
+      ]
+    },
+    {
+      "id": "d100",
+      "statement": "Threshold Authority is a law-enforcement organization in the city, identifiable by greenish uniforms bearing the letters 'TA'.",
+      "entities": [
+        "Threshold Authority"
+      ],
+      "citations": [
+        {
+          "start": 2550,
+          "end": 2551
+        }
+      ]
+    },
+    {
+      "id": "d101",
+      "statement": "Threshold Authority is a law enforcement organization whose officers wear greenish uniforms marked with 'TA'.",
+      "entities": [
+        "Threshold Authority"
+      ],
+      "citations": [
+        {
+          "start": 2551,
+          "end": 2551
+        }
+      ]
+    },
+    {
+      "id": "d102",
+      "statement": "Black Line is a separate law-enforcement organization that generally polices the nicer parts of the city; its officers wear full uniforms and carry batons rather than firearms.",
+      "entities": [
+        "Black Line"
+      ],
+      "citations": [
+        {
+          "start": 2552,
+          "end": 2558
+        }
+      ]
+    },
+    {
+      "id": "d103",
+      "statement": "Blackline is a private law enforcement company that generally polices nicer parts of the city.",
+      "entities": [
+        "Blackline"
+      ],
+      "citations": [
+        {
+          "start": 2552,
+          "end": 2554
+        }
+      ]
+    },
+    {
+      "id": "d104",
+      "statement": "Blackline officers carry batons as their primary weapon rather than firearms.",
+      "entities": [
+        "Blackline"
+      ],
+      "citations": [
+        {
+          "start": 2557,
+          "end": 2558
+        }
+      ]
+    },
+    {
+      "id": "d105",
+      "statement": "Blackline operates on a subscription model, providing law enforcement services only to paying clients.",
+      "entities": [
+        "Blackline"
+      ],
+      "citations": [
+        {
+          "start": 2571,
+          "end": 2574
+        }
+      ]
+    },
+    {
+      "id": "d106",
+      "statement": "Copperjaw operates out of a scrapyard called Sableclutch Scrap and is known to hire people to make deliveries.",
+      "entities": [
+        "Copperjaw",
+        "Sableclutch Scrap"
+      ],
+      "citations": [
+        {
+          "start": 2587,
+          "end": 2695
+        }
+      ]
+    },
+    {
+      "id": "d107",
+      "statement": "Blackline had been patrolling the district (where Sableclutch Scrap is located) for a few weeks at the time of the encounter, having clients in the area.",
+      "entities": [
+        "Blackline"
+      ],
+      "citations": [
+        {
+          "start": 2652,
+          "end": 2655
+        }
+      ]
+    },
+    {
+      "id": "d108",
+      "statement": "One of the two Blackline officers encountered is named Officer Smith.",
+      "entities": [
+        "Officer Smith",
+        "Blackline"
+      ],
+      "citations": [
+        {
+          "start": 2704,
+          "end": 2708
+        }
+      ]
+    },
+    {
+      "id": "d109",
+      "statement": "The second Blackline officer is mute due to a bad accident involving a local gang, and is nicknamed 'Mute' by his partner.",
+      "entities": [
+        "Mute",
+        "Blackline",
+        "Officer Smith"
+      ],
+      "citations": [
+        {
+          "start": 2717,
+          "end": 2727
+        }
+      ]
+    },
+    {
+      "id": "d110",
+      "statement": "After rounding a corner, the two Blackline officers completely vanished from Othello's aerial sight, suggesting they may have used some form of magic or concealment.",
+      "entities": [
+        "Othello",
+        "Blackline",
+        "Officer Smith",
+        "Mute"
+      ],
+      "citations": [
+        {
+          "start": 2745,
+          "end": 2746
+        }
+      ]
+    },
+    {
+      "id": "d111",
+      "statement": "A car costs approximately 2,000 gold pieces.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2785,
+          "end": 2787
+        }
+      ]
+    },
+    {
+      "id": "d112",
+      "statement": "Private vehicles with built-in slide devices can travel between city districts (voidward or starward), but slides cannot be used within city limits as a security measure.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2790,
+          "end": 2793
+        }
+      ]
+    },
+    {
+      "id": "d113",
+      "statement": "A standalone slide device that allows travel anywhere outside city limits costs approximately two gold pieces.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2795,
+          "end": 2796
+        }
+      ]
+    },
+    {
+      "id": "d114",
+      "statement": "The trolley station district where the party was located has many goblinoid factory workers who use the tram to commute home.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2817,
+          "end": 2820
+        }
+      ]
+    },
+    {
+      "id": "d115",
+      "statement": "The Masque District contains hotels and is a tourist area of the city.",
+      "entities": [
+        "Masque District"
+      ],
+      "citations": [
+        {
+          "start": 2887,
+          "end": 2887
+        }
+      ]
+    },
+    {
+      "id": "d116",
+      "statement": "Tourists staying in the city lodge in an area called the Masque District.",
+      "entities": [
+        "Masque District"
+      ],
+      "citations": [
+        {
+          "start": 2887,
+          "end": 2887
+        }
+      ]
+    },
+    {
+      "id": "d117",
+      "statement": "The tram system uses numbered stations; the party boarded near the factory/scrapyard district at Void 2 and their destination is at Prime (Zero).",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2893,
+          "end": 2895
+        }
+      ]
+    },
+    {
+      "id": "d118",
+      "statement": "The tram line runs through stations designated by 'Void' numbers, with the party boarding at Void 2 and their destination being at Prime (Zero).",
+      "entities": [
+        "Prime Meridian",
+        "Void 2",
+        "Prime"
+      ],
+      "citations": [
+        {
+          "start": 2894,
+          "end": 2895
+        }
+      ]
+    },
+    {
+      "id": "d119",
+      "statement": "One of the goblinoid factory workers who boarded the tram with the party was observed surreptitiously watching the party's briefcase.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2916,
+          "end": 2919
+        }
+      ]
+    },
+    {
+      "id": "d120",
+      "statement": "The tram system in the city is privately operated by Prime Meridian.",
+      "entities": [
+        "Prime Meridian"
+      ],
+      "citations": [
+        {
+          "start": 2933,
+          "end": 2933
+        }
+      ]
+    },
+    {
+      "id": "d121",
+      "statement": "The destination the party is travelling to is located in an upscale part of the city where residents can afford private cars, making public transport unavailable in that area.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2950,
+          "end": 2951
+        }
+      ]
+    },
+    {
+      "id": "d122",
+      "statement": "A taxi fare in the city costs approximately three silver pieces.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2956,
+          "end": 2956
+        }
+      ]
+    },
+    {
+      "id": "d123",
+      "statement": "Two pursuers who had been following the party revealed themselves in an alley; they were shapeshifters who had disguised themselves as office workers before transforming into large, pink, fleshy, naked-mole-rat-like creatures roughly a foot and a half taller than their human forms, with eyes sunken into featureless sockets and no other discernible facial features.",
+      "entities": [
+        "Ugathal I",
+        "Ugathal II"
+      ],
+      "citations": [
+        {
+          "start": 3047,
+          "end": 3081
+        }
+      ]
+    },
+    {
+      "id": "d124",
+      "statement": "One of the two shapeshifter pursuers was incapable of normal speech, producing only a gargling sound instead of words.",
+      "entities": [
+        "Ugathal I",
+        "Ugathal II"
+      ],
+      "citations": [
+        {
+          "start": 3049,
+          "end": 3055
+        }
+      ]
+    },
+    {
+      "id": "d125",
+      "statement": "The two shapeshifter pursuers demanded the party hand over a briefcase and everything inside it.",
+      "entities": [
+        "Ugathal I",
+        "Ugathal II"
+      ],
+      "citations": [
+        {
+          "start": 3058,
+          "end": 3059
+        }
+      ]
+    },
+    {
+      "id": "d126",
+      "statement": "The shapeshifter creatures, referred to as Ugathal I and Ugathal II, have no blood inside them — their flesh simply splits to reveal more flesh when cut.",
+      "entities": [
+        "Ugathal I",
+        "Ugathal II"
+      ],
+      "citations": [
+        {
+          "start": 3211,
+          "end": 3215
+        }
+      ]
+    },
+    {
+      "id": "d127",
+      "statement": "Benny wields a glowing pick that deals spirit damage and gains bonus damage against targets below half HP.",
+      "entities": [
+        "Benny"
+      ],
+      "citations": [
+        {
+          "start": 3266,
+          "end": 3574
+        }
+      ]
+    },
+    {
+      "id": "d128",
+      "statement": "The Ugathals have a blood nourishment ability that is a three-action manipulate action; when successfully used on a grabbed target, it grants the Ugathal benefits (described as nourishment).",
+      "entities": [
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3317,
+          "end": 3321
+        }
+      ]
+    },
+    {
+      "id": "d129",
+      "statement": "The Ugathals have a featureless face from which a proboscis can grow to drain blood from a target.",
+      "entities": [
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3321,
+          "end": 3321
+        }
+      ]
+    },
+    {
+      "id": "d130",
+      "statement": "Johnny recited a poem to Anzu during the battle, describing a blackbird living in a library among stacked books, using a lamp as its sun and building a nest in hollow shelves until the doors open to light.",
+      "entities": [
+        "Johnny",
+        "Anzu"
+      ],
+      "citations": [
+        {
+          "start": 3371,
+          "end": 3379
+        }
+      ]
+    },
+    {
+      "id": "d131",
+      "statement": "Anzu had not previously encountered or heard of an Ugathal before this encounter.",
+      "entities": [
+        "Anzu",
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3434,
+          "end": 3435
+        }
+      ]
+    },
+    {
+      "id": "d132",
+      "statement": "The Ugathals have resistance 5 to bludgeoning damage and no other listed resistances, weaknesses, or immunities.",
+      "entities": [
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3445,
+          "end": 3445
+        }
+      ]
+    },
+    {
+      "id": "d133",
+      "statement": "Ugathal I is known among the party by the nickname 'Mute'.",
+      "entities": [
+        "Ugathal I",
+        "Mute"
+      ],
+      "citations": [
+        {
+          "start": 3494,
+          "end": 3496
+        }
+      ]
+    },
+    {
+      "id": "d134",
+      "statement": "Ugathal I (referred to as 'Mute') does not react to pain from attacks; its body loses form and collapses when killed, with a flash of divine energy accompanying its death.",
+      "entities": [
+        "Ugathal I",
+        "Mute"
+      ],
+      "citations": [
+        {
+          "start": 3510,
+          "end": 3583
+        }
+      ]
+    },
+    {
+      "id": "d135",
+      "statement": "Ugathal II watched Benny kill Ugathal I (Mute) and was frightened by it, abandoning any intention to make demands.",
+      "entities": [
+        "Ugathal II",
+        "Benny",
+        "Ugathal I",
+        "Mute"
+      ],
+      "citations": [
+        {
+          "start": 3590,
+          "end": 3593
+        }
+      ]
+    },
+    {
+      "id": "d136",
+      "statement": "Ugathal II had intended to demand the party hand over a briefcase before witnessing Mute's death.",
+      "entities": [
+        "Ugathal II",
+        "Mute"
+      ],
+      "citations": [
+        {
+          "start": 3591,
+          "end": 3592
+        }
+      ]
+    },
+    {
+      "id": "d137",
+      "statement": "The Ugathal possess a signature three-action ability that requires a target to be grabbed and restrained, and which grants the Ugathal benefits when it sucks out someone's blood; this ability was interrupted twice during the fight.",
+      "entities": [
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3616,
+          "end": 3873
+        }
+      ]
+    },
+    {
+      "id": "d138",
+      "statement": "The party killed the two Ugathal that were stalking them through the alleys.",
+      "entities": [
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3799,
+          "end": 3799
+        }
+      ]
+    },
+    {
+      "id": "d139",
+      "statement": "The Ugathal do not wear clothes and their flesh is described as weird and stringy, such that a hand can be pushed into the mound of flesh.",
+      "entities": [
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3810,
+          "end": 3812
+        }
+      ]
+    },
+    {
+      "id": "d140",
+      "statement": "The two slain Ugathal each had a black line badge concealed inside their flesh.",
+      "entities": [
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3813,
+          "end": 3817
+        }
+      ]
+    },
+    {
+      "id": "d141",
+      "statement": "Argyle recovered two seemingly real black line badges from the bodies of the slain Ugathal.",
+      "entities": [
+        "Argyle",
+        "Ugathal"
+      ],
+      "citations": [
+        {
+          "start": 3817,
+          "end": 3818
+        }
+      ]
+    },
+    {
+      "id": "d142",
+      "statement": "The campaign setting is called Færrin.",
+      "entities": [
+        "Færrin"
+      ],
+      "citations": [
+        {
+          "start": 3926,
+          "end": 3926
+        }
+      ]
     }
   ],
   "goodSentences": [],
