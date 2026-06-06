@@ -8,6 +8,8 @@ import { join } from 'node:path';
 import { readEvalLabel } from '../src/eval/labels';
 import { scoreSession, formatScore } from '../src/eval/run';
 import { mine } from '../src/pipeline/mine';
+import { judgeMatchMap, matcherFromMap } from '../src/eval/judge';
+import { tokenMatcher } from '../src/eval/score';
 import { discoverTranscripts } from '../src/transcript/discover';
 import { writeFileAtomic } from '../src/state/atomic';
 
@@ -23,8 +25,9 @@ async function main() {
   const arc = process.argv[2];
   const dateArg = process.argv[3];
   const save = process.argv.includes('--save');
+  const useToken = process.argv.includes('--token');
   if (!arc || !dateArg) {
-    console.error('Usage: bun scripts/eval.ts <arc> <date> [--save]');
+    console.error('Usage: bun scripts/eval.ts <arc> <date> [--save] [--token]');
     process.exit(1);
   }
   const date = toIsoDate(dateArg);
@@ -39,10 +42,17 @@ async function main() {
 
   const text = await Bun.file(join(TRANSCRIPTS_DIR, file.filename)).text();
   console.error(`Mining ${arc}@${date} …`);
-  const { claims, windows, rawCount } = await mine(text, { transcriptName: file.filename });
-  console.error(`  ${windows} windows · ${rawCount} raw → ${claims.length} deduped claims`);
+  const { claims, windows, rawCount, droppedNoEntity } = await mine(text, { transcriptName: file.filename });
+  console.error(`  ${windows} windows · ${rawCount} raw → ${claims.length} claims (dropped ${droppedNoEntity} entity-less)`);
 
-  const score = scoreSession(label, claims);
+  const matcher = useToken
+    ? tokenMatcher()
+    : matcherFromMap(await (async () => {
+        console.error('  judging matches (LLM) …');
+        return judgeMatchMap(label.canonFacts, claims);
+      })());
+
+  const score = scoreSession(label, claims, matcher);
   const report = formatScore(score);
   console.log('\n' + report + '\n');
 

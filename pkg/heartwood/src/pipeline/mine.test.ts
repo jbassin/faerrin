@@ -48,11 +48,25 @@ test('attributes a player line to role player', async () => {
     transcriptName: 't.txt',
     model: 'test',
     completeFn: stub([
-      { statement: 'A fact from a player line.', entities: [], startLine: 7, endLine: 7, modality: 'player-speculation' },
+      { statement: 'A fact from a player line.', entities: ['Thing'], startLine: 7, endLine: 7, modality: 'player-speculation' },
     ]),
   });
   expect(res.claims[0]!.role).toBe('player');
   expect(res.claims[0]!.speaker).toBe('Johnny');
+});
+
+test('drops facts with no entities (nowhere to live in the wiki)', async () => {
+  const res = await mine(transcript(), {
+    transcriptName: 't.txt',
+    model: 'test',
+    completeFn: stub([
+      { statement: 'A fact with a home.', entities: ['Iomenei'], startLine: 5, endLine: 5, modality: 'gm-stated' },
+      { statement: 'A homeless fact.', entities: [], startLine: 6, endLine: 6, modality: 'gm-stated' },
+    ]),
+  });
+  expect(res.claims).toHaveLength(1);
+  expect(res.droppedNoEntity).toBe(1);
+  expect(res.claims[0]!.text).toBe('A fact with a home.');
 });
 
 test('dedupes repeated facts (overlap windows) by normalized statement', async () => {
@@ -73,8 +87,8 @@ test('claims carry sequential ids', async () => {
     transcriptName: 't.txt',
     model: 'test',
     completeFn: stub([
-      { statement: 'Fact one.', entities: [], startLine: 1, endLine: 1, modality: 'gm-stated' },
-      { statement: 'Fact two.', entities: [], startLine: 2, endLine: 2, modality: 'uncertain' },
+      { statement: 'Fact one.', entities: ['A'], startLine: 1, endLine: 1, modality: 'gm-stated' },
+      { statement: 'Fact two.', entities: ['B'], startLine: 2, endLine: 2, modality: 'uncertain' },
     ]),
   });
   expect(res.claims.map((c) => c.id)).toEqual(['c001', 'c002']);

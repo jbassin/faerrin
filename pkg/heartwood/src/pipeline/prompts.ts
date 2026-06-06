@@ -29,4 +29,8 @@ EXTRACT THE STANDING FACT FROM AN EVENT: if an event reveals a durable world-fac
 
 USE CANONICAL NAMES: prefer the most specific proper name the transcript provides over generic referents. If a place/person is named, use the name (e.g. "the Verdant Expanse", not "the forest"); resolve obvious referents within the chunk.
 
-Each fact must be ATOMIC (one per entry), stated plainly, with the named entities it concerns, and cited to the transcript line numbers (the leading NNNNNN on each line). If a chunk has no setting facts, return an empty list.`;
+Each fact must be ATOMIC (one per entry), stated plainly, and cited to the transcript line numbers (the leading NNNNNN on each line).
+
+EVERY fact must name at least one ENTITY it concerns — the person, place, organization, object, or concept that would own its wiki page. A fact with no clear entity has nowhere to live in the wiki, so if you can't name the entity it's about, DON'T record it.
+
+If a chunk has no setting facts, return an empty list.`;

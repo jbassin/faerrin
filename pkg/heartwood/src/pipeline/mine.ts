@@ -46,6 +46,8 @@ export interface MineResult {
   windows: number;
   /** Total facts emitted before dedup (overlap windows repeat boundary facts). */
   rawCount: number;
+  /** Facts dropped for having no entity — nothing to attach them to in the wiki. */
+  droppedNoEntity: number;
 }
 
 function roleFor(speaker: string | undefined, modality: Modality): Claim['role'] {
@@ -86,9 +88,12 @@ export async function mine(text: string, opts: MineOptions): Promise<MineResult>
   // Merge + dedup by normalized statement (overlap windows repeat boundary facts).
   const seen = new Map<string, Claim>();
   let rawCount = 0;
+  let droppedNoEntity = 0;
   let counter = 0;
   for (const f of perWindow.flat()) {
     rawCount++;
+    // A fact with no entity has no wiki page to attach to — drop it.
+    if (f.entities.length === 0) { droppedNoEntity++; continue; }
     const key = normalizeSentence(f.statement);
     if (!key || seen.has(key)) continue;
     const speaker = speakerForSpan(f.startLine, f.endLine);
@@ -103,5 +108,5 @@ export async function mine(text: string, opts: MineOptions): Promise<MineResult>
     });
   }
 
-  return { claims: [...seen.values()], windows: windows.length, rawCount };
+  return { claims: [...seen.values()], windows: windows.length, rawCount, droppedNoEntity };
 }

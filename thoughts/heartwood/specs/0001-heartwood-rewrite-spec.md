@@ -240,7 +240,7 @@ transcript (line-numbered, ~50% noise)
 | Subsystem | Responsibility | Reliability bet |
 |---|---|---|
 | Ingest | Parse line-numbered transcript; attach speaker/role; cheap heuristic noise pre-pass. | High (deterministic). |
-| Mine | LLM: atomic **setting-fact** claims with line-IDs + modality — extracts standing world-facts, **excludes session-event/party-action narrative** (§5), and pulls the durable fact out of an event. Bounded cost (per-chunk, not whole-wiki). | Medium — the recall problem; needs eval set (G8). |
+| Mine | LLM: atomic **setting-fact** claims with line-IDs + modality — extracts standing world-facts, **excludes session-event/party-action narrative** (§5), pulls the durable fact out of an event, and **drops entity-less facts** (no page to attach to). Bounded cost (per-chunk, not whole-wiki). | Medium — the recall problem; needs eval set (G8). |
 | Triage | Present canon/uncertain/noise; human confirms. | High — human in the loop by design. |
 | **Resolve entities** | Map each claim's surface forms — including generic referents ("the forest" → the Verdant Expanse) — to a canonical **entity** + existing page (or new-page), using the wiki `aliases:` index + an entity registry; surface low-confidence merges for human confirmation. | Medium — the **biggest single error source** (ASR variance + referents); never auto-merge across a confidence threshold. |
 | Locate | Match resolved entity → existing page or new-page proposal (uses a wiki index/summaries, not full text). | Medium. |

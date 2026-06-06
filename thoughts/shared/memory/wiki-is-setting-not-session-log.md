@@ -70,6 +70,12 @@ must lead with these as the top mistakes and instruct "when in doubt, leave it o
 volume." Mining should err toward fewer, cleaner setting facts; recall is recoverable via the human
 review, but slop wastes the reviewer's time (the rejected-tool failure mode).
 
+**Every fact must name an entity (its wiki page) — drop entity-less facts.** The wiki is organized
+into pages, each owned by an entity (person/place/org/object/concept). A fact with no assigned entity
+has nowhere to live, so mining drops it (and the prompt requires naming the entity, refusing facts
+whose subject can't be named). Implemented in `src/pipeline/mine.ts` (drops claims with empty
+`entitySurfaceForms`).
+
 **Exclude ephemeral plot / mystery / incident details.** Distinct from session events: facts about
 the *current* case the party is investigating — who committed a sabotage/crime, who had access on
 the day, the whodunit specifics of the plot being solved this arc — are **ephemeral** and do NOT

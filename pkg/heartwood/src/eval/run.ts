@@ -7,10 +7,11 @@ import {
   scoreCoverage,
   scorePrecision,
   scoreFalseCanon,
+  tokenMatcher,
   type CoverageResult,
   type PrecisionResult,
   type FalseCanonResult,
-  type ScoreOptions,
+  type Matcher,
 } from './score';
 import type { EvalLabel } from './labels';
 import type { Claim } from '../pipeline/types';
@@ -25,15 +26,15 @@ export interface SessionScore {
   falseCanon: FalseCanonResult;
 }
 
-export function scoreSession(label: EvalLabel, claims: Claim[], opts: ScoreOptions = {}): SessionScore {
+export function scoreSession(label: EvalLabel, claims: Claim[], matcher: Matcher = tokenMatcher()): SessionScore {
   return {
     arc: label.session.arc,
     date: label.session.date,
     labeledFacts: label.canonFacts.length,
     producedClaims: claims.length,
-    coverage: scoreCoverage(label.canonFacts, claims, opts),
-    precision: scorePrecision(label.canonFacts, claims, opts),
-    falseCanon: scoreFalseCanon(label.canonFacts, claims, opts),
+    coverage: scoreCoverage(label.canonFacts, claims, matcher),
+    precision: scorePrecision(label.canonFacts, claims, matcher),
+    falseCanon: scoreFalseCanon(label.canonFacts, claims, matcher),
   };
 }
 
