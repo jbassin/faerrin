@@ -6,6 +6,7 @@ import {
   aliasEditClusterToProposal,
   commentClusterToProposal,
   proposeCluster,
+  proposeTranscript,
   loadConventions,
   type EditProposal,
   type AppendProposal,
@@ -292,6 +293,41 @@ describe('proposeCreate', () => {
     expect(result!.kind).toBe('create');
     const create = result as CreateProposal;
     expect(create.path).toBe('Org/Iconoclasm/People/Dura Oil Drinker.md');
+  });
+});
+
+describe('proposeTranscript resilience', () => {
+  let dir: string;
+  beforeEach(() => { dir = mkdtempSync(join(tmpdir(), 'propose-')); });
+  afterEach(() => rmSync(dir, { recursive: true, force: true }));
+
+  // Regression: the propose LLM occasionally returns a proposal missing the
+  // required `citations` field, which made complete() throw and abort the whole
+  // stage mid-run (it crashed the real 2025-8-28 run). One bad cluster must be
+  // dropped and tallied, like a failed validation — not fatal.
+  test('a cluster whose LLM call throws is dropped and tallied, not fatal', async () => {
+    const throwing: typeof complete = async () => { throw new Error('proposal.citations: Required'); };
+    const matches = [{
+      claim: makeClaim(),
+      candidatePages: [{ path: null, relation: 'new' as const, rationale: 'no page matched', excerpt: null }],
+    }];
+
+    const warnOrig = console.warn;
+    console.warn = () => {};
+    try {
+      const res = await proposeTranscript(
+        matches,
+        { claims: [makeClaim()], aliasSuggestions: [] },
+        [],
+        makeWikiIndex({ 'Org/Iconoclasm/index.md': {} }),
+        { model: 'claude-sonnet-4-6', contentDir: dir, conventionsPath: CLAUDE_MD_PATH, transcript: 't.txt', completeFn: throwing as any },
+      );
+      expect(res.proposals).toHaveLength(0);
+      expect(res.stats.droppedByReason['llm-error']).toBe(1);
+      expect(res.stats.totalClusters).toBe(1);
+    } finally {
+      console.warn = warnOrig;
+    }
   });
 });
 

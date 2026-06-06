@@ -418,7 +418,20 @@ export async function proposeTranscript(
   const proposalsByKind = { edit: 0, append: 0, create: 0, comment: 0 };
 
   for (const cluster of clusters) {
-    const proposal = await proposeCluster(cluster, ctx, pageTextLoader);
+    let proposal: Proposal | null;
+    try {
+      proposal = await proposeCluster(cluster, ctx, pageTextLoader);
+    } catch (err) {
+      // A single malformed LLM response (e.g. the model omits the required
+      // citations field) must not abort the whole stage mid-run — drop just this
+      // cluster and tally it, the same as a failed validation. temperature:0
+      // makes the failure deterministic, so a retry wouldn't help; and an
+      // uncited proposal should be dropped, not salvaged. The human PR review
+      // still gates everything that survives.
+      droppedByReason['llm-error'] = (droppedByReason['llm-error'] ?? 0) + 1;
+      console.warn(`propose: dropping ${cluster.kind} cluster after LLM error: ${(err as Error).message}`);
+      continue;
+    }
     await opts.onClusterProposed?.(cluster, proposal);
 
     if (proposal === null) continue;
