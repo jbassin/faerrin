@@ -13,6 +13,8 @@ export interface CommitResult {
   skipped: { proposal: string; reason: string }[];
   amend: number;
   create: number;
+  /** Amends that REPLACED an existing statement (a Supersede correction, AC-21). */
+  corrected: number;
 }
 
 // ---- Pure helpers (unit-tested; used by commit-impl) -----------------------
@@ -29,13 +31,42 @@ export function newPageContent(text: string): string {
   return `${text.trim()}\n`;
 }
 
-export function commitMessage(arc: string, date: string, amend: number, create: number): string {
-  const n = amend + create;
-  return `heartwood: ${arc} ${date} — ${n} page${n === 1 ? "" : "s"} (${amend} amend, ${create} create)`;
+export function commitMessage(
+  arc: string,
+  date: string,
+  amend: number,
+  create: number,
+  corrected = 0,
+): string {
+  const n = amend + create + corrected;
+  const parts = [`${amend} amend`, `${create} create`];
+  if (corrected > 0) parts.push(`${corrected} correct`);
+  return `heartwood: ${arc} ${date} — ${n} page${n === 1 ? "" : "s"} (${parts.join(", ")})`;
 }
 
 export function normalizeWikiPath(p: string): string {
   return p.endsWith(".md") ? p : `${p}.md`;
+}
+
+/**
+ * Supersede (AC-21): replace the existing statement in `body` with the authored prose.
+ * Conflict.existingStatement is the LLM's verbatim slice of the page, so a substring match
+ * locates it; if it can't be found, fall back to appending so the prose is never lost.
+ */
+export function applySupersede(
+  body: string,
+  existingStatement: string,
+  replacement: string,
+): { body: string; located: boolean } {
+  const target = existingStatement.trim();
+  const idx = target ? body.indexOf(target) : -1;
+  if (idx === -1) {
+    return { body: appendAuthoredParagraph(body, replacement), located: false };
+  }
+  return {
+    body: body.slice(0, idx) + replacement.trim() + body.slice(idx + target.length),
+    located: true,
+  };
 }
 
 export const commitSession = createServerFn({ method: "POST" })

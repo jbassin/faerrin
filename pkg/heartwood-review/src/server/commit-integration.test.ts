@@ -8,6 +8,7 @@ import {
   type SessionArtifact,
 } from "@faerrin/heartwood/src/state/store.ts";
 import {
+  applyConflictResolution,
   applyDecision,
   emptyReviewState,
   writeReviewState,
@@ -143,6 +144,41 @@ describe("performCommit (Stage F, AC-7/AC-15)", () => {
       expect(r2.amend).toBe(0);
       expect(r2.create).toBe(0);
       expect(deps.jjCalls.length).toBe(before); // no new jj invocation
+    } finally {
+      await rm(base, { recursive: true, force: true });
+    }
+  });
+
+  it("Supersede replaces the existing statement in place (AC-21)", async () => {
+    const { base, deps, amendAbs } = await setup();
+    try {
+      // Add a conflict on the amend's claim, with the existing page sentence as its statement.
+      const art = artifact();
+      art.conflicts = [
+        {
+          claimId: "c1",
+          entityId: "e1",
+          canonicalName: "Sableclutch",
+          newStatement: "A levy now bites the wharves.",
+          existingStatement: "Sableclutch is overlooked by the capital.",
+          source: "wiki",
+          sourceRef: AMEND_PATH,
+          explanation: "tension",
+        },
+      ];
+      await writeSessionArtifact(deps.sessionsDir, art);
+      // approve the amend + resolve the conflict as Supersede
+      let rs = emptyReviewState(SID);
+      rs = applyDecision(rs, { proposalId: "prop:e1", decision: "approved", authoredText: "The wharves now pay a levy." });
+      rs = applyConflictResolution(rs, "c1", "supersede");
+      await writeReviewState(deps.reviewDir, rs);
+
+      const r = await performCommit(SID, deps);
+      expect(r.corrected).toBe(1);
+      expect(r.amend).toBe(0);
+      const body = await readFile(amendAbs, "utf8");
+      expect(body).toContain("The wharves now pay a levy.");
+      expect(body).not.toContain("Sableclutch is overlooked by the capital.");
     } finally {
       await rm(base, { recursive: true, force: true });
     }

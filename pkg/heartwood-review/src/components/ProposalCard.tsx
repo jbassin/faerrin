@@ -3,6 +3,7 @@ import { renderMarkdown, renderPagePreview } from "@/server/render";
 import { saveDecision, type SessionView } from "@/server/sessions";
 import type { Decision, ReviewState } from "@faerrin/heartwood/src/state/review.ts";
 import { CitationChip } from "./CitationChip.tsx";
+import { CreatePagePicker } from "./CreatePagePicker.tsx";
 import { voiceWarnings } from "@/lib/voice-warnings.ts";
 import type { PageType } from "@/lib/page-type.ts";
 import "@/styles/wiki-render.css";
@@ -132,24 +133,11 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
       {view === "edit" && (
         <>
           {proposal.kind === "create" && (
-            <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.85rem", color: "#555" }}>
-              New page path (content-relative, under wiki/):
-              <input
-                type="text"
-                value={targetPath}
-                onChange={(e) => setTargetPath(e.target.value)}
-                placeholder={`e.g. People/${proposal.canonicalName}.md`}
-                style={{
-                  width: "100%",
-                  font: "inherit",
-                  fontSize: "0.9rem",
-                  padding: "0.4rem",
-                  marginTop: "0.25rem",
-                  borderRadius: 6,
-                  border: "1px solid #ccc",
-                }}
-              />
-            </label>
+            <CreatePagePicker
+              canonicalName={proposal.canonicalName}
+              initialTargetPath={initialTargetPath}
+              onChange={setTargetPath}
+            />
           )}
           <textarea
             value={authored}

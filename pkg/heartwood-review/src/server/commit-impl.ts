@@ -23,6 +23,7 @@ import { writeFileAtomic } from "@faerrin/heartwood/src/state/atomic.ts";
 import { PROV_ROOT, REPO_ROOT, REVIEW_DIR, SESSIONS_DIR, WIKI_DIR, within } from "./paths.ts";
 import {
   appendAuthoredParagraph,
+  applySupersede,
   commitMessage,
   newPageContent,
   normalizeWikiPath,
@@ -71,14 +72,15 @@ async function writeProvenanceFor(
   const claimId = proposal.facts[0]?.claimId ?? proposal.id;
   const entityIds = [proposal.entityId];
 
-  // Authored prose was appended at the end, so its sentences are the last K of the body.
+  // Locate each authored sentence in the new body by normalized match (works whether the
+  // prose was appended at the end or spliced in as a Supersede correction).
   const all = parsePageSentences(newBody);
-  const authoredCount = parsePageSentences(authoredText).length;
-  const startIdx = Math.max(0, all.length - authoredCount);
   const records = [];
-  for (let i = startIdx; i < all.length; i++) {
+  for (const a of parsePageSentences(authoredText)) {
+    const idx = all.findIndex((b) => b.norm === a.norm);
+    if (idx === -1) continue;
     records.push(
-      makeRecord({ anchor: anchorForSentence(all, i), arc: sid.arc, date: sid.date, citations, claimId, entityIds }),
+      makeRecord({ anchor: anchorForSentence(all, idx), arc: sid.arc, date: sid.date, citations, claimId, entityIds }),
     );
   }
   if (records.length === 0) return null;
@@ -112,11 +114,18 @@ export async function performCommit(
   if (!artifact) throw new Error(`Session ${sid.arc}@${sid.date} not ingested`);
   const review = await readReviewState(deps.reviewDir, sid);
 
+  // Supersede resolutions (AC-21): map a conflicting claimId → the existing statement to replace.
+  const supersededByClaim = new Map<string, string>();
+  for (const c of artifact.conflicts) {
+    if (review.conflictResolutions[c.claimId] === "supersede") supersededByClaim.set(c.claimId, c.existingStatement);
+  }
+
   const written: string[] = [];
   const skipped: { proposal: string; reason: string }[] = [];
   const committedIds: string[] = [];
   let amend = 0;
   let create = 0;
+  let corrected = 0;
 
   for (const p of artifact.proposals) {
     const dec = review.decisions[p.id];
@@ -131,12 +140,24 @@ export async function performCommit(
     if (p.kind === "amend" && p.targetPath) {
       const abs = within(deps.wikiDir, p.targetPath);
       const existing = await readFile(abs, "utf8");
-      const newBody = appendAuthoredParagraph(existing, text);
+      // If a fact on this proposal has a Supersede resolution, REPLACE the existing statement
+      // (a correction, AC-21); otherwise append the new prose.
+      const supersedeStmt = p.facts.map((f) => supersededByClaim.get(f.claimId)).find(Boolean);
+      let newBody: string;
+      let isCorrection = false;
+      if (supersedeStmt) {
+        const r = applySupersede(existing, supersedeStmt, text);
+        newBody = r.body;
+        isCorrection = r.located;
+      } else {
+        newBody = appendAuthoredParagraph(existing, text);
+      }
       await writeFileAtomic(abs, newBody);
       written.push(`pkg/content/wiki/${p.targetPath}`);
       const sc = await writeProvenanceFor(deps.provRoot, p.targetPath, newBody, text, p, sid);
       if (sc) written.push(sc);
-      amend++;
+      if (isCorrection) corrected++;
+      else amend++;
       committedIds.push(p.id);
     } else if (p.kind === "create") {
       const tp = dec.targetPath?.trim();
@@ -163,10 +184,10 @@ export async function performCommit(
   }
 
   if (written.length === 0) {
-    return { committed: false, written, skipped, amend, create };
+    return { committed: false, written, skipped, amend, create, corrected };
   }
 
-  const message = commitMessage(sid.arc, sid.date, amend, create);
+  const message = commitMessage(sid.arc, sid.date, amend, create, corrected);
   await deps.runJj(["commit", "-m", message, ...written]);
   const revision = (await deps.runJj(["log", "-r", "@-", "--no-graph", "-T", "commit_id.short()"])).trim();
 
@@ -179,5 +200,5 @@ export async function performCommit(
   }
   await writeReviewState(deps.reviewDir, { ...review, decisions, updatedAt: now });
 
-  return { committed: true, revision, message, written, skipped, amend, create };
+  return { committed: true, revision, message, written, skipped, amend, create, corrected };
 }

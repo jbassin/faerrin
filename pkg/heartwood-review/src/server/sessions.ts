@@ -145,6 +145,49 @@ export const saveDecision = createServerFn({ method: "POST" })
     return next;
   });
 
+/** Existing wiki folders (for the create-page folder picker, AC-10/D-6). */
+export const getWikiFolders = createServerFn({ method: "GET" }).handler(
+  async (): Promise<string[]> => {
+    const { listWikiMarkdownFiles } = await import("./content.ts");
+    const files = await listWikiMarkdownFiles();
+    const dirs = new Set<string>([""]); // "" = wiki root
+    for (const f of files) {
+      const parts = f.split("/");
+      for (let i = 1; i < parts.length; i++) dirs.add(parts.slice(0, i).join("/"));
+    }
+    return [...dirs].sort();
+  },
+);
+
+export interface InboundSuggestions {
+  /** Pages whose body already mentions the entity (candidate inbound links, AC-10). */
+  mentions: string[];
+  /** True when nothing links/mentions it — a new page nothing points to (flagged, AC-10). */
+  orphan: boolean;
+}
+
+/** Suggest inbound links for a new page by finding existing pages that mention its name (AC-10). */
+export const suggestInboundLinks = createServerFn({ method: "GET" })
+  .inputValidator((data: { name: string }) => data)
+  .handler(async ({ data }): Promise<InboundSuggestions> => {
+    const { listWikiMarkdownFiles, readWikiPage } = await import("./content.ts");
+    const name = data.name.trim();
+    if (name.length < 3) return { mentions: [], orphan: true };
+    const needle = name.toLowerCase();
+    const files = await listWikiMarkdownFiles();
+    const mentions: string[] = [];
+    for (const f of files) {
+      if (f.startsWith("Script/")) continue; // generated transcript pages aren't edit targets
+      try {
+        if ((await readWikiPage(f)).toLowerCase().includes(needle)) mentions.push(f);
+      } catch {
+        /* skip unreadable */
+      }
+      if (mentions.length >= 25) break;
+    }
+    return { mentions, orphan: mentions.length === 0 };
+  });
+
 const CONFLICT_RESOLUTIONS = ["supersede", "coexist", "reject"] as const;
 
 /** Record a conflict resolution (Supersede / Coexist / Reject) by claimId (AC-11). */
