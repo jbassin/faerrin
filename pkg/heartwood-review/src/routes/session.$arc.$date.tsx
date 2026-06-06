@@ -57,6 +57,12 @@ function SessionPage() {
     return d?.decision === "approved" && !d.committedAt;
   }).length;
 
+  // AC-18: live session tally (the same shape the commit message is built from).
+  const tally = { approved: 0, rejected: 0, deferred: 0, pending: 0 };
+  for (const p of artifact.proposals) {
+    tally[review.decisions[p.id]?.decision ?? "pending"]++;
+  }
+
   async function doCommit() {
     setCommitting(true);
     try {
@@ -122,6 +128,14 @@ function SessionPage() {
           {decided}/{artifact.proposals.length} decided
         </span>
       </nav>
+
+      {/* AC-18: live tally — drives the commit message. */}
+      <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem", fontSize: "0.8rem" }}>
+        <TallyPill label="approved" n={tally.approved} color="#137333" />
+        <TallyPill label="rejected" n={tally.rejected} color="#c5221f" />
+        <TallyPill label="deferred" n={tally.deferred} color="#b06000" />
+        <TallyPill label="pending" n={tally.pending} color="#5f6368" />
+      </div>
 
       {tab === "proposals" && (
         <>
@@ -244,6 +258,14 @@ function SessionPage() {
         )}
       </section>
     </main>
+  );
+}
+
+function TallyPill({ label, n, color }: { label: string; n: number; color: string }) {
+  return (
+    <span style={{ color: n > 0 ? color : "#bbb", fontWeight: 600 }}>
+      {n} {label}
+    </span>
   );
 }
 
