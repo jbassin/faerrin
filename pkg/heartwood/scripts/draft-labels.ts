@@ -45,10 +45,13 @@ e.g. "Copperjaw operates Sableclutch Scrap and has a copper-jaw prosthetic"; "Ha
 
 STRICTLY EXCLUDE:
 - SESSION-EVENT NARRATIVE: what the party did, where they went, quest/mission progress, encounters, retrievals, scene-by-scene events. e.g. "the party retrieved the dish", "the party traced the man to a train", "the session ended with...". These are the single most common mistake — do not record them.
+- GAME MECHANICS: for a character, record physical characteristics and personality, but NOT abilities, stats, spells they can cast, weapons they wield, action economy, or levels (PF2e stat-block content). e.g. drop "Krod wields a Nodachi with the extend property" and "Mordecai has Magnificent Mansion"; a characterful trait like "Krod can sense blood like a bloodhound" is fine.
 - Out-of-character banter, jokes, real-world tangents, scheduling, rules/dice talk.
 - Player SPECULATION/guesses — only what the GM affirmed about the world.
 
 EXTRACT THE STANDING FACT FROM AN EVENT: if an event reveals a durable world-fact, record the fact, not the action. "Flynn's body was recovered and returned to base" → record "Flynn is dead". "Anzu's raven Othello rejoined the party" → record "Anzu has a raven companion named Othello".
+
+USE CANONICAL NAMES: prefer the most specific proper name the transcript provides over generic referents. If a place/person is named, use the name (e.g. "the Verdant Expanse", not "the forest"); resolve obvious referents within the chunk.
 
 Each fact must be ATOMIC (one per entry), stated plainly, with the named entities it concerns, and cited to the transcript line numbers (the leading NNNNNN on each line). If a chunk has no setting facts, return an empty list.`;
 

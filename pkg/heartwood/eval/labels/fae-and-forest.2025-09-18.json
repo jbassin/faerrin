@@ -5,61 +5,6 @@
   },
   "canonFacts": [
     {
-      "id": "d001",
-      "statement": "The party are magic cops (investigators with magical abilities).",
-      "entities": [],
-      "citations": [
-        {
-          "start": 592,
-          "end": 593
-        }
-      ]
-    },
-    {
-      "id": "d002",
-      "statement": "On the outskirts of the remote town there is a commune of people who dress in old-fashioned tunics. They are described as honest, peaceful people.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 604,
-          "end": 655
-        }
-      ]
-    },
-    {
-      "id": "d003",
-      "statement": "A series of murders occurred over three weeks, with victims who were shriveled up. The victims differed in age, race, and location, and the murders occurred at different frequencies, making them difficult to link — except that all victims were found shriveled.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 609,
-          "end": 643
-        }
-      ]
-    },
-    {
-      "id": "d004",
-      "statement": "A witness reported that one of the murder victims had met with a man wearing a tunic in the style of the 1700s prior to his death.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 624,
-          "end": 633
-        }
-      ]
-    },
-    {
-      "id": "d005",
-      "statement": "The tunic-wearing man was traced to a train leading to a remote town far from the city.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 649,
-          "end": 650
-        }
-      ]
-    },
-    {
       "id": "d006",
       "statement": "A secret secondary religion exists within the commune, centered on worship of an entity called the Green Man.",
       "entities": [
@@ -70,7 +15,8 @@
           "start": 656,
           "end": 671
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d007",
@@ -83,7 +29,8 @@
           "start": 657,
           "end": 663
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d008",
@@ -96,35 +43,8 @@
           "start": 665,
           "end": 669
         }
-      ]
-    },
-    {
-      "id": "d009",
-      "statement": "A member of the commune left to commune with the Green Man and nature by going into the Sea of Trees. His house contained a non-Fayrin metal necklace that, when picked up, levitated and pointed in a direction, functioning as a compass.",
-      "entities": [
-        "the Green Man",
-        "Sea of Trees"
       ],
-      "citations": [
-        {
-          "start": 680,
-          "end": 692
-        }
-      ]
-    },
-    {
-      "id": "d010",
-      "statement": "The commune members warned against going too deep into the Sea of Trees, as doing so leads into a region called the Mid-Bowery.",
-      "entities": [
-        "Sea of Trees",
-        "Mid-Bowery"
-      ],
-      "citations": [
-        {
-          "start": 695,
-          "end": 702
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d011",
@@ -137,7 +57,8 @@
           "start": 704,
           "end": 715
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d012",
@@ -151,20 +72,8 @@
           "start": 720,
           "end": 720
         }
-      ]
-    },
-    {
-      "id": "d013",
-      "statement": "One party member (referred to as Mordecai) has access to the spell Magnificent Mansion.",
-      "entities": [
-        "Mordecai"
       ],
-      "citations": [
-        {
-          "start": 728,
-          "end": 728
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d014",
@@ -177,44 +86,8 @@
           "start": 736,
           "end": 737
         }
-      ]
-    },
-    {
-      "id": "d015",
-      "statement": "One party member (Cedric's character) has a backstory involving a scarring childhood, which motivated him to become a cop dedicated to helping children in need.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 745,
-          "end": 747
-        }
-      ]
-    },
-    {
-      "id": "d016",
-      "statement": "Krod Snodman has an ability to sense blood, functioning like a bloodhound.",
-      "entities": [
-        "Krod Snodman"
       ],
-      "citations": [
-        {
-          "start": 789,
-          "end": 799
-        }
-      ]
-    },
-    {
-      "id": "d017",
-      "statement": "Krod Snodman wields a Nodachi with an extend property, allowing him to strike from 60 feet away.",
-      "entities": [
-        "Krod Snodman"
-      ],
-      "citations": [
-        {
-          "start": 801,
-          "end": 803
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d018",
@@ -227,62 +100,8 @@
           "start": 809,
           "end": 810
         }
-      ]
-    },
-    {
-      "id": "d019",
-      "statement": "The party belongs to the Church of Calaria, also called the Iridescent Host.",
-      "entities": [
-        "Church of Calaria",
-        "Iridescent Host"
       ],
-      "citations": [
-        {
-          "start": 814,
-          "end": 815
-        }
-      ]
-    },
-    {
-      "id": "d020",
-      "statement": "A curse has been killing people in Hallia; at least 47 people have died from it.",
-      "entities": [
-        "Hallia"
-      ],
-      "citations": [
-        {
-          "start": 819,
-          "end": 824
-        }
-      ]
-    },
-    {
-      "id": "d021",
-      "statement": "The party was brought in as magic cops (agents of the Church of Calaria) to investigate the source of the curse affecting Hallia.",
-      "entities": [
-        "Church of Calaria",
-        "Hallia"
-      ],
-      "citations": [
-        {
-          "start": 825,
-          "end": 825
-        }
-      ]
-    },
-    {
-      "id": "d022",
-      "statement": "The first victim of the curse in Hallia contracted it from a person dressed in a tunic who came from the city of Wrenford.",
-      "entities": [
-        "Hallia",
-        "Wrenford"
-      ],
-      "citations": [
-        {
-          "start": 829,
-          "end": 829
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d023",
@@ -296,21 +115,8 @@
           "start": 831,
           "end": 836
         }
-      ]
-    },
-    {
-      "id": "d024",
-      "statement": "The suspect from Wrenford worshipped a deity or figure known as the Green Father.",
-      "entities": [
-        "Wrenford",
-        "Green Father"
       ],
-      "citations": [
-        {
-          "start": 838,
-          "end": 844
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d025",
@@ -324,7 +130,8 @@
           "start": 844,
           "end": 844
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d026",
@@ -337,7 +144,8 @@
           "start": 863,
           "end": 968
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d027",
@@ -351,49 +159,8 @@
           "start": 879,
           "end": 879
         }
-      ]
-    },
-    {
-      "id": "d028",
-      "statement": "The Wrenford suspect walked into the Verdant Expanse six months before the session and had not been seen since, before later appearing in Hallia.",
-      "entities": [
-        "Wrenford",
-        "Verdant Expanse",
-        "Hallia"
       ],
-      "citations": [
-        {
-          "start": 881,
-          "end": 881
-        }
-      ]
-    },
-    {
-      "id": "d029",
-      "statement": "The first incident of the curse in Hallia occurred approximately three weeks before the current session.",
-      "entities": [
-        "Hallia"
-      ],
-      "citations": [
-        {
-          "start": 887,
-          "end": 887
-        }
-      ]
-    },
-    {
-      "id": "d030",
-      "statement": "A strange green rock on a twine necklace was found in the Wrenford suspect's house; it is identified as feystone, a particularly rare material sought after by collectors, believed to originate from somewhere starward on the horizon.",
-      "entities": [
-        "Wrenford",
-        "feystone"
-      ],
-      "citations": [
-        {
-          "start": 893,
-          "end": 893
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d031",
@@ -406,7 +173,8 @@
           "start": 893,
           "end": 893
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d032",
@@ -419,7 +187,8 @@
           "start": 918,
           "end": 920
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d033",
@@ -432,7 +201,8 @@
           "start": 921,
           "end": 921
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d034",
@@ -445,7 +215,8 @@
           "start": 922,
           "end": 923
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d035",
@@ -458,7 +229,8 @@
           "start": 924,
           "end": 925
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d036",
@@ -471,18 +243,8 @@
           "start": 925,
           "end": 925
         }
-      ]
-    },
-    {
-      "id": "d037",
-      "statement": "Some dwarves can take an ancestry feat that makes them completely unaffected by magical darkness.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 932,
-          "end": 934
-        }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d038",
@@ -495,7 +257,8 @@
           "start": 937,
           "end": 937
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d039",
@@ -509,7 +272,8 @@
           "start": 937,
           "end": 941
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d040",
@@ -523,7 +287,8 @@
           "start": 946,
           "end": 949
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d041",
@@ -537,7 +302,8 @@
           "start": 957,
           "end": 961
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d042",
@@ -550,18 +316,8 @@
           "start": 974,
           "end": 981
         }
-      ]
-    },
-    {
-      "id": "d043",
-      "statement": "This one-shot is set concurrently with the main campaign, beginning on the same day the campaign started, and is approximately one week ahead of where Campaign 3 currently is.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 1055,
-          "end": 1056
-        }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d044",
@@ -575,7 +331,8 @@
           "start": 1097,
           "end": 1367
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d045",
@@ -589,7 +346,8 @@
           "start": 1142,
           "end": 1180
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d046",
@@ -602,34 +360,23 @@
           "start": 1197,
           "end": 1203
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d047",
-      "statement": "The Ghost Festival is a Haleo cultural tradition during which children go trick-or-treating.",
+      "statement": "The Ghost Festival is a Hallia cultural tradition during which children go trick-or-treating.",
       "entities": [
         "Ghost Festival",
-        "Haleo"
+        "Hallia"
       ],
       "citations": [
         {
           "start": 1339,
           "end": 1347
         }
-      ]
-    },
-    {
-      "id": "d048",
-      "statement": "Tommy entered the grove from the direction of the center of the forest.",
-      "entities": [
-        "Tommy"
       ],
-      "citations": [
-        {
-          "start": 1386,
-          "end": 1387
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d049",
@@ -642,7 +389,8 @@
           "start": 1397,
           "end": 1401
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d050",
@@ -655,7 +403,8 @@
           "start": 1453,
           "end": 1462
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d051",
@@ -668,7 +417,8 @@
           "start": 1453,
           "end": 1455
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d052",
@@ -681,7 +431,8 @@
           "start": 1461,
           "end": 1462
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d053",
@@ -695,7 +446,8 @@
           "start": 1471,
           "end": 1473
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d054",
@@ -709,7 +461,8 @@
           "start": 1471,
           "end": 1473
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d055",
@@ -722,72 +475,37 @@
           "start": 1483,
           "end": 1532
         }
-      ]
-    },
-    {
-      "id": "d056",
-      "statement": "The Midbau forest becomes significantly denser and darker deeper in, with trees growing much larger and their first sturdy branches starting approximately 20 feet off the ground.",
-      "entities": [
-        "Midbau"
       ],
-      "citations": [
-        {
-          "start": 1509,
-          "end": 1650
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d057",
-      "statement": "Deeper regions of the Midbau forest have consistently damp, muddy ground, evidenced by lichens and mosses growing on tree trunks — but only from about three feet above ground level upward; below that line the trunks are completely clean.",
+      "statement": "Deeper regions of the Mid-bough forest have consistently damp, muddy ground, evidenced by lichens and mosses growing on tree trunks -- but only from aobut three feet above ground level upward; below that line the trunks are completely clean.",
       "entities": [
-        "Midbau"
+        "mid-bowry"
       ],
       "citations": [
         {
           "start": 1590,
           "end": 1613
         }
-      ]
-    },
-    {
-      "id": "d058",
-      "statement": "Deeper in the Midbau forest, there are no animal tracks or signs of animal passage, unlike the outer parts of the forest.",
-      "entities": [
-        "Midbau"
       ],
-      "citations": [
-        {
-          "start": 1604,
-          "end": 1607
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d059",
-      "statement": "A phenomenon exists in the Midbau forest consisting of a fast-moving wave of brown muddy water three to four feet tall, within which humanoid-shaped silhouettes briefly form from the foam before dispersing, accompanied by the sound of joyous laughter.",
+      "statement": "A phenomenon exists in the mid-bowry consisting of a fast-moving wave of brown muddy water three to four feet tall, within which humanoid-shaped silhouettes briefly form from the foam before dispersing, accompanied by the sound of joyous laughter.",
       "entities": [
-        "Midbau"
+        "Verdant Expanse",
+        "mid-bowry"
       ],
       "citations": [
         {
           "start": 1679,
           "end": 1726
         }
-      ]
-    },
-    {
-      "id": "d060",
-      "statement": "The laughing wave in the Midbau does not leave standing puddles behind; the entire mass moves as one extended wave and the water level tapers off behind it, leaving the ground damper but not flooded.",
-      "entities": [
-        "Midbau"
       ],
-      "citations": [
-        {
-          "start": 1722,
-          "end": 1726
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d061",
@@ -801,61 +519,23 @@
           "start": 1789,
           "end": 1791
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d062",
-      "statement": "The Midbau forest is so dark even during the day that it reaches the very edge of dim light before nightfall, and is completely dark once night falls.",
+      "statement": "The mid-bowry is so dark even during the day that it reaches the very edge of dim light before nightfall, and is completely dark once night falls.",
       "entities": [
-        "Midbau"
+        "Verdant Expanse",
+        "mid-bowry"
       ],
       "citations": [
         {
           "start": 1829,
           "end": 1832
         }
-      ]
-    },
-    {
-      "id": "d063",
-      "statement": "Tommy was dared by his schoolmate Jonathan to walk into the forest for an hour and then walk back out, for a wager of two dollars.",
-      "entities": [
-        "Tommy",
-        "Jonathan"
       ],
-      "citations": [
-        {
-          "start": 1892,
-          "end": 1904
-        }
-      ]
-    },
-    {
-      "id": "d064",
-      "statement": "Tommy is approximately eight years old and attends school with a friend named Jonathan.",
-      "entities": [
-        "Tommy",
-        "Jonathan"
-      ],
-      "citations": [
-        {
-          "start": 1902,
-          "end": 1903
-        }
-      ]
-    },
-    {
-      "id": "d065",
-      "statement": "Cedric Rowe is a detective and a field propagandist, and possesses the 'Lie to Me' feat, granting him a +2 circumstance bonus to his Deception DC and a +2 circumstance bonus to Perception DCs against others' attempts to lie to him.",
-      "entities": [
-        "Cedric Rowe"
-      ],
-      "citations": [
-        {
-          "start": 1967,
-          "end": 2092
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d066",
@@ -869,47 +549,22 @@
           "start": 1972,
           "end": 1973
         }
-      ]
-    },
-    {
-      "id": "d067",
-      "statement": "Tommy was already a follower of 'the host' in at least some small way before meeting the party, and already thought solving crimes was cool.",
-      "entities": [
-        "Tommy",
-        "the host"
       ],
-      "citations": [
-        {
-          "start": 1973,
-          "end": 1974
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d068",
       "statement": "Deep within the forest, approximately a week's travel in, the tree canopy is so tall and extensive that no light reaches the forest floor, creating permanent darkness.",
       "entities": [
-        "the forest"
+        "Verdant Expanse"
       ],
       "citations": [
         {
           "start": 2005,
           "end": 2010
         }
-      ]
-    },
-    {
-      "id": "d069",
-      "statement": "Greater obsidian goggles grant darkvision and can be activated any number of times per day, remaining active until deactivated; they are expensive items.",
-      "entities": [
-        "greater obsidian goggles"
       ],
-      "citations": [
-        {
-          "start": 2035,
-          "end": 2037
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d070",
@@ -923,213 +578,64 @@
           "start": 2106,
           "end": 2107
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d071",
       "statement": "The deep forest lacks normal large wildlife; there is a background of faint leaf rustling and insect sounds, but no bear calls or evidence of ordinary forest creatures.",
       "entities": [
-        "the forest"
+        "Verdant Expanse"
       ],
       "citations": [
         {
           "start": 2154,
           "end": 2156
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d072",
       "statement": "A whale call can be heard deep within the forest, distant and echoey, suggesting the presence of whale-like creatures in the interior of the forest.",
       "entities": [
-        "the forest"
+        "Verdant Expanse"
       ],
       "citations": [
         {
           "start": 2157,
           "end": 2168
         }
-      ]
-    },
-    {
-      "id": "d073",
-      "statement": "An unknown entity was capable of locating and tapping on the invisible exterior door of the Planar Palace, and fled supernaturally quickly the moment the door was opened.",
-      "entities": [
-        "Planar Palace"
       ],
-      "citations": [
-        {
-          "start": 2200,
-          "end": 2553
-        }
-      ]
-    },
-    {
-      "id": "d074",
-      "statement": "Andros carries a clockwork shield that can be activated to grant an additional reaction usable only to shield block.",
-      "entities": [
-        "Andros"
-      ],
-      "citations": [
-        {
-          "start": 2287,
-          "end": 2287
-        }
-      ]
-    },
-    {
-      "id": "d075",
-      "statement": "The Planar Palace spell creates a separate plane of existence and generates a door that can be made invisible from the outside. While the entrance is closed, effects from outside fail to penetrate it and vice versa, except for interplanar teleport. The caster designates which creatures can enter when the spell is cast, and those designated creatures can reopen the door at will.",
-      "entities": [
-        "Planar Palace"
-      ],
-      "citations": [
-        {
-          "start": 2324,
-          "end": 2330
-        }
-      ]
-    },
-    {
-      "id": "d076",
-      "statement": "Tommy is a child travelling with the party who carries school books, empty candy wrappers, a crumpled brown paper bag, a nearly rotting apple, tinfoil from a eaten sandwich, pencils, and a bitten eraser in his bag. None of his possessions are supernatural.",
-      "entities": [
-        "Tommy"
-      ],
-      "citations": [
-        {
-          "start": 2344,
-          "end": 2356
-        }
-      ]
-    },
-    {
-      "id": "d077",
-      "statement": "Andros is Large-sized and possesses the Titan Wrestler ability, allowing him to disarm, grapple, reposition, shove, or trip creatures up to two sizes larger than himself — up to Gargantuan.",
-      "entities": [
-        "Andros"
-      ],
-      "citations": [
-        {
-          "start": 2387,
-          "end": 2389
-        }
-      ]
-    },
-    {
-      "id": "d078",
-      "statement": "Cedric has access to the spell Mountain's Resistance, which grants Resistance 5 to physical damage (except Adamantine) and reduces damage when struck.",
-      "entities": [
-        "Cedric"
-      ],
-      "citations": [
-        {
-          "start": 2397,
-          "end": 2402
-        }
-      ]
-    },
-    {
-      "id": "d079",
-      "statement": "Cedric is a wild magic sorcerer whose spells can randomly change damage type; for example, a fireball-type spell can become an electricity bolt.",
-      "entities": [
-        "Cedric"
-      ],
-      "citations": [
-        {
-          "start": 2445,
-          "end": 2451
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d080",
       "statement": "The forest region the party is travelling through is covered by a persistent supernatural darkness — a blackish night that covers the entirety of that part of the forest, obscuring the sky so that stars cannot be seen even when technically outdoors.",
-      "entities": [],
+      "entities": [
+        "Verdant Expanse"
+      ],
       "citations": [
         {
           "start": 2493,
           "end": 2518
         }
-      ]
-    },
-    {
-      "id": "d081",
-      "statement": "The exterior face of the Planar Palace door had a very faint, partial carving on it — appearing to be the outline of the left half of a tree with some leaves, though only partially complete.",
-      "entities": [
-        "Planar Palace"
       ],
-      "citations": [
-        {
-          "start": 2499,
-          "end": 2543
-        }
-      ]
-    },
-    {
-      "id": "d082",
-      "statement": "The door to another plane of existence had a carving on it that resembled the outline of the left half of a tree, possibly with leaves — only a partial image.",
-      "entities": [
-        "the door"
-      ],
-      "citations": [
-        {
-          "start": 2541,
-          "end": 2544
-        }
-      ]
-    },
-    {
-      "id": "d083",
-      "statement": "The door to another plane of existence that the party uses as a shelter is a magical construct that is invisible and leads to another plane of existence.",
-      "entities": [
-        "the door"
-      ],
-      "citations": [
-        {
-          "start": 2547,
-          "end": 2547
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d084",
       "statement": "The dark forest contains creatures that use glowing lures: small, faintly glowing orbs of pure white light with a shimmering liquid-like interior, suspended about five feet off the ground and attached by very faint gossamer threads running upward into the forest canopy — consistent with anglerfish-style predatory luring.",
       "entities": [
-        "the dark forest"
+        "Verdant Expanse"
       ],
       "citations": [
         {
           "start": 2638,
           "end": 2727
         }
-      ]
-    },
-    {
-      "id": "d085",
-      "statement": "The glowing lure orbs in the dark forest carry the emotion, enchantment, and mental traits, and can compel creatures who come close to impulsively want to touch them.",
-      "entities": [
-        "the dark forest"
       ],
-      "citations": [
-        {
-          "start": 2706,
-          "end": 2715
-        }
-      ]
-    },
-    {
-      "id": "d086",
-      "statement": "The dark forest contains a source of a bluish-purple diffuse glow accompanied by the sound of a harp and the sound of people talking, located somewhere among the trees.",
-      "entities": [
-        "the dark forest"
-      ],
-      "citations": [
-        {
-          "start": 2906,
-          "end": 2919
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d087",
@@ -1143,7 +649,8 @@
           "start": 2931,
           "end": 2934
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d088",
@@ -1157,105 +664,8 @@
           "start": 2931,
           "end": 2934
         }
-      ]
-    },
-    {
-      "id": "d089",
-      "statement": "A glade exists within the dense forest, identifiable by a bluish-purple luminescence produced by fungal or mushroom-like growths on the surrounding trees.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2971,
-          "end": 2974
-        }
-      ]
-    },
-    {
-      "id": "d090",
-      "statement": "A group of non-human humanoid creatures inhabits a glade in the forest. They are tall and gangly with bluish-gray skin, disproportionately long limbs, and wear gossamer sheer wrappings that appear organic rather than manufactured.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2978,
-          "end": 2991
-        }
-      ]
-    },
-    {
-      "id": "d091",
-      "statement": "The forest creatures' faces are covered by a hard, glossy bony or exoskeletal growth that functions like a fused mask, with a circular lamprey-like mouth, two horn-like protrusions, no visible nose, and hollow black eye sockets with no visible eyeballs.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2992,
-          "end": 3008
-        }
-      ]
-    },
-    {
-      "id": "d092",
-      "statement": "The forest creatures speak a sing-songy language that does not follow any recognizable melody, and their circular mouths contort in unusual ways to form sounds.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 3003,
-          "end": 3004
-        }
-      ]
-    },
-    {
-      "id": "d093",
-      "statement": "Krod is a small creature with the Titan Wrestler ability, allowing him to trip, shove, and grapple large creatures despite his size.",
-      "entities": [
-        "Krod"
       ],
-      "citations": [
-        {
-          "start": 3062,
-          "end": 3063
-        }
-      ]
-    },
-    {
-      "id": "d094",
-      "statement": "Tommy is an NPC companion traveling with the party who remained at the edge of the glade rather than entering the circle of forest creatures.",
-      "entities": [
-        "Tommy"
-      ],
-      "citations": [
-        {
-          "start": 3095,
-          "end": 3253
-        }
-      ]
-    },
-    {
-      "id": "d095",
-      "statement": "Oriel plays a harp and appears to hold a position of relative calm and authority among the forest creatures, while Jin is more openly contemptuous of outsiders.",
-      "entities": [
-        "Oriel",
-        "Jin"
-      ],
-      "citations": [
-        {
-          "start": 3104,
-          "end": 3142
-        }
-      ]
-    },
-    {
-      "id": "d096",
-      "statement": "Two of the forest creatures, named Oriel (also called Oriela or Auriel) and Jin (also called Jyn or Eurasian), appear to be leaders or figures of authority among the group gathered in the glade.",
-      "entities": [
-        "Oriel",
-        "Jin"
-      ],
-      "citations": [
-        {
-          "start": 3105,
-          "end": 3118
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d097",
@@ -1269,583 +679,8 @@
           "start": 3177,
           "end": 3178
         }
-      ]
-    },
-    {
-      "id": "d098",
-      "statement": "The forest creatures and their two leaders carry a jet-black raiment, indicating they are backed by a reasonably powerful divine or supernatural entity. This entity is not one of the Outer Gods and is not associated with the Green Man.",
-      "entities": [
-        "Oriel",
-        "Jin"
       ],
-      "citations": [
-        {
-          "start": 3193,
-          "end": 3201
-        }
-      ]
-    },
-    {
-      "id": "d099",
-      "statement": "The forest creatures do not use or value personal names, considering them freely given away by 'small folk.'",
-      "entities": [],
-      "citations": [
-        {
-          "start": 3208,
-          "end": 3209
-        }
-      ]
-    },
-    {
-      "id": "d100",
-      "statement": "The party are detectives affiliated with the Iridescent Church.",
-      "entities": [
-        "Cedric",
-        "Andros",
-        "Krod",
-        "Iridescent Church"
-      ],
-      "citations": [
-        {
-          "start": 3243,
-          "end": 3407
-        }
-      ]
-    },
-    {
-      "id": "d101",
-      "statement": "Tommy is a member of the party's group who tends to hang back and observe rather than engage directly in confrontations.",
-      "entities": [
-        "Tommy"
-      ],
-      "citations": [
-        {
-          "start": 3252,
-          "end": 3254
-        }
-      ]
-    },
-    {
-      "id": "d102",
-      "statement": "The husking process does not appear to cause pain to its victims.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 3261,
-          "end": 3263
-        }
-      ]
-    },
-    {
-      "id": "d103",
-      "statement": "The husking of small folk is described as important for 'the future' by those involved, though no harvesting of anything from the victims is taking place.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 3296,
-          "end": 3315
-        }
-      ]
-    },
-    {
-      "id": "d104",
-      "statement": "There exists a powerful lady whose court can be accessed through Auriel's magical door; she would not ask for material possessions from those who entreat her.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3329,
-          "end": 3330
-        }
-      ]
-    },
-    {
-      "id": "d105",
-      "statement": "The party's suspect connected to the husking is dead and no longer present.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 3345,
-          "end": 3356
-        }
-      ]
-    },
-    {
-      "id": "d106",
-      "statement": "Cedric is a wood-blooded lizard with a forest bloodline and is a propagandist by profession, granting him heightened resistance to deception.",
-      "entities": [
-        "Cedric"
-      ],
-      "citations": [
-        {
-          "start": 3369,
-          "end": 3415
-        }
-      ]
-    },
-    {
-      "id": "d107",
-      "statement": "Andros has natural orienteering ability and is considered attuned to forests.",
-      "entities": [
-        "Andros"
-      ],
-      "citations": [
-        {
-          "start": 3373,
-          "end": 3374
-        }
-      ]
-    },
-    {
-      "id": "d108",
-      "statement": "Auriel (also referred to as 'Aureole') is a fey-like being with a hard exoskeleton exterior and soft flesh on the inside, who plays a harp.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3393,
-          "end": 3576
-        }
-      ]
-    },
-    {
-      "id": "d109",
-      "statement": "Auriel can open a magical door carved into a fallen tree trunk by playing a specific melody on her harp; the door bears a crescent moon carving and serves as a passage to her lady's court.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3393,
-          "end": 3400
-        }
-      ]
-    },
-    {
-      "id": "d110",
-      "statement": "Jin is a being associated with Auriel's group who is not directly responsible for the husking of small folk.",
-      "entities": [
-        "Jin"
-      ],
-      "citations": [
-        {
-          "start": 3423,
-          "end": 3445
-        }
-      ]
-    },
-    {
-      "id": "d111",
-      "statement": "Auriel can also close the magical door by strumming three notes on her harp.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3544,
-          "end": 3546
-        }
-      ]
-    },
-    {
-      "id": "d112",
-      "statement": "Andros uses a spiked shield as his primary weapon.",
-      "entities": [
-        "Andros"
-      ],
-      "citations": [
-        {
-          "start": 3573,
-          "end": 3575
-        }
-      ]
-    },
-    {
-      "id": "d113",
-      "statement": "Auriel can conjure giant thorny protrusions from the ground as a melee strike attack, which also deals acid damage.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3581,
-          "end": 3606
-        }
-      ]
-    },
-    {
-      "id": "d114",
-      "statement": "Andros has resistance to physical damage of 7 from his armor.",
-      "entities": [
-        "Andros"
-      ],
-      "citations": [
-        {
-          "start": 3609,
-          "end": 3611
-        }
-      ]
-    },
-    {
-      "id": "d115",
-      "statement": "Cedric has the Sorcerer's Potency ability, which allows him to add his spell level to damage or healing rolls due to magical power inherent in his bloodline.",
-      "entities": [
-        "Cedric"
-      ],
-      "citations": [
-        {
-          "start": 3612,
-          "end": 3616
-        }
-      ]
-    },
-    {
-      "id": "d116",
-      "statement": "Krod wields a Nodachi.",
-      "entities": [
-        "Krod"
-      ],
-      "citations": [
-        {
-          "start": 3647,
-          "end": 3647
-        }
-      ]
-    },
-    {
-      "id": "d117",
-      "statement": "Krod has the Vicious Swing ability, which grants two extra dice of weapon damage.",
-      "entities": [
-        "Krod"
-      ],
-      "citations": [
-        {
-          "start": 3673,
-          "end": 3678
-        }
-      ]
-    },
-    {
-      "id": "d118",
-      "statement": "Auriel has an exoskeleton-like growth on her skin and black ichor instead of blood.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3688,
-          "end": 3690
-        }
-      ]
-    },
-    {
-      "id": "d119",
-      "statement": "Auriel can emit a maniacal laughter ability with the arcane, concentrate, emotion, and mental traits (and likely auditory) that compels nearby enemies to laugh uncontrollably.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3690,
-          "end": 3705
-        }
-      ]
-    },
-    {
-      "id": "d120",
-      "statement": "Auriel's laughter ability affects all enemies within 30 feet.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3695,
-          "end": 3696
-        }
-      ]
-    },
-    {
-      "id": "d121",
-      "statement": "Andros has the 'I Defy You' ability, which can be used on saving throws.",
-      "entities": [
-        "Andros"
-      ],
-      "citations": [
-        {
-          "start": 3717,
-          "end": 3717
-        }
-      ]
-    },
-    {
-      "id": "d122",
-      "statement": "Andros has the Shielded Taunt ability, which lets him raise his shield and taunt simultaneously; enemies who do not include Andros in their hostile actions suffer penalties.",
-      "entities": [
-        "Andros"
-      ],
-      "citations": [
-        {
-          "start": 3787,
-          "end": 3791
-        }
-      ]
-    },
-    {
-      "id": "d123",
-      "statement": "Jhin can cast Confusion.",
-      "entities": [
-        "Jhin"
-      ],
-      "citations": [
-        {
-          "start": 3807,
-          "end": 3807
-        }
-      ]
-    },
-    {
-      "id": "d124",
-      "statement": "Cedric has the Translocate ability, which allows him to teleport.",
-      "entities": [
-        "Cedric"
-      ],
-      "citations": [
-        {
-          "start": 3862,
-          "end": 3863
-        }
-      ]
-    },
-    {
-      "id": "d125",
-      "statement": "The courtiers are a troop creature type, meaning the group makes a single saving throw rather than individual ones.",
-      "entities": [
-        "courtiers"
-      ],
-      "citations": [
-        {
-          "start": 3882,
-          "end": 3882
-        }
-      ]
-    },
-    {
-      "id": "d126",
-      "statement": "Jhin has an exoskeleton-like growth on his skin and black ichor instead of blood, and can release a jet of black liquid under pressure when his exoskeleton is cracked.",
-      "entities": [
-        "Jhin"
-      ],
-      "citations": [
-        {
-          "start": 3913,
-          "end": 3914
-        }
-      ]
-    },
-    {
-      "id": "d127",
-      "statement": "Cedric has fast healing equal to half his level; at level 13 this is 6 hit points per turn.",
-      "entities": [
-        "Cedric"
-      ],
-      "citations": [
-        {
-          "start": 3928,
-          "end": 3933
-        }
-      ]
-    },
-    {
-      "id": "d128",
-      "statement": "Auriel can emit a slowing black mist from the cracks in her exoskeleton as a fortitude-save ability.",
-      "entities": [
-        "Auriel"
-      ],
-      "citations": [
-        {
-          "start": 3947,
-          "end": 3959
-        }
-      ]
-    },
-    {
-      "id": "d129",
-      "statement": "Aureole (Aurel) is a fey creature with a carapace that leaks black ichor when cracked.",
-      "entities": [
-        "Aureole",
-        "Aurel"
-      ],
-      "citations": [
-        {
-          "start": 4011,
-          "end": 4012
-        }
-      ]
-    },
-    {
-      "id": "d130",
-      "statement": "Troops (as a creature type) have a shared health pool, and each time damage crosses a certain threshold, another token representing a member of the troop is removed.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 4135,
-          "end": 4136
-        }
-      ]
-    },
-    {
-      "id": "d131",
-      "statement": "Troops are immune to the frightened and off-guard conditions.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 4137,
-          "end": 4137
-        }
-      ]
-    },
-    {
-      "id": "d132",
-      "statement": "The city of Hallia is a location the party returns to in order to report findings to the Iridescent Church.",
-      "entities": [
-        "Hallia",
-        "Iridescent Church"
-      ],
-      "citations": [
-        {
-          "start": 4207,
-          "end": 4207
-        }
-      ]
-    },
-    {
-      "id": "d133",
-      "statement": "The curse afflicting people in the region continued to wither and kill victims even after Aureole and Jin were slain, indicating those individuals were not the source of the curse.",
-      "entities": [
-        "Aureole",
-        "Jin"
-      ],
-      "citations": [
-        {
-          "start": 4208,
-          "end": 4216
-        }
-      ]
-    },
-    {
-      "id": "d134",
-      "statement": "Entering the fey court through its gate was understood to be lethal to the party.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 4217,
-          "end": 4217
-        }
-      ]
-    },
-    {
-      "id": "d135",
-      "statement": "The Iridescent Church is an organization the party is affiliated with and reports to.",
-      "entities": [
-        "Iridescent Church"
-      ],
-      "citations": [
-        {
-          "start": 4219,
-          "end": 4263
-        }
-      ]
-    },
-    {
-      "id": "d136",
-      "statement": "Tommy's mother is aware of him and claims to be a law clerk at a local legal office, but this claim is a lie.",
-      "entities": [
-        "Tommy"
-      ],
-      "citations": [
-        {
-          "start": 4240,
-          "end": 4252
-        }
-      ]
-    },
-    {
-      "id": "d137",
-      "statement": "Tommy is approximately eight years old but is a higher level than expected for his age, and is not frightened by the dark and can see in the dark.",
-      "entities": [
-        "Tommy"
-      ],
-      "citations": [
-        {
-          "start": 4253,
-          "end": 4358
-        }
-      ]
-    },
-    {
-      "id": "d138",
-      "statement": "Something was etching markings on the party's door, and while someone had the Perception to hear it, no one had the stats to identify what was being etched.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 4283,
-          "end": 4285
-        }
-      ]
-    },
-    {
-      "id": "d139",
-      "statement": "Jin is immune to the frightened condition.",
-      "entities": [
-        "Jin"
-      ],
-      "citations": [
-        {
-          "start": 4299,
-          "end": 4299
-        }
-      ]
-    },
-    {
-      "id": "d140",
-      "statement": "A character named Tanner is part of the broader party group but was absent during this adventure.",
-      "entities": [
-        "Tanner"
-      ],
-      "citations": [
-        {
-          "start": 4340,
-          "end": 4349
-        }
-      ]
-    },
-    {
-      "id": "d141",
-      "statement": "A character named Cedric Corot exists in the world and is someone the party has not yet encountered.",
-      "entities": [
-        "Cedric Corot"
-      ],
-      "citations": [
-        {
-          "start": 4344,
-          "end": 4345
-        }
-      ]
-    },
-    {
-      "id": "d142",
-      "statement": "Tommy is a boy who was held in the fey forest, many days' travel from where he was supposed to be.",
-      "entities": [
-        "Tommy"
-      ],
-      "citations": [
-        {
-          "start": 4355,
-          "end": 4357
-        }
-      ]
+      "reviewed": true
     }
   ],
   "goodSentences": [],

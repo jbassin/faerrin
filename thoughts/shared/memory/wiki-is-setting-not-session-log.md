@@ -37,3 +37,21 @@ people/places/things/lore fact. The old draft-labels prompt over-generated event
 extract the standing fact out of an event rather than recording the event. This is a criterion
 ORTHOGONAL to epistemic modality (gm-stated vs speculation, see [[heartwood-rewrite-constraints]]):
 a fact can be GM-stated canon and still be a session event that does NOT belong in the wiki.
+
+## Further refinements (worldbuilder review of fae-and-forest, 2025-09-18)
+
+**No game mechanics for characters.** Record a character's **physical characteristics and
+personality**; do **NOT** record PF2e mechanical/stat-block content — abilities, stats, spells they
+can cast, weapons they wield, action economy, levels. e.g. drop "Krod wields a Nodachi with the
+extend property", "Mordecai has Magnificent Mansion", "the Ugathal's blood-drain is a 3-action
+manipulate". Keep "Krod can sense blood like a bloodhound" only as a *characterful trait*, not as a
+mechanic. (Some borderline ability-flavor was kept in the earlier session — the bar is: flavor/trait
+yes, stat-block no.)
+
+**Use canonical proper names, not generic referents.** The fae-and-forest session is set in **the
+Verdant Expanse**; the draft often wrote "the forest" or "the Sea of Trees" and the worldbuilder had
+to edit them to the canonical name. Mining should prefer the **most specific proper name** the
+transcript provides and resolve obvious in-chunk referents ("the forest" → the named place). In the
+real pipeline this is **entity resolution (AC-20)**: surface forms and generic referents resolve to
+the canonical wiki entity (using the wiki's titles/`aliases:` index). The draft-labels script has no
+wiki context, so it can only do the prompt-level best-effort.

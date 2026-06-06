@@ -157,7 +157,12 @@ click.
   party-action narrative — and when an event reveals a durable fact, it **extracts the fact, not
   the action** (e.g. "the body was returned to base" → record *the NPC is dead*). This is a
   criterion **orthogonal to modality**: a fact can be GM-stated canon and still be a session
-  event that does not belong in the wiki. See `wiki-is-setting-not-session-log` memory.
+  event that does not belong in the wiki. Two further bars from worldbuilder review:
+  **(a) no game mechanics** — record a character's physical characteristics and personality, but
+  **not** PF2e stat-block content (abilities, stats, spells, weapons, action economy, levels);
+  **(b) canonical names** — prefer the specific proper name over generic referents ("the forest"
+  → the Verdant Expanse), resolving referents to named entities (this is `Resolve`'s job, AC-20).
+  See `wiki-is-setting-not-session-log` memory.
 - **Sentence anchor** — a durable handle identifying *which* wiki sentence a provenance record
   attaches to, robust to surrounding edits (not a raw character offset, which breaks on the
   next manual edit). Storage layer decided (D-1: render-invisible sidecar); the exact anchor
@@ -229,7 +234,7 @@ transcript (line-numbered, ~50% noise)
 | Ingest | Parse line-numbered transcript; attach speaker/role; cheap heuristic noise pre-pass. | High (deterministic). |
 | Mine | LLM: atomic **setting-fact** claims with line-IDs + modality — extracts standing world-facts, **excludes session-event/party-action narrative** (§5), and pulls the durable fact out of an event. Bounded cost (per-chunk, not whole-wiki). | Medium — the recall problem; needs eval set (G8). |
 | Triage | Present canon/uncertain/noise; human confirms. | High — human in the loop by design. |
-| **Resolve entities** | Map each claim's surface forms to a canonical **entity** + existing page (or new-page), using the wiki `aliases:` index + an entity registry; surface low-confidence merges for human confirmation. | Medium — the **biggest single error source** (ASR variance); never auto-merge across a confidence threshold. |
+| **Resolve entities** | Map each claim's surface forms — including generic referents ("the forest" → the Verdant Expanse) — to a canonical **entity** + existing page (or new-page), using the wiki `aliases:` index + an entity registry; surface low-confidence merges for human confirmation. | Medium — the **biggest single error source** (ASR variance + referents); never auto-merge across a confidence threshold. |
 | Locate | Match resolved entity → existing page or new-page proposal (uses a wiki index/summaries, not full text). | Medium. |
 | Conflict | Flag contradictions vs. wiki + prior claims, **entity-scoped** (compare only against prior canon sharing a resolved entity — D-11); canon is one shared world across arcs (D-9). | Medium — explicit human resolution. |
 | Draft/assemble | Build per-page proposals; optional voice-draft. | Low (voice) — therefore human authors. |
