@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.output/
+.nitro/
+.tanstack/
+.vite/
+src/routeTree.gen.ts
+*.tsbuildinfo

@@ -101,6 +101,47 @@
         "typescript": "^5.9.3",
       },
     },
+    "pkg/heartwood-review": {
+      "name": "@faerrin/heartwood-review",
+      "version": "0.1.0",
+      "dependencies": {
+        "@faerrin/heartwood": "workspace:*",
+        "@tanstack/react-router": "^1.170.7",
+        "@tanstack/react-start": "^1.168.10",
+        "github-slugger": "^2.0.0",
+        "mdast-util-to-string": "^4.0.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "rehype-stringify": "^10.0.1",
+        "remark-directive": "^4.0.0",
+        "remark-gfm": "^4.0.1",
+        "remark-parse": "^11.0.0",
+        "remark-rehype": "^11.1.2",
+        "remark-smartypants": "^3.0.2",
+        "unified": "^11.0.5",
+        "unist-util-visit": "^5.1.0",
+      },
+      "devDependencies": {
+        "@eslint/js": "^9.0.0",
+        "@tanstack/router-generator": "^1.167.13",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^16.3.2",
+        "@types/hast": "^3.0.4",
+        "@types/mdast": "^4.0.4",
+        "@types/node": "^24.2.1",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "@vitejs/plugin-react": "^6.0.2",
+        "eslint": "^9.0.0",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "jsdom": "^29.1.1",
+        "prettier": "^3.8.3",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.18.0",
+        "vite": "^8",
+        "vitest": "^4.1.7",
+      },
+    },
     "pkg/llm": {
       "name": "@faerrin/llm",
       "dependencies": {
@@ -344,6 +385,8 @@
     "@faerrin/face": ["@faerrin/face@workspace:pkg/face"],
 
     "@faerrin/heartwood": ["@faerrin/heartwood@workspace:pkg/heartwood"],
+
+    "@faerrin/heartwood-review": ["@faerrin/heartwood-review@workspace:pkg/heartwood-review"],
 
     "@faerrin/llm": ["@faerrin/llm@workspace:pkg/llm"],
 

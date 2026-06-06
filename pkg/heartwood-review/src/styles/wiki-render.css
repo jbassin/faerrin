@@ -1,0 +1,102 @@
+/* Checkpoint-grade article styling for the Phase-0a render-fidelity review.
+ * This is NOT aether's full themed cascade (variables/theme/custom SCSS, ~40KB)
+ * — it's enough to read the rendered structure as prose and confirm callouts,
+ * internal links, transcript lines, and `::` stat blocks render correctly.
+ * Stage E can wire aether's real compiled CSS if full theme parity is wanted. */
+
+.wiki-article {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #1c1c1e;
+}
+
+.wiki-article h1,
+.wiki-article h2,
+.wiki-article h3,
+.wiki-article h4 {
+  line-height: 1.25;
+  margin: 1.6em 0 0.5em;
+  font-weight: 600;
+}
+
+.wiki-article p {
+  margin: 0 0 1em;
+}
+
+.wiki-article a.internal {
+  color: #2b6cb0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(43, 108, 176, 0.35);
+}
+.wiki-article a.internal:hover {
+  border-bottom-color: #2b6cb0;
+}
+
+/* Obsidian/Quartz callout box (structure mirrors aether's DOM). */
+.wiki-article .callout {
+  margin: 1em 0;
+  padding: 0.6em 0.9em;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-left: 4px solid #6a7886;
+  background: rgba(106, 120, 134, 0.08);
+}
+.wiki-article .callout-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+.wiki-article .callout-content-inner > :last-child {
+  margin-bottom: 0;
+}
+.wiki-article .callout[data-callout="note"] {
+  border-left-color: #2b6cb0;
+  background: rgba(43, 108, 176, 0.08);
+}
+.wiki-article .callout[data-callout="warning"],
+.wiki-article .callout[data-callout="caution"] {
+  border-left-color: #d69e2e;
+  background: rgba(214, 158, 46, 0.1);
+}
+
+/* Transcript lines (from aether's transcript directives). */
+.wiki-article .transcript-line {
+  display: flex;
+  gap: 0.5em;
+  align-items: baseline;
+  font-size: 0.95em;
+}
+.wiki-article .transcript-time {
+  appearance: none;
+  border: none;
+  background: none;
+  color: #2b6cb0;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+.wiki-article .transcript-name {
+  font-weight: 600;
+}
+
+.wiki-article pre {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.8em;
+  border-radius: 6px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+@media (prefers-color-scheme: dark) {
+  .wiki-article {
+    color: #e4e4e7;
+  }
+  .wiki-article a.internal {
+    color: #7cb3ee;
+    border-bottom-color: rgba(124, 179, 238, 0.35);
+  }
+}
