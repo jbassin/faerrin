@@ -18,23 +18,23 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-8-28.txt",
-      "contentHash": "55bcf42dcbf3a93a73aa498c61fe47e94fdc0d1e73f38cc151087afa5cce3170",
+      "contentHash": "28f6bbbad24c8586b0bfd3ef8e2e87e2fbf3fd5037e2448ce4fc5fcfbeccf18d",
       "stages": {
-        "segmented": "2026-06-06T01:13:14.498Z",
-        "extracted": "2026-06-06T01:17:58.487Z",
-        "resolved": "2026-06-06T01:18:00.276Z",
-        "matched": "2026-06-06T01:24:27.815Z",
-        "proposed": "2026-06-06T01:32:03.588Z",
-        "verified": "2026-06-06T01:52:13.330Z",
-        "prOpened": "2026-06-06T01:52:13.330Z"
+        "segmented": "2026-06-06T02:03:03.882Z",
+        "extracted": "2026-06-06T02:08:07.487Z",
+        "resolved": "2026-06-06T02:08:09.898Z",
+        "matched": "2026-06-06T02:10:32.031Z",
+        "proposed": "2026-06-06T02:12:24.292Z",
+        "verified": "2026-06-06T02:12:27.803Z",
+        "prOpened": "2026-06-06T02:12:27.803Z"
       },
       "errors": [],
-      "prUrl": "https://github.com/jbassin/faerrin/pull/4",
-      "prNumber": 4
+      "prUrl": "https://github.com/jbassin/faerrin/pull/5",
+      "prNumber": 5
     },
     {
       "filename": "000.through-a-song-darkly.2025-10-20.txt",
-      "contentHash": "23e179951c3ec260ddd3295160ab80b3cc422ce7b4235c3ca756d660f3c3da5b",
+      "contentHash": "20ac39d308990c11b1ccbbe9d2f9ff079ba9759cd4d274957ea7b52725ec4c67",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -48,7 +48,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-10-27.txt",
-      "contentHash": "2d796bb65533d49430d9175819586a04e74817ac4c5632356c1d2c9479dca07b",
+      "contentHash": "11109fafc75584e37243225d56f148bd4c64afa50d5e4329e78c7537bbf76d95",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -62,7 +62,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-11-4.txt",
-      "contentHash": "d87df1b56e524af9adb73525b2f54635189b62635a2398ce1cef8e91633efc3e",
+      "contentHash": "f0c688d4a54d7c26f11ac213034f6551a023b7a148719c87df0340fc41bf9c9c",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -76,7 +76,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-11-11.txt",
-      "contentHash": "22dd8991c0aa0518646f0496eaa427d1eb7c287587072b7cf2710007ae7f7c45",
+      "contentHash": "2de823d2add9f190e819a1812615f237f354e9fc49ce2909febc8c006c3caafb",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -90,7 +90,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-11-18.txt",
-      "contentHash": "a820af9bb65139c17f0dd1ee89dfe58707a5d38648dd378bbe4ee45d93597340",
+      "contentHash": "5ba86124049cf2a8750a0667ac00886c31096579bd3809801b945f65915df178",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -104,7 +104,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-12-2.txt",
-      "contentHash": "fd854cb6d2b2bb9045137723df9479dce7bd7e742e68152a7c20c1102b043592",
+      "contentHash": "4462fbbc762ef2e1232c34cf11a9902b75b36cab369b16bc7f8231433db9ef23",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -118,7 +118,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-12-9.txt",
-      "contentHash": "2f53332a5b14ee9b5fca3bbeed918277f3e4aa6db6cddc788076d219d5c3b78e",
+      "contentHash": "34e9e71ddf22f728c72d81e2a66723e59a61296ba6bf8a6e7919f7a744fcd8ee",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -132,7 +132,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-12-16.txt",
-      "contentHash": "559aeee4dc43cdb6f9abf3aeeccb4b3248556034ae05f905a0ba857461501902",
+      "contentHash": "648ba54ffef5fdf6d7ca5489b39b3c37ef3bf60b73a22c0fe98cc8d71d32abd9",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -146,7 +146,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-12-23.txt",
-      "contentHash": "f36b697a86fefd7e001801060a18b3525ba7855729b518e2305847b1aabdc54c",
+      "contentHash": "7180dc11992ce39a00e1edf7a8f932d458a637c2eca14e6ef80fbabdfd32fa54",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -160,7 +160,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2025-12-30.txt",
-      "contentHash": "b9c9eb269d83f269afcab0ac129fbbdc5a8a2645c4d70120b28e313ce14fb934",
+      "contentHash": "8c257ca48ab2402c9f7dadae1674bbaba0572da6dc4c96b1fa9267abc9f053de",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -174,7 +174,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-1-6.txt",
-      "contentHash": "3310e6890d8500f2d737dcb3a18d95e2b7ed586466356e3ff68052b985e3cd67",
+      "contentHash": "38680855f4f6c5e45e4f2f4d0780e23f72ceafe01350d88b8e416ba20ac17db1",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -188,7 +188,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-1-13.txt",
-      "contentHash": "8790567a498cdcbd1e1379f0e8a3fe7fe4fb458bc1a1025ff4b6c328f1a1de9b",
+      "contentHash": "ad939245b5943c8123bd95a3ec8837e4ca0231ffd33117d37cf4231088d3fb47",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -202,7 +202,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-1-20.txt",
-      "contentHash": "9ab41cf5bba493351461834370a7d412f1df9a100f29e0185b94a2203fef7878",
+      "contentHash": "983d96a0dba9459be5702919b651d4c0fe1d2a774b82a3ac23d1e566510a2ecc",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -216,7 +216,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-1-27.txt",
-      "contentHash": "b28b37cc972bcd08323731d0a35e273e6659a425d8bc486966dab13dde552d49",
+      "contentHash": "2c1e0018c2d1369effdbfc0535430014759d884e84cde7677fea4197b07d1b34",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -230,7 +230,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-2-3.txt",
-      "contentHash": "749eff6a2e616ffb866ec0d94be4bc1780981cec846a6695124862c6fe8f3823",
+      "contentHash": "428bb91e01d37ebc44cef687eed3e43d26bc02a2ecafd471553f3e4027826c80",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -244,7 +244,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-2-17.txt",
-      "contentHash": "adce58755c24ed1763690af37fd106c16535d511a47eb115b5d8eba4047e1f0e",
+      "contentHash": "7eec718d201865f67c1cc8a32b8f6ea8ef8c11a332b102452e1a51e1b2008453",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -258,7 +258,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-2-24.txt",
-      "contentHash": "05e1da13071fe6a92f7f26169ce392aee111828e1a75d965f5af30fae3908e1a",
+      "contentHash": "325c93eeb1e4662ae9c1f985144f0776a8525c6f8cd8d5b5964e310e72cc31a8",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -272,7 +272,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-3-3.txt",
-      "contentHash": "cd0956d96063f94ebd0cad2efcaebf6eb9087089808fee81020cea4a7d91ee63",
+      "contentHash": "4fdbecbf1af4051a9690c03ed0e6de5c53fcdf1627322565b2834953dd2ee25a",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -286,7 +286,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-3-9.txt",
-      "contentHash": "214eed0ed56b70b977c9710016b6d84c06644c17571bb55d8cca9041c23bffa6",
+      "contentHash": "390172c4d3ec88280a609f0ddb67760f5c7278b9b41b0dd5273280bd92d36108",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -300,7 +300,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-3-16.txt",
-      "contentHash": "6de001e11beab440e22a0c6e6f1431854f19bd2339b60aea786c81bae5e4be67",
+      "contentHash": "39df637d258615bfa3c9540d095db3d11832df199c527f12ad434c9a769918ee",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -314,7 +314,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-3-23.txt",
-      "contentHash": "5846b3401dac4d3c6dfedaafb9ee9640f391c417df0f128001319a16245bc770",
+      "contentHash": "884824bb6a0ec49fbb6adbb8b7ee2698bd0eae5cfdb31ae827b818ff86e41d7e",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -328,7 +328,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-3-30.txt",
-      "contentHash": "9a6e9845c42af0a0f44fb169ad410f9296d67cbc06768ca877adb5b59b2be05e",
+      "contentHash": "07baf688181fc79e94e71984baab2d3cae42b2ec2b022d43bbfe3cc2b90ddce2",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -342,7 +342,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-4-13.txt",
-      "contentHash": "d472887c9132f6476b37bd3d5ced9f6dff907d7092cc6e3bd104d81ed700a06a",
+      "contentHash": "d277e39038b24b1ebf48a80b789d655554d7c917eaf8c5a907d635884b0ac746",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -356,7 +356,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-5-7.txt",
-      "contentHash": "f2febca28df07f5466a1638957d88dee1f4dcc398610ddf28ae2e8108c4a1b25",
+      "contentHash": "5bf409e5e6e6d1e797f57c387f847f89ac09038178dee79c46cda206284a8eb2",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -370,7 +370,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-5-11.txt",
-      "contentHash": "1240b2498ee0d128d02e7b23526e2425ed12df71a3c2709d349dddc901c25e76",
+      "contentHash": "fd76d08b4d1ae308c9d2b5e6fb4d119f53b5831882fb5a89b02ed325fcb5aae6",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -384,7 +384,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-5-21.txt",
-      "contentHash": "447204655d0d75210a17a7bd54efbd410bbf01f57dde5538b41a698181fef161",
+      "contentHash": "25e1a21c55b3ded06c5b0cde16cbba53a522325b6636f7199bae40984ba7d1c7",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -398,7 +398,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-5-25.txt",
-      "contentHash": "a0d9fca6093c5c177b47c834cc7e5c0d39f13c2d2b50734a1425c54414bfa180",
+      "contentHash": "89eea36bee5cf0444e488d6f351a9c25e23ede807eecf951e4bbea92be7fe0a3",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -412,7 +412,7 @@
     },
     {
       "filename": "000.through-a-song-darkly.2026-6-1.txt",
-      "contentHash": "5316e9989715c41f451d2f4bf82140fe7b4cb6f8b540b2e9429026952562937d",
+      "contentHash": "38589bb8e798a7991ecd63ae5cfd9937f2f97f1add11cafdc9f94758a4affbab",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -440,7 +440,7 @@
     },
     {
       "filename": "102.fae-and-forest.2025-9-11.txt",
-      "contentHash": "c6e3fb2f1919dd6e2dd255776ceb4ff0c512175c534ba23e79fdb3fe396a2342",
+      "contentHash": "1c3d9e86d118f135c54c7082366b5f3bd4f78ab1d88ff703b9b7a116985efb60",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -454,7 +454,7 @@
     },
     {
       "filename": "102.fae-and-forest.2025-9-18.txt",
-      "contentHash": "433cc8d98cc749b79fe3c2e832cd7bc16c943d84ad15a50c3ea80c9029908a6d",
+      "contentHash": "f13a3e9dd3d07bb2e5770d308fe5f3b3690caffeb4eeafa1cf1c28d02ed27dfc",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -468,7 +468,7 @@
     },
     {
       "filename": "102.fae-and-forest.2025-9-25.txt",
-      "contentHash": "4da407badd357e05a1fee9fd216272d3854d41d6e0df86b1856b6639d38f77d1",
+      "contentHash": "076bcc081f29ddee7f65ae3e0c0acb7f33c35b6ef9435f54ffb442dd69501427",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -482,7 +482,7 @@
     },
     {
       "filename": "103.a-hunt-of-metal-and-vine.2025-6-9.txt",
-      "contentHash": "ad5012c62ba8ba671efc18931c07e3edd39cc23016dc83da348ddb7fb7413df5",
+      "contentHash": "7cca76138e27a7e550c7bbc8635146e35e11883231fead7706c399a89180f679",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -496,7 +496,7 @@
     },
     {
       "filename": "103.a-hunt-of-metal-and-vine.2025-6-16.txt",
-      "contentHash": "e50d2f570ccce17845b1e2dbc3b43146ac581fadcba6b87505083e1d95768e11",
+      "contentHash": "cdabad9deea30619e9ee898c9a04827b005778dfdf1ae77b93ecee33a080f9d9",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -510,7 +510,7 @@
     },
     {
       "filename": "103.a-hunt-of-metal-and-vine.2025-6-23.txt",
-      "contentHash": "4f2912f1e6660962dca69044d14e15c7877ab82c4ff24a2798db7ae50325449b",
+      "contentHash": "f8d32e50a037c53a7609841f43384de0ffabd3b19d0d2fbd3ca233eba7ff6b04",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -524,7 +524,7 @@
     },
     {
       "filename": "104.the-first-spark.2025-5-21.txt",
-      "contentHash": "c9165e30f992b2979c9314e5e379bbc1d7c1067651ff9d9f23f1d1b22177a81d",
+      "contentHash": "a0006d50f470e9b59332259926c0b2a2d89c74d26e62d5357029149516254e64",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -538,7 +538,7 @@
     },
     {
       "filename": "105.observatory-slipped.2026-4-6.txt",
-      "contentHash": "c4c06ac286169fc65df23d13f0b1e6ec2c00fd486ab7d842734eb6f8508cad64",
+      "contentHash": "1a4455e51a5df5822e8b29c61b538e5cc9d091046df2d93051ec2d30149427e7",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -552,7 +552,7 @@
     },
     {
       "filename": "105.observatory-slipped.2026-4-27.txt",
-      "contentHash": "b607d855ec8367ebabd0b98d2cba63a65d1fde7873f73bc5caecc9fc645121f8",
+      "contentHash": "82a04761800690b352e2008be2bbe2c7003e76c44cca6bcb931812c426fd2799",
       "stages": {
         "segmented": null,
         "extracted": null,
@@ -566,7 +566,7 @@
     },
     {
       "filename": "106.fey-in-the-mists.2026-4-20.txt",
-      "contentHash": "dc5dd3237c47b1bad1d36c57796629af272b1c266c216d20003f344d67654364",
+      "contentHash": "e89234b75c122bf2a7c64359814b61817edf7e33db94520890889d4a9b1ddfce",
       "stages": {
         "segmented": null,
         "extracted": null,

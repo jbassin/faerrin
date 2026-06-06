@@ -1,6 +1,6 @@
 {
   "filename": "000.through-a-song-darkly.2025-8-28.txt",
-  "contentHash": "55bcf42dcbf3a93a73aa498c61fe47e94fdc0d1e73f38cc151087afa5cce3170",
+  "contentHash": "28f6bbbad24c8586b0bfd3ef8e2e87e2fbf3fd5037e2448ce4fc5fcfbeccf18d",
   "totalLines": 3981,
   "windowCount": 11,
   "segments": [
@@ -23,126 +23,112 @@
       "endLine": 237,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Argyle tells story of Delta flight: two women taking eight seats and requesting iced coffee"
+      "oneLineSummary": "Argyle tells story about Delta flight attendant confusion over water vs. iced coffee request"
     },
     {
       "startLine": 238,
       "endLine": 266,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Argyle shares workplace joke about coffee: 'it's not my cup of tea' pun"
+      "oneLineSummary": "Argyle shares workplace joke about coffee: 'it's not my cup of tea'"
     },
     {
       "startLine": 267,
       "endLine": 380,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Players discuss ISS, reference frames, physics Reddit debates about pull-ups and treadmills"
+      "oneLineSummary": "Players discuss ISS decommissioning, reference frames, physics Reddit debates about pull-ups and treadmills"
     },
     {
       "startLine": 381,
       "endLine": 495,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Players discuss physics, Reddit, third-party apps, NYT crossword paywall, and campaign backgrounds"
+      "oneLineSummary": "Players discuss physics, Reddit, third-party apps, NYT crossword paywall, and campaign background setup"
     },
     {
       "startLine": 496,
       "endLine": 546,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Discussion of Notion campaign notes, currencies from first campaign, returning NPCs like Elias"
+      "oneLineSummary": "Discussion of Notion campaign notes, previous campaign currencies, NPCs returning from campaign one"
     },
     {
       "startLine": 547,
       "endLine": 730,
       "label": "recap",
       "confidence": "high",
-      "oneLineSummary": "Johnny recaps first mega session: fire, dream sequence, meeting Illmari and crew, investigating Flynn's death, sewers, augers, satellite dish recovery, Zorbon meeting"
+      "oneLineSummary": "Johnny recaps first mega session: fire, escape, breakfast, meeting Illmari and NPCs, investigating Flynn's death, sewers, augers, recovering body, satellite dish, Zorbon meeting"
     },
     {
       "startLine": 731,
       "endLine": 742,
       "label": "recap",
       "confidence": "high",
-      "oneLineSummary": "Johnny recaps previous session: satellite dish heist, leveling up, party returns to Sin and Tonic"
+      "oneLineSummary": "Johnny recaps previous session: stole radar dish from roller rink, returned to Sin and Tonic, party leveled up"
     },
     {
       "startLine": 743,
-      "endLine": 827,
+      "endLine": 826,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Players and GM discuss mythic points, hero points, and joke about buying vowels; GM clarifies tavern layout"
+      "oneLineSummary": "Players and GM discuss hero points, mythic points, and joke about Wheel of Fortune vowels; GM clarifies mattress history"
     },
     {
-      "startLine": 828,
-      "endLine": 835,
+      "startLine": 827,
+      "endLine": 895,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Argyle wakes and goes downstairs; GM clarifies the tavern layout is single-floor."
+      "oneLineSummary": "Argyle wakes and goes downstairs for breakfast; Anzu asks about Fanes and hearts, rolls Arcana 20 to learn about Belvedere's multiple hearts"
     },
     {
-      "startLine": 836,
-      "endLine": 882,
-      "label": "rules",
-      "confidence": "high",
-      "oneLineSummary": "Anzu asks about Fane mechanics (size, power, multiple hearts); GM explains with examples of Concordia and RunGunners."
-    },
-    {
-      "startLine": 883,
-      "endLine": 896,
-      "label": "ooc",
-      "confidence": "high",
-      "oneLineSummary": "OOC banter about the word 'patchwork' and a villain from campaign one; players joke about past encounters."
-    },
-    {
-      "startLine": 897,
+      "startLine": 896,
       "endLine": 970,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party gathers for breakfast at Sin and Tonic; Argyle asks Ginny about fire repellent; Johnny finds ornate fans"
+      "oneLineSummary": "Party discusses fire repellent with Ginny the heart; orders breakfast; Johnny finds ornate fans; party plans next steps and shopping"
     },
     {
       "startLine": 971,
       "endLine": 1047,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party discusses to-do list: decode receiver, patch walls, attend meeting; plans to buy tinfoil and eggs; Anzu wants to track Tywelwyn"
+      "oneLineSummary": "Anzu wants to check on twins about radar dish investigation; discusses tuning it cautiously; twins mention Sentience Distributor and Embercall"
     },
     {
       "startLine": 1048,
       "endLine": 1080,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party discusses acquiring equipment and weapons; characters check resources and negotiate with a merchant contact in town."
+      "oneLineSummary": "Party discusses acquiring equipment and weapons; characters negotiate with a merchant contact and track gold/silver inventory."
     },
     {
       "startLine": 1081,
       "endLine": 1183,
       "label": "rules",
       "confidence": "high",
-      "oneLineSummary": "Players discuss equipment purchases, armor costs, discounts, and party finances"
+      "oneLineSummary": "Players discuss equipment purchases, armor costs, discounts, and party finances; debate plate armor affordability"
     },
     {
       "startLine": 1184,
       "endLine": 1224,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Anok offers work at a scrapyard; party discusses job options and decides to visit Johnny's contact for armor"
+      "oneLineSummary": "Anouk offers scrapyard work; party decides to visit Johnny's contact for armor before taking jobs"
     },
     {
       "startLine": 1225,
       "endLine": 1340,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party travels to Undertable pawn shop; Anzu's raven Othello arrives; Johnny introduces party to Smiler the centaur proprietor"
+      "oneLineSummary": "Party travels to seedier district via trolley; Anzu's raven Othello arrives; group heads to Undertable pawn shop"
     },
     {
       "startLine": 1341,
       "endLine": 1441,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Smiler describes his shop; Johnny negotiates friend discount; Smiler offers Benny a tiny gun for self-defense"
+      "oneLineSummary": "Party enters Undertable pawn shop; Johnny reunites with Smiler the centaur fence; Smiler offers Benny a gun"
     },
     {
       "startLine": 1442,
@@ -177,14 +163,14 @@
       "endLine": 1820,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party reacts to Benny's revelation; Argyle shows new business card, discusses classified parents"
+      "oneLineSummary": "Party reacts to Benny's revelation; Argyle shows new business card, discusses parents with Scale"
     },
     {
       "startLine": 1821,
       "endLine": 1868,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party discusses glowing items from dreams, Argyle's new business cards and licensing, and plans to visit the junkyard"
+      "oneLineSummary": "Party discusses glowing items from dreams, Argyle's new business cards and licensing, and Argyle's parents' names (Aaron Cross and Joran Davinrock)"
     },
     {
       "startLine": 1869,
@@ -205,59 +191,66 @@
       "endLine": 1968,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "GM narrates arrival at Sableclutch Scrap, party spots Copperjaw operating crusher, Johnny casts musical accompaniment"
+      "oneLineSummary": "Party arrives at Sableclutch Scrap, Johnny casts musical accompaniment, party discusses their recent gifts"
     },
     {
       "startLine": 1969,
-      "endLine": 2014,
+      "endLine": 2030,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party meets Copperjaw, Benny shakes his hand and loses athletics check, gets knuckles ground together"
+      "oneLineSummary": "Party meets Copperjaw, dwarven scrapyard owner; Benny shakes his hand and receives handcuffed suitcase job for 100 gold"
     },
     {
-      "startLine": 2015,
-      "endLine": 2078,
+      "startLine": 2031,
+      "endLine": 2089,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Copperjaw offers jobs: guarding (70 gp) or moving (100 gp); party chooses moving, receives locked suitcase"
+      "oneLineSummary": "NPC Copperjaw assigns delivery job with heavy magical suitcase; warns of potential ambush by interested parties."
     },
     {
-      "startLine": 2079,
+      "startLine": 2090,
+      "endLine": 2100,
+      "label": "ooc",
+      "confidence": "high",
+      "oneLineSummary": "Players and GM banter about tire companies and world-building details; off-topic tangent about Michelin and Chorath."
+    },
+    {
+      "startLine": 2101,
       "endLine": 2124,
-      "label": "ic",
+      "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Anzu asks about danger; Copperjaw warns of two mysterious people interested in the suitcase; OOC tangent about Michelin guides"
+      "oneLineSummary": "Players and GM discuss tire companies, restaurant guides, and real-world examples like Denver and Michelin stars—entirely out-of-character banter."
     },
     {
       "startLine": 2125,
       "endLine": 2180,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Copperjaw gives Diamond District address, party prepares to depart; Johnny prestidigitates everyone clean"
+      "oneLineSummary": "Copperjaw gives Diamond District address, Johnny prestidigitates party clean, confirms doorman details and payment"
     },
     {
       "startLine": 2181,
       "endLine": 2240,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party negotiates payment details with Cobblejaw, discusses the mysterious suitcase delivery job and Benny's weapons loadout"
+      "oneLineSummary": "Party negotiates payment details with Copperjaw, discusses the briefcase delivery job, and prepares to leave the junkyard"
     },
     {
       "startLine": 2241,
       "endLine": 2283,
       "label": "rules",
       "confidence": "high",
-      "oneLineSummary": "Players and GM clarify mechanics of Anzu's animal companion perception bonus and eye-viewing ability cooldown."
+      "oneLineSummary": "Discussion of Anzu's animal companion's perception modifier and mechanics of an ability allowing one-minute eye-contact viewing once per ten minutes."
     },
     {
       "startLine": 2284,
-      "endLine": 2289,
+      "endLine": 2290,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Johnny and Anzu take a break to use the stream while the GM steps away; players announce their departure."
+      "oneLineSummary": "Players announce they're stepping away to use the restroom during the campaign session."
     },
     {
-      "startLine": 2290,
+      "startLine": 2291,
       "endLine": 2333,
       "label": "ooc",
       "confidence": "high",
@@ -265,59 +258,59 @@
     },
     {
       "startLine": 2334,
-      "endLine": 2370,
+      "endLine": 2372,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party walks toward trolley with Othello scouting overhead; Johnny asks Benny about hobbies and comics"
+      "oneLineSummary": "Party walks through town while Johnny questions Benny about entertainment; GM describes perception checks and suspicious figure following them."
     },
     {
-      "startLine": 2371,
-      "endLine": 2398,
+      "startLine": 2373,
+      "endLine": 2403,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Perception checks reveal party draws attention due to nine-year-old with chained briefcase; shadowy figure follows them"
+      "oneLineSummary": "GM narrates party's journey, describes attention drawn by Benny's suitcase, and players establish marching order for continued travel."
     },
     {
-      "startLine": 2399,
+      "startLine": 2404,
       "endLine": 2427,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Players and GM discuss marching order and character details; conversation devolves into meta-discussion about character race and appearance."
+      "oneLineSummary": "Players and GM discuss character appearance and race in a lighthearted meta conversation about a character's elven features."
     },
     {
       "startLine": 2428,
       "endLine": 2540,
-      "label": "ic",
+      "label": "combat",
       "confidence": "high",
-      "oneLineSummary": "Goblin pickpocket attempts to steal from Johnny; party pursues but loses him in alley; Black Line cops approach after commotion"
+      "oneLineSummary": "Goblin pickpocket attempts to steal from Johnny, party pursues, then Black Line cops approach after commotion"
     },
     {
       "startLine": 2541,
       "endLine": 2559,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Anzu's bird Othello spots two Black Line cops approaching; they're not Threshold Authority."
+      "oneLineSummary": "Anzu's bird Othello spots two Blackline cops approaching; they're not Threshold Authority."
     },
     {
       "startLine": 2560,
       "endLine": 2597,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Johnny persuades cops to pursue pickpocket; gives contact info via Coppajaw at Sableclutch scrap."
+      "oneLineSummary": "Johnny persuades cops to pursue pickpocket; gives contact info via Copperjaw at Sableclutch scrap."
     },
     {
       "startLine": 2598,
       "endLine": 2626,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Argyle scouts for more cops; they position themselves around party in tactical formation."
+      "oneLineSummary": "Argyle and Anzu scout for threats; cops position themselves to box in the party."
     },
     {
       "startLine": 2627,
       "endLine": 2678,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Argyle questions cops' ID; Johnny backs up near Benny; cops mention delivery and leave."
+      "oneLineSummary": "Argyle questions cops' ID; they mention delivery job and leave after exchanging names."
     },
     {
       "startLine": 2679,
@@ -352,7 +345,7 @@
       "endLine": 2824,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party arrives at trolley station; perceives three waiting people; tram arrives and doors open."
+      "oneLineSummary": "Party arrives at trolley station; perceives waiting passengers; tram arrives and doors open."
     },
     {
       "startLine": 2825,
@@ -366,7 +359,7 @@
       "endLine": 2889,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Argyle checks if passengers are skinwalkers; identifies factory workers and lost tourists."
+      "oneLineSummary": "Argyle makes society check on passengers; learns they're factory workers and lost tourists."
     },
     {
       "startLine": 2890,
@@ -380,7 +373,7 @@
       "endLine": 2902,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party boards tram, GM describes passengers; Argyle guards child, more people board at next station"
+      "oneLineSummary": "Party boards tram, GM describes passengers; Argyle guards child; more passengers board at next stops"
     },
     {
       "startLine": 2903,
@@ -401,49 +394,35 @@
       "endLine": 2960,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Tram reaches final stop; party disembarks, discusses walking vs taxi to destination"
+      "oneLineSummary": "Tram reaches destination; party disembarks; GM offers taxi or walking; party decides to walk"
     },
     {
       "startLine": 2961,
-      "endLine": 2983,
+      "endLine": 3027,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party checks for pursuing goblins, confirms they've gone a different direction, and prepares to move on."
+      "oneLineSummary": "Party checks for followers, finds none; routes through alleys toward destination; GM describes path options"
     },
     {
-      "startLine": 2984,
-      "endLine": 3002,
-      "label": "ic",
-      "confidence": "high",
-      "oneLineSummary": "Party discusses strategy for potential ambush in alleys and scouts for a good location using Othello."
-    },
-    {
-      "startLine": 3003,
+      "startLine": 3028,
       "endLine": 3083,
       "label": "ic",
       "confidence": "high",
-      "oneLineSummary": "Party walks through alley, two office workers transform into fleshy creatures; combat initiated"
+      "oneLineSummary": "Party walks through alley; two office workers transform into fleshy creatures; combat imminent"
     },
     {
       "startLine": 3084,
-      "endLine": 3160,
-      "label": "rules",
-      "confidence": "high",
-      "oneLineSummary": "Initiative rolls, weapon rune progression discussion, Foundry setup clarification, mythic role bug fix"
-    },
-    {
-      "startLine": 3161,
       "endLine": 3260,
       "label": "combat",
       "confidence": "high",
-      "oneLineSummary": "Combat round 1: Argyle strikes twice, Benny intimidates and damages Ugathol I, Ugathol II prepares counterattack"
+      "oneLineSummary": "Initiative rolled; rules discussion on rune progression and weapon bonuses; Argyle and Benny attack creatures; combat begins"
     },
     {
       "startLine": 3261,
       "endLine": 3349,
       "label": "combat",
       "confidence": "high",
-      "oneLineSummary": "Benny intimidates Ugathal I, Argyle takes damage and gets grabbed, Benny interrupts Ugathal I's blood nourishment with a critical hit"
+      "oneLineSummary": "Benny intimidates Ugathal I, Ugathal II attacks Argyle and grabs him, Benny interrupts with opportunity attack"
     },
     {
       "startLine": 3350,
@@ -457,7 +436,7 @@
       "endLine": 3478,
       "label": "combat",
       "confidence": "high",
-      "oneLineSummary": "Anzu recalls knowledge on creatures, casts Telekinetic Rend on both Ugathals, uses shield"
+      "oneLineSummary": "Anzu recalls knowledge on creatures, casts Telekinetic Rend on both Ugathals, shields herself"
     },
     {
       "startLine": 3479,
@@ -471,14 +450,21 @@
       "endLine": 3615,
       "label": "combat",
       "confidence": "high",
-      "oneLineSummary": "Benny kills Ugathal I with intimidating strike, Ugathal II attempts blood nourishment but gets interrupted, debate over grabbed condition duration"
+      "oneLineSummary": "Benny kills Ugathal I with intimidating strike, Ugathal II attempts blood nourishment but gets interrupted by Johnny"
     },
     {
       "startLine": 3616,
-      "endLine": 3819,
+      "endLine": 3799,
       "label": "combat",
       "confidence": "high",
-      "oneLineSummary": "Party finishes combat against Ukathals; Anzu uses telekinetic projectile, Argyle delivers killing blow, party finds badges on corpses"
+      "oneLineSummary": "Combat continues: Johnny uses distracting performance, Anzu attacks with telekinetic projectile, Argyle finishes off the Ugathal with a great axe strike."
+    },
+    {
+      "startLine": 3800,
+      "endLine": 3819,
+      "label": "ic",
+      "confidence": "high",
+      "oneLineSummary": "Party searches the Ugathal corpses, finds two black line badges inside the flesh."
     },
     {
       "startLine": 3820,
@@ -492,21 +478,21 @@
       "endLine": 3876,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Post-combat discussion: players and GM discuss enemy stats, crit mechanics, weapon builds, and reactive strikes in a casual meta-game conversation."
+      "oneLineSummary": "Post-combat discussion: players and GM discuss enemy stats, crit rolls, weapon builds, and reactive strike mechanics in a casual, joking tone."
     },
     {
       "startLine": 3877,
       "endLine": 3900,
       "label": "rules",
       "confidence": "high",
-      "oneLineSummary": "Rules discussion about weapon potency, armor potency, unarmed attacks, and hand wraps for spellcasters"
+      "oneLineSummary": "Rules discussion: weapon potency benefits for spellcasters, armor potency from explorer's clothing, hand wraps for unarmed strikes."
     },
     {
       "startLine": 3901,
       "endLine": 3981,
       "label": "ooc",
       "confidence": "high",
-      "oneLineSummary": "Players discuss scheduling for next month, Johnny's trip to Japan, Tanner's Italy trip, Argyle's wedding; discussion of Noah's book manuscript"
+      "oneLineSummary": "Players discuss scheduling (Johnny to Japan, Anzu to Italy, Argyle's wedding), Johnny's book manuscript, and say goodbyes."
     }
   ]
 }
