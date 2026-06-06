@@ -310,7 +310,7 @@ describe('submitOne — live path', () => {
     });
     await submitOne(entry, ledger, makeCtx(() => client));
 
-    expect(anchors[0]).toEqual({ commitId: 'head-sha', path: 'content/Geography/Hallia/index.md', line: 1 });
+    expect(anchors[0]).toEqual({ commitId: 'head-sha', path: 'pkg/content/wiki/Geography/Hallia/index.md', line: 1 });
   });
 
   test('only-comments (no edits) → no review comments; comments folded into PR body under "Flagged for Review"', async () => {
@@ -426,7 +426,7 @@ describe('submitOne — live path', () => {
     await submitOne(entry, ledger, makeCtx(() => client));
 
     expect(noteBodies[0]).toContain('**[Speculative]**');
-    expect(noteBodies[0]).toContain('`content/Org/Foo/index.md`');
+    expect(noteBodies[0]).toContain('`pkg/content/wiki/Org/Foo/index.md`');
     expect(noteBodies[0]).toContain('Spec msg.');
     expect(noteBodies[1]).toContain('**[Contradiction]**');
     expect(noteBodies[1]).toContain('(no related page)');
@@ -450,7 +450,7 @@ describe('submitOne — live path', () => {
 
     await submitOne(entry, ledger, makeCtx(() => client));
     expect(capturedMessage).toContain('wiki: integrate 000.through-a-song-darkly.2025-8-28');
-    expect(capturedMessage).toContain('content/Geography/Hallia/index.md');
+    expect(capturedMessage).toContain('pkg/content/wiki/Geography/Hallia/index.md');
     expect(capturedMessage).toContain('lines 10–20');
   });
 });

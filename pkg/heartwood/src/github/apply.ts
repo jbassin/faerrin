@@ -1,5 +1,6 @@
 import type { Proposal } from '../reconcile/propose';
 import type { CommitAction } from './client';
+import { toRepoPath } from './paths';
 
 export interface ApplyContext {
   contentDir: string;
@@ -26,7 +27,7 @@ export async function buildCommitActions(
   for (const proposal of proposals) {
     if (proposal.kind === 'comment') continue;
 
-    const filePath = `content/${proposal.path}`;
+    const filePath = toRepoPath(proposal.path);
     const diskPath = `${ctx.contentDir}/${proposal.path}`;
 
     if (proposal.kind === 'create') {

@@ -90,7 +90,7 @@ const PROPOSER_SYSTEM_TEMPLATE = [
   'If a claim is not supported by any specific text you can quote, do NOT incorporate it.',
   '',
   'Follow the wiki conventions documented below verbatim — frontmatter, wikilinks, callouts, naming.',
-  'Do NOT add information not stated in the claims. Do NOT propose edits to pages under content/Rules/.',
+  'Do NOT add information not stated in the claims. Do NOT propose edits to pages under Rules/.',
   '',
   '--- WIKI CONVENTIONS (from CLAUDE.md) ---',
   '{{CONVENTIONS}}',

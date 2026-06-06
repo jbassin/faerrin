@@ -314,14 +314,14 @@ describe('respondOne — diff discussions', () => {
   });
 
   test('diff discussion → LLM called, commit made, "Applied." posted', async () => {
-    const disc = makeDiffDiscussion('diff-1', 'delete this entry', 'content/Old.md');
+    const disc = makeDiffDiscussion('diff-1', 'delete this entry', 'pkg/content/wiki/Old.md');
     await Bun.write(`${tmpDir}/content/Old.md`, '# Old\n\nContent.\n');
 
     const mockComplete: RespondCtx['completeFn'] = async (args) => {
       expect(args.stage).toBe('respond-diff');
       return {
         text: '', usage: { input: 0, cacheRead: 0, cacheWrite: 0, output: 0, ms: 0 },
-        value: { actions: [{ action: 'delete', filePath: 'content/Old.md' }] },
+        value: { actions: [{ action: 'delete', filePath: 'pkg/content/wiki/Old.md' }] },
       } as never;
     };
 
@@ -339,7 +339,7 @@ describe('respondOne — diff discussions', () => {
   });
 
   test('diff handler reads the real wiki file from contentDir, not heartwood cwd', async () => {
-    const disc = makeDiffDiscussion('diff-1', 'tweak this entry', 'content/Old.md');
+    const disc = makeDiffDiscussion('diff-1', 'tweak this entry', 'pkg/content/wiki/Old.md');
     await Bun.write(`${tmpDir}/content/Old.md`, '# Old\n\nUNIQUE-MARKER-CONTENT\n');
 
     let capturedUser = '';
@@ -366,7 +366,7 @@ describe('respondOne — diff discussions', () => {
       notes: [
         {
           id: 0, body: 'delete this', author: { username: 'reviewer' },
-          position: { position_type: 'text', new_path: 'content/Old.md', new_line: 1, old_line: null },
+          position: { position_type: 'text', new_path: 'pkg/content/wiki/Old.md', new_line: 1, old_line: null },
         },
         { id: 1, body: 'Applied.', author: { username: 'bot' }, position: null },
       ],
@@ -389,7 +389,7 @@ describe('respondOne — diff discussions', () => {
       individual_note: false,
       notes: [{
         id: 0, body: '**[Speculative]**', author: { username: 'bot' },
-        position: { position_type: 'text', new_path: 'content/Foo.md', new_line: 1, old_line: null },
+        position: { position_type: 'text', new_path: 'pkg/content/wiki/Foo.md', new_line: 1, old_line: null },
       }],
     };
 
@@ -426,7 +426,7 @@ describe('respondOne — batching', () => {
 
   test('multiple approvals produce a single commit', async () => {
     const disc1 = makeDiscussion('disc-1', [{ body: '**[Speculative]**' }, { body: 'approve' }]);
-    const disc2 = makeDiffDiscussion('diff-1', 'delete this', 'content/Old.md');
+    const disc2 = makeDiffDiscussion('diff-1', 'delete this', 'pkg/content/wiki/Old.md');
 
     await Bun.write(`${tmpDir}/content/Foo.md`, '# Foo\n\nExisting.\n');
     await Bun.write(`${tmpDir}/content/Old.md`, '# Old\n');
@@ -440,7 +440,7 @@ describe('respondOne — batching', () => {
       }
       return {
         text: '', usage: { input: 0, cacheRead: 0, cacheWrite: 0, output: 0, ms: 0 },
-        value: { actions: [{ action: 'delete', filePath: 'content/Old.md' }] },
+        value: { actions: [{ action: 'delete', filePath: 'pkg/content/wiki/Old.md' }] },
       } as never;
     };
 

@@ -1,6 +1,7 @@
 import { mkdir } from 'node:fs/promises';
 import { createClient, type GitHubClient, type CommitAction } from './client';
 import { buildCommitActions } from './apply';
+import { toRepoPath } from './paths';
 import { writeDryRun } from './dry-run';
 import { writeSubmissions, type DiscussionMapping } from './submissions';
 import { parseFilename } from '../transcript/discover';
@@ -224,7 +225,7 @@ function buildPrBody(
   const citationsByFile = new Map<string, Citation[]>();
   for (const p of proposals) {
     if (p.kind === 'comment') continue;
-    const filePath = `content/${p.path}`;
+    const filePath = toRepoPath(p.path);
     if (!citationsByFile.has(filePath)) citationsByFile.set(filePath, []);
     citationsByFile.get(filePath)!.push(...p.citations);
   }
@@ -261,7 +262,7 @@ function buildNoteBody(
 ): string {
   const label = proposal.reason === 'speculative' ? '[Speculative]' : '[Contradiction]';
   const pathStr = proposal.relatedPath !== null
-    ? `\`content/${proposal.relatedPath}\``
+    ? `\`${toRepoPath(proposal.relatedPath)}\``
     : '(no related page)';
   const citationLinks = proposal.citations
     .map((c) => buildCitationLink(c, webUrl, defaultBranch, filename))
@@ -277,7 +278,7 @@ function buildCommitMessage(
   const citationsByFile = new Map<string, Citation[]>();
   for (const p of proposals) {
     if (p.kind === 'comment') continue;
-    const filePath = `content/${p.path}`;
+    const filePath = toRepoPath(p.path);
     if (!citationsByFile.has(filePath)) citationsByFile.set(filePath, []);
     citationsByFile.get(filePath)!.push(...p.citations);
   }

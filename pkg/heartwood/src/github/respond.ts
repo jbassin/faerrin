@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { createClient, type GitHubClient, type CommitAction, type Discussion } from './client';
 import { readSubmissions } from './submissions';
 import { buildCommitActions } from './apply';
+import { toRepoPath, fromRepoPath } from './paths';
 import { loadConventions } from '../reconcile/propose';
 import { complete as defaultComplete } from '../llm';
 import { config } from '../config';
@@ -228,7 +229,7 @@ async function applySpeculativeApproval(
   ].join('\n');
 
   const user = [
-    `Page path: content/${proposal.relatedPath}`,
+    `Page path: ${toRepoPath(proposal.relatedPath)}`,
     '',
     '--- Current page content ---',
     pageText || '(empty — page does not exist yet)',
@@ -288,12 +289,12 @@ async function applyDiffComment(
   fn:    typeof defaultComplete,
 ): Promise<CommitAction[]> {
   const firstNote = disc.notes[0]!;
-  const filePath  = firstNote.position!.new_path;   // repo-relative, e.g. content/Foo.md
+  const filePath  = firstNote.position!.new_path;   // repo-relative, e.g. pkg/content/wiki/Foo.md
 
   // The wiki lives at ctx.contentDir (../content/wiki), not heartwood's cwd.
-  // Strip the repo-relative `content/` prefix to read the real file off disk;
-  // filePath stays repo-relative for the prompt and the committed CommitAction paths.
-  const diskPath = `${ctx.contentDir}/${filePath.replace(/^content\//, '')}`;
+  // Strip the repo-relative wiki prefix to read the real file off disk; filePath
+  // stays repo-relative for the prompt and the committed CommitAction paths.
+  const diskPath = `${ctx.contentDir}/${fromRepoPath(filePath)}`;
 
   // Find the first stakeholder instruction (first note in the discussion, or look at all notes)
   const instruction = disc.notes.map((n) => n.body).join('\n').trim();

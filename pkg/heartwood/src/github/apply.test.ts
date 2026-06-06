@@ -43,7 +43,7 @@ describe('edit', () => {
     const actions = await buildCommitActions(proposals, ctx());
     expect(actions).toHaveLength(1);
     expect(actions[0]!.action).toBe('update');
-    expect(actions[0]!.filePath).toBe('content/Geography/Hallia/index.md');
+    expect(actions[0]!.filePath).toBe('pkg/content/wiki/Geography/Hallia/index.md');
     expect(contentOf(actions[0]!)).toContain('New description.');
     expect(contentOf(actions[0]!)).not.toContain('Old description.');
   });
@@ -107,7 +107,7 @@ describe('create', () => {
     const actions = await buildCommitActions(proposals, ctx());
     expect(actions).toHaveLength(1);
     expect(actions[0]!.action).toBe('create');
-    expect(actions[0]!.filePath).toBe('content/Org/NewOrg/index.md');
+    expect(actions[0]!.filePath).toBe('pkg/content/wiki/Org/NewOrg/index.md');
     expect(contentOf(actions[0]!)).toBe('# New Org\n\nA new organization.\n');
   });
 
