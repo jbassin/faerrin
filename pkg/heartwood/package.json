@@ -5,6 +5,8 @@
   "scripts": {
     "hello": "bun index.ts hello",
     "cost-report": "bun index.ts cost-report",
+    "draft-labels": "bun scripts/draft-labels.ts",
+    "review-labels": "bun scripts/review-labels.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },

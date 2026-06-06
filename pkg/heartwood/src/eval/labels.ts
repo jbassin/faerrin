@@ -12,6 +12,8 @@ export const LabeledFactSchema = z.object({
   entities: z.array(z.string()),
   /** Optional transcript line span(s) the fact comes from. */
   citations: z.array(z.object({ start: z.number().int(), end: z.number().int() })).optional(),
+  /** Set true once a human has approved/edited this fact in the review CLI (for resume). */
+  reviewed: z.boolean().optional(),
 });
 export type LabeledFact = z.infer<typeof LabeledFactSchema>;
 
