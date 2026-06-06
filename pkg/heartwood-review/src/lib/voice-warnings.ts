@@ -5,10 +5,14 @@
 //
 // Pure + deterministic so it's unit-tested and runs client-side as the reviewer types.
 
+import { PROSE_PAGE_TYPES, type PageType } from "./page-type.ts";
+import { slugForPath } from "../render/remark-wikilinks-injected.ts";
+
 export type VoiceWarningType =
   | "encyclopedia-opener"
   | "it-is-template"
   | "intensifier"
+  | "broken-wikilink"
   | "empty";
 
 export interface VoiceWarning {
@@ -43,17 +47,55 @@ function sentences(text: string): string[] {
     .filter(Boolean);
 }
 
+// [[target]] / [[target|alias]] / [[target#anchor]] — capture the link target only.
+const WIKILINK_RE = /\[\[([^[\]|#]+)(?:#[^[\]|]+)?(?:\|[^[\]]+)?\]\]/g;
+
+export interface VoiceWarningOptions {
+  /** Target page type — non-prose types suppress the literary checks (AC-24). */
+  pageType?: PageType;
+  /** Every known page slug; when provided, validates [[wikilinks]] (AC-13). */
+  allSlugs?: string[];
+}
+
 /**
  * Run the automatable §9 checks over a block of (human-authored) wiki prose.
- * Returns zero or more non-blocking warnings.
+ * Returns zero or more non-blocking warnings. Page-type-aware (AC-24): the literary
+ * checks are suppressed on non-prose pages. Wikilink validation (AC-13) runs on all types.
  */
-export function voiceWarnings(text: string): VoiceWarning[] {
+export function voiceWarnings(text: string, opts: VoiceWarningOptions = {}): VoiceWarning[] {
   const out: VoiceWarning[] = [];
   const trimmed = text.trim();
   if (!trimmed) {
     out.push({ type: "empty", message: "No prose written yet." });
     return out;
   }
+
+  // Wikilink validation applies regardless of page type (AC-13). Resolution mirrors
+  // aether's Quartz "shortest" strategy (case-sensitive): a link is valid if its
+  // slugified target is a full slug OR shares a basename with some known slug.
+  if (opts.allSlugs) {
+    const slugSet = new Set(opts.allSlugs);
+    const basenames = new Set(opts.allSlugs.map((s) => s.split("/").pop()));
+    const broken: string[] = [];
+    let m: RegExpExecArray | null;
+    WIKILINK_RE.lastIndex = 0;
+    while ((m = WIKILINK_RE.exec(trimmed)) !== null) {
+      const raw = m[1]!.trim();
+      if (!raw) continue;
+      const slug = slugForPath(raw);
+      const fname = slug.split("/").pop();
+      if (!slugSet.has(slug) && (fname === undefined || !basenames.has(fname))) broken.push(raw);
+    }
+    if (broken.length > 0) {
+      out.push({
+        type: "broken-wikilink",
+        message: `Wikilink target not found: ${[...new Set(broken)].join(", ")}. Check the page exists (or create it).`,
+      });
+    }
+  }
+
+  // The literary prose checks apply only to prose page types (AC-24).
+  if (opts.pageType && !PROSE_PAGE_TYPES.has(opts.pageType)) return out;
 
   const sents = sentences(trimmed);
   const first = sents[0] ?? "";

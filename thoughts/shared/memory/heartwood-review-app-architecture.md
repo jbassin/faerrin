@@ -22,6 +22,25 @@ global is `undefined`** there. Consequences:
   Stage D must either make core I/O node:fs-portable (works under Bun too) or read
   at the app layer (`src/server/content.ts`) and feed the pure fns.
 
+**⚠️ Server fns must be CLIENT-SAFE shells; Node-IO is dynamic-imported (load-bearing).**
+A `createServerFn` module is imported by client components (for the fn reference), so the
+TanStack plugin replaces the *handler body* with a `createClientRpc` stub — BUT any
+**static top-level import** in that module (and any non-handler export that uses it, e.g. a
+helper or `performCommit`) stays in the **client bundle**. node:fs/crypto/child_process get
+externalized there and **throw on access** during hydration ("Module node:crypto has been
+externalized…"), crashing the page. Rules (enforced in `src/server/`):
+- Server-fn modules statically import ONLY: `createServerFn`, **types** (`import type`), and
+  **pure** helpers (no node:fs). Path constants + `within` live in `paths.ts` (node:path only,
+  client-safe). Pure logic (`parseTranscriptRange`, `assertSessionId`, append/message helpers,
+  `detectPageType`, `voice-warnings`, `slugForPath`) is fine to import statically.
+- All node:fs / core ledger modules (`state/store|review|provenance|atomic`, `anchor` →
+  node:crypto, `child_process`, and `content.ts` which is node:fs) are **dynamic-imported
+  inside handlers** (`const { x } = await import("…")`). Heavy server-only impls live in their
+  own module (`commit-impl.ts`, `content.ts`) that is never statically imported by a client file.
+- Verify after adding a server fn: `curl http://localhost:3001/src/server/<mod>.ts` (Vite-
+  transformed) shows `createClientRpc` and NO static `node:`/core-IO import; dev log has no
+  "externalized for browser" error when the route loads.
+
 **TanStack server-fn API (v1.168):** `createServerFn({method}).inputValidator((d:
 T) => d).handler(async ({ data }) => …)` — the method is **`inputValidator`** (not
 `validator`). Call it as `fn({ data: T })`. A route with `validateSearch` that

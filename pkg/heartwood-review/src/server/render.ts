@@ -1,7 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
-import { renderWikiMarkdown } from "../render/renderWikiMarkdown.ts";
 import { slugForPath } from "../render/remark-wikilinks-injected.ts";
-import { loadAllSlugs, readWikiPage } from "./content.ts";
+
+// Static imports are client-safe (slugForPath is pure). The node:fs content readers and
+// the heavy unified renderer are dynamic-imported inside handlers (server-only).
 
 export interface PagePreview {
   path: string;
@@ -19,13 +20,14 @@ function titleFromPath(contentRelPath: string): string {
 }
 
 /**
- * Render a wiki page to aether-faithful HTML for the Phase-0a fidelity check
- * (and the basis of proposal rendering in Stage E). Server-side: reads the SSOT
- * page + computes the slug set, then runs the shared renderer.
+ * Render a wiki page to aether-faithful HTML for proposal review (AC-2). Server-side:
+ * reads the SSOT page + computes the slug set, then runs the shared renderer.
  */
 export const renderPagePreview = createServerFn({ method: "GET" })
   .inputValidator((data: { path: string }) => data)
   .handler(async ({ data }): Promise<PagePreview> => {
+    const { loadAllSlugs, readWikiPage } = await import("./content.ts");
+    const { renderWikiMarkdown } = await import("../render/renderWikiMarkdown.ts");
     const raw = await readWikiPage(data.path);
     const allSlugs = await loadAllSlugs();
     const html = await renderWikiMarkdown(stripFrontmatter(raw), {
@@ -36,14 +38,15 @@ export const renderPagePreview = createServerFn({ method: "GET" })
   });
 
 /**
- * Render arbitrary authored Markdown (the reviewer's in-progress prose) to
- * aether-faithful HTML, so edit-in-place shows a live in-voice preview (AC-2/AC-4).
- * `srcPath` is the page the prose targets (drives wikilink resolution); for a new
- * page pass its intended content-relative path.
+ * Render arbitrary authored Markdown (the reviewer's in-progress prose) to aether-faithful
+ * HTML, so edit-in-place shows a live in-voice preview (AC-2/AC-4). `srcPath` is the target
+ * page (drives wikilink resolution); for a new page pass its intended content-relative path.
  */
 export const renderMarkdown = createServerFn({ method: "POST" })
   .inputValidator((data: { md: string; srcPath: string }) => data)
   .handler(async ({ data }): Promise<string> => {
+    const { loadAllSlugs } = await import("./content.ts");
+    const { renderWikiMarkdown } = await import("../render/renderWikiMarkdown.ts");
     const allSlugs = await loadAllSlugs();
     return renderWikiMarkdown(data.md, {
       srcSlug: slugForPath(data.srcPath),

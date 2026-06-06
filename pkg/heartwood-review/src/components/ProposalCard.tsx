@@ -4,6 +4,7 @@ import { saveDecision, type SessionView } from "@/server/sessions";
 import type { Decision, ReviewState } from "@faerrin/heartwood/src/state/review.ts";
 import { CitationChip } from "./CitationChip.tsx";
 import { voiceWarnings } from "@/lib/voice-warnings.ts";
+import type { PageType } from "@/lib/page-type.ts";
 import "@/styles/wiki-render.css";
 
 type Proposal = SessionView["artifact"]["proposals"][number];
@@ -16,6 +17,8 @@ interface Props {
   initialDecision: Decision;
   initialText: string;
   initialTargetPath: string;
+  pageType: PageType;
+  allSlugs: string[];
   onSaved: (state: ReviewState) => void;
 }
 
@@ -26,7 +29,7 @@ const DECISION_COLORS: Record<Decision, string> = {
   deferred: "#b06000",
 };
 
-export function ProposalCard({ arc, date, proposal, initialDecision, initialText, initialTargetPath, onSaved }: Props) {
+export function ProposalCard({ arc, date, proposal, initialDecision, initialText, initialTargetPath, pageType, allSlugs, onSaved }: Props) {
   const [authored, setAuthored] = useState(initialText);
   const [targetPath, setTargetPath] = useState(initialTargetPath);
   const [decision, setDecision] = useState<Decision>(initialDecision);
@@ -35,7 +38,7 @@ export function ProposalCard({ arc, date, proposal, initialDecision, initialText
   const [existingHtml, setExistingHtml] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
-  const warnings = voiceWarnings(authored);
+  const warnings = voiceWarnings(authored, { pageType, allSlugs });
   // A new page targets its (proposed) path; amend targets the existing page.
   const srcPath = proposal.targetPath ?? `${proposal.canonicalName}.md`;
 

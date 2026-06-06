@@ -1,4 +1,3 @@
-import { randomUUID } from 'node:crypto';
 import { mkdir, rename, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
 
@@ -10,7 +9,9 @@ import { dirname } from 'node:path';
 // race on one .tmp.
 export async function writeFileAtomic(path: string, content: string): Promise<void> {
   await mkdir(dirname(path), { recursive: true });
-  const tmp = `${path}.${randomUUID()}.tmp`;
+  // globalThis.crypto (Web Crypto) — available in Node 19+, Bun, and browsers — so no
+  // `node:crypto` import that Vite would externalize into the client bundle.
+  const tmp = `${path}.${crypto.randomUUID()}.tmp`;
   await writeFile(tmp, content);
   await rename(tmp, path);
 }

@@ -16,7 +16,7 @@ type Conflict = SessionView["artifact"]["conflicts"][number];
 type Proposal = SessionView["artifact"]["proposals"][number];
 
 function SessionPage() {
-  const { artifact, review: initialReview } = Route.useLoaderData() as SessionView;
+  const { artifact, review: initialReview, pageTypes, allSlugs } = Route.useLoaderData() as SessionView;
   const [review, setReview] = useState<ReviewState>(initialReview);
   const [tab, setTab] = useState<"proposals" | "triage">("proposals");
   const [commitResult, setCommitResult] = useState<CommitResult | null>(null);
@@ -107,6 +107,8 @@ function SessionPage() {
             initialDecision={review.decisions[p.id]?.decision ?? "pending"}
             initialText={review.decisions[p.id]?.authoredText ?? ""}
             initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
+            pageType={pageTypes[p.id] ?? "lore"}
+            allSlugs={allSlugs}
             onSaved={setReview}
           />
         ))}

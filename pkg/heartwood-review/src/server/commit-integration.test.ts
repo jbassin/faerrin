@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
-import { performCommit, type CommitDeps } from "./commit.ts";
+import { performCommit, type CommitDeps } from "./commit-impl.ts";
 import {
   writeSessionArtifact,
   type SessionArtifact,

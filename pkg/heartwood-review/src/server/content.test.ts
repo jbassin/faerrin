@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { join } from "node:path";
-import { within } from "./content.ts";
+import { within } from "./paths.ts";
 
 const ROOT = join("/tmp", "hwr-root");
 

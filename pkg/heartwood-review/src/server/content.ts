@@ -1,35 +1,18 @@
-// Node-safe readers over the SSOT content tree (pkg/content). Server functions
-// run under Node (see spike.ts), so these use node:fs exclusively — never Bun.*.
-// Mirrors aether's content-paths.mjs slug walk, but Node-safe and on demand.
+// Node-safe readers over the SSOT content tree (pkg/content). SERVER-ONLY: this module
+// statically imports node:fs, so it must never be statically imported by a client
+// component — server functions dynamic-import it inside their handlers. Pure path helpers
+// (constants + within) live in paths.ts.
 import { readFile, readdir } from "node:fs/promises";
-import { join, relative, resolve, sep } from "node:path";
+import { relative, sep } from "node:path";
 import { slugForPath } from "../render/remark-wikilinks-injected.ts";
-
-/** Repo-relative content roots; dev server cwd is pkg/heartwood-review. */
-export const CONTENT_ROOT = join(process.cwd(), "..", "content");
-export const WIKI_DIR = join(CONTENT_ROOT, "wiki");
-export const TRANSCRIPTS_DIR = join(CONTENT_ROOT, "transcripts");
-
-/**
- * Resolve `rel` under `root` and refuse anything that escapes it (path-traversal
- * guard). Server-fn inputs (page paths, transcript names) are user-controllable, and
- * node:path.join happily resolves `..`, so every file reader funnels through this.
- */
-export function within(root: string, rel: string): string {
-  const abs = resolve(root, rel);
-  const rootResolved = resolve(root);
-  if (abs !== rootResolved && !abs.startsWith(rootResolved + sep)) {
-    throw new Error(`path escapes content root: ${rel}`);
-  }
-  return abs;
-}
+import { WIKI_DIR, within } from "./paths.ts";
 
 /** All content-relative markdown paths under wiki/, posix-separated, sorted. */
 export async function listWikiMarkdownFiles(): Promise<string[]> {
   const out: string[] = [];
   async function walk(dir: string): Promise<void> {
     for (const e of await readdir(dir, { withFileTypes: true })) {
-      const full = join(dir, e.name);
+      const full = `${dir}/${e.name}`;
       if (e.isDirectory()) {
         if (e.name.startsWith(".")) continue;
         await walk(full);

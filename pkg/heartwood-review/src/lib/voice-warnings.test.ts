@@ -34,4 +34,26 @@ describe("voiceWarnings (§9 automatable subset, AC-9)", () => {
   it("reports empty prose", () => {
     expect(types("   ")).toEqual(["empty"]);
   });
+
+  it("suppresses literary checks on non-prose page types (AC-24)", () => {
+    const statline = "Foo is a large thing.";
+    expect(voiceWarnings(statline, { pageType: "deity-statblock" })).toEqual([]);
+    // but still applies on a stub (graduates to prose)
+    expect(
+      voiceWarnings(statline, { pageType: "stub" }).map((w) => w.type),
+    ).toContain("encyclopedia-opener");
+  });
+
+  it("flags broken [[wikilinks]] against allSlugs (AC-13)", () => {
+    // basename resolution (shortest) for "Maren Dock" → "Maren-Dock"; full-path for the index.
+    const slugs = ["Geography/Calaria/Hallia/index", "People/Maren-Dock"];
+    const warns = voiceWarnings(
+      "See [[Maren Dock]], [[Geography/Calaria/Hallia/index|Hallia]], and [[Nonexistent Place]].",
+      { allSlugs: slugs },
+    );
+    const broken = warns.find((w) => w.type === "broken-wikilink");
+    expect(broken?.message).toContain("Nonexistent Place");
+    expect(broken?.message).not.toContain("Maren Dock");
+    expect(broken?.message).not.toContain("Hallia");
+  });
 });

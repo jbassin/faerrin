@@ -1,30 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
-// Deep-imports into the core (NOT the package root — that runs the CLI on import).
-// These modules are Node-safe (node:fs, no Bun globals at module load).
-import {
-  listSessionArtifacts,
-  readSessionArtifact,
-  type SessionArtifact,
-  type SessionSummary,
-} from "@faerrin/heartwood/src/state/store.ts";
-import {
-  applyDecision,
-  readReviewState,
-  reviewStatus,
-  writeReviewState,
-  type Decision,
-  type ReviewState,
-  type ReviewStatus,
+// Static imports are CLIENT-SAFE only: pure path helpers, pure local helpers, types, and
+// the pure page-type detector. All node:fs / core-IO is dynamic-imported inside handlers
+// (server-only) so it never lands in the client bundle. See paths.ts for the rationale.
+import { SESSIONS_DIR, REVIEW_DIR, TRANSCRIPTS_DIR, within } from "./paths.ts";
+import { detectPageType, type PageType } from "../lib/page-type.ts";
+import type { SessionArtifact, SessionSummary } from "@faerrin/heartwood/src/state/store.ts";
+import type {
+  Decision,
+  ReviewState,
+  ReviewStatus,
 } from "@faerrin/heartwood/src/state/review.ts";
-import { TRANSCRIPTS_DIR, within } from "./content.ts";
-
-// The pipeline persists artifacts under the core package's state dir; the dev
-// server cwd is pkg/heartwood-review, so the core is `../heartwood`.
-const CORE_STATE = join(process.cwd(), "..", "heartwood", "state");
-const SESSIONS_DIR = join(CORE_STATE, "sessions");
-const REVIEW_DIR = join(CORE_STATE, "review");
 
 // Arc/date are interpolated into a `${arc}@${date}.json` filename, so validate their
 // shape before they touch the filesystem (path-traversal guard, mirrors `within`).
@@ -43,10 +28,11 @@ export interface SessionListItem extends SessionSummary {
 /** Session list with review status (Unreviewed / Partial / Reviewed) — AC-23 entry. */
 export const listSessions = createServerFn({ method: "GET" }).handler(
   async (): Promise<SessionListItem[]> => {
+    const { listSessionArtifacts } = await import("@faerrin/heartwood/src/state/store.ts");
+    const { readReviewState, reviewStatus } = await import("@faerrin/heartwood/src/state/review.ts");
     const summaries = await listSessionArtifacts(SESSIONS_DIR);
     const out: SessionListItem[] = [];
     for (const s of summaries) {
-      // s.proposalIds avoids a second full-artifact read per session (M1).
       const review = await readReviewState(REVIEW_DIR, s.sessionId);
       out.push({ ...s, status: reviewStatus(review, s.proposalIds) });
     }
@@ -57,6 +43,10 @@ export const listSessions = createServerFn({ method: "GET" }).handler(
 export interface SessionView {
   artifact: SessionArtifact;
   review: ReviewState;
+  /** Target page type per proposal id — drives the page-type-aware voice bar (AC-24). */
+  pageTypes: Record<string, PageType>;
+  /** Every known page slug — for wikilink validation in authored prose (AC-13). */
+  allSlugs: string[];
 }
 
 /** Full session payload for review: proposals + narrative + triage + conflicts + decisions. */
@@ -64,10 +54,28 @@ export const getSession = createServerFn({ method: "GET" })
   .inputValidator((data: { arc: string; date: string }) => data)
   .handler(async ({ data }): Promise<SessionView> => {
     const sessionId = assertSessionId(data.arc, data.date);
+    const { readSessionArtifact } = await import("@faerrin/heartwood/src/state/store.ts");
+    const { readReviewState } = await import("@faerrin/heartwood/src/state/review.ts");
+    const { loadAllSlugs, readWikiPage } = await import("./content.ts");
+
     const artifact = await readSessionArtifact(SESSIONS_DIR, sessionId);
     if (!artifact) throw new Error(`Session ${data.arc}@${data.date} not ingested`);
     const review = await readReviewState(REVIEW_DIR, sessionId);
-    return { artifact, review };
+
+    const allSlugs = await loadAllSlugs();
+    const pageTypes: Record<string, PageType> = {};
+    for (const p of artifact.proposals) {
+      if (p.kind === "amend" && p.targetPath) {
+        try {
+          pageTypes[p.id] = detectPageType(p.targetPath, await readWikiPage(p.targetPath));
+        } catch {
+          pageTypes[p.id] = "lore"; // missing page → treat as prose
+        }
+      } else {
+        pageTypes[p.id] = "lore"; // new page authored as prose
+      }
+    }
+    return { artifact, review, pageTypes, allSlugs };
   });
 
 export interface TranscriptLine {
@@ -101,6 +109,7 @@ export function parseTranscriptRange(
 export const getTranscriptLines = createServerFn({ method: "GET" })
   .inputValidator((data: { transcript: string; start: number; end: number }) => data)
   .handler(async ({ data }): Promise<TranscriptLine[]> => {
+    const { readFile } = await import("node:fs/promises");
     const raw = await readFile(within(TRANSCRIPTS_DIR, data.transcript), "utf8");
     return parseTranscriptRange(raw, data.start, data.end);
   });
@@ -120,6 +129,9 @@ export const saveDecision = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }): Promise<ReviewState> => {
     const sessionId = assertSessionId(data.arc, data.date);
+    const { readReviewState, writeReviewState, applyDecision } = await import(
+      "@faerrin/heartwood/src/state/review.ts"
+    );
     const current = await readReviewState(REVIEW_DIR, sessionId);
     const next = applyDecision(current, {
       proposalId: data.proposalId,
