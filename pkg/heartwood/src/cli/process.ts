@@ -116,7 +116,7 @@ export class LedgerMutex {
 
 // ---- Context builder ----
 
-async function buildCtx(opts: ProcessCliOptions): Promise<ResolvedCtx> {
+export async function buildCtx(opts: ProcessCliOptions): Promise<ResolvedCtx> {
   const transcriptsDir = opts.transcriptsDir ?? '../content/transcripts';
   const ledgerPath     = opts.ledgerPath     ?? 'state/processed.json';
   const segmentsDir    = opts.segmentsDir    ?? 'state/segments';
@@ -124,7 +124,7 @@ async function buildCtx(opts: ProcessCliOptions): Promise<ResolvedCtx> {
   const resolutionsDir = opts.resolutionsDir ?? 'state/resolutions';
   const matchesDir     = opts.matchesDir     ?? 'state/matches';
   const proposalsDir   = opts.proposalsDir   ?? 'state/proposals';
-  const contentDir     = opts.contentDir     ?? 'content';
+  const contentDir     = opts.contentDir     ?? '../content/wiki';
   const dryRunsDir     = opts.dryRunsDir     ?? 'state/dry-runs';
   const submissionsDir = opts.submissionsDir ?? 'state/submissions';
   const wikiIndexPath  = opts.wikiIndexPath  ?? 'state/wiki-index.json';

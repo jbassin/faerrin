@@ -6,6 +6,7 @@ import {
   getTargets,
   processOneTranscript,
   process,
+  buildCtx,
   LedgerMutex,
   type ProcessCliOptions,
 } from './process';
@@ -793,5 +794,27 @@ describe('process', () => {
     } finally {
       teardown(s.root);
     }
+  });
+});
+
+describe('buildCtx defaults', () => {
+  // Regression: process used to default contentDir to 'content' while every other
+  // CLI (match/propose/submit/index-wiki) uses '../content/wiki'. That made match
+  // open 'content/Org/.../Page.md' (ENOENT) the first time a session resolved a
+  // claim to an existing wiki page. Guard the wiki root the orchestrator feeds the
+  // page-reading stages.
+  const emptyIndex = { pages: [], allEntities: [], wikilinks: [], generatedAt: '', totalPages: 0 } as never;
+
+  test('contentDir falls back to the monorepo wiki root for match/propose/submit', async () => {
+    const ctx = await buildCtx({ wikiIndex: emptyIndex });
+    expect(ctx.matchCtx.contentDir).toBe('../content/wiki');
+    expect(ctx.propCtx.contentDir).toBe('../content/wiki');
+    expect(ctx.submitCtx.contentDir).toBe('../content/wiki');
+  });
+
+  test('an explicit contentDir override is still honored', async () => {
+    const ctx = await buildCtx({ wikiIndex: emptyIndex, contentDir: '/tmp/wiki' });
+    expect(ctx.matchCtx.contentDir).toBe('/tmp/wiki');
+    expect(ctx.submitCtx.contentDir).toBe('/tmp/wiki');
   });
 });
