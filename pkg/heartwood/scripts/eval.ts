@@ -8,6 +8,7 @@ import { join } from 'node:path';
 import { readEvalLabel } from '../src/eval/labels';
 import { scoreSession, formatScore } from '../src/eval/run';
 import { mine } from '../src/pipeline/mine';
+import { triage } from '../src/pipeline/triage';
 import { judgeMatchMap, matcherFromMap } from '../src/eval/judge';
 import { tokenMatcher } from '../src/eval/score';
 import { discoverTranscripts } from '../src/transcript/discover';
@@ -26,6 +27,7 @@ async function main() {
   const dateArg = process.argv[3];
   const save = process.argv.includes('--save');
   const useToken = process.argv.includes('--token');
+  const noTriage = process.argv.includes('--no-triage');
   if (!arc || !dateArg) {
     console.error('Usage: bun scripts/eval.ts <arc> <date> [--save] [--token]');
     process.exit(1);
@@ -53,7 +55,31 @@ async function main() {
       })());
 
   const score = scoreSession(label, claims, matcher);
-  const report = formatScore(score);
+  let report = formatScore(score);
+
+  if (!noTriage) {
+    console.error('  triaging …');
+    const t = await triage(claims);
+    const canonScore = scoreSession(label, t.canon, matcher); // reuse the same match map
+    const pct = (n: number) => `${(n * 100).toFixed(0)}%`;
+
+    // Safety: a kept fact is "hidden" if every claim matching it landed in noise (the reviewer
+    // would never see it). D-4 says triage must keep noise conservative — this should stay ~0.
+    const reviewable = new Set([...t.canon, ...t.uncertain].map((c) => c.id));
+    let hidden = 0;
+    for (const fact of label.canonFacts) {
+      const matching = claims.filter((c) => matcher(fact, c));
+      if (matching.length > 0 && !matching.some((c) => reviewable.has(c.id))) hidden++;
+    }
+
+    report +=
+      `\n\n## Triage` +
+      `\n- buckets: canon ${t.canon.length} · uncertain ${t.uncertain.length} · noise ${t.noise.length}` +
+      `\n- **canon-bucket coverage: ${pct(canonScore.coverage.coverage)}** (${canonScore.coverage.covered}/${canonScore.coverage.total}) — kept facts that survived into canon` +
+      `\n- **canon-bucket precision: ${pct(canonScore.precision.precision)}** (${canonScore.precision.matched}/${canonScore.precision.total}) — canon claims that are kept facts` +
+      `\n- **kept facts hidden in noise: ${hidden}** (must stay ~0 — these would never reach the reviewer)`;
+  }
+
   console.log('\n' + report + '\n');
 
   if (save) {

@@ -42,3 +42,15 @@ Each fact must be ATOMIC (one per entry), stated plainly, and cited to the trans
 EVERY fact must name at least one ENTITY it concerns — the person, place, organization, object, or concept that would own its wiki page. A fact with no clear entity has nowhere to live in the wiki, so if you can't name the entity it's about, DON'T record it.
 
 If a chunk has no setting facts, return an empty list.`;
+
+// Triage classification (spec §6.2, AC-1, AC-5, D-4). A second-pass judge of already-extracted
+// claims, sorting each into canon / uncertain / noise.
+export const TRIAGE_SYSTEM = `You triage candidate facts already extracted from a Pathfinder 2e session, sorting EACH into exactly one bucket for a worldbuilding wiki:
+
+- "canon": a durable SETTING fact about a person, place, organization, object, or concept that the GM established — it describes what the world IS and belongs in the wiki.
+- "uncertain": might belong, but isn't firmly established canon — player speculation, in-character claims (an NPC's words, which may be a lie or legend), or genuinely ambiguous facts. Surface for human judgment; do not auto-accept.
+- "noise": does NOT belong in the wiki — a leaked session event or party action, a detail of the CURRENT case/mystery/incident (crime, sabotage, curse, victims, suspects, clues), combat, or a game mechanic (spell, item, feat, ability, weapon, stat). Anything that isn't a durable world-fact.
+
+Each candidate includes its modality. HARD RULE: player-speculation and in-character-fiction are NEVER "canon" — at most "uncertain".
+
+Be CONSERVATIVE: if unsure between canon and noise, choose "uncertain" so a human can decide. Give a short reason for each.`;
