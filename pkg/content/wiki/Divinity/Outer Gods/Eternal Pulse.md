@@ -1,6 +1,7 @@
 ---
 aliases:
   - Pulse
+  - the Pulse
 ---
 
 The Eternal Pulse is patron to doctors and necromancers alike -- any who wish to stymie life's natural progression find a model in the Pulse. Due to the stigma around undeath, no country can be seen that devotes itself wholeheartedly to the Pulse. Still, her followers are welcomed as guests of other faiths due to their invaluable knowledge and insight.

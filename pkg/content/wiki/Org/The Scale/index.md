@@ -2,6 +2,8 @@
 tags:
   - Judge
   - Religious
+aliases:
+  - Scale
 ---
 
 The Scale serves as the [[Judge of Ages|Judge]]'s hand as it seeks to impose order and balance across Færrin. The seat of the Scale's power is their Stronghold -- a citadel in the Opaline Mountains that sits on a conjunction of leylines.
@@ -9,7 +11,7 @@ The Scale serves as the [[Judge of Ages|Judge]]'s hand as it seeks to impose ord
 The Scale operates as an extranational form of governance with stronger guarantees than any nation could provide. The organization is split into the following groups, in order of rarity:
 
 - **Pactbrokers** oversee contracts between parties, ensuring that both sides hold up their end, no matter what.
-- **Arbiters** track down those who have escaped justice and deliver them their due.
+- **Arbiters** track down those who have escaped justice and deliver them their due. The Scale does not extend this authority to unaffiliated individuals — bounty hunting is a power reserved for Arbiters alone.
 - **Overseers** stop those seeking to seal the Gods away again, returning the planet to the Dark Ages.
 - **Timekeepers** prevent meddling with the time stream, preventing the creation of paradoxes.
 

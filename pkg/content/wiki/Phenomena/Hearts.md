@@ -25,7 +25,8 @@ if they try they explode (╯'□')╯
 fanes can be small like a mousehole or big like a city. sometimes a bunch of
 small fanes merge into a big 1 and then all the hearts can hang out! the size
 is based on how much magic they have and you can give more magic to a heart to
-make it bigger!!
+make it bigger!! when hearts from different places merge like that, the spots
+where they meet look all weird and patchwork instead of fitting together nice :/
 
 what a fane looks like is up2 the heart! and this one they can change. hearts
 are lik ppl cause they can think and have opinions so they make their fane look

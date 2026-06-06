@@ -6,3 +6,5 @@ For hundreds of thousands of years, the people of Færrin lived believing they w
 
 > [!note] The Mundane Færrish
 > Before magic was introduced to Færrin, the only sentient life on the planet was human. Afterward, more than half of the humans found themselves taking on new traits, spurred by the sudden influx of magical energy. Magic beasts with sentience also appeared throughout the planet. Perhaps this is unimportant to modern life, but it's an interesting tidbit for researchers trying to find what encourages intelligence in the Astra.
+
+Today, Færrin is a fully magical society. Seeing bird people and other non-human beings going about their lives is commonplace and does not attract unusual attention.

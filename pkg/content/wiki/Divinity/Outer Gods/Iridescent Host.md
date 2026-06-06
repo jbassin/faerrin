@@ -1,6 +1,7 @@
 ---
 aliases:
   - Host
+  - the Host
 ---
 
 The Iridescent Host is the patron deity of the [[Org/Iridescent Church/index|Iridescent Church]] and, by extension, the Thearchy of [[Geography/Calaria/index|Calaria]]. Above all else, the Host favors the prosperity of her people in spite of (or to the detriment of) others. She commands her followers to create great works and establish lasting monuments such that the reputation of the Host endures the ages.
