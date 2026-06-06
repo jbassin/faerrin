@@ -36,10 +36,12 @@ src/
   log.ts, config.ts ← per-run JSONL cost log; frozen env config (ANTHROPIC_API_KEY + MODEL_* keys; no GITHUB_*)
   anchor/anchor.ts  ← durable sentence anchors (content-hash + fuzzy re-anchor) for provenance (D-1)
   state/
-    identity.ts     ← SessionId = (arc, date); sessionKey; from transcript filename (C8)
+    identity.ts     ← SessionId = (arc, date); sessionKey; imports the PURE transcript/filename.ts (C8)
     provenance.ts   ← render-invisible per-page provenance sidecar, re-anchors on read (AC-15)
-    atomic.ts       ← writeFileAtomic (tmp → rename)
-  transcript/       ← discover (parseFilename → arc/date), speakers, chunk, ledger [salvaged; ledger re-keyed to (arc,date)]
+    atomic.ts       ← writeFileAtomic (tmp → rename, node:fs + Web Crypto)
+    store.ts        ← SessionArtifact persistence (narrative+triage+proposals+entities+conflicts), Zod + drift guards [Phase 2]
+    review.ts       ← resumable ReviewState: decisions (authoredText/targetPath/weave/committedAt), conflictResolutions, promotedClaims [Phase 2-3]
+  transcript/       ← filename (PURE parseFilename, no Bun), discover (Bun.Glob scan), speakers, chunk, ledger
   wiki/             ← loadWikiIndex, frontmatter, wikilinks, index-schema, hash, summarize [salvaged]
   pipeline/
     types.ts        ← Claim (cited + modality + entitySurfaceForms), Modality, isCanonModality
@@ -57,7 +59,7 @@ src/
     review.ts       ← interactive eval-label triage loop (DI), used by review-labels CLI
   util/pool.ts      ← bounded-concurrency helper
   cli/              ← hello, cost-report (commander); index.ts registers them
-scripts/            ← draft-labels, review-labels, eval, resolve, assemble [--conflict] (inspection CLIs)
+scripts/            ← draft-labels, review-labels, eval, resolve, assemble [--conflict], ingest (persists a SessionArtifact)
 eval/labels/        ← 3 hand-reviewed sessions (through-a-song-darkly@2025-08-28=80, fae-and-forest@2025-09-18=47, interred-in-iomenei@2026-02-10=78)
 eval/results/       ← gitignored eval reports
 state/              ← wiki-index.json (salvaged); runs/ (cost logs, gitignored)
@@ -71,10 +73,18 @@ bun run test                 # bun test (co-located *.test.ts, DI stubs, no netw
 bun run eval <arc> <date>    # mine → judge-scored coverage/precision (+ triage canon-bucket); --token / --no-triage / --save
 bun run resolve <arc> <date> # mine → resolve; print entity registry (known/pending, merges to confirm)
 bun run assemble <arc> <date> [--conflict]   # full pipeline → proposals + narrative (+ conflicts)
+bun run ingest <arc> <date>                  # full pipeline → PERSIST a SessionArtifact for the review app
 bun run draft-labels <arc> <date>            # bootstrap eval labels via LLM
 bun run review-labels <arc> <date>           # interactive approve/edit/deny of label candidates
 ```
 Dates accept `2026-2-10` or `2026-02-10`. LLM calls need `ANTHROPIC_API_KEY` in `.env`.
+
+**Core I/O is Node-portable** (config→`process.env`, hash→`node:crypto`, atomic/provenance/store/
+review→`node:fs`) so the review app (`@faerrin/heartwood-review`, server fns run under **Node**) can
+deep-import the **state/** modules. Keep it that way: `state/identity.ts` imports the pure
+`transcript/filename.ts`, never the Bun-using `transcript/discover.ts`. The pipeline stages
+(mine/triage/resolve/assemble/conflict) are pure (text + injected `completeFn`) and runtime-agnostic;
+only the CLIs use `Bun.Glob`.
 
 ## Conventions
 

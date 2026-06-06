@@ -1,121 +1,134 @@
 # @faerrin/heartwood-review
 
-The **Phase 2 interactive review app** for the heartwood rewrite — a standalone,
-local-first **TanStack Start (SSR) + React 19** app that consumes the headless
-`@faerrin/heartwood` pipeline output and lets the worldbuilder review proposed
-wiki edits **rendered in aether's voice**, verify them against cited transcript
-lines, edit in place, and commit one batched **jj** revision per session. No
-GitHub PRs. See `thoughts/heartwood/specs/0001-heartwood-rewrite-spec.md` (§6/§11)
-and `thoughts/heartwood/plans/2026-06-06-heartwood-rewrite-implementation.md`
-(Phase 2).
+The **interactive review app** for the heartwood rewrite — a standalone, local-first
+**TanStack Start (SSR) + React 19** app that consumes the headless `@faerrin/heartwood`
+pipeline output and lets the worldbuilder review proposed wiki edits **rendered in aether's
+voice**, verify them against cited transcript lines, edit in place, resolve conflicts, and
+commit one batched **jj** revision per session. No GitHub PRs. Spec:
+`thoughts/heartwood/specs/0001-heartwood-rewrite-spec.md`; plan:
+`thoughts/heartwood/plans/2026-06-06-heartwood-rewrite-implementation.md`.
 
 ## Build status (2026-06-06)
 
-**Stages A–F done — Phase 2 (P0 review→commit loop) is complete.**
-- **A. Scaffold** — TanStack Start SSR + React, mirrors strider (declares
-  `@tanstack/router-generator` + `@eslint/js`; extends `tsconfig.base.json`;
-  excludes `scripts/`). Runs in **SSR** mode (no prerender) so server functions work.
-- **B. Server-fn I/O** — proved read pkg/content + write sidecar + shell `jj` from a
-  `createServerFn` (runtime is **Node**; spike route since removed).
-- **C. `renderWikiMarkdown`** (`src/render/`) — **byte-faithful** to aether's live
-  build (golden-diff on prose / callout / deity stat-block pages).
-- **D. Persistence + server fns** — core `state/store.ts` (SessionArtifact) +
-  `state/review.ts` (resumable decisions); `scripts/ingest.ts` persists a session.
-  `src/server/sessions.ts`: `listSessions`/`getSession`/`getTranscriptLines`/`saveDecision`.
-- **E. Review UI** — session list → narrative (AC-23) → triage (AC-1) → proposal review
-  with edit-in-place (AC-4), Reading/Diff toggle rendered-in-context (AC-2),
-  citation-on-hover (AC-3), voice warnings (AC-9), approve/reject/defer persisted with
-  nothing-written-until-commit (AC-6) + resume (AC-8). Components in `src/components/`,
-  voice checks in `src/lib/voice-warnings.ts`.
+**Phases 2 and 3 COMPLETE. Phase 4 (quality loop + deferred voice assist) is next.**
+- **Phase 2 (P0 loop):** session list → narrative (AC-23) → triage (AC-1) → proposal review
+  rendered-in-context with Reading/Diff toggle (AC-2), citation-on-hover (AC-3), edit-in-place
+  (AC-4), voice warnings (AC-9), approve/reject/defer with nothing-written-until-commit (AC-6) +
+  resume (AC-8); commit writes prose + provenance sidecar (AC-15) as one path-scoped **jj**
+  revision (AC-7, D-2), idempotent via `committedAt`.
+- **Phase 3 (depth):** AC-11 conflict resolution (Supersede/Coexist/Reject, `ConflictCard`);
+  AC-21 corrections (Supersede REPLACES the existing statement via `applySupersede`); AC-10
+  create-page folder picker + inbound-link suggestions (`CreatePagePicker`); AC-12 **weave amend**
+  (`WeavePicker` + `applyWeave`: end / into-paragraph / after-paragraph, rendered woven + highlighted
+  via `renderWovenPreview`); AC-13 wikilink validation; AC-24 page-type-aware voice bar
+  (`page-type.ts`); AC-14 noise spot-check (promote, `promotedClaims`); AC-22 multi-page event
+  grouping by citation overlap (`event-groups.ts`).
 
-- **F. Commit + provenance** (`src/server/commit.ts`) — `commitSession`/`performCommit`
-  writes approved authored prose (amend = append paragraph at end of body; create = plain-prose
-  page at a reviewer-chosen path) + the provenance sidecar (AC-15), then ONE path-scoped **jj**
-  revision (AC-7, D-2) that leaves unrelated working changes alone. Idempotent via a `committedAt`
-  guard. `performCommit(sid, deps)` takes injectable I/O roots + jj runner (integration-tested
-  against a temp tree; real `jj commit <paths>` isolation verified separately).
+**Counts:** app 53 tests, core 143 tests; typecheck + lint green. Verified over SSR; the real
+end-to-end browser commit + aether build-diff is the worldbuilder's outstanding verification.
 
-**Next — Phase 3:** conflict-resolution UI (Supersede/Coexist/Reject, AC-11), create-page
-folder-tree picker (AC-10/D-6), seamless in-paragraph amend (AC-12), wikilink validation (AC-13),
-page-type-aware voice bar (AC-24), corrections/retractions (AC-21), multi-page events (AC-22).
+## Layout
 
-## Provenance ledger & the aether byte-stability guard (C6)
+```
+src/
+  router.tsx, routes/__root.tsx
+  routes/index.tsx                 ← session list (status badges)
+  routes/session.$arc.$date.tsx    ← the review surface: narrative → conflicts → tabs
+                                     (Proposals grouped by event / Triage) → commit bar
+  routes/preview.tsx               ← render-fidelity preview (sample pages)
+  server/                          ← CLIENT-SAFE server-fn shells + pure helpers (see split rule)
+    paths.ts        ← path constants + within() (node:path only, client-safe)
+    content.ts      ← node:fs wiki readers (SERVER-ONLY; dynamic-imported)
+    sessions.ts     ← listSessions, getSession, getTranscriptLines, saveDecision,
+                      saveConflictResolution, togglePromotion, getWikiFolders,
+                      suggestInboundLinks, getPageParagraphs (+ pure parseTranscriptRange, assertSessionId)
+    render.ts       ← renderPagePreview, renderMarkdown, renderWovenPreview
+    commit.ts       ← commitSession (shell) + pure helpers (appendAuthoredParagraph,
+                      applyWeave, applySupersede, newPageContent, commitMessage, normalizeWikiPath)
+    commit-impl.ts  ← performCommit (SERVER-ONLY; dynamic-imported by commitSession)
+  render/
+    renderWikiMarkdown.ts          ← aether-faithful unified() chain
+    remark-wikilinks-injected.ts   ← parameterized wikilinks (injected allSlugs) + slugForPath
+    rehype-heading-ids.ts          ← github-slugger heading ids (Astro parity)
+    vendor/aether-slug.ts          ← VENDORED aether slug.ts (@ts-nocheck) + .drift.test
+  lib/
+    voice-warnings.ts   ← §9 automatable checks (AC-9) + wikilink validation (AC-13), page-type-aware
+    page-type.ts        ← lore/deity-statblock/timeline/flavor-pre/stub (AC-24)
+    event-groups.ts     ← group proposals by citation overlap (AC-22)
+  components/  CitationChip, ProposalCard, TriageView, ConflictCard, CreatePagePicker, WeavePicker
+  styles/wiki-render.css   ← checkpoint-grade article CSS (callouts, links, transcript, .woven)
+scripts/  generate-routes.ts, dev-fixture.ts
+```
 
-Provenance sidecars live at `pkg/content/.heartwood/provenance/<wikiPath>.prov.json` — a dot-dir
-**outside `wiki/`**, so aether's content walk skips it and committing the ledger never changes
-aether's build. A commit only mutates the targeted `.md` pages (amends add a paragraph; creates add
-a file) — those render changes are intended. Before a *real* session commit, validate with a build +
-file-set diff: only the touched pages (and any new page) should differ; the renderer/other 763
-files must not. Don't relocate provenance into `wiki/`.
+## ⚠️ Two load-bearing rules (don't regress these)
 
-## Security / hardening (a code-reviewer pass enforced these — keep them)
-
-- **Path containment:** every server fn that reads by a user-supplied path goes through
-  `within(root, rel)` (`src/server/content.ts`); session fns validate `arc`/`date` shape
-  before building a filename. Don't `join` user input into a path without it.
-- **LAN bind is intentional:** `vite.config.ts` sets `server.host=true` (0.0.0.0) so the
-  worldbuilder can review from another device on his LAN. This is safe ONLY because the
-  path-containment guard above is in place and the app is never public — don't "re-fix" it to
-  loopback, and never relax the `within()`/arc-date guards while this bind stands.
-- **No Bun globals on the server-fn import path** (see below); `state/identity.ts` imports
-  the pure `transcript/filename.ts`, never the Bun-using `discover.ts`.
-
-## Offline dev data
-
-`bun run --filter @faerrin/heartwood-review dev:fixture` writes a realistic SessionArtifact
-(no LLM) so the UI works offline. Real data: `… @faerrin/heartwood ingest <arc> <date>`.
-
-## ⚠️ Server functions run under **Node, not Bun**
-
-The Vite SSR runtime is Node (confirmed: `process.version` = node v24 inside a
-server fn). **The `Bun` global is `undefined` in server functions.** Therefore:
-- All server-side I/O uses `node:*` APIs (`node:fs/promises`, `node:child_process`)
-  — never `Bun.file` / `Bun.spawn` / `Bun.write`.
-- The core's `Bun.file`-based helpers (`state/provenance.ts`, `state/atomic.ts`,
-  `wiki/load.ts`, transcript readers) **cannot be called as-is** from a server fn.
-  Stage D makes the core's I/O Node-portable (node:fs works under Bun too) OR reads
-  at the app layer with `node:fs` (`src/server/content.ts`) and passes data into the
-  core's **pure** functions (mine/triage/resolve/assemble/conflict take strings +
-  injected `completeFn`/`readPage`, so those are runtime-agnostic).
+1. **Server functions run under Node, not Bun.** The Vite SSR runtime is Node (`process.version`
+   = node v24 inside a handler); the `Bun` global is **undefined**. All server-side I/O uses `node:*`
+   (never `Bun.file`/`Bun.spawn`). The core's I/O was made node:fs-portable for this.
+2. **Server-fn modules must be CLIENT-SAFE shells; Node I/O is dynamic-imported in handlers.**
+   `createServerFn` modules are imported by client components, so any **static** top-level import
+   (and non-handler exports like `performCommit`) lands in the **client bundle** — and node:fs/crypto/
+   child_process get externalized there and **throw on hydration** (this crashed the app; latent
+   Stages D–F until fixed). So: static-import only `createServerFn` + types (`import type`) + pure
+   helpers; `await import(...)` all node:fs / core-ledger modules inside handlers; heavy server-only
+   impls live in their own module (`commit-impl.ts`, `content.ts`). Verify with
+   `curl http://localhost:3001/src/server/<mod>.ts` → must show `createClientRpc` and no static
+   `node:`/core-IO import, and the dev log must have no "externalized for browser" error on load.
+   The architecture memory [[heartwood-review-app-architecture]] has the full rule.
 
 ## aether-faithful rendering (D-8)
 
-`src/render/renderWikiMarkdown.ts` runs a `unified()` chain that **reuses aether's
-live remark plugins** so proposals render exactly as on `heart.iridi.cc`:
-`remarkParse → remarkGfm → remarkDirective → remarkCallouts → remarkWikilinksInjected
-→ remarkTranscript → remarkSmartypants → remarkRehype(directiveHandlers) →
+`src/render/renderWikiMarkdown.ts` reuses aether's live remark plugins so output is **byte-faithful**
+to `heart.iridi.cc`: `remarkParse → remarkGfm → remarkDirective → remarkCallouts →
+remarkWikilinksInjected → remarkTranscript → remarkSmartypants → remarkRehype(directiveHandlers) →
 rehypeHeadingIds → rehypeStringify` (both rehype steps `allowDangerousHtml`).
-- **Reuses aether's `.mjs` directly** (relative import into `../../../aether/src/lib/`):
-  `remark-callouts`, `remark-transcript`, `directive-handlers` — untyped JS, loose.
-- **Wikilinks** are a parameterized port (`remark-wikilinks-injected.ts`) taking an
-  **injected `allSlugs`** instead of aether's module-load fs walk (so it can include
-  pending new-page slugs). Same `transformLink` "shortest" algorithm.
-- **`slug.ts` is VENDORED** (`src/render/vendor/aether-slug.ts`, `@ts-nocheck`) rather
-  than deep-imported: it's TypeScript source, so importing it pulls aether's file into
-  this strict (`noUncheckedIndexedAccess`) program and reports errors in a file we must
-  not edit. `aether-slug.drift.test.ts` fails if the copy diverges from aether's source.
-- **smartypants** + **heading ids** match Astro's `smartypants:true` and default
-  `rehypeHeadingIds`. `rehype-slug` isn't available offline, so `rehype-heading-ids.ts`
-  is a 20-line github-slugger stand-in (same lib → same output).
-- **Golden-diff** (`renderWikiMarkdown.test.ts`) compares the rendered article to
-  aether's built `<article>` (`pkg/aether/public`, gitignored → test skips when absent).
-- CSS: `src/styles/wiki-render.css` is **checkpoint-grade** (readable structure), not
-  aether's full themed SCSS cascade. Wire real CSS in Stage E if full parity is wanted.
+- Reuses aether's `.mjs` directly (relative import `../../../aether/src/lib/`): callouts, transcript,
+  directive-handlers (untyped JS). Wikilinks are a parameterized port with **injected allSlugs**.
+- **`slug.ts` is VENDORED** (`vendor/aether-slug.ts`, `@ts-nocheck`) because importing the .ts source
+  pulls it into this strict (`noUncheckedIndexedAccess`) program; `aether-slug.drift.test.ts` fails if
+  it diverges from aether's source. smartypants + heading-ids match Astro (`rehype-slug` unavailable
+  offline → 20-line github-slugger stand-in). Golden-diff test skips when `pkg/aether/public` absent.
+- CSS (`wiki-render.css`) is checkpoint-grade, not aether's full SCSS cascade.
+
+## Provenance ledger & the aether byte-stability guard (C6)
+
+Provenance sidecars: `pkg/content/.heartwood/provenance/<wikiPath>.prov.json` — a dot-dir **outside
+`wiki/`**, so aether's content walk skips it and committing the ledger never changes aether's build.
+A commit only mutates targeted `.md` pages (intended). Before a *real* commit, validate with a build +
+file-set diff: only touched/new pages differ; the renderer + other 763 files must not. Don't relocate
+provenance into `wiki/`.
+
+## Security / hardening (a code-reviewer pass enforced these — keep them)
+
+- **Path containment:** every server fn that reads by a user path goes through `within(root, rel)`
+  (`src/server/paths.ts`); session fns validate `arc`/`date` shape before building a filename.
+- **LAN bind is intentional:** `vite.config.ts` sets `server.host=true` (0.0.0.0) so the worldbuilder
+  reviews from another LAN device. Safe ONLY because of the path guards + it's never public — don't
+  re-fix to loopback, and never relax the guards while this stands.
+- **jj via `execFile`** (fixed argv, no shell). `jj commit <paths>` is path-scoped so it never sweeps
+  in the worldbuilder's unrelated working changes.
+
+## State model (persisted by the core, read/written by the app)
+
+- `SessionArtifact` (`@faerrin/heartwood/src/state/store.ts`) — narrative, triage buckets, proposals,
+  entities, conflicts. Written by `ingest`, read by the app. Under `pkg/heartwood/state/sessions/`.
+- `ReviewState` (`@faerrin/heartwood/src/state/review.ts`) — `decisions` (per proposal: decision +
+  authoredText + targetPath + weave + committedAt), `conflictResolutions` (by claimId),
+  `promotedClaims`. Under `pkg/heartwood/state/review/`. Both dirs gitignored.
 
 ## Commands
 
 ```sh
-bun run dev          # vite dev (SSR) on :3001
+bun run dev          # vite dev (SSR) on 0.0.0.0:3001
+bun run dev:fixture  # write an offline sample SessionArtifact (no LLM)
 bun run typecheck    # generate routes → tsc --noEmit
-bun run test         # vitest (render fidelity, drift guard)
+bun run test         # vitest
 bun run lint         # eslint
-bun run build        # vite build (SSR)
 ```
+Real review data: `bun run --filter @faerrin/heartwood ingest <arc> <date>` (LLM-backed).
 
 ## Conventions
 
-- **Bun to launch, Node at runtime in server fns** (see warning above). React 19,
-  strict TS + `noUncheckedIndexedAccess`. LLM (when added) only via the core's
-  `complete()` with DI. **jj, not git.** Not Caddy-served; not in `sites.caddyfile`.
-- Content is read cwd-relative from `../content` (`src/server/content.ts`), matching
-  the heartwood core's convention. `Script/` pages are excluded by the core.
+Bun to launch, Node at runtime in server fns. React 19, strict TS + `noUncheckedIndexedAccess`. LLM
+(when added, Phase 4) only via the core's `complete()` with DI. **jj, not git** (`--no-pager`, `-m`;
+push main directly). Not Caddy-served. Content read cwd-relative from `../content`; `Script/` excluded.
