@@ -18,13 +18,23 @@ import {
   type ReviewState,
   type ReviewStatus,
 } from "@faerrin/heartwood/src/state/review.ts";
-import { TRANSCRIPTS_DIR } from "./content.ts";
+import { TRANSCRIPTS_DIR, within } from "./content.ts";
 
 // The pipeline persists artifacts under the core package's state dir; the dev
 // server cwd is pkg/heartwood-review, so the core is `../heartwood`.
 const CORE_STATE = join(process.cwd(), "..", "heartwood", "state");
 const SESSIONS_DIR = join(CORE_STATE, "sessions");
 const REVIEW_DIR = join(CORE_STATE, "review");
+
+// Arc/date are interpolated into a `${arc}@${date}.json` filename, so validate their
+// shape before they touch the filesystem (path-traversal guard, mirrors `within`).
+const ARC_RE = /^[a-z0-9][a-z0-9-]*$/;
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+function assertSessionId(arc: string, date: string): { arc: string; date: string } {
+  if (!ARC_RE.test(arc)) throw new Error(`invalid arc: ${arc}`);
+  if (!DATE_RE.test(date)) throw new Error(`invalid date: ${date}`);
+  return { arc, date };
+}
 
 export interface SessionListItem extends SessionSummary {
   status: ReviewStatus;
@@ -36,10 +46,9 @@ export const listSessions = createServerFn({ method: "GET" }).handler(
     const summaries = await listSessionArtifacts(SESSIONS_DIR);
     const out: SessionListItem[] = [];
     for (const s of summaries) {
-      const artifact = await readSessionArtifact(SESSIONS_DIR, s.sessionId);
+      // s.proposalIds avoids a second full-artifact read per session (M1).
       const review = await readReviewState(REVIEW_DIR, s.sessionId);
-      const ids = artifact ? artifact.proposals.map((p) => p.id) : [];
-      out.push({ ...s, status: reviewStatus(review, ids) });
+      out.push({ ...s, status: reviewStatus(review, s.proposalIds) });
     }
     return out;
   },
@@ -54,7 +63,7 @@ export interface SessionView {
 export const getSession = createServerFn({ method: "GET" })
   .inputValidator((data: { arc: string; date: string }) => data)
   .handler(async ({ data }): Promise<SessionView> => {
-    const sessionId = { arc: data.arc, date: data.date };
+    const sessionId = assertSessionId(data.arc, data.date);
     const artifact = await readSessionArtifact(SESSIONS_DIR, sessionId);
     if (!artifact) throw new Error(`Session ${data.arc}@${data.date} not ingested`);
     const review = await readReviewState(REVIEW_DIR, sessionId);
@@ -67,8 +76,9 @@ export interface TranscriptLine {
   text: string;
 }
 
-// Transcript lines are `NNNNNN<TAB>Speaker: text`; ids are per-file (C8).
-const LINE_RE = /^(\d{6})\t([^:]+):\s?(.*)$/;
+// Transcript lines are `NNNNNN<TAB>Speaker: text`; ids are zero-padded 6-digit per-file
+// (C8), but accept 6+ digits so an over-long id is never silently dropped from a citation.
+const LINE_RE = /^(\d{6,})\t([^:]+):\s?(.*)$/;
 
 /** Pure: extract transcript lines whose id falls in [start, end]. Testable. */
 export function parseTranscriptRange(
@@ -91,7 +101,7 @@ export function parseTranscriptRange(
 export const getTranscriptLines = createServerFn({ method: "GET" })
   .inputValidator((data: { transcript: string; start: number; end: number }) => data)
   .handler(async ({ data }): Promise<TranscriptLine[]> => {
-    const raw = await readFile(join(TRANSCRIPTS_DIR, data.transcript), "utf8");
+    const raw = await readFile(within(TRANSCRIPTS_DIR, data.transcript), "utf8");
     return parseTranscriptRange(raw, data.start, data.end);
   });
 
@@ -108,7 +118,7 @@ export const saveDecision = createServerFn({ method: "POST" })
     }) => data,
   )
   .handler(async ({ data }): Promise<ReviewState> => {
-    const sessionId = { arc: data.arc, date: data.date };
+    const sessionId = assertSessionId(data.arc, data.date);
     const current = await readReviewState(REVIEW_DIR, sessionId);
     const next = applyDecision(current, {
       proposalId: data.proposalId,

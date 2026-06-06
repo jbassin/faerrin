@@ -3,7 +3,9 @@
 // across ~30 files differing only by date. Arc = the campaign slug (1:1 with the numeric
 // prefix). Citations elsewhere are (transcript, lineId); a bare line number is never unique.
 
-import { parseFilename } from '../transcript/discover';
+// Import the PURE parser (filename.ts), not discover.ts — discover.ts uses Bun.Glob/
+// Bun.file, and identity.ts is on the review app's Node server-fn import path.
+import { parseFilename } from '../transcript/filename';
 
 export interface SessionId {
   /** Campaign/arc slug, e.g. "through-a-song-darkly" (1:1 with the numeric filename prefix). */

@@ -114,6 +114,8 @@ export interface SessionSummary {
   sessionId: SessionId;
   transcript: string;
   generatedAt: string;
+  /** Proposal ids — carried so callers can compute review status without re-reading. */
+  proposalIds: string[];
   proposalCount: number;
   conflictCount: number;
 }
@@ -139,6 +141,7 @@ export async function listSessionArtifacts(dir: string): Promise<SessionSummary[
       sessionId: a.sessionId,
       transcript: a.transcript,
       generatedAt: a.generatedAt,
+      proposalIds: a.proposals.map((p) => p.id),
       proposalCount: a.proposals.length,
       conflictCount: a.conflicts.length,
     });

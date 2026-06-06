@@ -34,3 +34,19 @@ export const renderPagePreview = createServerFn({ method: "GET" })
     });
     return { path: data.path, title: titleFromPath(data.path), html };
   });
+
+/**
+ * Render arbitrary authored Markdown (the reviewer's in-progress prose) to
+ * aether-faithful HTML, so edit-in-place shows a live in-voice preview (AC-2/AC-4).
+ * `srcPath` is the page the prose targets (drives wikilink resolution); for a new
+ * page pass its intended content-relative path.
+ */
+export const renderMarkdown = createServerFn({ method: "POST" })
+  .inputValidator((data: { md: string; srcPath: string }) => data)
+  .handler(async ({ data }): Promise<string> => {
+    const allSlugs = await loadAllSlugs();
+    return renderWikiMarkdown(data.md, {
+      srcSlug: slugForPath(data.srcPath),
+      allSlugs,
+    });
+  });

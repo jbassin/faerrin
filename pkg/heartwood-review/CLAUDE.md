@@ -11,19 +11,41 @@ and `thoughts/heartwood/plans/2026-06-06-heartwood-rewrite-implementation.md`
 
 ## Build status (2026-06-06)
 
-**Stages A–C done (Phase-0a spikes + scaffold):**
+**Stages A–E done. Stage F (commit + provenance write) is next.**
 - **A. Scaffold** — TanStack Start SSR + React, mirrors strider (declares
   `@tanstack/router-generator` + `@eslint/js`; extends `tsconfig.base.json`;
   excludes `scripts/`). Runs in **SSR** mode (no prerender) so server functions work.
-- **B. Server-fn I/O spike** (`src/server/spike.ts`) — proves read pkg/content +
-  write sidecar + shell `jj` from one `createServerFn`.
+- **B. Server-fn I/O** — proved read pkg/content + write sidecar + shell `jj` from a
+  `createServerFn` (runtime is **Node**; spike route since removed).
 - **C. `renderWikiMarkdown`** (`src/render/`) — **byte-faithful** to aether's live
-  build (golden-diff test passes on prose / callout / deity stat-block pages).
+  build (golden-diff on prose / callout / deity stat-block pages).
+- **D. Persistence + server fns** — core `state/store.ts` (SessionArtifact) +
+  `state/review.ts` (resumable decisions); `scripts/ingest.ts` persists a session.
+  `src/server/sessions.ts`: `listSessions`/`getSession`/`getTranscriptLines`/`saveDecision`.
+- **E. Review UI** — session list → narrative (AC-23) → triage (AC-1) → proposal review
+  with edit-in-place (AC-4), Reading/Diff toggle rendered-in-context (AC-2),
+  citation-on-hover (AC-3), voice warnings (AC-9), approve/reject/defer persisted with
+  nothing-written-until-commit (AC-6) + resume (AC-8). Components in `src/components/`,
+  voice checks in `src/lib/voice-warnings.ts`.
 
-**Next — Stages D–F:** real server functions over the core (`listSessions`,
-`getSession`, `getTranscriptLines`, `saveDecision`, `commitSession`) + resumable
-review state; the review UI (narrative → triage → rendered-in-context review →
-citation hover → edit-in-place → approve/reject/defer); commit + provenance write.
+**Next — Stage F:** `commitSession` — write approved authored prose to
+`pkg/content/wiki/**` + the provenance sidecar (AC-15), one batched **jj** revision
+(AC-7); aether 763-file byte-diff guard (C6). Then the conflict-resolution UI
+(Supersede/Coexist/Reject) + create-page path picker are Phase 3.
+
+## Security / hardening (a code-reviewer pass enforced these — keep them)
+
+- **Path containment:** every server fn that reads by a user-supplied path goes through
+  `within(root, rel)` (`src/server/content.ts`); session fns validate `arc`/`date` shape
+  before building a filename. Don't `join` user input into a path without it.
+- **Loopback only:** `vite.config.ts` does NOT set `server.host` — do not expose on the LAN.
+- **No Bun globals on the server-fn import path** (see below); `state/identity.ts` imports
+  the pure `transcript/filename.ts`, never the Bun-using `discover.ts`.
+
+## Offline dev data
+
+`bun run --filter @faerrin/heartwood-review dev:fixture` writes a realistic SessionArtifact
+(no LLM) so the UI works offline. Real data: `… @faerrin/heartwood ingest <arc> <date>`.
 
 ## ⚠️ Server functions run under **Node, not Bun**
 

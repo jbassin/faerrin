@@ -20,7 +20,6 @@ function SessionList() {
         <h1 style={{ margin: 0 }}>Heartwood Review</h1>
         <nav style={{ display: "flex", gap: "1rem", fontSize: "0.85rem" }}>
           <Link to="/preview">render preview</Link>
-          <Link to="/spike">I/O spike</Link>
         </nav>
       </header>
       <p style={{ color: "#666" }}>

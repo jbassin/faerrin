@@ -7,7 +7,9 @@ import path from "node:path";
 // unlike strider) so server functions (`createServerFn`) can read pkg/content,
 // write the provenance sidecar, and shell out to `jj`. NOT Caddy-served.
 export default defineConfig({
-  server: { port: 3001, host: true },
+  // Bind loopback only — this is a single-user local tool whose server functions
+  // read pkg/content and the state dir; do not expose them on the LAN.
+  server: { port: 3001 },
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },

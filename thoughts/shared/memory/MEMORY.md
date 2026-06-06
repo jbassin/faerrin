@@ -9,3 +9,4 @@
 - [Wiki is setting, not session log](wiki-is-setting-not-session-log.md) — wiki records persistent world-state (people/places/things/lore), NOT party-action/session events; mining extracts standing facts, drops event narrative
 - [Heartwood rewrite progress](heartwood-rewrite-progress.md) — headless Phase-1 pipeline COMPLETE (132 tests); Phase 2 review app IN PROGRESS (Stages A–C done)
 - [Heartwood review app architecture](heartwood-review-app-architecture.md) — pkg/heartwood-review: server fns run under Node not Bun (node:* I/O); aether render reuse (vendored slug, byte-faithful); TanStack server-fn API
+- [Heartwood-review Phase 2 A-D review](heartwood-review-phase2-stage-a-d.md) — reviewer-found security/portability gaps (path traversal, 0.0.0.0 bind, latent Bun import) now all FIXED in Stage E; guards documented

@@ -22,16 +22,19 @@ incrementally on `main` (pushed directly). As of **2026-06-06**:
 
 **IN PROGRESS — Phase 2: the interactive review app.** New package `pkg/heartwood-review`
 (`@faerrin/heartwood-review`) — standalone local-first **TanStack Start (SSR) + React 19**.
-**Stages A–C done & pushed to main (2026-06-06):** SSR scaffold; server-fn I/O spike;
-`renderWikiMarkdown()` **byte-faithful** to aether's build (golden-diff + drift guard, 9 tests).
-The two deferred Phase-0a spikes are now landed. See [[heartwood-review-app-architecture]] for the
-load-bearing findings (server fns run under **Node not Bun** → node:* I/O; render-reuse strategy).
-**NEXT — Stages D–F:** real server fns over the core (`listSessions`/`getSession`/
-`getTranscriptLines`/`saveDecision`/`commitSession`) + resumable review state; the review UI
-(narrative → triage → rendered-in-context review → citation hover → edit-in-place →
-approve/reject/defer); commit + provenance-sidecar *writes* on approval, batched **jj** commit
-(AC-1..AC-9, AC-23). Checkpoints C (render fidelity) and F (full loop) hand to the worldbuilder's
-browser.
+**Stages A–E done & pushed to main (2026-06-06):** SSR scaffold; server-fn I/O; `renderWikiMarkdown()`
+**byte-faithful** to aether's build; core persistence (`state/store.ts` SessionArtifact +
+`state/review.ts` resumable decisions, node:fs-portable) + `ingest` CLI; server fns
+(`listSessions`/`getSession`/`getTranscriptLines`/`saveDecision`); and the full review UI —
+session list → narrative (AC-23) → triage (AC-1) → proposal review with edit-in-place (AC-4),
+Reading/Diff rendered-in-context (AC-2), citation hover (AC-3), voice warnings (AC-9),
+approve/reject/defer persisted, nothing-until-commit (AC-6) + resume (AC-8). A team-mode
+code-reviewer pass hardened it (path-traversal guards, loopback bind, pure `transcript/filename.ts`
+to kill a latent Bun import) — see [[heartwood-review-phase2-stage-a-d]] and
+[[heartwood-review-app-architecture]]. **NEXT — Stage F:** `commitSession` — write approved prose to
+`pkg/content/wiki/**` + provenance sidecar (AC-15), one batched **jj** revision (AC-7), aether
+763-file byte-diff guard (C6); then Phase 3 (conflict resolution UI, create-page picker, page-types).
+Browser checkpoint (full loop) hands to the worldbuilder before/at Stage F.
 
 **Key facts for continuity:** Bun+TS, strict `noUncheckedIndexedAccess`; LLM only via `complete()`
 with DI `completeFn`; jj not git (push main directly); pkg/heartwood/CLAUDE.md is now accurate.
