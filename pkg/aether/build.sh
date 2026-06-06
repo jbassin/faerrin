@@ -19,11 +19,16 @@ bun install --frozen-lockfile
 # which this site reads as its astro content root.
 bun run --filter @faerrin/content pipeline
 
-# 2. Clear the content-layer cache. Astro keeps it in BOTH .astro/ and the
-# hoisted ${ROOT}/node_modules/.astro/, and does NOT reliably invalidate it on
-# remark-plugin edits (which can otherwise ship a stale render). Unlike `npm ci`,
-# `bun install` does NOT wipe node_modules, so we remove both caches explicitly.
-rm -rf .astro "${ROOT}/node_modules/.astro"
+# 2. Clear the content-layer cache. Astro does NOT reliably invalidate it on
+# remark-plugin edits or regenerated Script pages (which can otherwise ship a
+# stale render or spam "Duplicate id … later items overwrite" warnings). The
+# data store lives at Astro's cacheDir = <root>/node_modules/.astro — and under
+# bun's per-package node_modules that resolves to THIS package's
+# node_modules/.astro, NOT the hoisted ${ROOT}/node_modules/.astro. Clear all
+# three (the project .astro/ for types, plus both node_modules/.astro locations
+# so it stays correct whichever way bun hoists). `bun install` does NOT wipe
+# node_modules, so we remove them explicitly.
+rm -rf .astro node_modules/.astro "${ROOT}/node_modules/.astro"
 
 # 3. Build the Astro site → public/ (astro-pagefind builds the search index in
 # astro:build:done; Astro empties outDir each build so removed pages don't linger).
