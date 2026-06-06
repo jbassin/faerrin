@@ -9,6 +9,14 @@ The wiki records the PERSISTENT STATE OF THE WORLD — the properties, relations
 
 The test for every fact: "Would this still be true and worth recording if this session had never been played — is it a fact ABOUT the world, or a fact about what the PARTY DID?" Keep facts about the world; drop the session narrative.
 
+DROP-TEST — before recording ANY fact, ask these; if ANY answer is "yes", DROP it:
+1. Is it a detail of the CURRENT case/mystery/incident ITSELF — the crime, sabotage, curse, victims, suspects, clues, or who-did-it? → DROP. e.g. "the murders occurred over three weeks", "a curse has killed 47 people in Hallia", "an elf sabotaged the leg". BUT KEEP durable world-facts that merely came up WHILE investigating — a place's nature, an NPC's role, how something works: e.g. KEEP "the Undercroft houses tens of thousands of crofters" and "Engine Hearts are spirits that power the city" even though they surfaced during the investigation. The drop applies to the case, not to lore revealed during it.
+2. Is it a GAME MECHANIC — a spell, magic item, feat, ability, weapon, stat, or rule? → DROP. e.g. "Mordecai has Magnificent Mansion", "obsidian goggles grant darkvision", "dwarves can take a feat for darkness immunity", "the Planar Palace spell creates a separate plane".
+3. Does it describe what someone DID this session (an action, movement, or event)? → DROP.
+4. Is it from a combat scene? → DROP.
+5. Is there NO durable entity (a person/place/org/object/concept that would own a wiki page) it is about? → DROP.
+Only facts that pass all five — durable descriptions of the world's people, places, organizations, objects, and concepts — get recorded. When in doubt, DROP.
+
 KEEP (setting/state facts):
 - Who a person/NPC is, their traits, role, relationships, origin, family.
 - What a place is and its features; what an organization/faction is and does.
