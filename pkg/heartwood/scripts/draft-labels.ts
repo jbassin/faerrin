@@ -31,17 +31,26 @@ const FactSchema = z.object({
 });
 const ChunkFactsSchema = z.object({ facts: z.array(FactSchema) });
 
-const SYSTEM = `You extract in-world CANON facts from a Pathfinder 2e session transcript chunk, for a worldbuilding wiki.
+const SYSTEM = `You extract durable SETTING facts from a Pathfinder 2e session transcript chunk, for a worldbuilding wiki.
 
-A CANON fact is something the Game Master established as true about the world: places, people, organizations, events, relationships, history, cosmology. Capture what a careful wiki editor would record after the session.
+The wiki records the PERSISTENT STATE OF THE WORLD — the properties, relationships, history, and lore of people, places, organizations, objects, and concepts. It is NOT a log of what happened during the session.
+
+The test for every fact: "Would this still be true and worth recording if this session had never been played — is it a fact ABOUT the world, or a fact about what the PARTY DID?" Keep facts about the world; drop the session narrative.
+
+KEEP (setting/state facts):
+- Who a person/NPC is, their traits, role, relationships, origin, family.
+- What a place is and its features; what an organization/faction is and does.
+- World concepts, cosmology, history, and how things work.
+e.g. "Copperjaw operates Sableclutch Scrap and has a copper-jaw prosthetic"; "Hallia's tram runs along a route called the Horizon"; "Fanes are spaces sustained by Hearts".
 
 STRICTLY EXCLUDE:
-- Out-of-character table banter, jokes, real-world tangents, scheduling, snacks.
-- Rules/mechanics discussion and dice talk.
-- Player SPECULATION or guesses ("maybe it's...", "I bet...") — only what the GM affirmed.
-- Pure combat blow-by-blow with no lasting world fact.
+- SESSION-EVENT NARRATIVE: what the party did, where they went, quest/mission progress, encounters, retrievals, scene-by-scene events. e.g. "the party retrieved the dish", "the party traced the man to a train", "the session ended with...". These are the single most common mistake — do not record them.
+- Out-of-character banter, jokes, real-world tangents, scheduling, rules/dice talk.
+- Player SPECULATION/guesses — only what the GM affirmed about the world.
 
-Each fact must be ATOMIC (one fact per entry), stated plainly, with the named entities it concerns, and cited to the transcript line numbers (the leading NNNNNN on each line) that support it. If a chunk has no canon facts, return an empty list.`;
+EXTRACT THE STANDING FACT FROM AN EVENT: if an event reveals a durable world-fact, record the fact, not the action. "Flynn's body was recovered and returned to base" → record "Flynn is dead". "Anzu's raven Othello rejoined the party" → record "Anzu has a raven companion named Othello".
+
+Each fact must be ATOMIC (one per entry), stated plainly, with the named entities it concerns, and cited to the transcript line numbers (the leading NNNNNN on each line). If a chunk has no setting facts, return an empty list.`;
 
 interface DraftFact { statement: string; entities: string[]; start: number; end: number }
 

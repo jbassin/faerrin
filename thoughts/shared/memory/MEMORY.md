@@ -6,3 +6,4 @@
 - [Heartwood rewrite constraints](heartwood-rewrite-constraints.md) — heartwood being fully rewritten; fixed stakeholder constraints (interactive review UI, human-voiced prose, provenance) + 50%-noise/literary-voice hard truths
 - [Transcript arcs and naming](transcript-arcs-and-naming.md) — transcripts span 6+ concurrent arcs; 000 arc's 30 files share one basename (differ only by date); line IDs are per-file
 - [Wiki non-prose pages](wiki-nonprose-pages.md) — Timeline.md is HTML, deity pages are :: stat blocks, flavor docs are <pre>; prose/voice tooling must be page-type-aware
+- [Wiki is setting, not session log](wiki-is-setting-not-session-log.md) — wiki records persistent world-state (people/places/things/lore), NOT party-action/session events; mining extracts standing facts, drops event narrative

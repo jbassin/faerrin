@@ -148,7 +148,16 @@ click.
   `aliases:` frontmatter field — the tool must use and extend it).
 - **Claim** — an atomic in-world fact mined from a session, each carrying **line citations**
   (`(transcript, lineId)` ranges), a **speaker/role**, an **epistemic modality** (see below),
-  and resolved **entity** references.
+  and resolved **entity** references. A claim must be a **setting fact** (next entry).
+- **Setting fact vs. session event** — the wiki records the **persistent state of the world**
+  (properties, relationships, history, and lore of people, places, organizations, objects, and
+  concepts), **not a log of what the party did this session** (movements, quest/mission
+  progress, encounters, scene-by-scene events). The test: *would this still be true and worth
+  recording if the session had never been played?* Mining keeps standing world-facts and drops
+  party-action narrative — and when an event reveals a durable fact, it **extracts the fact, not
+  the action** (e.g. "the body was returned to base" → record *the NPC is dead*). This is a
+  criterion **orthogonal to modality**: a fact can be GM-stated canon and still be a session
+  event that does not belong in the wiki. See `wiki-is-setting-not-session-log` memory.
 - **Sentence anchor** — a durable handle identifying *which* wiki sentence a provenance record
   attaches to, robust to surrounding edits (not a raw character offset, which breaks on the
   next manual edit). Storage layer decided (D-1: render-invisible sidecar); the exact anchor
@@ -218,7 +227,7 @@ transcript (line-numbered, ~50% noise)
 | Subsystem | Responsibility | Reliability bet |
 |---|---|---|
 | Ingest | Parse line-numbered transcript; attach speaker/role; cheap heuristic noise pre-pass. | High (deterministic). |
-| Mine | LLM: atomic claims with line-IDs + modality. Bounded cost (per-chunk, not whole-wiki). | Medium — the recall problem; needs eval set (G8). |
+| Mine | LLM: atomic **setting-fact** claims with line-IDs + modality — extracts standing world-facts, **excludes session-event/party-action narrative** (§5), and pulls the durable fact out of an event. Bounded cost (per-chunk, not whole-wiki). | Medium — the recall problem; needs eval set (G8). |
 | Triage | Present canon/uncertain/noise; human confirms. | High — human in the loop by design. |
 | **Resolve entities** | Map each claim's surface forms to a canonical **entity** + existing page (or new-page), using the wiki `aliases:` index + an entity registry; surface low-confidence merges for human confirmation. | Medium — the **biggest single error source** (ASR variance); never auto-merge across a confidence threshold. |
 | Locate | Match resolved entity → existing page or new-page proposal (uses a wiki index/summaries, not full text). | Medium. |

@@ -16,7 +16,8 @@
           "start": 543,
           "end": 571
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d002",
@@ -30,7 +31,8 @@
           "start": 565,
           "end": 565
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d003",
@@ -44,7 +46,8 @@
           "start": 566,
           "end": 566
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d004",
@@ -58,7 +61,8 @@
           "start": 567,
           "end": 567
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d005",
@@ -71,21 +75,8 @@
           "start": 568,
           "end": 568
         }
-      ]
-    },
-    {
-      "id": "d006",
-      "statement": "The party's first mission was to find out what happened to Flynn, a male sprite who was investigating a roller rink being opened by the Roundhat Gang.",
-      "entities": [
-        "Flynn",
-        "Roundhat Gang"
       ],
-      "citations": [
-        {
-          "start": 574,
-          "end": 576
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d007",
@@ -99,7 +90,8 @@
           "start": 576,
           "end": 578
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d008",
@@ -114,7 +106,8 @@
           "start": 610,
           "end": 613
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d009",
@@ -128,12 +121,14 @@
           "start": 613,
           "end": 613
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d010",
-      "statement": "The law enforcement authority in the area is called the Threshold Authority, also known as the TA.",
+      "statement": "The law enforcement authority in Sableclutch is called the Threshold Authority, also known as the TA.",
       "entities": [
+        "Sableclutch",
         "Threshold Authority"
       ],
       "citations": [
@@ -141,7 +136,8 @@
           "start": 667,
           "end": 677
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d011",
@@ -154,7 +150,8 @@
           "start": 695,
           "end": 696
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d012",
@@ -167,22 +164,8 @@
           "start": 697,
           "end": 698
         }
-      ]
-    },
-    {
-      "id": "d013",
-      "statement": "Flynn's body was recovered and returned to the Sin and Tonic, where the party reported their findings to Illmari Vaino.",
-      "entities": [
-        "Flynn",
-        "Sin and Tonic",
-        "Illmari Vaino"
       ],
-      "citations": [
-        {
-          "start": 705,
-          "end": 706
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d014",
@@ -195,7 +178,8 @@
           "start": 706,
           "end": 707
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d015",
@@ -209,73 +193,8 @@
           "start": 717,
           "end": 727
         }
-      ]
-    },
-    {
-      "id": "d016",
-      "statement": "The party is obligated to attend a meeting about the Zorbon on the coming Saturday.",
-      "entities": [
-        "Zorbon"
       ],
-      "citations": [
-        {
-          "start": 717,
-          "end": 717
-        }
-      ]
-    },
-    {
-      "id": "d017",
-      "statement": "The party retrieved a receiver/satellite dish from the roller rink rooftop and returned it to the Sin and Tonic as their base.",
-      "entities": [
-        "Sin and Tonic"
-      ],
-      "citations": [
-        {
-          "start": 728,
-          "end": 728
-        }
-      ]
-    },
-    {
-      "id": "d018",
-      "statement": "The party took a satellite/radar dish back to their base at the Sin and Tonic after stealing it from a rollerama (roller skating area).",
-      "entities": [
-        "Sin and Tonic",
-        "rollerama"
-      ],
-      "citations": [
-        {
-          "start": 728,
-          "end": 778
-        }
-      ]
-    },
-    {
-      "id": "d019",
-      "statement": "The party transported the radar dish in a Volkswagen Beetle called the 'city tripper'.",
-      "entities": [
-        "Sin and Tonic"
-      ],
-      "citations": [
-        {
-          "start": 777,
-          "end": 777
-        }
-      ]
-    },
-    {
-      "id": "d020",
-      "statement": "The radar dish is being stored in the garage of the Sin and Tonic.",
-      "entities": [
-        "Sin and Tonic"
-      ],
-      "citations": [
-        {
-          "start": 778,
-          "end": 778
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d021",
@@ -288,7 +207,8 @@
           "start": 781,
           "end": 783
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d022",
@@ -301,7 +221,8 @@
           "start": 831,
           "end": 833
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d023",
@@ -315,7 +236,8 @@
           "start": 836,
           "end": 840
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d024",
@@ -329,7 +251,8 @@
           "start": 841,
           "end": 842
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d025",
@@ -342,7 +265,8 @@
           "start": 858,
           "end": 862
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d026",
@@ -355,7 +279,8 @@
           "start": 867,
           "end": 872
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d027",
@@ -368,7 +293,8 @@
           "start": 875,
           "end": 879
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d028",
@@ -382,7 +308,8 @@
           "start": 882,
           "end": 882
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d029",
@@ -396,7 +323,8 @@
           "start": 899,
           "end": 906
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d030",
@@ -411,84 +339,8 @@
           "start": 919,
           "end": 929
         }
-      ]
-    },
-    {
-      "id": "d031",
-      "statement": "There is a supermarket a few blocks from the Sin and Tonic.",
-      "entities": [
-        "Sin and Tonic"
       ],
-      "citations": [
-        {
-          "start": 948,
-          "end": 948
-        }
-      ]
-    },
-    {
-      "id": "d032",
-      "statement": "A person named Tywelwyn ran the roller rink that the party visited; he was not present at the scene and is believed to have gone mad, likely due to sounds being broadcast into his head via the radar dish.",
-      "entities": [
-        "Tywelwyn"
-      ],
-      "citations": [
-        {
-          "start": 960,
-          "end": 961
-        }
-      ]
-    },
-    {
-      "id": "d033",
-      "statement": "The twins at the Sin and Tonic are skilled crafters capable of making healing potions, but they do not run a shop; they require the party to supply components.",
-      "entities": [
-        "Sin and Tonic"
-      ],
-      "citations": [
-        {
-          "start": 985,
-          "end": 988
-        }
-      ]
-    },
-    {
-      "id": "d034",
-      "statement": "The party possesses a fragile arcane item called a Sentience Distributor, which appears to spread a received signal more broadly and may have been applied to the radar dish setup at the roller rink.",
-      "entities": [
-        "Sentience Distributor"
-      ],
-      "citations": [
-        {
-          "start": 1015,
-          "end": 1018
-        }
-      ]
-    },
-    {
-      "id": "d035",
-      "statement": "The radar dish is believed to be a device for receiving a signal, not broadcasting one.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 1027,
-          "end": 1028
-        }
-      ]
-    },
-    {
-      "id": "d036",
-      "statement": "Anouk told the party that there is work available in the city and that she has an old friend who runs a scrapyard one district over in Sableclutch, who regularly hires couriers and other workers rather than using a formal service.",
-      "entities": [
-        "Anouk",
-        "Sableclutch"
-      ],
-      "citations": [
-        {
-          "start": 1184,
-          "end": 1199
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d037",
@@ -501,7 +353,8 @@
           "start": 1205,
           "end": 1208
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d038",
@@ -514,7 +367,8 @@
           "start": 1211,
           "end": 1211
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d039",
@@ -528,7 +382,8 @@
           "start": 1230,
           "end": 1230
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d040",
@@ -541,22 +396,23 @@
           "start": 1230,
           "end": 1230
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d041",
-      "statement": "The Undertable is a pawn shop located in the Star 12 district of Hallia, situated starward down the Horizon from the Sin and Tonic neighborhood.",
+      "statement": "The Undertable is a pawn shop located in Sableclutch, Star 12 in Hallia, situated starward down the Horizon from the Sin and Tonic neighborhood.",
       "entities": [
         "Undertable",
-        "Hallia",
-        "Star 12"
+        "Hallia"
       ],
       "citations": [
         {
           "start": 1230,
           "end": 1253
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d042",
@@ -570,7 +426,8 @@
           "start": 1231,
           "end": 1234
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d043",
@@ -583,7 +440,8 @@
           "start": 1235,
           "end": 1238
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d044",
@@ -600,7 +458,8 @@
           "start": 1263,
           "end": 1300
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d045",
@@ -614,7 +473,8 @@
           "start": 1310,
           "end": 1312
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d046",
@@ -628,7 +488,8 @@
           "start": 1314,
           "end": 1314
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d047",
@@ -642,7 +503,8 @@
           "start": 1317,
           "end": 1319
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d048",
@@ -655,7 +517,8 @@
           "start": 1342,
           "end": 1352
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d049",
@@ -668,7 +531,8 @@
           "start": 1354,
           "end": 1363
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d050",
@@ -682,7 +546,8 @@
           "start": 1364,
           "end": 1382
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d051",
@@ -697,7 +562,8 @@
           "start": 1370,
           "end": 1378
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d052",
@@ -710,7 +576,8 @@
           "start": 1385,
           "end": 1391
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d053",
@@ -724,7 +591,8 @@
           "start": 1393,
           "end": 1393
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d054",
@@ -738,7 +606,8 @@
           "start": 1426,
           "end": 1430
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d055",
@@ -751,63 +620,8 @@
           "start": 1441,
           "end": 1601
         }
-      ]
-    },
-    {
-      "id": "d056",
-      "statement": "Full plate armor costs 30 gold pieces at standard price, reduced to 27 gold with Smiler's friends discount (10% off).",
-      "entities": [
-        "Smiler",
-        "Undertable"
       ],
-      "citations": [
-        {
-          "start": 1463,
-          "end": 1467
-        }
-      ]
-    },
-    {
-      "id": "d057",
-      "statement": "Argyle purchased full plate armor, which costs 30 gold pieces (discounted to 27 gold with a 10% reduction).",
-      "entities": [
-        "Argyle"
-      ],
-      "citations": [
-        {
-          "start": 1463,
-          "end": 1467
-        }
-      ]
-    },
-    {
-      "id": "d058",
-      "statement": "Johnny passed along a message to Smiler asking him to tell 'Donnie' to stop by and talk to 'Red', indicating Red has been receiving updates.",
-      "entities": [
-        "Johnny",
-        "Smiler",
-        "Donnie",
-        "Red"
-      ],
-      "citations": [
-        {
-          "start": 1570,
-          "end": 1575
-        }
-      ]
-    },
-    {
-      "id": "d059",
-      "statement": "Argyle's eyes shifted from gold to a bright white, almost bluish color after acquiring his new armor.",
-      "entities": [
-        "Argyle"
-      ],
-      "citations": [
-        {
-          "start": 1576,
-          "end": 1578
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d060",
@@ -822,7 +636,8 @@
           "start": 1606,
           "end": 1659
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d061",
@@ -835,7 +650,8 @@
           "start": 1632,
           "end": 1632
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d062",
@@ -848,7 +664,8 @@
           "start": 1637,
           "end": 1644
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d063",
@@ -863,7 +680,8 @@
           "start": 1675,
           "end": 1710
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d064",
@@ -876,7 +694,8 @@
           "start": 1698,
           "end": 1703
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d065",
@@ -890,33 +709,8 @@
           "start": 1704,
           "end": 1706
         }
-      ]
-    },
-    {
-      "id": "d066",
-      "statement": "Anzu was born in a nest.",
-      "entities": [
-        "Anzu"
       ],
-      "citations": [
-        {
-          "start": 1726,
-          "end": 1726
-        }
-      ]
-    },
-    {
-      "id": "d067",
-      "statement": "Johnny was born in a small village residential hospital.",
-      "entities": [
-        "Johnny"
-      ],
-      "citations": [
-        {
-          "start": 1729,
-          "end": 1731
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d068",
@@ -930,7 +724,8 @@
           "start": 1737,
           "end": 1739
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d069",
@@ -945,7 +740,8 @@
           "start": 1745,
           "end": 1746
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d070",
@@ -959,7 +755,8 @@
           "start": 1753,
           "end": 1755
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d071",
@@ -974,60 +771,8 @@
           "start": 1757,
           "end": 1764
         }
-      ]
-    },
-    {
-      "id": "d072",
-      "statement": "The Pulse communicated with Benny overnight, warning him to be more careful and expressing a desire to keep him alive, and empowered his pick weapon, causing it to glow.",
-      "entities": [
-        "Benny",
-        "The Pulse"
       ],
-      "citations": [
-        {
-          "start": 1776,
-          "end": 1799
-        }
-      ]
-    },
-    {
-      "id": "d073",
-      "statement": "The party's raiments (clothing/gear) grew slightly larger overnight, implying the characters physically grew.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 1808,
-          "end": 1809
-        }
-      ]
-    },
-    {
-      "id": "d074",
-      "statement": "Argyle received a new business card with 'Doctor' bolded after his licensing came through, and the card was covered as a complimentary benefit by his parents through the Scale.",
-      "entities": [
-        "Argyle",
-        "the Scale"
-      ],
-      "citations": [
-        {
-          "start": 1810,
-          "end": 1824
-        }
-      ]
-    },
-    {
-      "id": "d075",
-      "statement": "Argyle's parents are operatives of the Scale, and their identities are classified.",
-      "entities": [
-        "Argyle",
-        "the Scale"
-      ],
-      "citations": [
-        {
-          "start": 1825,
-          "end": 1829
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d076",
@@ -1043,7 +788,8 @@
           "start": 1829,
           "end": 1829
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d077",
@@ -1058,7 +804,8 @@
           "start": 1847,
           "end": 1854
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d078",
@@ -1072,7 +819,8 @@
           "start": 1877,
           "end": 1883
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d079",
@@ -1087,7 +835,8 @@
           "start": 1877,
           "end": 1919
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d080",
@@ -1100,7 +849,8 @@
           "start": 1879,
           "end": 1911
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d081",
@@ -1113,7 +863,8 @@
           "start": 1915,
           "end": 1918
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d082",
@@ -1127,7 +878,8 @@
           "start": 1928,
           "end": 1987
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d083",
@@ -1141,7 +893,8 @@
           "start": 1971,
           "end": 1981
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d084",
@@ -1154,137 +907,8 @@
           "start": 1977,
           "end": 1979
         }
-      ]
-    },
-    {
-      "id": "d085",
-      "statement": "Copperjaw offered the party 100 gold pieces to deliver a locked metal suitcase handcuffed to a carrier, and 70 gold pieces for a separate guarding job.",
-      "entities": [
-        "Copperjaw"
       ],
-      "citations": [
-        {
-          "start": 2025,
-          "end": 2035
-        }
-      ]
-    },
-    {
-      "id": "d086",
-      "statement": "The locked metal suitcase Copperjaw wants delivered is extremely heavy — heavy enough that dropping it would make a small crater in the ground.",
-      "entities": [
-        "Copperjaw"
-      ],
-      "citations": [
-        {
-          "start": 2066,
-          "end": 2069
-        }
-      ]
-    },
-    {
-      "id": "d087",
-      "statement": "Two people (always coming in pairs, though different individuals each time) have been visiting Sableclutch Scrap and showing interest in the suitcase Copperjaw wants delivered; he expects them to intercept the delivery party en route.",
-      "entities": [
-        "Copperjaw",
-        "Sableclutch Scrap"
-      ],
-      "citations": [
-        {
-          "start": 2086,
-          "end": 2096
-        }
-      ]
-    },
-    {
-      "id": "d088",
-      "statement": "A tire/guide company called Chorath exists in the world, and its guide (the Chorath Guide) rates food establishments similarly to a real-world restaurant guide.",
-      "entities": [
-        "Chorath"
-      ],
-      "citations": [
-        {
-          "start": 2106,
-          "end": 2109
-        }
-      ]
-    },
-    {
-      "id": "d089",
-      "statement": "The delivery destination is an address in the Diamond District of Hallia, a relatively upscale part of the city known for jewelers, fine metal shops, and high-end residential areas.",
-      "entities": [
-        "Diamond District",
-        "Hallia"
-      ],
-      "citations": [
-        {
-          "start": 2135,
-          "end": 2147
-        }
-      ]
-    },
-    {
-      "id": "d090",
-      "statement": "The suitcase is to be handed to a doorman at the Diamond District building; the doorman will use a wax-seal device to unlock it and take it, while the actual client will not show his face to the delivery party.",
-      "entities": [
-        "Diamond District"
-      ],
-      "citations": [
-        {
-          "start": 2170,
-          "end": 2178
-        }
-      ]
-    },
-    {
-      "id": "d091",
-      "statement": "The client receiving the delivery would not show his face to the couriers; instead, a specific doorman would authenticate the handoff using a wax seal-like device that unlocks the delivery.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2173,
-          "end": 2178
-        }
-      ]
-    },
-    {
-      "id": "d092",
-      "statement": "Copperjaw fabricated the contents of the suitcase himself and was already paid for making it; the party is being paid only for delivery.",
-      "entities": [
-        "Copperjaw"
-      ],
-      "citations": [
-        {
-          "start": 2184,
-          "end": 2187
-        }
-      ]
-    },
-    {
-      "id": "d093",
-      "statement": "Benny carried a suitcase handcuffed to his arm during the delivery mission.",
-      "entities": [
-        "Benny"
-      ],
-      "citations": [
-        {
-          "start": 2204,
-          "end": 2205
-        }
-      ]
-    },
-    {
-      "id": "d094",
-      "statement": "Benny was equipped with two picks, a longsword, a silver knife stolen from silverware, a coat pistol, and the briefcase as a bludgeoning object.",
-      "entities": [
-        "Benny"
-      ],
-      "citations": [
-        {
-          "start": 2218,
-          "end": 2221
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d095",
@@ -1298,55 +922,8 @@
           "start": 2240,
           "end": 2244
         }
-      ]
-    },
-    {
-      "id": "d096",
-      "statement": "The city is a magical society where bird-people and similar non-human folk are common enough not to draw attention.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2375,
-          "end": 2375
-        }
-      ]
-    },
-    {
-      "id": "d097",
-      "statement": "A goblin pickpocket in tattered workman's overalls attempted to steal from Johnny's jacket pocket as the party walked through the streets.",
-      "entities": [
-        "Johnny"
       ],
-      "citations": [
-        {
-          "start": 2450,
-          "end": 2455
-        }
-      ]
-    },
-    {
-      "id": "d098",
-      "statement": "The goblin pickpocket fled back into the alley they had been lurking in after being caught.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2495,
-          "end": 2512
-        }
-      ]
-    },
-    {
-      "id": "d099",
-      "statement": "Two Black Line officers were spotted approaching the party after the commotion caused by the pickpocket encounter; their presence in this part of the city was notable because Black Line typically operates in wealthier districts.",
-      "entities": [
-        "Black Line"
-      ],
-      "citations": [
-        {
-          "start": 2547,
-          "end": 2555
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d100",
@@ -1359,7 +936,8 @@
           "start": 2550,
           "end": 2551
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d101",
@@ -1372,7 +950,8 @@
           "start": 2551,
           "end": 2551
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d102",
@@ -1385,7 +964,8 @@
           "start": 2552,
           "end": 2558
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d103",
@@ -1398,7 +978,8 @@
           "start": 2552,
           "end": 2554
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d104",
@@ -1411,7 +992,8 @@
           "start": 2557,
           "end": 2558
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d105",
@@ -1424,7 +1006,8 @@
           "start": 2571,
           "end": 2574
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d106",
@@ -1438,76 +1021,8 @@
           "start": 2587,
           "end": 2695
         }
-      ]
-    },
-    {
-      "id": "d107",
-      "statement": "Blackline had been patrolling the district (where Sableclutch Scrap is located) for a few weeks at the time of the encounter, having clients in the area.",
-      "entities": [
-        "Blackline"
       ],
-      "citations": [
-        {
-          "start": 2652,
-          "end": 2655
-        }
-      ]
-    },
-    {
-      "id": "d108",
-      "statement": "One of the two Blackline officers encountered is named Officer Smith.",
-      "entities": [
-        "Officer Smith",
-        "Blackline"
-      ],
-      "citations": [
-        {
-          "start": 2704,
-          "end": 2708
-        }
-      ]
-    },
-    {
-      "id": "d109",
-      "statement": "The second Blackline officer is mute due to a bad accident involving a local gang, and is nicknamed 'Mute' by his partner.",
-      "entities": [
-        "Mute",
-        "Blackline",
-        "Officer Smith"
-      ],
-      "citations": [
-        {
-          "start": 2717,
-          "end": 2727
-        }
-      ]
-    },
-    {
-      "id": "d110",
-      "statement": "After rounding a corner, the two Blackline officers completely vanished from Othello's aerial sight, suggesting they may have used some form of magic or concealment.",
-      "entities": [
-        "Othello",
-        "Blackline",
-        "Officer Smith",
-        "Mute"
-      ],
-      "citations": [
-        {
-          "start": 2745,
-          "end": 2746
-        }
-      ]
-    },
-    {
-      "id": "d111",
-      "statement": "A car costs approximately 2,000 gold pieces.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2785,
-          "end": 2787
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d112",
@@ -1518,7 +1033,8 @@
           "start": 2790,
           "end": 2793
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d113",
@@ -1529,18 +1045,8 @@
           "start": 2795,
           "end": 2796
         }
-      ]
-    },
-    {
-      "id": "d114",
-      "statement": "The trolley station district where the party was located has many goblinoid factory workers who use the tram to commute home.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2817,
-          "end": 2820
-        }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d115",
@@ -1553,7 +1059,8 @@
           "start": 2887,
           "end": 2887
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d116",
@@ -1566,7 +1073,8 @@
           "start": 2887,
           "end": 2887
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d117",
@@ -1577,33 +1085,22 @@
           "start": 2893,
           "end": 2895
         }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d118",
       "statement": "The tram line runs through stations designated by 'Void' numbers, with the party boarding at Void 2 and their destination being at Prime (Zero).",
       "entities": [
-        "Prime Meridian",
-        "Void 2",
-        "Prime"
+        "Prime Meridian"
       ],
       "citations": [
         {
           "start": 2894,
           "end": 2895
         }
-      ]
-    },
-    {
-      "id": "d119",
-      "statement": "One of the goblinoid factory workers who boarded the tram with the party was observed surreptitiously watching the party's briefcase.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2916,
-          "end": 2919
-        }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d120",
@@ -1616,18 +1113,8 @@
           "start": 2933,
           "end": 2933
         }
-      ]
-    },
-    {
-      "id": "d121",
-      "statement": "The destination the party is travelling to is located in an upscale part of the city where residents can afford private cars, making public transport unavailable in that area.",
-      "entities": [],
-      "citations": [
-        {
-          "start": 2950,
-          "end": 2951
-        }
-      ]
+      ],
+      "reviewed": true
     },
     {
       "id": "d122",
@@ -1638,89 +1125,8 @@
           "start": 2956,
           "end": 2956
         }
-      ]
-    },
-    {
-      "id": "d123",
-      "statement": "Two pursuers who had been following the party revealed themselves in an alley; they were shapeshifters who had disguised themselves as office workers before transforming into large, pink, fleshy, naked-mole-rat-like creatures roughly a foot and a half taller than their human forms, with eyes sunken into featureless sockets and no other discernible facial features.",
-      "entities": [
-        "Ugathal I",
-        "Ugathal II"
       ],
-      "citations": [
-        {
-          "start": 3047,
-          "end": 3081
-        }
-      ]
-    },
-    {
-      "id": "d124",
-      "statement": "One of the two shapeshifter pursuers was incapable of normal speech, producing only a gargling sound instead of words.",
-      "entities": [
-        "Ugathal I",
-        "Ugathal II"
-      ],
-      "citations": [
-        {
-          "start": 3049,
-          "end": 3055
-        }
-      ]
-    },
-    {
-      "id": "d125",
-      "statement": "The two shapeshifter pursuers demanded the party hand over a briefcase and everything inside it.",
-      "entities": [
-        "Ugathal I",
-        "Ugathal II"
-      ],
-      "citations": [
-        {
-          "start": 3058,
-          "end": 3059
-        }
-      ]
-    },
-    {
-      "id": "d126",
-      "statement": "The shapeshifter creatures, referred to as Ugathal I and Ugathal II, have no blood inside them — their flesh simply splits to reveal more flesh when cut.",
-      "entities": [
-        "Ugathal I",
-        "Ugathal II"
-      ],
-      "citations": [
-        {
-          "start": 3211,
-          "end": 3215
-        }
-      ]
-    },
-    {
-      "id": "d127",
-      "statement": "Benny wields a glowing pick that deals spirit damage and gains bonus damage against targets below half HP.",
-      "entities": [
-        "Benny"
-      ],
-      "citations": [
-        {
-          "start": 3266,
-          "end": 3574
-        }
-      ]
-    },
-    {
-      "id": "d128",
-      "statement": "The Ugathals have a blood nourishment ability that is a three-action manipulate action; when successfully used on a grabbed target, it grants the Ugathal benefits (described as nourishment).",
-      "entities": [
-        "Ugathal"
-      ],
-      "citations": [
-        {
-          "start": 3317,
-          "end": 3321
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d129",
@@ -1733,172 +1139,22 @@
           "start": 3321,
           "end": 3321
         }
-      ]
-    },
-    {
-      "id": "d130",
-      "statement": "Johnny recited a poem to Anzu during the battle, describing a blackbird living in a library among stacked books, using a lamp as its sun and building a nest in hollow shelves until the doors open to light.",
-      "entities": [
-        "Johnny",
-        "Anzu"
       ],
-      "citations": [
-        {
-          "start": 3371,
-          "end": 3379
-        }
-      ]
+      "reviewed": true
     },
     {
-      "id": "d131",
-      "statement": "Anzu had not previously encountered or heard of an Ugathal before this encounter.",
-      "entities": [
-        "Anzu",
-        "Ugathal"
-      ],
-      "citations": [
-        {
-          "start": 3434,
-          "end": 3435
-        }
-      ]
-    },
-    {
-      "id": "d132",
-      "statement": "The Ugathals have resistance 5 to bludgeoning damage and no other listed resistances, weaknesses, or immunities.",
+      "id": "d128",
+      "statement": "The Ugathals have a blood nourishment ability that is a three-action manipulate action; when successfully used on a grabbed target, it grants the Ugathal benefits (described as nourishment).",
       "entities": [
         "Ugathal"
       ],
       "citations": [
         {
-          "start": 3445,
-          "end": 3445
+          "start": 3317,
+          "end": 3321
         }
-      ]
-    },
-    {
-      "id": "d133",
-      "statement": "Ugathal I is known among the party by the nickname 'Mute'.",
-      "entities": [
-        "Ugathal I",
-        "Mute"
       ],
-      "citations": [
-        {
-          "start": 3494,
-          "end": 3496
-        }
-      ]
-    },
-    {
-      "id": "d134",
-      "statement": "Ugathal I (referred to as 'Mute') does not react to pain from attacks; its body loses form and collapses when killed, with a flash of divine energy accompanying its death.",
-      "entities": [
-        "Ugathal I",
-        "Mute"
-      ],
-      "citations": [
-        {
-          "start": 3510,
-          "end": 3583
-        }
-      ]
-    },
-    {
-      "id": "d135",
-      "statement": "Ugathal II watched Benny kill Ugathal I (Mute) and was frightened by it, abandoning any intention to make demands.",
-      "entities": [
-        "Ugathal II",
-        "Benny",
-        "Ugathal I",
-        "Mute"
-      ],
-      "citations": [
-        {
-          "start": 3590,
-          "end": 3593
-        }
-      ]
-    },
-    {
-      "id": "d136",
-      "statement": "Ugathal II had intended to demand the party hand over a briefcase before witnessing Mute's death.",
-      "entities": [
-        "Ugathal II",
-        "Mute"
-      ],
-      "citations": [
-        {
-          "start": 3591,
-          "end": 3592
-        }
-      ]
-    },
-    {
-      "id": "d137",
-      "statement": "The Ugathal possess a signature three-action ability that requires a target to be grabbed and restrained, and which grants the Ugathal benefits when it sucks out someone's blood; this ability was interrupted twice during the fight.",
-      "entities": [
-        "Ugathal"
-      ],
-      "citations": [
-        {
-          "start": 3616,
-          "end": 3873
-        }
-      ]
-    },
-    {
-      "id": "d138",
-      "statement": "The party killed the two Ugathal that were stalking them through the alleys.",
-      "entities": [
-        "Ugathal"
-      ],
-      "citations": [
-        {
-          "start": 3799,
-          "end": 3799
-        }
-      ]
-    },
-    {
-      "id": "d139",
-      "statement": "The Ugathal do not wear clothes and their flesh is described as weird and stringy, such that a hand can be pushed into the mound of flesh.",
-      "entities": [
-        "Ugathal"
-      ],
-      "citations": [
-        {
-          "start": 3810,
-          "end": 3812
-        }
-      ]
-    },
-    {
-      "id": "d140",
-      "statement": "The two slain Ugathal each had a black line badge concealed inside their flesh.",
-      "entities": [
-        "Ugathal"
-      ],
-      "citations": [
-        {
-          "start": 3813,
-          "end": 3817
-        }
-      ]
-    },
-    {
-      "id": "d141",
-      "statement": "Argyle recovered two seemingly real black line badges from the bodies of the slain Ugathal.",
-      "entities": [
-        "Argyle",
-        "Ugathal"
-      ],
-      "citations": [
-        {
-          "start": 3817,
-          "end": 3818
-        }
-      ]
+      "reviewed": true
     },
     {
       "id": "d142",
@@ -1911,7 +1167,8 @@
           "start": 3926,
           "end": 3926
         }
-      ]
+      ],
+      "reviewed": true
     }
   ],
   "goodSentences": [],

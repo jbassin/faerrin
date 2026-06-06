@@ -269,6 +269,11 @@ Turn a transcript into reviewable, cited, entity-resolved proposals with provena
 - Chunked input (`chunkTranscript`), line-prefixed so the model emits `(transcript, lineId)`
   citations. **Every claim carries a modality** (AC-5) and ≥1 citation; an uncited claim is
   invalid. Cheap heuristic noise pre-pass before the LLM (C1).
+- **Setting-fact filter (spec §5):** mine extracts durable world-state facts and **excludes
+  session-event / party-action narrative**, pulling the standing fact out of an event. This is
+  orthogonal to modality and was the dominant false-positive in label drafting (worldbuilder
+  kept 80/142, cutting exactly the event entries). Encode it in the mine prompt; the eval
+  coverage/false-canon scoring measures it.
 - **In-character fiction (D-10):** `in-character-fiction`/GM-voiced claims are minted as
   **attributed** ("X claimed Y"), not bare propositions.
 
