@@ -760,7 +760,7 @@
 000760	Gamemaster: Absolutely.  
 000761	Gamemaster: Looking through this, he says,  
 000762	Gamemaster: Whose book is this?  
-000763	Johnny: This is, this is one Benjamin Grayson, sorry, Benjamin Grayson of Ambercall.  
+000763	Johnny: This is, this is one Benjamin Grayson, sorry, Benjamin Grayson of Amber Call.  
 000764	Argyle: That's the funny part.  
 000765	Gamemaster: Are you trying to get me fired?  
 000766	Gamemaster: And he hands the back book to you.  
@@ -784,7 +784,7 @@
 000784	Johnny: A cat.  
 000785	Gamemaster: Oh, okay.  
 000786	Gamemaster: Still don't want to know.  
-000787	Gamemaster: Listen, this is... If I start opening any investigations into Ambercall, it's my neck on the line.  
+000787	Gamemaster: Listen, this is... If I start opening any investigations into Amber Call, it's my neck on the line.  
 000788	Gamemaster: And by extension, yours, because I'm the reason that you're being paid this stipend.  
 000789	Argyle: Uh.  
 000790	Anzu: Hmm.  
@@ -953,7 +953,7 @@
 000953	Johnny: We can go to the bank.  
 000954	Gamemaster: Okay, you guys can go to a bank.  
 000955	Gamemaster: That's fine.  
-000956	Gamemaster: Would you prefer the Commonwealth Treasury of Calaria, Iridite Neutral, or Ledger, Ledger, and Light?  
+000956	Gamemaster: Would you prefer the Commonwealth Treasury of Calaria, Iridite Mutual, or Ledger, Ledger, and Light?  
 000957	Gamemaster: It's three different banks.  
 000958	Gamemaster: There's no difference for you guys.  
 000959	Anzu: Ledger, ledger, light.  
@@ -1377,7 +1377,7 @@
 001377	Benny: They're a gang, right?  
 001378	Benny: They have like, in some way, it's able to tell outwardly that they're part of that particular gang.  
 001379	Gamemaster: It's the hats.  
-001380	Gamemaster: They're the round hat gang.  
+001380	Gamemaster: They're the Roundhat Gang.  
 001381	Gamemaster: They have Roundhats.  
 001382	Benny: Right.  
 001383	Benny: Of course.  
@@ -1638,13 +1638,13 @@
 001638	Gamemaster: So really what you're looking for is just people going in and out.  
 001639	Gamemaster: With those perception checks, you guys start staking out around after the sun's set.  
 001640	Gamemaster: So people start filtering in around when you get in.  
-001641	Gamemaster: Most of the people don't immediately strike you as necessarily members of the Roundhat gang.  
+001641	Gamemaster: Most of the people don't immediately strike you as necessarily members of the Roundhat Gang.  
 001642	Gamemaster: This is a gang-owned...  
 001643	Gamemaster: bar, but it isn't a gang exclusive bar.  
 001644	Gamemaster: Plenty of these people look like they're just dock workers from around the area just settling in after a hard day at work.  
 001645	Gamemaster: You do occasionally see people that are very obviously members of the gang.  
 001646	Gamemaster: The most obvious pieces of them being that they are wearing the signature round bowler hat looking thing.  
-001647	Gamemaster: The other thing that I think you would notice with those perception checks is you had already noticed this a little bit when you had first dealt with them, but every member that you can identify of the Roundhat gang appears to have some amount of bestial qualities to them.  
+001647	Gamemaster: The other thing that I think you would notice with those perception checks is you had already noticed this a little bit when you had first dealt with them, but every member that you can identify of the Roundhat Gang appears to have some amount of bestial qualities to them.  
 001648	Benny: Thank you.  
 001649	Gamemaster: They all seem to be human-derived, but there's definitely some animal mixed in.  
 001650	Gamemaster: part of the gang's recruiting requirements.  
@@ -1791,7 +1791,7 @@
 001791	Gamemaster: Yeah, so you wait a little bit.  
 001792	Gamemaster: Just, you know, waiting until the rest of the evening passes.  
 001793	Gamemaster: You guys can continue to take a look out while you wait.  
-001794	Gamemaster: You do not see any Roundhat gang members leave over the course of the evening that you are waiting.  
+001794	Gamemaster: You do not see any Roundhat Gang members leave over the course of the evening that you are waiting.  
 001795	Gamemaster: And after like that busy period, after like 10-ish, you don't see any more enter either.  
 001796	Gamemaster: It seems the people that are going to enter for the evening already have.  
 001797	Gamemaster: A few people enter, quite a few people leave.  
@@ -2257,7 +2257,7 @@
 002257	Gamemaster: How many actions is it?  
 002258	Gamemaster: That's two actions.  
 002259	Gamemaster: Okay, so if it's going to be two actions to get to Benny, he's not going to do that.  
-002260	Johnny: Borg.  
+002260	Johnny: Org.  
 002261	Gamemaster: Oh, actually, wait, no.  
 002262	Gamemaster: He can get to Benny, and then Benny will be flanked, because Benny will be between him and Hlarf.  
 002263	Benny: No!  

@@ -78,7 +78,7 @@
 000078	Arctos: Yeah.  
 000079	Gamemaster: Of course.  
 000080	Arctos: Yeah, so.  
-000081	Anzu: We're going to have to siphon some of this heart's power so that our gin-soaked rag can add another couple garage slots.  
+000081	Anzu: We're going to have to siphon some of this heart's power so that our Gin Soaked Rag can add another couple garage slots.  
 000082	Gamemaster: No, you don't need two garages.  
 000083	Arctos: Yeah, yeah.  
 000084	Gamemaster: What you need is a second floor so that you can truthfully say I go upstairs.  
@@ -1410,7 +1410,7 @@
 001410	Gamemaster: But I like this place.  
 001411	Gamemaster: There's way more room to expand under this gas station than there was under that tavern.  
 001412	Gamemaster: So, works out for me.  
-001413	Johnny: So back to this art, back to the art on the doors.  
+001413	Johnny: So back to this art, back to the Heart on the doors.  
 001414	Arctos: So what are you like doing?  
 001415	Arctos: Yeah, as a heart.  
 001416	Arctos: Oh, yeah.  
@@ -1764,7 +1764,7 @@
 001764	Benny: It's literally like, is anyone looking at me within 30 feet?  
 001765	Gamemaster: Yep.  
 001766	Benny: All right, Benny will invest in that one too.  
-001767	Gamemaster: It's handy if, like, you need to break into a PO box.  
+001767	Gamemaster: It's handy if, like, you need to break into a P.O. Box.  
 001768	Gamemaster: And you're trying to not be suspicious about it.  
 001769	Arctos: Oh, sorry.  
 001770	Arctos: I thought you misspoke and it was a medicine check.  
@@ -3436,7 +3436,7 @@
 003436	Arctos: We close the doors.  
 003437	Arctos: Can we loot them and the cars?  
 003438	Gamemaster: Yeah, I'm not even going to make you roll a perception check for this one.  
-003439	Gamemaster: These guys were not carrying, like, it's the same as the roundhat gang members that you had found downstairs that weren't Dwellin.  
+003439	Gamemaster: These guys were not carrying, like, it's the same as the Roundhat Gang members that you had found downstairs that weren't Dwellin.  
 003440	Gamemaster: So the only real thing of note you find on their bodies is the car keys.  
 003441	Gamemaster: There are also some Roundhats, if you want.  
 003442	Johnny: Do they go with the Roundhats go with our ponchos?  
@@ -3509,7 +3509,7 @@
 003509	Benny: Yeah.  
 003510	Gamemaster: Like, from your bookkeeping, you know at least two other members of the Roundhat Gang still exist.  
 003511	Arctos: I think we should... So I think maybe we should get all the information, get all the papers we can out of the heart now, and then immediately drive over and report it.  
-003512	Gamemaster: Sorry, you know at least three other members of the Roundhat Gang, because there was also the Bouncer of the Crowded Fleet that he did not engage with.  
+003512	Gamemaster: Sorry, you know at least three other members of the Roundhat Gang, because there was also the Bouncer of The Crowded Flea that he did not engage with.  
 003513	Arctos: I would report it to Magic Ops and then the Inquisitors, but it's up to you guys.  
 003514	Johnny: No, I think that's fair.  
 003515	Johnny: We should just make sure that we are aware Grayson probably knows about this.  
@@ -3954,7 +3954,7 @@
 003954	Arctos: to the group oh we yeah  
 003955	Gamemaster: I think the only thing you would note there is that these are... Because it's like actual cash that's here, it is...  
 003956	Gamemaster: such that it wouldn't be associated with a bank account or anything like that.  
-003957	Gamemaster: I think Calera... Yeah, Calera is probably in this transitionary period where they're printing money that can't be traced, but there's still so much of the old gold pieces that used to be used that they're still accepted everywhere.  
+003957	Gamemaster: I think Calaria... Yeah, Calaria is probably in this transitionary period where they're printing money that can't be traced, but there's still so much of the old gold pieces that used to be used that they're still accepted everywhere.  
 003958	Gamemaster: That's like an established currency still.  
 003959	Arctos: Cool.  
 003960	Johnny: um um  
@@ -3995,7 +3995,7 @@
 003995	Gamemaster: It might be worth like two gold pieces.  
 003996	Gamemaster: Sorry, I guess it would be a vial of quicksilver.  
 003997	Gamemaster: If anything, this kind of feels like a passion project.  
-003998	Gamemaster: of Twelwins.  
+003998	Gamemaster: of Tywelwyn's.  
 003999	Johnny: Carly pulled, that's a deep one.  
 004000	Gamemaster: You can see he was in the midst of making a bowler hat with holes in it for antlers.  
 004001	Arctos: Alright, we'll take the Quicksilver and then we'll go to the Augury.  
@@ -4564,7 +4564,7 @@
 004564	Gamemaster: Yeah.  
 004565	Benny: Because he currently has a pick that has deadly d10.  
 004566	Benny: Or I think fatal d10.  
-004567	Benny: But his goal is a Felcata that has...  
+004567	Benny: But his goal is a Falcata that has...  
 004568	Benny: Fatal D12.  
 004569	Arctos: My dog is requesting I take him out.  
 004570	Anzu: Yeah, props.  

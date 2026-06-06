@@ -1975,7 +1975,7 @@
 001975	Foral: uh-huh  
 001976	Gamemaster: The only strange thing is that none of you are standing on the same floor.  
 001977	Gamemaster: None of you are even standing in the same direction.  
-001978	Gamemaster: Forl, you look around and you can see from your perspective when you look up, Ozzie appears to be standing at like a 45 degree angle from you, a distance away, and Scrazzy is fully upside down.  
+001978	Gamemaster: Foral, you look around and you can see from your perspective when you look up, Ozzie appears to be standing at like a 45 degree angle from you, a distance away, and Scrazzy is fully upside down.  
 001979	Gamemaster: It looks like he's on not the ceiling necessarily, but where a ceiling would be if there was stuff here.  
 001980	Foral: oh  
 001981	Gamemaster: But besides the weird gravitational anomaly stuff, you find that you can walk around...  
@@ -1995,10 +1995,10 @@
 001995	Ozzie: We look like we're inside of a sphere.  
 001996	Gamemaster: You don't see a sphere outside of you.  
 001997	Gamemaster: In fact, you don't even see anything that you're necessarily standing on.  
-001998	Gamemaster: But from the crit from Forl, like looking around and walking around, it's like you're walking on the interior of an invisible sphere where gravity is always pointing down from whatever that perspective is.  
+001998	Gamemaster: But from the crit from Foral, like looking around and walking around, it's like you're walking on the interior of an invisible sphere where gravity is always pointing down from whatever that perspective is.  
 001999	Ozzie: Mm-hmm.  
 002000	Ozzie: Oh.  
-002001	Gamemaster: So Scrazi is standing on the opposite side of the sphere from you on the interior.  
+002001	Gamemaster: So Scrazzy is standing on the opposite side of the sphere from you on the interior.  
 002002	Ozzie: Mm-hmm.  
 002003	Ozzie: Mm-hmm, mm-hmm.  
 002004	Foral: Thank you.  
@@ -2007,7 +2007,7 @@
 002007	Ozzie: Make it a pretty small sphere.  
 002008	Gamemaster: Yeah.  
 002009	Gamemaster: You would guess, like, radius-wise, maybe 100 feet.  
-002010	Gamemaster: Like, from you to Scrazi on the opposite end, it's 200 feet away.  
+002010	Gamemaster: Like, from you to Scrazzy on the opposite end, it's 200 feet away.  
 002011	Ozzie: Do we have any way of knowing if we've passed the barrier?  
 002012	Scrazzy: Thank you.  
 002013	Ozzie: Or we just gotta find a portal is kind of it.  
@@ -2073,13 +2073,13 @@
 002073	Ozzie: We're going to walk in his direction from where we are and then continue in that direction.  
 002074	Scrazzy: Yeah.  
 002075	Foral: Yeah, so it's like making a line.  
-002076	Gamemaster: Okay, so, I will note, since you are on the interior of a sphere, and you are on the opposite side of the sphere from Scrazi, literally any direction you walk will take you towards Scrazi.  
+002076	Gamemaster: Okay, so, I will note, since you are on the interior of a sphere, and you are on the opposite side of the sphere from Scrazzy, literally any direction you walk will take you towards Scrazzy.  
 002077	Foral: Okay.  
 002078	Scrazzy: But shouldn't we have a line?  
 002079	Foral: Okay, wait, wait, wait.  
 002080	Scrazzy: We have three points.  
 002081	Foral: We should both... Yeah, so we should both... If we both walk, we'll get the...  
-002082	Gamemaster: Yeah, so, all that I mean to say is, Scrazi is standing here on the interior like a stalactite.  
+002082	Gamemaster: Yeah, so, all that I mean to say is, Scrazzy is standing here on the interior like a stalactite.  
 002083	Gamemaster: You guys are here, so if you walk this way or you walk this way or you walk this way, regardless of the direction that you walk, you will eventually make it too scrazzy.  
 002084	Foral: Wait, but we came from different angles.  
 002085	Foral: So if we go there and then we will have like a gram like this, we then go here.  
@@ -2088,9 +2088,9 @@
 002088	Gamemaster: No, I don't.  
 002089	Gamemaster: I... Okay.  
 002090	Foral: So it.  
-002091	Foral: So if Tanner is on one spot and walks this direction and I walk this way and then we we both meet at Scrazi.  
+002091	Foral: So if Tanner is on one spot and walks this direction and I walk this way and then we we both meet at Scrazzy.  
 002092	Gamemaster: Yeah.  
-002093	Gamemaster: Eventually you will meet up at Scrazi.  
+002093	Gamemaster: Eventually you will meet up at Scrazzy.  
 002094	Gamemaster: Yes.  
 002095	Foral: Yeah.  
 002096	Foral: But if we keep going, we both go this way.  
@@ -2098,7 +2098,7 @@
 002098	Foral: Cut it.  
 002099	Gamemaster: You can do that.  
 002100	Gamemaster: Okay.  
-002101	Gamemaster: So step one is you guys are walking in opposite directions so that you meet up at Scrazi at the same time.  
+002101	Gamemaster: So step one is you guys are walking in opposite directions so that you meet up at Scrazzy at the same time.  
 002102	Foral: Yeah?  
 002103	Gamemaster: Okay.  
 002104	Gamemaster: Absolutely.  
@@ -2127,7 +2127,7 @@
 002127	Gamemaster: Like, as he walks, it takes a little bit of time for it to catch up to him.  
 002128	Foral: All right.  
 002129	Gamemaster: as he gets to you.  
-002130	Gamemaster: It's a barely discernible amount of sluggishness, but given how good Scrazi is at reading magic energy, it does stand out to him.  
+002130	Gamemaster: It's a barely discernible amount of sluggishness, but given how good Scrazzy is at reading magic energy, it does stand out to him.  
 002131	Gamemaster: To the other point, looking at Thoril going counterclockwise...  
 002132	Gamemaster: The magic flow there is exceptionally snappy.  
 002133	Gamemaster: It's actually snappier than you'd expect.  
@@ -2360,7 +2360,7 @@
 002360	Foral: Oh, cognitive self.  
 002361	Gamemaster: And then he makes his way back to your position.  
 002362	Gamemaster: He has apparently, it looks like, made this thread kind of wrap around the sphere in some way.  
-002363	Gamemaster: Forl, at this point, you have six minutes remaining on your timer.  
+002363	Gamemaster: Foral, at this point, you have six minutes remaining on your timer.  
 002364	Gamemaster: The two of you have eight.  
 002365	Foral: Does Snazzy have more, though, because he waited one cycle?  
 002366	Gamemaster: You're correct.  
@@ -2375,7 +2375,7 @@
 002375	Gamemaster: Similarly, at this point, he seems to be treading more of this, like, gossamer thread behind him.  
 002376	Gamemaster: It's interesting.  
 002377	Gamemaster: That's like a phenomenon that you hadn't seen before.  
-002378	Foral: And Scrazi should have lower momentum because he skipped two cycles around.  
+002378	Foral: And Scrazzy should have lower momentum because he skipped two cycles around.  
 002379	Gamemaster: You don't know if it's because you've walked far enough, or it's because of some other thing that, like, has been happening.  
 002380	Gamemaster: But it is a change, which feels promising.  
 002381	Ozzie: you  
@@ -2481,7 +2481,7 @@
 002481	Gamemaster: Scrazzy, you feel as your legs are...  
 002482	Gamemaster: twisted into a small, like, spaghetti extruder shape as you are pulled through this hole that you jumped into.  
 002483	Gamemaster: You are going to take some bludgeoning damage as you get stretched into this weird distortion that you found.  
-002484	Gamemaster: With a 23, Forl soon follows.  
+002484	Gamemaster: With a 23, Foral soon follows.  
 002485	Gamemaster: managing to only take half damage from this bludgeoning.  
 002486	Gamemaster: But similarly, Ozzie, you standing there, watch your two companions jump into this puddle of water, get spaghettified, and then disappear.  
 002487	Ozzie: I was just waiting to make sure they both made it through.  
@@ -2498,7 +2498,7 @@
 002498	Foral: He actually was just waiting for us.  
 002499	Foral: He cannonballs.  
 002500	Foral: Oh, I should hold my feet together.  
-002501	Gamemaster: 23 points of bludgeoning damage halved for Forl, who succeeded on his check.  
+002501	Gamemaster: 23 points of bludgeoning damage halved for Foral, who succeeded on his check.  
 002502	Foral: Can you make my character appear somewhere just so I can click F?  
 002503	Gamemaster: Uh, sure.  
 002504	Foral: Thank you.  
@@ -3351,7 +3351,7 @@
 003351	Gamemaster: He's going to use his third action to... He's a spider.  
 003352	Scrazzy: attack of opportunity oh it does i wish  
 003353	Ozzie: My god, how fast is he?  
-003354	Gamemaster: It's Forl's turn.  
+003354	Gamemaster: It's Foral's turn.  
 003355	Foral: So I'm going to reload.  
 003356	Gamemaster: Bob doesn't have an attack of opportunity, right?  
 003357	Gamemaster: You were just saying that?  

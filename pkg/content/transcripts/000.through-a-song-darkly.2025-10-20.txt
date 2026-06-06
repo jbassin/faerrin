@@ -1392,7 +1392,7 @@
 001392	Argyle: Yes.  
 001393	Gamemaster: That is easy to do.  
 001394	Gamemaster: You haven't been in this area before, and it's not like you have a phone you can use to Google Maps it, but there are directories at Payphones around that you can use to look up the address of it.  
-001395	Gamemaster: And head down a few blocks to the Scaled Pact Broker office.  
+001395	Gamemaster: And head down a few blocks to The Scale Pact Broker office.  
 001396	Gamemaster: The office itself is relatively...  
 001397	Gamemaster: Quaint is the wrong term.  
 001398	Gamemaster: It is austere.  
@@ -1407,7 +1407,7 @@
 001407	Gamemaster: So you are granted entry in, and if you want, you're made... You're able to use the fax machine and the telephone, if you like.  
 001408	Gamemaster: They're not going to let you start poking through files and stuff like that.  
 001409	Gamemaster: That's all confidential.  
-001410	Argyle: I would like to set up a line with damn Quay.  
+001410	Argyle: I would like to set up a line with Dame Quay.  
 001411	Gamemaster: But for communications, sure.  
 001412	Gamemaster: Okay.  
 001413	Gamemaster: Key.  
@@ -1454,7 +1454,7 @@
 001454	Gamemaster: When you say from the Watcher, do you mean Belvedere?  
 001455	Gamemaster: Okay.  
 001456	Gamemaster: Absolutely.  
-001457	Argyle: And then... And then one of them is... One of the ghosts of Raelio.  
+001457	Argyle: And then... And then one of them is... One of the Ghosts of Raelion.  
 001458	Gamemaster: And you do hear, like, very faint screeching on the other end as she's writing down what you're saying.  
 001459	Gamemaster: Okay.  
 001460	Gamemaster: Any of them seem particularly dangerous?  
@@ -2093,12 +2093,12 @@
 002093	Johnny: I don't know.  
 002094	Johnny: It's either one, he really wanted a lollipop and really likes it, or two, he's very aware of who he is.  
 002095	Anzu: Alright, let's go back to the Sin and Tonic.  
-002096	Gamemaster: The Sim and Tonic?  
+002096	Gamemaster: The Sin and Tonic?  
 002097	Gamemaster: Absolutely.  
 002098	Gamemaster: You take the tram back.  
 002099	Gamemaster: That's another two silver pieces.  
 002100	Anzu: Yeah.  
-002101	Gamemaster: You head over to the Sim and Tonic.  
+002101	Gamemaster: You head over to the Sin and Tonic.  
 002102	Argyle: Okay.  
 002103	Gamemaster: Indeed, look and bar.  
 002104	Gamemaster: If you recall, there are sensors from the ceiling that are burning tobacco, which are now, I guess, freshly mingling with the very, very strong scent of myrrh that has surrounded your party.  
@@ -2202,7 +2202,7 @@
 002202	Gamemaster: We'll see.  
 002203	Gamemaster: Okay, so...  
 002204	Gamemaster: I was able to do a little bit of asking around in regards to this dish.  
-002205	Gamemaster: It is made by a company called EmberCole Incorporated.  
+002205	Gamemaster: It is made by a company called Embercall Incorporated.  
 002206	Gamemaster: Relatively small company.  
 002207	Gamemaster: It was only created like two or three months ago, something like that.  
 002208	Gamemaster: No owner on file.  
@@ -2210,9 +2210,9 @@
 002210	Gamemaster: They're private.  
 002211	Gamemaster: They paid the extra money for it to not be around.  
 002212	Gamemaster: So that's a little bit of a dead end.  
-002213	Gamemaster: But I did find the location of their headquarters is a PO box, which, coincidentally, trying to find the source of the signal that this thing was pointed at, there is a...  
+002213	Gamemaster: But I did find the location of their headquarters is a P.O. Box, which, coincidentally, trying to find the source of the signal that this thing was pointed at, there is a...  
 002214	Gamemaster: It appears to be coming from Gryphonline, which is a logistics mail company, something of that nature.  
-002215	Gamemaster: It's pointed right at a semi-nearby Gryphonline distribution center, which is coincidentally where the PO box is registered.  
+002215	Gamemaster: It's pointed right at a semi-nearby Gryphonline distribution center, which is coincidentally where the P.O. Box is registered.  
 002216	Gamemaster: So I imagine that that is relevant in some way.  
 002217	Gamemaster: I couldn't get any more information about what the signal itself is.  
 002218	Gamemaster: I tried...  
@@ -2399,7 +2399,7 @@
 002399	Anzu: And they've got this Embercall company that they've put together.  
 002400	Anzu: So, according to my thoughts, we have four possible leads that we could try to chase down.  
 002401	Anzu: One...  
-002402	Anzu: is to see if we could find Tywelwyn, which we could do by perhaps finding the rest of his Roundhat gang.  
+002402	Anzu: is to see if we could find Tywelwyn, which we could do by perhaps finding the rest of his Roundhat Gang.  
 002403	Anzu: It's a little risky.  
 002404	Anzu: They're a gang.  
 002405	Anzu: But if we go in with the thought of we think that Tywelwyn was enchanted or magically manipulated, maybe they'd have... If we go in saying we want to help, they might be amenable.  
@@ -2410,11 +2410,11 @@
 002410	Anzu: Um...  
 002411	Anzu: Seems like the Threshold Authority might be involved somehow, so we could look into them, see if they've got any unethical connections to Pyrelight or Embercall.  
 002412	Argyle: Okay.  
-002413	Anzu: And then the newest one, which is fantastic, is we got a location on the signal source of the dish, so that's its PO box and the distribution center that its signal seems to come from.  
+002413	Anzu: And then the newest one, which is fantastic, is we got a location on the signal source of the dish, so that's its P.O. Box and the distribution center that its signal seems to come from.  
 002414	Anzu: So those are the four leads that I've got in my brain.  
 002415	Johnny: I agree.  
 002416	Johnny: I can't think of any others.  
-002417	Benny: I thought that anything will be too interesting in the PO box.  
+002417	Benny: I thought that anything will be too interesting in the P.O. Box.  
 002418	Argyle: you you  
 002419	Benny: I mean, maybe we could check on the shipping center that it's a part of and see if anything weird has been happening.  
 002420	Johnny: Well, it says they said that's where the signal is coming from.  
@@ -2487,7 +2487,7 @@
 002487	Anzu: I also don't know how to find them.  
 002488	Anzu: But I'm sure that there's people that would know in the town.  
 002489	Benny: Sure.  
-002490	Johnny: I'm still interested in checking out the PO box, but that could be lower on the list.  
+002490	Johnny: I'm still interested in checking out the P.O. Box, but that could be lower on the list.  
 002491	Argyle: we can go to the box you want to just sit on it see who comes or less of you if we go to the p.m  
 002492	Benny: Yeah, we can just ask at the P.O.  
 002493	Benny: Box place and also see if anything weird was going on.  
@@ -2505,11 +2505,11 @@
 002505	Benny: Yeah, actually, let's go there.  
 002506	Benny: Because I was thinking that there's going to be nothing interesting.  
 002507	Benny: But if you mailed yourself something that transmitted a signal, you would have to pick it up.  
-002508	Benny: They'd be like, hey, there's this thing still in your PO box.  
-002509	Benny: So it's probably in the building somewhere and not in the PO box.  
+002508	Benny: They'd be like, hey, there's this thing still in your P.O. Box.  
+002509	Benny: So it's probably in the building somewhere and not in the P.O. Box.  
 002510	Argyle: we don't investigate the gang they might not go undercover or they might go underground or die but before we get to killing  
 002511	Gamemaster: Yes, Tanner.  
-002512	Anzu: Just a clarification for when you were explaining it before, are the PO box and the distribution center the same thing, or are they just nearby each other?  
+002512	Anzu: Just a clarification for when you were explaining it before, are the P.O. Box and the distribution center the same thing, or are they just nearby each other?  
 002513	Gamemaster: There is a P.O.  
 002514	Gamemaster: box in the distribution center that is listed as the headquarters address of Embercall.  
 002515	Anzu: Okay.  
@@ -2527,7 +2527,7 @@
 002527	Benny: That sounds less fun.  
 002528	Gamemaster: Thank you.  
 002529	Johnny: Let's go through the checkbox.  
-002530	Johnny: One, stop by the PO box.  
+002530	Johnny: One, stop by the P.O. Box.  
 002531	Johnny: Two, try and find the gang.  
 002532	Johnny: Three, Zorbon.  
 002533	Benny: Mm hmm.  
@@ -2586,7 +2586,7 @@
 002586	Gamemaster: Um,  
 002587	Gamemaster: that if you're looking to meet up with a member of the gang, that's probably where you're most likely to bump into one.  
 002588	Benny: we the warehouse is probably closed but the bar is probably just getting popping  
-002589	Argyle: Do you guys want to go or do you want to just go to the PO box?  
+002589	Argyle: Do you guys want to go or do you want to just go to the P.O. Box?  
 002590	Johnny: What time of day is it right now?  
 002591	Gamemaster: The suns have set like an hour or so ago.  
 002592	Gamemaster: It's probably getting to like 8, 8 p.m.  
@@ -2625,7 +2625,7 @@
 002625	Benny: Of course.  
 002626	Gamemaster: So...  
 002627	Argyle: Skittle bark.  
-002628	Gamemaster: so the bar uh the bar is in this neighborhood like the roundhat gang works in this neighborhood so you you don't need to take your car uh you don't have a license for it yet moving away so you couldn't go very far um but no tram or anything either just a quick walk um can i get a nature check uh from someone as you guys start walking to the bar  
+002628	Gamemaster: so the bar uh the bar is in this neighborhood like the Roundhat Gang works in this neighborhood so you you don't need to take your car uh you don't have a license for it yet moving away so you couldn't go very far um but no tram or anything either just a quick walk um can i get a nature check uh from someone as you guys start walking to the bar  
 002629	Anzu: I seem to recall we were relatively bad at nature.  
 002630	Benny: Is it going to have greater than a plus zero?  
 002631	Anzu: I have a five.  
@@ -2651,7 +2651,7 @@
 002651	Gamemaster: Weird weather patterns.  
 002652	Gamemaster: Unfortunately, none of you rolled high enough to understand why weird weather patterns just...  
 002653	Gamemaster: It's pouring now.  
-002654	Anzu: Must be the Sorbonne.  
+002654	Anzu: Must be The Zorbon.  
 002655	Gamemaster: Must be the Zorbon.  
 002656	Johnny: It was a pretty weird weather pattern.  
 002657	Gamemaster: The Zorbon could cause this.  
@@ -3502,7 +3502,7 @@
 003502	Gamemaster: They've got this really nice looking...  
 003503	Gamemaster: red and orange-leaved tree in the center that kind of serves as a centerpiece for the area.  
 003504	Johnny: you you  
-003505	Gamemaster: And there are signs that point out different parts of the distribution center, like if you're looking to self-serve mail and check a PO box, this is over here.  
+003505	Gamemaster: And there are signs that point out different parts of the distribution center, like if you're looking to self-serve mail and check a P.O. Box, this is over here.  
 003506	Gamemaster: If you want to come in and mail a package, that's over there.  
 003507	Gamemaster: And then an employees-only service area on one side of the building.  
 003508	Gamemaster: There are people I would say milling about.  
@@ -3516,10 +3516,10 @@
 003516	Gamemaster: You guys don't attract any particularly weird looks.  
 003517	Gamemaster: I think you might get one if somebody sees the nine-year-old get out of the driver's seat, but other than that, not really.  
 003518	Anzu: Yes, did they give us a specific number?  
-003519	Johnny: So we're looking for the Embercall PO box, right?  
+003519	Johnny: So we're looking for the Embercall P.O. Box, right?  
 003520	Johnny: Oh, cool.  
 003521	Anzu: Were they able to get... Yes, so what are we going to...  
-003522	Gamemaster: Yeah, there is a particular address for the company on the file, so they can give you the specific PO box for the script of mine.  
+003522	Gamemaster: Yeah, there is a particular address for the company on the file, so they can give you the specific P.O. Box for the script of mine.  
 003523	Gamemaster: You're looking for number 9C.  
 003524	Johnny: Go find that one.  
 003525	Argyle: Thank you.  
@@ -3607,7 +3607,7 @@
 003607	Gamemaster: It can communicate empathically with you as long as it's within a mile of you sharing emotions.  
 003608	Gamemaster: So yeah, you can have an emotion that's like, haha, I found this person.  
 003609	Anzu: Right.  
-003610	Johnny: I really like the idea of this child breaking into this PO box though.  
+003610	Johnny: I really like the idea of this child breaking into this P.O. Box though.  
 003611	Gamemaster: That's a lab.  
 003612	Anzu: So if there's a rafter or something near the ceiling of this room... Yeah.  
 003613	Gamemaster: So...  
@@ -3686,7 +3686,7 @@
 003686	Benny: box at like eight in the morning on a random day?  
 003687	Anzu: Well, since it's rainy, they're going to figure that not really a lot of people will be out.  
 003688	Benny: What are they getting from here?  
-003689	Johnny: whatever's in that PO box.  
+003689	Johnny: whatever's in that P.O. Box.  
 003690	Anzu: This is like the address of their business.  
 003691	Benny: But there's no way their business fits in there, and he'll point to the P.O.  
 003692	Benny: box.  

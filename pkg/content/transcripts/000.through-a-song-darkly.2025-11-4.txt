@@ -754,7 +754,7 @@
 000754	Gamemaster: That's fine.  
 000755	Benny: All right.  
 000756	Benny: We start the session staking out.  
-000757	Benny: We're going to assume that this illegitimate business uses a legitimate PO box.  
+000757	Benny: We're going to assume that this illegitimate business uses a legitimate P.O. Box.  
 000758	Benny: When the kid goes in, and actually, I guess before we go in, we hear on the radio, the most pertinent information is that you can now short the rain via shorting rain stocks.  
 000759	Gamemaster: That was the most pertinent information.  
 000760	Benny: We send the child in.  
@@ -824,7 +824,7 @@
 000824	Benny: Credit union.  
 000825	Benny: Dishes.  
 000826	Benny: We're going to see who will pay us to end of the reign, and then we're going to kill Tywelwyn.  
-000827	Gamemaster: from the Round Hat gang said that he had recently, as per the directions of somebody higher than him in the gang, helped install radar dishes at a local credit union, a family restaurant, and a car park.  
+000827	Gamemaster: from the Roundhat Gang said that he had recently, as per the directions of somebody higher than him in the gang, helped install radar dishes at a local credit union, a family restaurant, and a car park.  
 000828	Gamemaster: Indeed, give you the locations of those.  
 000829	Gamemaster: Not to say that, like, I don't think you guys were planning on going to take them down or anything.  
 000830	Gamemaster: It was more just, like, plotting them out on a map to make sure that they were equidistant and covering.  
@@ -1656,7 +1656,7 @@
 001656	Gamemaster: Oggers.  
 001657	Anzu: Well, that'll do it.  
 001658	Anzu: And they seem like they killed a person also in doing this as part of their ritual.  
-001659	Anzu: And actually, we believe we may have been, or at least iconoclism was the target of at least this particular instance of augury.  
+001659	Anzu: And actually, we believe we may have been, or at least Iconoclasm was the target of at least this particular instance of augury.  
 001660	Argyle: you  
 001661	Anzu: We had kind of a shared...  
 001662	Anzu: dream where we were attacked.  
@@ -1709,7 +1709,7 @@
 001709	Gamemaster: It's the same looking fire, effectively.  
 001710	Gamemaster: It's like this bright white fire, almost.  
 001711	Gamemaster: Yes.  
-001712	Anzu: Is Tellers Run Uptown?  
+001712	Anzu: Is Teller's Run Uptown?  
 001713	Gamemaster: Teller's Run is uptown.  
 001714	Anzu: Okay.  
 001715	Gamemaster: I don't have a map for you, although I really should at this point, but just pretend like if it's about a circle, there is a river that runs diagonally through the city.  
@@ -1801,7 +1801,7 @@
 001801	Gamemaster: that's all very useful connected how because  
 001802	Argyle: It was connected to the Gryphon shipping company.  
 001803	Argyle: All the dishes point there.  
-001804	Argyle: They have a PO box with  
+001804	Argyle: They have a P.O. Box with  
 001805	Argyle: Quick question.  
 001806	Argyle: This might be crazy.  
 001807	Argyle: I could swear, and I describe in as much detail as I can, the tree.  
@@ -1928,7 +1928,7 @@
 001928	Gamemaster: I'm just going to do red.  
 001929	Benny: OK.  
 001930	Gamemaster: Compelled is silver.  
-001931	Gamemaster: Scal is gold.  
+001931	Gamemaster: Scale is gold.  
 001932	Gamemaster: Compelled is silver.  
 001933	Gamemaster: Host is rainbow.  
 001934	Gamemaster: Watcher is white.  
@@ -2074,7 +2074,7 @@
 002074	Gamemaster: But if you do anything that actually leads to the apprehension or... I know how you adventuring types are.  
 002075	Gamemaster: Apprehension or...  
 002076	Gamemaster: stopping the person doing the bad thing, regardless of how that actually happens.  
-002077	Argyle: we would read them the scales, the field Scale rights.  
+002077	Argyle: we would read them the Scale's, the field Scale rights.  
 002078	Gamemaster: We will pay.  
 002079	Gamemaster: That doesn't actually apply if the Scale hasn't already marked them for death.  
 002080	Gamemaster: But in this particular instance, Tywelwyn is a known gang leader, so I'm not particularly worried about a court finding him guilty.  
@@ -2213,7 +2213,7 @@
 002213	Benny: Yeah.  
 002214	Gamemaster: Was there anything you guys wanted to do in between?  
 002215	Gamemaster: You had like open threads or whatever that you wanted to look into, I think.  
-002216	Anzu: If nothing else, we could go for one of the radar dishes in the Sableclutch.  
+002216	Anzu: If nothing else, we could go for one of the radar dishes in The Scale clutch.  
 002217	Argyle: Yeah, or we can go beat up some gang members, get some intel.  
 002218	Johnny: You guys want to grab a panini and decide on our next move?  
 002219	Argyle: Sure.  
@@ -2376,7 +2376,7 @@
 002376	Gamemaster: But also...  
 002377	Gamemaster: None of you have been to a bank yet, so none of you have a debit card or anything equivalent to that.  
 002378	Gamemaster: But you would know that a bunch of cash passes hands in a restaurant.  
-002379	Gamemaster: So it also isn't a terrible place to do some kind of laundering, if that's something the Runtat gang needs.  
+002379	Gamemaster: So it also isn't a terrible place to do some kind of laundering, if that's something the Roundhat Gang needs.  
 002380	Gamemaster: So there is a realm of possibility where the gang actually does own the restaurant.  
 002381	Gamemaster: There's also a different possibility where they're just forcing the restaurant to install the radar initiative.  
 002382	Gamemaster: You need more information to be able to tell.  
@@ -2557,7 +2557,7 @@
 002557	Johnny: Dead.  
 002558	Argyle: I will use... Give me one second.  
 002559	Benny: I believe we lost the character this quick.  
-002560	Argyle: Rebalance the scales, or whatever that thing's called.  
+002560	Argyle: Rebalance the Scale's, or whatever that thing's called.  
 002561	Argyle: That's how we roll this.  
 002562	Gamemaster: 25.  
 002563	Argyle: 25.  
@@ -2998,7 +2998,7 @@
 002998	Benny: The radar dish caused the attention to subside.  
 002999	Benny: It's not like the attention popped, Benny was just paying attention to it, and then felt it subside.  
 003000	Benny: That's probably what Benny would conclude.  
-003001	Gamemaster: So, Batsu is currently being hoisted up the side of the building by Arkyle.  
+003001	Gamemaster: So, Batsu is currently being hoisted up the side of the building by Argyle.  
 003002	Benny: Because everyone else would feel it if it just swung over.  
 003003	Benny: It's not like Benny.  
 003004	Argyle: Big boiling frog.  
@@ -3016,7 +3016,7 @@
 003016	Argyle: Benny, you want to come up here too?  
 003017	Benny: No, I'm waiting.  
 003018	Benny: I think Johnny is about to start banging pots and pans in there or causing an international incident, and I'm going to see if I can get access to the filing cabinets in the manager's room.  
-003019	Gamemaster: Also, Benny is substantially heavier than Ansu, so the DC would be higher.  
+003019	Gamemaster: Also, Benny is substantially heavier than Anzu, so the DC would be higher.  
 003020	Johnny: at that exact moment, at that exact moment.  
 003021	Argyle: All right.  
 003022	Argyle: I think Benny could climb.  
@@ -3406,9 +3406,9 @@
 003406	Gamemaster: Because if I recall, the original reason you went to this place was to discuss the plan.  
 003407	Anzu: Well, we went here to get this dish and to pass the time until we need to go to our meeting tonight.  
 003408	Benny: Oh, no, this one.  
-003409	Benny: With the Zorba.  
+003409	Benny: With The Zorbon.  
 003410	Gamemaster: Oh, okay.  
-003411	Gamemaster: So this was your thing to do in between going to the Zorbog meeting.  
+003411	Gamemaster: So this was your thing to do in between going to The Zorbon meeting.  
 003412	Anzu: Right.  
 003413	Gamemaster: Okay.  
 003414	Gamemaster: I mean, it's still, it's not bright out because the rain cover is so heavy, but it's not quite time.  
@@ -3524,7 +3524,7 @@
 003524	Johnny: See where that leads.  
 003525	Johnny: Then we gear up.  
 003526	Johnny: We get ready.  
-003527	Johnny: And we assault the Roundhat gang.  
+003527	Johnny: And we assault the Roundhat Gang.  
 003528	Anzu: We're going to be going up against a lot of gangsters, including probably the actual Tywelwyn, who's probably more powerful than his simulacrum.  
 003529	Johnny: alternate assault plan.  
 003530	Johnny: Maybe... The sewers are sort of underwater right now, so that plan... I was going to say we could go underground into their basement, but it's probably underwater right now.  

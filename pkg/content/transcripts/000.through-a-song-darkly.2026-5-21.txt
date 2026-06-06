@@ -1103,7 +1103,7 @@
 001103	Gamemaster: Absolutely.  
 001104	Argyle: May you invite our neighbors to a small cookout that we will be hosting tomorrow at 1 p.m.?  
 001105	Gamemaster: Of course.  
-001106	Gamemaster: This is to the Hildebrant Corporation now.  
+001106	Gamemaster: This is to the Hildebrandt Corporation now.  
 001107	Argyle: Yes.  
 001108	Gamemaster: Absolutely.  
 001109	Argyle: Tell them to bring their swim trunks if they have any.  
@@ -1278,7 +1278,7 @@
 001278	Gamemaster: If not, we could just skip to that.  
 001279	Benny: Benny will go to the gym.  
 001280	Gamemaster: Okay.  
-001281	Benny: He won't talk to them, but are there anyone from Hildebrant at the gym that he can tell?  
+001281	Benny: He won't talk to them, but are there anyone from Hildebrandt at the gym that he can tell?  
 001282	Gamemaster: Make a reception check.  
 001283	Argyle: Well, I would assume anyone who's not us in the gym.  
 001284	Argyle: You don't need to tell if they're from Hildebrandt just if they're there.  
@@ -1373,11 +1373,11 @@
 001373	Gamemaster: Uh, and he will reach into like, he's wearing athletic wear, uh, but he reaches into the pockets of his pants and he pulls out a business card.  
 001374	Anzu: Thank you.  
 001375	Gamemaster: Uh, and, and, uh, uh, Paavo will hand the business card over to you.  
-001376	Gamemaster: The business card says, Paavo Karu, Aeronautics Engineer, Hildebrant Corporation.  
+001376	Gamemaster: The business card says, Paavo Karu, Aeronautics Engineer, Hildebrandt Corporation.  
 001377	Argyle: Love a good Scale business card.  
 001378	Gamemaster: This business card is not for the Scale.  
 001379	Argyle: No, I know, but I mean like the people that follow the judge are like, we need business cards.  
-001380	Gamemaster: It's for Hildebrant.  
+001380	Gamemaster: It's for Hildebrandt.  
 001381	Gamemaster: And they will, Paavo will be like, mind if I follow you guys up?  
 001382	Gamemaster: It's been a while since I've seen Bishop in action.  
 001383	Benny: Absolutely.  
@@ -1521,7 +1521,7 @@
 001521	Argyle: They're invited to the cookout as well.  
 001522	Gamemaster: He mentions that the Scale got in a little later after you yesterday.  
 001523	Argyle: That makes sense.  
-001524	Gamemaster: He mentions that Solari Subsurface, which is a kind of logistics transport company, they got in overnight, like late into the evening, like 1, 2 a.m.  
+001524	Gamemaster: He mentions that Solari Sub-surface, which is a kind of logistics transport company, they got in overnight, like late into the evening, like 1, 2 a.m.  
 001525	Gamemaster: And currently setting up, as of the time that you're asking, would be Amber Call, which is this health insurance company.  
 001526	Johnny: Oh, no.  
 001527	Gamemaster: So those are the people that are currently on the Strider with you.  
@@ -1735,14 +1735,14 @@
 001735	Gamemaster: Clearly not a child, but sure.  
 001736	Gamemaster: and he will continue to mingle.  
 001737	Gamemaster: But you have that open invite if you want.  
-001738	Gamemaster: You can head over to the Scales fame on this Strider.  
+001738	Gamemaster: You can head over to the Scale's fame on this Strider.  
 001739	Argyle: Cool.  
 001740	Argyle: God damn it, they got such a cool fucking heart name.  
 001741	Gamemaster: You don't know what it is.  
 001742	Argyle: Oh, I thought it was called the Scale's Fate.  
 001743	Gamemaster: Maybe it's Jerry.  
 001744	Gamemaster: No, no, no, no, no.  
-001745	Gamemaster: The Scales fame, as in the place where they are.  
+001745	Gamemaster: the Scale's fame, as in the place where they are.  
 001746	Argyle: Oh, okay.  
 001747	Gamemaster: Yeah, no.  
 001748	Argyle: I was like, they just named it Scales Fate.  
@@ -1811,19 +1811,19 @@
 001811	Gamemaster: Did he do something bad?  
 001812	Johnny: I'm not sure.  
 001813	Gamemaster: That's fucking terrifying, mate.  
-001814	Gamemaster: I'm Silvado.  
+001814	Gamemaster: I'm Salvado.  
 001815	Johnny: It's crazy.  
 001816	Johnny: I'm Johnny Skyfall.  
-001817	Gamemaster: And he'll... I'm Solari Subsurface.  
+001817	Gamemaster: And he'll... I'm Solari Sub-surface.  
 001818	Johnny: Great to meet you.  
 001819	Johnny: Who are you with?  
 001820	Gamemaster: Listen, most of my days, I'm working on spreadsheets.  
 001821	Gamemaster: I don't... They sent me here because I requested a transfer, and they thought it would be funny if I transferred here.  
 001822	Gamemaster: I am fucking terrified.  
 001823	Johnny: His name's Solaro?  
-001824	Gamemaster: So... His name is Solvado.  
-001825	Johnny: Silvado.  
-001826	Gamemaster: Solvado Targona.  
+001824	Gamemaster: So... His name is Salvado.  
+001825	Johnny: Salvado.  
+001826	Gamemaster: Salvado Targona.  
 001827	Johnny: I was like... Listen, man.  
 001828	Gamemaster: It's clear we're both out of our depth here, so we should stick together.  
 001829	Johnny: I write poetry for a living.  
@@ -1851,7 +1851,7 @@
 001851	Gamemaster: We should stick together.  
 001852	Gamemaster: You've fully convinced this guy that he's made a friend of somebody else who is fully in over their head at what's going on.  
 001853	Johnny: What does his company do?  
-001854	Gamemaster: Solari Subsurface is a transport company.  
+001854	Gamemaster: Solari Sub-surface is a transport company.  
 001855	Gamemaster: Their whole deal is that they buy from Prime Meridian, the company that actually makes railways and stuff.  
 001856	Gamemaster: They will buy the rights to run trains on those railways and then just kind of do their own shipping on top of it.  
 001857	Gamemaster: They're not very successful.  
@@ -1892,13 +1892,13 @@
 001892	Argyle: We don't know anything.  
 001893	Argyle: Maybe someone there knows.  
 001894	Johnny: That's a good question, actually.  
-001895	Johnny: Can I ask Silvado?  
+001895	Johnny: Can I ask Salvado?  
 001896	Johnny: Actually, when everyone's in the hot tub and a little drunk, I'm going to be like, so how did you guys find out about this place?  
 001897	Johnny: How did you guys get your invite?  
 001898	Johnny: And deflect every time someone asks how we got our invite.  
 001899	Gamemaster: Absolutely.  
 001900	Benny: you  
-001901	Gamemaster: Uh, Silvano would say, I didn't get an invite.  
+001901	Gamemaster: Uh, Salvado would say, I didn't get an invite.  
 001902	Gamemaster: I just got told that we had to, like, this was where I was being reassigned to and I showed up.  
 001903	Gamemaster: Uh, I didn't know that invites were being handed out.  
 001904	Gamemaster: Although I guess that makes sense.  
@@ -2735,7 +2735,7 @@
 002735	Benny: You expect there to be  
 002736	Gamemaster: I had some interesting predictions about who would make it on, and there were some curveballs.  
 002737	Gamemaster: But that happens.  
-002738	Johnny: Was it, was Silvado, was he the big curveball?  
+002738	Johnny: Was it, was Salvado, was he the big curveball?  
 002739	Gamemaster: Oh, subspace, yes.  
 002740	Gamemaster: They're one of them.  
 002741	Argyle: Was were we careful?  
@@ -2745,7 +2745,7 @@
 002745	Gamemaster: Once I saw you attending, I figured you had a good chance.  
 002746	Gamemaster: You guys are go-getters.  
 002747	Argyle: you know about all of our backstories.  
-002748	Benny: This guy right here, and Benny will point to Anzu, chip the size of fucking Brithwin on his shoulder.  
+002748	Benny: This guy right here, and Benny will point to Anzu, chip the size of fucking Brithwyn on his shoulder.  
 002749	Anzu: Anzu just puts his beak in his hands and just kind of shakes his head.  
 002750	Johnny: I'm just confident.  
 002751	Anzu: Us too.  
@@ -3006,7 +3006,7 @@
 003006	Benny: I'll be in the back of the diner.  
 003007	Gamemaster: Not a titer.  
 003008	Argyle: Really not great, actually.  
-003009	Benny: I like the Harley Quinn's just really overdramatic.  
+003009	Benny: I like The Harlequins just really overdramatic.  
 003010	Argyle: Hayworks.  
 003011	Johnny: Do you know this guy?  
 003012	Johnny: Is he bad?  
@@ -3187,7 +3187,7 @@
 003187	Gamemaster: Okay, you use the skein and you just, you give them the information you have and you are connected in that way.  
 003188	Argyle: Let us know if you're being attacked ever.  
 003189	Gamemaster: That's fine.  
-003190	Gamemaster: Since you last checked, Ternian Heavy Industries, which is also in aeronautics, but they work primarily on military planes, bombers and the like.  
+003190	Gamemaster: Since you last checked, Ternion Heavy Industries, which is also in aeronautics, but they work primarily on military planes, bombers and the like.  
 003191	Gamemaster: have come in.  
 003192	Argyle: They fly in here?  
 003193	Gamemaster: No, they took a, like, the rules are you take a vehicle, so they took a vehicle, like a car.  
@@ -3217,12 +3217,12 @@
 003217	Argyle: Who's the weakling that you're friends with?  
 003218	Argyle: And I look at Johnny.  
 003219	Johnny: um oh i just named down i was  
-003220	Gamemaster: From Solari subspace.  
+003220	Gamemaster: From Solari Sub-surface.  
 003221	Anzu: That's Delvato.  
 003222	Argyle: Yeah.  
 003223	Benny: Now, stavato.  
 003224	Argyle: We need to make sure they contact our heart if they're getting raided so we can third party.  
-003225	Gamemaster: Solvado.  
+003225	Gamemaster: Salvado.  
 003226	Argyle: Don't tell them that, though.  
 003227	Gamemaster: That's crazy.  
 003228	Argyle: But we need to.  
@@ -3690,7 +3690,7 @@
 003690	Argyle: right next to the sub shipping.  
 003691	Argyle: They're going to eat those people for lunch.  
 003692	Johnny: Poor guys.  
-003693	Gamemaster: Solari subsurface?  
+003693	Gamemaster: Solari Sub-surface?  
 003694	Gamemaster: Listen, worst comes to worst, if they get cleared out, that's more room for them to expand into if they need to.  
 003695	Argyle: Yep.  
 003696	Anzu: I mean, alternatively, they could kind of take them under their wing and kind of have both hearts.  
@@ -3763,14 +3763,14 @@
 003763	Gamemaster: Or did you have somebody else that you wanted to go to?  
 003764	Argyle: Yeah, necrologic bill let us.  
 003765	Gamemaster: Okay.  
-003766	Gamemaster: Necrolug, you're... Can I get an occultism check, actually, as you meet with the person?  
-003767	Gamemaster: You are not allowed into the Fane of Necrolug.  
+003766	Gamemaster: NecroLog, you're... Can I get an occultism check, actually, as you meet with the person?  
+003767	Gamemaster: You are not allowed into the Fane of NecroLog.  
 003768	Anzu: 47.  
 003769	Argyle: Probably eating people in there.  
 003770	Gamemaster: It is this, like, black, painted, gothic-style home that they've built for their Fane.  
 003771	Gamemaster: What did we get?  
 003772	Gamemaster: 27 is enough.  
-003773	Gamemaster: The guy that meets you, Gasper Caetano.  
+003773	Gamemaster: The guy that meets you, Gaspar Caetano.  
 003774	Gamemaster: Gasper is gaunt-looking.  
 003775	Gamemaster: He's got this gray pall to his skin.  
 003776	Benny: you  
@@ -3899,7 +3899,7 @@
 003899	Gamemaster: and he will give permission for Axis Interlink to connect to your little chat room of hearts you've got going.  
 003900	Gamemaster: And I think you just show up and murder.  
 003901	Anzu: Just today.  
-003902	Anzu: Hey, Salvador.  
+003902	Anzu: Hey, Salvado.  
 003903	Gamemaster: I think... Go be no Protectorate, you know?  
 003904	Benny: Where's the biggest guy on the yard?  
 003905	Johnny: Oh no, we like them.  
@@ -3922,7 +3922,7 @@
 003922	Gamemaster: So is The Scale.  
 003923	Benny: The biggest, let's go.  
 003924	Gamemaster: So is, gosh, like these are all relatively large groups.  
-003925	Gamemaster: I'm very certain, like the only company that's maybe smaller than Solari Subservice is Garrick Textiles, which is a clothing manufacturer.  
+003925	Gamemaster: I'm very certain, like the only company that's maybe smaller than Solari Sub-surface is Garrick Textiles, which is a clothing manufacturer.  
 003926	Benny: Wait, Garrick Textiles.  
 003927	Benny: Was this the place that Benny got his poncho?  
 003928	Gamemaster: Uh, yes.  
@@ -3959,14 +3959,14 @@
 003959	Argyle: Can we still be next to Hildebrandt?  
 003960	Gamemaster: Okay, fine.  
 003961	Gamemaster: Yeah, fine.  
-003962	Gamemaster: If you want to be next to Hildebrant, I don't know how much that necessarily matters, but we can do, it's RunGunners, Iconoclasm, Hildebrant, Radiant Arms.  
+003962	Gamemaster: If you want to be next to Hildebrandt, I don't know how much that necessarily matters, but we can do, it's RunGunners, Iconoclasm, Hildebrandt, Radiant Arms.  
 003963	Argyle: Yes.  
 003964	Argyle: Yes.  
 003965	Gamemaster: Okay?  
 003966	Argyle: Yes.  
 003967	Gamemaster: Great.  
 003968	Argyle: That also, yeah, yeah, great, great.  
-003969	Gamemaster: You guys have your Fane built, and then Hildebrant has their Fane built one over, and you go to Radiant Arms, and you're like, can we switch?  
+003969	Gamemaster: You guys have your Fane built, and then Hildebrandt has their Fane built one over, and you go to Radiant Arms, and you're like, can we switch?  
 003970	Johnny: Please.  
 003971	Benny: Yeah, we just really prefer the window seat.  
 003972	Gamemaster: Do you mind if we switch homes?  
@@ -4015,7 +4015,7 @@
 004015	Johnny: This can turn into a build.  
 004016	Johnny: This can turn into a build.  
 004017	Argyle: Or they're going to, like, brainwash them.  
-004018	Benny: no we have to set up 24 7 guard posts around gary textiles  
+004018	Benny: no we have to set up 24 7 guard posts around Garrick Textiles  
 004019	Johnny: This can't be good.  
 004020	Argyle: no no josh why not why couldn't this have just been like all friends and then all of our dnd sessions are like and then you met a really big worm but he was friendly so then he's like my name's gary and then it's just  
 004021	Gamemaster: yeah exactly  
@@ -4116,7 +4116,7 @@
 004116	Argyle: I can't believe you made everyone so paranoid.  
 004117	Gamemaster: You guys made yourselves paranoid.  
 004118	Johnny: I like that the guy said, there might be deaths, and Jorge went, we got to jump on the highway and start shooting.  
-004119	Argyle: Imagine if Gary Textiles never made it because we just jumped them.  
+004119	Argyle: Imagine if Garrick Textiles never made it because we just jumped them.  
 004120	Gamemaster: Exactly.  
 004121	Gamemaster: There might be deaths.  
 004122	Gamemaster: Well, listen, if we don't do it, someone else will, so we may as well.  
@@ -4143,7 +4143,7 @@
 004143	Gamemaster: Oh, it might have been Ætherion.  
 004144	Benny: if I have that one written down.  
 004145	Gamemaster: Let's see.  
-004146	Gamemaster: Oh no, your options were... Vane had the option of working with Turnian Heavy Industries, or Concordia, and you went with Turnian.  
+004146	Gamemaster: Oh no, your options were... Vane had the option of working with Ternion Heavy Industries, or Concordia, and you went with Ternion.  
 004147	Gamemaster: The military plane manufacturer.  
 004148	Argyle: oh yeah  
 004149	Gamemaster: Yeah, because you could get space-grade bottles.  

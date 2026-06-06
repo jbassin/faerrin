@@ -946,7 +946,7 @@
 000946	Gamemaster: recognize them because you're not quite familiar with the logo.  
 000947	Gamemaster: But Johnny would be most familiar with them.  
 000948	Johnny: you  
-000949	Gamemaster: Holopact, which is a firearms manufacturer that used to be in Raelion and what survived of the company has managed to integrate itself and ingratiate itself into Calaria as a moderate firearm supplier.  
+000949	Gamemaster: Hollowpact, which is a firearms manufacturer that used to be in Raelion and what survived of the company has managed to integrate itself and ingratiate itself into Calaria as a moderate firearm supplier.  
 000950	Gamemaster: Not one of the biggest ones, but...  
 000951	Gamemaster: Definitely one on the bleeding edge.  
 000952	Gamemaster: There are a few symbols that you wouldn't recognize.  
@@ -2347,11 +2347,11 @@
 002347	Anzu: Yeah.  
 002348	Anzu: Okay, okay.  
 002349	Anzu: Um...  
-002350	Anzu: And then second action, I'm going to send a Psyburst at the Barbra Zoo, but let me just check something quick.  
+002350	Anzu: And then second action, I'm going to send a Psiburst at the Barbra Zoo, but let me just check something quick.  
 002351	Gamemaster: Okay.  
 002352	Gamemaster: No.  
 002353	Gamemaster: Okay.  
-002354	Anzu: All right, we're going to Mind Shift the Psyburst so that it is, instead of a...  
+002354	Anzu: All right, we're going to Mind Shift the Psiburst so that it is, instead of a...  
 002355	Anzu: Reflex save.  
 002356	Anzu: It becomes a will save and becomes mental damage.  
 002357	Johnny: you  
@@ -3842,7 +3842,7 @@
 003842	Johnny: That's my turn.  
 003843	Gamemaster: You are going to take two points of bleed damage.  
 003844	Gamemaster: And you critically succeed on your recovery check, so you're no longer bleeding.  
-003845	Benny: That makes Arctosis turn straightforward.  
+003845	Benny: That makes Arctos' turn straightforward.  
 003846	Anzu: Oh, amazing.  
 003847	Johnny: Finally, there it is.  
 003848	Johnny: One of us is down.  
@@ -4031,7 +4031,7 @@
 004031	Anzu: That is smart.  
 004032	Anzu: I like that.  
 004033	Anzu: I'm going to look at the guy real quick.  
-004034	Arctos: How far does Tellers run from Sinadonic?  
+004034	Arctos: How far does Teller's Run from Sinadonic?  
 004035	Gamemaster: Mm-hmm.  
 004036	Anzu: And I'm going to say, I'd like to ask you a question about the nature of the questions we can ask.  
 004037	Anzu: Will that count as one of our three questions?  
@@ -4095,7 +4095,7 @@
 004095	Anzu: Then we know that it's more like just hidden, just straight hidden.  
 004096	Arctos: Yeah, let's try it.  
 004097	Anzu: Who possesses Keystone 14?  
-004098	Gamemaster: Eastone 14 is currently held by the Hart Rapid Connection.  
+004098	Gamemaster: Eastone 14 is currently held by the Heart Rapid Connection.  
 004099	Johnny: Do any of us know rapid connection?  
 004100	Johnny: Do any of us know rapid connection?  
 004101	Gamemaster: You guys can make society checks if that's familiar to you.  

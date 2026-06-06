@@ -2252,7 +2252,7 @@
 002252	Benny: I got my one.  
 002253	Johnny: I'll come for you on Zoom.  
 002254	Gamemaster: I'm sorry, you got left alone.  
-002255	Benny: Anzu, besting even Johnny in the art of distraction.  
+002255	Benny: Anzu, besting even Johnny in the Heart of distraction.  
 002256	Anzu: Smoke and mirrors.  
 002257	Benny: Oh no!  
 002258	Gamemaster: Okay.  
@@ -2460,7 +2460,7 @@
 002460	Gamemaster: All right, Anzu, it's still your turn.  
 002461	Anzu: Yeah, I've got two more actions.  
 002462	Argyle: Alright, since you're going to fear one, I'm not going to stop that.  
-002463	Anzu: So we're going to hit this guy with a Psyburst.  
+002463	Anzu: So we're going to hit this guy with a Psiburst.  
 002464	Gamemaster: Okay.  
 002465	Anzu: I'm just trying to think.  
 002466	Anzu: I think we'll have him do the will save.  

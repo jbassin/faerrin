@@ -598,7 +598,7 @@
 000598	Benny: Mm hmm.  
 000599	Anzu: Well, we don't have that one.  
 000600	Arctos: We always have that as an option.  
-000601	Arctos: What other ideas do you have, Anzo?  
+000601	Arctos: What other ideas do you have, Anzu?  
 000602	Anzu: Well, there's also the dice and poker games and what I think is probably a fairy ring of some kind.  
 000603	Anzu: I don't know what that means, but...  
 000604	Anzu: I don't know which one of these four we should do.  
@@ -1358,7 +1358,7 @@
 001358	Gamemaster: With a 26, the accent isn't Calarian.  
 001359	Gamemaster: There's something of a slightly similar lilt to it that makes you think it's part of the same general geographic area.  
 001360	Arctos: Well, they don't have a works in breath one.  
-001361	Gamemaster: This is something that you would associate with Brithwen.  
+001361	Gamemaster: This is something that you would associate with Brithwyn.  
 001362	Gamemaster: used to be Calaria, kind of has its own accent.  
 001363	Gamemaster: It's the northern area.  
 001364	Gamemaster: But this is somebody who was born and raised in Brithwyn.  
@@ -1411,7 +1411,7 @@
 001411	Benny: Yeah, we got plenty of room.  
 001412	Johnny: It's a big car.  
 001413	Johnny: It's just a really big car.  
-001414	Arctos: You know the word that won against Galaria?  
+001414	Arctos: You know the word that won against Calaria?  
 001415	Arctos: Yeah.  
 001416	Johnny: Hey, man.  
 001417	Arctos: Let's not make an enemy of it.  
@@ -1432,7 +1432,7 @@
 001432	Anzu: Yeah, true, true, true.  
 001433	Johnny: Hey, man.  
 001434	Benny: Thank you.  
-001435	Johnny: They're not Galarians, so Johnny was like, whatever.  
+001435	Johnny: They're not Calarians, so Johnny was like, whatever.  
 001436	Anzu: Or if they try to come after us, we say, listen, we don't got to fight.  
 001437	Anzu: The two of you can fit with us easy.  
 001438	Anzu: We'll take a view.  
@@ -1667,7 +1667,7 @@
 001667	Benny: Yeah, I also agree.  
 001668	Arctos: The way I see it is if someone gets to this one first, we should just follow that person, like pick up the trail there.  
 001669	Arctos: You know?  
-001670	Benny: I think it's probably a reasonable shortcut to figure out the art beforehand because I feel like it's something that could get us in the door.  
+001670	Benny: I think it's probably a reasonable shortcut to figure out the Heart beforehand because I feel like it's something that could get us in the door.  
 001671	Benny: If these people don't want to talk to us at all, like no one that is near the heart,  
 001672	Benny: It's going to be difficult, but if we're like, we have this porcelain elephant that takes you to a different world, they'll be like, hold on.  
 001673	Arctos: Hmm.  
@@ -2476,7 +2476,7 @@
 002476	Gamemaster: Benny is alert.  
 002477	Gamemaster: He's absolutely fine as you guys drive down.  
 002478	Gamemaster: I mean, you effectively just took a highway out of the city, so it's a straight shot for an extended period of time.  
-002479	Gamemaster: But eventually you do drive in through the southern entrance of Hallia and make your way back to Isin and Tonic.  
+002479	Gamemaster: But eventually you do drive in through the southern entrance of Hallia and make your way back to Sin and Tonic.  
 002480	Gamemaster: The way the timing works out is 8 in the morning.  
 002481	Anzu: Oh, God.  
 002482	Johnny: 100%.  
@@ -2627,7 +2627,7 @@
 002627	Johnny: Anyway, we took it, and we have a couple of the guns, but I thought Donnie might want some more of those.  
 002628	Gamemaster: That's fair.  
 002629	Gamemaster: If you want to follow it up yourself, my contact or our contact at Sable & Sons is Lark Crowe.  
-002630	Gamemaster: Moonlight is an arms dealer, but usually you can find them in the market over in Deosil, which is like one of the other districts in Talia.  
+002630	Gamemaster: Moonlight is an arms dealer, but usually you can find them in the market over in Deosil, which is like one of the other districts in Hallia.  
 002631	Johnny: All right.  
 002632	Johnny: Well, thanks, Red.  
 002633	Johnny: I guess I'll talk to you soon.  
@@ -2906,7 +2906,7 @@
 002906	Benny: He'll roll down Arctos' window.  
 002907	Gamemaster: 31.  
 002908	Gamemaster: Okay.  
-002909	Gamemaster: With the 31, they roll the windows down, and you can see the... Eridian is self-policed, so it's not one of the three police agencies that go around to the rest of the city.  
+002909	Gamemaster: With the 31, they roll the windows down, and you can see the... Aurideon is self-policed, so it's not one of the three police agencies that go around to the rest of the city.  
 002910	Johnny: Okay.  
 002911	Arctos: Hello.  
 002912	Gamemaster: These are members of the church.  
@@ -2994,7 +2994,7 @@
 002994	Benny: you  
 002995	Gamemaster: sorry, into the marble, like the Path of Ivy, so that it grows into the pattern of the Vale house logo, which is a V with a sword passed through it.  
 002996	Gamemaster: You drive around the entryway fountain to get up to the front door, where, of course, one of the servants is ready to take the car and park it elsewhere and lead you guys into the home.  
-002997	Gamemaster: As you're let in, you would meet with the Mayordomo, who is... What is this guy's name?  
+002997	Gamemaster: As you're let in, you would meet with the majordomo, who is... What is this guy's name?  
 002998	Johnny: you you  
 002999	Gamemaster: Where are you?  
 003000	Gamemaster: Crowley Hart.  
@@ -3289,8 +3289,8 @@
 003289	Arctos: Wait a second.  
 003290	Benny: Salmon.  
 003291	Gamemaster: Okay, sure.  
-003292	Arctos: It would have been Austrine.  
-003293	Arctos: Just different nice pics of Austrine and then probably some Aurora.  
+003292	Arctos: It would have been Austrene.  
+003293	Arctos: Just different nice pics of Austrene and then probably some Aurora.  
 003294	Gamemaster: Sure.  
 003295	Gamemaster: Yeah, he is, baby.  
 003296	Arctos: If we don't hear from him in like a week, we'll just come back and take one of my paintings.  

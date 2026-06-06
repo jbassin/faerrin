@@ -1401,7 +1401,7 @@
 001401	Benny: do you yet understand benny will take the box and go into room 101 and attempt to store the sound  
 001402	Anzu: Two of these speakers are playing stuff.  
 001403	Gamemaster: Absolutely.  
-001404	Gamemaster: You hit the button and you watch as the scales come out of the speaker.  
+001404	Gamemaster: You hit the button and you watch as the Scale's come out of the speaker.  
 001405	Gamemaster: The speaker stops playing.  
 001406	Gamemaster: And you watch as some of the wall directing in front of you next to the speaker crumbles in and creates a hole that allows you to move forward to what you would imagine would be 103.  
 001407	Johnny: Oh, excellent.  
@@ -2320,7 +2320,7 @@
 002320	Anzu: I can make my Psy Bursts do mental damage, but I would need to do that next round when I unleash Psyche.  
 002321	Benny: I'm just thinking of more juvenile ways to assault your enemies.  
 002322	Benny: Just put your finger in your mouth and wet-willy them from across.  
-002323	Anzu: I mean, the Psyburst works kind of well for that, but maybe we'll get there next turn, but that's it for me, yeah.  
+002323	Anzu: I mean, the Psiburst works kind of well for that, but maybe we'll get there next turn, but that's it for me, yeah.  
 002324	Gamemaster: It does.  
 002325	Gamemaster: Is that the end of your turn?  
 002326	Gamemaster: Johnny, it's your turn.  
@@ -2983,10 +2983,10 @@
 002983	Johnny: Oh, no.  
 002984	Gamemaster: I mean, yeah, there's all manner of things you could do.  
 002985	Arctos: And our shit in it.  
-002986	Gamemaster: Really just any kind of kill members of the roundhat gang and just take it back by force.  
+002986	Gamemaster: Really just any kind of kill members of the Roundhat Gang and just take it back by force.  
 002987	Arctos: Who is this necromancer you guys keep mentioning?  
 002988	Gamemaster: You're not going to get much help if you try and pull actual law enforcement into it.  
-002989	Gamemaster: They kind of back off of the roundhat gang in their territories.  
+002989	Gamemaster: They kind of back off of the Roundhat Gang in their territories.  
 002990	Johnny: He's the head of... Where did it go?  
 002991	Anzu: please hold Master Grayson.  
 002992	Gamemaster: Oh, yeah, you're Mr. I believe Brandon Grayson, I think is his name.  
@@ -3186,7 +3186,7 @@
 003186	Gamemaster: It's in your holy city because it was here first.  
 003187	Johnny: Thank you.  
 003188	Anzu: Um...  
-003189	Gamemaster: Hylia was built around the site that Aurelia used to get up to the Godhome the first time.  
+003189	Gamemaster: Hallia was built around the site that Aurelia used to get up to the Godhome the first time.  
 003190	Gamemaster: And she used the Pharos.  
 003191	Gamemaster: So, you know, connect the dots.  
 003192	Arctos: And just out of game, so when other gods became outer gods, did they also have higher fans?  
@@ -3393,7 +3393,7 @@
 003393	Gamemaster: I don't have the car image on hand, unfortunately.  
 003394	Gamemaster: Yeah, so you'd definitely be out of view there, Arctos, if that's something you're trying to do.  
 003395	Arctos: What if Andrew was lying flat on the ceiling?  
-003396	Gamemaster: In the alley itself, where Benny is, so long as Clarf doesn't look up while he's pissing, that works.  
+003396	Gamemaster: In the alley itself, where Benny is, so long as Hlarf doesn't look up while he's pissing, that works.  
 003397	Gamemaster: It would really depend on stealth checks there to stay hidden.  
 003398	Benny: Oh, it's a hidden... Wait, is it hidden where Benny is?  
 003399	Gamemaster: Same with Anzu, if you're trying to stay hidden.  
@@ -4040,7 +4040,7 @@
 004040	Johnny: No, I... When this started, I was like, what if I go down again?  
 004041	Gamemaster: It's only Hlarf from now on.  
 004042	Arctos: All going for Johnny.  
-004043	Johnny: What if I die to Hlarif a second time?  
+004043	Johnny: What if I die to Hlarf a second time?  
 004044	Gamemaster: I rolled very close to critting on you at least one of the times, and he had a fatal d10 to his punches.  
 004045	Arctos: Oh, I know.  
 004046	Johnny: Well, after that, he was fleeing three because he was frightened.  

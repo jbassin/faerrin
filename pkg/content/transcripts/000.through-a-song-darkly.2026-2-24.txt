@@ -352,7 +352,7 @@
 000352	Arctos: Mm-hmm.  
 000353	Gamemaster: I mean...  
 000354	Benny: Or else it'll flop all over the place because it's so fresh.  
-000355	Gamemaster: I do like how, because I assume you're feeding in previous images so that whatever model you use knows what to generate, that it's starting to think that the star in the bottom corner is part of the art and is generating its own version of it.  
+000355	Gamemaster: I do like how, because I assume you're feeding in previous images so that whatever model you use knows what to generate, that it's starting to think that the star in the bottom corner is part of the Heart and is generating its own version of it.  
 000356	Benny: That is one of my rules.  
 000357	Benny: I give it the same source image, which is the original Yeen image of Bartleby.  
 000358	Benny: Bartleby?  
@@ -380,7 +380,7 @@
 000380	Anzu: So we researched a couple things, including big booty bears.  
 000381	Anzu: Didn't find any, but we learned a couple things.  
 000382	Anzu: We learned that Sir Arctos is a major anomaly and a very interesting piece.  
-000383	Anzu: We learned about some other strange happenings along the timeline of Ember Calls arising, including a couple months ago some other fire-related cults that kind of burned out quick.  
+000383	Anzu: We learned about some other strange happenings along the timeline of Embercall's arising, including a couple months ago some other fire-related cults that kind of burned out quick.  
 000384	Anzu: We also learned about a strider that just kind of started singing and then disappeared.  
 000385	Anzu: And then...  
 000386	Anzu: We talked to Anaïs and Anouk, and we told them to kill our rivals.  
@@ -454,7 +454,7 @@
 000454	Gamemaster: OK, so you've marked that down.  
 000455	Gamemaster: You guys are in your car.  
 000456	Gamemaster: We'll say it's probably around 10 AM.  
-000457	Gamemaster: You've just pulled out of the commercial loading area of this sub-nexus of Prime Meridians and Sableclutch.  
+000457	Gamemaster: You've just pulled out of the commercial loading area of this sub-nexus of Prime Meridian's and Sableclutch.  
 000458	Gamemaster: What is the plan?  
 000459	Johnny: Do we want to go to an art museum to learn about art?  
 000460	Benny: Of course the nerd wants to go to the museum.  
@@ -462,7 +462,7 @@
 000462	Arctos: No.  
 000463	Anzu: I think we need to go to the museum.  
 000464	Arctos: We're not just going to steal art from him.  
-000465	Benny: No, I think we should go to the art museum and then hopefully, coincidentally, a bad person will own a very nice piece of art and then we can go and take it from them without remorse.  
+000465	Benny: No, I think we should go to the Heart museum and then hopefully, coincidentally, a bad person will own a very nice piece of art and then we can go and take it from them without remorse.  
 000466	Arctos: Well, if it makes you feel any better, probably most of the rich people are bad people here.  
 000467	Johnny: Does that include your friend?  
 000468	Johnny: Siberian bear.  
@@ -504,14 +504,14 @@
 000504	Benny: Let me chance my hero point, please.  
 000505	Anzu: I got a critical 31.  
 000506	Gamemaster: Nice.  
-000507	Gamemaster: You know all of the art galleries and museums in Hallia.  
+000507	Gamemaster: You know all of the Heart galleries and museums in Hallia.  
 000508	Anzu: Guys, I had a feeling we might need to go to a museum, so I looked a couple up earlier.  
 000509	Gamemaster: Honestly, that's fair.  
 000510	Johnny: pulls up every pamphlet from a tourist stop.  
 000511	Gamemaster: So there are...  
 000512	Gamemaster: Um, there are quite a few, uh, art galleries in, or art museums and the like, uh, in Hallia.  
 000513	Gamemaster: Uh, this is very much the, the cultural center of Calaria.  
-000514	Gamemaster: Um, but if you're looking for the art museum, like the one that will have the largest breadth of different art and all that kind of stuff, you're, you're looking for the Hallia Metropolitan Conservatory, the MetCon.  
+000514	Gamemaster: Um, but if you're looking for the Heart museum, like the one that will have the largest breadth of different art and all that kind of stuff, you're, you're looking for the Hallia Metropolitan Conservatory, the MetCon.  
 000515	Arctos: Hell yeah.  
 000516	Gamemaster: which is like a multi-story collection of hundreds of years' worth of art.  
 000517	Johnny: To that museum.  
@@ -599,7 +599,7 @@
 000599	Gamemaster: So I think the best you could get is there is currently an exhibit that's being advertised in different parts of the museum as the current big thing, and that sounds like...  
 000600	Johnny: you  
 000601	Benny: Thank you.  
-000602	Gamemaster: it'd be the the the big thing gosh what is it the the barretto exhibit there's an artist from tormoray that's that's currently brought a few of his art pieces along to be displayed in the museum for the next few months um as part of a a partial exhibit um  
+000602	Gamemaster: it'd be the the the big thing gosh what is it the the barretto exhibit there's an artist from Tormeré that's that's currently brought a few of his art pieces along to be displayed in the museum for the next few months um as part of a a partial exhibit um  
 000603	Gamemaster: But yeah, you can find a group of fourth graders.  
 000604	Gamemaster: Can I get either a diplomacy or a diplomacy, deception, or intimidation?  
 000605	Gamemaster: It's your choice.  
@@ -693,7 +693,7 @@
 000693	Johnny: It's the kid from the forest.  
 000694	Arctos: Wait, wait, wait, so... Just out of clarification, just for my own edification, there's a group of nine-year-olds, there's one with a poncho, who also has a raiment that's, like, five times bigger than the other.  
 000695	Gamemaster: You do have that arsh enemy.  
-000696	Gamemaster: And the wrong color for a school kid in Alia.  
+000696	Gamemaster: And the wrong color for a school kid in Hallia.  
 000697	Arctos: Yes.  
 000698	Arctos: Like, everyone else is like, oh, hey, and it's, like, bigger than the chaperones, and they're like...  
 000699	Arctos: That is a godly kid.  
@@ -776,7 +776,7 @@
 000776	Arctos: So.  
 000777	Gamemaster: I don't know.  
 000778	Gamemaster: What?  
-000779	Gamemaster: Since you have a tour guide, I guess you can roll diplomacy to try and get her to talk about, like, the art if you're looking for something in particular.  
+000779	Gamemaster: Since you have a tour guide, I guess you can roll diplomacy to try and get her to talk about, like, the Heart if you're looking for something in particular.  
 000780	Gamemaster: You were looking for more of Kellum Quinn's art, but in general.  
 000781	Gamemaster: Alternatively, you guys can roll either perception or crafting to yourself.  
 000782	Gamemaster: Like, look at different pieces of art and try and figure stuff out.  
@@ -824,7 +824,7 @@
 000824	Gamemaster: But other than that... You know what?  
 000825	Gamemaster: I was planning on revealing these individually if you asked about them, but I think with a 40, you're just gonna...  
 000826	Gamemaster: One second.  
-000827	Gamemaster: You get her to talk about all of the art in the exhibit.  
+000827	Gamemaster: You get her to talk about all of the Heart in the exhibit.  
 000828	Johnny: Okay, give me 10 minutes to read these over and see if any of them are interesting.  
 000829	Arctos: Hell yeah.  
 000830	Benny: Good gravy.  
@@ -837,8 +837,8 @@
 000837	Anzu: this guy's a problem  
 000838	Johnny: Well, I guess.  
 000839	Arctos: Oh.  
-000840	Gamemaster: Uh, the art over in the bottom right is all by Mr. Paolo Barreto.  
-000841	Gamemaster: Um, he's, he's a famous artist from Tormere.  
+000840	Gamemaster: Uh, the Heart over in the bottom right is all by Mr. Paolo Barreto.  
+000841	Gamemaster: Um, he's, he's a famous artist from Tormeré.  
 000842	Gamemaster: Uh, he is currently in jail for heresy, but he expects to get out soon.  
 000843	Gamemaster: And then the other stuff I think might be of note to you.  
 000844	Gamemaster: I don't know if you care about any of it.  
@@ -895,7 +895,7 @@
 000895	Gamemaster: But you can steer her that way if you like.  
 000896	Gamemaster: The answer is that...  
 000897	Johnny: Well.  
-000898	Gamemaster: There is like one particular blot of shame on this museum, and that is somebody scammed the museum into thinking that they were a famous artist and used setting up their exhibit within the museum as a chance to enter and take some of the art and swap it out with forgeries and then leave.  
+000898	Gamemaster: There is like one particular blot of shame on this museum, and that is somebody scammed the museum into thinking that they were a famous artist and used setting up their exhibit within the museum as a chance to enter and take some of the Heart and swap it out with forgeries and then leave.  
 000899	Benny: you  
 000900	Arctos: Brilliant.  
 000901	Gamemaster: And unfortunately, they were never caught.  
@@ -1048,7 +1048,7 @@
 001048	Gamemaster: I will say with a 38, this is not a representation you have seen previously.  
 001049	Gamemaster: surprisingly, it doesn't structurally seem to go against any theories you're aware of on how it works.  
 001050	Gamemaster: It just seems to be a different representation.  
-001051	Gamemaster: One that, like, no academics, even in Tormere, the place that this particular artist is from, necessarily ascribe to.  
+001051	Gamemaster: One that, like, no academics, even in Tormeré, the place that this particular artist is from, necessarily ascribe to.  
 001052	Gamemaster: It's interesting.  
 001053	Anzu: Do I find it at all insightful or educational?  
 001054	Johnny: you  
@@ -1056,7 +1056,7 @@
 001056	Anzu: This guy's a no-er, too.  
 001057	Anzu: All right.  
 001058	Arctos: Sir Arctos is going to offer to sign any autographs for the children.  
-001059	Johnny: I thought you were going to say Sir Arctos offers to sign the art.  
+001059	Johnny: I thought you were going to say Sir Arctos offers to sign the Heart.  
 001060	Gamemaster: Absolutely.  
 001061	Arctos: Free of charge.  
 001062	Gamemaster: You definitely would have people who want your autograph, so that's doable.  
@@ -1077,8 +1077,8 @@
 001077	Johnny: Seems super difficult.  
 001078	Johnny: Two, we steal art from someone else's house.  
 001079	Johnny: More difficult.  
-001080	Johnny: Three, we give Arctos a piece of salmon and ice and steal the art from his house.  
-001081	Benny: Do we know how much the art in his house would go for?  
+001080	Johnny: Three, we give Arctos a piece of salmon and ice and steal the Heart from his house.  
+001081	Benny: Do we know how much the Heart in his house would go for?  
 001082	Benny: I did hear... Well, I mean, I guess everyone heard.  
 001083	Johnny: Maybe talk to someone around here.  
 001084	Benny: There's a new larger exhibit from Beretto that is supposed to be coming here.  
@@ -1347,7 +1347,7 @@
 001347	Gamemaster: Well, I'll hope whatever ploy he's doing, if that is the issue, ends soon.  
 001348	Arctos: Yeah, I hope he does not succeed.  
 001349	Gamemaster: Either way, Minister Vane is healthy, so no need to worry on that front.  
-001350	Arctos: Didn't we read something that Graystone was trying to do mind control?  
+001350	Arctos: Didn't we read something that Grayson was trying to do mind control?  
 001351	Arctos: Did we read that somewhere?  
 001352	Gamemaster: Yes.  
 001353	Arctos: I think we did.  
@@ -1593,14 +1593,14 @@
 001593	Johnny: Okay, maybe we should wrap art in something.  
 001594	Gamemaster: Yeah, right now your truck has three pieces of art and 300 gallons of gasoline.  
 001595	Arctos: The gasoline trunk?  
-001596	Anzu: They'll never find the art.  
+001596	Anzu: They'll never find the Heart.  
 001597	Arctos: Is that safe?  
 001598	Arctos: Is the gasoline going to ruin all of our art?  
 001599	Arctos: That'd be so sad.  
 001600	Anzu: Yeah, it might.  
 001601	Gamemaster: It's in jerry cans.  
 001602	Arctos: No, no, don't guess.  
-001603	Arctos: Can we leave the art in Arctos' room?  
+001603	Arctos: Can we leave the Heart in Arctos' room?  
 001604	Arctos: Is that fine?  
 001605	Anzu: I think maybe let's bring it home to iconoclasm.  
 001606	Arctos: Or do you guys... You trust Iconoclasm?  
@@ -1662,7 +1662,7 @@
 001662	Arctos: Can we also... Who's the lady who builds stuff that owns the car?  
 001663	Johnny: You're right.  
 001664	Anzu: All right.  
-001665	Gamemaster: Dur is the one that maintains the car, the mechanic, that kind of stuff, yeah.  
+001665	Gamemaster: Dura is the one that maintains the car, the mechanic, that kind of stuff, yeah.  
 001666	Arctos: Yeah.  
 001667	Arctos: Hey, Dura, we got some... These are actually legit, but can you, like, booby-trap a door or something to make sure no one opens it?  
 001668	Gamemaster: It depends.  
@@ -1913,7 +1913,7 @@
 001913	Gamemaster: It's very funny that your most nonchalant member of the party is the guy with the big Ringo Starr sunglasses.  
 001914	Gamemaster: And a poncho.  
 001915	Gamemaster: Ponchos are not like standard clothing.  
-001916	Gamemaster: In Alia, people are not walking around all in ponchos.  
+001916	Gamemaster: in Hallia, people are not walking around all in ponchos.  
 001917	Gamemaster: Like, if last campaign, which for the first, like, eight levels was fully Western-themed, if you were walking around in ponchos for that, it would have made sense.  
 001918	Gamemaster: Why did you wait until Cold War-era, like, Metropolitan City to start wearing the ponchos?  
 001919	Johnny: I tried all denim.  
@@ -2044,7 +2044,7 @@
 002044	Gamemaster: You can kill without going into combat.  
 002045	Arctos: Hmm.  
 002046	Gamemaster: It's possible.  
-002047	Gamemaster: Okay, so I'm going to ask that you apply your buffs in the map that we're currently in, in the art gallery.  
+002047	Gamemaster: Okay, so I'm going to ask that you apply your buffs in the map that we're currently in, in the Heart gallery.  
 002048	Gamemaster: And then we swap over to the other map when it's time.  
 002049	Gamemaster: So we've fast-forwarded a little bit.  
 002050	Gamemaster: So now we're however many seconds before you expect whatever to happen will happen.  
@@ -2132,7 +2132,7 @@
 002132	Arctos: Yes, I can do that.  
 002133	Johnny: Get back here a little bit.  
 002134	Arctos: Sorry, one second.  
-002135	Johnny: Arctosis blue.  
+002135	Johnny: Arctos' blue.  
 002136	Arctos: Sorry, perception check.  
 002137	Arctos: Wait, it's in the skills, which is the hands.  
 002138	Anzu: Oh, he's blue.  
@@ -3281,7 +3281,7 @@
 003281	Gamemaster: And then, because he was frenzied, he is clumsy now.  
 003282	Benny: course.  
 003283	Gamemaster: Johnny, it's your turn.  
-003284	Johnny: I will sustain the Spurtleby image.  
+003284	Johnny: I will sustain the Sbrtlby image.  
 003285	Gamemaster: Absolutely.  
 003286	Johnny: So he'll... He'll go for... I'll swing for the Meokton.  
 003287	Gamemaster: They're both looking pretty bad, but the milk den looks slightly worse.  

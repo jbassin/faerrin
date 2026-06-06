@@ -440,7 +440,7 @@
 000440	Cedric: Like, people will be like, yeah, this is my, like... Yeah.  
 000441	Gamemaster: They've gotten in trouble on four separate occasions for stealing art.  
 000442	Krod: But not the story.  
-000443	Krod: They could have stole the writing, lots of plausible liability, but they steal the pixels of the art.  
+000443	Krod: They could have stole the writing, lots of plausible liability, but they steal the pixels of the Heart.  
 000444	Krod: Just do Game of Thrones.  
 000445	Gamemaster: Mm-hmm.  
 000446	Krod: Just don't tell anyone and just do Game of Thrones for like one of the seasons.  
@@ -451,7 +451,7 @@
 000451	Cedric: I don't know about this one in particular, but I've seen other things that are basically the exact same thing, but they'll just steal it.  
 000452	Gamemaster: So, for Marathon, the entire aesthetic of the game appears to be copied from an artist on Twitter named Sidereel, who they said, listen, this art was limited specifically to one of the contractors that we hired, who no longer works for the company.  
 000453	Cedric: Yeah.  
-000454	Gamemaster: But, like, the creative director and the art director and a few employees known to work as artists at Bungie all follow Sidereel on Twitter.  
+000454	Gamemaster: But, like, the creative director and the Heart director and a few employees known to work as artists at Bungie all follow Sidereel on Twitter.  
 000455	Gamemaster: So, like...  
 000456	Cedric: Yeah, yeah.  
 000457	Krod: That's so clever.  
@@ -1234,10 +1234,10 @@
 001234	Gamemaster: Um, as a kind of like, okay, sure.  
 001235	Gamemaster: Yeah.  
 001236	Gamemaster: I just, I almost reflex.  
-001237	Gamemaster: Most of the people that you interact with here are either from somewhere in Calaria, most of the people from Hallia, or are from Tormure, which is the country to the south that is famous for a number of rare jewels that only come out of that region, which makes sense.  
+001237	Gamemaster: Most of the people that you interact with here are either from somewhere in Calaria, most of the people from Hallia, or are from Tormeré, which is the country to the south that is famous for a number of rare jewels that only come out of that region, which makes sense.  
 001238	Gamemaster: Every once in a while you get one or two people that are from somewhere slightly further out.  
 001239	Gamemaster: There's a few from Velthara, which is big.  
-001240	Gamemaster: mining town or mining country in general uh no one from renford or from around the uh the the verdant expanse as best you can tell um just you know  
+001240	Gamemaster: mining town or mining country in general uh no one from Wrenford or from around the uh the the verdant expanse as best you can tell um just you know  
 001241	Andros: Whenever I come back to my comrades, one, I think one of these vendors just got me into a conversation and I do not have enough charisma to say no.  
 001242	Andros: So I come back with just a Giant like solid gold rhinestone covered like shotgun.  
 001243	Gamemaster: God snob them.  
@@ -1365,7 +1365,7 @@
 001365	Cedric: So actually, we probably should confiscate this, but we can deal with that later.  
 001366	Cedric: Oh.  
 001367	Cedric: Good, I guess.  
-001368	Gamemaster: Amos is from Helya.  
+001368	Gamemaster: Amos is from Hallia.  
 001369	Cedric: Yeah.  
 001370	Krod: He answered.  
 001371	Andros: Everyone answered.  
@@ -2931,7 +2931,7 @@
 002931	Krod: Can we go back to Amos and ask if he knows anyone in Tomare that deals in... Hey, listen.  
 002932	Cedric: We should just give him a piece of the rock.  
 002933	Krod: At least you know that we're... Can you help us out?  
-002934	Gamemaster: He knows dealers in Dormeray.  
+002934	Gamemaster: He knows dealers in Tormeré.  
 002935	Gamemaster: None that claim to be selling Facestone right now, but I think around this time, you would get a call from the crime scene asking you to come back, because they have some questions about the stuff that you left for them to investigate.  
 002936	Gamemaster: And they'd like some context.  
 002937	Krod: Sure.  
@@ -3063,7 +3063,7 @@
 003063	Krod: Try it.  
 003064	Andros: I'm going to walk towards it.  
 003065	Gamemaster: Absolutely.  
-003066	Andros: For Calario.  
+003066	Andros: For Calaria.  
 003067	Gamemaster: It's interesting.  
 003068	Gamemaster: As you get closer, it's all two-dimensional.  
 003069	Gamemaster: But it's got this kind of slightly undulating quality within the darkness.  

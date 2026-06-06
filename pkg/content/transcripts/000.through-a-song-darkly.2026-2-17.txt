@@ -388,7 +388,7 @@
 000388	Gamemaster: If you guys leveled up more, I would have to come up with new sounds for leveling up.  
 000389	Gamemaster: Maybe you should just level up like two to three times a session.  
 000390	Anzu: It's too soon.  
-000391	Benny: Maybe I should go to a voice gen model, or a multimodal model, and give it YeenutGuy, and then ask what he would sound like, and then have him do the level up sound.  
+000391	Benny: Maybe I should go to a voice gen model, or a multimodal model, and give it Yeenut Guy, and then ask what he would sound like, and then have him do the level up sound.  
 000392	Gamemaster: I don't know if I want that much Yeenut.  
 000393	Gamemaster: I don't know if Mr. Yeenut should be given more responsibility.  
 000394	Benny: I'm so glad that I am snaking my way through creative ways to indicate that I am playing D&D.  
@@ -573,7 +573,7 @@
 000573	Benny: So the nerd's pissed.  
 000574	Benny: Benny's pissed because we're locked in a room.  
 000575	Benny: One of us is just eating blocks of ice with salmon inside.  
-000576	Benny: And none of the art in this room is famous, according to our thorough research.  
+000576	Benny: And none of the Heart in this room is famous, according to our thorough research.  
 000577	Gamemaster: Uh, yes-ish.  
 000578	Gamemaster: There was more to that session.  
 000579	Benny: Josh, if there was more in the session, I would have wrote it down.  
@@ -594,18 +594,18 @@
 000594	Gamemaster: Each of the two people here...  
 000595	Gamemaster: who are actually members of Belvedere, are apparently still in good standing at Belvedere, and were each able to bring in a guest.  
 000596	Gamemaster: So the four of you entered.  
-000597	Gamemaster: The way that this works is it's similar to Belvedere and research libraries back in Austren.  
+000597	Gamemaster: The way that this works is it's similar to Belvedere and research libraries back in Austrene.  
 000598	Gamemaster: Basically, it's this huge warehouse of books, and then you request particular topics, and those are fetched for you.  
 000599	Gamemaster: You can't take the books out of the library, but you can read them while you're here.  
 000600	Gamemaster: The two things that you had researched while you were in the library was first, what's an Archmechanic, which as a refresher is a very high ranking member of Prime Meridian that manages, in modern times, they manage the hearts that manage movement of the logistics devices across the city.  
 000601	Arctos: you  
 000602	Gamemaster: So like trains coming in and out of stations, cars going into places that they need to go, scheduling, all of that kind of stuff.  
 000603	Gamemaster: Um, there is an Archmechanic of Hallia, uh, that would manage all of that stuff, um, speak to the hearts that do all of those kinds of things.  
-000604	Gamemaster: The other thing that you looked up was, uh, if you recall, the art pieces you saw in, um, uh, Minister Vane's home, uh, were include in the meeting area that you had first entered, there was that, uh,  
+000604	Gamemaster: The other thing that you looked up was, uh, if you recall, the Heart pieces you saw in, um, uh, Minister Vane's home, uh, were include in the meeting area that you had first entered, there was that, uh,  
 000605	Gamemaster: There was that large landscape that was the skyline of Hallia, which you had rolled a really good perception check and noted that the Pharos was painted in at some point and then painted over.  
 000606	Gamemaster: And then you also looked at the paintings that Arctos had in his room, which were by two artists that your research in the library noted to you are like...  
 000607	Gamemaster: pet artists of the Vane household, in that they are hired and patronized by Vane to make painting for their house and for other properties, which means that they're not necessarily particularly well-known outside of the Vane household right now.  
-000608	Gamemaster: That doesn't mean that the art isn't necessarily good, it just means that the artists aren't particularly well-known.  
+000608	Gamemaster: That doesn't mean that the Heart isn't necessarily good, it just means that the artists aren't particularly well-known.  
 000609	Gamemaster: But you are still, as we start today's session, inside of the library.  
 000610	Gamemaster: You are free to request books as you wish.  
 000611	Gamemaster: Or if you had something else you'd like to do for the remainder of the day, it is now probably around like a little after noon, like 1230-ish.  
@@ -846,7 +846,7 @@
 000846	Gamemaster: Literally any message I ever send to any of you.  
 000847	Arctos: Is it in my Arctos stock?  
 000848	Gamemaster: No.  
-000849	Johnny: The Art Doc.  
+000849	Johnny: the Heart Doc.  
 000850	Gamemaster: Um... It's not in your arc doc.  
 000851	Gamemaster: It is.  
 000852	Gamemaster: I can't find it.  
@@ -1004,7 +1004,7 @@
 001004	Benny: And then you would just have like, here is added to the list of known hearts that exist.  
 001005	Gamemaster: Yeah, I don't believe there would be something like that.  
 001006	Gamemaster: At the very least, not here.  
-001007	Gamemaster: There might be something in Belvedere, like all the way back in Ostreen, where they're trying to track that kind of stuff.  
+001007	Gamemaster: There might be something in Belvedere, like all the way back in Austrene, where they're trying to track that kind of stuff.  
 001008	Gamemaster: But that wouldn't just be a resource available, necessarily.  
 001009	Benny: I see.  
 001010	Johnny: you  
@@ -1085,7 +1085,7 @@
 001085	Gamemaster: They got like 80% of the way through building the skyscraper before the company folded.  
 001086	Gamemaster: They effectively got pushed out of the market by...  
 001087	Gamemaster: Shoot, what are they called?  
-001088	Gamemaster: Hildebrant, which had gone ahead with their commercial airlines and kind of just took over the market there.  
+001088	Gamemaster: Hildebrandt, which had gone ahead with their commercial airlines and kind of just took over the market there.  
 001089	Gamemaster: So the skyscraper itself sat unfinished in the middle of Teller's Run.  
 001090	Gamemaster: It seems that about six months after the Wall of Fire was enacted around Teller's Run...  
 001091	Gamemaster: Lights were seen from within the skyscraper as if people had moved in and started construction of some kind.  
@@ -1179,7 +1179,7 @@
 001179	Gamemaster: They're creatures that are known to... Their home exists somewhere on the horizon, and sometimes they make their way towards the... towards the Prime Varan, but... Yeah.  
 001180	Arctos: How about angels?  
 001181	Anzu: Yeah.  
-001182	Arctos: Do they live in their Joker worlds?  
+001182	Arctos: Do they live in their Joker Worlds?  
 001183	Arctos: Are they in the Godhome?  
 001184	Arctos: Do they even exist?  
 001185	Gamemaster: Uh... So, angels...  
@@ -1258,7 +1258,7 @@
 001258	Johnny: I think he's double-dipping.  
 001259	Johnny: I think he's double-dipping.  
 001260	Johnny: I think he's doing Voidsong and Regent Song.  
-001261	Arctos: Well, do we have him confirmed listening to Emberco?  
+001261	Arctos: Well, do we have him confirmed listening to Embercall?  
 001262	Anzu: Voidsong Nu Metal  
 001263	Johnny: We haven't confirmed this into Voidsong.  
 001264	Johnny: I'll confirm that one.  
@@ -1594,7 +1594,7 @@
 001594	Gamemaster: It happens.  
 001595	Gamemaster: By the way, did you have a particular art piece you were planning on stealing?  
 001596	Arctos: Well, there's also the Archmechanic guy that we know who works with the hearts.  
-001597	Arctos: We've got to get through him to get to the heart, to get to the art piece, or to bring the art piece.  
+001597	Arctos: We've got to get through him to get to the heart, to get to the Heart piece, or to bring the Heart piece.  
 001598	Gamemaster: Okay.  
 001599	Gamemaster: You see my point about convoluted steps now?  
 001600	Arctos: I agree.  
@@ -1643,7 +1643,7 @@
 001643	Johnny: Not this line of questioning.  
 001644	Anzu: I don't think we should bother Dura with this line of questioning.  
 001645	Johnny: Different line of questioning.  
-001646	Arctos: Also, to answer your question about the art, I was hoping my friend could hook us up with some fine art.  
+001646	Arctos: Also, to answer your question about the Heart, I was hoping my friend could hook us up with some fine art.  
 001647	Johnny: I'm back somewhere.  
 001648	Arctos: If you have a better lead or you just want to steal some, by all means, go for it.  
 001649	Gamemaster: Well, we know where art is kept.  
@@ -1885,9 +1885,9 @@
 001885	Anzu: Yeah, so is there a major station in Sableclutch?  
 001886	Arctos: I don't think it's necessarily a bad thing to show up with the wrong art.  
 001887	Arctos: I think it's... We have a chance of having the right art, and if we show up with no art, we definitely don't have a chance of having the right art.  
-001888	Arctos: But I do think the art thing is a backseat.  
-001889	Arctos: I think we could find the heart and then try to get the art.  
-001890	Benny: i'm just wondering like what we go there and then they're like no you can't come in and we don't want to fight them because we're attempting to bargain with the art so it's just like we have access to fine art tell the heart this and then hope the heart lets us in and then otherwise show up with a piece of art  
+001888	Arctos: But I do think the Heart thing is a backseat.  
+001889	Arctos: I think we could find the heart and then try to get the Heart.  
+001890	Benny: i'm just wondering like what we go there and then they're like no you can't come in and we don't want to fight them because we're attempting to bargain with the Heart so it's just like we have access to fine art tell the heart this and then hope the heart lets us in and then otherwise show up with a piece of art  
 001891	Gamemaster: Rule?  
 001892	Arctos: I mean, the counters, we also could show up and be like, why are you here?  
 001893	Arctos: We're like, we have blank art piece for the heart.  
@@ -2847,7 +2847,7 @@
 002847	Arctos: Imagine we go in and we're just like, hey guys, this super secret part that's probably responsible for critical infrastructure inside of the city.  
 002848	Arctos: We know its name, even though it doesn't know who we are.  
 002849	Arctos: If we were to broaden it, what type of art does it want?  
-002850	Anzu: Well, we would have to tell them that we are in the art world, you know.  
+002850	Anzu: Well, we would have to tell them that we are in the Heart world, you know.  
 002851	Johnny: Well, maybe we just go in and we say, hey, we're here to talk with Rapid Connection regarding the competition that he is part of.  
 002852	Arctos: I want to go talk to them.  
 002853	Arctos: I do.  
@@ -2924,7 +2924,7 @@
 002924	Arctos: I don't like this guy.  
 002925	Johnny: That's already scary.  
 002926	Johnny: Hi, a friend.  
-002927	Johnny: My name is Salvador Van Warhol.  
+002927	Johnny: My name is Salvado Van Warhol.  
 002928	Benny: Thank you.  
 002929	Johnny: I'm a... I'm something of an...  
 002930	Johnny: art curator here in town, and I'd like to speak to the Heart Rapid Connection.  
@@ -2959,8 +2959,8 @@
 002959	Gamemaster: Okay, with a 25.  
 002960	Gamemaster: He looks at you, and there's a very clear look of confusion on his face.  
 002961	Johnny: Van Warhol.  
-002962	Gamemaster: Before he says, sorry, your name was Salvador Von...  
-002963	Gamemaster: Salvador van Warhol, of course.  
+002962	Gamemaster: Before he says, sorry, your name was Salvado Von...  
+002963	Gamemaster: Salvado van Warhol, of course.  
 002964	Gamemaster: One moment, please.  
 002965	Gamemaster: And you can see he starts moving his fingers on the arm that has the metal rods embedded into it.  
 002966	Gamemaster: It almost looks like he's typing with or interacting with something, but they're just moving around in the air.  
@@ -3083,12 +3083,12 @@
 003083	Arctos: Yeah, the good one with the Arctic.  
 003084	Arctos: We'll first try the Arctic and then try the other one.  
 003085	Gamemaster: Wait, sorry.  
-003086	Gamemaster: Try the art... What do you mean?  
+003086	Gamemaster: Try the Heart... What do you mean?  
 003087	Gamemaster: Oh, okay.  
 003088	Arctos: First, the paintings in Arctos' room.  
 003089	Johnny: I have a Kellum Quinn I think you may be interested in.  
 003090	Gamemaster: So...  
-003091	Gamemaster: I don't have names for the painters for the art in Arctos' room.  
+003091	Gamemaster: I don't have names for the painters for the Heart in Arctos' room.  
 003092	Arctos: And then... Yeah.  
 003093	Gamemaster: I do have, it's Kellum Quinn is the name of the artist that drew that landscape.  
 003094	Johnny: Painted over something very interesting in the center.  
@@ -3232,7 +3232,7 @@
 003232	Arctos: Like, maybe the Quinn's like a Rembrandt and then we should bring it.  
 003233	Anzu: Okay, okay.  
 003234	Arctos: Or maybe it's just like a crazy guy with a tinfoil hat that painted over that thing.  
-003235	Johnny: Okay, to the Calerian Museum of Art.  
+003235	Johnny: Okay, to the Calarian Museum of Art.  
 003236	Arctos: Alright.  
 003237	Gamemaster: I think it's 10.55.  
 003238	Gamemaster: I think maybe we leave it there for tonight's session.  

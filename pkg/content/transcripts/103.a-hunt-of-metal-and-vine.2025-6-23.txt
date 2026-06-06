@@ -1238,7 +1238,7 @@
 001238	Cliff: Yes.  
 001239	Gamemaster: Okay.  
 001240	Reverend: The judge is the holiest.  
-001241	Reverend: He can balance the scales.  
+001241	Reverend: He can balance the Scale's.  
 001242	Gamemaster: Make a diplomacy check.  
 001243	Reverend: Exactly like that.  
 001244	Reverend: No.  
@@ -2114,7 +2114,7 @@
 002114	Gamemaster: the sense of divinity to your destination.  
 002115	Reverend: We're here.  
 002116	Gregor: That was actually a really good answer.  
-002117	Zangron: When we've balanced the scales.  
+002117	Zangron: When we've balanced the Scale's.  
 002118	Cliff: Hey, guys.  
 002119	Cliff: Out of curiosity, when do we decide to turn back?  
 002120	Reverend: When our quest is complete.  
@@ -2763,7 +2763,7 @@
 002763	Gamemaster: Why, I thought it prudent to reach out to you.  
 002764	Reverend: What is this blasphemy?  
 002765	Reverend: How can he be a child of the judge?  
-002766	Gamemaster: in the same way that you are children of the judge, not directly, but empowered divinely, yet fallen.  
+002766	Gamemaster: in the same way that you are Children of the Heir judge, not directly, but empowered divinely, yet fallen.  
 002767	Cliff: What is it that you seek?  
 002768	Gamemaster: Freedom.  
 002769	Gamemaster: It is a...  
@@ -4639,7 +4639,7 @@
 004639	Gamemaster: Voice of Many is a very powerful heart.  
 004640	Cliff: OK.  
 004641	Cliff: OK.  
-004642	Gamemaster: But now under the scales employ, I suppose.  
+004642	Gamemaster: But now under the Scale's employ, I suppose.  
 004643	Cliff: Yeah.  
 004644	Gregor: Let's go.  
 004645	Reverend: Interesting.  

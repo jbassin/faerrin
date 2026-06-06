@@ -394,7 +394,7 @@
 000394	Johnny: It's got a pool.  
 000395	Argyle: So keep that in mind.  
 000396	Benny: I think that large of a mortgage payment scares me.  
-000397	Gamemaster: The Art Deco House?  
+000397	Gamemaster: the Heart Deco House?  
 000398	Gamemaster: 6.3 is what they're estimating it at.  
 000399	Argyle: With the solid credit, you got it.  
 000400	Argyle: Yeah.  
@@ -916,17 +916,17 @@
 000916	Anzu: That's crazy.  
 000917	Anzu: That's still pretty bad, but 17.  
 000918	Gamemaster: Seventeen's is enough.  
-000919	Gamemaster: She will say, Oh, are you friends of the Sorbonne?  
+000919	Gamemaster: She will say, Oh, are you friends of The Zorbon?  
 000920	Anzu: Well, I think that that's not the way you're supposed to phrase it technically, but we're thinking about it.  
 000921	Gamemaster: You're looking to be friends with the Zorbon?  
 000922	Argyle: Time out, time out.  
 000923	Anzu: No, no.  
-000924	Argyle: We're not friends with the Zorbom.  
+000924	Argyle: We're not friends with The Zorbon.  
 000925	Benny: you  
 000926	Gamemaster: Oh, okay.  
 000927	Gamemaster: I just had to check.  
 000928	Anzu: Right, that's what I was getting at.  
-000929	Argyle: We're friends with Whiskers, not the Zorbom.  
+000929	Argyle: We're friends with Whiskers, not The Zorbon.  
 000930	Anzu: Yeah.  
 000931	Gamemaster: Gotcha.  
 000932	Gamemaster: Sure.  
@@ -985,7 +985,7 @@
 000985	Gamemaster: But it's just, it's gross, but it's not untenable, you know?  
 000986	Anzu: We put our tinfoil hats on.  
 000987	Gamemaster: Yes.  
-000988	Argyle: The Zorbon cannot flood this Syria.  
+000988	Argyle: The Zorbon cannot flood this sewer.  
 000989	Argyle: That's what happened.  
 000990	Gamemaster: Sure.  
 000991	Gamemaster: Either way, you are down in this pump room.  
@@ -1422,7 +1422,7 @@
 001422	Gamemaster: You have run up to agent of the... Absolutely.  
 001423	Argyle: Yes.  
 001424	Johnny: hello hello  
-001425	Benny: Sorbonne.  
+001425	Benny: Zorbon.  
 001426	Argyle: And I will take a strike.  
 001427	Argyle: Delicious.  
 001428	Gamemaster: A 26 hits.  
@@ -2313,7 +2313,7 @@
 002313	Gamemaster: And it looks like somebody loaded them up onto a boat and sailed off downriver.  
 002314	Johnny: Okay, I got a 26 to rifle through belongings.  
 002315	Gamemaster: Okay, 26 to rival through belongings.  
-002316	Gamemaster: The people here, like the members of the Zorbom resistance team, were not particularly well-off individuals.  
+002316	Gamemaster: The people here, like the members of The Zorbon resistance team, were not particularly well-off individuals.  
 002317	Gamemaster: They were all, as you, like, rifle through this stuff, they're all homeless.  
 002318	Gamemaster: Oh, okay.  
 002319	Johnny: Sorry, not the people here, the dudes we just killed.  
@@ -3605,7 +3605,7 @@
 003605	Argyle: He would have just jumped at the last moment.  
 003606	Johnny: Wait, like as you're falling mid-air, you would have jumped?  
 003607	Argyle: Yeah, I would double jump.  
-003608	Gamemaster: Is that a thing Orgyle can do?  
+003608	Gamemaster: Is that a thing Argyle can do?  
 003609	Argyle: Well, single jump.  
 003610	Gamemaster: That's not how that works.  
 003611	Argyle: I'm allowed to jump, right?  

@@ -52,7 +52,7 @@
 000052	Benny: So,  
 000053	Benny: I mean, I asked... Oh, my God.  
 000054	Benny: I asked the... So I asked the AI, I asked Gemini, like, hey, generate this thing.  
-000055	Benny: Meaning, this thing meaning generate a yeanut butter and jelly sandwich.  
+000055	Benny: Meaning, this thing meaning generate a Yeenut butter and jelly sandwich.  
 000056	Anzu: Right.  
 000057	Benny: And, yeah, so then I...  
 000058	Anzu: From last week.  
@@ -88,7 +88,7 @@
 000088	Gamemaster: Oh, Mr. Grunch, sure.  
 000089	Gamemaster: I am familiar with him.  
 000090	Gamemaster: I don't think that's his name, but, I mean, what do I know?  
-000091	Johnny: No, the Mr. Grunch who's famous for his yee-nut butter and yelly sandwiches.  
+000091	Johnny: No, the Mr. Grunch who's famous for his Yeenut butter and yelly sandwiches.  
 000092	Gamemaster: Oh, of course.  
 000093	Gamemaster: Absolutely.  
 000094	Benny: Good old eNut butter.  
@@ -1730,7 +1730,7 @@
 001730	Arctos: So, yeah.  
 001731	Gamemaster: Like, where did you... He will ask where this book... Or, like, how you came across the book in some form.  
 001732	Johnny: you  
-001733	Arctos: Sorbonne meeting?  
+001733	Arctos: Zorbon meeting?  
 001734	Gamemaster: Okay, so you're explaining the entirety of going into the sewers for the Zorbon, meaning finding Grayson's... Fane in the underground?  
 001735	Arctos: Yeah.  
 001736	Arctos: We were just... Yeah, we stole the radar dish from the gang, and then he caught us, so we had to agree to that.  
@@ -3117,7 +3117,7 @@
 003117	Johnny: Superground.  
 003118	Gamemaster: I'm checking.  
 003119	Gamemaster: Attempts to grapple the creature using the body part.  
-003120	Gamemaster: Yeah, it is against your fort TC.  
+003120	Gamemaster: Yeah, it is against your Fort DC.  
 003121	Arctos: Is that 10 plus your save?  
 003122	Gamemaster: Yes.  
 003123	Gamemaster: Is that a failure or a critical failure?  
@@ -3354,7 +3354,7 @@
 003354	Anzu: That's not going to work.  
 003355	Gamemaster: No.  
 003356	Anzu: Okay.  
-003357	Anzu: We will throw a Psyburst his way.  
+003357	Anzu: We will throw a Psiburst his way.  
 003358	Anzu: He can make this basic reflex save.  
 003359	Gamemaster: I rolled very well.  
 003360	Johnny: you  

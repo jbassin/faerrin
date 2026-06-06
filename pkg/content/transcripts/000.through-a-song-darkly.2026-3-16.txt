@@ -675,7 +675,7 @@
 000675	Gamemaster: I will say, you definitely have enough room in there.  
 000676	Gamemaster: There's a little bit of, uh, Jenka involved with, like, the polar bear, and now you have to make use of the third row, or I'll squeeze into the back row or something.  
 000677	Gamemaster: But the car is big enough.  
-000678	Gamemaster: It was owned by Clarf.  
+000678	Gamemaster: It was owned by Hlarf.  
 000679	Gamemaster: He was massive.  
 000680	Gamemaster: You can make it work.  
 000681	Gamemaster: Um... And you, uh, you drive on over.  
@@ -1417,7 +1417,7 @@
 001417	Gamemaster: So I need you to make a choice here about... There are two names that come up as possible partners that you could get into that could help set up the manufacturing for this.  
 001418	Gamemaster: You could either work with... Shoot, where did that go?  
 001419	Gamemaster: I just lost it.  
-001420	Gamemaster: Turnian Heavy Industries...  
+001420	Gamemaster: Ternion Heavy Industries...  
 001421	Gamemaster: which is normally a kind of, like their main focus is aerospace, but they're trying to break into consumer goods, and they're hoping to maybe use that springboard there to move into consumer goods.  
 001422	Argyle: I don't know.  
 001423	Gamemaster: Or you can sign up with Concordia, which is currently the big name.  
@@ -1467,7 +1467,7 @@
 001467	Gamemaster: Okay, so he said information would be of the utmost importance.  
 001468	Gamemaster: You said you're looking for information.  
 001469	Benny: Right, yeah, yeah.  
-001470	Gamemaster: The archive that you checked was insufficiently indexed to locate particular things about the Ember Cull.  
+001470	Gamemaster: The archive that you checked was insufficiently indexed to locate particular things about the Embercall.  
 001471	Johnny: you  
 001472	Gamemaster: and also maybe things related to the pilgrimage.  
 001473	Gamemaster: Okay, so over the next few weeks, I don't think he'd have any information necessarily for you for the pilgrimage.  
@@ -1779,7 +1779,7 @@
 001779	Benny: you  
 001780	Gamemaster: So he has to choose one or the other to kind of pressure to maybe give some information there.  
 001781	Gamemaster: Uh, the, the two, uh, the, the, the two...  
-001782	Gamemaster: orgs that these people are from that he could lean on are either he has a contact that's part of the children of the air which you would know are devotees of the air of the plague this particular group is this guy is part of the like more  
+001782	Gamemaster: orgs that these people are from that he could lean on are either he has a contact that's part of the Children of the Heir air which you would know are devotees of the air of the plague this particular group is this guy is part of the like more  
 001783	Gamemaster: bioterrorist group, uh, like part of that, that wing where their whole deal is they're kind of trying to, um, just reduce, uh, man-made construction, uh, back into the, the natural state, like the forests and the marshes that got replaced where, where Halyan normally is.  
 001784	Johnny: Okay.  
 001785	Gamemaster: Um, or alternatively, uh, he could lean on somebody in, uh, somebody he knows in Necrolog, uh, which is a...  
@@ -1799,7 +1799,7 @@
 001799	Gamemaster: Absolutely.  
 001800	Gamemaster: Can you roll a d100 for me, please?  
 001801	Gamemaster: 30 and below is Necrolog.  
-001802	Gamemaster: Over 30 is the Children of the Air.  
+001802	Gamemaster: Over 30 is the Children of the Heir Air.  
 001803	Johnny: 30.  
 001804	Gamemaster: Okay, that's Necrolog.  
 001805	Gamemaster: Good to know.  
@@ -1845,7 +1845,7 @@
 001845	Benny: Thank you.  
 001846	Gamemaster: You kind of have to synthesize some information that you've pulled from a few different sources.  
 001847	Gamemaster: You're looking at the cork portal of the papers and stuff that you recovered from Tywelwyn.  
-001848	Gamemaster: You're looking at... I don't know if you recall, but when you guys were going through Noire, that city in the Black and White, and you were in the theater, there was some information you got from the Emberfall and stuff there.  
+001848	Gamemaster: You're looking at... I don't know if you recall, but when you guys were going through Noire, that city in the Black and White, and you were in the theater, there was some information you got from the Embercall and stuff there.  
 001849	Gamemaster: um and you're kind of just trying to synthesize the the disparate pieces uh like as well as the stuff from the radar dish stuff into something that might be useful for you uh and with that role i think the the first step is going through Tywelwyn's papers uh and figuring out what the hell he's writing about and was trying to map out and the like  
 001850	Gamemaster: And you were right in your recollection.  
 001851	Gamemaster: It wasn't quite the Voidsong.  
@@ -2080,7 +2080,7 @@
 002080	Gamemaster: But at this point, they kind of run a lot of museums in Hallia and through the rest of Calaria.  
 002081	Gamemaster: But one of the two actually won a bidding War.  
 002082	Gamemaster: I need somebody to roll a D100.  
-002083	Gamemaster: 50 and under is Korath.  
+002083	Gamemaster: 50 and under is Chorath.  
 002084	Gamemaster: Above 50 is the Ministry.  
 002085	Johnny: Jorge, this is your moment or mic.  
 002086	Benny: I can do it.  
@@ -2093,7 +2093,7 @@
 002093	Gamemaster: 51!  
 002094	Gamemaster: Okay!  
 002095	Gamemaster: That would be the Ministry.  
-002096	Gamemaster: Tor Korath did not get their hands, at least through that auction, on a keystone.  
+002096	Gamemaster: Tor Chorath did not get their hands, at least through that auction, on a keystone.  
 002097	Argyle: That's what they get.  
 002098	Gamemaster: And... And one more.  
 002099	Argyle: They don't even deserve it.  
@@ -2118,7 +2118,7 @@
 002118	Johnny: Cool.  
 002119	Anzu: I mean, probably.  
 002120	Gamemaster: Sometimes this happens.  
-002121	Gamemaster: We are asked by our benefactor to resolve something that is up in the air, and she is not available to lean on the scales one way or the other.  
+002121	Gamemaster: We are asked by our benefactor to resolve something that is up in the air, and she is not available to lean on the Scale's one way or the other.  
 002122	Gamemaster: And you can see that below you is resolving like a fight of some kind.  
 002123	Gamemaster: Can I get a perception check?  
 002124	Argyle: I'll make one.  
@@ -2220,7 +2220,7 @@
 002220	Gamemaster: They are happening.  
 002221	Argyle: What language did you two speak to each other?  
 002222	Gamemaster: And sometimes we have fun with it.  
-002223	Gamemaster: It is a little enjoyable to tilt the scales one way or the other.  
+002223	Gamemaster: It is a little enjoyable to tilt the Scale's one way or the other.  
 002224	Gamemaster: Unfortunately, most of the time, they don't have any relation to what we are doing.  
 002225	Gamemaster: But in this particular instance, it seemed like it might have been useful.  
 002226	Gamemaster: It is from our home.  
@@ -2475,7 +2475,7 @@
 002475	Benny: Okay.  
 002476	Gamemaster: Farts will be cleared out after a few minutes, probably.  
 002477	Gamemaster: Like, it's not a fast process, but it will happen.  
-002478	Gamemaster: It is 320 gold pieces is the market price, but you can also get the upgrade from Soiler if you like.  
+002478	Gamemaster: It is 320 gold pieces is the market price, but you can also get the upgrade from Smiler if you like.  
 002479	Argyle: Okay.  
 002480	Benny: 320 gold pieces at a discount.  
 002481	Benny: Is it the same price?  
@@ -2538,7 +2538,7 @@
 002538	Benny: So I'll go with the observatory.  
 002539	Benny: 13.  
 002540	Gamemaster: Alright, I also, as part of this, need you to roll a d100.  
-002541	Gamemaster: 30 and below is Garrett Textiles.  
+002541	Gamemaster: 30 and below is Garrick Textiles.  
 002542	Gamemaster: Above a 30 is the Eileen Bryn Observatories.  
 002543	Gamemaster: 13.  
 002544	Gamemaster: It's the Textiles.  
@@ -2559,7 +2559,7 @@
 002559	Benny: What kind of textiles do they make?  
 002560	Gamemaster: All of them, effectively.  
 002561	Gamemaster: They are...  
-002562	Gamemaster: They started out as an importer of raw cotton from Larandrus.  
+002562	Gamemaster: They started out as an importer of raw cotton from Lorandris.  
 002563	Gamemaster: But when they first embedded themselves in Hallia, that kind of turned into...  
 002564	Gamemaster: buying up other textile importers, and then eventually integrating vertically in actual clothing manufacturers.  
 002565	Gamemaster: And now Garrick Textiles is the largest textile importer and clothing manufacturer in Calaria, by far.  
@@ -2652,7 +2652,7 @@
 002652	Gamemaster: Information they can get about Illmari.  
 002653	Gamemaster: He wasn't really a very public figure before the Voidsong and Iconoclasm and all of that kind of stuff.  
 002654	Johnny: you you  
-002655	Gamemaster: They know he was born in Valthara.  
+002655	Gamemaster: They know he was born in Velthara.  
 002656	Gamemaster: Um...  
 002657	Gamemaster: At some point, his family moved to Calaria.  
 002658	Gamemaster: He started up a mercenary company.  
@@ -2679,7 +2679,7 @@
 002679	Benny: Okay.  
 002680	Gamemaster: around this time.  
 002681	Gamemaster: We're at month three.  
-002682	Gamemaster: Arctos, your first samples have been sent to the Synan Tonic if you'd like to test them or anything for quality.  
+002682	Gamemaster: Arctos, your first samples have been sent to the Sin and Tonic if you'd like to test them or anything for quality.  
 002683	Gamemaster: But assuming you rubber stamp them... Okay.  
 002684	Argyle: I'd like to gather the group to give them some blind tastes.  
 002685	Gamemaster: Okay.  
@@ -2762,7 +2762,7 @@
 002762	Gamemaster: So you pop that off, you poke a hole in the top of the can.  
 002763	Gamemaster: There is this like.  
 002764	Gamemaster: almost cold pop of air out of it, despite the fact that these cans weren't refrigerated.  
-002765	Gamemaster: It appears that Ternian Heavy has enchanted them to chill themselves once they're opened.  
+002765	Gamemaster: It appears that Ternion Heavy has enchanted them to chill themselves once they're opened.  
 002766	Argyle: A STREET!  
 002767	Gamemaster: And you may take a sip if you like.  
 002768	Gamemaster: I'd love a fort safe from you.  
@@ -3278,7 +3278,7 @@
 003278	Gamemaster: you are just sticking to, trying to keep north, keep your bearings that way, heading in that direction as best you can.  
 003279	Gamemaster: With a 22, luckily you don't need to stick your head out of a manhole cover up into the street to regate your bearings.  
 003280	Gamemaster: You do know the direction you're headed towards.  
-003281	Gamemaster: But you do bump into a roadblock when you're getting very close to the edge of Taylor's Run, where it seems that the path that you've been following in the sewers opens up into a larger, maybe sewage processing area of some kind.  
+003281	Gamemaster: But you do bump into a roadblock when you're getting very close to the edge of Teller's Run, where it seems that the path that you've been following in the sewers opens up into a larger, maybe sewage processing area of some kind.  
 003282	Johnny: you  
 003283	Gamemaster: It's not a dead end, necessarily, but you have hit a point where you're not just walking through a tunnel.  
 003284	Gamemaster: It looks like you're entering into a place where...  
@@ -3337,7 +3337,7 @@
 003337	Gamemaster: Okay.  
 003338	Benny: you  
 003339	Gamemaster: Okay, no.  
-003340	Gamemaster: Ansu freaking killed it.  
+003340	Gamemaster: Anzu freaking killed it.  
 003341	Argyle: I was just trying to update my spells.  
 003342	Argyle: I'll just do it for tomorrow.  
 003343	Argyle: I have the ones on Path Builder.  

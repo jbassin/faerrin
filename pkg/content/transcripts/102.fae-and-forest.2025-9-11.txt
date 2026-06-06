@@ -502,7 +502,7 @@
 000502	Mickey: I'll stick to... Yep.  
 000503	Cedric: You should watch it.  
 000504	Cedric: It's really uncomfortable.  
-000505	Mickey: Josh, are the people of Faerin in disagreement on what to call this forest?  
+000505	Mickey: Josh, are the people of Færrin in disagreement on what to call this forest?  
 000506	Gamemaster: A little bit.  
 000507	Gamemaster: It's got a few names.  
 000508	Gamemaster: It happens.  
@@ -654,13 +654,13 @@
 000654	Gamemaster: And yeah, asking around, now that you had a little bit of a target, you found that they had arrived earlier in the day.  
 000655	Gamemaster: earlier in the day that Mr. Vanderbloom had died, via train coming in from the east.  
 000656	Gamemaster: You track it down, you follow that path out, and you know that there is actually only one stop he could have come from.  
-000657	Gamemaster: He could have only come from Renford, which is a small, almost abandoned logging town.  
+000657	Gamemaster: He could have only come from Wrenford, which is a small, almost abandoned logging town.  
 000658	Gamemaster: on the edge of the Verdant Expanse, the official Iridescent Church-approved name for that Giant forest on the eastern border of Calaria.  
 000659	Gamemaster: So, with seemingly no other leads, no other way to stop these murders from continuing, you have to go to the source.  
-000660	Gamemaster: You have to go to Renford, try and figure out what happened.  
+000660	Gamemaster: You have to go to Wrenford, try and figure out what happened.  
 000661	Gamemaster: And so all of you hop on a train, you know, paid for, of course, by yourselves, but will be reimbursed when you return by the church.  
 000662	Gamemaster: Business class, it's not bad.  
-000663	Gamemaster: And you take the day-and-a-half-ish train ride out to Renford.  
+000663	Gamemaster: And you take the day-and-a-half-ish train ride out to Wrenford.  
 000664	Gamemaster: As you guys are lounging on the train, you've all known each other for a while at this point.  
 000665	Gamemaster: This is not the first case you've worked before.  
 000666	Gamemaster: But I'd appreciate it if you could go around and describe yourselves.  
@@ -778,7 +778,7 @@
 000778	Gamemaster: No, you're on an express train.  
 000779	Gamemaster: So actually, roll a society check for me, please.  
 000780	Krod: So he... So he actually... Oh, yeah, yeah, okay.  
-000781	Gamemaster: There's a reason why when you figured out that this guy took a train in from the east that you knew that he came from Renford.  
+000781	Gamemaster: There's a reason why when you figured out that this guy took a train in from the east that you knew that he came from Wrenford.  
 000782	Krod: Yeah, I guess I remember.  
 000783	Krod: I was asking for clarification because there's no one else in the train and we're not stopping.  
 000784	Krod: So is he...  
@@ -823,8 +823,8 @@
 000823	Gamemaster: Oh, so bad.  
 000824	Gamemaster: 19.  
 000825	Gamemaster: Hi.  
-000826	Gamemaster: Yeah, you know that, like, this was originally planned to be some big train line going out to Renford, but for whatever reason, plans for it fell through, and there isn't much reason to come out here anymore, so not a lot of people on the train, and there aren't many stops, because most of the distance between Hallia and...  
-000827	Gamemaster: Renford is mountain, so it's just mostly traveling through or over mountains, but nowhere that, like, a settlement could reside.  
+000826	Gamemaster: Yeah, you know that, like, this was originally planned to be some big train line going out to Wrenford, but for whatever reason, plans for it fell through, and there isn't much reason to come out here anymore, so not a lot of people on the train, and there aren't many stops, because most of the distance between Hallia and...  
+000827	Gamemaster: Wrenford is mountain, so it's just mostly traveling through or over mountains, but nowhere that, like, a settlement could reside.  
 000828	Gamemaster: It's a long and boring train ride.  
 000829	Gamemaster: I would also take a perception check as the person carrying the trolley and stuff passes by.  
 000830	Mickey: I think I could do that.  
@@ -844,7 +844,7 @@
 000844	Cedric: I beat him by one, and then comes over Mickey!  
 000845	Gamemaster: So in this particular instance, Mickey's the only one that succeeded the check anyway.  
 000846	Gamemaster: So...  
-000847	Gamemaster: The only thing to notice is Renford is technically part of Calaria.  
+000847	Gamemaster: The only thing to notice is Wrenford is technically part of Calaria.  
 000848	Gamemaster: It's, like, very out on the border there as you get towards the Verdant Expanse, but it is still part of, like, the Iridescent Church's domain.  
 000849	Cedric: you  
 000850	Gamemaster: So most of the people that you bump into here are worshippers of the host, and they have various sizes of that, like, pearlescent rainbow shimmery raiment.  
@@ -865,16 +865,16 @@
 000865	Gamemaster: Prime Meridian, the company that runs most of the trains in Calaria, would not arrive late.  
 000866	Gamemaster: They would rather increase speeds to a dangerous degree to make it on time than they would arrive late.  
 000867	Mickey: Yes, of course.  
-000868	Gamemaster: So you pull into what is much too big a station for Renford.  
-000869	Gamemaster: It seems you pull into one of what look to be maybe eight tracks, despite the fact that you know that there's nothing on this line other than Hallia, and no one's commuting into Hallia from Renford.  
+000868	Gamemaster: So you pull into what is much too big a station for Wrenford.  
+000869	Gamemaster: It seems you pull into one of what look to be maybe eight tracks, despite the fact that you know that there's nothing on this line other than Hallia, and no one's commuting into Hallia from Wrenford.  
 000870	Gamemaster: This is a large train station that sees one train, maybe two, a day.  
 000871	Gamemaster: But doors open, you're all ushered out, as they know that nobody's staying on the train right now.  
 000872	Gamemaster: You're greeted by a very elderly, tired-looking train conductor as he's kind of waving people off of the station.  
 000873	Gamemaster: You pass by the two people that it looks like were waiting for the train to get onto to head back towards Alia.  
 000874	Gamemaster: Um...  
 000875	Gamemaster: And as you walk by, you're just kind of handed a pamphlet by, it looks like the conductor's doubling as a tour guide of some kind, because they've just been waiting and they have like a series of pamphlets that they're handing out as people leave.  
-000876	Gamemaster: that just has a picturesque image, like a drone shot almost, but illustrated of Renford, or of what Renford was supposed to be when they were originally planning it, because it's very idealized in this, as you can tell as soon as you exit the train station.  
-000877	Gamemaster: I'd like another perception check, or society check, as you guys exit out into the town of Renford.  
+000876	Gamemaster: that just has a picturesque image, like a drone shot almost, but illustrated of Wrenford, or of what Wrenford was supposed to be when they were originally planning it, because it's very idealized in this, as you can tell as soon as you exit the train station.  
+000877	Gamemaster: I'd like another perception check, or society check, as you guys exit out into the town of Wrenford.  
 000878	Gamemaster: And let me know which of the two you roll.  
 000879	Cedric: And what'd you say, sorry?  
 000880	Krod: Perception 31.  
@@ -882,7 +882,7 @@
 000882	Gamemaster: Perception or society.  
 000883	Gamemaster: Whichever you prefer.  
 000884	Cedric: And this is to look around render?  
-000885	Gamemaster: This is just as you get out of the train station, looking at Renford, at the city in general.  
+000885	Gamemaster: This is just as you get out of the train station, looking at Wrenford, at the city in general.  
 000886	Cedric: Okay.  
 000887	Gamemaster: Just like getting your bearings.  
 000888	Cedric: So this is not like gathering information.  
@@ -938,7 +938,7 @@
 000938	Gamemaster: Just yet, at least.  
 000939	Gamemaster: You've got to spend a little bit in town and try and figure out what's going on before you start investigating elsewhere.  
 000940	Gamemaster: So, what do you want to do?  
-000941	Gamemaster: Now that you made it to Renford, not a hugely populated area, you know that somebody wearing a weird old tiny tunic came from here, showed up, met some guy, and then he died, and then 47 other people died after that over the next three weeks.  
+000941	Gamemaster: Now that you made it to Wrenford, not a hugely populated area, you know that somebody wearing a weird old tiny tunic came from here, showed up, met some guy, and then he died, and then 47 other people died after that over the next three weeks.  
 000942	Cedric: So I'd like to gather information.  
 000943	Gamemaster: Okay.  
 000944	Gamemaster: Absolutely.  
@@ -1179,7 +1179,7 @@
 001179	Gamemaster: And with a 46 crit, do you gather any particular benefit?  
 001180	Gamemaster: No.  
 001181	Gamemaster: Okay.  
-001182	Gamemaster: So, I mean, like, the obvious thing of note as you guys exit the train station or looking around is that the average person in Renford is wearing regular clothes.  
+001182	Gamemaster: So, I mean, like, the obvious thing of note as you guys exit the train station or looking around is that the average person in Wrenford is wearing regular clothes.  
 001183	Cedric: Okay.  
 001184	Gamemaster: It's not like they're all just walking around wearing tunics and stuff.  
 001185	Gamemaster: Why, was that a bet or something?  
@@ -1189,7 +1189,7 @@
 001189	Gamemaster: They're wearing, like, you know, suits are kind of in vogue right now, especially if you're working suits and dresses.  
 001190	Gamemaster: But, you know, t-shirts, pants...  
 001191	Gamemaster: No tunics, none of that old-timey leggings, all that kind of stuff.  
-001192	Gamemaster: But with the 46, you would know that there is a small percentage of people in Renford who are devout worshippers of who they call the Green Father, which...  
+001192	Gamemaster: But with the 46, you would know that there is a small percentage of people in Wrenford who are devout worshippers of who they call the Green Father, which...  
 001193	Gamemaster: as best your listeners can tell, is like some kind of...  
 001194	Gamemaster: representation of the Virgin Expanse, of the Giant forest behind you, instead of necessarily being, like, a specific guy.  
 001195	Gamemaster: But as part of that kind of getting into worship of the Green Father, they've kind of issued some of the more... I don't know if that's how you say that word.  
@@ -1199,9 +1199,9 @@
 001199	Gamemaster: They don't really mess with things that are too far removed from what they perceive as the natural state.  
 001200	Gamemaster: And so, you know, people asking around, they're like, well, obviously they haven't given us any details to find a specific person.  
 001201	Cedric: Okay.  
-001202	Gamemaster: But if I had to put money on some guy in a tunic that came from Renford, I would guess it would be the weird people that don't like cars a little bit out of the city.  
+001202	Gamemaster: But if I had to put money on some guy in a tunic that came from Wrenford, I would guess it would be the weird people that don't like cars a little bit out of the city.  
 001203	Gamemaster: And so that's kind of where they point you.  
-001204	Gamemaster: They point you in the direction you know where the Renford commune, as they call it, is, like on the outskirts of Renford.  
+001204	Gamemaster: They point you in the direction you know where the Wrenford commune, as they call it, is, like on the outskirts of Wrenford.  
 001205	Cedric: That's my contribution for the day, if you guys want to do anything else.  
 001206	Cedric: Otherwise, grab a beer.  
 001207	Krod: Krod will glance at Mickey and say, the old-fashioned way.  
@@ -1285,7 +1285,7 @@
 001285	Krod: I also can't beat it.  
 001286	Gamemaster: Okay, so with a 40, I think the best you would get is... I imagine your character with alcohol lore has tasted a wide variety of beers, and so would know what notes to expect in different kinds of beers.  
 001287	Cedric: I'd like to ask someone about this.  
-001288	Gamemaster: And there's a weird, herbaceous note in the house beer here, in whatever that you know is fermented, like in Renford, that you...  
+001288	Gamemaster: And there's a weird, herbaceous note in the house beer here, in whatever that you know is fermented, like in Wrenford, that you...  
 001289	Gamemaster: Had not quite place.  
 001290	Mickey: Thanks.  
 001291	Gamemaster: Unfortunately, there's not a lot more about that.  
@@ -1525,7 +1525,7 @@
 001525	Gamemaster: The city never really grew large enough to warrant that.  
 001526	Gamemaster: You guys can just take a nice 20-minute walk out to the outskirts of town.  
 001527	Gamemaster: It is pretty obvious once you've found...  
-001528	Gamemaster: the edge of the commune, because the concrete and brick buildings of Renford kind of fade away as you make it to the outskirts and are replaced with wood and thatch-roofed houses.  
+001528	Gamemaster: the edge of the commune, because the concrete and brick buildings of Wrenford kind of fade away as you make it to the outskirts and are replaced with wood and thatch-roofed houses.  
 001529	Gamemaster: that look like they were built for some kind of historical reenactment and not necessarily where people are actually living.  
 001530	Gamemaster: But people are actually living!  
 001531	Gamemaster: As you get a bit closer, no perception check necessary, the first person you see is an older-looking human man, full-on wearing a tunic, by the looks of it herding some sheep.  
@@ -3587,7 +3587,7 @@
 003587	Gamemaster: Anyone!  
 003588	Gamemaster: Please!  
 003589	Gamemaster: Um...  
-003590	Gamemaster: He looks like he's wearing... He looks like a kid that you would see in Helya.  
+003590	Gamemaster: He looks like he's wearing... He looks like a kid that you would see in Hallia.  
 003591	Gamemaster: Like, cargo shorts, a graphic tee by the looks of it.  
 003592	Gamemaster: He's got a bald cap on.  
 003593	Gamemaster: You can't really see his face from this perspective.  

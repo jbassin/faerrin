@@ -828,15 +828,15 @@
 000828	Andros: Went to the boonies.  
 000829	Gamemaster: Yes, the first victim of the curse you discovered met from somebody dressed in a tunic, and you were able to track that that person came from this particular city out in the boonies.  
 000830	Andros: So we tracked this man.  
-000831	Gamemaster: Renford is the name of the city, by the way.  
+000831	Gamemaster: Wrenford is the name of the city, by the way.  
 000832	Andros: Bedford?  
-000833	Gamemaster: Renford.  
-000834	Andros: Renford?  
+000833	Gamemaster: Wrenford.  
+000834	Andros: Wrenford?  
 000835	Gamemaster: W-R-E-N-F-O-R-D.  
-000836	Gamemaster: Renford.  
+000836	Gamemaster: Wrenford.  
 000837	Andros: So we tracked this man wearing a potato sack out there.  
 000838	Gamemaster: The Green Father.  
-000839	Andros: Looked around, found out that this man from Renford worshipped the Green Man.  
+000839	Andros: Looked around, found out that this man from Wrenford worshipped the Green Man.  
 000840	Andros: Oh.  
 000841	Andros: The Green Father, which does sound rather different than the Green Man.  
 000842	Krod: Thank you.  
@@ -873,7 +873,7 @@
 000873	Andros: You're like, I want to play in a movie theater.  
 000874	Krod: Welcome to Regal.  
 000875	Gamemaster: Either way.  
-000876	Gamemaster: So they get to Renford.  
+000876	Gamemaster: So they get to Wrenford.  
 000877	Gamemaster: They ask about weird regional beer ingredients.  
 000878	Andros: Somehow they end up at the guy in a tunic's house.  
 000879	Gamemaster: They figure out that there is a commune on the edge of town of people who, like, equivalent-ish to, like, Mannonites, where they kind of forego a lot of technology, which is where the tunic comes from, because, like, they worship the Green Father more so than the average person in the Clarion does.  
@@ -915,7 +915,7 @@
 000915	Gamemaster: He also failed both checks.  
 000916	Andros: Okay, so he doesn't know what the animals are.  
 000917	Gamemaster: Yeah, so I think that's a pretty good summary.  
-000918	Gamemaster: A brief overview of the Virgent Expanse itself, the place that you find yourselves in right now, is this is a forest the size of a country.  
+000918	Gamemaster: A brief overview of the Verdant Expanse itself, the place that you find yourselves in right now, is this is a forest the size of a country.  
 000919	Gamemaster: Um...  
 000920	Gamemaster: with trees that have sat for thousands of years, it's believed.  
 000921	Gamemaster: As you get closer to the center of the forest, the trees grow larger and taller, at their peak close to a mile high.  
@@ -1364,7 +1364,7 @@
 001364	Gamemaster: Sure.  
 001365	Andros: i'm using mythical i'm using mythic point oh that was even worse oh never mind i got nothing  
 001366	Cedric: So what town are you from?  
-001367	Gamemaster: Renford?  
+001367	Gamemaster: Wrenford?  
 001368	Cedric: What's your parents' names?  
 001369	Gamemaster: I don't have those, but he would.  
 001370	Cedric: Okay, that's fine.  
@@ -1390,7 +1390,7 @@
 001390	Krod: A lot of people do that.  
 001391	Andros: Yeah, a lot of guys do that.  
 001392	Gamemaster: So what crime are we investigating?  
-001393	Krod: Some people... There's a guy that might... We're sort of on the last valid leads of this, but we're looking for a guy from Renford, actually.  
+001393	Krod: Some people... There's a guy that might... We're sort of on the last valid leads of this, but we're looking for a guy from Wrenford, actually.  
 001394	Gamemaster: Oh, it's like...  
 001395	Krod: Hey, you wouldn't happen to dress up in a tunic in your pastime.  
 001396	Gamemaster: No.  
@@ -2103,7 +2103,7 @@
 002103	Gamemaster: 44.  
 002104	Gamemaster: He is being truthful.  
 002105	Gamemaster: As far as he's aware, he doesn't come from the middle of the forest.  
-002106	Gamemaster: He lives in Renford.  
+002106	Gamemaster: He lives in Wrenford.  
 002107	Gamemaster: He doesn't think that he came from here.  
 002108	Gamemaster: He was just walking for a little bit.  
 002109	Cedric: Okay.  
@@ -3124,7 +3124,7 @@
 003124	Gamemaster: Lyric... Oriel, the one playing the harp, will respond.  
 003125	Cedric: And are you aware of any connections between him and huskifying citizens of our great nation of the Iridescent Church?  
 003126	Gamemaster: We don't have to answer your questions, so if you could take a breather, take a seat, I'd be happy to talk over some conversation.  
-003127	Cedric: If they were in Claria, would they have to answer my questions?  
+003127	Cedric: If they were in Calaria, would they have to answer my questions?  
 003128	Gamemaster: What do you mean if they were in Calaria?  
 003129	Cedric: Like, if they were, like, in a city... I know they don't subscribe to being in Calaria, but if...  
 003130	Gamemaster: Like...  

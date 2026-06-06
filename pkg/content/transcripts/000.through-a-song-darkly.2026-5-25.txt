@@ -84,7 +84,7 @@
 000084	Anzu: PLS is... Oh, the Pale Lantern Society is pretty big.  
 000085	Gamemaster: You're the... You can also... You can also click on them.  
 000086	Argyle: um garrick is so fucked those fucking RunGunners i it makes sense the RunGunners no no that they're making it on their borders so they can traffic goods those smuggling assholes  
-000087	Anzu: Protectored is big, which makes sense.  
+000087	Anzu: Protectorate is big, which makes sense.  
 000088	Anzu: The Scale is relatively big, yeah.  
 000089	Gamemaster: There's not a lot of info on them yet, but you can click on it, and it brings up a little bit of information on each of the factions.  
 000090	Gamemaster: I mean, for the most part, you already know them, but... You don't like the RunGunners?  
@@ -130,13 +130,13 @@
 000130	Anzu: Looks like Noah got a pretty nice haircut.  
 000131	Argyle: It does.  
 000132	Johnny: Thank you.  
-000133	Argyle: Guys, looking at this base, at this chart, I low-key want to cut ties with the Solari subsurface.  
+000133	Argyle: Guys, looking at this base, at this chart, I low-key want to cut ties with the Solari Sub-surface.  
 000134	Argyle: It's kind of embarrassing to have our hearts communicate.  
 000135	Argyle: Is that like a security risk?  
 000136	Argyle: Like, is it a security risk?  
 000137	Argyle: Because they're going to get taken over.  
 000138	Benny: They don't even have the smallest one.  
-000139	Gamemaster: the the the Solari subsurface base is only one tile smaller than yours is it's not you know such a huge difference they don't  
+000139	Gamemaster: the the the Solari Sub-surface base is only one tile smaller than yours is it's not you know such a huge difference they don't  
 000140	Benny: The handsome chaps at Garrick Textiles do.  
 000141	Anzu: Yeah, they're screwed.  
 000142	Anzu: They are absolutely screwed.  
@@ -159,7 +159,7 @@
 000159	Benny: And Brick Hall has a huge base.  
 000160	Anzu: Yeah, that's why I need all the losers, Jorge.  
 000161	Argyle: Yeah.  
-000162	Anzu: Look at that base on Ambercall.  
+000162	Anzu: Look at that base on Amber Call.  
 000163	Argyle: So I really hope the Pale Lantern Society are good people.  
 000164	Argyle: I just really don't think they are.  
 000165	Argyle: So it's unfortunate that I think they're going to be working with the Amber Call.  
@@ -209,7 +209,7 @@
 000209	Anzu: And also, they're kind of impartial, I feel, to the conflicts.  
 000210	Anzu: I could be wrong about that, but... I don't think they'll do that, but you never know.  
 000211	Benny: This is the thing.  
-000212	Argyle: We're going to be so fucked if Ambercall takes out the Harlequins.  
+000212	Argyle: We're going to be so fucked if Amber Call takes out the Harlequins.  
 000213	Johnny: I don't like what you said at the moment.  
 000214	Argyle: I don't think they will either.  
 000215	Gamemaster: At the moment, at least, the Harlequins are the ones running the Strider.  
@@ -219,18 +219,18 @@
 000219	Johnny: Yes, you can.  
 000220	Benny: We can deal...  
 000221	Benny: This is a great opportunity.  
-000222	Benny: One of the funny things, we don't like Ambercall.  
-000223	Benny: I know how to get some people on Ambercall's case.  
-000224	Benny: Point out to the Iridescent Church that they have a smaller base than the Ambercall.  
+000222	Benny: One of the funny things, we don't like Amber Call.  
+000223	Benny: I know how to get some people on Amber Call's case.  
+000224	Benny: Point out to the Iridescent Church that they have a smaller base than the Amber Call.  
 000225	Benny: Their whole thing is pride.  
 000226	Anzu: If we could get them to take over Necrolog, that could be really good.  
 000227	Argyle: That's true.  
-000228	Benny: This is nice, but Ambercall's is huge.  
+000228	Benny: This is nice, but Amber Call's is huge.  
 000229	Benny: I mean, they're showing out.  
 000230	Benny: I'm surprised.  
 000231	Benny: I mean, one of the best showings for any org on this Strider.  
 000232	Benny: I mean, it's kind of amazing.  
-000233	Benny: Why do you hate Necrologues so much?  
+000233	Benny: Why do you hate NecroLog so much?  
 000234	Anzu: There's the proxy War.  
 000235	Benny: They're not going to take over Necrolog.  
 000236	Benny: They're going to rub it in Necrolog's face.  
@@ -238,7 +238,7 @@
 000238	Anzu: Thank you.  
 000239	Benny: I imagine people at Necrolog look like they're dead.  
 000240	Benny: So it's going to be like one of those... Yeah, exactly.  
-000241	Gamemaster: The one person at Nekrolag you met is a Dompir.  
+000241	Gamemaster: The one person at NecroLog you met is a dhampir.  
 000242	Johnny: Dead.  
 000243	Benny: And that's probably the best looking person.  
 000244	Gamemaster: Only half.  
@@ -253,7 +253,7 @@
 000253	Johnny: mm-hmm  
 000254	Argyle: Yeah, yeah, yeah.  
 000255	Anzu: Because we need to be insulated.  
-000256	Argyle: Sables and Sons is also really close to the walkways, which I don't know if they're planning to do pop shots and trying to rob us, because they're going to get fucked up if they try robbing people.  
+000256	Argyle: Sable and Suns is also really close to the walkways, which I don't know if they're planning to do pop shots and trying to rob us, because they're going to get fucked up if they try robbing people.  
 000257	Argyle: Yeah.  
 000258	Argyle: Who are the other small ones?  
 000259	Argyle: Which one do you think has Anzu's sister?  
@@ -277,7 +277,7 @@
 000277	Benny: They both have age.  
 000278	Benny: I think it's Necrolog.  
 000279	Argyle: Wait, wait.  
-000280	Argyle: Alka-Heist Freight.  
+000280	Argyle: Alkahest Freight.  
 000281	Argyle: What do we know about them?  
 000282	Johnny: Sounds like they're a freight company.  
 000283	Anzu: Not a lot, I don't think.  
@@ -726,7 +726,7 @@
 000726	Benny: People start arriving a bit more.  
 000727	Benny: One of the people that didn't show up to the cookout was Grayson's relative.  
 000728	Benny: Don't know what the issue is there.  
-000729	Benny: At the cookout, Johnny converses with Salvato from Solari, our strongest and most powerful ally.  
+000729	Benny: At the cookout, Johnny converses with Salvado from Solari, our strongest and most powerful ally.  
 000730	Benny: Anzu speaks with an old man.  
 000731	Benny: Argyle sets up a visit with Scale people.  
 000732	Benny: We go to the Scale place.  
@@ -898,7 +898,7 @@
 000898	Argyle: What do you mean, not a horrible idea?  
 000899	Argyle: Do you have a better one?  
 000900	Anzu: That's all.  
-000901	Argyle: Yeah, yeah, try to have her meet either at our heart or a neutral location, like the Scales headquarters.  
+000901	Argyle: Yeah, yeah, try to have her meet either at our heart or a neutral location, like the Scale's headquarters.  
 000902	Anzu: I just don't want to make... I also don't want to make her too suspicious.  
 000903	Argyle: She probably won't go for that.  
 000904	Argyle: What do you mean?  
@@ -925,7 +925,7 @@
 000925	Argyle: Who are we about to go talk with?  
 000926	Gamemaster: you haven't attempted to speak with them i don't believe it  
 000927	Anzu: Sable & Sons, Ætherion Limited, Verdant Holdings, The RunGunners, Radiant Gun, The Pale Lantern Society, Amber Call, and Garrick Textiles.  
-000928	Argyle: Sable and Son.  
+000928	Argyle: Sable and Suns.  
 000929	Argyle: Yeah.  
 000930	Benny: Woo Gary.  
 000931	Argyle: We also haven't chatted with the Ministry of Cultural Progress, right?  
@@ -1206,7 +1206,7 @@
 001206	Argyle: I'm going to pull them aside.  
 001207	Argyle: My friends aside will be like, we need to talk him into moving with us because they're going to fucking die.  
 001208	Gamemaster: Oh.  
-001209	Argyle: Tell them the Amber Collar is scary.  
+001209	Argyle: Tell them the Amber Call is scary.  
 001210	Argyle: I don't know.  
 001211	Argyle: You guys figure it out.  
 001212	Johnny: Listen, you know, Mr. I'm so sorry, what was his name again?  
@@ -1259,7 +1259,7 @@
 001259	Gamemaster: Oh, this is, I didn't realize that there were fans of the industry on board.  
 001260	Gamemaster: This is, you know, the poncho wasn't particularly popular, which always surprised me because I always thought it was an excellent multi-purpose garment.  
 001261	Benny: Exactly.  
-001262	Gamemaster: It's just, it's not been particularly popular in Helya.  
+001262	Gamemaster: It's just, it's not been particularly popular in Hallia.  
 001263	Benny: Couldn't have said it better myself.  
 001264	Gamemaster: Listen, if you go further out, Velthara, they love the poncho, especially further out, especially our waterproof variants.  
 001265	Gamemaster: Although, admittedly, that fabric isn't as soft, so I don't wear it myself.  
@@ -1324,8 +1324,8 @@
 001324	Johnny: My wife is dead!  
 001325	Johnny: Oh, my secretary is dead!  
 001326	Argyle: Not wife, just poor secretary.  
-001327	Anzu: Maybe Amber Cole will just make him an offer he can't refuse instead, and he'll live.  
-001328	Argyle: Well, I'm worried that Amber Cole is going to mind control him or something.  
+001327	Anzu: Maybe Amber Call will just make him an offer he can't refuse instead, and he'll live.  
+001328	Argyle: Well, I'm worried that Amber Call is going to mind control him or something.  
 001329	Johnny: Oh, no.  
 001330	Anzu: Oh, that could happen, yeah.  
 001331	Johnny: Such a nice guy.  
@@ -1419,10 +1419,10 @@
 001419	Gamemaster: Okay, so...  
 001420	Argyle: We'll give a dossier of these people and basically be like, we don't know.  
 001421	Gamemaster: You get... Okay, sure.  
-001422	Argyle: We're keeping Anaïs on them because they're next to Amber Cole to let everyone else know.  
+001422	Argyle: We're keeping Anaïs on them because they're next to Amber Call to let everyone else know.  
 001423	Argyle: We think they're... Yeah.  
 001424	Johnny: It's not gonna die.  
-001425	Gamemaster: So, you get Whirling and Rags hooked up to your Skain network so that you can feasibly have a chat with them if you want to, or if you think that they might die in the middle of the night and send off, like, a death rattle, you can... Okay.  
+001425	Gamemaster: So, you get Whirling and Rags hooked up to your skein network so that you can feasibly have a chat with them if you want to, or if you think that they might die in the middle of the night and send off, like, a death rattle, you can... Okay.  
 001426	Argyle: I stress... Yeah.  
 001427	Argyle: Yeah, I stress that.  
 001428	Argyle: If they get attacked, don't let us know.  
@@ -1488,7 +1488,7 @@
 001488	Gamemaster: And something is directing them, as they set about moving objects, unloading them off of... They didn't try to skirt around the you-get-one-vehicle rule, so they just had one, like, trailer that they are actively pulling boxes off of and unloading into their home.  
 001489	Benny: Thank you.  
 001490	Gamemaster: You get, just from the size of this area, multiple houses, any one of which is larger than yours, that when they were putting together this feign,  
-001491	Gamemaster: They had somebody around who was familiar with the art of constructing fanes from hearts and was able to steer it in a direction that fit whatever they were looking for.  
+001491	Gamemaster: They had somebody around who was familiar with the Heart of constructing fanes from hearts and was able to steer it in a direction that fit whatever they were looking for.  
 001492	Anzu: Thank you.  
 001493	Gamemaster: This is clearly a better outfit group.  
 001494	Gamemaster: I don't think any of you have necessarily had the chance in your backstories to interact with the Pale Lantern Society all that much.  
@@ -1731,7 +1731,7 @@
 001731	Gamemaster: Some of these areas are large.  
 001732	Gamemaster: There was clearly some know-how in building veins.  
 001733	Gamemaster: And some of these areas are smaller and were more like you, where they were figuring things out as they go, type deal.  
-001734	Gamemaster: Alkahast Freight, clearly the latter.  
+001734	Gamemaster: Alkahest Freight, clearly the latter.  
 001735	Gamemaster: Their home is, or their base, is approximately the same size as yours.  
 001736	Gamemaster: It's around the same length.  
 001737	Gamemaster: I think theirs was more like a line, if I recall.  
@@ -1898,7 +1898,7 @@
 001898	Gamemaster: and when you approach, it looks like they are hauling pieces out of the car that they were allowed to build what looks to be a small airplane.  
 001899	Argyle: Oh, let's just not go.  
 001900	Gamemaster: They brought all the pieces.  
-001901	Anzu: Now, before we speak to them, I do want to point out that they, outside of the Strider, their company is very competitively against Hildebrant.  
+001901	Anzu: Now, before we speak to them, I do want to point out that they, outside of the Strider, their company is very competitively against Hildebrandt.  
 001902	Gamemaster: They couldn't, like, tow it in, so they brought it in pieces, and now you can see there are two engineers that are currently in the process of what looks like putting it together, while there's another one or two people that are kind of supervising as the whole thing goes up.  
 001903	Gamemaster: You can see from out far and you're like, no.  
 001904	Argyle: I'm okay.  
@@ -1922,7 +1922,7 @@
 001922	Anzu: No, no, you're absolutely right.  
 001923	Anzu: That's why I wanted to point it out before we went in.  
 001924	Argyle: That's good.  
-001925	Argyle: All right, so we have left the Ministry of Cultural Progress, the Sable & Sons, the Limited, which has Tommy Shelby, and then we have Verdant Holdings.  
+001925	Argyle: All right, so we have left the Ministry of Cultural Progress, The Scale & Sons, the Limited, which has Tommy Shelby, and then we have Verdant Holdings.  
 001926	Gamemaster: welcome yeah there's there's a bunch  
 001927	Benny: Bye.  
 001928	Anzu: And Radiant Arms, I think, right?  
@@ -2099,7 +2099,7 @@
 002099	Gamemaster: and they bring you into what is, for all intents and purposes, a pretty cozy-looking living room, sitting room area.  
 002100	Gamemaster: They clearly figured out pretty quickly how to put together a home of some kind.  
 002101	Gamemaster: This does feel like a home.  
-002102	Gamemaster: It doesn't feel like a forward operating center like the Scales does, or like half of an airstrip like Journey and Heavy Industries is.  
+002102	Gamemaster: It doesn't feel like a forward operating center like the Scale's does, or like half of an airstrip like Journey and Heavy Industries is.  
 002103	Gamemaster: This is a house.  
 002104	Gamemaster: Um, this is a house that actually has a lot of firearms in it.  
 002105	Gamemaster: Um, both in terms of, like, art pieces and the like.  
@@ -2296,7 +2296,7 @@
 002296	Gamemaster: I'm more than happy to be part of your, uh, your little gaggle.  
 002297	Argyle: What?  
 002298	Anzu: Yes, actually, our space is not too far from here.  
-002299	Anzu: And our shared neighbor, Hildebrant, here has also been pretty forthcoming.  
+002299	Anzu: And our shared neighbor, Hildebrandt, here has also been pretty forthcoming.  
 002300	Anzu: So it could be a nice block, this area of the Strider.  
 002301	Gamemaster: Absolutely.  
 002302	Gamemaster: Happy to participate if you wouldn't mind.  
@@ -2548,7 +2548,7 @@
 002548	Argyle: Separately.  
 002549	Argyle: Yeah.  
 002550	Gamemaster: Okay, absolutely.  
-002551	Argyle: Also, generally, Argyle, when he's going to the gym and stuff like that, he's going to pass by Garrix and just double check they haven't been blown up.  
+002551	Argyle: Also, generally, Argyle, when he's going to the gym and stuff like that, he's going to pass by Garrick and just double check they haven't been blown up.  
 002552	Johnny: Yeah.  
 002553	Gamemaster: Absolutely.  
 002554	Gamemaster: Over the course of this week, you check by every once in a while, and they are both fine.  
@@ -2628,7 +2628,7 @@
 002628	Gamemaster: First of all, there is a bar in the back.  
 002629	Gamemaster: It looks like there's a bartender back there.  
 002630	Gamemaster: Nobody's actively engaged with them or ordering anything.  
-002631	Gamemaster: It's the morning, and it seems that the alcoholics have not found this part of the bar yet, although you do know from your interaction with Solari Subspace that they do have some alcohol on tap, and they're probably pretty far into it by now.  
+002631	Gamemaster: It's the morning, and it seems that the alcoholics have not found this part of the bar yet, although you do know from your interaction with Solari Sub-surface that they do have some alcohol on tap, and they're probably pretty far into it by now.  
 002632	Argyle: Hmm.  
 002633	Gamemaster: There are some waiters either like harlequins acting as waiters kind of loitering around in the back.  
 002634	Gamemaster: And it looks like there are currently two customers already situated when you guys arrive.  
@@ -2687,7 +2687,7 @@
 002687	Anzu: Are they around?  
 002688	Gamemaster: Um, Tengu are, like, just by nature of their general construction, so to speak, they tend to live in higher altitude areas.  
 002689	Anzu: Is it pretty rare?  
-002690	Gamemaster: So you get a lot of them over in Austrine, a lot of them in, like, the Opaline Mountains in Brithwyn and the like.  
+002690	Gamemaster: So you get a lot of them over in Austrene, a lot of them in, like, the Opaline Mountains in Brithwyn and the like.  
 002691	Benny: you  
 002692	Anzu: Okay.  
 002693	Gamemaster: Not so much in Calaria and Hallia.  
@@ -2709,7 +2709,7 @@
 002709	Gamemaster: The only thing of note is at some point, depending on how long you wait, if like 15 minutes go by, you'd see another group start to filter in being shepherded along on a floating disc by their butler.  
 002710	Argyle: I'll sit down with him.  
 002711	Gamemaster: As they get closer, unfortunately you have to wait until they're basically on the doorstep of the restaurant to identify them.  
-002712	Gamemaster: It is Paavo and a group of other people from Hildebrant who it looks like are just coming by for brunch.  
+002712	Gamemaster: It is Paavo and a group of other people from Hildebrandt who it looks like are just coming by for brunch.  
 002713	Anzu: Hmm.  
 002714	Anzu: Mm-hmm.  
 002715	Gamemaster: They stop in.  
@@ -2747,7 +2747,7 @@
 002747	Gamemaster: And I'll put out a hand.  
 002748	Anzu: Yep.  
 002749	Anzu: I'll shake.  
-002750	Anzu: I'll say, my name's Ansu.  
+002750	Anzu: I'll say, my name's Anzu.  
 002751	Anzu: I'm here with Panaclasm.  
 002752	Anzu: Who are you here with?  
 002753	Gamemaster: Lark Crowe.  
@@ -2790,7 +2790,7 @@
 002790	Johnny: No, on the hybridization.  
 002791	Johnny: There it is.  
 002792	Johnny: Whoa.  
-002793	Gamemaster: You've seen the name Larkrow pop up in two different locations.  
+002793	Gamemaster: You've seen the name Lark Crowe pop up in two different locations.  
 002794	Anzu: Yeah.  
 002795	Anzu: Because he supplied those stupid bandits, right?  
 002796	Johnny: He was also the ghost's gun contact for a little bit.  
@@ -2921,11 +2921,11 @@
 002921	Gamemaster: Happens to the best of us.  
 002922	Johnny: Oh, sorry, where are you staying?  
 002923	Gamemaster: The Ministry of Cultural Progress.  
-002924	Argyle: How are you Giannis?  
+002924	Argyle: How are you Giannos?  
 002925	Gamemaster: MoCA.  
 002926	Gamemaster: As this is often referred to.  
 002927	Johnny: What's your name, friend?  
-002928	Gamemaster: Giannis.  
+002928	Gamemaster: Giannos.  
 002929	Johnny: Great to meet you.  
 002930	Gamemaster: I was doing fine.  
 002931	Gamemaster: My brunch was interrupted, but I imagine I'll get over it.  
@@ -2981,7 +2981,7 @@
 002981	Gamemaster: Okay, so the Ministry of Cultural Progress started out as a convox of the Iridescent Church before it was kind of spun off into its own thing.  
 002982	Argyle: So they might be.  
 002983	Gamemaster: Their whole claim to fame is they own...  
-002984	Gamemaster: the radio waves in Calaria and Tormore and some of Rithwin.  
+002984	Gamemaster: the radio waves in Calaria and Tormeré and some of Rithwin.  
 002985	Benny: you you  
 002986	Gamemaster: And so their whole deal is they manage who can broadcast and when, they fund radio shows to ensure there's stuff going on, that kind of stuff.  
 002987	Gamemaster: And they are very, very heavily involved with the Calarian government and the Iridescent Church.  
@@ -3058,7 +3058,7 @@
 003058	Gamemaster: You got everybody but three.  
 003059	Gamemaster: Oh, no, sorry.  
 003060	Gamemaster: The fourth one.  
-003061	Gamemaster: You see Manus and Brini, the two people from Pell Lantern Society, talking to the Dompir that you had seen at Necrolog and a fourth figure, a taller-looking human, gray slicked-back hair.  
+003061	Gamemaster: You see Manus and Brini, the two people from Pale Lantern Society, talking to the dhampir that you had seen at Necrolog and a fourth figure, a taller-looking human, gray slicked-back hair.  
 003062	Gamemaster: He looks to be in his early 20s or so.  
 003063	Gamemaster: clearly like holding court amongst the four of them like he's telling a story by the looks of it and the other three are standing around listening and that's all of the people you can absolutely do that if you like  
 003064	Anzu: I roll to attack with my beak.  
@@ -3301,7 +3301,7 @@
 003301	Johnny: Oh, I missed that part.  
 003302	Johnny: No, my guy.  
 003303	Johnny: He died already.  
-003304	Johnny: Oh, it is the Kirin.  
+003304	Johnny: Oh, it is the Ki-Rin.  
 003305	Johnny: Ki-Rin.  
 003306	Argyle: Yeah.  
 003307	Argyle: Can we tame him and use him as horses?  
@@ -3444,7 +3444,7 @@
 003444	Argyle: That's true.  
 003445	Gamemaster: I don't know.  
 003446	Argyle: That's fucked up.  
-003447	Gamemaster: If you ever make it back to Helya, you can hunt him down and ask.  
+003447	Gamemaster: If you ever make it back to Hallia, you can hunt him down and ask.  
 003448	Johnny: Man, really right up in the mix.  
 003449	Benny: This is true.  
 003450	Gamemaster: He's still around.  

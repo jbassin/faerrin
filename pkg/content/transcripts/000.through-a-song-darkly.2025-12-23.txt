@@ -889,7 +889,7 @@
 000889	Arctos: Hell yeah.  
 000890	Gamemaster: You can't remove the hole from the trunk, but the inside of the trunk is larger than the exterior.  
 000891	Gamemaster: searching around trying to find things just like throughout the car of note you've already found you have the keys for the car in addition there is a like a duffel bag a go bag effectively tucked into the expanded trunk that has a set of clothes um  
-000892	Gamemaster: Some fake IDs associated with, like, flipping through them, you can see there's some with Hlarf's picture on them under different names, and then also some other faces that you would recognize as some of the people that killed you in the bar, as well as a handful of other people that you assume are also part of the Roundhead gang.  
+000892	Gamemaster: Some fake IDs associated with, like, flipping through them, you can see there's some with Hlarf's picture on them under different names, and then also some other faces that you would recognize as some of the people that killed you in the bar, as well as a handful of other people that you assume are also part of the Roundhat Gang.  
 000893	Gamemaster: You also find a levered crowbar and a set of infiltrator's theme stools.  
 000894	Arctos: Benny can take that.  
 000895	Gamemaster: Sorry, a thieves toolkit infiltrator.  
@@ -1051,7 +1051,7 @@
 001051	Anzu: Well, that's not going to help then.  
 001052	Gamemaster: Yeah, unfortunately you guys cruise around Sableclutch for a little bit, looking for an ATM, and you don't find any.  
 001053	Arctos: Excellent.  
-001054	Gamemaster: You could always go to Irodite Mutual's headquarters, because you know there's an ATM there, but you also know that that would be the best guarded.  
+001054	Gamemaster: You could always go to Iridite Mutual headquarters, because you know there's an ATM there, but you also know that that would be the best guarded.  
 001055	Gamemaster: If you don't care about there being a guard present, then that's fine.  
 001056	Gamemaster: That's an easy go.  
 001057	Arctos: Is there any people on the street that we can ask?  
@@ -1389,7 +1389,7 @@
 001389	Johnny: Who's got the card?  
 001390	Johnny: We need all the money off of this.  
 001391	Gamemaster: Is there something I should be concerned about when I access it?  
-001392	Johnny: This is Twelwynn, Leatherhide's first mate, and we killed him last night in an alley.  
+001392	Johnny: This is Tywelwyn, Leatherhide's first mate, and we killed him last night in an alley.  
 001393	Gamemaster: Good for you.  
 001394	Benny: Then we have his car.  
 001395	Arctos: We hit his body too.  
@@ -2044,7 +2044,7 @@
 002044	Gamemaster: You're not quite sure what at this distance, what modifications they're making to the car.  
 002045	Gamemaster: But it's undergoing some work.  
 002046	Gamemaster: Looking into the shop from the distance that you're in, just kind of like across the street, casing it, you can identify at least three people moving around in there.  
-002047	Gamemaster: Nobody's wearing the bowler hats associated with the round hat gang, so you see a few people wearing uniforms, though, that look like they're associated with the...  
+002047	Gamemaster: Nobody's wearing the bowler hats associated with the Roundhat Gang, so you see a few people wearing uniforms, though, that look like they're associated with the...  
 002048	Johnny: Thank you.  
 002049	Gamemaster: Gas-n-Go℠.  
 002050	Gamemaster: It's not super easy, especially at this distance, to try and figure out if they are associated with the gang or if they just work for the shop.  
@@ -2137,7 +2137,7 @@
 002137	Gamemaster: Around...  
 002138	Gamemaster: 8ish p.m.  
 002139	Gamemaster: You see the last of the employees for this Gas-n-Go℠ lock up and leave.  
-002140	Gamemaster: And then about two hours later, another car pulls up and out of it step some very obviously members of the Roundhat gang of different animal flavors who enter the building.  
+002140	Gamemaster: And then about two hours later, another car pulls up and out of it step some very obviously members of the Roundhat Gang of different animal flavors who enter the building.  
 002141	Johnny: Thank you.  
 002142	Arctos: Sorry.  
 002143	Gamemaster: Yes.  
@@ -2694,7 +2694,7 @@
 002694	Gamemaster: There is a throne on a raised altar of some kind.  
 002695	Arctos: Asshole.  
 002696	Gamemaster: There are a few people that you would recognize as...  
-002697	Gamemaster: members of the Roundhat gang.  
+002697	Gamemaster: members of the Roundhat Gang.  
 002698	Gamemaster: But there is a figure that you don't... You know what?  
 002699	Gamemaster: On a crit, I think you probably would recognize.  
 002700	Gamemaster: You'd have to squint a little bit.  
@@ -2855,7 +2855,7 @@
 002855	Gamemaster: Then it's the boar's turn.  
 002856	Gamemaster: Some of you will recognize this particular boar.  
 002857	Johnny: Oh, this guy.  
-002858	Arctos: Fuck that Borg.  
+002858	Arctos: Fuck that Org.  
 002859	Gamemaster: He'll look over and say, didn't I fucking kill you?  
 002860	Johnny: Oh, yeah.  
 002861	Gamemaster: Which strikes me as very similar to what Hlarf said right before he died.  
@@ -4578,7 +4578,7 @@
 004578	Anzu: I think I'm just going to try to agitate him again.  
 004579	Anzu: Okay.  
 004580	Gamemaster: Go for it.  
-004581	Gamemaster: Try and agitate Mr. Twelwin.  
+004581	Gamemaster: Try and agitate Mr. Tywelwyn.  
 004582	Gamemaster: That is a success.  
 004583	Johnny: uh...  
 004584	Gamemaster: Okay, absolutely.  
@@ -4588,7 +4588,7 @@
 004588	Anzu: Use an action to stride or take, it should be a 4d8 mental damage because I cast it at second level.  
 004589	Gamemaster: All right.  
 004590	Arctos: You gave me ADHD.  
-004591	Anzu: Then we will send a Psyburst his way.  
+004591	Anzu: Then we will send a Psiburst his way.  
 004592	Gamemaster: Of course.  
 004593	Johnny: Mind bird!  
 004594	Arctos: Man, man.  

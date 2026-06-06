@@ -890,7 +890,7 @@
 000890	Gamemaster: You should be able to see him within the next few days at the very least.  
 000891	Johnny: I'm sorry if I missed this.  
 000892	Johnny: What is the other group that's already here?  
-000893	Gamemaster: The other group would be Birth 6, which would be the Hildebrant Corporation.  
+000893	Gamemaster: The other group would be Birth 6, which would be the Hildebrandt Corporation.  
 000894	Gamemaster: There's no need for masks of the guests anymore, given that you'll all be traveling together, so I hope you don't mind that if anybody asks about you, your identities will be disclosed as well.  
 000895	Benny: What vehicle did they bring?  
 000896	Gamemaster: They brought...  
@@ -2560,7 +2560,7 @@
 002560	Gamemaster: Okay.  
 002561	Anzu: That's crazy.  
 002562	Anzu: That was FlourishCast.  
-002563	Anzu: So then we're going to try to send a... Psyburst his way.  
+002563	Anzu: So then we're going to try to send a... Psiburst his way.  
 002564	Gamemaster: He's cybersting.  
 002565	Anzu: we don't want to mind shift this because I don't know if he takes mental damage so there I'll send that in reflex save nothing happens yeah that's good enough that's my turn  
 002566	Gamemaster: Okay, I did roll well on this one.  

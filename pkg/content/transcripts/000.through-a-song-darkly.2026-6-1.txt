@@ -440,7 +440,7 @@
 000440	Johnny: Oh.  
 000441	Argyle: Oh, yes, we homies.  
 000442	Anzu: Like, in real life.  
-000443	Argyle: Yeah, we're homies with Hildemarant.  
+000443	Argyle: Yeah, we're homies with Hildebrandt.  
 000444	Benny: real life.  
 000445	Argyle: we saw the Pale Lantern.  
 000446	Johnny: Yeah.  
@@ -669,7 +669,7 @@
 000669	Gamemaster: I'm trying to think if there's anybody else that's particularly strange.  
 000670	Gamemaster: Manus is maybe a little bit weird.  
 000671	Anzu: The other ones are all like, yeah, but I had that pretty close.  
-000672	Gamemaster: Giannis, maybe?  
+000672	Gamemaster: Giannos, maybe?  
 000673	Gamemaster: I'll take just Kadou, being strange.  
 000674	Johnny: Oh, you know what it is?  
 000675	Anzu: I think, yeah.  
@@ -742,7 +742,7 @@
 000742	Gamemaster: Red with a fiery effect.  
 000743	Argyle: Okay.  
 000744	Gamemaster: Which you would place as making him a devotee of the air of the plague.  
-000745	Argyle: OK, so it looks like, and then who is Ischel again?  
+000745	Argyle: OK, so it looks like, and then who is Ichel again?  
 000746	Gamemaster: Ichel is the firearms manufacturer from Radiant Arms, the android.  
 000747	Johnny: Okay.  
 000748	Argyle: OK, OK, so top right, homies.  
@@ -2121,7 +2121,7 @@
 002121	Anzu: Okay, then I get 15 temporary hit points as I extract his thermal energy and use it to bolster myself.  
 002122	Gamemaster: Nice.  
 002123	Benny: What?  
-002124	Anzu: Then we will send a Psyburst at him.  
+002124	Anzu: Then we will send a Psiburst at him.  
 002125	Johnny: I feel like dogs are nimble.  
 002126	Anzu: Oh, guys, do we think it should make a reflex save or a will save?  
 002127	Argyle: Oh.  
@@ -2388,8 +2388,8 @@
 002388	Gamemaster: 500 feet?  
 002389	Gamemaster: Yeah, he'll cast Chain Lightning as well.  
 002390	Benny: he is not outside of benny's sprinting distance i just need him to understand the ben gas  
-002391	Gamemaster: He's attacking these Barkists.  
-002392	Gamemaster: He doesn't want the Barkists getting him.  
+002391	Gamemaster: He's attacking these barghests.  
+002392	Gamemaster: He doesn't want the barghests getting him.  
 002393	Johnny: Well, that's a lot of damage.  
 002394	Gamemaster: That is a critical failure, so this guy's going to take double damage.  
 002395	Argyle: Well, at least if we jump him now, he's probably losing two of his highest level spell slots.  
@@ -2648,7 +2648,7 @@
 002648	Johnny: No.  
 002649	Anzu: No way.  
 002650	Johnny: Jethro.  
-002651	Anzu: Josh, I'm going to throw a Psyburst at the Vicious Spargus that's right here.  
+002651	Anzu: Josh, I'm going to throw a Psiburst at the Vicious Spargus that's right here.  
 002652	Gamemaster: Absolutely.  
 002653	Anzu: It's a will.  
 002654	Gamemaster: Reflex or Will?  
@@ -3246,8 +3246,8 @@
 003246	Gamemaster: It is no longer... It is no more magically or physically intensive to move from, like, Void 1 to Void 2 than it is from Void 1,000,000 to Void 1,000,001.  
 003247	Gamemaster: The complications are some kind of logistics because you need some way of feeding yourself and actually making the transfer because it's assumed that whatever vehicle you're taking takes some kind of energy.  
 003248	Gamemaster: And...  
-003249	Gamemaster: Joker worlds tend to get both larger and more intense the further you go out, which makes it more dangerous, not more difficult.  
-003250	Gamemaster: Um, especially because, uh, the further you get out, you start to see multi-world Joker worlds.  
+003249	Gamemaster: Joker Worlds tend to get both larger and more intense the further you go out, which makes it more dangerous, not more difficult.  
+003250	Gamemaster: Um, especially because, uh, the further you get out, you start to see multi-world Joker Worlds.  
 003251	Gamemaster: Like, very early on, you see, oh, this world's weird.  
 003252	Gamemaster: Or, like, you move forward and this world has some weird quirk or something like that.  
 003253	Gamemaster: Uh, you get further along and you see, uh, a Joker world that is from, like, Void 1,000,000 to Void 1,112,000.  

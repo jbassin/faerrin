@@ -742,7 +742,7 @@
 000742	Johnny: Oh, no, no, he's probably a Thessian.  
 000743	Johnny: He's probably someone we've met.  
 000744	Johnny: Then we were like, all right, we could do a lot of crazy shenanigans to try and get a piece of art.  
-000745	Johnny: And Johnny was like, listen, guys, I feel like we could just steal the art from Arctos' house.  
+000745	Johnny: And Johnny was like, listen, guys, I feel like we could just steal the Heart from Arctos' house.  
 000746	Johnny: Didn't phrase it that way.  
 000747	Johnny: Gave Arctos a really beautiful speech about how he was the chosen one, which I don't really think penetrated Arctos' fuzzy head, but it kind of worked anyway.  
 000748	Johnny: Yeah.  
@@ -755,7 +755,7 @@
 000755	Benny: you you  
 000756	Johnny: He's still in an emergency meeting.  
 000757	Johnny: Probably not good.  
-000758	Johnny: We got the art, and then we walked out.  
+000758	Johnny: We got the Heart, and then we walked out.  
 000759	Johnny: Easy peasy, lemon squeezy.  
 000760	Johnny: Instead of difficult, difficult, lemon difficult.  
 000761	Gamemaster: Mm-hmm.  
@@ -812,7 +812,7 @@
 000812	Arctos: How big is Sbrtlby?  
 000813	Gamemaster: Yeah.  
 000814	Benny: Thank you.  
-000815	Gamemaster: Sbrtlby himself, I switched it over to the art thing.  
+000815	Gamemaster: Sbrtlby himself, I switched it over to the Heart thing.  
 000816	Gamemaster: Let me switch back to the row house.  
 000817	Arctos: Do you guys want to start growing some weed?  
 000818	Arctos: Should we grab some?  
@@ -955,7 +955,7 @@
 000955	Gamemaster: Because I was going to say you could justify doing crafting here as well.  
 000956	Gamemaster: Yeah, I think, unfortunately, like, architecture is not your strong suit.  
 000957	Gamemaster: You do not have one of the backgrounds that gives you, like, masonry lore, which are weirdly common.  
-000958	Anzu: Because what I really want to do is run through this building real fast, see if there's an office area, and see if Sbrtlby knew about the art thing, and if he's acquired any paintings.  
+000958	Anzu: Because what I really want to do is run through this building real fast, see if there's an office area, and see if Sbrtlby knew about the Heart thing, and if he's acquired any paintings.  
 000959	Gamemaster: So, you know, anywhere from one minute to, like, an hour.  
 000960	Benny: you you  
 000961	Gamemaster: Okay.  
@@ -1153,7 +1153,7 @@
 001153	Gamemaster: It was actually pretty easy for this man.  
 001154	Gamemaster: He was selling contraband under his full name.  
 001155	Gamemaster: which made it relatively easy to find him.  
-001156	Johnny: The Spurtleby Jones illegal drug operation.  
+001156	Johnny: The Sbrtlby Jones illegal drug operation.  
 001157	Anzu: All right.  
 001158	Johnny: Listen, I don't think anyone deserves to die, but this guy kind of had it coming.  
 001159	Arctos: He's a demon, not a devil, right?  
@@ -1229,10 +1229,10 @@
 001229	Benny: This could all be for naught.  
 001230	Arctos: While he's sorting that out on...  
 001231	Arctos: What's our plan?  
-001232	Arctos: Are we going to go to... I say we just go to the art dealer.  
+001232	Arctos: Are we going to go to... I say we just go to the Heart dealer.  
 001233	Arctos: Hey, take these paintings.  
 001234	Johnny: We got this painting.  
-001235	Anzu: The art dealer being the guy with the heart.  
+001235	Anzu: the Heart dealer being the guy with the heart.  
 001236	Johnny: I got it.  
 001237	Arctos: Yeah.  
 001238	Arctos: Yeah.  
@@ -1241,7 +1241,7 @@
 001241	Anzu: I mean, I could use maybe a brief to treat wounds, but...  
 001242	Arctos: We could go in the morning, too.  
 001243	Arctos: We don't have to go tonight.  
-001244	Johnny: I'm just worried we're going to walk in there and be like, now that you've given me the art, you'll have to fight my army, and then you can get the stone.  
+001244	Johnny: I'm just worried we're going to walk in there and be like, now that you've given me the Heart, you'll have to fight my army, and then you can get the stone.  
 001245	Arctos: Yeah, let's go in the morning.  
 001246	Benny: Yes.  
 001247	Arctos: Yeah, let's go in the morning.  
@@ -1647,7 +1647,7 @@
 001647	Arctos: Does anyone want to go for a jog?  
 001648	Johnny: Okay.  
 001649	Johnny: Yeah, sure, I'll go for a jog with you.  
-001650	Johnny: Tomorrow, our plan, are we saying, hey, it's us, we have the art, or are we just going to be straight up and say, hey, we have art, we have the quinn, we want to trade it for the... Is it a sphere?  
+001650	Johnny: Tomorrow, our plan, are we saying, hey, it's us, we have the Heart, or are we just going to be straight up and say, hey, we have art, we have the quinn, we want to trade it for the... Is it a sphere?  
 001651	Arctos: Cool.  
 001652	Johnny: It's a sphere we're trying to get?  
 001653	Anzu: A keystone?  
@@ -2594,7 +2594,7 @@
 002594	Gamemaster: Okay, so with Arctos' role, I mean, the DC here is not very high to get the original, the basic gist of the place.  
 002595	Gamemaster: You have been lowered into the Fane of presumably an old and more powerful heart than the ones that you have interacted with previously.  
 002596	Gamemaster: This is one of, as per your research in Belvedere's archives, one of the three hearts that is used to control the entirety  
-002597	Gamemaster: of train and bus travel within Hylia by Prime Meridian.  
+002597	Gamemaster: of train and bus travel within Hallia by Prime Meridian.  
 002598	Gamemaster: There is the moment the elevators open, the sound of ticking.  
 002599	Johnny: you you  
 002600	Gamemaster: of many discrete mechanical components moving forward as if you were inside the interior of a watch.  
@@ -2719,7 +2719,7 @@
 002719	Gamemaster: And then...  
 002720	Gamemaster: There are, it's strange.  
 002721	Gamemaster: It looks like part of the painting is melting.  
-002722	Gamemaster: And then you realize that some of the outer layer of the paint is just being abraded off in front of you by some kind of force being generated by the art, which is interesting.  
+002722	Gamemaster: And then you realize that some of the outer layer of the paint is just being abraded off in front of you by some kind of force being generated by the Heart, which is interesting.  
 002723	Gamemaster: In multiple ways, perhaps, I'll let you get one perception check as it gets abraded away.  
 002724	Benny: Who amongst us is the best perceiver?  
 002725	Arctos: Well, it should be me, but... Oops.  
@@ -2932,7 +2932,7 @@
 002932	Benny: These are the last people looking for it, though, so this is great.  
 002933	Benny: We can take  
 002934	Benny: Kill them, spartal bees, in hell for the next six months, and no one else is looking for it, so we're good.  
-002935	Johnny: They gave us... We have to fight Sartleby again.  
+002935	Johnny: They gave us... We have to fight Sbrtlby again.  
 002936	Arctos: Hopefully Onik was on the trail and is also here as backup.  
 002937	Anzu: Why are these two guys absolute freaks?  
 002938	Anzu: Why are they not just normal people?  
@@ -2970,7 +2970,7 @@
 002970	Johnny: This can't be a sign of bad things.  
 002971	Gamemaster: Can I... That's crazy.  
 002972	Benny: Yeah yellow versus red.  
-002973	Gamemaster: Can I ask, out of curiosity, if one of you guys hover over the Submecanators versus one of the people from Concordia, is the border different?  
+002973	Gamemaster: Can I ask, out of curiosity, if one of you guys hover over the Submechanitor versus one of the people from Concordia, is the border different?  
 002974	Anzu: It's yellow.  
 002975	Johnny: Hmm?  
 002976	Anzu: All right.  
@@ -3125,7 +3125,7 @@
 003125	Anzu: Via magical means.  
 003126	Gamemaster: Okay.  
 003127	Gamemaster: All right.  
-003128	Gamemaster: That'll bring us to Submechanic 4.  
+003128	Gamemaster: That'll bring us to Submechanitor 4.  
 003129	Gamemaster: So, Mr. Darkmoor, the Archmechanic...  
 003130	Gamemaster: Can't do combat.  
 003131	Gamemaster: He's a civilian.  
@@ -3302,7 +3302,7 @@
 003302	Gamemaster: Uh, okay.  
 003303	Benny: All right, maybe.  
 003304	Benny: That's crazy.  
-003305	Gamemaster: You, uh, hit him with the Falkata, and you've done a bunch of damage.  
+003305	Gamemaster: You, uh, hit him with the Falcata, and you've done a bunch of damage.  
 003306	Gamemaster: Um, and then you deal an additional 16, and in one turn he is mortal, but he is still standing.  
 003307	Benny: Okay.  
 003308	Gamemaster: And that one hits two.  
@@ -3435,7 +3435,7 @@
 003435	Arctos: That's what they wanted to show us, critical bits.  
 003436	Gamemaster: Happy Time Enforcer 5 is going to roll this fourth save.  
 003437	Gamemaster: and succeed, so they're going to take half of this.  
-003438	Gamemaster: Okay, and then submechanic under 2 is going to do the same thing at number 3, so they're going to roll a fort save.  
+003438	Gamemaster: Okay, and then Submechanitor under 2 is going to do the same thing at number 3, so they're going to roll a fort save.  
 003439	Gamemaster: They succeed, so they're going to take half damage.  
 003440	Gamemaster: Damage.  
 003441	Gamemaster: Okay.  
@@ -3839,7 +3839,7 @@
 003839	Gamemaster: It's fine.  
 003840	Arctos: Oh, it's a shame it wasn't with the Falcata.  
 003841	Gamemaster: It's totally fine.  
-003842	Benny: The Felicata, unfortunately,  
+003842	Benny: The Falcata, unfortunately,  
 003843	Gamemaster: He has three hit points.  
 003844	Benny: Oh, nice.  
 003845	Benny: Yeah, the Falcata, unfortunately, until next level, is two less than the other weapons I have.  
@@ -4086,7 +4086,7 @@
 004086	Johnny: Level 6 is so good.  
 004087	Johnny: That was so rude.  
 004088	Gamemaster: And of course, when...  
-004089	Gamemaster: Six months pass and you go back and the majordome is just like, yeah, I'm sorry.  
+004089	Gamemaster: Six months pass and you go back and the majordomo is just like, yeah, I'm sorry.  
 004090	Gamemaster: He's just, he's still there.  
 004091	Gamemaster: I still have an appointment for a week from now, though, if that's useful.  
 004092	Benny: you  

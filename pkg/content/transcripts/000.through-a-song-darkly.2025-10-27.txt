@@ -626,7 +626,7 @@
 000626	Argyle: We then...  
 000627	Argyle: Take out the car with our new license.  
 000628	Argyle: We drive over to the FedEx with Hippogriffs.  
-000629	Argyle: And then we go, wow, we should really figure out why these satellites pointed to this little safety deposit box, or PO box.  
+000629	Argyle: And then we go, wow, we should really figure out why these satellites pointed to this little safety deposit box, or P.O. Box.  
 000630	Argyle: And they were like, you know what?  
 000631	Argyle: They totally checked this thing all day.  
 000632	Argyle: So we just decide we're going to camp out in front of this thing.  
@@ -818,21 +818,21 @@
 000818	Gamemaster: box that is known to be the address of Embercall Incorporated, which is a known entity associated with Pyrelight, which is the gang that is doing stuff, I guess.  
 000819	Gamemaster: Um...  
 000820	Gamemaster: It has been pouring since yesterday.  
-000821	Gamemaster: You have a meeting later today on Pier 54 with Tywelwyn Leatherhide, head of the Round Hat Gang, who you did manage to get this meeting put together due to some swagger on Mr. Skyfall's part.  
+000821	Gamemaster: You have a meeting later today on Pier 54 with Tywelwyn Leatherhide, head of the Roundhat Gang, who you did manage to get this meeting put together due to some swagger on Mr. Skyfall's part.  
 000822	Gamemaster: You also have, it is currently Friday, so tomorrow there is a pending meeting in the sewers with Whiskers and Co.  
 000823	Gamemaster: adorned with tinfoil hats to learn more about this mysterious entity that is supposedly everywhere and controlling people's minds and the like.  
 000824	Anzu: That's tomorrow, you said.  
 000825	Anzu: Excellent.  
 000826	Gamemaster: Yes, that would be tomorrow.  
 000827	Gamemaster: You have been in the car for a few hours now, waiting to see if anybody would stop by to pick up stuff from this post box.  
-000828	Gamemaster: PO box?  
+000828	Gamemaster: P.O. Box?  
 000829	Gamemaster: What is that?  
-000830	Gamemaster: I don't know what the PO and PO box stands for.  
-000831	Gamemaster: PO box.  
+000830	Gamemaster: I don't know what the PO and P.O. Box stands for.  
+000831	Gamemaster: P.O. Box.  
 000832	Argyle: Post office.  
 000833	Gamemaster: Post office box.  
 000834	Gamemaster: So I guess it would be a G box, because it's not the post office, it's Gryphonline.  
-000835	Gamemaster: But that's worse, so we're going to keep calling it PO box.  
+000835	Gamemaster: But that's worse, so we're going to keep calling it P.O. Box.  
 000836	Argyle: It actually is post office box.  
 000837	Argyle: I thought it was being an ass.  
 000838	Argyle: I was like, I think that's right, but it doesn't seem right saying out loud.  
@@ -885,7 +885,7 @@
 000885	Gamemaster: And Bev says, and that's why we have on a special guest for today.  
 000886	Gamemaster: Everybody give a warm welcome to the, and you can hear some rustling of papers, the deputy director of the...  
 000887	Johnny: you you  
-000888	Gamemaster: Magical Crimes Convox here in Hellia.  
+000888	Gamemaster: Magical Crimes Convox here in Hallia.  
 000889	Gamemaster: Major-Chaplain Ewan McFoster.  
 000890	Gamemaster: Ewan, what do you think about all this?  
 000891	Gamemaster: And then a third voice comes on the radio and says, Well, Bev Sirnow, it's pretty obvious that this is a symptom of illegal augury.  
@@ -999,7 +999,7 @@
 000999	Gamemaster: We don't have, we're not that far along, unfortunately, fortunately, in Calarian society that we've not over-commoditized everything yet.  
 001000	Johnny: Yeah.  
 001001	Benny: How about we take care of whatever important business this... We only have like seven things to do today.  
-001002	Benny: We have to check out the PO box that they're definitely going to visit.  
+001002	Benny: We have to check out the P.O. Box that they're definitely going to visit.  
 001003	Benny: We got to have a meeting at sundown with that guy that is interested in you.  
 001004	Gamemaster: this is this is my mistake i think  
 001005	Benny: Little sus.  
@@ -1016,17 +1016,17 @@
 001016	Gamemaster: He's just looking for insider information, effectively?  
 001017	Benny: wrap it up one hour wrap it up it's 20 minutes I'm driving it's in the rain I want to be safe  
 001018	Gamemaster: Okay.  
-001019	Johnny: Alright, has anyone checked this PO Box?  
+001019	Johnny: Alright, has anyone checked this P.O. Box?  
 001020	Gamemaster: Ridiculous.  
 001021	Anzu: Yeah, you said it's been a long time at this point, right?  
 001022	Gamemaster: So in the time... It's been a while.  
-001023	Gamemaster: Nobody has come by to look at that particular PO box.  
+001023	Gamemaster: Nobody has come by to look at that particular P.O. Box.  
 001024	Anzu: And how close are we to our meeting?  
 001025	Gamemaster: Maybe an hour out?  
 001026	Argyle: We can get there in 30 minutes, so we should go.  
 001027	Gamemaster: Yeah.  
 001028	Johnny: Alright, friends.  
-001029	Johnny: I... I can... Are we... So do we want to, like, try and break into this PO Box while we're here?  
+001029	Johnny: I... I can... Are we... So do we want to, like, try and break into this P.O. Box while we're here?  
 001030	Johnny: Just to see what's in it?  
 001031	Anzu: I guess we could, but we have to be really careful.  
 001032	Benny: Oh, I think you're talking about plan B for Benny, that he'll take out his thieves' tools that he showed you earlier.  
@@ -1080,7 +1080,7 @@
 001080	Gamemaster: People have been kind of filtering in because work ended, and so they're going to check their mailbox on their way home.  
 001081	Gamemaster: There's like six or seven people in here right now, either interacting with the mail or there's one person talking to the employee.  
 001082	Gamemaster: Spread throughout the room.  
-001083	Gamemaster: No one's standing directly in front of the PO box that you're looking to break open, but there are people.  
+001083	Gamemaster: No one's standing directly in front of the P.O. Box that you're looking to break open, but there are people.  
 001084	Gamemaster: What you doing?  
 001085	Johnny: I'm going to get into... What does this map look like?  
 001086	Johnny: I have it open.  

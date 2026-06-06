@@ -214,7 +214,7 @@
 000214	Gamemaster: Oh, you're looking around the file system.  
 000215	Gamemaster: You're not looking at the scene selector.  
 000216	Gamemaster: I gotcha.  
-000217	Combo: This is under Worlds Faerin Assets Scenes.  
+000217	Combo: This is under Worlds Færrin Assets Scenes.  
 000218	Gamemaster: Okay.  
 000219	Combo: So I imagine it is the scenes.  
 000220	Gamemaster: Great.  
@@ -1160,7 +1160,7 @@
 001160	Gamemaster: In some respects, depending on where you end up, depending on how you end up, there is a much better life to be had in Hallia than there are in other parts of the world.  
 001161	Gamemaster: It's not true for everywhere, though.  
 001162	Gamemaster: That contrast is best seen in the Masque District and Teller's Run.  
-001163	Gamemaster: Two districts sat... Neighborhoods, boroughs, sat next to each other in Helya.  
+001163	Gamemaster: Two districts sat... Neighborhoods, boroughs, sat next to each other in Hallia.  
 001164	Gamemaster: One of them, the Masque District, very wealthy.  
 001165	Gamemaster: One of them, Teller's Run, not so much.  
 001166	Gamemaster: The Masque District is...  
@@ -1515,10 +1515,10 @@
 001515	Gamemaster: But if you find a shoot, you might end up in star 400,613.  
 001516	Gamemaster: The other... Sure.  
 001517	Pluckwort: This is on page six of liturgy, by the way.  
-001518	Gamemaster: The other thing of note, the other exception to their devoid of life is there are Joker worlds, which are...  
+001518	Gamemaster: The other thing of note, the other exception to their devoid of life is there are Joker Worlds, which are...  
 001519	Gamemaster: instances of Færrin somewhere on the infinite horizon that are very different from everything else.  
 001520	Combo: Thank you.  
-001521	Gamemaster: Ranging from there's a Joker World starward that has roving packs of cannibalistic butterfly, sorry, carnivorous butterflies that exist in the area where Helya used to be, which made it a little difficult to settle there.  
+001521	Gamemaster: Ranging from there's a Joker World starward that has roving packs of cannibalistic butterfly, sorry, carnivorous butterflies that exist in the area where Hallia used to be, which made it a little difficult to settle there.  
 001522	Gamemaster: to, like, there is a Færrin somewhere on the horizon that is where the devils live.  
 001523	Gamemaster: Not sure where that is, but one of them has the devil home, like, on it.  
 001524	Gamemaster: Because every once in a while, one pops up in Færrin Prime, or where they're, like, areas, and they got there somehow.  

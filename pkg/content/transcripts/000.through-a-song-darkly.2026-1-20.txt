@@ -647,7 +647,7 @@
 000647	Johnny: We also learned about the rest of the narrative.  
 000648	Johnny: We learned about Aut, the writer, who we already know, but now we know his title.  
 000649	Johnny: Renge, the fickle mistress.  
-000650	Johnny: Pter, the threshold.  
+000650	Johnny: P'ter, the threshold.  
 000651	Johnny: Insuperlex, the bifurcated mountain man.  
 000652	Johnny: And the Menhir, the heroes.  
 000653	Johnny: Which seem like a group of people who are dangerous, and then one group of rocks, which is pretty cool.  
@@ -797,10 +797,10 @@
 000797	Gamemaster: For the past, it looks like three months that he's had this particular journal.  
 000798	Gamemaster: Most of them are relatively benign-looking entries talking about how much so-and-so pissed him off today or something like that nature.  
 000799	Benny: Thank you.  
-000800	Gamemaster: Leafing through, it looks like he was actually skimming a little bit off the top of the take from the racketeering that he was running in the area in Sableclutch, because he talks about pocketing some coins before they actually make it into the Roundhat Kings.  
+000800	Gamemaster: Leafing through, it looks like he was actually skimming a little bit off the top of the take from the racketeering that he was running in the area in Sableclutch, because he talks about pocketing some coins before they actually make it into the Roundhat Gang.  
 000801	Gamemaster: Which you gather is the money that you stole off of him.  
 000802	Johnny: Is it good?  
-000803	Gamemaster: That wasn't Roundhead Gang's specific money.  
+000803	Gamemaster: That wasn't Roundhat Gang's specific money.  
 000804	Gamemaster: That was Hlarf's personal stash.  
 000805	Gamemaster: There's some poetry.  
 000806	Arctos: Thank you.  
@@ -2037,7 +2037,7 @@
 002037	Gamemaster: That was two actions.  
 002038	Gamemaster: He's going to use his third action to do a running reload and run away.  
 002039	Johnny: Yeah, that sucked.  
-002040	Gamemaster: Please, Kate, let me move him.  
+002040	Gamemaster: Please, game, let me move him.  
 002041	Gamemaster: Okay.  
 002042	Gamemaster: Johnny, it's your turn.  
 002043	Johnny: Ow.  
@@ -2675,7 +2675,7 @@
 002675	Arctos: Mm hmm.  
 002676	Anzu: Then I need to stride a little bit.  
 002677	Anzu: Maybe we'll go here.  
-002678	Anzu: And we will send a Psyburst at this fella.  
+002678	Anzu: And we will send a Psiburst at this fella.  
 002679	Anzu: Boom.  
 002680	Gamemaster: He succeeds, so he's only going to take half damage.  
 002681	Anzu: Oh.  

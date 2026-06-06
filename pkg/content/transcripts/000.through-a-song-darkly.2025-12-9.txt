@@ -648,7 +648,7 @@
 000648	Gamemaster: No, it's not.  
 000649	Gamemaster: I have a few of these images on the heart.arrity.cc, whatever, just to try and put a face to some of the characters that you've been seeing.  
 000650	Gamemaster: I will say,  
-000651	Gamemaster: Gin-soaked rag does not have an image, because try as I might, I could not get it to generate an image that doesn't look either very stupid or uncomfortable.  
+000651	Gamemaster: Gin Soaked Rag does not have an image, because try as I might, I could not get it to generate an image that doesn't look either very stupid or uncomfortable.  
 000652	Gamemaster: I will add the best two that I got, which we're not using for obvious reasons.  
 000653	Anzu: I'm not excited to see these either.  
 000654	Anzu: I have a moral issue where my wife and brother are both artists.  
@@ -663,7 +663,7 @@
 000663	Johnny: The first one felt like a brown paper napkin that got wet.  
 000664	Gamemaster: I mean... A little bit, yeah.  
 000665	Gamemaster: Maybe that's his brother.  
-000666	Gamemaster: Gin-soaked rag's brother is a brown paper napkin that got a little wet.  
+000666	Gamemaster: Gin Soaked Rag's brother is a brown paper napkin that got a little wet.  
 000667	Arctos: I don't know if non-pro Gemini has it, but you can make gems where you can give it a base prompt and images and things like that, and then you can activate that gem, and it'll have all that context.  
 000668	Johnny: Also, the picture that Josh has for Mr. Whiskers looks like one of the characters from the 2020 live-action Cats.  
 000669	Arctos: So you could use that to create a character.  
@@ -736,7 +736,7 @@
 000736	Gamemaster: Yeah, absolutely.  
 000737	Gamemaster: Roll for bargaining.  
 000738	Anzu: Three.  
-000739	Anzu: Looks like I'll be the gin-soaked rag.  
+000739	Anzu: Looks like I'll be the Gin Soaked Rag.  
 000740	Gamemaster: Sorry, you're still at anchor.  
 000741	Johnny: Oh no.  
 000742	Gamemaster: It happens.  
@@ -890,7 +890,7 @@
 000890	Gamemaster: But never out loud.  
 000891	Gamemaster: Yeah, that's Mr. Flintlock.  
 000892	Benny: Yeah, no, never mind.  
-000893	Anzu: Mike, that's Flint toboggan.  
+000893	Anzu: Mike, that's Flintlock Toboggan.  
 000894	Benny: Oh.  
 000895	Gamemaster: Everybody's favorite goat demon.  
 000896	Benny: I found the package.  
@@ -1808,7 +1808,7 @@
 001808	Gamemaster: Just like a bear out of the forest.  
 001809	Johnny: What?  
 001810	Gamemaster: Or like off of an iceberg.  
-001811	Gamemaster: Jorge, can you describe who Illumari is talking to right now, please?  
+001811	Gamemaster: Jorge, can you describe who Illmari is talking to right now, please?  
 001812	Arctos: Yeah, so at the moment, he's wearing a trench coat and a wide-brimmed hat.  
 001813	Anzu: Oh no, pictures.  
 001814	Arctos: And you can still make it out the polar bear because he has bright white fur, massive, massive paws, and a long snout.  
@@ -1822,7 +1822,7 @@
 001822	Arctos: If not, you know.  
 001823	Gamemaster: You would pick up two pings in this room with you.  
 001824	Anzu: I guess I cock my head a little bit and approach the table.  
-001825	Gamemaster: Illumari sees you approach, and not knowing anything of what happened last night, is just like, hey, come, we've got a new friend for you and your group, the sleepyheads.  
+001825	Gamemaster: Illmari sees you approach, and not knowing anything of what happened last night, is just like, hey, come, we've got a new friend for you and your group, the sleepyheads.  
 001826	Gamemaster: Anzu, this is Arctos.  
 001827	Johnny: Whoa.  
 001828	Gamemaster: Sorry, Sir Arctos.  
@@ -1834,7 +1834,7 @@
 001834	Anzu: Arctos, I'm so sorry.  
 001835	Anzu: Can you give me a minute with Illmari?  
 001836	Anzu: I mean, no disrespect.  
-001837	Arctos: Whatever you say to Ilmar, you can say to me.  
+001837	Arctos: Whatever you say to Illmari, you can say to me.  
 001838	Gamemaster: Illmari looks at you and then looks at Anzu and is like, yes, we can step away for a moment.  
 001839	Gamemaster: Order any eggs you like, Sir Arctos.  
 001840	Gamemaster: You know, first ones on the house.  
@@ -2621,7 +2621,7 @@
 002621	Benny: I'm zero in bear years.  
 002622	Arctos: I was originally not from here, but they kind of brought me here.  
 002623	Benny: I've never lived a year as a bear.  
-002624	Gamemaster: Arctos, you would know that you were originally imported from Austria.  
+002624	Gamemaster: Arctos, you would know that you were originally imported from Austrene.  
 002625	Arctos: Oh, I know.  
 002626	Arctos: They didn't ask.  
 002627	Arctos: Yeah.  

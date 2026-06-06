@@ -563,7 +563,7 @@
 000563	Johnny: There was a bit of description that we were all in iconoclasm from our various and sundry backgrounds.  
 000564	Johnny: We were a bird, a child, a scary doctor, and Ringo Starr.  
 000565	Johnny: We met Illmari Vaino, who was the founder of Iconoclasm.  
-000566	Johnny: We met Gin-Soaked Rag, who was the heart of the Sin and Tonic.  
+000566	Johnny: We met Gin Soaked Rag, who was the heart of the Sin and Tonic.  
 000567	Johnny: We met Anaïs and Anouk, who were level 11-ish, adventurers of sorts.  
 000568	Johnny: We met Dura Oil Drinker, who's a mechanic.  
 000569	Johnny: We played around with a rocket on a hammer and broke a hole in the wall.  
@@ -573,7 +573,7 @@
 000573	Johnny: But whatever.  
 000574	Johnny: We were given our first mission to go find out what happened to Flynn.  
 000575	Johnny: He was a male sprite.  
-000576	Johnny: He was investigating a roller rink being opened by the Roundhack gang run by Tywelwyn Leatherhead.  
+000576	Johnny: He was investigating a roller rink being opened by the Roundhat Gang run by Tywelwyn Leatherhead.  
 000577	Johnny: It might have been Leatherhide and I might have left off an E. I'm not sure.  
 000578	Gamemaster: It is Leatherhide.  
 000579	Johnny: I left off an E. It was so hard to say that name in a sentence.  
@@ -667,7 +667,7 @@
 000667	Gamemaster: A note here, the cops in this area are part of the Threshold Authority.  
 000668	Johnny: Looked around a little bit more.  
 000669	Gamemaster: That's the name of their particular company.  
-000670	Johnny: Seems like they might be bought out by either the Roundhack gang or maybe Embercall Industries slash Pyrelight.  
+000670	Johnny: Seems like they might be bought out by either the Roundhat Gang or maybe Embercall Industries slash Pyrelight.  
 000671	Johnny: Who knows?  
 000672	Johnny: We're just going to spitball them.  
 000673	Anzu: Josh, can you say that name one more time?  
@@ -774,7 +774,7 @@
 000774	Benny: E.  
 000775	Gamemaster: heisted a radar dish off the top of this rollerama, roller skating area.  
 000776	Gamemaster: And by heisted, I mean you just went when it was kind of dark, and you did get caught immediately, but it's fine, because as best you could tell, the witness is crazy.  
-000777	Gamemaster: stole the radar dish, packed it into the back of the Volkswagen Beetle, the city tripper that you have, and drove it on back to the Sim and Tonic.  
+000777	Gamemaster: stole the radar dish, packed it into the back of the Volkswagen Beetle, the city tripper that you have, and drove it on back to the Sin and Tonic.  
 000778	Gamemaster: You can just keep it in the garage for now until you figure out what you're doing with it, and you'll all bed down for the evening.  
 000779	Gamemaster: Get the benefits of a long rest, or just a regular rest, because long rests aren't a thing.  
 000780	Gamemaster: You wake up in the morning as well-rested as one can be.  
@@ -896,7 +896,7 @@
 000896	Gamemaster: Yeah.  
 000897	Argyle: I'd like to walk up.  
 000898	Argyle: What's the name of the heart again?  
-000899	Gamemaster: Gin-soaked rag or Ginny?  
+000899	Gamemaster: Gin Soaked Rag or Ginny?  
 000900	Argyle: Ginny.  
 000901	Argyle: Yeah, Ginny.  
 000902	Argyle: Do you guys have any fire repellent?  
@@ -1181,7 +1181,7 @@
 001181	Johnny: Find Twiluin.  
 001182	Johnny: 6.  
 001183	Johnny: Learn about the Zorbon.  
-001184	Gamemaster: If you guys are discussing this, I think Anok will say, if you all are running a little low on funds, there is work to be had in the city.  
+001184	Gamemaster: If you guys are discussing this, I think Anouk will say, if you all are running a little low on funds, there is work to be had in the city.  
 001185	Gamemaster: We're not in any particular rush.  
 001186	Gamemaster: We're just looking to make some money.  
 001187	Argyle: Oh yeah, let's go do that.  
@@ -1208,7 +1208,7 @@
 001208	Gamemaster: They're not gonna trust that to randos.  
 001209	Argyle: Yeah.  
 001210	Gamemaster: Um...  
-001211	Gamemaster: But if you're looking specifically for bounty work, there are usually bounties available for many of the three police orgs that work in Helya for outstanding warrants and the like.  
+001211	Gamemaster: But if you're looking specifically for bounty work, there are usually bounties available for many of the three police orgs that work in Hallia for outstanding warrants and the like.  
 001212	Argyle: I saw you go to the scrapyard.  
 001213	Argyle: I will say, I turn over to my compatriots, a healing potion's four gold.  
 001214	Argyle: That's a lot of money.  
@@ -1231,7 +1231,7 @@
 001231	Gamemaster: And it's very much the experience of, like, the area that the Sin and Tonic is in is not, like, particularly well-to-do.  
 001232	Gamemaster: It is mostly a, like, a commercialized area.  
 001233	Gamemaster: People don't make a ton of income, but it's enough to get by.  
-001234	Gamemaster: It definitely doesn't feel seedy so much as it just feels kind of, like, generally one of the poorer parts of Helya.  
+001234	Gamemaster: It definitely doesn't feel seedy so much as it just feels kind of, like, generally one of the poorer parts of Hallia.  
 001235	Gamemaster: But in comparison, as you move further starward, the buildings become less well-maintained, and they become older.  
 001236	Gamemaster: Like, they got built up at some point when people believed that, like, when this tram line was first built, people thought that it would boom and become this big thing, and so people got in and built buildings.  
 001237	Gamemaster: And then nothing really came of it, because there wasn't much reason to go that far out.  
@@ -1644,7 +1644,7 @@
 001644	Argyle: In human years.  
 001645	Argyle: If I was human.  
 001646	Gamemaster: But what about in dog years?  
-001647	Johnny: Yeah, I heard that there's a bunch of pug people sort of somewhere running around Faerin.  
+001647	Johnny: Yeah, I heard that there's a bunch of pug people sort of somewhere running around Færrin.  
 001648	Johnny: What if they were to give you numbers?  
 001649	Argyle: Yeah, I'd be different.  
 001650	Benny: We check an ID all of a sudden?  
@@ -2103,10 +2103,10 @@
 002103	Gamemaster: Actually, cars do exist.  
 002104	Gamemaster: And as such, tire companies exist.  
 002105	Argyle: What's the name of a big tire company?  
-002106	Gamemaster: So... Korath.  
-002107	Argyle: Like Korath.  
-002108	Gamemaster: Korath.  
-002109	Gamemaster: The Korath Guide.  
+002106	Gamemaster: So... Chorath.  
+002107	Argyle: Like Chorath.  
+002108	Gamemaster: Chorath.  
+002109	Gamemaster: The Chorath Guide.  
 002110	Argyle: Food chasers.  
 002111	Johnny: Tora, I've heard about them trying to sell more guides.  
 002112	Gamemaster: Is that true?  
@@ -2194,7 +2194,7 @@
 002194	Argyle: You're right.  
 002195	Gamemaster: You're just not going to get the answer.  
 002196	Argyle: All right.  
-002197	Johnny: I like you, Cobblejaw.  
+002197	Johnny: I like you, Copperjaw.  
 002198	Johnny: I think we're gonna be friends.  
 002199	Johnny: I'll take my sunglasses down.  
 002200	Gamemaster: Sure.  
@@ -2583,8 +2583,8 @@
 002583	Gamemaster: Okay, and how can we reach you?  
 002584	Benny: Thank you.  
 002585	Johnny: We're kind of moving through town.  
-002586	Johnny: If you reach out to Coppajaw over at whatever the junkyard was,  
-002587	Gamemaster: coppers are at the Sableclutch scrap.  
+002586	Johnny: If you reach out to Copperjaw over at whatever the junkyard was,  
+002587	Gamemaster: coppers are at The Scale clutch scrap.  
 002588	Johnny: Yeah, Carpajar, the Sableclutch scrap, he's sort of our boss.  
 002589	Gamemaster: Okay.  
 002590	Gamemaster: So if we end up seeing and catching this goblin pickpocket, then you would like us to go to him and then let him know?  
@@ -3271,8 +3271,8 @@
 003271	Gamemaster: Oh, I totally just applied that to Benny.  
 003272	Gamemaster: Ignore that.  
 003273	Gamemaster: I reverted it.  
-003274	Gamemaster: Um, Ugathol I takes the seven damage and is afeared and still off guard because it's squished between me two.  
-003275	Gamemaster: Um, that brings us to Ugathol II, who, you know, we did the whole...  
+003274	Gamemaster: Um, Ugathal I takes the seven damage and is afeared and still off guard because it's squished between me two.  
+003275	Gamemaster: Um, that brings us to Ugathal II, who, you know, we did the whole...  
 003276	Gamemaster: rotating around people thing.  
 003277	Gamemaster: So I think within that he's also going to take a stride action so that Argyle is also flat-footed.  
 003278	Johnny: What?  
@@ -3307,7 +3307,7 @@
 003307	Gamemaster: Okay, uh, so his, like, weird extended hand goes out, slashes you, and then grabs onto the muscle that he's, uh, cut into.  
 003308	Gamemaster: Just to keep you in place.  
 003309	Gamemaster: Is he in a history?  
-003310	Gamemaster: Ugathol I. He is afeard.  
+003310	Gamemaster: Ugathal I. He is afeard.  
 003311	Gamemaster: Loads of stuff.  
 003312	Gamemaster: I think he's going to... You're already immobilized, or you're grabbed, sorry.  
 003313	Gamemaster: I should actually apply that.  
@@ -3586,7 +3586,7 @@
 003586	Gamemaster: Absolutely.  
 003587	Johnny: Hmm.  
 003588	Benny: That's it.  
-003589	Gamemaster: Okay, that brings us to Ugithul 2's turn.  
+003589	Gamemaster: Okay, that brings us to Ugathal 2's turn.  
 003590	Gamemaster: They are frightened.  
 003591	Gamemaster: They were probably going to say something pithy and say, you know, it's your last chance to hand over the briefcase, small child, and all that kind of stuff.  
 003592	Gamemaster: But it did watch that small child just murder Mute, so I don't think it's going to do that.  
@@ -3633,7 +3633,7 @@
 003633	Argyle: The description that I got is not... Okay.  
 003634	Gamemaster: No, I... I didn't send the grabbed thing in the chat.  
 003635	Argyle: Okay.  
-003636	Argyle: No, it's like the grapple thing from Ukathal said on a success.  
+003636	Argyle: No, it's like the grapple thing from Ugathal said on a success.  
 003637	Argyle: It's only until the end of its next turn.  
 003638	Gamemaster: Oh.  
 003639	Gamemaster: No, you're still grabbed.  
@@ -3796,7 +3796,7 @@
 003796	Argyle: And he dies by just getting... Yeah!  
 003797	Gamemaster: He is knee-height already.  
 003798	Gamemaster: So... Yeah, the two of you can swing, and similar as before, it just kind of cripples.  
-003799	Gamemaster: You have killed the Ukathals that were stalking you through the alleys.  
+003799	Gamemaster: You have killed the Ugathal that were stalking you through the alleys.  
 003800	Argyle: Do they have anything on their bodies?  
 003801	Johnny: Okay.  
 003802	Argyle: Or they absorbed everything, right?  

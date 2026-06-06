@@ -1051,7 +1051,7 @@
 001051	Gamemaster: You get a Mythic Point sponsored by Dr. Pepper, the soda with the most aspartame per 12-ounce bottle.  
 001052	Benny: Woo!  
 001053	Gamemaster: Good if you're aspartame loving, yeah.  
-001054	Gamemaster: And so we will start today's session with all of you in the lobby of this Primerudian sub-nexus, surrounded by some dead bodies.  
+001054	Gamemaster: And so we will start today's session with all of you in the lobby of this Prime Meridian sub-nexus, surrounded by some dead bodies.  
 001055	Gamemaster: Yes, your hand is raised.  
 001056	Anzu: The first thing I want to do is more of a mental action.  
 001057	Anzu: You described a blue flash of light that came from these people as they expired.  
@@ -1115,7 +1115,7 @@
 001115	Gamemaster: So, you guys are just kind of, I guess, standing around and recovering from all of this stuff as there's a... whatever.  
 001116	Argyle: Yeah.  
 001117	Gamemaster: At this point, the Ark Mechanitor, the...  
-001118	Gamemaster: the friend that you had made over the course of coming in here and selling some art, he had been the one that had made the connection to the submechanators and were using them as, like, little guys throughout the combat.  
+001118	Gamemaster: the friend that you had made over the course of coming in here and selling some art, he had been the one that had made the connection to the Submechanitor and were using them as, like, little guys throughout the combat.  
 001119	Gamemaster: He drops that at this point.  
 001120	Gamemaster: He no longer needs that control since it seems the threat has passed, and he will walk out and start poking...  
 001121	Argyle: Yeah.  
@@ -2402,7 +2402,7 @@
 002402	Anzu: Okay, okay, okay.  
 002403	Gamemaster: I apologize.  
 002404	Gamemaster: But I will also note, like, the callout specifically, the person who was talking about the Pelgrimage said that the keystones were spread in and around Hallia.  
-002405	Gamemaster: Yeah, I... Ostren is pretty far away from Hallia.  
+002405	Gamemaster: Yeah, I... Austrene is pretty far away from Hallia.  
 002406	Argyle: Oh, around.  
 002407	Argyle: As far as Peltier.  
 002408	Anzu: I mean...  
@@ -2526,7 +2526,7 @@
 002526	Benny: He's a tween.  
 002527	Johnny: The whole time.  
 002528	Johnny: The whole time.  
-002529	Gamemaster: Yeah, Ansu's dad, Adol, will say hi to all of you.  
+002529	Gamemaster: Yeah, Anzu's dad, Adol, will say hi to all of you.  
 002530	Gamemaster: Have a little chat.  
 002531	Gamemaster: Just, you know.  
 002532	Gamemaster: If anything else, he's just happy that you all don't sound like you're criminals or anti-nobility rebels.  
@@ -2695,14 +2695,14 @@
 002695	Johnny: It's not under Johnny Skyfall.  
 002696	Benny: you you  
 002697	Johnny: That's one.  
-002698	Johnny: Second one, pretty quickly, I would like to follow up on the Sable & Sons laser gun thing.  
+002698	Johnny: Second one, pretty quickly, I would like to follow up on The Scale & Sons laser gun thing.  
 002699	Johnny: I had a... I believe I had...  
 002700	Gamemaster: Yes, absolutely.  
 002701	Anzu: Lark.  
 002702	Johnny: Yes, Lark Crowe.  
 002703	Gamemaster: Yes, you can do that.  
 002704	Gamemaster: Okay, so you actually had two avenues here.  
-002705	Gamemaster: You could meet up with the Sable and Suns, like, with the contact, and you had asked Hale to look into it on his end.  
+002705	Gamemaster: You could meet up with The Scale and Sons, like, with the contact, and you had asked Hale to look into it on his end.  
 002706	Benny: Thank you.  
 002707	Gamemaster: And I think you'll get two different, like, pieces of information out of those particular avenues.  
 002708	Gamemaster: What is the plan with luck?  
@@ -2825,7 +2825,7 @@
 002825	Gamemaster: Um... Yep.  
 002826	Gamemaster: Uh, she, uh...  
 002827	Gamemaster: Starts pulling out another folder.  
-002828	Gamemaster: Having finished your briefing, she immediately moves on to the next thing, and she starts talking to Flipok about something happening with Althara.  
+002828	Gamemaster: Having finished your briefing, she immediately moves on to the next thing, and she starts talking to Flipok about something happening with Velthara.  
 002829	Argyle: Flintlock, and I leave and just start.  
 002830	Argyle: Guests heading over.  
 002831	Gamemaster: Flipok tips a non-existent hat to you.  
@@ -3294,7 +3294,7 @@
 003294	Gamemaster: I think at most you guys have seen worrying diagrams and the like over the past two weeks in the bar of Arctos sketching out images of glass bottles.  
 003295	Gamemaster: I don't know.  
 003296	Gamemaster: Past that, it seems he's very into whatever he's doing right now.  
-003297	Anzu: I cannot believe that you're out for Arctosis for him to become a drug dealer.  
+003297	Anzu: I cannot believe that you're out for Arctos' for him to become a drug dealer.  
 003298	Johnny: I can't believe this.  
 003299	Johnny: And you brought back.  
 003300	Johnny: Argyle 2.0.  

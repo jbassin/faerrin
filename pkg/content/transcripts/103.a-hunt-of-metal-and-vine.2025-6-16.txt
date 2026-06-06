@@ -3942,7 +3942,7 @@
 003942	Gamemaster: The mage has been demoralized.  
 003943	Reverend: That mage is... That mage is very demoralizing.  
 003944	Gamemaster: Don't do that.  
-003945	Reverend: Following that, I will... I will strike Kate's mage.  
+003945	Reverend: Following that, I will... I will strike game's mage.  
 003946	Gamemaster: No, you won't.  
 003947	Reverend: I get a hero point, though.  
 003948	Reverend: I will follow up and attempt to strike again, but with multiple attack penalty.  

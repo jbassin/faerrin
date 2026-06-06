@@ -854,7 +854,7 @@
 000854	Benny: Divex does not have a hard G. Benny doesn't have pop.  
 000855	Gamemaster: It's similar.  
 000856	Benny: Benny's such a fun name.  
-000857	Gamemaster: Benny actually follows a little bit from Dive-X, because Benny's just short for his full name, which does also have the X in it.  
+000857	Gamemaster: Benny actually follows a little bit from Divex, because Benny's just short for his full name, which does also have the X in it.  
 000858	Benny: That's true.  
 000859	Gamemaster: So, you know, you're keeping with that theme.  
 000860	Benny: But okay.  
@@ -868,7 +868,7 @@
 000868	Benny: I changed one letter of a different name.  
 000869	Gamemaster: Okay, but...  
 000870	Benny: And it wasn't the X. True.  
-000871	Gamemaster: But when I say that you originated it, you were the one that handed me a piece of paper that said Bennex on it.  
+000871	Gamemaster: But when I say that you originated it, you were the one that handed me a piece of paper that said Bennix on it.  
 000872	Gamemaster: Like, I didn't come up with the name, you did.  
 000873	Benny: True.  
 000874	Benny: But I got Bennix from somewhere.  
@@ -1630,7 +1630,7 @@
 001630	Gamemaster: Anything else you guys want to do?  
 001631	Anzu: I go to sleep.  
 001632	Gamemaster: OK.  
-001633	Anzu: Well, if most of it was contained to Taylor's run...  
+001633	Anzu: Well, if most of it was contained to Teller's Run...  
 001634	Benny: That it was the bad people.  
 001635	Benny: You're right.  
 001636	Benny: Benny is... I don't know how well Benny's going to sleep.  
@@ -3153,7 +3153,7 @@
 003153	Gamemaster: So you guys are driving for a while.  
 003154	Gamemaster: I will then ask, as we're going, can I have, I guess it has to be Benny and Argyle, because you guys are in the front.  
 003155	Gamemaster: I'm going to need a perception check from you guys as like a kind of watch as you're driving forward.  
-003156	Benny: 24 for Bennex.  
+003156	Benny: 24 for Bennix.  
 003157	Argyle: I got those goggles.  
 003158	Argyle: I'm going to re-roll that.  
 003159	Argyle: 29.  
@@ -3163,7 +3163,7 @@
 003163	Gamemaster: It is not long after you get off of the main highway before you are almost entirely on the road on your own.  
 003164	Gamemaster: Not a lot of people are heading out to this part of Hallia, or the outskirts thereof.  
 003165	Gamemaster: There's not a lot to do here.  
-003166	Gamemaster: Most transit continues further south, heading towards Tormoray, or what used to be Raelion, and now kind of  
+003166	Gamemaster: Most transit continues further south, heading towards Tormeré, or what used to be Raelion, and now kind of  
 003167	Gamemaster: navigates around that area but you're you're kind of headed in the direction of nothing effectively there's this little bit of a dead zone in calaria where people aren't there anymore it's it's it's not there are no resources that are worth building out there so you you very quickly end up like on your own on the road uh i do have uh perhaps a little bit of a flavor question there's no speed limit in in calaria they're not going to restrict you like that how fast would benny be driving  
 003168	Johnny: you  
 003169	Benny: Yeah.  
