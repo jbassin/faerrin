@@ -76,13 +76,19 @@ function contextFor(lines: string[]) {
   };
 }
 
+/** Accept either 2026-2-10 or 2026-02-10; normalize to ISO zero-padded. */
+function toIsoDate(d: string): string {
+  return d.replace(/^(\d{4})-(\d{1,2})-(\d{1,2})$/, (_m, y, mo, da) => `${y}-${mo.padStart(2, '0')}-${da.padStart(2, '0')}`);
+}
+
 async function main() {
   const arc = process.argv[2];
-  const date = process.argv[3];
-  if (!arc || !date) {
+  const dateArg = process.argv[3];
+  if (!arc || !dateArg) {
     console.error('Usage: bun scripts/review-labels.ts <arc> <date>');
     process.exit(1);
   }
+  const date = toIsoDate(dateArg);
 
   const path = join(LABELS_DIR, `${arc}.${date}.json`);
   const label = await readEvalLabel(path);

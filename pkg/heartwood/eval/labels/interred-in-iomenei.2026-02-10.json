@@ -1,0 +1,1772 @@
+{
+  "session": {
+    "arc": "interred-in-iomenei",
+    "date": "2026-02-10"
+  },
+  "canonFacts": [
+    {
+      "id": "d001",
+      "statement": "Iomene (also spelled Iominae) is the largest of the Strider Cities of Istria, a man-made moving city built inside an artificial mountain, housing approximately 100,000 residents.",
+      "entities": [
+        "Iomene",
+        "Istria"
+      ],
+      "citations": [
+        {
+          "start": 337,
+          "end": 337
+        }
+      ]
+    },
+    {
+      "id": "d002",
+      "statement": "Iomene is hundreds of years old, having been built almost immediately after the gods first came to Færrin, making it one of the oldest still-operating structures on Færrin.",
+      "entities": [
+        "Iomene",
+        "Færrin"
+      ],
+      "citations": [
+        {
+          "start": 341,
+          "end": 343
+        }
+      ]
+    },
+    {
+      "id": "d003",
+      "statement": "Iomene travels across the Deadlands and moves through slips along the infinite horizon, stopping periodically to collect ancient treasures, archaeotech, and artifacts from the Dark Ages.",
+      "entities": [
+        "Iomene",
+        "Deadlands"
+      ],
+      "citations": [
+        {
+          "start": 345,
+          "end": 349
+        }
+      ]
+    },
+    {
+      "id": "d004",
+      "statement": "Iomene is socially stratified: the upper class (heroes) live on the upper floors and are rewarded for delving into ancient dungeons and retrieving spoils, while the working class (Undercrofters) live in the Undercroft below and perform all maintenance and labor that keeps the city moving.",
+      "entities": [
+        "Iomene",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 351,
+          "end": 361
+        }
+      ]
+    },
+    {
+      "id": "d005",
+      "statement": "The Undercroft is home to tens of thousands of Undercrofters organized into clans, each led by a clan leader.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 361,
+          "end": 371
+        }
+      ]
+    },
+    {
+      "id": "d006",
+      "statement": "Tens of thousands of crofters (Undercrofters) live below the surface inside the Undercroft.",
+      "entities": [
+        "Undercroft",
+        "Undercrofters"
+      ],
+      "citations": [
+        {
+          "start": 361,
+          "end": 362
+        }
+      ]
+    },
+    {
+      "id": "d007",
+      "statement": "Undercrofters are born in the Undercroft and would typically never see sunlight.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 362,
+          "end": 365
+        }
+      ]
+    },
+    {
+      "id": "d008",
+      "statement": "The Undercroft of Iomene has hundreds of labyrinthian levels with no windows, lit instead by lumen lights (magic lights) studded throughout its metal decks.",
+      "entities": [
+        "Iomene",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 364,
+          "end": 367
+        }
+      ]
+    },
+    {
+      "id": "d009",
+      "statement": "The Undercroft has hundreds of labyrinthian levels with no windows, as windows are considered structural weaknesses that could be assaulted from the outside.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 364,
+          "end": 366
+        }
+      ]
+    },
+    {
+      "id": "d010",
+      "statement": "The Undercroft is lit by lumen lights — magic lights studded throughout the metal decks of its interior.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 367,
+          "end": 367
+        }
+      ]
+    },
+    {
+      "id": "d011",
+      "statement": "Mysterious happenings have been affecting Iomene, including fires, the killings of clan leaders of various groups in the Undercroft under apparently natural circumstances, and a six-second freezing of two of the Strider City's six legs.",
+      "entities": [
+        "Iomene",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 370,
+          "end": 376
+        }
+      ]
+    },
+    {
+      "id": "d012",
+      "statement": "Iomene is propelled by six legs.",
+      "entities": [
+        "Iomene"
+      ],
+      "citations": [
+        {
+          "start": 373,
+          "end": 373
+        }
+      ]
+    },
+    {
+      "id": "d013",
+      "statement": "Iomene is a Strider City that walks on six legs.",
+      "entities": [
+        "Iomene"
+      ],
+      "citations": [
+        {
+          "start": 373,
+          "end": 373
+        }
+      ]
+    },
+    {
+      "id": "d014",
+      "statement": "The Seneschal is the second-in-command of Iomene.",
+      "entities": [
+        "Seneschal",
+        "Iomene"
+      ],
+      "citations": [
+        {
+          "start": 377,
+          "end": 377
+        }
+      ]
+    },
+    {
+      "id": "d015",
+      "statement": "The upper decks of Iomene are where the more privileged residents live, distinct from the Undercroft below.",
+      "entities": [
+        "Iomene",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 378,
+          "end": 381
+        }
+      ]
+    },
+    {
+      "id": "d016",
+      "statement": "Subdeck 15B is a location within Iomene's lower decks and was the site of a recent sabotage incident.",
+      "entities": [
+        "Iomene",
+        "Subdeck 15B"
+      ],
+      "citations": [
+        {
+          "start": 389,
+          "end": 389
+        }
+      ]
+    },
+    {
+      "id": "d017",
+      "statement": "Subdeck 15B is the site of the most recent sabotage in Iomene.",
+      "entities": [
+        "Subdeck 15B",
+        "Iomene"
+      ],
+      "citations": [
+        {
+          "start": 389,
+          "end": 389
+        }
+      ]
+    },
+    {
+      "id": "d018",
+      "statement": "Barlow Crane is an ancient elf with faded pale amethyst skin (originally dark-elf purple), silver hair swept back, and a bushy silver handlebar mustache. He wears padded overalls filled with tools and carries a club ringed with teeth and claws taken from monsters.",
+      "entities": [
+        "Barlow Crane"
+      ],
+      "citations": [
+        {
+          "start": 391,
+          "end": 396
+        }
+      ]
+    },
+    {
+      "id": "d019",
+      "statement": "Barlow Crane is an elf, likely the oldest elf anyone has met, with faded pale amethyst skin (originally dark-elf purple), silver swept-back hair, and a bushy silver handlebar mustache. He wears overalls with workman's pants filled with tools, heavy padding resembling armor, and carries a large shield on his back.",
+      "entities": [
+        "Barlow Crane"
+      ],
+      "citations": [
+        {
+          "start": 391,
+          "end": 396
+        }
+      ]
+    },
+    {
+      "id": "d020",
+      "statement": "Barlow Crane's role in the Undercroft is to kill creatures that get in and shouldn't be there, such as large rats and large cockroaches.",
+      "entities": [
+        "Barlow Crane",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 397,
+          "end": 398
+        }
+      ]
+    },
+    {
+      "id": "d021",
+      "statement": "Barlow Crane's job in the Undercroft is to kill creatures — such as large rats and large cockroaches — that get inside and shouldn't be there.",
+      "entities": [
+        "Barlow Crane",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 397,
+          "end": 398
+        }
+      ]
+    },
+    {
+      "id": "d022",
+      "statement": "Grant FireEye is a short, dense dwarf whose lower face is covered by a pseudo-steampunk hazmat mask. His suit is patched with welded metal. He carries a lantern emanating blue light, a small buckler, a coiled metal whip, and wears an eyepatch with a bright light.",
+      "entities": [
+        "Grant FireEye"
+      ],
+      "citations": [
+        {
+          "start": 403,
+          "end": 411
+        }
+      ]
+    },
+    {
+      "id": "d023",
+      "statement": "Grant FireEye is known for working in very dark tunnel sections or areas with noxious fumes in the Undercroft.",
+      "entities": [
+        "Grant FireEye",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 412,
+          "end": 412
+        }
+      ]
+    },
+    {
+      "id": "d024",
+      "statement": "Gage the Cunning wears dirty black studded leather, has piercing blue eyes, and a distinctive crisscross metallic-blue scar under one of his eyes.",
+      "entities": [
+        "Gage the Cunning"
+      ],
+      "citations": [
+        {
+          "start": 428,
+          "end": 435
+        }
+      ]
+    },
+    {
+      "id": "d025",
+      "statement": "The predominant religion aboard the Strider Iomene is the Pulse, centered on the belief that the Strider is a machine that lives forever by expending humans as fuel to keep it going.",
+      "entities": [
+        "Iomene",
+        "the Pulse"
+      ],
+      "citations": [
+        {
+          "start": 451,
+          "end": 451
+        }
+      ]
+    },
+    {
+      "id": "d026",
+      "statement": "The Host is a figure or entity known to (or rumored to exist among) the people of Iomene; some Undercrofters believe the Host is a myth.",
+      "entities": [
+        "the Host",
+        "Iomene",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 451,
+          "end": 466
+        }
+      ]
+    },
+    {
+      "id": "d027",
+      "statement": "Barlow Crane previously worked on mechanics in the Undercroft, including construction of an elevator, before being reassigned to pest/creature control.",
+      "entities": [
+        "Barlow Crane",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 478,
+          "end": 486
+        }
+      ]
+    },
+    {
+      "id": "d028",
+      "statement": "Attempting to unionize in Iomene, if heard by people on the upper decks, results in the immediate deaths of everyone involved in the attempt, possibly including their families.",
+      "entities": [
+        "Iomene"
+      ],
+      "citations": [
+        {
+          "start": 546,
+          "end": 550
+        }
+      ]
+    },
+    {
+      "id": "d029",
+      "statement": "Strider Leg Armature Containment Unit 14 is one of several openings near the bottom of the Strider through which a leg enters the body, allowing repairs to individual joints and feeding of lubricant into the leg from internal ports.",
+      "entities": [
+        "Strider Leg Armature Containment Unit 14",
+        "Iomene"
+      ],
+      "citations": [
+        {
+          "start": 562,
+          "end": 563
+        }
+      ]
+    },
+    {
+      "id": "d030",
+      "statement": "Strider Leg Armature Containment Unit 14 is a large, roughly 300-foot-across domed circular space. It contains one of the Strider's massive metal legs entering through a sealed vent in the wall, with about 200 feet of the leg visible inside. The room's exterior wall holds toolboxes, shelving for materials, scrap areas, hoses for maintenance fluids, and rigging for workers to access the leg.",
+      "entities": [
+        "Strider Leg Armature Containment Unit 14"
+      ],
+      "citations": [
+        {
+          "start": 567,
+          "end": 577
+        }
+      ]
+    },
+    {
+      "id": "d031",
+      "statement": "The sabotage at Strider Leg Armature Containment Unit 14 was caused by someone wedging a large piece of scrap metal into one of the leg's lubricant lines, which would cause the leg to run out of lubricant and seize up over time.",
+      "entities": [
+        "Strider Leg Armature Containment Unit 14",
+        "Iomene"
+      ],
+      "citations": [
+        {
+          "start": 579,
+          "end": 580
+        }
+      ]
+    },
+    {
+      "id": "d032",
+      "statement": "The strider leg junction platform contains intake pipes (tubes) for lubricant, fuel, and similar fluids that feed into the strider's legs. The platform sits atop rafters/scaffolding and is approximately 20 feet by 20 feet.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 751,
+          "end": 1103
+        }
+      ]
+    },
+    {
+      "id": "d033",
+      "statement": "Brayro is a mongrel folk who was once a dwarf. Their upper torso has elongated and their spine bends at roughly 60 degrees near the top, leaving them permanently hunched to one side. They have two arms on their right (hunched) side and one arm on their left. Their right eye is approximately three times the size of a normal eye and is uncomfortably seated in their face; both eyes are slightly clouded over.",
+      "entities": [
+        "Brayro"
+      ],
+      "citations": [
+        {
+          "start": 766,
+          "end": 799
+        }
+      ]
+    },
+    {
+      "id": "d034",
+      "statement": "Mongrel folk are mutants that arise from people in the Undercroft who were born around or work around Archaeotech, which can have physical effects on them.",
+      "entities": [
+        "Mongrel folk",
+        "Undercroft",
+        "Archaeotech"
+      ],
+      "citations": [
+        {
+          "start": 774,
+          "end": 774
+        }
+      ]
+    },
+    {
+      "id": "d035",
+      "statement": "Mongrel folk are not treated well in the Undercroft because there is a fine line between a benign mutation and a malicious mutation caused by a malign force trying to corrupt people. Some ancient Archaeotech devices are sentient and capable of corrupting those around them.",
+      "entities": [
+        "Mongrel folk",
+        "Undercroft",
+        "Archaeotech"
+      ],
+      "citations": [
+        {
+          "start": 775,
+          "end": 779
+        }
+      ]
+    },
+    {
+      "id": "d036",
+      "statement": "The foreman of the sabotage site in the Undercroft is named Morgris.",
+      "entities": [
+        "Morgris",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 812,
+          "end": 827
+        }
+      ]
+    },
+    {
+      "id": "d037",
+      "statement": "The saboteur seen via psychometric resonance on the sabotaged tube appeared to be an elf with androgynous features, a jaw hanging slightly off and split in the middle resembling mandibles, and small additional eyelid slits spotted around their eyes that are closed when not in use. The emotion imprinted was one of complete religious devotion and exaltation, as if performing a holy act.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 891,
+          "end": 909
+        }
+      ]
+    },
+    {
+      "id": "d038",
+      "statement": "Workers who have official access to the strider leg lubricant junction are called Fluid Masters. On the day of the sabotage, the Fluid Masters with access were an unnamed gnome worker, Remiel, and Gerhardt.",
+      "entities": [
+        "Remiel",
+        "Gerhardt",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1028,
+          "end": 1033
+        }
+      ]
+    },
+    {
+      "id": "d039",
+      "statement": "Gerhardt is an elf who works as a Fluid Master in the Undercroft.",
+      "entities": [
+        "Gerhardt",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1044,
+          "end": 1044
+        }
+      ]
+    },
+    {
+      "id": "d040",
+      "statement": "The gnome Fluid Master present at the sabotage site is 43 years old, which is considered very old for a gnome.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1052,
+          "end": 1061
+        }
+      ]
+    },
+    {
+      "id": "d041",
+      "statement": "The Mutant Den is a part of the Undercroft where undesirables who are not fit enough to work are pushed. Many mongrel folk end up there.",
+      "entities": [
+        "Mutant Den",
+        "Undercroft",
+        "Mongrel folk"
+      ],
+      "citations": [
+        {
+          "start": 1083,
+          "end": 1085
+        }
+      ]
+    },
+    {
+      "id": "d042",
+      "statement": "The Mutant Den is a part of the Undercroft where undesirables who are not fit enough to work are pushed, and many mongrel folk end up there.",
+      "entities": [
+        "Mutant Den",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1083,
+          "end": 1085
+        }
+      ]
+    },
+    {
+      "id": "d043",
+      "statement": "The sabotage at the strider leg junction involved a piece of scrap metal stuffed into a lubricant intake tube, blocking lubricant flow and causing the leg to seize up.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1106,
+          "end": 1110
+        }
+      ]
+    },
+    {
+      "id": "d044",
+      "statement": "The Undercroft's collective housing consists of large open rooms converted into tunnel-like corridors lined with stacked mattresses, where workers share beds in shifts rather than owning their own rooms or beds.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1128,
+          "end": 1138
+        }
+      ]
+    },
+    {
+      "id": "d045",
+      "statement": "In the Undercroft's communal living areas, food is prepared in communal vats fed by fluid runoff collected from gutters higher up in the strider, often supplemented with mutated rats for meat.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1140,
+          "end": 1146
+        }
+      ]
+    },
+    {
+      "id": "d046",
+      "statement": "Argyle is a person associated with the campaign setting who was still alive eight months before the main campaign events.",
+      "entities": [
+        "Argyle"
+      ],
+      "citations": [
+        {
+          "start": 1154,
+          "end": 1156
+        }
+      ]
+    },
+    {
+      "id": "d047",
+      "statement": "Gerhard is described by his neighbors as a nice, friendly person who always does his work and is easy to make small talk with, but he had no close friends and no one knew anything about his personal life.",
+      "entities": [
+        "Gerhard"
+      ],
+      "citations": [
+        {
+          "start": 1203,
+          "end": 1209
+        }
+      ]
+    },
+    {
+      "id": "d048",
+      "statement": "Gerhard is an elf fluid master who was born on Iominae and has lived there as long as anyone can remember; no one recalls his parents or childhood.",
+      "entities": [
+        "Gerhard",
+        "Iominae"
+      ],
+      "citations": [
+        {
+          "start": 1213,
+          "end": 1223
+        }
+      ]
+    },
+    {
+      "id": "d049",
+      "statement": "Entertainment in the Undercroft includes fighting rings, void rat races, and bars where workers trade ration cards for homebrew alcohol.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1231,
+          "end": 1237
+        }
+      ]
+    },
+    {
+      "id": "d050",
+      "statement": "Gerhard scratched a symbol resembling a horn (the instrument) with a circle around it into his bedpost in the Undercroft communal sleeping area.",
+      "entities": [
+        "Gerhard",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1265,
+          "end": 1269
+        }
+      ]
+    },
+    {
+      "id": "d051",
+      "statement": "The symbol of a horn with a circle around it scratched by Gerhard is not recognized even by someone with a high Esoterica skill, suggesting it is obscure lore.",
+      "entities": [
+        "Gerhard"
+      ],
+      "citations": [
+        {
+          "start": 1272,
+          "end": 1275
+        }
+      ]
+    },
+    {
+      "id": "d052",
+      "statement": "Fighting pits are not completely illegal aboard Iominae but are tolerated as stress relief for the crew; however, enforcers break them up if they become too dangerous and cause workers to be injured and unable to work.",
+      "entities": [
+        "Iominae"
+      ],
+      "citations": [
+        {
+          "start": 1332,
+          "end": 1341
+        }
+      ]
+    },
+    {
+      "id": "d053",
+      "statement": "Fighting pits on Iominae tend to be located in less-trafficked areas near forsaken sectors to avoid enforcement attention.",
+      "entities": [
+        "Iominae"
+      ],
+      "citations": [
+        {
+          "start": 1340,
+          "end": 1348
+        }
+      ]
+    },
+    {
+      "id": "d054",
+      "statement": "Forsaken sectors are parts of Iominae that people are forbidden from entering, either due to accidents that rendered them unlivable or dangerous technology deemed not worth the risk.",
+      "entities": [
+        "Iominae"
+      ],
+      "citations": [
+        {
+          "start": 1342,
+          "end": 1347
+        }
+      ]
+    },
+    {
+      "id": "d055",
+      "statement": "One fighting pit on Iominae is located on the edge of a forsaken sector, situated on a large metal grate suspended by chains above steaming vats of caustic liquid that are predecessor components to the fuel the city uses.",
+      "entities": [
+        "Iominae"
+      ],
+      "citations": [
+        {
+          "start": 1342,
+          "end": 1405
+        }
+      ]
+    },
+    {
+      "id": "d056",
+      "statement": "The currency used in the Undercroft is ration slips (ration papers), which workers use to bet, trade for food, and purchase entertainment.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1388,
+          "end": 1415
+        }
+      ]
+    },
+    {
+      "id": "d057",
+      "statement": "The caustic vats near the fighting pit are so corrosive that a body dropped into them dissolves completely.",
+      "entities": [
+        "Iominae"
+      ],
+      "citations": [
+        {
+          "start": 1400,
+          "end": 1403
+        }
+      ]
+    },
+    {
+      "id": "d058",
+      "statement": "The bookie operating the fighting pit near the forsaken sector is named Varian Khan.",
+      "entities": [
+        "Varian Khan"
+      ],
+      "citations": [
+        {
+          "start": 1431,
+          "end": 1431
+        }
+      ]
+    },
+    {
+      "id": "d059",
+      "statement": "Scrap metal on Iominae is stored in designated locations and is considered property that can be stolen, with punishment if caught.",
+      "entities": [
+        "Iominae"
+      ],
+      "citations": [
+        {
+          "start": 1478,
+          "end": 1480
+        }
+      ]
+    },
+    {
+      "id": "d060",
+      "statement": "The Forsaken sector is a dark, unlit area within the Undercroft.",
+      "entities": [
+        "Forsaken sector",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1614,
+          "end": 1639
+        }
+      ]
+    },
+    {
+      "id": "d061",
+      "statement": "The floors of the Forsaken sector are made of the same patchwork metal slabs as the rest of the city, replaced and patched many times over.",
+      "entities": [
+        "Forsaken sector"
+      ],
+      "citations": [
+        {
+          "start": 1684,
+          "end": 1684
+        }
+      ]
+    },
+    {
+      "id": "d062",
+      "statement": "The Forsaken sector appears to have been abandoned in a hurry, with boxes, fabrics, and other belongings left strewn around its hallways.",
+      "entities": [
+        "Forsaken sector"
+      ],
+      "citations": [
+        {
+          "start": 1686,
+          "end": 1688
+        }
+      ]
+    },
+    {
+      "id": "d063",
+      "statement": "The Forsaken sector contains old dried blood stains on the ground, turned a sickly brown color, with splatter patterns consistent with blood.",
+      "entities": [
+        "Forsaken sector"
+      ],
+      "citations": [
+        {
+          "start": 1689,
+          "end": 1692
+        }
+      ]
+    },
+    {
+      "id": "d064",
+      "statement": "The Forsaken sector has strange claw-mark scratchings on its floors and walls, appearing to have been left by something organic.",
+      "entities": [
+        "Forsaken sector"
+      ],
+      "citations": [
+        {
+          "start": 1693,
+          "end": 1715
+        }
+      ]
+    },
+    {
+      "id": "d065",
+      "statement": "The Undercroft is never quiet; machines hum, gears shift, and pistons fire constantly throughout it.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 1697,
+          "end": 1701
+        }
+      ]
+    },
+    {
+      "id": "d066",
+      "statement": "Every 12 seconds, a loud thud reverberates through the Undercroft as one of the Strider's legs makes contact with the ground.",
+      "entities": [
+        "Undercroft",
+        "Strider"
+      ],
+      "citations": [
+        {
+          "start": 1699,
+          "end": 1699
+        }
+      ]
+    },
+    {
+      "id": "d067",
+      "statement": "The Forsaken sector is inhabited by insectoid creatures called Swarmchildren, which have three claws per hand, a purplish-orange chitinous body, a hard head, and nasty fangs, and dwell in the vents behind walls and underfoot.",
+      "entities": [
+        "Forsaken sector",
+        "Swarmchildren"
+      ],
+      "citations": [
+        {
+          "start": 1761,
+          "end": 1801
+        }
+      ]
+    },
+    {
+      "id": "d068",
+      "statement": "Swarmchildren use a mandible frenzy attack that requires targets to make a Reflex save.",
+      "entities": [
+        "Swarmchildren"
+      ],
+      "citations": [
+        {
+          "start": 1823,
+          "end": 1825
+        }
+      ]
+    },
+    {
+      "id": "d069",
+      "statement": "Gage carries an icon called the Unfailing Bow.",
+      "entities": [
+        "Gage",
+        "Unfailing Bow"
+      ],
+      "citations": [
+        {
+          "start": 1840,
+          "end": 1870
+        }
+      ]
+    },
+    {
+      "id": "d070",
+      "statement": "Gage is an Exemplar, a class whose core mechanic involves moving a Divine Spark between icons (such as the Unfailing Bow and the Eye-catching Spot).",
+      "entities": [
+        "Gage"
+      ],
+      "citations": [
+        {
+          "start": 1849,
+          "end": 1903
+        }
+      ]
+    },
+    {
+      "id": "d071",
+      "statement": "Swarmchildren have armored carapaces.",
+      "entities": [
+        "Swarmchildren"
+      ],
+      "citations": [
+        {
+          "start": 1889,
+          "end": 1889
+        }
+      ]
+    },
+    {
+      "id": "d072",
+      "statement": "Gage carries an icon called the Eye-catching Spot, associated with his face.",
+      "entities": [
+        "Gage",
+        "Eye-catching Spot"
+      ],
+      "citations": [
+        {
+          "start": 1898,
+          "end": 1903
+        }
+      ]
+    },
+    {
+      "id": "d073",
+      "statement": "Swarmchildren have a weakness to splash damage and area-of-effect attacks (Splash Damage 7).",
+      "entities": [
+        "Swarmchildren"
+      ],
+      "citations": [
+        {
+          "start": 1955,
+          "end": 1960
+        }
+      ]
+    },
+    {
+      "id": "d074",
+      "statement": "Barlow wields a weapon called the Leo Mano.",
+      "entities": [
+        "Barlow",
+        "Leo Mano"
+      ],
+      "citations": [
+        {
+          "start": 1974,
+          "end": 1974
+        }
+      ]
+    },
+    {
+      "id": "d075",
+      "statement": "As a Swarmchild troop loses members, the remaining members become less coordinated and do not match the movements of the others as well.",
+      "entities": [
+        "Swarmchildren"
+      ],
+      "citations": [
+        {
+          "start": 2116,
+          "end": 2118
+        }
+      ]
+    },
+    {
+      "id": "d076",
+      "statement": "Swarmchildren are insectoid creatures that attack in swarms and operate under a modified version of the troop rules.",
+      "entities": [
+        "Swarmchildren"
+      ],
+      "citations": [
+        {
+          "start": 2120,
+          "end": 2120
+        }
+      ]
+    },
+    {
+      "id": "d077",
+      "statement": "Barlow has an ability called Inspiring Martial Stance, which grants allies a +1 status bonus to attack rolls and saves against fear.",
+      "entities": [
+        "Barlow"
+      ],
+      "citations": [
+        {
+          "start": 2177,
+          "end": 2184
+        }
+      ]
+    },
+    {
+      "id": "d078",
+      "statement": "Gage's full title or epithet is 'Gage the Cunning', with a comma separating the name from the epithet.",
+      "entities": [
+        "Gage"
+      ],
+      "citations": [
+        {
+          "start": 2310,
+          "end": 2318
+        }
+      ]
+    },
+    {
+      "id": "d079",
+      "statement": "Grant possesses healer's gloves, a magic item with an activation ability.",
+      "entities": [
+        "Grant"
+      ],
+      "citations": [
+        {
+          "start": 2488,
+          "end": 2505
+        }
+      ]
+    },
+    {
+      "id": "d080",
+      "statement": "The map images used for the location are taken from a video game with a bird's-eye camera perspective; the large black areas on the map represent doors that can be walked through.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2546,
+          "end": 2546
+        }
+      ]
+    },
+    {
+      "id": "d081",
+      "statement": "The area the party entered from the bottom contains crates.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2553,
+          "end": 2553
+        }
+      ]
+    },
+    {
+      "id": "d082",
+      "statement": "The bottom-right room in the area the party is exploring contains lockers and appears to have been a space for workers to store belongings before proceeding further into the sector.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2555,
+          "end": 2556
+        }
+      ]
+    },
+    {
+      "id": "d083",
+      "statement": "The symbol of an English horn inside a circle is associated with an organization or entity known as the Herald.",
+      "entities": [
+        "Herald"
+      ],
+      "citations": [
+        {
+          "start": 2563,
+          "end": 2576
+        }
+      ]
+    },
+    {
+      "id": "d084",
+      "statement": "The Herald is considered an evil or antagonistic faction within the setting, referred to in connection with 'gray slash'.",
+      "entities": [
+        "Herald"
+      ],
+      "citations": [
+        {
+          "start": 2575,
+          "end": 2579
+        }
+      ]
+    },
+    {
+      "id": "d085",
+      "statement": "Ration slips approximately 200 years old were found in the sector's worker lockers; that style of ration slip has since gone out of use because it was easier to counterfeit than current ration slips.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2599,
+          "end": 2600
+        }
+      ]
+    },
+    {
+      "id": "d086",
+      "statement": "The sector's worker locker room contained sacred unguents, magical seals, and other ritual materials associated with dealing with an engine heart — one of the spirits that power the city and handle some of its logistics.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2626,
+          "end": 2626
+        }
+      ]
+    },
+    {
+      "id": "d087",
+      "statement": "Engine hearts are spirits that power the city and handle some of its logistics as it moves.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2626,
+          "end": 2626
+        }
+      ]
+    },
+    {
+      "id": "d088",
+      "statement": "Some of the ritual materials found in the sector's locker room did not match those normally used with a standard engine heart, suggesting either that the set of materials used has changed over time or that the engine heart in this sector is different from a normal one.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2627,
+          "end": 2630
+        }
+      ]
+    },
+    {
+      "id": "d089",
+      "statement": "Archie is a rogue character who previously appeared in the Velvet Mark one-shot at level 9.",
+      "entities": [
+        "Archie"
+      ],
+      "citations": [
+        {
+          "start": 2760,
+          "end": 2763
+        }
+      ]
+    },
+    {
+      "id": "d090",
+      "statement": "The sector has been forbidden from entry for approximately two centuries because of some dangerous thing living within it.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2833,
+          "end": 2833
+        }
+      ]
+    },
+    {
+      "id": "d091",
+      "statement": "The room adjacent to the forbidden sector's deeper area functions as an airlock-type antechamber separating the rest of a sector from wherever an engine heart is stored.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2857,
+          "end": 2859
+        }
+      ]
+    },
+    {
+      "id": "d092",
+      "statement": "The city travels by stepping through horizons, moving one horizon at a time; attempting to skip one or more worlds per step to travel faster is possible but increasingly dangerous the greater the distance skipped.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2887,
+          "end": 2888
+        }
+      ]
+    },
+    {
+      "id": "d093",
+      "statement": "Traveling between worlds on the Horizon normally requires moving one horizon at a time, but it is possible to attempt to skip one or two worlds per step to make the journey faster.",
+      "entities": [
+        "Horizon"
+      ],
+      "citations": [
+        {
+          "start": 2887,
+          "end": 2888
+        }
+      ]
+    },
+    {
+      "id": "d094",
+      "statement": "Attempting to skip multiple worlds in a single horizon jump increases the danger of the transition; the greater the distance skipped, the more dangerous it becomes.",
+      "entities": [
+        "Horizon"
+      ],
+      "citations": [
+        {
+          "start": 2888,
+          "end": 2890
+        }
+      ]
+    },
+    {
+      "id": "d095",
+      "statement": "When a horizon jump goes wrong, pieces of the vehicle attempting the transition can be lost, warped, or shifted; this warping effect on metal and piping is visible in places where bad jumps occurred, and may be a source of some mutants.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2889,
+          "end": 2893
+        }
+      ]
+    },
+    {
+      "id": "d096",
+      "statement": "When a horizon jump goes wrong, vehicles can lose pieces or have parts warped and shifted during the transition.",
+      "entities": [
+        "Horizon"
+      ],
+      "citations": [
+        {
+          "start": 2891,
+          "end": 2892
+        }
+      ]
+    },
+    {
+      "id": "d097",
+      "statement": "Some of the mutants found in the city may originate from pieces of vehicles or beings that were warped or shifted during failed horizon jumps.",
+      "entities": [
+        "Horizon"
+      ],
+      "citations": [
+        {
+          "start": 2893,
+          "end": 2893
+        }
+      ]
+    },
+    {
+      "id": "d098",
+      "statement": "Large cities avoid making long-distance horizon jumps when possible because of the danger involved.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2896,
+          "end": 2897
+        }
+      ]
+    },
+    {
+      "id": "d099",
+      "statement": "Large cities on the Horizon try to avoid making long-distance horizon jumps because of the danger involved.",
+      "entities": [
+        "Horizon"
+      ],
+      "citations": [
+        {
+          "start": 2896,
+          "end": 2896
+        }
+      ]
+    },
+    {
+      "id": "d100",
+      "statement": "The warping in the forbidden sector's antechamber and deeper areas is far more severe than elsewhere in the city, consistent with a particularly bad long-distance horizon jump that went very wrong.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2897,
+          "end": 2900
+        }
+      ]
+    },
+    {
+      "id": "d101",
+      "statement": "A particular sector of the city shows severe warping damage consistent with a badly failed long-distance horizon jump.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 2897,
+          "end": 2899
+        }
+      ]
+    },
+    {
+      "id": "d102",
+      "statement": "The concentration of horizon-jump warping in the forbidden sector is greatest past the airlock antechamber, deeper into the sector.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2900,
+          "end": 2900
+        }
+      ]
+    },
+    {
+      "id": "d103",
+      "statement": "The warping damage in the affected sector is concentrated further past the airlock area, deeper into that sector.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 2900,
+          "end": 2900
+        }
+      ]
+    },
+    {
+      "id": "d104",
+      "statement": "The NPC Tanner carries a lesser healing potion.",
+      "entities": [
+        "Tanner"
+      ],
+      "citations": [
+        {
+          "start": 2921,
+          "end": 2921
+        }
+      ]
+    },
+    {
+      "id": "d105",
+      "statement": "Jorge possesses healer's gloves but is not trained in medicine.",
+      "entities": [
+        "Jorge"
+      ],
+      "citations": [
+        {
+          "start": 2932,
+          "end": 2932
+        }
+      ]
+    },
+    {
+      "id": "d106",
+      "statement": "Barlow Crane is a very old elf who does not believe in the existence of the sun.",
+      "entities": [
+        "Barlow Crane"
+      ],
+      "citations": [
+        {
+          "start": 2957,
+          "end": 3077
+        }
+      ]
+    },
+    {
+      "id": "d107",
+      "statement": "Beyond the sealed airlock door in the damaged sector is a room approximately 500 feet across, built in the style of a cathedral, with flat side walls curving into a rounded back.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 2997,
+          "end": 3000
+        }
+      ]
+    },
+    {
+      "id": "d108",
+      "statement": "The cathedral-like room has stained glass frescoes covering the walls and back, with no particular pattern — purely aesthetic in design.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 3001,
+          "end": 3003
+        }
+      ]
+    },
+    {
+      "id": "d109",
+      "statement": "At the back of the cathedral room, between two stained glass windows, stands a massive player's organ: a giant wheel with indents that, as it rotates, pushes air through organ pipes twisting throughout the room.",
+      "entities": [
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 3005,
+          "end": 3009
+        }
+      ]
+    },
+    {
+      "id": "d110",
+      "statement": "The player's organ in the cathedral room is a form of Engine Heart, more ornate and decorated than any other Engine Heart previously encountered.",
+      "entities": [
+        "Undercroft",
+        "Engine Heart"
+      ],
+      "citations": [
+        {
+          "start": 3011,
+          "end": 3011
+        }
+      ]
+    },
+    {
+      "id": "d111",
+      "statement": "The Engine Heart in the cathedral room is dead or out of commission, as no Fane presence is felt from it.",
+      "entities": [
+        "Undercroft",
+        "Engine Heart"
+      ],
+      "citations": [
+        {
+          "start": 3013,
+          "end": 3013
+        }
+      ]
+    },
+    {
+      "id": "d112",
+      "statement": "A central pillar in the cathedral room is wrapped by an approximately 80-foot-long insectoid creature, identified as a Swarm Hive Mother.",
+      "entities": [
+        "Undercroft",
+        "Swarm Hive Mother"
+      ],
+      "citations": [
+        {
+          "start": 3014,
+          "end": 3017
+        }
+      ]
+    },
+    {
+      "id": "d113",
+      "statement": "The Swarm Hive Mother actively emits smaller insectoid creatures and has claimed the cathedral room as her territory.",
+      "entities": [
+        "Swarm Hive Mother",
+        "Undercroft"
+      ],
+      "citations": [
+        {
+          "start": 3018,
+          "end": 3020
+        }
+      ]
+    },
+    {
+      "id": "d114",
+      "statement": "The Swarm Hive Mother has a horn protruding from her mouth and possesses tremorsense but no eyes.",
+      "entities": [
+        "Swarm Hive Mother"
+      ],
+      "citations": [
+        {
+          "start": 3024,
+          "end": 3135
+        }
+      ]
+    },
+    {
+      "id": "d115",
+      "statement": "Grant FireEye is a dwarf who hopes to reach the surface and see the sun, motivated by a desire to win a competition so that a younger person might be able to enjoy it instead.",
+      "entities": [
+        "Grant FireEye"
+      ],
+      "citations": [
+        {
+          "start": 3076,
+          "end": 3079
+        }
+      ]
+    },
+    {
+      "id": "d116",
+      "statement": "Gage's primary motivation is to escape poverty.",
+      "entities": [
+        "Gage"
+      ],
+      "citations": [
+        {
+          "start": 3082,
+          "end": 3084
+        }
+      ]
+    },
+    {
+      "id": "d117",
+      "statement": "The Swarm Hive Mother can release a frenzy pheromone — a screech accompanied by a chemical signal that puts the other insectoid creatures in the area into a frenzy.",
+      "entities": [
+        "Swarm Hive Mother"
+      ],
+      "citations": [
+        {
+          "start": 3138,
+          "end": 3138
+        }
+      ]
+    },
+    {
+      "id": "d118",
+      "statement": "The Swarm Hive Mother can spit acid as an attack.",
+      "entities": [
+        "Swarm Hive Mother"
+      ],
+      "citations": [
+        {
+          "start": 3146,
+          "end": 3154
+        }
+      ]
+    },
+    {
+      "id": "d119",
+      "statement": "The Swarm Hive Warriors are a type of insectoid swarm creature that can attack multiple adjacent enemies simultaneously and have a ranged acid spit attack with a range of 30 feet.",
+      "entities": [
+        "Swarm Hive Warriors"
+      ],
+      "citations": [
+        {
+          "start": 3270,
+          "end": 3424
+        }
+      ]
+    },
+    {
+      "id": "d120",
+      "statement": "Barlow wields a weapon called a Leomano.",
+      "entities": [
+        "Barlow"
+      ],
+      "citations": [
+        {
+          "start": 3363,
+          "end": 3460
+        }
+      ]
+    },
+    {
+      "id": "d121",
+      "statement": "The Hivemother's lowest save is Fortitude.",
+      "entities": [
+        "Hivemother"
+      ],
+      "citations": [
+        {
+          "start": 3469,
+          "end": 3473
+        }
+      ]
+    },
+    {
+      "id": "d122",
+      "statement": "The Hivemother is a creature capable of spraying acid in an area, affecting multiple targets at once.",
+      "entities": [
+        "Hivemother"
+      ],
+      "citations": [
+        {
+          "start": 3479,
+          "end": 3499
+        }
+      ]
+    },
+    {
+      "id": "d123",
+      "statement": "The Hivemother's acid spray deals 37 points of acid damage and inflicts persistent acid on those who fail their Reflex save.",
+      "entities": [
+        "Hivemother"
+      ],
+      "citations": [
+        {
+          "start": 3499,
+          "end": 3507
+        }
+      ]
+    },
+    {
+      "id": "d124",
+      "statement": "Archie is being compensated with rations for his participation.",
+      "entities": [
+        "Archie",
+        "Grant",
+        "Gage"
+      ],
+      "citations": [
+        {
+          "start": 3628,
+          "end": 3638
+        }
+      ]
+    },
+    {
+      "id": "d125",
+      "statement": "Insect-like creatures, including a Hivemother, had taken root within a part of Iomine.",
+      "entities": [
+        "Iomine",
+        "Hivemother"
+      ],
+      "citations": [
+        {
+          "start": 3782,
+          "end": 3789
+        }
+      ]
+    },
+    {
+      "id": "d126",
+      "statement": "The interior of Iomine contains a cathedral-like area that serves as a receptacle for an engine heart of some kind.",
+      "entities": [
+        "Iomine"
+      ],
+      "citations": [
+        {
+          "start": 3785,
+          "end": 3787
+        }
+      ]
+    },
+    {
+      "id": "d127",
+      "statement": "An elven insectoid person was responsible for sabotage within Iomine and remained at large after the Hivemother was slain.",
+      "entities": [
+        "Iomine"
+      ],
+      "citations": [
+        {
+          "start": 3788,
+          "end": 3789
+        }
+      ]
+    },
+    {
+      "id": "d128",
+      "statement": "The Hivemother was a level 8 creature with an AC of 29.",
+      "entities": [
+        "Hivemother"
+      ],
+      "citations": [
+        {
+          "start": 3809,
+          "end": 3823
+        }
+      ]
+    },
+    {
+      "id": "d129",
+      "statement": "The insect swarms associated with the Hivemother were level 3 creatures.",
+      "entities": [
+        "Iomine"
+      ],
+      "citations": [
+        {
+          "start": 3826,
+          "end": 3826
+        }
+      ]
+    },
+    {
+      "id": "d130",
+      "statement": "If the party obtains the crystal, they would ride inside a strider for a pilgrimage, passing through the interior of Iomine.",
+      "entities": [
+        "Iomine"
+      ],
+      "citations": [
+        {
+          "start": 3835,
+          "end": 3837
+        }
+      ]
+    },
+    {
+      "id": "d131",
+      "statement": "The one-shot session in Iomine takes place a few months before the main campaign.",
+      "entities": [
+        "Iomine"
+      ],
+      "citations": [
+        {
+          "start": 3848,
+          "end": 3848
+        }
+      ]
+    },
+    {
+      "id": "d132",
+      "statement": "After the events in Iomine, Archie left and joined up with the Velvet Mark.",
+      "entities": [
+        "Archie",
+        "Velvet Mark"
+      ],
+      "citations": [
+        {
+          "start": 3849,
+          "end": 3849
+        }
+      ]
+    },
+    {
+      "id": "d133",
+      "statement": "Archie has a history of involvement with multiple factions or events, including one associated with the Herald and another called Pyre.",
+      "entities": [
+        "Archie",
+        "Pyre"
+      ],
+      "citations": [
+        {
+          "start": 3866,
+          "end": 3870
+        }
+      ]
+    },
+    {
+      "id": "d134",
+      "statement": "Archie is canonically from Brooklyn.",
+      "entities": [
+        "Archie"
+      ],
+      "citations": [
+        {
+          "start": 3890,
+          "end": 3890
+        }
+      ]
+    }
+  ],
+  "goodSentences": [],
+  "badSentences": []
+}

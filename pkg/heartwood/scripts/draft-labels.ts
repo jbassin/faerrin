@@ -71,9 +71,14 @@ async function pool<T, R>(items: T[], n: number, fn: (item: T, i: number) => Pro
   return results;
 }
 
+/** Accept either 2026-2-10 or 2026-02-10; normalize to ISO zero-padded. */
+function toIsoDate(d: string): string {
+  return d.replace(/^(\d{4})-(\d{1,2})-(\d{1,2})$/, (_m, y, mo, da) => `${y}-${mo.padStart(2, '0')}-${da.padStart(2, '0')}`);
+}
+
 async function main() {
   const arc = process.argv[2] ?? 'through-a-song-darkly';
-  const date = process.argv[3] ?? '2025-08-28';
+  const date = toIsoDate(process.argv[3] ?? '2025-08-28');
   const model = config().MODEL_MINE;
 
   const { files } = await discoverTranscripts(TRANSCRIPTS_DIR);
