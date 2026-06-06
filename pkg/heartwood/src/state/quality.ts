@@ -117,6 +117,15 @@ export function rejectionEntryFor(store: RejectionStore, text: string): Rejectio
   return store.entries[signatureFor(text)];
 }
 
+/** Tray display summary for a rejected claim: how many sessions rejected it + the latest reason. */
+export function rejectionSummary(entry: RejectionEntry): { sessions: number; reason?: string } {
+  let latest: { reason?: string; at: string } | undefined;
+  for (const s of Object.values(entry.bySession)) {
+    if (!latest || s.at > latest.at) latest = s;
+  }
+  return { sessions: rejectionCount(entry), reason: latest?.reason };
+}
+
 /** Quality-log reason tally across all rejections (AC-16 tuning signal, dashboard AC-19). */
 export function reasonTally(store: RejectionStore): Record<string, number> {
   const out: Record<string, number> = {};

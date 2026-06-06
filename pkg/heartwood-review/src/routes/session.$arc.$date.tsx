@@ -18,7 +18,8 @@ type Conflict = SessionView["artifact"]["conflicts"][number];
 type Proposal = SessionView["artifact"]["proposals"][number];
 
 function SessionPage() {
-  const { artifact, review: initialReview, pageTypes, allSlugs } = Route.useLoaderData() as SessionView;
+  const { artifact, review: initialReview, pageTypes, allSlugs, suppressedProposalIds, rejectionInfo } =
+    Route.useLoaderData() as SessionView;
   const [review, setReview] = useState<ReviewState>(initialReview);
   const [tab, setTab] = useState<"proposals" | "triage">("proposals");
   const [commitResult, setCommitResult] = useState<CommitResult | null>(null);
@@ -29,7 +30,11 @@ function SessionPage() {
   ).length;
 
   const proposalById = new Map(artifact.proposals.map((p: Proposal) => [p.id, p]));
-  const eventGroups = groupProposalsByEvent(artifact.proposals);
+  const suppressed = new Set(suppressedProposalIds);
+  // AC-26: previously-rejected proposals are kept out of the main flow (shown in a tray below).
+  const shownProposals = artifact.proposals.filter((p: Proposal) => !suppressed.has(p.id));
+  const suppressedProposals = artifact.proposals.filter((p: Proposal) => suppressed.has(p.id));
+  const eventGroups = groupProposalsByEvent(shownProposals);
 
   const renderCard = (p: Proposal) => (
     <ProposalCard
@@ -118,30 +123,60 @@ function SessionPage() {
         </span>
       </nav>
 
-      {tab === "proposals" &&
-        eventGroups.map((group, gi) => {
-          const proposals = group.map((id) => proposalById.get(id)!);
-          if (proposals.length <= 1) return proposals.map(renderCard);
-          // AC-22: related per-page edits from one event, grouped so they stay consistent.
-          return (
-            <div
-              key={`event-${gi}`}
-              style={{
-                border: "1px dashed #9aa0a6",
-                borderRadius: 12,
-                padding: "0.75rem",
-                marginBottom: "1rem",
-                background: "rgba(154,160,166,0.06)",
-              }}
-            >
-              <div style={{ fontSize: "0.8rem", color: "#5f6368", fontWeight: 600, marginBottom: "0.5rem" }}>
-                ⛓ Event group · {proposals.length} pages — these edits share transcript moments; keep
-                them consistent
+      {tab === "proposals" && (
+        <>
+          {eventGroups.map((group, gi) => {
+            const proposals = group.map((id) => proposalById.get(id)!);
+            if (proposals.length <= 1) return proposals.map(renderCard);
+            // AC-22: related per-page edits from one event, grouped so they stay consistent.
+            return (
+              <div
+                key={`event-${gi}`}
+                style={{
+                  border: "1px dashed #9aa0a6",
+                  borderRadius: 12,
+                  padding: "0.75rem",
+                  marginBottom: "1rem",
+                  background: "rgba(154,160,166,0.06)",
+                }}
+              >
+                <div style={{ fontSize: "0.8rem", color: "#5f6368", fontWeight: 600, marginBottom: "0.5rem" }}>
+                  ⛓ Event group · {proposals.length} pages — these edits share transcript moments; keep
+                  them consistent
+                </div>
+                {proposals.map(renderCard)}
               </div>
-              {proposals.map(renderCard)}
-            </div>
-          );
-        })}
+            );
+          })}
+
+          {/* AC-26 / D-7: previously-rejected claims, collapsed — never silently discarded. */}
+          {suppressedProposals.length > 0 && (
+            <details style={{ marginTop: "0.5rem" }}>
+              <summary style={{ cursor: "pointer", color: "#777", fontSize: "0.9rem", fontWeight: 600 }}>
+                Previously rejected ({suppressedProposals.length}) — suppressed from earlier sessions
+              </summary>
+              <p style={{ fontSize: "0.8rem", color: "#999", margin: "0.4rem 0 0.75rem" }}>
+                These match claims you rejected before. They&rsquo;re kept here so nothing is lost — act on
+                one to bring it back into canon.
+              </p>
+              {suppressedProposals.map((p: Proposal) => {
+                const info = rejectionInfo[p.id];
+                return (
+                  <div key={p.id}>
+                    {info && (
+                      <div style={{ fontSize: "0.75rem", color: "#c5221f", marginBottom: "-0.4rem" }}>
+                        ⊘ rejected in {info.sessions} earlier session{info.sessions === 1 ? "" : "s"}
+                        {info.reason ? ` · ${info.reason}` : ""}
+                      </div>
+                    )}
+                    {renderCard(p)}
+                  </div>
+                );
+              })}
+            </details>
+          )}
+        </>
+      )}
 
       {tab === "triage" && (
         <TriageView

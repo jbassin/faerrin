@@ -42,6 +42,13 @@ export const listSessions = createServerFn({ method: "GET" }).handler(
   },
 );
 
+export interface RejectionInfo {
+  /** How many earlier sessions rejected an identical claim. */
+  sessions: number;
+  /** The most recent tagged reason, if any. */
+  reason?: string;
+}
+
 export interface SessionView {
   artifact: SessionArtifact;
   review: ReviewState;
@@ -49,6 +56,11 @@ export interface SessionView {
   pageTypes: Record<string, PageType>;
   /** Every known page slug — for wikilink validation in authored prose (AC-13). */
   allSlugs: string[];
+  /** Still-pending proposals whose every backing claim was rejected in an earlier session
+   *  (AC-26/D-7) — moved to the collapsed "previously rejected" tray, never discarded. */
+  suppressedProposalIds: string[];
+  /** Tray display info per suppressed proposal id. */
+  rejectionInfo: Record<string, RejectionInfo>;
 }
 
 /** Full session payload for review: proposals + narrative + triage + conflicts + decisions. */
@@ -77,7 +89,29 @@ export const getSession = createServerFn({ method: "GET" })
         pageTypes[p.id] = "lore"; // new page authored as prose
       }
     }
-    return { artifact, review, pageTypes, allSlugs };
+
+    // AC-26/D-7: a still-pending proposal whose EVERY backing claim was rejected in an
+    // earlier session is moved to the collapsed "previously rejected" tray (never discarded,
+    // never re-nagging). Decided proposals stay in the main flow.
+    const { sessionKey } = await import("@faerrin/heartwood/src/state/identity.ts");
+    const { readRejectionStore, isSuppressed, rejectionEntryFor, rejectionSummary } = await import(
+      "@faerrin/heartwood/src/state/quality.ts"
+    );
+    const store = await readRejectionStore(QUALITY_DIR);
+    const key = sessionKey(sessionId);
+    const suppressedProposalIds: string[] = [];
+    const rejectionInfo: Record<string, RejectionInfo> = {};
+    for (const p of artifact.proposals) {
+      const decided = review.decisions[p.id]?.decision;
+      if (decided && decided !== "pending") continue;
+      if (p.facts.length === 0) continue;
+      if (!p.facts.every((f) => isSuppressed(store, f.text, key))) continue;
+      suppressedProposalIds.push(p.id);
+      const entry = rejectionEntryFor(store, p.facts[0]!.text);
+      rejectionInfo[p.id] = entry ? rejectionSummary(entry) : { sessions: 1 };
+    }
+
+    return { artifact, review, pageTypes, allSlugs, suppressedProposalIds, rejectionInfo };
   });
 
 export interface TranscriptLine {

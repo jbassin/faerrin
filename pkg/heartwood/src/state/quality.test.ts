@@ -11,6 +11,7 @@ import {
   rejectionEntryFor,
   readRejectionStore,
   removeRejection,
+  rejectionSummary,
   signatureFor,
   writeRejectionStore,
 } from './quality';
@@ -92,6 +93,27 @@ describe('isSuppressed (AC-26 cross-session only)', () => {
 
   test('an unrejected claim is never suppressed', () => {
     expect(isSuppressed(emptyRejectionStore(), 'anything', 'current')).toBe(false);
+  });
+});
+
+describe('rejectionSummary', () => {
+  test('reports session count and the most recent reason', () => {
+    let store = recordRejection(emptyRejectionStore(), {
+      text: 'x',
+      reason: 'not-canon',
+      sessionKey: 's1',
+      at: '2026-01-01T00:00:00.000Z',
+    });
+    store = recordRejection(store, {
+      text: 'x',
+      reason: 'out-of-voice',
+      sessionKey: 's2',
+      at: '2026-02-01T00:00:00.000Z',
+    });
+    expect(rejectionSummary(rejectionEntryFor(store, 'x')!)).toEqual({
+      sessions: 2,
+      reason: 'out-of-voice',
+    });
   });
 });
 
