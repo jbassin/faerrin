@@ -188,6 +188,19 @@ export const suggestInboundLinks = createServerFn({ method: "GET" })
     return { mentions, orphan: mentions.length === 0 };
   });
 
+/** Promote/unpromote a claim from Uncertain/Noise back to Canon (AC-14). */
+export const togglePromotion = createServerFn({ method: "POST" })
+  .inputValidator((data: { arc: string; date: string; claimId: string }) => data)
+  .handler(async ({ data }): Promise<ReviewState> => {
+    const sessionId = assertSessionId(data.arc, data.date);
+    const { readReviewState, writeReviewState, togglePromotion: toggle } = await import(
+      "@faerrin/heartwood/src/state/review.ts"
+    );
+    const next = toggle(await readReviewState(REVIEW_DIR, sessionId), data.claimId);
+    await writeReviewState(REVIEW_DIR, next);
+    return next;
+  });
+
 const CONFLICT_RESOLUTIONS = ["supersede", "coexist", "reject"] as const;
 
 /** Record a conflict resolution (Supersede / Coexist / Reject) by claimId (AC-11). */

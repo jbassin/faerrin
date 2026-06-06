@@ -10,6 +10,7 @@ import {
   emptyReviewState,
   readReviewState,
   reviewStatus,
+  togglePromotion,
   writeReviewState,
 } from './review';
 
@@ -84,5 +85,14 @@ describe('review state', () => {
   it('defaults conflictResolutions for older review files (schema default)', () => {
     // emptyReviewState always includes it; the schema default covers files written before AC-11.
     expect(emptyReviewState(SID).conflictResolutions).toEqual({});
+  });
+
+  it('toggles claim promotion (AC-14)', () => {
+    let s = emptyReviewState(SID);
+    expect(s.promotedClaims).toEqual([]);
+    s = togglePromotion(s, 'c9');
+    expect(s.promotedClaims).toEqual(['c9']);
+    s = togglePromotion(s, 'c9');
+    expect(s.promotedClaims).toEqual([]);
   });
 });

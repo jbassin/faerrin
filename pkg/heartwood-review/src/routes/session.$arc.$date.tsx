@@ -113,7 +113,15 @@ function SessionPage() {
           />
         ))}
 
-      {tab === "triage" && <TriageView triage={artifact.triage} />}
+      {tab === "triage" && (
+        <TriageView
+          arc={artifact.sessionId.arc}
+          date={artifact.sessionId.date}
+          triage={artifact.triage}
+          review={review}
+          onChanged={setReview}
+        />
+      )}
 
       {/* Commit bar (AC-7): one batched jj revision per session; nothing written until here. */}
       <section

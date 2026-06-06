@@ -44,6 +44,8 @@ export const ReviewStateSchema = z.object({
   decisions: z.record(z.string(), ProposalDecisionSchema),
   /** Conflict resolutions keyed by the conflicting claimId (AC-11). Defaulted for old files. */
   conflictResolutions: z.record(z.string(), z.enum(CONFLICT_RESOLUTIONS)).default({}),
+  /** Claim ids the reviewer promoted from Uncertain/Noise back to Canon (AC-14). */
+  promotedClaims: z.array(z.string()).default([]),
   updatedAt: z.string(),
 });
 export type ReviewState = z.infer<typeof ReviewStateSchema>;
@@ -53,7 +55,13 @@ export function reviewStatePath(dir: string, id: SessionId): string {
 }
 
 export function emptyReviewState(id: SessionId): ReviewState {
-  return { sessionId: id, decisions: {}, conflictResolutions: {}, updatedAt: new Date().toISOString() };
+  return {
+    sessionId: id,
+    decisions: {},
+    conflictResolutions: {},
+    promotedClaims: [],
+    updatedAt: new Date().toISOString(),
+  };
 }
 
 /** Read review state, or a fresh empty one if the session was never opened. */
@@ -105,6 +113,18 @@ export function applyConflictResolution(
 
 export function conflictResolutionFor(state: ReviewState, claimId: string): ConflictResolution | undefined {
   return state.conflictResolutions[claimId];
+}
+
+/** Pure: toggle a claim's promotion to canon (AC-14), returning a new state. */
+export function togglePromotion(state: ReviewState, claimId: string): ReviewState {
+  const has = state.promotedClaims.includes(claimId);
+  return {
+    ...state,
+    promotedClaims: has
+      ? state.promotedClaims.filter((c) => c !== claimId)
+      : [...state.promotedClaims, claimId],
+    updatedAt: new Date().toISOString(),
+  };
 }
 
 export type ReviewStatus = 'unreviewed' | 'partial' | 'reviewed';
