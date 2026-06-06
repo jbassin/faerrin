@@ -275,9 +275,11 @@ Turn a transcript into reviewable, cited, entity-resolved proposals with provena
   kept 80/142, cutting exactly the event entries). Further bars from three review rounds: **no
   game mechanics** (physical/personality traits yes; abilities/stats/spells/weapons no); **prefer
   canonical proper names** over generic referents (canonicalization is Resolve's job, AC-20);
-  **skip combat sections wholesale** (concentrated mechanics + events, no durable value); and a
-  **precision bias** ("when in doubt, leave it out" — slop wastes reviewer time; recall is
-  recoverable in review). Encode in the mine prompt; eval false-canon/precision scoring measures it.
+  **skip combat sections wholesale** (concentrated mechanics + events, no durable value); **no
+  ephemeral plot/mystery details** (the current incident/case being investigated — who sabotaged
+  it, who had access — is transient, not a durable entity description; permanent changes to an
+  entity like "Raelion was destroyed" are kept); and a **precision bias** ("when in doubt, leave
+  it out"). Encode in the mine prompt; eval false-canon/precision scoring measures it.
 - **In-character fiction (D-10):** `in-character-fiction`/GM-voiced claims are minted as
   **attributed** ("X claimed Y"), not bare propositions.
 

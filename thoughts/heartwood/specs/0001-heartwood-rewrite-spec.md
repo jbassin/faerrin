@@ -164,9 +164,13 @@ click.
   → the Verdant Expanse), resolving referents to named entities (this is `Resolve`'s job, AC-20);
   **(c) skip combat** — combat encounters are almost all mechanics + momentary events with no
   durable setting value, so mining skips them wholesale (keeping only a standing world-fact a
-  fight happens to reveal); **(d) precision bias** — "when in doubt, leave it out", since slop
-  wastes the reviewer's time (the rejected-tool failure mode) and recall is recoverable in review.
-  See `wiki-is-setting-not-session-log` memory.
+  fight happens to reveal); **(d) no ephemeral plot/mystery details** — the specifics of the
+  *current* incident or case under investigation (who sabotaged it, who had access, whodunit
+  details) are transient and excluded, since they don't durably describe the entity as a whole
+  (test: *does it still matter after the mystery is solved?*; a permanent change to what an entity
+  IS — "Raelion was destroyed" — is durable and kept); **(e) precision bias** — "when in doubt,
+  leave it out", since slop wastes the reviewer's time (the rejected-tool failure mode) and recall
+  is recoverable in review. See `wiki-is-setting-not-session-log` memory.
 - **Sentence anchor** — a durable handle identifying *which* wiki sentence a provenance record
   attaches to, robust to surrounding edits (not a raw character offset, which breaks on the
   next manual edit). Storage layer decided (D-1: render-invisible sidecar); the exact anchor

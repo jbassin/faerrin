@@ -69,3 +69,14 @@ recurring leftover noise was (1) session-event facts and (2) weapon/ability/stat
 must lead with these as the top mistakes and instruct "when in doubt, leave it out; precision over
 volume." Mining should err toward fewer, cleaner setting facts; recall is recoverable via the human
 review, but slop wastes the reviewer's time (the rejected-tool failure mode).
+
+**Exclude ephemeral plot / mystery / incident details.** Distinct from session events: facts about
+the *current* case the party is investigating — who committed a sabotage/crime, who had access on
+the day, the whodunit specifics of the plot being solved this arc — are **ephemeral** and do NOT
+belong in the wiki, even when phrased as facts. e.g. drop "Iomenei was sabotaged by an elf" and "the
+workers with access on the day of the sabotage were X, Y, Z": these don't meaningfully describe the
+Strider as a whole and stop mattering once the mystery resolves. **Test:** *does this durably
+describe the entity AS A WHOLE and still matter after the mystery is solved?* If it's a detail of the
+current situation/investigation, exclude it. (Caveat — a **permanent change to what an entity IS** is
+durable and kept: "Raelion was destroyed" stays, because it changes the place's existence; an
+unsolved incident detail does not.)
