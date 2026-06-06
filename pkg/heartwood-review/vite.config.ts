@@ -7,9 +7,11 @@ import path from "node:path";
 // unlike strider) so server functions (`createServerFn`) can read pkg/content,
 // write the provenance sidecar, and shell out to `jj`. NOT Caddy-served.
 export default defineConfig({
-  // Bind loopback only — this is a single-user local tool whose server functions
-  // read pkg/content and the state dir; do not expose them on the LAN.
-  server: { port: 3001 },
+  // host:true (0.0.0.0) is intentional — the worldbuilder reviews from another device
+  // on his LAN. Safe because (a) every file-reading server fn is path-contained via
+  // within()/arc-date validation (no traversal), and (b) it's never exposed publicly.
+  // Do not "re-fix" this to loopback; see the security note in CLAUDE.md.
+  server: { port: 3001, host: true },
   resolve: {
     alias: { "@": path.resolve(__dirname, "./src") },
   },

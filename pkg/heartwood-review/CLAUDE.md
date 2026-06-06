@@ -38,7 +38,10 @@ and `thoughts/heartwood/plans/2026-06-06-heartwood-rewrite-implementation.md`
 - **Path containment:** every server fn that reads by a user-supplied path goes through
   `within(root, rel)` (`src/server/content.ts`); session fns validate `arc`/`date` shape
   before building a filename. Don't `join` user input into a path without it.
-- **Loopback only:** `vite.config.ts` does NOT set `server.host` — do not expose on the LAN.
+- **LAN bind is intentional:** `vite.config.ts` sets `server.host=true` (0.0.0.0) so the
+  worldbuilder can review from another device on his LAN. This is safe ONLY because the
+  path-containment guard above is in place and the app is never public — don't "re-fix" it to
+  loopback, and never relax the `within()`/arc-date guards while this bind stands.
 - **No Bun globals on the server-fn import path** (see below); `state/identity.ts` imports
   the pure `transcript/filename.ts`, never the Bun-using `discover.ts`.
 

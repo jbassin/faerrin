@@ -20,7 +20,10 @@ FIXED in Stage E** (kept here as the rationale for the guards, so they aren't re
   `getTranscriptLines`; `getSession`/`saveDecision` validate `arc` (`/^[a-z0-9][a-z0-9-]*$/`) and
   `date` (`/^\d{4}-\d{2}-\d{2}$/`) before building the `${arc}@${date}.json` key. Tested in
   `content.test.ts`.
-- **0.0.0.0 bind → FIXED.** Dropped `server.host=true` in `vite.config.ts`; loopback only.
+- **0.0.0.0 bind → kept INTENTIONALLY.** `vite.config.ts` sets `server.host=true` because the
+  worldbuilder reviews from another LAN device; it's never public. The reviewer's H1 was severe
+  only because of the traversal — with that guarded (above) the LAN bind is acceptable. Do NOT
+  re-fix to loopback, and never relax the path guards while this stands.
 - **Latent Bun-on-Node → FIXED.** Extracted the pure `parseFilename` into
   `pkg/heartwood/src/transcript/filename.ts`; `state/identity.ts` imports it (not `discover.ts`,
   which uses `Bun.Glob`/`Bun.file`). A Node-runtime guard test in `content.test.ts` imports
