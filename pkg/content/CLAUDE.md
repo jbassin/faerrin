@@ -21,12 +21,13 @@ for the narrative overview; this file is the editing contract.
 ## Pipeline (`scripts/`)
 
 ```sh
-bun run --filter @faerrin/content pipeline          # ingest → export → script (all)
-bun run --filter @faerrin/content build:transcripts # regenerate transcripts/ from scripts/script
+bun run --filter @faerrin/content pipeline          # ingest → export → script → transcripts (all)
+bun run --filter @faerrin/content build:transcripts # regenerate transcripts/ only (also the pipeline's last step)
 bun run --filter @faerrin/content review            # transcript-correction review UI
 ```
 
-- **`scripts/run.ts`** — CLI orchestrator (`ingest` / `export` / `script` / all).
+- **`scripts/run.ts`** — CLI orchestrator (`ingest` / `export` / `script` / `transcripts` / all). The
+  `transcripts` step runs `build-transcripts.ts` last so defs corrections reach `transcripts/`.
 - **`scripts/pipeline/`** — `ingest.ts` (remote API → `scripts/data/*.json`), `export.ts`
   (→ `wiki/Script/*.md` directive pages + auto-linked wikilinks), `script.ts`
   (→ `scripts/script/*.txt`, `scripts/shibboleth.json`).

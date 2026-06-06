@@ -43,7 +43,7 @@ function transform(raw: string): string {
   return out.join("\n") + "\n";
 }
 
-async function main() {
+export async function run() {
   const entries = (await readdir(srcDir)).filter((n) => n.endsWith(".txt")).sort();
   await rm(outDir, { recursive: true, force: true });
   await mkdir(outDir, { recursive: true });
@@ -54,4 +54,6 @@ async function main() {
   console.log(`build-transcripts: wrote ${entries.length} transcript(s) → ${path.relative(process.cwd(), outDir)}`);
 }
 
-await main();
+// Still runnable standalone (`bun scripts/build-transcripts.ts`); when imported as
+// a pipeline step (run.ts) only `run` is invoked, not this auto-run.
+if (import.meta.main) await run();
