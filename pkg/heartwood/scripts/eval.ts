@@ -85,7 +85,19 @@ async function main() {
   if (save) {
     await writeFileAtomic(join(OUT_DIR, `${arc}.${date}.md`), report + '\n');
     await writeFileAtomic(join(OUT_DIR, `${arc}.${date}.claims.json`), JSON.stringify(claims, null, 2) + '\n');
-    console.error(`Saved report + claims to ${OUT_DIR}/`);
+    // Compact structured score for the review-app dashboard (AC-19); headline numbers only.
+    const scoreJson = {
+      arc: score.arc,
+      date: score.date,
+      labeledFacts: score.labeledFacts,
+      producedClaims: score.producedClaims,
+      coverage: score.coverage.coverage,
+      precision: score.precision.precision,
+      falseCanonRate: score.falseCanon.falseCanonRate,
+      generatedAt: new Date().toISOString(),
+    };
+    await writeFileAtomic(join(OUT_DIR, `${arc}.${date}.score.json`), JSON.stringify(scoreJson, null, 2) + '\n');
+    console.error(`Saved report + claims + score to ${OUT_DIR}/`);
   }
   process.exit(0);
 }

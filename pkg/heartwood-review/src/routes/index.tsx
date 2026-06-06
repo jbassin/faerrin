@@ -19,6 +19,7 @@ function SessionList() {
       <header style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
         <h1 style={{ margin: 0 }}>Heartwood Review</h1>
         <nav style={{ display: "flex", gap: "1rem", fontSize: "0.85rem" }}>
+          <Link to="/dashboard">coverage &amp; slop</Link>
           <Link to="/preview">render preview</Link>
         </nav>
       </header>
