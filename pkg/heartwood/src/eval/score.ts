@@ -1,0 +1,88 @@
+// Eval scoring (spec §12, AC-19). Pure functions over labeled canon facts + produced claims.
+//
+// - coverage / recall: fraction of labeled canon facts the pipeline surfaced as a claim
+//   (the headline metric; the old pipeline's ~52% is the baseline to beat).
+// - false-canon rate: fraction of gm-stated (canon) claims that match NO labeled fact — a
+//   guide to over-claiming/hallucination. Labels may be incomplete, so this is directional,
+//   not a hard gate (spec §9/§12 note).
+//
+// Matching is intentionally simple and deterministic: shared entity + token similarity, or
+// strong token similarity alone. Thresholds are explicit so the test pins behavior.
+
+import { normalizeSentence } from '../anchor/anchor';
+import { isCanonModality, type Claim } from '../pipeline/types';
+import type { LabeledFact } from './labels';
+
+export interface ScoreOptions {
+  /** Token-Jaccard required when an entity also overlaps. */
+  entityAssistedSim?: number;
+  /** Token-Jaccard required with no entity overlap. */
+  textOnlySim?: number;
+}
+const DEFAULTS: Required<ScoreOptions> = { entityAssistedSim: 0.25, textOnlySim: 0.6 };
+
+function tokens(s: string): Set<string> {
+  return new Set(normalizeSentence(s).split(' ').filter(Boolean));
+}
+
+function jaccard(a: Set<string>, b: Set<string>): number {
+  if (a.size === 0 && b.size === 0) return 1;
+  let inter = 0;
+  for (const t of a) if (b.has(t)) inter++;
+  return inter / (a.size + b.size - inter);
+}
+
+function entityOverlap(factEntities: string[], surfaceForms: string[]): boolean {
+  const norm = (xs: string[]) => new Set(xs.map((x) => normalizeSentence(x)));
+  const a = norm(factEntities);
+  const b = norm(surfaceForms);
+  for (const x of a) if (b.has(x)) return true;
+  return false;
+}
+
+export function claimMatchesFact(fact: LabeledFact, claim: Claim, opts: ScoreOptions = {}): boolean {
+  const o = { ...DEFAULTS, ...opts };
+  const sim = jaccard(tokens(fact.statement), tokens(claim.text));
+  if (sim >= o.textOnlySim) return true;
+  if (entityOverlap(fact.entities, claim.entitySurfaceForms) && sim >= o.entityAssistedSim) return true;
+  return false;
+}
+
+export interface CoverageResult {
+  total: number;
+  covered: number;
+  coverage: number; // 0..1
+  missed: LabeledFact[];
+}
+
+/** A labeled fact is covered if any produced claim matches it. */
+export function scoreCoverage(facts: LabeledFact[], claims: Claim[], opts: ScoreOptions = {}): CoverageResult {
+  const missed: LabeledFact[] = [];
+  let covered = 0;
+  for (const fact of facts) {
+    if (claims.some((c) => claimMatchesFact(fact, c, opts))) covered++;
+    else missed.push(fact);
+  }
+  const total = facts.length;
+  return { total, covered, coverage: total === 0 ? 1 : covered / total, missed };
+}
+
+export interface FalseCanonResult {
+  canonClaims: number;
+  unmatched: number;
+  falseCanonRate: number; // 0..1
+}
+
+/** Of canon-modality claims, the fraction matching no labeled fact (directional). */
+export function scoreFalseCanon(facts: LabeledFact[], claims: Claim[], opts: ScoreOptions = {}): FalseCanonResult {
+  const canon = claims.filter((c) => isCanonModality(c.modality));
+  let unmatched = 0;
+  for (const c of canon) {
+    if (!facts.some((f) => claimMatchesFact(f, c, opts))) unmatched++;
+  }
+  return {
+    canonClaims: canon.length,
+    unmatched,
+    falseCanonRate: canon.length === 0 ? 0 : unmatched / canon.length,
+  };
+}
