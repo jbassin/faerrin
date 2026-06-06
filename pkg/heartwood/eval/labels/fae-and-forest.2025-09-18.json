@@ -1,11 +1,2283 @@
 {
-  "session": { "arc": "fae-and-forest", "date": "2025-09-18" },
+  "session": {
+    "arc": "fae-and-forest",
+    "date": "2025-09-18"
+  },
   "canonFacts": [
     {
-      "id": "EXAMPLE-replace-me",
-      "statement": "Replace this with a real canon fact from this session.",
-      "entities": ["SomeEntity"],
-      "citations": [{ "start": 0, "end": 0 }]
+      "id": "d001",
+      "statement": "The party are investigators described as 'magic cops' working on a series of murders.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 592,
+          "end": 613
+        }
+      ]
+    },
+    {
+      "id": "d002",
+      "statement": "On the outskirts of the remote town there is a commune whose inhabitants dress in old-fashioned tunics and are described as honest, peaceful people.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 604,
+          "end": 655
+        }
+      ]
+    },
+    {
+      "id": "d003",
+      "statement": "The murders the party is investigating occurred over a span of three weeks.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 614,
+          "end": 618
+        }
+      ]
+    },
+    {
+      "id": "d004",
+      "statement": "The murder victims share no obvious links: they differ in age, race, location, and the frequency of killings.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 620,
+          "end": 622
+        }
+      ]
+    },
+    {
+      "id": "d005",
+      "statement": "A witness told the party that one of the murder victims had met with a man wearing a tunic from the 1700s prior to his death.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 623,
+          "end": 633
+        }
+      ]
+    },
+    {
+      "id": "d006",
+      "statement": "All of the murder victims were found shriveled up.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 637,
+          "end": 642
+        }
+      ]
+    },
+    {
+      "id": "d007",
+      "statement": "The party traced the tunic-wearing man to a train leading to a remote town in the boonies.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 649,
+          "end": 650
+        }
+      ]
+    },
+    {
+      "id": "d008",
+      "statement": "Some members of the commune have a greenish tint to their skin and secretly worship an entity called 'the Green Man'.",
+      "entities": [
+        "the Green Man"
+      ],
+      "citations": [
+        {
+          "start": 656,
+          "end": 671
+        }
+      ]
+    },
+    {
+      "id": "d009",
+      "statement": "The remote town is located on the border of a massive forest called the Sea of Trees (or similar name), where the pine trees grow miles high and from a distance resemble an actual sea, with what appears to be a mountain that is actually just very tall trees.",
+      "entities": [
+        "Sea of Trees"
+      ],
+      "citations": [
+        {
+          "start": 665,
+          "end": 669
+        }
+      ]
+    },
+    {
+      "id": "d010",
+      "statement": "The forest is composed of pine trees.",
+      "entities": [
+        "Sea of Trees"
+      ],
+      "citations": [
+        {
+          "start": 674,
+          "end": 675
+        }
+      ]
+    },
+    {
+      "id": "d011",
+      "statement": "The suspect (the tunic-wearing man) had a house at the commune and left to commune with the Green Man by going into the forest.",
+      "entities": [
+        "the Green Man"
+      ],
+      "citations": [
+        {
+          "start": 680,
+          "end": 685
+        }
+      ]
+    },
+    {
+      "id": "d012",
+      "statement": "The party found a non-Fayrin metal necklace in the suspect's house at the commune.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 687,
+          "end": 688
+        }
+      ]
+    },
+    {
+      "id": "d013",
+      "statement": "The necklace levitated and pointed in a direction, acting as a compass to guide the party through the forest.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 692,
+          "end": 694
+        }
+      ]
+    },
+    {
+      "id": "d014",
+      "statement": "The commune members warned the party not to go too deep into the forest, as doing so would take them into a region called the Mid-Bowery (or Mid-Down).",
+      "entities": [
+        "Mid-Bowery"
+      ],
+      "citations": [
+        {
+          "start": 695,
+          "end": 702
+        }
+      ]
+    },
+    {
+      "id": "d015",
+      "statement": "The party encountered a group of giant praying mantises in the forest; most of the mantises were killed or fled after the fight.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 704,
+          "end": 709
+        }
+      ]
+    },
+    {
+      "id": "d016",
+      "statement": "Deeper in the forest (the Mid-Bowery), the environment becomes darker.",
+      "entities": [
+        "Mid-Bowery"
+      ],
+      "citations": [
+        {
+          "start": 720,
+          "end": 720
+        }
+      ]
+    },
+    {
+      "id": "d017",
+      "statement": "One of the party members (now absent) possessed a darkvision or dark-sense ability that was useful in the darker depths of the forest.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 721,
+          "end": 722
+        }
+      ]
+    },
+    {
+      "id": "d018",
+      "statement": "The party rested for several peaceful days inside a magical mansion conjured by a party member named Mordecai (Mordenkainen's Magnificent Mansion or equivalent spell).",
+      "entities": [
+        "Mordecai"
+      ],
+      "citations": [
+        {
+          "start": 728,
+          "end": 729
+        }
+      ]
+    },
+    {
+      "id": "d019",
+      "statement": "Upon entering the forest more deeply, the party encountered what appeared to be an eight-year-old child in armor, crying.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 736,
+          "end": 737
+        }
+      ]
+    },
+    {
+      "id": "d020",
+      "statement": "The session ended with the party deciding to approach the crying child in the forest.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 756,
+          "end": 760
+        }
+      ]
+    },
+    {
+      "id": "d021",
+      "statement": "Krod Snodman is a Shuni (a dog-like ancestry) with the ability to sense blood.",
+      "entities": [
+        "Krod Snodman"
+      ],
+      "citations": [
+        {
+          "start": 789,
+          "end": 799
+        }
+      ]
+    },
+    {
+      "id": "d022",
+      "statement": "The Iridescent Host preaches self-exceptionalism — the religion does not compel its followers to risk themselves to save others; such acts are a matter of personal character rather than religious duty.",
+      "entities": [
+        "Iridescent Host"
+      ],
+      "citations": [
+        {
+          "start": 808,
+          "end": 810
+        }
+      ]
+    },
+    {
+      "id": "d023",
+      "statement": "The party belongs to the Church of Calaria, also called the Iridescent Host.",
+      "entities": [
+        "Church of Calaria",
+        "Iridescent Host"
+      ],
+      "citations": [
+        {
+          "start": 814,
+          "end": 815
+        }
+      ]
+    },
+    {
+      "id": "d024",
+      "statement": "A curse has been affecting people in Hallia, killing 47 people so far.",
+      "entities": [
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 819,
+          "end": 824
+        }
+      ]
+    },
+    {
+      "id": "d025",
+      "statement": "The party was brought in as magic cops (agents of the Church of Calaria) to investigate the source of the curse afflicting Hallia.",
+      "entities": [
+        "Church of Calaria",
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 825,
+          "end": 825
+        }
+      ]
+    },
+    {
+      "id": "d026",
+      "statement": "The first victim of the curse in Hallia contracted it from someone dressed in a tunic, who was traced back to the city of Wrenford.",
+      "entities": [
+        "Hallia",
+        "Wrenford"
+      ],
+      "citations": [
+        {
+          "start": 829,
+          "end": 829
+        }
+      ]
+    },
+    {
+      "id": "d027",
+      "statement": "Wrenford is a city located out in the boonies (rural area) connected to the investigation of the curse.",
+      "entities": [
+        "Wrenford"
+      ],
+      "citations": [
+        {
+          "start": 831,
+          "end": 836
+        }
+      ]
+    },
+    {
+      "id": "d028",
+      "statement": "The suspect from Wrenford is referred to as 'the Green Father' and is associated with worship of a figure called the Green Father.",
+      "entities": [
+        "Wrenford",
+        "Green Father"
+      ],
+      "citations": [
+        {
+          "start": 838,
+          "end": 841
+        }
+      ]
+    },
+    {
+      "id": "d029",
+      "statement": "The Green Father is believed to be somehow related to the Verdant Expanse, the forest near Wrenford.",
+      "entities": [
+        "Green Father",
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 844,
+          "end": 844
+        }
+      ]
+    },
+    {
+      "id": "d030",
+      "statement": "There is a commune on the edge of Wrenford whose inhabitants forego much technology, similar to Mennonites, and worship the Green Father more devoutly than the average person in the Clarion.",
+      "entities": [
+        "Wrenford",
+        "Green Father"
+      ],
+      "citations": [
+        {
+          "start": 879,
+          "end": 879
+        }
+      ]
+    },
+    {
+      "id": "d031",
+      "statement": "The suspect from Wrenford walked into the Verdant Expanse six months ago and has not been seen since by the commune members.",
+      "entities": [
+        "Wrenford",
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 881,
+          "end": 881
+        }
+      ]
+    },
+    {
+      "id": "d032",
+      "statement": "The first incident of the curse in Hallia occurred three weeks ago, while the suspect entered the Verdant Expanse six months ago.",
+      "entities": [
+        "Hallia",
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 887,
+          "end": 888
+        }
+      ]
+    },
+    {
+      "id": "d033",
+      "statement": "A strange green rock on a twine necklace was found in the suspect's house in Wrenford, identified through a high skill roll as 'feystone' — a particularly rare material sought after by collectors, believed to originate from somewhere starward on the horizon, though little else is known about it.",
+      "entities": [
+        "Wrenford",
+        "feystone"
+      ],
+      "citations": [
+        {
+          "start": 893,
+          "end": 893
+        }
+      ]
+    },
+    {
+      "id": "d034",
+      "statement": "The feystone necklace found in the suspect's house acted as a divining rod, pointing the party toward something within the Verdant Expanse.",
+      "entities": [
+        "feystone",
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 901,
+          "end": 902
+        }
+      ]
+    },
+    {
+      "id": "d035",
+      "statement": "The party encountered giant praying mantises while traveling through the Verdant Expanse.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 904,
+          "end": 904
+        }
+      ]
+    },
+    {
+      "id": "d036",
+      "statement": "The Verdant Expanse is a forest the size of a country, with trees believed to have stood for thousands of years.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 918,
+          "end": 920
+        }
+      ]
+    },
+    {
+      "id": "d037",
+      "statement": "As one travels closer to the center of the Verdant Expanse, the trees grow larger and taller, reaching close to a mile high at their peak.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 921,
+          "end": 921
+        }
+      ]
+    },
+    {
+      "id": "d038",
+      "statement": "All manner of strange creatures live within the Verdant Expanse, and strange magics are believed to occur there.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 922,
+          "end": 923
+        }
+      ]
+    },
+    {
+      "id": "d039",
+      "statement": "Most people who go too deep into the Verdant Expanse do not come back out; the only confirmed fact is that the further in one goes, the less light reaches the surface as the tree canopy grows denser.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 924,
+          "end": 925
+        }
+      ]
+    },
+    {
+      "id": "d040",
+      "statement": "The Verdant Expanse is treated similarly to an ocean in that its depths are hard to map and generally not worth entering for the average person.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 925,
+          "end": 925
+        }
+      ]
+    },
+    {
+      "id": "d041",
+      "statement": "The suspect walked into the Verdant Expanse, disappeared, then appeared in Hallia months later, killed someone, and disappeared again.",
+      "entities": [
+        "Verdant Expanse",
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 926,
+          "end": 926
+        }
+      ]
+    },
+    {
+      "id": "d042",
+      "statement": "The region of the Verdant Expanse called the 'mid-bowry' experiences permanent dim light during the day, as the tree canopy blocks most sunlight, though it still gets dark when the sun sets.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 937,
+          "end": 941
+        }
+      ]
+    },
+    {
+      "id": "d043",
+      "statement": "In the mid-bowry of the Verdant Expanse, the party found a clearing approximately 15 feet wide with a beam of light coming down into it, where an approximately eight-year-old human boy was found on the ground with scratches on his legs, his ankle wrapped by a branch from a nearby tree.",
+      "entities": [
+        "Verdant Expanse"
+      ],
+      "citations": [
+        {
+          "start": 943,
+          "end": 948
+        }
+      ]
+    },
+    {
+      "id": "d044",
+      "statement": "Andros Anthropos is a 10-foot-tall human man with a large Tom Selleck-style mustache, wearing ornate dragon turtle armor bearing the symbol of the Iridescent Host and a caduceus-like medical symbol, and carrying a large pocket-watch-shaped shield.",
+      "entities": [
+        "Andros Anthropos",
+        "Iridescent Host"
+      ],
+      "citations": [
+        {
+          "start": 957,
+          "end": 961
+        }
+      ]
+    },
+    {
+      "id": "d045",
+      "statement": "Cedric Corot is a lizardfolk detective styled after film noir, dressed in a black suit, black tie, white shirt, and a fedora, who smokes cigarettes and travels with an entourage named Vinny, Tony, Donnie, and Eddie (who must remain within safe city limits).",
+      "entities": [
+        "Cedric Corot"
+      ],
+      "citations": [
+        {
+          "start": 963,
+          "end": 972
+        }
+      ]
+    },
+    {
+      "id": "d046",
+      "statement": "Krod Snodman is a graying black pug standing roughly two and a half feet tall, wearing lattice armor and carrying a full-size nodachi (approximately three times his height) on his back.",
+      "entities": [
+        "Krod Snodman"
+      ],
+      "citations": [
+        {
+          "start": 974,
+          "end": 981
+        }
+      ]
+    },
+    {
+      "id": "d047",
+      "statement": "This one-shot adventure is concurrent with the main campaign and began on the same day the campaign started; by the time of this session, the one-shot party is approximately one week ahead of where the main campaign currently is.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 1055,
+          "end": 1056
+        }
+      ]
+    },
+    {
+      "id": "d048",
+      "statement": "The boy in the clearing gave his name as Tommy and claimed he had been walking through the forest by himself.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1097,
+          "end": 1113
+        }
+      ]
+    },
+    {
+      "id": "d049",
+      "statement": "A boy named Tommy was found lost and injured in the forest, with a branch-wound around his ankle that had worn away quite a bit of skin.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1097,
+          "end": 1266
+        }
+      ]
+    },
+    {
+      "id": "d050",
+      "statement": "Cedric Garot is a famous detective whose reputation is known well enough that an eight-year-old child from Wrenford recognized his name.",
+      "entities": [
+        "Cedric Garot",
+        "Wrenford"
+      ],
+      "citations": [
+        {
+          "start": 1173,
+          "end": 1180
+        }
+      ]
+    },
+    {
+      "id": "d051",
+      "statement": "Tommy bears a very faint rainbow-colored raiment, marking him as a low-level member of the Host.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1197,
+          "end": 1203
+        }
+      ]
+    },
+    {
+      "id": "d052",
+      "statement": "Tommy is approximately eight years old.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1207,
+          "end": 1207
+        }
+      ]
+    },
+    {
+      "id": "d053",
+      "statement": "People in the forest are reputed by locals to eat other people, according to what Tommy had been told.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1217,
+          "end": 1217
+        }
+      ]
+    },
+    {
+      "id": "d054",
+      "statement": "Tommy had been lost in the forest for what he estimated to be at least a few days, though the detective Cedric assessed this was likely an exaggeration born of fear rather than deliberate deception.",
+      "entities": [
+        "Tommy",
+        "Cedric"
+      ],
+      "citations": [
+        {
+          "start": 1279,
+          "end": 1317
+        }
+      ]
+    },
+    {
+      "id": "d055",
+      "statement": "Tommy appeared more magically or divinely powerful than would be expected for an eight-year-old child.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1316,
+          "end": 1316
+        }
+      ]
+    },
+    {
+      "id": "d056",
+      "statement": "The Ghost Festival is a Haleo cultural tradition during which children go trick-or-treating.",
+      "entities": [
+        "Ghost Festival",
+        "Haleo"
+      ],
+      "citations": [
+        {
+          "start": 1339,
+          "end": 1347
+        }
+      ]
+    },
+    {
+      "id": "d057",
+      "statement": "Tommy was not equipped for forest travel — he wore shorts and a graphic tee and carried a school backpack with a water bottle, but did not appear malnourished.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1352,
+          "end": 1357
+        }
+      ]
+    },
+    {
+      "id": "d058",
+      "statement": "Tommy is from the town of Wrenford.",
+      "entities": [
+        "Tommy",
+        "Wrenford"
+      ],
+      "citations": [
+        {
+          "start": 1367,
+          "end": 1367
+        }
+      ]
+    },
+    {
+      "id": "d059",
+      "statement": "Tommy's tracks in the grove indicated he entered from the direction of the center of the forest.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1382,
+          "end": 1387
+        }
+      ]
+    },
+    {
+      "id": "d060",
+      "statement": "There are people on the edge of Wrenford known for dressing in tunics, whom Tommy's mother told him not to talk to.",
+      "entities": [
+        "Wrenford",
+        "Tommy",
+        "Karen Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1397,
+          "end": 1401
+        }
+      ]
+    },
+    {
+      "id": "d061",
+      "statement": "The party's investigation in the forest is being guided by the direction a face stone points.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 1447,
+          "end": 1447
+        }
+      ]
+    },
+    {
+      "id": "d062",
+      "statement": "Tommy's mother told him that the Green Father is not real.",
+      "entities": [
+        "Tommy",
+        "Karen Lagerman",
+        "Green Father"
+      ],
+      "citations": [
+        {
+          "start": 1451,
+          "end": 1451
+        }
+      ]
+    },
+    {
+      "id": "d063",
+      "statement": "Tommy Lagerman's mother has told him that the Green Father is not real.",
+      "entities": [
+        "Tommy Lagerman",
+        "Karen Lagerman",
+        "Green Father"
+      ],
+      "citations": [
+        {
+          "start": 1451,
+          "end": 1451
+        }
+      ]
+    },
+    {
+      "id": "d064",
+      "statement": "Karen Lagerman previously worked in the lumber industry helping with tree-cutting, but at the time of the session works for a newspaper, writing articles on a typewriter.",
+      "entities": [
+        "Karen Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1453,
+          "end": 1455
+        }
+      ]
+    },
+    {
+      "id": "d065",
+      "statement": "Karen Lagerman previously worked in tree-cutting and now appears to work for a newspaper, spending significant time writing on a typewriter.",
+      "entities": [
+        "Karen Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1453,
+          "end": 1455
+        }
+      ]
+    },
+    {
+      "id": "d066",
+      "statement": "Karen Lagerman's newspaper articles contained no pictures, unlike a normal newspaper.",
+      "entities": [
+        "Karen Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1461,
+          "end": 1462
+        }
+      ]
+    },
+    {
+      "id": "d067",
+      "statement": "Karen Lagerman's newspaper articles contain no pictures, unlike a normal newspaper.",
+      "entities": [
+        "Karen Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1461,
+          "end": 1462
+        }
+      ]
+    },
+    {
+      "id": "d068",
+      "statement": "Tommy's mother is named Karen Lagerman.",
+      "entities": [
+        "Tommy",
+        "Karen Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1471,
+          "end": 1473
+        }
+      ]
+    },
+    {
+      "id": "d069",
+      "statement": "The child travelling with the party is named Tommy Lagerman.",
+      "entities": [
+        "Tommy Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1471,
+          "end": 1483
+        }
+      ]
+    },
+    {
+      "id": "d070",
+      "statement": "Tommy Lagerman's mother is named Karen Lagerman.",
+      "entities": [
+        "Karen Lagerman",
+        "Tommy Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1471,
+          "end": 1473
+        }
+      ]
+    },
+    {
+      "id": "d071",
+      "statement": "The party is travelling through a forest called the Midbau, following the direction indicated by a face stone (dowsing necklace).",
+      "entities": [
+        "Midbau",
+        "face stone"
+      ],
+      "citations": [
+        {
+          "start": 1509,
+          "end": 1522
+        }
+      ]
+    },
+    {
+      "id": "d072",
+      "statement": "Tommy Lagerman is approximately eight years old.",
+      "entities": [
+        "Tommy Lagerman"
+      ],
+      "citations": [
+        {
+          "start": 1532,
+          "end": 1532
+        }
+      ]
+    },
+    {
+      "id": "d073",
+      "statement": "Deeper into the Midbau, the trees grow noticeably denser and larger, requiring significant deviations from a straight path.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1585,
+          "end": 1585
+        }
+      ]
+    },
+    {
+      "id": "d074",
+      "statement": "The ground in the deeper parts of the Midbau is consistently damp and muddy, with lichens and mosses growing on the bases of trees, indicating frequent dampness rather than a one-off event.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1590,
+          "end": 1595
+        }
+      ]
+    },
+    {
+      "id": "d075",
+      "statement": "In the deeper Midbau, there are no animal tracks or signs of animal passage on the ground, unlike earlier parts of the forest.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1604,
+          "end": 1608
+        }
+      ]
+    },
+    {
+      "id": "d076",
+      "statement": "In the deeper Midbau, mosses and lichens on tree trunks begin only about three feet above the ground; below that line the trunks are completely bare, suggesting periodic flooding to that height.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1611,
+          "end": 1613
+        }
+      ]
+    },
+    {
+      "id": "d077",
+      "statement": "The first sturdy branches on the large trees in the deeper Midbau are approximately 20 feet off the ground.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1650,
+          "end": 1651
+        }
+      ]
+    },
+    {
+      "id": "d078",
+      "statement": "A fast-moving wave of brown, muddy water three to four feet tall passed through the forest, travelling from the east toward the west.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1679,
+          "end": 1726
+        }
+      ]
+    },
+    {
+      "id": "d079",
+      "statement": "The muddy wave was accompanied by the sound of joyous laughter emanating from within it.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1684,
+          "end": 1714
+        }
+      ]
+    },
+    {
+      "id": "d080",
+      "statement": "Humanoid-ish silhouettes briefly formed out of the foam at the edge of the wave before dispersing back into the water, suggesting the presence of entities within the wave.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1715,
+          "end": 1716
+        }
+      ]
+    },
+    {
+      "id": "d081",
+      "statement": "The wave did not leave standing puddles behind; the entire mass of water moved as one extended wave and the water level tapered off behind it, leaving the ground damper but otherwise clear.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1722,
+          "end": 1726
+        }
+      ]
+    },
+    {
+      "id": "d082",
+      "statement": "After the wave passed, the party continued following the dowsing necklace and after roughly an hour the ground began to firm up again, suggesting they had left the area regularly traversed by the wave.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1823,
+          "end": 1827
+        }
+      ]
+    },
+    {
+      "id": "d083",
+      "statement": "In the deep Midbau, it becomes completely dark once night falls, with only dim light available even before sunset.",
+      "entities": [
+        "Midbau"
+      ],
+      "citations": [
+        {
+          "start": 1829,
+          "end": 1832
+        }
+      ]
+    },
+    {
+      "id": "d084",
+      "statement": "Tommy lives in Wrenford and does not come from the middle of the forest; he entered the forest on a dare from his schoolmate Jonathan, who bet him two bucks to walk in and back out an hour later, during which he got a little lost and was attacked by a tree before the party found him.",
+      "entities": [
+        "Tommy",
+        "Jonathan",
+        "Wrenford"
+      ],
+      "citations": [
+        {
+          "start": 1892,
+          "end": 2107
+        }
+      ]
+    },
+    {
+      "id": "d085",
+      "statement": "Cedric Rowe successfully spread propaganda about Calaria to Tommy; as a result, for the next month any information Tommy seeks about Calaria will reflect what Cedric wants him to learn, and the propaganda cannot be traced back to Cedric.",
+      "entities": [
+        "Cedric Rowe",
+        "Tommy",
+        "Calaria"
+      ],
+      "citations": [
+        {
+          "start": 1966,
+          "end": 1974
+        }
+      ]
+    },
+    {
+      "id": "d086",
+      "statement": "Tommy was already a follower of 'the host' in at least some small way before Cedric's propaganda, and already thought solving crimes was cool.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 1973,
+          "end": 1974
+        }
+      ]
+    },
+    {
+      "id": "d087",
+      "statement": "After about a week's worth of travel into the forest, light no longer reaches the forest floor because the trees are too tall and the canopy cover is too extensive, making it permanently dark in that region.",
+      "entities": [
+        "the forest"
+      ],
+      "citations": [
+        {
+          "start": 2005,
+          "end": 2010
+        }
+      ]
+    },
+    {
+      "id": "d088",
+      "statement": "Tommy was truthful that he does not come from the deep forest and believes he simply got turned around at some point.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 2104,
+          "end": 2111
+        }
+      ]
+    },
+    {
+      "id": "d089",
+      "statement": "Deep in the permanently dark region of the forest, the party's dowsing necklace occasionally begins pointing away from the direction they are walking, suggesting either the party is getting turned around or the target the necklace points to is moving.",
+      "entities": [
+        "the forest"
+      ],
+      "citations": [
+        {
+          "start": 2130,
+          "end": 2136
+        }
+      ]
+    },
+    {
+      "id": "d090",
+      "statement": "The deep forest has a background of very faint distant leaf rustling and insect sounds, but no evidence of normal forest creatures such as bears, and no large animal calls are typically heard.",
+      "entities": [
+        "the forest"
+      ],
+      "citations": [
+        {
+          "start": 2154,
+          "end": 2156
+        }
+      ]
+    },
+    {
+      "id": "d091",
+      "statement": "Several hours into travel through the deep forest, the party heard a single long, distant, echoey whale call before it faded.",
+      "entities": [
+        "the forest"
+      ],
+      "citations": [
+        {
+          "start": 2157,
+          "end": 2168
+        }
+      ]
+    },
+    {
+      "id": "d092",
+      "statement": "The party heard a distant whale call while traveling through the forest, which sounded echoey by the time it reached them, suggesting the whale was far away.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2167,
+          "end": 2170
+        }
+      ]
+    },
+    {
+      "id": "d093",
+      "statement": "The party has established a tradition of all sleeping in the same room together while traveling.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2181,
+          "end": 2184
+        }
+      ]
+    },
+    {
+      "id": "d094",
+      "statement": "Approximately an hour after the party bedded down for the night, Andros heard a very faint sound of tapping.",
+      "entities": [
+        "Andros"
+      ],
+      "citations": [
+        {
+          "start": 2198,
+          "end": 2200
+        }
+      ]
+    },
+    {
+      "id": "d095",
+      "statement": "Approximately an hour after bedding down for the night, Andros heard a very faint tapping sound coming from the front door of the Planar Palace mansion.",
+      "entities": [
+        "Andros"
+      ],
+      "citations": [
+        {
+          "start": 2198,
+          "end": 2208
+        }
+      ]
+    },
+    {
+      "id": "d096",
+      "statement": "The tapping at the Planar Palace door was irregular in rhythm: a burst of fast, faint taps followed by a break, repeating in that pattern.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2250,
+          "end": 2251
+        }
+      ]
+    },
+    {
+      "id": "d097",
+      "statement": "Tommy, the child traveling with the party, was asleep in a room situated away from the mansion's entrance.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 2258,
+          "end": 2269
+        }
+      ]
+    },
+    {
+      "id": "d098",
+      "statement": "The Planar Palace spell creates a separate plane of existence; once inside, the entrance can be shut and made invisible, and while closed, effects from outside fail to penetrate it and vice versa, except for interplanar teleport.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2324,
+          "end": 2328
+        }
+      ]
+    },
+    {
+      "id": "d099",
+      "statement": "Only creatures designated by the caster when the Planar Palace spell is cast can reopen the door at will.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2327,
+          "end": 2330
+        }
+      ]
+    },
+    {
+      "id": "d100",
+      "statement": "While the Planar Palace entrance is closed, scrying magic can only observe the outside if it is capable of crossing planes.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2329,
+          "end": 2329
+        }
+      ]
+    },
+    {
+      "id": "d101",
+      "statement": "Tommy's bag contained school books, multiple empty candy wrappers (including a gummy wrapper), a crumpled brown paper bag, a very soft and nearly rotting apple, tinfoil suggesting he had eaten a sandwich, pencils, and an eraser with a bite taken out of it — nothing supernatural.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 2344,
+          "end": 2356
+        }
+      ]
+    },
+    {
+      "id": "d102",
+      "statement": "When the party opened the Planar Palace door, a dark blob-shaped entity was seen immediately pushing away from the door opening and moving to the left, then fleeing supernaturally quickly into the forest.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2433,
+          "end": 2553
+        }
+      ]
+    },
+    {
+      "id": "d103",
+      "statement": "The explosion from Cedric's spell woke Tommy, who stuck his head out of the bedroom asking what had happened.",
+      "entities": [
+        "Tommy",
+        "Cedric"
+      ],
+      "citations": [
+        {
+          "start": 2474,
+          "end": 2476
+        }
+      ]
+    },
+    {
+      "id": "d104",
+      "statement": "The forest in this region is covered by a persistent blackish night that obscures the sky entirely, preventing observation of stars even when technically outdoors.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2492,
+          "end": 2518
+        }
+      ]
+    },
+    {
+      "id": "d105",
+      "statement": "On the exterior face of the Planar Palace door — which is normally invisible — there was a very faint carving that appeared to be the beginnings of the left half of a tree with some leaves, though its magical purpose could not be determined.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2499,
+          "end": 2547
+        }
+      ]
+    },
+    {
+      "id": "d106",
+      "statement": "The magical door (summoned as a planar portal) had a carving on it that, when examined with a high Arcana check, appeared to resemble the outline of the left half of a tree, possibly with leaves — only a partial image.",
+      "entities": [
+        "magical door"
+      ],
+      "citations": [
+        {
+          "start": 2541,
+          "end": 2544
+        }
+      ]
+    },
+    {
+      "id": "d107",
+      "statement": "The magical door is an invisible construct that functions as a door leading to another plane of existence.",
+      "entities": [
+        "magical door"
+      ],
+      "citations": [
+        {
+          "start": 2547,
+          "end": 2547
+        }
+      ]
+    },
+    {
+      "id": "d108",
+      "statement": "The entity that had been tapping at the Planar Palace door bolted the instant the door was opened, disappearing into the forest at supernatural speed.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2551,
+          "end": 2553
+        }
+      ]
+    },
+    {
+      "id": "d109",
+      "statement": "Whatever creature had been carving on the magical door bolted supernaturally quickly the moment the door opened, and was gone without a trace even on a critical perception check.",
+      "entities": [
+        "magical door"
+      ],
+      "citations": [
+        {
+          "start": 2551,
+          "end": 2553
+        }
+      ]
+    },
+    {
+      "id": "d110",
+      "statement": "The necklace being used as a tracking device points toward a moving target; the direction it indicates shifts over time, and the changes in direction become more pronounced as the party gets closer to whatever it is tracking.",
+      "entities": [
+        "necklace"
+      ],
+      "citations": [
+        {
+          "start": 2633,
+          "end": 2635
+        }
+      ]
+    },
+    {
+      "id": "d111",
+      "statement": "Approximately 500 feet ahead of the party, four faint pure-white lights were observed floating roughly five feet off the ground, relatively stationary.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2638,
+          "end": 2646
+        }
+      ]
+    },
+    {
+      "id": "d112",
+      "statement": "The floating lights with gossamer threads produced a mental enchantment effect (with emotion, enchantment, and mental traits) that compelled those who came close to want to jump down and grab one.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2706,
+          "end": 2715
+        }
+      ]
+    },
+    {
+      "id": "d113",
+      "statement": "The floating white lights had a shimmering, liquid-like quality inside them — the liquid appeared to glow and move around faintly.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2711,
+          "end": 2712
+        }
+      ]
+    },
+    {
+      "id": "d114",
+      "statement": "The floating white lights each had a very faint gossamer thread attached to them that extended upward into the forest canopy above, out of sight.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2717,
+          "end": 2726
+        }
+      ]
+    },
+    {
+      "id": "d115",
+      "statement": "The floating lights with gossamer threads did not follow the party when they moved away from them; after roughly 15 minutes of walking around them, the lights were completely out of sight.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2750,
+          "end": 2752
+        }
+      ]
+    },
+    {
+      "id": "d116",
+      "statement": "After two days of travel following the necklace, the party sensed they were getting very close to the source, as the necklace began veering sharply to the side at times before stabilizing in a consistent direction about two hours into the third day of travel.",
+      "entities": [
+        "necklace"
+      ],
+      "citations": [
+        {
+          "start": 2757,
+          "end": 2872
+        }
+      ]
+    },
+    {
+      "id": "d117",
+      "statement": "On the second night of camping, the carving/etching on the magical door was absent — the door was smooth with no markings, as it had been when first summoned.",
+      "entities": [
+        "magical door"
+      ],
+      "citations": [
+        {
+          "start": 2766,
+          "end": 2853
+        }
+      ]
+    },
+    {
+      "id": "d118",
+      "statement": "After approximately four hours of travel on the third day, the party heard the sound of a harp (or similar string instrument) echoing through the trees, coming from generally the direction they had been walking.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2879,
+          "end": 2886
+        }
+      ]
+    },
+    {
+      "id": "d119",
+      "statement": "The door that the party had previously investigated had no marking on it in the morning before they left for the day, but a marking appeared on it later.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2892,
+          "end": 2893
+        }
+      ]
+    },
+    {
+      "id": "d120",
+      "statement": "Further along the path, the party observed a large, diffuse bluish-purple glow emanating from among the trees ahead — much brighter than the faint white orbs seen earlier — accompanied by the louder sound of a harp and the distinct sound of multiple people talking to each other.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2906,
+          "end": 2919
+        }
+      ]
+    },
+    {
+      "id": "d121",
+      "statement": "The source of the bluish-purple glow and the harp music appeared to be at the same location as whatever the necklace was leading the party toward.",
+      "entities": [
+        "necklace"
+      ],
+      "citations": [
+        {
+          "start": 2917,
+          "end": 2917
+        }
+      ]
+    },
+    {
+      "id": "d122",
+      "statement": "The Iridescent Church is the organization that the player characters belong to, and its members have the legal authority to compel speech and, if they believe someone is responsible for a curse killing people, to kill that person under the laws of Calaria.",
+      "entities": [
+        "Iridescent Church",
+        "Calaria"
+      ],
+      "citations": [
+        {
+          "start": 2931,
+          "end": 2934
+        }
+      ]
+    },
+    {
+      "id": "d123",
+      "statement": "A glade exists in the forest where a fungal or mushroom-like growth on the trees emits a bluish-purplish luminescence, creating a diffuse glow visible through the trees.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2971,
+          "end": 2974
+        }
+      ]
+    },
+    {
+      "id": "d124",
+      "statement": "A group of humanoid creatures inhabits the glade in the forest; they are tall and gangly with bluish-gray skin, disproportionately long arms and legs, and wear gossamer sheer wrappings that appear organic rather than manufactured.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2976,
+          "end": 2991
+        }
+      ]
+    },
+    {
+      "id": "d125",
+      "statement": "The creatures in the glade are unfamiliar to the player characters and do not match any known ancestry.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2978,
+          "end": 3019
+        }
+      ]
+    },
+    {
+      "id": "d126",
+      "statement": "The humanoid creatures in the glade have faces that appear as a hard, glossy bony or exoskeletal growth resembling a mask merged onto their bodies, with two upward-curving horns, no nose, and two dark hollow eye sockets with no visible eyeballs.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 2993,
+          "end": 3008
+        }
+      ]
+    },
+    {
+      "id": "d127",
+      "statement": "The creatures in the glade have circular, lamprey eel-like mouths that contort in unusual ways to produce a sing-song language that does not follow any recognizable melody.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 3000,
+          "end": 3003
+        }
+      ]
+    },
+    {
+      "id": "d128",
+      "statement": "Two of the creatures in the glade appear larger and of higher status than the others, and seem to be holding court at the center of the group.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 3101,
+          "end": 3102
+        }
+      ]
+    },
+    {
+      "id": "d129",
+      "statement": "One of the two central creatures in the glade is named Oriela (also referred to as Oriel), and was playing a harp when the party arrived.",
+      "entities": [
+        "Oriela"
+      ],
+      "citations": [
+        {
+          "start": 3116,
+          "end": 3124
+        }
+      ]
+    },
+    {
+      "id": "d130",
+      "statement": "The other central creature in the glade is named Jin (also referred to as Jyn), who made dismissive remarks about the party and referred to them as 'dogs of the state.'",
+      "entities": [
+        "Jin"
+      ],
+      "citations": [
+        {
+          "start": 3116,
+          "end": 3142
+        }
+      ]
+    },
+    {
+      "id": "d131",
+      "statement": "The creatures in the glade stated that names are not of much use to them, and that many people have passed through their territory.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 3161,
+          "end": 3163
+        }
+      ]
+    },
+    {
+      "id": "d132",
+      "statement": "The creatures in the glade are aware of an entity called the Green Father, which they describe as something 'the silly little ones outside of this place worship,' implying it is worshipped by people living near or around the forest.",
+      "entities": [
+        "Green Father"
+      ],
+      "citations": [
+        {
+          "start": 3177,
+          "end": 3178
+        }
+      ]
+    },
+    {
+      "id": "d133",
+      "statement": "The creatures in the glade possess divine raiments; the two central figures have notably large, jet-black raiments granted by a patron entity that is not one of the recognized Outer Gods and is not associated with the Green Man.",
+      "entities": [
+        "Oriela",
+        "Jin"
+      ],
+      "citations": [
+        {
+          "start": 3193,
+          "end": 3201
+        }
+      ]
+    },
+    {
+      "id": "d134",
+      "statement": "Oriela indicated that the creatures have a patron entity that grants them their divine raiment, in the same manner that the party's own raiments are granted.",
+      "entities": [
+        "Oriela"
+      ],
+      "citations": [
+        {
+          "start": 3206,
+          "end": 3206
+        }
+      ]
+    },
+    {
+      "id": "d135",
+      "statement": "When shown a half-completed etching of a tree symbol, one of the central creatures (Oriela) visibly reacted with a slight tightening of the mouth, suggesting recognition of the symbol.",
+      "entities": [
+        "Oriela"
+      ],
+      "citations": [
+        {
+          "start": 3229,
+          "end": 3230
+        }
+      ]
+    },
+    {
+      "id": "d136",
+      "statement": "A companion named Tommy accompanied the party into the forest but hung back behind a stump rather than entering the glade with the party.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 3252,
+          "end": 3253
+        }
+      ]
+    },
+    {
+      "id": "d137",
+      "statement": "Tommy (a companion of the party) did not follow the party into the group of fey beings and instead waited behind a stump, watching.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 3252,
+          "end": 3254
+        }
+      ]
+    },
+    {
+      "id": "d138",
+      "statement": "Auriel stated that the husking victims did not appear to be in pain.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3263,
+          "end": 3263
+        }
+      ]
+    },
+    {
+      "id": "d139",
+      "statement": "Auriel confirmed she is involved with the husking (referred to as 'hostification') of citizens.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3276,
+          "end": 3281
+        }
+      ]
+    },
+    {
+      "id": "d140",
+      "statement": "According to Auriel, the husking is important for the future, and neither she nor others are harvesting anything from the victims.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3296,
+          "end": 3315
+        }
+      ]
+    },
+    {
+      "id": "d141",
+      "statement": "Auriel offered the party the option to redirect the husking to specific people rather than stopping it entirely.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3301,
+          "end": 3306
+        }
+      ]
+    },
+    {
+      "id": "d142",
+      "statement": "To stop the husking entirely, the party would need to entreat Auriel's lady (a more powerful figure) directly, and she would not ask for material possessions.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3329,
+          "end": 3330
+        }
+      ]
+    },
+    {
+      "id": "d143",
+      "statement": "The man the party was seeking (their person of interest connected to the husking) is dead; Auriel's companion Jin confirmed he is no longer present and is 'happy,' implying he has died.",
+      "entities": [
+        "Jin"
+      ],
+      "citations": [
+        {
+          "start": 3345,
+          "end": 3358
+        }
+      ]
+    },
+    {
+      "id": "d144",
+      "statement": "Auriel (also referred to as 'Aureole') is a fey-like being with a hard exterior (exoskeleton) and soft flesh inside, who plays a harp and can open magical doorways by playing specific melodies.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3393,
+          "end": 3400
+        }
+      ]
+    },
+    {
+      "id": "d145",
+      "statement": "Auriel opened a door carved into the bark of a fallen tree trunk by playing a specific melody on her harp; the door bore the carving of a crescent moon and had an indent where a pull-knob would be.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3396,
+          "end": 3400
+        }
+      ]
+    },
+    {
+      "id": "d146",
+      "statement": "Seeking an audience with Auriel's lady may require forsaking the Iridescent Church, according to Auriel's questioning of the party.",
+      "entities": [
+        "Auriel",
+        "Iridescent Church"
+      ],
+      "citations": [
+        {
+          "start": 3405,
+          "end": 3407
+        }
+      ]
+    },
+    {
+      "id": "d147",
+      "statement": "Jin is a companion of Auriel who is also present at the encounter; Jin stated directly that he is not responsible for the husking.",
+      "entities": [
+        "Jin"
+      ],
+      "citations": [
+        {
+          "start": 3423,
+          "end": 3445
+        }
+      ]
+    },
+    {
+      "id": "d148",
+      "statement": "Auriel can close the magical door in the tree by strumming three notes on her harp, causing the door to fade.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3544,
+          "end": 3546
+        }
+      ]
+    },
+    {
+      "id": "d149",
+      "statement": "Auriel can summon giant five-foot-tall thorny protrusions from the ground as a melee attack, and her strikes deal both piercing and acid damage.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3582,
+          "end": 3606
+        }
+      ]
+    },
+    {
+      "id": "d150",
+      "statement": "Jhin (also referred to as Jin) is one of the two main antagonists in this encounter, alongside Auriel.",
+      "entities": [
+        "Jhin",
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3658,
+          "end": 3658
+        }
+      ]
+    },
+    {
+      "id": "d151",
+      "statement": "Auriel has an exoskeleton formed on her skin, and when sufficiently wounded (bloodied), dark black ichor instead of blood spews from the cuts.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3688,
+          "end": 3690
+        }
+      ]
+    },
+    {
+      "id": "d152",
+      "statement": "Auriel possesses a bloodied ability that triggers uncontrollable laughter in enemies within 30 feet; the ability has the arcane, concentrate, emotion, and mental traits.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3690,
+          "end": 3705
+        }
+      ]
+    },
+    {
+      "id": "d153",
+      "statement": "Auriel does not have the same facial structure as the player characters, causing her laughter to sound like something mimicking laughter rather than genuine laughter.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3692,
+          "end": 3693
+        }
+      ]
+    },
+    {
+      "id": "d154",
+      "statement": "Auriel's bloodied laughter ability causes affected creatures who fail their Will save to be unable to use reactions and become slowed 1; those who merely succeed are unable to use reactions until the start of Krod's next turn.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3740,
+          "end": 3743
+        }
+      ]
+    },
+    {
+      "id": "d155",
+      "statement": "Jhin used the spell Confusion during the encounter, targeting Krod.",
+      "entities": [
+        "Jhin",
+        "Krod"
+      ],
+      "citations": [
+        {
+          "start": 3807,
+          "end": 3815
+        }
+      ]
+    },
+    {
+      "id": "d156",
+      "statement": "The courtiers are a troop-type enemy (a single group entity) present in the encounter alongside Jhin and Auriel.",
+      "entities": [
+        "Courtiers"
+      ],
+      "citations": [
+        {
+          "start": 3882,
+          "end": 3882
+        }
+      ]
+    },
+    {
+      "id": "d157",
+      "statement": "When Jhin is bloodied, a jet-black stream of liquid (ichor) shoots out of cracks in his exoskeleton as a burst effect dealing acid damage.",
+      "entities": [
+        "Jhin"
+      ],
+      "citations": [
+        {
+          "start": 3913,
+          "end": 3920
+        }
+      ]
+    },
+    {
+      "id": "d158",
+      "statement": "Auriel can emit a black mist from the cracks in her exoskeleton that functions as a slowing gas, affecting adjacent creatures via a Fortitude save.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3947,
+          "end": 3963
+        }
+      ]
+    },
+    {
+      "id": "d159",
+      "statement": "Auriel possesses supernaturally sharpened nails she uses as a melee attack.",
+      "entities": [
+        "Auriel"
+      ],
+      "citations": [
+        {
+          "start": 3966,
+          "end": 3983
+        }
+      ]
+    },
+    {
+      "id": "d160",
+      "statement": "Aureole (Aurel) was defeated when her carapace lost structural integrity, collapsed in on itself, and leaked black ichor from multiple breaks.",
+      "entities": [
+        "Aureole",
+        "Aurel"
+      ],
+      "citations": [
+        {
+          "start": 4009,
+          "end": 4027
+        }
+      ]
+    },
+    {
+      "id": "d161",
+      "statement": "The party safely escaped the forest with the boy (Tommy) and returned to Hallia to report back to the Iridescent Church.",
+      "entities": [
+        "Tommy",
+        "Hallia",
+        "Iridescent Church"
+      ],
+      "citations": [
+        {
+          "start": 4204,
+          "end": 4207
+        }
+      ]
+    },
+    {
+      "id": "d162",
+      "statement": "After the party escaped the forest with the boy, another person was struck down by the withering curse during the time it took them to return, indicating that killing Aureole and her allies did not stop the curse.",
+      "entities": [
+        "Hallia"
+      ],
+      "citations": [
+        {
+          "start": 4208,
+          "end": 4216
+        }
+      ]
+    },
+    {
+      "id": "d163",
+      "statement": "The party was told they would have died if they had entered through the fey court's gate to meet the patron.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4217,
+          "end": 4217
+        }
+      ]
+    },
+    {
+      "id": "d164",
+      "statement": "Tommy's mother claimed to be a law clerk for a local legal office, but she was lying.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 4240,
+          "end": 4243
+        }
+      ]
+    },
+    {
+      "id": "d165",
+      "statement": "Tommy is the son of the woman the party approached after rescuing him.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 4250,
+          "end": 4251
+        }
+      ]
+    },
+    {
+      "id": "d166",
+      "statement": "Tommy, an eight-year-old boy, is higher level than a normal child of his age would be expected to be, and was found many days deep into a forest where he was not supposed to be.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 4253,
+          "end": 4357
+        }
+      ]
+    },
+    {
+      "id": "d167",
+      "statement": "Tommy is being reported to the Iridescent Church by the party.",
+      "entities": [
+        "Tommy",
+        "Iridescent Church"
+      ],
+      "citations": [
+        {
+          "start": 4263,
+          "end": 4265
+        }
+      ]
+    },
+    {
+      "id": "d168",
+      "statement": "Something was etching markings on the party's door, but none of the party members had the skills to determine what was being etched.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4283,
+          "end": 4285
+        }
+      ]
+    },
+    {
+      "id": "d169",
+      "statement": "The party obtained a tree seed during the session.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4335,
+          "end": 4335
+        }
+      ]
+    },
+    {
+      "id": "d170",
+      "statement": "The party encountered and killed fey creatures in the forest during this adventure.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4346,
+          "end": 4348
+        }
+      ]
+    },
+    {
+      "id": "d171",
+      "statement": "The party encountered and killed some fey during the session.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4346,
+          "end": 4348
+        }
+      ]
+    },
+    {
+      "id": "d172",
+      "statement": "The fey encountered by the party appeared in the form of a child (described as seemingly an eight-year-old).",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4354,
+          "end": 4357
+        }
+      ]
+    },
+    {
+      "id": "d173",
+      "statement": "Something attempted to enter the party's mansion only after Tommy had been introduced into it.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 4355,
+          "end": 4356
+        }
+      ]
+    },
+    {
+      "id": "d174",
+      "statement": "The fey child was found many days into a forest where it was not supposed to be.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4355,
+          "end": 4356
+        }
+      ]
+    },
+    {
+      "id": "d175",
+      "statement": "The fey child was of a higher level (power) than would normally be expected for its apparent form.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4355,
+          "end": 4356
+        }
+      ]
+    },
+    {
+      "id": "d176",
+      "statement": "The fey child was only encountered after the party had introduced it into their mansion, and something attempted to get into the mansion only after that introduction.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4355,
+          "end": 4355
+        }
+      ]
+    },
+    {
+      "id": "d177",
+      "statement": "Tommy can see in the dark and is not frightened by darkness.",
+      "entities": [
+        "Tommy"
+      ],
+      "citations": [
+        {
+          "start": 4358,
+          "end": 4358
+        }
+      ]
+    },
+    {
+      "id": "d178",
+      "statement": "The fey child could see in the dark and was not frightened by darkness.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4358,
+          "end": 4358
+        }
+      ]
+    },
+    {
+      "id": "d179",
+      "statement": "The fey child's mother knew the party.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4359,
+          "end": 4365
+        }
+      ]
+    },
+    {
+      "id": "d180",
+      "statement": "The fey child liked the party, and the party had shared beef jerky with it.",
+      "entities": [],
+      "citations": [
+        {
+          "start": 4363,
+          "end": 4367
+        }
+      ]
     }
   ],
   "goodSentences": [],
