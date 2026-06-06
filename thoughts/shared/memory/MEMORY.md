@@ -7,4 +7,5 @@
 - [Transcript arcs and naming](transcript-arcs-and-naming.md) — transcripts span 6+ concurrent arcs; 000 arc's 30 files share one basename (differ only by date); line IDs are per-file
 - [Wiki non-prose pages](wiki-nonprose-pages.md) — Timeline.md is HTML, deity pages are :: stat blocks, flavor docs are <pre>; prose/voice tooling must be page-type-aware
 - [Wiki is setting, not session log](wiki-is-setting-not-session-log.md) — wiki records persistent world-state (people/places/things/lore), NOT party-action/session events; mining extracts standing facts, drops event narrative
-- [Heartwood rewrite progress](heartwood-rewrite-progress.md) — headless Phase-1 pipeline (mine→triage→resolve→assemble→conflict) COMPLETE & green (132 tests); Phase 2 review app is next
+- [Heartwood rewrite progress](heartwood-rewrite-progress.md) — headless Phase-1 pipeline COMPLETE (132 tests); Phase 2 review app IN PROGRESS (Stages A–C done)
+- [Heartwood review app architecture](heartwood-review-app-architecture.md) — pkg/heartwood-review: server fns run under Node not Bun (node:* I/O); aether render reuse (vendored slug, byte-faithful); TanStack server-fn API
