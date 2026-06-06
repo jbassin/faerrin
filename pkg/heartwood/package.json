@@ -8,6 +8,7 @@
     "draft-labels": "bun scripts/draft-labels.ts",
     "review-labels": "bun scripts/review-labels.ts",
     "eval": "bun scripts/eval.ts",
+    "resolve": "bun scripts/resolve.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },
