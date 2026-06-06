@@ -1,6 +1,6 @@
 import { test, expect, describe, beforeEach } from 'bun:test';
 import { mkdir } from 'node:fs/promises';
-import { respondOne, type RespondCtx } from './respond';
+import { respondOne, parseDecision, type RespondCtx } from './respond';
 import type { GitHubClient, Discussion } from './client';
 import type { LedgerEntry } from '../transcript/ledger';
 import { EMPTY_STAGES } from '../transcript/ledger';
@@ -455,5 +455,130 @@ describe('respondOne — batching', () => {
     expect(committed).toHaveLength(1);    // single batched commit
     expect(committed[0]!.actions).toHaveLength(2);
     expect(replies).toHaveLength(2);      // one per handled discussion
+  });
+});
+
+describe('parseDecision', () => {
+  test('bare approve → approve, no path', () => {
+    expect(parseDecision('approve')).toEqual({ kind: 'approve', path: null });
+    expect(parseDecision('  Approve  ')).toEqual({ kind: 'approve', path: null });
+  });
+
+  test('approve <path.md> carries the target page', () => {
+    expect(parseDecision('approve Phenomena/Bestiary/Auger.md'))
+      .toEqual({ kind: 'approve', path: 'Phenomena/Bestiary/Auger.md' });
+    // paths can contain spaces (wiki uses Title Case filenames)
+    expect(parseDecision('Approve  Org/Foo Bar/index.md'))
+      .toEqual({ kind: 'approve', path: 'Org/Foo Bar/index.md' });
+  });
+
+  test('approve with non-path trailing text stays a bare approve', () => {
+    expect(parseDecision('approve looks good')).toEqual({ kind: 'approve', path: null });
+  });
+
+  test('deny → deny', () => {
+    expect(parseDecision('deny')).toEqual({ kind: 'deny', path: null });
+    expect(parseDecision('Deny this one')).toEqual({ kind: 'deny', path: null });
+  });
+
+  test('non-decisions, sentinels, and chatter → null', () => {
+    expect(parseDecision('**[Speculative]** — `pkg/content/wiki/Foo.md`')).toBeNull();
+    expect(parseDecision('Applied.')).toBeNull();
+    expect(parseDecision('Denied — no changes applied.')).toBeNull();
+    expect(parseDecision('No related page to apply this to — reply `approve <path>`')).toBeNull();
+    expect(parseDecision('denied')).toBeNull(); // not the word "deny"
+    expect(parseDecision('looks good to me')).toBeNull();
+  });
+});
+
+describe('respondOne — approve with explicit path', () => {
+  const FILENAME = '000.test.2025-1-1.txt';
+  let tmpDir: string;
+
+  beforeEach(async () => {
+    tmpDir = await makeTmpDir();
+    await mkdir(`${tmpDir}/submissions`, { recursive: true });
+    await mkdir(`${tmpDir}/proposals`,   { recursive: true });
+    await mkdir(`${tmpDir}/content`,     { recursive: true });
+    await Bun.write(`${tmpDir}/CLAUDE.md`, '## Content Files\nStub conventions.\n');
+  });
+
+  const noPageComment = [
+    { kind: 'comment', reason: 'speculative', relatedPath: null, message: 'Augers are creatures.', citations: [[1, 1]] },
+  ];
+  const createComplete: RespondCtx['completeFn'] = async () => ({
+    text: '', usage: { input: 0, cacheRead: 0, cacheWrite: 0, output: 0, ms: 0 },
+    // the LLM may echo any path; respond must pin it to the reviewer's path
+    value: { proposal: { kind: 'create', path: 'IGNORED/by/llm.md', content: '---\ntitle: Auger\n---\nAn auger.\n', citations: [[1, 1]] } },
+  } as never);
+
+  test('approve <path> on a no-related-page comment creates that page', async () => {
+    const disc = makeDiscussion('disc-1', [
+      { body: '**[Speculative]** — (no related page)' },
+      { body: 'approve Phenomena/Bestiary/Auger.md' },
+    ]);
+    const { client, committed, replies } = makeMockClient([disc]);
+    await writeDefaultSub(tmpDir, FILENAME, [{ discussionId: 'disc-1', proposalIndex: 0 }]);
+    await writeProposalsFile(`${tmpDir}/proposals`, FILENAME, noPageComment);
+
+    await respondOne(makeEntry(FILENAME), makeCtx(tmpDir, client, createComplete));
+
+    expect(committed).toHaveLength(1);
+    const actions = committed[0]!.actions as Array<{ action: string; filePath: string }>;
+    expect(actions).toHaveLength(1);
+    expect(actions[0]!.action).toBe('create');
+    expect(actions[0]!.filePath).toBe('pkg/content/wiki/Phenomena/Bestiary/Auger.md');
+    expect(replies[0]!.body).toBe('Applied.');
+  });
+
+  test('bare approve on a no-related-page comment asks for a path, applies nothing', async () => {
+    const disc = makeDiscussion('disc-1', [
+      { body: '**[Speculative]** — (no related page)' },
+      { body: 'approve' },
+    ]);
+    const { client, committed, replies } = makeMockClient([disc]);
+    await writeDefaultSub(tmpDir, FILENAME, [{ discussionId: 'disc-1', proposalIndex: 0 }]);
+    await writeProposalsFile(`${tmpDir}/proposals`, FILENAME, noPageComment);
+
+    await respondOne(makeEntry(FILENAME), makeCtx(tmpDir, client));
+
+    expect(committed).toHaveLength(0);
+    expect(replies).toHaveLength(1);
+    expect(replies[0]!.body).toContain('No related page');
+  });
+
+  test('a later approve <path> re-opens a thread already answered with "no related page"', async () => {
+    const disc = makeDiscussion('disc-1', [
+      { body: '**[Speculative]** — (no related page)' },
+      { body: 'approve' },
+      { body: 'No related page to apply this to — reply `approve <path>` ...' },
+      { body: 'approve Phenomena/Bestiary/Auger.md' },
+    ]);
+    const { client, committed, replies } = makeMockClient([disc]);
+    await writeDefaultSub(tmpDir, FILENAME, [{ discussionId: 'disc-1', proposalIndex: 0 }]);
+    await writeProposalsFile(`${tmpDir}/proposals`, FILENAME, noPageComment);
+
+    await respondOne(makeEntry(FILENAME), makeCtx(tmpDir, client, createComplete));
+
+    expect(committed).toHaveLength(1);
+    const actions = committed[0]!.actions as Array<{ filePath: string }>;
+    expect(actions[0]!.filePath).toBe('pkg/content/wiki/Phenomena/Bestiary/Auger.md');
+    expect(replies[0]!.body).toBe('Applied.');
+  });
+
+  test('idempotent: a "no related page" note already follows the bare approve → skip', async () => {
+    const disc = makeDiscussion('disc-1', [
+      { body: '**[Speculative]** — (no related page)' },
+      { body: 'approve' },
+      { body: 'No related page to apply this to — reply `approve <path>` ...' },
+    ]);
+    const { client, committed, replies } = makeMockClient([disc]);
+    await writeDefaultSub(tmpDir, FILENAME, [{ discussionId: 'disc-1', proposalIndex: 0 }]);
+    await writeProposalsFile(`${tmpDir}/proposals`, FILENAME, noPageComment);
+
+    await respondOne(makeEntry(FILENAME), makeCtx(tmpDir, client));
+
+    expect(committed).toHaveLength(0);
+    expect(replies).toHaveLength(0);
   });
 });

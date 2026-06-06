@@ -29,6 +29,39 @@ interface ProposalsFile {
 // ---- Sentinel strings posted by the bot ----
 const APPLIED_SENTINEL = 'Applied.';
 const DENIED_SENTINEL  = 'Denied — no changes applied.';
+const NEEDS_PATH_PREFIX = 'No related page to apply this to';
+const NEEDS_PATH_REPLY =
+  NEEDS_PATH_PREFIX +
+  ' — reply `approve <path>` (e.g. `approve Phenomena/Bestiary/Auger.md`) to create that page and apply the claim there.';
+
+export interface ReviewDecision {
+  kind: 'approve' | 'deny';
+  /** A target wiki page (contentDir-relative) parsed from `approve <path.md>`, else null. */
+  path: string | null;
+}
+
+/**
+ * Parse a reviewer's reply. `approve` accepts an optional trailing page path
+ * (`approve Phenomena/Bestiary/Auger.md`) used to create/redirect where the claim
+ * lands; the path is only taken when the trailing text looks like a wiki file
+ * (ends in `.md`), so `approve looks good` stays a bare approval. Returns null for
+ * anything that isn't a decision (the bot's own notes, sentinels, chatter).
+ */
+export function parseDecision(body: string): ReviewDecision | null {
+  const t = body.trim();
+  const approve = /^approve\b[ \t]*(.*)$/i.exec(t);
+  if (approve) {
+    const rest = (approve[1] ?? '').trim();
+    return { kind: 'approve', path: /\.md$/i.test(rest) ? rest : null };
+  }
+  if (/^deny\b/i.test(t)) return { kind: 'deny', path: null };
+  return null;
+}
+
+/** A bot outcome note for a decision — its presence means the decision was handled. */
+function isOutcomeNote(body: string): boolean {
+  return body === APPLIED_SENTINEL || body === DENIED_SENTINEL || body.startsWith(NEEDS_PATH_PREFIX);
+}
 
 // ---- LLM schemas ----
 
@@ -127,34 +160,46 @@ export async function respondOne(entry: LedgerEntry, ctx: RespondCtx): Promise<v
     const disc = allDiscussions.find((d) => d.id === mapping.discussionId);
     if (!disc) continue;
 
-    // Skip if already handled
-    if (disc.notes.some((n) => n.body === APPLIED_SENTINEL || n.body === DENIED_SENTINEL)) {
+    // Act on the most recent reviewer decision (notes[0] is the bot's own note),
+    // and skip if the bot has already responded to it. Using the *latest* decision
+    // — not the first — lets a follow-up `approve <path>` re-open a thread the bot
+    // earlier answered with "no related page".
+    let decisionIdx = -1;
+    for (let i = disc.notes.length - 1; i >= 1; i--) {
+      if (parseDecision(disc.notes[i]!.body)) { decisionIdx = i; break; }
+    }
+    if (decisionIdx < 0) continue;
+    if (disc.notes.slice(decisionIdx + 1).some((n) => isOutcomeNote(n.body))) continue;
+
+    const decision = parseDecision(disc.notes[decisionIdx]!.body)!;
+    if (decision.kind === 'deny') {
+      queuedReplies.push({ discussionId: mapping.discussionId, body: DENIED_SENTINEL });
       continue;
     }
 
-    // Find first non-first note with approve/deny
-    const reply = disc.notes.slice(1).find(
-      (n) => /^approve\b/i.test(n.body) || /^deny\b/i.test(n.body),
-    );
-    if (!reply) continue;
-
-    const isApprove = /^approve\b/i.test(reply.body);
-
-    if (isApprove) {
-      const proposal = allProposals[mapping.proposalIndex];
-      if (proposal?.kind === 'comment') {
-        const commentProposal = proposal as unknown as CommentProposal;
-        if (conventions === null) conventions = await loadConventions(ctx.conventionsPath);
-        const actions = await applySpeculativeApproval(
-          commentProposal, entry.filename, ctx, fn, conventions,
-        );
-        accumulatedActions.push(...actions);
-        speculativeApplied++;
-      }
+    // Approve. Only comment proposals carry a claim to apply; others are just acked.
+    const proposal = allProposals[mapping.proposalIndex];
+    if (proposal?.kind !== 'comment') {
       queuedReplies.push({ discussionId: mapping.discussionId, body: APPLIED_SENTINEL });
-    } else {
-      queuedReplies.push({ discussionId: mapping.discussionId, body: DENIED_SENTINEL });
+      continue;
     }
+    const commentProposal = proposal as unknown as CommentProposal;
+
+    // An explicit `approve <path>` wins; otherwise fall back to the claim's related
+    // page. With neither, there's nowhere to write it — ask for a path.
+    const targetPath = decision.path ?? commentProposal.relatedPath;
+    if (targetPath === null) {
+      queuedReplies.push({ discussionId: mapping.discussionId, body: NEEDS_PATH_REPLY });
+      continue;
+    }
+
+    if (conventions === null) conventions = await loadConventions(ctx.conventionsPath);
+    const actions = await applySpeculativeApproval(
+      commentProposal, targetPath, entry.filename, ctx, fn, conventions,
+    );
+    accumulatedActions.push(...actions);
+    speculativeApplied++;
+    queuedReplies.push({ discussionId: mapping.discussionId, body: APPLIED_SENTINEL });
   }
 
   // ---- Process diff discussions (inline comments on changed files) ----
@@ -198,17 +243,16 @@ export async function respondOne(entry: LedgerEntry, ctx: RespondCtx): Promise<v
 
 async function applySpeculativeApproval(
   proposal:    CommentProposal,
+  targetPath:  string,
   filename:    string,
   ctx:         RespondCtx,
   fn:          typeof defaultComplete,
   conventions: string,
 ): Promise<CommitAction[]> {
-  if (proposal.relatedPath === null) {
-    console.warn(`respond: approved speculative comment has no relatedPath — skipping`);
-    return [];
-  }
-
-  const pageFile = Bun.file(`${ctx.contentDir}/${proposal.relatedPath}`);
+  // targetPath may be an existing page (edit/append) or a brand-new one the
+  // reviewer named via `approve <path>` (create) — when it doesn't exist on disk
+  // the LLM is told the page is empty and produces a `create`.
+  const pageFile = Bun.file(`${ctx.contentDir}/${targetPath}`);
   const pageText = (await pageFile.exists()) ? await pageFile.text() : '';
 
   const transcriptLines = await readTranscriptLines(
@@ -229,7 +273,7 @@ async function applySpeculativeApproval(
   ].join('\n');
 
   const user = [
-    `Page path: ${toRepoPath(proposal.relatedPath)}`,
+    `Page path: ${toRepoPath(targetPath)}`,
     '',
     '--- Current page content ---',
     pageText || '(empty — page does not exist yet)',
@@ -247,7 +291,7 @@ async function applySpeculativeApproval(
   const result = await fn({
     stage:      'respond-approve',
     transcript: filename,
-    page:       proposal.relatedPath,
+    page:       targetPath,
     model,
     system,
     user,
@@ -258,21 +302,23 @@ async function applySpeculativeApproval(
   const raw = result.value.proposal;
   let fullProposal: EditProposal | AppendProposal | CreateProposal;
 
+  // Always pin the proposal to targetPath — for a create, that's the reviewer's
+  // requested path, not whatever the LLM might echo back.
   if (raw.kind === 'edit') {
     fullProposal = {
-      kind: 'edit', path: proposal.relatedPath,
+      kind: 'edit', path: targetPath,
       oldText: raw.oldText, newText: raw.newText,
       citations: raw.citations as Citation[],
     };
   } else if (raw.kind === 'append') {
     fullProposal = {
-      kind: 'append', path: proposal.relatedPath,
+      kind: 'append', path: targetPath,
       afterHeading: raw.afterHeading, content: raw.content,
       citations: raw.citations as Citation[],
     };
   } else {
     fullProposal = {
-      kind: 'create', path: raw.path,
+      kind: 'create', path: targetPath,
       content: raw.content,
       citations: raw.citations as Citation[],
     };
