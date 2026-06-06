@@ -1,0 +1,13 @@
+{
+  "session": { "arc": "through-a-song-darkly", "date": "2025-08-28" },
+  "canonFacts": [
+    {
+      "id": "EXAMPLE-replace-me",
+      "statement": "Sableclutch Scrap is a scrapyard run by Copperjaw, who hires anyone willing to work.",
+      "entities": ["Sableclutch Scrap", "Copperjaw"],
+      "citations": [{ "start": 1877, "end": 1924 }]
+    }
+  ],
+  "goodSentences": [],
+  "badSentences": []
+}

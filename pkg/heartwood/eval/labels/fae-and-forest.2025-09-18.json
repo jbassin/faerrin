@@ -1,0 +1,13 @@
+{
+  "session": { "arc": "fae-and-forest", "date": "2025-09-18" },
+  "canonFacts": [
+    {
+      "id": "EXAMPLE-replace-me",
+      "statement": "Replace this with a real canon fact from this session.",
+      "entities": ["SomeEntity"],
+      "citations": [{ "start": 0, "end": 0 }]
+    }
+  ],
+  "goodSentences": [],
+  "badSentences": []
+}
