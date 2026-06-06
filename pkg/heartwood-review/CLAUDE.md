@@ -8,6 +8,9 @@ commit one batched **jj** revision per session. No GitHub PRs. Spec:
 `thoughts/heartwood/specs/0001-heartwood-rewrite-spec.md`; plan:
 `thoughts/heartwood/plans/2026-06-06-heartwood-rewrite-implementation.md`.
 
+**End-user docs:** [`GUIDE.md`](./GUIDE.md) — a from-zero user guide (prereqs → ingest → review →
+commit). This `CLAUDE.md` is the developer/internals view.
+
 ## Build status (2026-06-06)
 
 **Phases 2, 3, and 4 COMPLETE.** (Phase 5 = deferred v2 structured-canon graph.)
