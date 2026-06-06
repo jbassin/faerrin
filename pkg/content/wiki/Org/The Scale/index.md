@@ -2,6 +2,8 @@
 tags:
   - Judge
   - Religious
+aliases:
+  - Scale
 ---
 
 The Scale serves as the [[Judge of Ages|Judge]]'s hand as it seeks to impose order and balance across Færrin. The seat of the Scale's power is their Stronghold -- a citadel in the Opaline Mountains that sits on a conjunction of leylines.
