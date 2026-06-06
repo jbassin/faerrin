@@ -47,13 +47,16 @@ leave other working changes alone), idempotent via `committedAt`. App: 32 tests;
   sentences by normalized match.
 - **AC-14** noise spot-check: promote an Uncertain/Noise claim to canon (`promotedClaims`).
 - **AC-22** multi-page event grouping by citation overlap (`groupProposalsByEvent`, union-find).
+- **AC-12** proper weave amend: the reviewer chooses where prose lands — end (default) / INTO a
+  paragraph (one continuous paragraph) / AFTER one — via `WeavePicker`; `applyWeave` (pure) does it
+  on commit (locating the target paragraph by text, falling back to end); `renderWovenPreview`
+  shows the page with the prose woven in place + highlighted (`<mark class="woven">`).
 - Plus a **critical fix**: server-only I/O leaked into the client bundle (hydration crash, latent
   since Stage D) — server-fn modules are now client-safe shells that dynamic-import Node code; the
   rule is load-bearing for any new server fn (see [[heartwood-review-app-architecture]]).
 
-**Only AC-12 (seamless in-paragraph amend) is open** — largely moot under the v1 append-at-end
-strategy (the Reading view already shows the new prose in context for seam judgment); literal
-in-paragraph weave waits on a future "weave" amend strategy. **Counts:** core 143 tests, app 49.
+**Phase 3 is COMPLETE (AC-10/11/12/13/14/21/22/24).** Amend default is now a weave with `end` mode
+(replaced the old append-only). **Counts:** core 143 tests, app 53.
 
 **NEXT — Phase 4 (quality loop + deferred voice assist):** AC-16 rejection-reason log, AC-17 slop
 pre-filters surfaced (the §9 automatable checks already exist as voice warnings), AC-18 session
