@@ -120,6 +120,7 @@
         "remark-smartypants": "^3.0.2",
         "unified": "^11.0.5",
         "unist-util-visit": "^5.1.0",
+        "zod": "^3.23.0",
       },
       "devDependencies": {
         "@eslint/js": "^9.0.0",

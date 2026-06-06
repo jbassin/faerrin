@@ -1,51 +1,93 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ioSpike, type SpikeResult } from "@/server/spike";
+import { listSessions, type SessionListItem } from "@/server/sessions";
 
 export const Route = createFileRoute("/")({
-  loader: async (): Promise<SpikeResult> => ioSpike(),
-  component: HomePage,
+  loader: async (): Promise<SessionListItem[]> => listSessions(),
+  component: SessionList,
 });
 
-function HomePage() {
-  const spike = Route.useLoaderData();
+const STATUS_LABEL: Record<SessionListItem["status"], string> = {
+  unreviewed: "Unreviewed",
+  partial: "In progress",
+  reviewed: "Reviewed",
+};
+
+function SessionList() {
+  const sessions = Route.useLoaderData();
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", maxWidth: 760 }}>
-      <h1>Heartwood Review</h1>
-      <p>Local-first review app — scaffold up. Sessions list coming next.</p>
-      <p>
-        <Link to="/preview">→ render-fidelity preview</Link> (compare against
-        heart.iridi.cc)
+    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem", maxWidth: 820, margin: "0 auto" }}>
+      <header style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
+        <h1 style={{ margin: 0 }}>Heartwood Review</h1>
+        <nav style={{ display: "flex", gap: "1rem", fontSize: "0.85rem" }}>
+          <Link to="/preview">render preview</Link>
+          <Link to="/spike">I/O spike</Link>
+        </nav>
+      </header>
+      <p style={{ color: "#666" }}>
+        Sessions ingested by <code>heartwood ingest</code>. Pick one to review.
       </p>
 
-      <h2>Phase 0a server-function I/O spike</h2>
-      <dl>
-        <dt>
-          <strong>runtime</strong> — server-function JS engine
-        </dt>
-        <dd>
-          <code>{spike.runtime}</code>
-        </dd>
-        <dt>
-          <strong>(a) content read</strong> — pkg/content wiki page
-        </dt>
-        <dd>
-          <code>{spike.contentRead}</code>
-        </dd>
-        <dt>
-          <strong>(b) sidecar write round-trip</strong>
-        </dt>
-        <dd>
-          <code>{spike.sidecarWriteRoundTrip}</code>
-        </dd>
-        <dt>
-          <strong>(c) jj status</strong> — shelled via Bun.spawn
-        </dt>
-        <dd>
-          <pre style={{ background: "#0001", padding: "0.75rem", whiteSpace: "pre-wrap" }}>
-            {spike.jjStatus}
-          </pre>
-        </dd>
-      </dl>
+      {sessions.length === 0 ? (
+        <p style={{ marginTop: "2rem", color: "#888" }}>
+          No ingested sessions yet. Run{" "}
+          <code>bun run --filter @faerrin/heartwood ingest &lt;arc&gt; &lt;date&gt;</code>{" "}
+          (or <code>bun run --filter @faerrin/heartwood-review dev:fixture</code> for an
+          offline sample).
+        </p>
+      ) : (
+        <ul style={{ listStyle: "none", padding: 0, marginTop: "1.5rem" }}>
+          {sessions.map((s: SessionListItem) => (
+            <li
+              key={`${s.sessionId.arc}@${s.sessionId.date}`}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "0.85rem 1rem",
+                border: "1px solid #e2e2e5",
+                borderRadius: 8,
+                marginBottom: "0.6rem",
+              }}
+            >
+              <div>
+                <Link
+                  to="/session/$arc/$date"
+                  params={{ arc: s.sessionId.arc, date: s.sessionId.date }}
+                  style={{ fontWeight: 600, fontSize: "1.05rem" }}
+                >
+                  {s.sessionId.arc}
+                </Link>
+                <div style={{ color: "#777", fontSize: "0.85rem" }}>
+                  {s.sessionId.date} · {s.proposalCount} proposals
+                  {s.conflictCount > 0 && ` · ${s.conflictCount} conflicts`}
+                </div>
+              </div>
+              <StatusBadge status={s.status} />
+            </li>
+          ))}
+        </ul>
+      )}
     </main>
+  );
+}
+
+function StatusBadge({ status }: { status: SessionListItem["status"] }) {
+  const bg =
+    status === "reviewed" ? "#e6f4ea" : status === "partial" ? "#fef7e0" : "#eef0f3";
+  const fg =
+    status === "reviewed" ? "#137333" : status === "partial" ? "#b06000" : "#5f6368";
+  return (
+    <span
+      style={{
+        background: bg,
+        color: fg,
+        fontSize: "0.78rem",
+        fontWeight: 600,
+        padding: "0.2rem 0.6rem",
+        borderRadius: 999,
+      }}
+    >
+      {STATUS_LABEL[status]}
+    </span>
   );
 }

@@ -10,6 +10,7 @@
     "eval": "bun scripts/eval.ts",
     "resolve": "bun scripts/resolve.ts",
     "assemble": "bun scripts/assemble.ts",
+    "ingest": "bun scripts/ingest.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },

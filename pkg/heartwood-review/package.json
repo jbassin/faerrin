@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev --port 3001",
+    "dev:fixture": "bun run scripts/dev-fixture.ts",
     "build": "vite build",
     "lint": "eslint .",
     "typecheck": "bun run scripts/generate-routes.ts && tsc --noEmit",
@@ -27,7 +28,8 @@
     "remark-rehype": "^11.1.2",
     "remark-smartypants": "^3.0.2",
     "unified": "^11.0.5",
-    "unist-util-visit": "^5.1.0"
+    "unist-util-visit": "^5.1.0",
+    "zod": "^3.23.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",

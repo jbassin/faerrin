@@ -7,6 +7,7 @@
 // edits self-heal; sentences that changed beyond recognition are reported stale. Canon is one
 // shared world, so every record also carries its originating `arc` (D-9).
 
+import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { z } from 'zod';
 import { writeFileAtomic } from './atomic';
@@ -50,9 +51,15 @@ export function sidecarPath(provRoot: string, wikiPath: string): string {
 
 /** Read a page's provenance sidecar; returns an empty record set if none exists. */
 export async function readPageProvenance(provRoot: string, wikiPath: string): Promise<PageProvenance> {
-  const file = Bun.file(sidecarPath(provRoot, wikiPath));
-  if (!(await file.exists())) return { wikiPath, records: [] };
-  return PageProvenanceSchema.parse(JSON.parse(await file.text()));
+  // node:fs (not Bun.file) so the review app can read sidecars under Node.
+  let text: string;
+  try {
+    text = await readFile(sidecarPath(provRoot, wikiPath), 'utf8');
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') return { wikiPath, records: [] };
+    throw err;
+  }
+  return PageProvenanceSchema.parse(JSON.parse(text));
 }
 
 /** Write a page's provenance sidecar atomically. */
