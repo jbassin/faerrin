@@ -34,10 +34,16 @@ export const ProposalDecisionSchema = z.object({
 });
 export type ProposalDecision = z.infer<typeof ProposalDecisionSchema>;
 
+/** How the reviewer resolves a cross-arc canon conflict (AC-11). Never auto-resolved. */
+export const CONFLICT_RESOLUTIONS = ['supersede', 'coexist', 'reject'] as const;
+export type ConflictResolution = (typeof CONFLICT_RESOLUTIONS)[number];
+
 export const ReviewStateSchema = z.object({
   sessionId: SessionIdSchema,
   /** Keyed by proposalId. Absent ⇒ pending. */
   decisions: z.record(z.string(), ProposalDecisionSchema),
+  /** Conflict resolutions keyed by the conflicting claimId (AC-11). Defaulted for old files. */
+  conflictResolutions: z.record(z.string(), z.enum(CONFLICT_RESOLUTIONS)).default({}),
   updatedAt: z.string(),
 });
 export type ReviewState = z.infer<typeof ReviewStateSchema>;
@@ -47,7 +53,7 @@ export function reviewStatePath(dir: string, id: SessionId): string {
 }
 
 export function emptyReviewState(id: SessionId): ReviewState {
-  return { sessionId: id, decisions: {}, updatedAt: new Date().toISOString() };
+  return { sessionId: id, decisions: {}, conflictResolutions: {}, updatedAt: new Date().toISOString() };
 }
 
 /** Read review state, or a fresh empty one if the session was never opened. */
@@ -82,6 +88,23 @@ export function applyDecision(
 
 export function decisionFor(state: ReviewState, proposalId: string): Decision {
   return state.decisions[proposalId]?.decision ?? 'pending';
+}
+
+/** Pure: record a conflict resolution by claimId (AC-11), returning a new state. */
+export function applyConflictResolution(
+  state: ReviewState,
+  claimId: string,
+  resolution: ConflictResolution,
+): ReviewState {
+  return {
+    ...state,
+    conflictResolutions: { ...state.conflictResolutions, [claimId]: resolution },
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+export function conflictResolutionFor(state: ReviewState, claimId: string): ConflictResolution | undefined {
+  return state.conflictResolutions[claimId];
 }
 
 export type ReviewStatus = 'unreviewed' | 'partial' | 'reviewed';

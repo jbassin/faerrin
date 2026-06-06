@@ -5,6 +5,7 @@ import { commitSession, type CommitResult } from "@/server/commit";
 import type { ReviewState } from "@faerrin/heartwood/src/state/review.ts";
 import { ProposalCard } from "@/components/ProposalCard.tsx";
 import { TriageView } from "@/components/TriageView.tsx";
+import { ConflictCard } from "@/components/ConflictCard.tsx";
 
 export const Route = createFileRoute("/session/$arc/$date")({
   loader: async ({ params }): Promise<SessionView> =>
@@ -71,16 +72,15 @@ function SessionPage() {
         >
           <strong style={{ color: "#b06000" }}>⚠ {artifact.conflicts.length} potential conflict(s)</strong>
           {artifact.conflicts.map((c: Conflict, i: number) => (
-            <div key={i} style={{ marginTop: "0.5rem", fontSize: "0.9rem" }}>
-              <strong>{c.canonicalName}</strong> ({c.sourceRef})
-              <div>new: {c.newStatement}</div>
-              <div>existing: {c.existingStatement}</div>
-              <div style={{ color: "#777" }}>{c.explanation}</div>
-            </div>
+            <ConflictCard
+              key={`${c.claimId}:${i}`}
+              arc={artifact.sessionId.arc}
+              date={artifact.sessionId.date}
+              conflict={c}
+              initial={review.conflictResolutions[c.claimId]}
+              onResolved={setReview}
+            />
           ))}
-          <div style={{ marginTop: "0.4rem", fontSize: "0.78rem", color: "#777" }}>
-            Resolution (Supersede / Coexist / Reject) lands in Phase 3.
-          </div>
         </section>
       )}
 

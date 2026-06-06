@@ -3,7 +3,9 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
+  applyConflictResolution,
   applyDecision,
+  conflictResolutionFor,
   decisionFor,
   emptyReviewState,
   readReviewState,
@@ -64,5 +66,23 @@ describe('review state', () => {
 
   it('empty proposal set is trivially reviewed', () => {
     expect(reviewStatus(emptyReviewState(SID), [])).toBe('reviewed');
+  });
+
+  it('records + round-trips conflict resolutions by claimId (AC-11)', async () => {
+    await withTmp(async (dir) => {
+      let s = emptyReviewState(SID);
+      s = applyConflictResolution(s, 'c1', 'supersede');
+      s = applyConflictResolution(s, 'c2', 'coexist');
+      await writeReviewState(dir, s);
+      const back = await readReviewState(dir, SID);
+      expect(conflictResolutionFor(back, 'c1')).toBe('supersede');
+      expect(conflictResolutionFor(back, 'c2')).toBe('coexist');
+      expect(conflictResolutionFor(back, 'c3')).toBeUndefined();
+    });
+  });
+
+  it('defaults conflictResolutions for older review files (schema default)', () => {
+    // emptyReviewState always includes it; the schema default covers files written before AC-11.
+    expect(emptyReviewState(SID).conflictResolutions).toEqual({});
   });
 });

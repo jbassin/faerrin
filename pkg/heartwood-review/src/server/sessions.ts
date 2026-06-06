@@ -6,6 +6,7 @@ import { SESSIONS_DIR, REVIEW_DIR, TRANSCRIPTS_DIR, within } from "./paths.ts";
 import { detectPageType, type PageType } from "../lib/page-type.ts";
 import type { SessionArtifact, SessionSummary } from "@faerrin/heartwood/src/state/store.ts";
 import type {
+  ConflictResolution,
   Decision,
   ReviewState,
   ReviewStatus,
@@ -140,6 +141,27 @@ export const saveDecision = createServerFn({ method: "POST" })
       rejectionReason: data.rejectionReason,
       targetPath: data.targetPath,
     });
+    await writeReviewState(REVIEW_DIR, next);
+    return next;
+  });
+
+const CONFLICT_RESOLUTIONS = ["supersede", "coexist", "reject"] as const;
+
+/** Record a conflict resolution (Supersede / Coexist / Reject) by claimId (AC-11). */
+export const saveConflictResolution = createServerFn({ method: "POST" })
+  .inputValidator((data: { arc: string; date: string; claimId: string; resolution: ConflictResolution }) => {
+    if (!CONFLICT_RESOLUTIONS.includes(data.resolution)) {
+      throw new Error(`invalid resolution: ${data.resolution}`);
+    }
+    return data;
+  })
+  .handler(async ({ data }): Promise<ReviewState> => {
+    const sessionId = assertSessionId(data.arc, data.date);
+    const { readReviewState, writeReviewState, applyConflictResolution } = await import(
+      "@faerrin/heartwood/src/state/review.ts"
+    );
+    const current = await readReviewState(REVIEW_DIR, sessionId);
+    const next = applyConflictResolution(current, data.claimId, data.resolution);
     await writeReviewState(REVIEW_DIR, next);
     return next;
   });
