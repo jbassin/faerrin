@@ -199,31 +199,37 @@ Each card is one proposed change to one wiki page. It shows:
 
 #### 6.2 The three views
 
-- **Edit** — the working view. Write/refine the wiki prose for this change.
-- **Reading** — the page **rendered exactly as it will appear on the wiki**, with your prose woven
-  into place and highlighted. This is how you judge prose: by reading it in context, not as a diff.
-- **Diff** — a plain `+` view of what you're adding, for when you want the literal text.
+- **Edit** — the working view. For an **amend**, the editor is **pre-populated with the existing
+  page text**, so you edit the whole page in place. For a **create**, it starts empty.
+- **Reading** — the full page **rendered exactly as it will appear on the wiki**. This is how you
+  judge prose: by reading it in context, not as a diff.
+- **Diff** — a line view of your changes: `+` for lines you added, `-` for lines you removed,
+  unchanged lines as context (for an amend, measured against the original page).
 
 #### 6.3 Writing the prose (edit-in-place)
 
 The tool deliberately does **not** auto-write wiki prose — _you_ do, because the wiki has a real
-literary voice an AI can't reliably match. To help you start:
+literary voice an AI can't reliably match.
 
-- **scaffold from facts** — drops the raw fact sentences into the editor as a rough starting lump to
-  rewrite.
-- **✨ draft in voice** — asks the AI for a short first-draft passage in the wiki's voice (see §6.4).
+For an **amend**, the editor loads the **current page text**. You add the new information directly
+where it belongs — rewrite a sentence, extend a paragraph, drop in a new one — and your edited text
+**becomes the new page** on commit. (The page's frontmatter, e.g. `aliases:`, is preserved
+automatically; you only edit the body.) This is the most natural way to keep the voice seamless:
+you're editing real prose, not bolting a fragment onto the end.
 
-Edit freely until the **Reading** view reads like something you'd have written by hand. For an
-**amend**, a **Weave** picker lets you choose _where_ the prose lands on the page — at the **end**,
-folded **into** an existing paragraph (one continuous paragraph), or as a new paragraph **after** a
-chosen one — so the seam reads naturally. For a **create**, a **folder-tree picker** lets you choose
-the new page's title and path, and the app suggests existing pages that mention the subject (so the
-new page isn't an orphan nothing links to).
+Two helpers add raw material without wiping your work — both **append** to what's in the editor:
+
+- **append facts** — drops the raw fact sentences at the end, to weave in and rewrite.
+- **✨ draft in voice** — asks the AI for a short in-voice passage and appends it (see §6.4).
+
+Edit freely until the **Reading** view reads like something you'd have written by hand. For a
+**create**, a **folder-tree picker** lets you choose the new page's title and path, and the app
+suggests existing pages that mention the subject (so the new page isn't an orphan nothing links to).
 
 #### 6.4 The "draft in voice" assist (optional, AI)
 
-Clicking **✨ draft in voice** generates **one** candidate passage from the cited facts and fills the
-editor with it, outlined in purple. It is **a starting point only**:
+Clicking **✨ draft in voice** generates **one** candidate passage from the cited facts and appends
+it to the editor, outlined in purple. It is **a starting point only**:
 
 - It is **never** committed as-is and **never** bypasses your approval — you must still edit and
   Approve.

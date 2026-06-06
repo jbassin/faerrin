@@ -22,6 +22,7 @@ function SessionPage() {
     artifact,
     review: initialReview,
     pageTypes,
+    pageBodies,
     allSlugs,
     suppressedProposalIds,
     rejectionInfo,
@@ -58,7 +59,7 @@ function SessionPage() {
       initialDecision={review.decisions[p.id]?.decision ?? "pending"}
       initialText={review.decisions[p.id]?.authoredText ?? ""}
       initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
-      initialWeave={review.decisions[p.id]?.weave}
+      initialPageBody={pageBodies[p.id] ?? ""}
       initialReason={review.decisions[p.id]?.rejectionReason ?? ""}
       pageType={pageTypes[p.id] ?? "lore"}
       allSlugs={allSlugs}
@@ -110,14 +111,17 @@ function SessionPage() {
         style={{
           marginTop: "1.25rem",
           padding: "1rem 1.25rem",
-          background: "#f6f7f9",
+          background: "#eef1f6",
+          border: "1px solid #d7deea",
           borderRadius: 8,
         }}
       >
-        <h2 style={{ marginTop: 0, fontSize: "1rem", color: "#555" }}>
+        <h2 style={{ marginTop: 0, fontSize: "1rem", color: "#3a4a63" }}>
           Session narrative
         </h2>
-        <p style={{ marginBottom: 0 }}>{artifact.narrative}</p>
+        <p style={{ marginBottom: 0, color: "#1f2733", lineHeight: 1.6 }}>
+          {artifact.narrative}
+        </p>
       </section>
 
       {/* AC-11: conflicts surfaced, pulled to the top. */}

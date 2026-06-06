@@ -22,9 +22,11 @@ commit). This `CLAUDE.md` is the developer/internals view.
   revision (AC-7, D-2), idempotent via `committedAt`.
 - **Phase 3 (depth):** AC-11 conflict resolution (Supersede/Coexist/Reject, `ConflictCard`);
   AC-21 corrections (Supersede REPLACES the existing statement via `applySupersede`); AC-10
-  create-page folder picker + inbound-link suggestions (`CreatePagePicker`); AC-12 **weave amend**
-  (`WeavePicker` + `applyWeave`: end / into-paragraph / after-paragraph, rendered woven + highlighted
-  via `renderWovenPreview`); AC-13 wikilink validation; AC-24 page-type-aware voice bar
+  create-page folder picker + inbound-link suggestions (`CreatePagePicker`); AC-12 **seamless amend
+  via full-page editing** (the editor is populated with the existing page body via `getSession`'s
+  `pageBodies`; the reviewer edits the whole page and on commit `replacePageBody` swaps the body and
+  preserves frontmatter — superseded the earlier weave-picker approach); AC-13 wikilink validation;
+  AC-24 page-type-aware voice bar
   (`page-type.ts`); AC-14 noise spot-check (promote, `promotedClaims`); AC-22 multi-page event
   grouping by citation overlap (`event-groups.ts`).
 - **Phase 4 (quality loop + voice assist):** AC-16 tagged reject reasons (`ProposalCard` reason
@@ -36,9 +38,11 @@ commit). This `CLAUDE.md` is the developer/internals view.
   warn-only critic (`server/draft.ts` shell → core `pipeline/draft.ts`; "✨ draft in voice" fills
   the editor as an editable starting point — never auto-commits).
 
-**Counts:** app 53 tests, core 167 tests; typecheck + lint green. Server-fn client-safety re-verified
-via curl for `dashboard.ts` + `draft.ts`. **Still outstanding (worldbuilder): the real end-to-end
-browser commit on a live session + the aether build-diff check** — the product bet.
+**Counts:** app 58 tests, core 167 tests; typecheck + lint green. Server-fn client-safety re-verified
+via curl for `dashboard.ts` + `draft.ts`. Amend review is **full-page editing** (the editor loads the
+existing page body; commit replaces the body, preserving frontmatter) — not the old weave picker.
+**Still outstanding (worldbuilder): the real end-to-end browser commit on a live session + the aether
+build-diff check** — the product bet.
 
 ## Layout
 
@@ -54,12 +58,13 @@ src/
   server/                          ← CLIENT-SAFE server-fn shells + pure helpers (see split rule)
     paths.ts        ← path constants + within() (node:path only, client-safe)
     content.ts      ← node:fs wiki readers (SERVER-ONLY; dynamic-imported)
-    sessions.ts     ← listSessions, getSession, getTranscriptLines, saveDecision,
-                      saveConflictResolution, togglePromotion, getWikiFolders,
-                      suggestInboundLinks, getPageParagraphs (+ pure parseTranscriptRange, assertSessionId)
-    render.ts       ← renderPagePreview, renderMarkdown, renderWovenPreview
-    commit.ts       ← commitSession (shell) + pure helpers (appendAuthoredParagraph,
-                      applyWeave, applySupersede, newPageContent, commitMessage, normalizeWikiPath)
+    sessions.ts     ← listSessions, getSession (+ pageBodies for amends), getTranscriptLines,
+                      saveDecision, saveConflictResolution, togglePromotion, getWikiFolders,
+                      suggestInboundLinks (+ pure parseTranscriptRange, assertSessionId)
+    render.ts       ← renderPagePreview, renderMarkdown
+    commit.ts       ← commitSession (shell) + pure helpers (newPageContent, commitMessage,
+                      normalizeWikiPath; appendAuthoredParagraph/applyWeave/applySupersede kept+tested,
+                      now unused by the full-page-replace amend)
     commit-impl.ts  ← performCommit (SERVER-ONLY; dynamic-imported by commitSession)
     dashboard.ts    ← getDashboard shell (eval results + live slop/reason tally) (AC-19)
     draft.ts        ← draftProposal shell → core pipeline/draft.ts (D-5; LLM, never commits)
@@ -73,7 +78,8 @@ src/
     page-type.ts        ← lore/deity-statblock/timeline/flavor-pre/stub (AC-24)
     event-groups.ts     ← group proposals by citation overlap (AC-22)
     rejection-reasons.ts ← CLIENT-SAFE mirror of the core's reject-reason tags (AC-16)
-  components/  CitationChip, ProposalCard, TriageView, ConflictCard, CreatePagePicker, WeavePicker
+    page-body.ts        ← splitFrontmatter + replacePageBody (full-page amend editing; pure)
+  components/  CitationChip, ProposalCard, TriageView, ConflictCard, CreatePagePicker
   styles/wiki-render.css   ← checkpoint-grade article CSS (callouts, links, transcript, .woven)
 scripts/  generate-routes.ts, dev-fixture.ts
 ```

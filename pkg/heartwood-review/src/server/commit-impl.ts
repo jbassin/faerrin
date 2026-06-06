@@ -35,13 +35,12 @@ import {
   within,
 } from "./paths.ts";
 import {
-  applySupersede,
-  applyWeave,
   commitMessage,
   newPageContent,
   normalizeWikiPath,
   type CommitResult,
 } from "./commit.ts";
+import { replacePageBody } from "../lib/page-body.ts";
 
 const execFileAsync = promisify(execFile);
 
@@ -76,7 +75,7 @@ async function writeProvenanceFor(
   provRoot: string,
   wikiPath: string,
   newBody: string,
-  authoredText: string,
+  priorBody: string,
   proposal: Proposal,
   sid: { arc: string; date: string },
 ): Promise<string | null> {
@@ -85,16 +84,17 @@ async function writeProvenanceFor(
   const claimId = proposal.facts[0]?.claimId ?? proposal.id;
   const entityIds = [proposal.entityId];
 
-  // Locate each authored sentence in the new body by normalized match (works whether the
-  // prose was appended at the end or spliced in as a Supersede correction).
+  // The reviewer edits the whole page, so record provenance only for sentences that are NEW
+  // relative to the prior page (by normalized text) — pre-existing prose keeps its own provenance.
+  const priorNorms = new Set(parsePageSentences(priorBody).map((s) => s.norm));
   const all = parsePageSentences(newBody);
   const records = [];
-  for (const a of parsePageSentences(authoredText)) {
-    const idx = all.findIndex((b) => b.norm === a.norm);
-    if (idx === -1) continue;
+  for (let i = 0; i < all.length; i++) {
+    const a = all[i];
+    if (!a || priorNorms.has(a.norm)) continue;
     records.push(
       makeRecord({
-        anchor: anchorForSentence(all, idx),
+        anchor: anchorForSentence(all, i),
         arc: sid.arc,
         date: sid.date,
         citations,
@@ -164,32 +164,25 @@ export async function performCommit(
     if (p.kind === "amend" && p.targetPath) {
       const abs = within(deps.wikiDir, p.targetPath);
       const existing = await readFile(abs, "utf8");
-      // If a fact on this proposal has a Supersede resolution, REPLACE the existing statement
-      // (a correction, AC-21); otherwise append the new prose.
-      const supersedeStmt = p.facts
-        .map((f) => supersededByClaim.get(f.claimId))
-        .find(Boolean);
-      let newBody: string;
-      let isCorrection = false;
-      if (supersedeStmt) {
-        const r = applySupersede(existing, supersedeStmt, text);
-        newBody = r.body;
-        isCorrection = r.located;
-      } else {
-        // Weave at the reviewer's chosen location (AC-12); defaults to append-at-end.
-        newBody = applyWeave(existing, text, dec.weave).body;
-      }
+      // The reviewer edited the populated page text in place; `text` IS the new full body. Replace
+      // the body wholesale, preserving the original frontmatter.
+      const newBody = replacePageBody(existing, text);
       await writeFileAtomic(abs, newBody);
       written.push(`pkg/content/wiki/${p.targetPath}`);
       const sc = await writeProvenanceFor(
         deps.provRoot,
         p.targetPath,
         newBody,
-        text,
+        existing,
         p,
         sid,
       );
       if (sc) written.push(sc);
+      // A page carrying a Supersede conflict resolution is tallied as a correction (AC-21); the
+      // reviewer performs the actual edit inline in the full-page text.
+      const isCorrection = p.facts.some((f) =>
+        supersededByClaim.has(f.claimId),
+      );
       if (isCorrection) corrected++;
       else amend++;
       committedIds.push(p.id);
@@ -218,7 +211,7 @@ export async function performCommit(
         deps.provRoot,
         wikiPath,
         newBody,
-        text,
+        "", // new page → no prior body, every sentence is from this session
         p,
         sid,
       );

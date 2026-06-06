@@ -10,6 +10,7 @@ import {
   within,
 } from "./paths.ts";
 import { detectPageType, type PageType } from "../lib/page-type.ts";
+import { splitFrontmatter } from "../lib/page-body.ts";
 import type {
   SessionArtifact,
   SessionSummary,
@@ -68,6 +69,9 @@ export interface SessionView {
   review: ReviewState;
   /** Target page type per proposal id — drives the page-type-aware voice bar (AC-24). */
   pageTypes: Record<string, PageType>;
+  /** Existing page body (frontmatter-stripped) per amend proposal id — the editor is populated
+   *  with this so the reviewer edits the whole page in place; absent for create proposals. */
+  pageBodies: Record<string, string>;
   /** Every known page slug — for wikilink validation in authored prose (AC-13). */
   allSlugs: string[];
   /** Still-pending proposals whose every backing claim was rejected in an earlier session
@@ -95,13 +99,14 @@ export const getSession = createServerFn({ method: "GET" })
 
     const allSlugs = await loadAllSlugs();
     const pageTypes: Record<string, PageType> = {};
+    const pageBodies: Record<string, string> = {};
     for (const p of artifact.proposals) {
       if (p.kind === "amend" && p.targetPath) {
         try {
-          pageTypes[p.id] = detectPageType(
-            p.targetPath,
-            await readWikiPage(p.targetPath),
-          );
+          const raw = await readWikiPage(p.targetPath);
+          pageTypes[p.id] = detectPageType(p.targetPath, raw);
+          // Populate the editor with the existing page body so the reviewer edits it in place.
+          pageBodies[p.id] = splitFrontmatter(raw).body.replace(/\s+$/, "");
         } catch {
           pageTypes[p.id] = "lore"; // missing page → treat as prose
         }
@@ -139,6 +144,7 @@ export const getSession = createServerFn({ method: "GET" })
       artifact,
       review,
       pageTypes,
+      pageBodies,
       allSlugs,
       suppressedProposalIds,
       rejectionInfo,
@@ -252,34 +258,6 @@ export const saveDecision = createServerFn({ method: "POST" })
       }
     }
     return next;
-  });
-
-export interface PageParagraph {
-  /** Full paragraph text — used as the weave anchor (AC-12). */
-  text: string;
-  /** Short preview for the picker. */
-  preview: string;
-}
-
-// Non-prose block starts (headings, HTML, quotes, lists, code fences, deity `::` stat lines).
-const NON_PROSE = /^(#|<|>|\||[-*]\s|\d+\.\s|```|.+ :: )/;
-
-/** Prose paragraphs of a page, for the weave-location picker (AC-12). */
-export const getPageParagraphs = createServerFn({ method: "GET" })
-  .inputValidator((data: { path: string }) => data)
-  .handler(async ({ data }): Promise<PageParagraph[]> => {
-    const { readWikiPage } = await import("./content.ts");
-    const body = (await readWikiPage(data.path)).replace(
-      /^---\n[\s\S]*?\n---\n?/,
-      "",
-    );
-    const out: PageParagraph[] = [];
-    for (const block of body.replace(/\n+$/, "").split(/\n{2,}/)) {
-      const t = block.trim();
-      if (!t || NON_PROSE.test(t)) continue;
-      out.push({ text: t, preview: t.length > 80 ? `${t.slice(0, 80)}…` : t });
-    }
-    return out;
   });
 
 /** Existing wiki folders (for the create-page folder picker, AC-10/D-6). */

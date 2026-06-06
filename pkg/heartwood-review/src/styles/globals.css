@@ -1,5 +1,8 @@
 :root {
-  color-scheme: light dark;
+  /* The app's UI is styled for a light theme throughout (light cards, dark text). Pin the
+     scheme so an OS dark-mode preference can't flip the UA default text/background and make
+     the hardcoded light surfaces (e.g. the narrative box) unreadable. */
+  color-scheme: light;
 }
 
 * {
@@ -19,4 +22,7 @@ body {
     "Segoe UI",
     sans-serif;
   line-height: 1.5;
+  /* Explicit so readability never depends on the UA default. */
+  background: #ffffff;
+  color: #1a1a1a;
 }

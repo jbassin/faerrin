@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { renderMarkdown, renderWovenPreview } from "@/server/render";
+import { renderMarkdown } from "@/server/render";
 import { saveDecision, type SessionView } from "@/server/sessions";
 import { draftProposal } from "@/server/draft";
 import type {
   Decision,
   ReviewState,
-  WeaveTarget,
 } from "@faerrin/heartwood/src/state/review.ts";
 import { CitationChip } from "./CitationChip.tsx";
 import { CreatePagePicker } from "./CreatePagePicker.tsx";
-import { WeavePicker } from "./WeavePicker.tsx";
 import { voiceWarnings } from "@/lib/voice-warnings.ts";
 import type { PageType } from "@/lib/page-type.ts";
 import {
@@ -29,7 +27,8 @@ interface Props {
   initialDecision: Decision;
   initialText: string;
   initialTargetPath: string;
-  initialWeave: WeaveTarget | undefined;
+  /** Existing page body (frontmatter-stripped) for an amend — populates the editor. */
+  initialPageBody: string;
   initialReason: string;
   pageType: PageType;
   allSlugs: string[];
@@ -50,15 +49,16 @@ export function ProposalCard({
   initialDecision,
   initialText,
   initialTargetPath,
-  initialWeave,
+  initialPageBody,
   initialReason,
   pageType,
   allSlugs,
   onSaved,
 }: Props) {
-  const [authored, setAuthored] = useState(initialText);
+  // For an amend the editor is populated with the existing page body (the reviewer edits it in
+  // place); a saved decision's text wins on resume. For a create it starts empty.
+  const [authored, setAuthored] = useState(initialText || initialPageBody);
   const [targetPath, setTargetPath] = useState(initialTargetPath);
-  const [weave, setWeave] = useState<WeaveTarget | undefined>(initialWeave);
   const [decision, setDecision] = useState<Decision>(initialDecision);
   const [reason, setReason] = useState<string>(initialReason);
   const [picking, setPicking] = useState(false);
@@ -74,25 +74,13 @@ export function ProposalCard({
   const srcPath = proposal.targetPath ?? `${proposal.canonicalName}.md`;
 
   async function refreshPreview() {
-    // Amend → render the page with the prose woven in place + highlighted (AC-12).
-    // Create → render the new page body.
-    if (proposal.kind === "amend" && proposal.targetPath) {
-      setPreviewHtml(
-        await renderWovenPreview({
-          data: {
-            path: proposal.targetPath,
-            authoredText: authored || "*(no prose yet)*",
-            weave,
-          },
-        }),
-      );
-    } else {
-      setPreviewHtml(
-        await renderMarkdown({
-          data: { md: authored || "*(no prose yet)*", srcPath },
-        }),
-      );
-    }
+    // The editor holds the full page body (amend = the existing page you edited; create = the new
+    // page), so Reading just renders that text as it will appear on the wiki.
+    setPreviewHtml(
+      await renderMarkdown({
+        data: { md: authored || "*(no prose yet)*", srcPath },
+      }),
+    );
   }
 
   async function showReading() {
@@ -108,7 +96,8 @@ export function ProposalCard({
       const { draft } = await draftProposal({
         data: { arc, date, proposalId: proposal.id },
       });
-      setAuthored(draft);
+      // Don't clobber the populated page — append the draft so the reviewer can position it.
+      setAuthored((prev) => appendBlock(prev, draft));
       setIsDraft(true);
       setView("edit");
     } catch (e) {
@@ -131,7 +120,6 @@ export function ProposalCard({
           rejectionReason: d === "rejected" ? rejectionReason : undefined,
           targetPath:
             proposal.kind === "create" ? targetPath || undefined : undefined,
-          weave: proposal.kind === "amend" ? weave : undefined,
         },
       });
       setDecision(d);
@@ -236,12 +224,14 @@ export function ProposalCard({
         <button
           type="button"
           onClick={() => {
-            setAuthored(proposal.facts.map((f) => f.text).join(" "));
+            setAuthored((prev) =>
+              appendBlock(prev, proposal.facts.map((f) => f.text).join(" ")),
+            );
             setIsDraft(false);
           }}
           style={linkBtn}
         >
-          scaffold from facts
+          append facts
         </button>
       </div>
       {draftError && (
@@ -267,11 +257,18 @@ export function ProposalCard({
             />
           )}
           {proposal.kind === "amend" && proposal.targetPath && (
-            <WeavePicker
-              targetPath={proposal.targetPath}
-              initial={initialWeave}
-              onChange={setWeave}
-            />
+            <div
+              style={{
+                fontSize: "0.75rem",
+                color: "#5f6368",
+                marginBottom: "0.4rem",
+              }}
+            >
+              Editing the full page <code>{proposal.targetPath}</code> — the
+              existing text is loaded below. Add the new information where it
+              belongs; on commit your version replaces the page body
+              (frontmatter is preserved).
+            </div>
           )}
           {isDraft && (
             <div
@@ -291,8 +288,12 @@ export function ProposalCard({
               setAuthored(e.target.value);
               setIsDraft(false);
             }}
-            placeholder="Write the wiki prose in your voice, drawing on the cited facts above…"
-            rows={5}
+            placeholder={
+              proposal.kind === "amend"
+                ? "The existing page text loads here — edit it to weave in the cited facts above…"
+                : "Write the wiki prose in your voice, drawing on the cited facts above…"
+            }
+            rows={proposal.kind === "amend" ? 16 : 6}
             style={{
               width: "100%",
               font: "inherit",
@@ -333,10 +334,10 @@ export function ProposalCard({
             }}
           >
             {proposal.kind === "amend"
-              ? "page with your prose woven in (highlighted) — judge the seam"
+              ? "the edited page as it will render — judge the whole thing"
               : "new page as it will render"}
           </div>
-          {/* Rendered in aether-faithful context (AC-2/AC-12); woven prose highlighted. */}
+          {/* Rendered in aether-faithful context (AC-2). */}
           <div
             className="wiki-article"
             dangerouslySetInnerHTML={{ __html: previewHtml ?? "" }}
@@ -354,10 +355,10 @@ export function ProposalCard({
             fontSize: "0.85rem",
           }}
         >
-          {authored
-            .split("\n")
-            .map((l) => `+ ${l}`)
-            .join("\n")}
+          {diffLines(
+            proposal.kind === "amend" ? initialPageBody : "",
+            authored,
+          )}
         </pre>
       )}
 
@@ -466,6 +467,26 @@ const linkBtn: React.CSSProperties = {
   cursor: "pointer",
   textDecoration: "underline",
 };
+
+/** Append a block of text to existing editor content, separated by a blank line (no-op join if empty). */
+function appendBlock(prev: string, add: string): string {
+  const a = add.trim();
+  if (!a) return prev;
+  const base = prev.replace(/\s+$/, "");
+  return base ? `${base}\n\n${a}` : a;
+}
+
+/** A lightweight line diff: lines in `current` absent from `original` are `+`, removed lines `-`. */
+function diffLines(original: string, current: string): string {
+  const origSet = new Set(original.split("\n"));
+  const curSet = new Set(current.split("\n"));
+  const out = current
+    .split("\n")
+    .map((l) => (origSet.has(l) ? `  ${l}` : `+ ${l}`));
+  for (const l of original.split("\n"))
+    if (l.trim() && !curSet.has(l)) out.push(`- ${l}`);
+  return out.join("\n");
+}
 
 function ViewTab({
   label,

@@ -98,7 +98,9 @@ async function setup() {
   rs = applyDecision(rs, {
     proposalId: "prop:e1",
     decision: "approved",
-    authoredText: "A levy now bites the wharves.",
+    // Amend = the reviewer edits the FULL populated page: the original sentence kept, the new one added.
+    authoredText:
+      "Sableclutch is overlooked by the capital. A levy now bites the wharves.",
   });
   rs = applyDecision(rs, {
     proposalId: "prop:e2",
@@ -111,7 +113,7 @@ async function setup() {
 }
 
 describe("performCommit (Stage F, AC-7/AC-15)", () => {
-  it("appends amend prose, writes the new page + provenance, and commits via jj", async () => {
+  it("replaces the amend page body, writes the new page + provenance, and commits via jj", async () => {
     const { base, deps, amendAbs } = await setup();
     try {
       const r = await performCommit(SID, deps);
@@ -120,7 +122,7 @@ describe("performCommit (Stage F, AC-7/AC-15)", () => {
       expect(r.create).toBe(1);
       expect(r.revision).toBe("abc1234");
 
-      // amend appended at end of body
+      // amend = full-page replace: the reviewer's edited body (kept original + new sentence)
       const amended = await readFile(amendAbs, "utf8");
       expect(amended).toContain("Sableclutch is overlooked by the capital.");
       expect(amended).toMatch(/A levy now bites the wharves\.\n$/);
