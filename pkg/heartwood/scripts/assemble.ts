@@ -8,6 +8,7 @@ import { mine } from '../src/pipeline/mine';
 import { triage } from '../src/pipeline/triage';
 import { resolve } from '../src/pipeline/resolve';
 import { assemble } from '../src/pipeline/assemble';
+import { detectConflicts } from '../src/pipeline/conflict';
 import { loadWikiIndex } from '../src/wiki/load';
 import { discoverTranscripts } from '../src/transcript/discover';
 
@@ -21,7 +22,8 @@ function toIsoDate(d: string): string {
 async function main() {
   const arc = process.argv[2];
   const dateArg = process.argv[3];
-  if (!arc || !dateArg) { console.error('Usage: bun scripts/assemble.ts <arc> <date>'); process.exit(1); }
+  const withConflict = process.argv.includes('--conflict');
+  if (!arc || !dateArg) { console.error('Usage: bun scripts/assemble.ts <arc> <date> [--conflict]'); process.exit(1); }
   const date = toIsoDate(dateArg);
 
   const { files } = await discoverTranscripts(TRANSCRIPTS_DIR);
@@ -59,6 +61,23 @@ async function main() {
   };
   render(`Amend existing pages (${amends.length})`, amends);
   render(`Create new pages (${creates.length})`, creates);
+
+  if (withConflict) {
+    console.error('Detecting conflicts …');
+    const readPage = async (p: string) => {
+      const f = Bun.file(join(WIKI_DIR, p));
+      return (await f.exists()) ? f.text() : null;
+    };
+    const c = await detectConflicts(a.proposals, { readPage });
+    console.log(`## Conflicts — checked ${c.checkedPages} pages, found ${c.conflicts.length}`);
+    for (const x of c.conflicts) {
+      console.log(`\n### ⚠ ${x.canonicalName} (${x.sourceRef})`);
+      console.log(`  - new:      ${x.newStatement}`);
+      console.log(`  - existing: ${x.existingStatement}`);
+      console.log(`  - why:      ${x.explanation}`);
+    }
+    console.log('');
+  }
   process.exit(0);
 }
 
