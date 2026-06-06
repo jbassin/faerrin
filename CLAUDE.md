@@ -12,6 +12,36 @@ precedence there. There's a repo-level [`README.md`](./README.md) with the human
 corrupt jj state. There are **no git hooks** (husky was removed; jj doesn't run them), so
 format/lint/test run in CI, not pre-commit. See the `jj` skill for safe usage (`--no-pager`, `-m`).
 
+## Memory (project-local — not `~/.claude`)
+
+Project memory lives **in the repo** at `thoughts/shared/memory/`, not in the harness default
+`~/.claude/projects/.../memory/`. The index is auto-loaded into every session via this import:
+
+@thoughts/shared/memory/MEMORY.md
+
+- **Writing memory overrides the harness default path:** create/update memory files and the
+  `MEMORY.md` index under `thoughts/shared/memory/` — **do not** write to `~/.claude`. Keep the
+  harness format: one fact per file with frontmatter, plus a one-line `MEMORY.md` pointer per memory.
+- This makes memory version-controlled and project-local. The rest of `thoughts/` holds research
+  (`thoughts/shared/research/`) and per-package plans (`thoughts/<pkg>/plans/`).
+- **Plans caveat:** native plan-mode still writes to the global `~/.claude/plans/` (the harness owns
+  that path; it can't be redirected). For project-local plans, use the `create-plan` skill, which
+  writes under `thoughts/<pkg>/plans/`.
+
+## Octo workflows (Claude-only, always team mode)
+
+This environment has access to **Claude only** — there are no other LLM providers (no Codex, Gemini,
+OpenCode, Perplexity, Qwen, etc.), and that is intentional, not a misconfiguration. For any `/octo:*`
+workflow:
+
+- **Always run in team mode** (multi-agent). Never run single-instance, and **never ask** whether to
+  use single vs team — the answer is always team.
+- **The "multiple LLMs" are Claude subagents/personas**, never other providers. Use the octo persona
+  agents (backend-architect, code-reviewer, database-architect, etc.) as the team's diversity. Do not
+  route any step to a non-Claude model.
+- **Never run or suggest `/octo:setup`** or any provider install/auth step. Missing-provider status in
+  the availability banner is expected — do not treat it as a problem to fix or prompt the user about.
+
 ## Workspace
 
 Bun workspaces; one root `bun.lock`; `node_modules` hoisted to the repo root. Members:

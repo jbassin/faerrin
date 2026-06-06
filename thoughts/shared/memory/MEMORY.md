@@ -1,0 +1,5 @@
+- [Octo personas not LLMs](octo-personas-not-llms.md) — in this repo, octo workflows use Claude persona agents instead of other LLM providers
+- [Quartz builds on bun](quartz-builds-on-bun.md) — spike proved Astro5+Vite+Pagefind quartz builds on bun with byte-parity vs npm (migration de-risked)
+- [Monorepo migration done](monorepo-phase1-done.md) — Phase 1 (bun workspace foundation) + Phase 2 (transcript+wiki SSOT, @faerrin/llm) COMPLETE; 6 packages; whole workspace green
+- [listener_wretch migration](listener-wretch-migration.md) — plan + host facts for importing the Python/whisperx transcript+audio producer into the monorepo (hybrid, staged)
+- [Package rename to @faerrin/* scope](package-rename-faerrin-scope.md) — all 8 pkgs renamed @faerrin/*, folders match short-names (quartz→aether, listener→wretch, shared-content→content, caster-site→face/un-nested, faerrin-llm→llm); old codenames now stale

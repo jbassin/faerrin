@@ -1,2 +1,0 @@
-- [Faerrin monorepo migration](project_faerrin_monorepo.md) — 4 apps in pkg/ being unified into Bun workspaces; quartz is the lone npm holdout
-- [Repo uses jj over git](reference_jj_repo.md) — .jj present at root; file moves must use jj, not git
