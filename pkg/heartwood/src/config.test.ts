@@ -1,13 +1,13 @@
 import { test, expect, beforeEach, afterEach } from 'bun:test';
 import { config, _resetConfigForTests } from './config';
 
-const REQUIRED = ['ANTHROPIC_API_KEY', 'GITHUB_TOKEN', 'GITHUB_REPO'] as const;
+const TOUCHED = ['ANTHROPIC_API_KEY', 'MODEL_MINE'] as const;
 const snapshot: Record<string, string | undefined> = {};
 
 beforeEach(() => {
   _resetConfigForTests();
-  for (const k of REQUIRED) snapshot[k] = Bun.env[k];
-  for (const k of REQUIRED) delete Bun.env[k];
+  for (const k of TOUCHED) snapshot[k] = Bun.env[k];
+  for (const k of TOUCHED) delete Bun.env[k];
 });
 
 afterEach(() => {
@@ -19,24 +19,20 @@ afterEach(() => {
 });
 
 test('rejects missing required env vars and names them', () => {
-  expect(() => config()).toThrow(/ANTHROPIC_API_KEY.*GITHUB_TOKEN.*GITHUB_REPO/);
+  expect(() => config()).toThrow(/ANTHROPIC_API_KEY/);
 });
 
-test('returns frozen config with model defaults and default API url', () => {
+test('returns frozen config with model defaults', () => {
   Bun.env.ANTHROPIC_API_KEY = 'sk-test';
-  Bun.env.GITHUB_TOKEN = 'ghp-test';
-  Bun.env.GITHUB_REPO = 'owner/repo';
   const c = config();
-  expect(c.GITHUB_API_URL).toBe('https://api.github.com');
-  expect(c.MODEL_SEGMENT).toBe('claude-haiku-4-5-20251001');
-  expect(c.MODEL_EXTRACT).toBe('claude-sonnet-4-6');
+  expect(c.MODEL_MINE).toBe('claude-sonnet-4-6');
+  expect(c.MODEL_TRIAGE).toBe('claude-haiku-4-5-20251001');
+  expect(c.MODEL_SUMMARIZE).toBe('claude-sonnet-4-6');
   expect(Object.isFrozen(c)).toBe(true);
 });
 
 test('respects overrides from env', () => {
   Bun.env.ANTHROPIC_API_KEY = 'sk-test';
-  Bun.env.GITHUB_TOKEN = 'ghp-test';
-  Bun.env.GITHUB_REPO = 'owner/repo';
-  Bun.env.MODEL_SEGMENT = 'my-segment-model';
-  expect(config().MODEL_SEGMENT).toBe('my-segment-model');
+  Bun.env.MODEL_MINE = 'my-mine-model';
+  expect(config().MODEL_MINE).toBe('my-mine-model');
 });

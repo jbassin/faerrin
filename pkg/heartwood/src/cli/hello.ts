@@ -9,7 +9,7 @@ export async function hello(opts: HelloCliOptions = {}): Promise<void> {
   const cfg = config();
   const { text } = await complete({
     stage: 'hello',
-    model: cfg.MODEL_SEGMENT,
+    model: cfg.MODEL_TRIAGE,
     system: 'You are a smoke test. Reply with exactly the single word: ok',
     user: 'ping',
     maxTokens: 16,

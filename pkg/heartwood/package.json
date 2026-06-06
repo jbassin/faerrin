@@ -5,16 +5,6 @@
   "scripts": {
     "hello": "bun index.ts hello",
     "cost-report": "bun index.ts cost-report",
-    "index-wiki": "bun index.ts index-wiki",
-    "transcripts": "bun index.ts transcripts",
-    "segment": "bun index.ts segment",
-    "extract": "bun index.ts extract",
-    "resolve": "bun index.ts resolve",
-    "match": "bun index.ts match",
-    "propose": "bun index.ts propose",
-    "submit": "bun index.ts submit",
-    "respond": "bun index.ts respond",
-    "process": "bun index.ts process",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },

@@ -91,7 +91,7 @@ export async function summarizeWikiPages(
   pages: Record<string, PageRecord>,
   opts: SummarizeWikiOptions,
 ): Promise<SummarizeWikiResult> {
-  const model = config().MODEL_EXTRACT;
+  const model = config().MODEL_SUMMARIZE;
   const failures: string[] = [];
   const enriched: SummarizeWikiResult['enriched'] = {};
 
