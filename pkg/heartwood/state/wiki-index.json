@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T00:48:55.548Z",
+  "generatedAt": "2026-06-06T01:11:05.443Z",
   "pageCount": 121,
   "pages": {
     "Divinity/Celestial Prescence.md": {
@@ -121,9 +121,24 @@
       ],
       "contentHash": "349b5ed2fbb9e008bcb93c11820a5ecd1a05414ca25021bdf96c311e8fef0f43",
       "byteLength": 379,
-      "summary": null,
-      "keyFacts": null,
-      "entities": null
+      "summary": "Flintlock Toboggan is a small, goat-like fiend residing in the Shackled Prince's demesne, standing 4'6\" with brown fur and hourglass pupils.",
+      "keyFacts": [
+        "Height: approximately 4'6\"",
+        "Humanoid body covered in short brown fur",
+        "Has hooved feet",
+        "Goatlike face with human features",
+        "Two curled rams' horns on forehead",
+        "Pupils are hourglass-shaped rather than round",
+        "Resides in the Shackled Prince's (Sigzil Haight's) demesne"
+      ],
+      "entities": {
+        "people": [
+          "Flintlock Toboggan",
+          "Sigzil Haight"
+        ],
+        "places": [],
+        "orgs": []
+      }
     },
     "Divinity/Fiends/Sigzil Haight.md": {
       "path": "Divinity/Fiends/Sigzil Haight.md",
