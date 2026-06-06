@@ -41,3 +41,6 @@ state/runs/*
 state/claims/_debug/
 state/matches/_debug/
 state/proposals/_debug/
+
+# eval runner output (regenerable)
+eval/results/

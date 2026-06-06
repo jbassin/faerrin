@@ -7,6 +7,7 @@
     "cost-report": "bun index.ts cost-report",
     "draft-labels": "bun scripts/draft-labels.ts",
     "review-labels": "bun scripts/review-labels.ts",
+    "eval": "bun scripts/eval.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },

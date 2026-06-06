@@ -67,6 +67,33 @@ export function scoreCoverage(facts: LabeledFact[], claims: Claim[], opts: Score
   return { total, covered, coverage: total === 0 ? 1 : covered / total, missed };
 }
 
+export interface PrecisionResult {
+  total: number;
+  matched: number;
+  precision: number; // 0..1 — fraction of produced claims that match a labeled (kept) fact
+  unmatched: Claim[]; // claims matching no kept fact — the likely event/combat/mechanics/plot noise
+}
+
+/**
+ * Of the produced claims, the fraction that match a labeled (human-kept) fact. The unmatched
+ * claims are the noise the reviewer would cut — a direct proxy for the slop the mine prompt
+ * still leaks. (The label set is the human's kept facts, so this is a fair precision measure.)
+ */
+export function scorePrecision(facts: LabeledFact[], claims: Claim[], opts: ScoreOptions = {}): PrecisionResult {
+  const unmatched: Claim[] = [];
+  let matched = 0;
+  for (const c of claims) {
+    if (facts.some((f) => claimMatchesFact(f, c, opts))) matched++;
+    else unmatched.push(c);
+  }
+  return {
+    total: claims.length,
+    matched,
+    precision: claims.length === 0 ? 1 : matched / claims.length,
+    unmatched,
+  };
+}
+
 export interface FalseCanonResult {
   canonClaims: number;
   unmatched: number;
