@@ -1,0 +1,6 @@
+# Vendored verbatim from aether's slug.ts (semi:false). Prettier must NOT reformat it —
+# it has to stay byte-identical to the source or aether-slug.drift.test.ts fails.
+src/render/vendor/aether-slug.ts
+
+# Generated route tree.
+src/routeTree.gen.ts

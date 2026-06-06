@@ -16,9 +16,10 @@ import {
 // [[fp]], [[fp|alias]], [[fp#anchor]], [[fp#anchor|alias]] (embeds skipped, as aether does)
 // Kept byte-identical to aether's remark-wikilinks.mjs regex (the in-char-class
 // escapes are redundant but match aether exactly — do not "simplify").
-// eslint-disable-next-line no-useless-escape
+/* eslint-disable no-useless-escape -- the in-char-class escapes mirror aether's regex byte-for-byte; do not simplify */
 const wikilinkRegex =
   /(!?)\[\[([^\[\]\|\#]+)?(#+[^\[\]\|\#]+)?(\|[^\[\]\#]+)?\]\]/g;
+/* eslint-enable no-useless-escape */
 
 function escapeHtml(s: string): string {
   return s
