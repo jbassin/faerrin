@@ -3,3 +3,6 @@
 - [Monorepo migration done](monorepo-phase1-done.md) — Phase 1 (bun workspace foundation) + Phase 2 (transcript+wiki SSOT, @faerrin/llm) COMPLETE; 6 packages; whole workspace green
 - [listener_wretch migration](listener-wretch-migration.md) — plan + host facts for importing the Python/whisperx transcript+audio producer into the monorepo (hybrid, staged)
 - [Package rename to @faerrin/* scope](package-rename-faerrin-scope.md) — all 8 pkgs renamed @faerrin/*, folders match short-names (quartz→aether, listener→wretch, shared-content→content, caster-site→face/un-nested, faerrin-llm→llm); old codenames now stale
+- [Heartwood rewrite constraints](heartwood-rewrite-constraints.md) — heartwood being fully rewritten; fixed stakeholder constraints (interactive review UI, human-voiced prose, provenance) + 50%-noise/literary-voice hard truths
+- [Transcript arcs and naming](transcript-arcs-and-naming.md) — transcripts span 6+ concurrent arcs; 000 arc's 30 files share one basename (differ only by date); line IDs are per-file
+- [Wiki non-prose pages](wiki-nonprose-pages.md) — Timeline.md is HTML, deity pages are :: stat blocks, flavor docs are <pre>; prose/voice tooling must be page-type-aware
