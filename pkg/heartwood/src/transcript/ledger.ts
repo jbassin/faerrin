@@ -1,27 +1,31 @@
-import { rename } from 'node:fs/promises';
 import { z } from 'zod';
 import type { TranscriptFile } from './discover';
+import { writeFileAtomic } from '../state/atomic';
+import { sessionKey, type SessionId } from '../state/identity';
+
+// Per-session processing ledger (spec C8/C9, AC-25). Keyed by (arc, date) — never the
+// filename stem (the `000` arc reuses one basename). Each session tracks a contentHash and
+// per-stage timestamps; on a hash change reconcile() clears the stages so it re-runs, and
+// already-approved facts are guarded downstream (provenance), not re-proposed.
 
 export const STAGE_ORDER = [
-  'segmented',
-  'extracted',
+  'mined',
+  'triaged',
   'resolved',
-  'matched',
-  'proposed',
-  'verified',
-  'prOpened',
+  'located',
+  'conflicted',
+  'assembled',
 ] as const;
 
 export type Stage = (typeof STAGE_ORDER)[number];
 
 export const StagesSchema = z.object({
-  segmented: z.string().nullable(),
-  extracted: z.string().nullable(),
-  resolved:  z.string().nullable().optional().transform((v) => v ?? null),
-  matched:   z.string().nullable(),
-  proposed:  z.string().nullable(),
-  verified:  z.string().nullable(),
-  prOpened:  z.string().nullable(),
+  mined:      z.string().nullable(),
+  triaged:    z.string().nullable(),
+  resolved:   z.string().nullable(),
+  located:    z.string().nullable(),
+  conflicted: z.string().nullable(),
+  assembled:  z.string().nullable(),
 });
 
 export const ErrorRecordSchema = z.object({
@@ -30,24 +34,15 @@ export const ErrorRecordSchema = z.object({
   message: z.string(),
 });
 
-// `prNumber` is the GitHub PR number. Legacy ledgers written before the
-// GitLab→GitHub migration used `mrIid`; a preprocess step maps that key onto
-// `prNumber` on read so existing committed ledgers still parse. New writes use
-// `prNumber`.
-export const LedgerEntrySchema = z.preprocess((raw) => {
-  if (raw && typeof raw === 'object' && !('prNumber' in raw) && 'mrIid' in raw) {
-    const { mrIid, ...rest } = raw as Record<string, unknown>;
-    return { ...rest, prNumber: mrIid };
-  }
-  return raw;
-}, z.object({
-  filename:    z.string(),
+export const SessionIdSchema = z.object({ arc: z.string(), date: z.string() });
+
+export const LedgerEntrySchema = z.object({
+  session:     SessionIdSchema,
+  filename:    z.string(),   // retained for display/citations
   contentHash: z.string(),
   stages:      StagesSchema,
-  prUrl:       z.string().optional(),
-  prNumber:    z.number().int().positive().optional(),
   errors:      z.array(ErrorRecordSchema),
-}));
+});
 
 export const LedgerSchema = z.object({
   entries: z.array(LedgerEntrySchema),
@@ -59,12 +54,15 @@ export type LedgerEntry = z.infer<typeof LedgerEntrySchema>;
 export type Ledger = z.infer<typeof LedgerSchema>;
 
 export const EMPTY_STAGES: Stages = {
-  segmented: null, extracted: null, resolved: null, matched: null,
-  proposed:  null, verified:  null, prOpened: null,
+  mined: null, triaged: null, resolved: null, located: null, conflicted: null, assembled: null,
 };
 
 export function emptyLedger(): Ledger {
   return { entries: [] };
+}
+
+function entryKey(e: LedgerEntry): string {
+  return sessionKey(e.session);
 }
 
 // ---- IO ----
@@ -72,23 +70,20 @@ export function emptyLedger(): Ledger {
 export async function readLedger(path: string): Promise<Ledger> {
   const file = Bun.file(path);
   if (!(await file.exists())) return emptyLedger();
-  const raw = JSON.parse(await file.text());
-  return LedgerSchema.parse(raw);
+  return LedgerSchema.parse(JSON.parse(await file.text()));
 }
 
 export async function writeLedger(path: string, ledger: Ledger): Promise<void> {
-  const tmp = `${path}.tmp`;
-  await Bun.write(tmp, JSON.stringify(ledger, null, 2) + '\n');
-  await rename(tmp, path);
+  await writeFileAtomic(path, JSON.stringify(ledger, null, 2) + '\n');
 }
 
 // ---- Reconcile ----
 
 export interface ReconcileChanges {
-  added:     string[];   // new files appearing in discovery
-  unchanged: string[];   // file present, hash matches existing entry
-  rehashed:  string[];   // file present, hash differs — entry kept but stages cleared
-  missing:   string[];   // ledger entry has no file in current discovery
+  added:     string[];   // session keys newly appearing in discovery
+  unchanged: string[];   // present, hash matches
+  rehashed:  string[];   // present, hash differs — entry kept but stages cleared (AC-25)
+  missing:   string[];   // ledger entry has no transcript in current discovery
 }
 
 export interface ReconcileResult {
@@ -96,43 +91,39 @@ export interface ReconcileResult {
   changes: ReconcileChanges;
 }
 
-export function reconcile(prior: Ledger, discovered: TranscriptFile[]): ReconcileResult {
-  const byFilename = new Map<string, LedgerEntry>();
-  for (const e of prior.entries) byFilename.set(e.filename, e);
+function sessionOf(f: TranscriptFile): SessionId {
+  return { arc: f.campaignName, date: f.sessionDate };
+}
 
-  const discoveredNames = new Set(discovered.map((f) => f.filename));
+export function reconcile(prior: Ledger, discovered: TranscriptFile[]): ReconcileResult {
+  const byKey = new Map<string, LedgerEntry>();
+  for (const e of prior.entries) byKey.set(entryKey(e), e);
+
+  const discoveredKeys = new Set(discovered.map((f) => sessionKey(sessionOf(f))));
   const changes: ReconcileChanges = { added: [], unchanged: [], rehashed: [], missing: [] };
   const nextEntries: LedgerEntry[] = [];
 
   for (const f of discovered) {
-    const existing = byFilename.get(f.filename);
+    const session = sessionOf(f);
+    const key = sessionKey(session);
+    const existing = byKey.get(key);
     if (!existing) {
-      nextEntries.push({
-        filename:    f.filename,
-        contentHash: f.contentHash,
-        stages:      { ...EMPTY_STAGES },
-        errors:      [],
-      });
-      changes.added.push(f.filename);
+      nextEntries.push({ session, filename: f.filename, contentHash: f.contentHash, stages: { ...EMPTY_STAGES }, errors: [] });
+      changes.added.push(key);
     } else if (existing.contentHash === f.contentHash) {
       nextEntries.push(existing);
-      changes.unchanged.push(f.filename);
+      changes.unchanged.push(key);
     } else {
-      nextEntries.push({
-        filename:    f.filename,
-        contentHash: f.contentHash,
-        stages:      { ...EMPTY_STAGES },
-        errors:      [],
-      });
-      changes.rehashed.push(f.filename);
+      nextEntries.push({ session, filename: f.filename, contentHash: f.contentHash, stages: { ...EMPTY_STAGES }, errors: [] });
+      changes.rehashed.push(key);
     }
   }
 
-  // Preserve orphan entries (file removed from disk) so we don't lose pipeline history.
+  // Preserve orphan entries (transcript removed from disk) so we don't lose history.
   for (const e of prior.entries) {
-    if (!discoveredNames.has(e.filename)) {
+    if (!discoveredKeys.has(entryKey(e))) {
       nextEntries.push(e);
-      changes.missing.push(e.filename);
+      changes.missing.push(entryKey(e));
     }
   }
 
@@ -146,77 +137,52 @@ export type FindResult =
   | { ok: false; reason: 'not_found' }
   | { ok: false; reason: 'ambiguous'; candidates: string[] };
 
-export function findEntry(ledger: Ledger, name: string): FindResult {
-  // 1. Exact match (with or without trailing .txt)
-  const withExt = name.endsWith('.txt') ? name : `${name}.txt`;
-  const exact = ledger.entries.find((e) => e.filename === name || e.filename === withExt);
+export function findBySession(ledger: Ledger, session: SessionId): LedgerEntry | undefined {
+  const key = sessionKey(session);
+  return ledger.entries.find((e) => entryKey(e) === key);
+}
+
+/** Loose lookup for CLI ergonomics: matches against `arc@date`, arc, or filename substring. */
+export function findEntry(ledger: Ledger, query: string): FindResult {
+  const exact = ledger.entries.find((e) => entryKey(e) === query);
   if (exact) return { ok: true, entry: exact };
 
-  // 2. Unique substring match
-  const matches = ledger.entries.filter((e) => e.filename.includes(name));
+  const matches = ledger.entries.filter(
+    (e) => entryKey(e).includes(query) || e.filename.includes(query),
+  );
   if (matches.length === 0) return { ok: false, reason: 'not_found' };
   if (matches.length === 1) return { ok: true, entry: matches[0]! };
-  return { ok: false, reason: 'ambiguous', candidates: matches.map((e) => e.filename) };
+  return { ok: false, reason: 'ambiguous', candidates: matches.map(entryKey) };
 }
 
 // ---- Mutations (all return a new ledger) ----
 
-function replaceEntry(ledger: Ledger, filename: string, fn: (e: LedgerEntry) => LedgerEntry): Ledger {
-  return {
-    entries: ledger.entries.map((e) => (e.filename === filename ? fn(e) : e)),
-  };
+function replaceEntry(ledger: Ledger, key: string, fn: (e: LedgerEntry) => LedgerEntry): Ledger {
+  return { entries: ledger.entries.map((e) => (entryKey(e) === key ? fn(e) : e)) };
 }
 
-export function markStage(ledger: Ledger, filename: string, stage: Stage, ts = new Date().toISOString()): Ledger {
-  return replaceEntry(ledger, filename, (e) => ({
+export function markStage(ledger: Ledger, session: SessionId, stage: Stage, ts = new Date().toISOString()): Ledger {
+  return replaceEntry(ledger, sessionKey(session), (e) => ({
     ...e,
     stages: { ...e.stages, [stage]: ts },
     errors: e.errors.filter((err) => err.stage !== stage),
   }));
 }
 
-export function recordError(ledger: Ledger, filename: string, stage: Stage, message: string, ts = new Date().toISOString()): Ledger {
-  return replaceEntry(ledger, filename, (e) => ({
+export function recordError(ledger: Ledger, session: SessionId, stage: Stage, message: string, ts = new Date().toISOString()): Ledger {
+  return replaceEntry(ledger, sessionKey(session), (e) => ({
     ...e,
     errors: [...e.errors, { stage, ts, message }],
   }));
 }
 
-export function setPrUrl(ledger: Ledger, filename: string, prUrl: string): Ledger {
-  return replaceEntry(ledger, filename, (e) => ({ ...e, prUrl }));
-}
-
-export function setPrNumber(ledger: Ledger, filename: string, prNumber: number): Ledger {
-  return replaceEntry(ledger, filename, (e) => ({ ...e, prNumber }));
-}
-
-export function resetEntry(ledger: Ledger, filename: string): Ledger {
-  return replaceEntry(ledger, filename, (e) => ({
-    filename: e.filename,
-    contentHash: e.contentHash,
-    stages: { ...EMPTY_STAGES },
-    errors: [],
-    // prUrl explicitly omitted
-  }));
-}
-
-export function resetEntryStage(ledger: Ledger, filename: string, stage: Stage): Ledger {
+export function resetEntryStage(ledger: Ledger, session: SessionId, stage: Stage): Ledger {
   const startIdx = STAGE_ORDER.indexOf(stage);
   if (startIdx < 0) throw new Error(`unknown stage: ${stage}`);
   const cleared = new Set<Stage>(STAGE_ORDER.slice(startIdx));
-  return replaceEntry(ledger, filename, (e) => {
+  return replaceEntry(ledger, sessionKey(session), (e) => {
     const stages: Stages = { ...e.stages };
     for (const s of cleared) stages[s] = null;
-    const next: LedgerEntry = {
-      ...e,
-      stages,
-      errors: e.errors.filter((err) => !cleared.has(err.stage)),
-    };
-    // If prOpened was cleared, prUrl and prNumber are now meaningless.
-    if (cleared.has('prOpened')) {
-      delete next.prUrl;
-      delete next.prNumber;
-    }
-    return next;
+    return { ...e, stages, errors: e.errors.filter((err) => !cleared.has(err.stage)) };
   });
 }
