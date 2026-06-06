@@ -6,6 +6,7 @@ import type { ReviewState } from "@faerrin/heartwood/src/state/review.ts";
 import { ProposalCard } from "@/components/ProposalCard.tsx";
 import { TriageView } from "@/components/TriageView.tsx";
 import { ConflictCard } from "@/components/ConflictCard.tsx";
+import { groupProposalsByEvent } from "@/lib/event-groups.ts";
 
 export const Route = createFileRoute("/session/$arc/$date")({
   loader: async ({ params }): Promise<SessionView> =>
@@ -26,6 +27,24 @@ function SessionPage() {
   const decided = artifact.proposals.filter(
     (p: Proposal) => (review.decisions[p.id]?.decision ?? "pending") !== "pending",
   ).length;
+
+  const proposalById = new Map(artifact.proposals.map((p: Proposal) => [p.id, p]));
+  const eventGroups = groupProposalsByEvent(artifact.proposals);
+
+  const renderCard = (p: Proposal) => (
+    <ProposalCard
+      key={p.id}
+      arc={artifact.sessionId.arc}
+      date={artifact.sessionId.date}
+      proposal={p}
+      initialDecision={review.decisions[p.id]?.decision ?? "pending"}
+      initialText={review.decisions[p.id]?.authoredText ?? ""}
+      initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
+      pageType={pageTypes[p.id] ?? "lore"}
+      allSlugs={allSlugs}
+      onSaved={setReview}
+    />
+  );
   const approvedUncommitted = artifact.proposals.filter((p: Proposal) => {
     const d = review.decisions[p.id];
     return d?.decision === "approved" && !d.committedAt;
@@ -98,20 +117,29 @@ function SessionPage() {
       </nav>
 
       {tab === "proposals" &&
-        artifact.proposals.map((p: Proposal) => (
-          <ProposalCard
-            key={p.id}
-            arc={artifact.sessionId.arc}
-            date={artifact.sessionId.date}
-            proposal={p}
-            initialDecision={review.decisions[p.id]?.decision ?? "pending"}
-            initialText={review.decisions[p.id]?.authoredText ?? ""}
-            initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
-            pageType={pageTypes[p.id] ?? "lore"}
-            allSlugs={allSlugs}
-            onSaved={setReview}
-          />
-        ))}
+        eventGroups.map((group, gi) => {
+          const proposals = group.map((id) => proposalById.get(id)!);
+          if (proposals.length <= 1) return proposals.map(renderCard);
+          // AC-22: related per-page edits from one event, grouped so they stay consistent.
+          return (
+            <div
+              key={`event-${gi}`}
+              style={{
+                border: "1px dashed #9aa0a6",
+                borderRadius: 12,
+                padding: "0.75rem",
+                marginBottom: "1rem",
+                background: "rgba(154,160,166,0.06)",
+              }}
+            >
+              <div style={{ fontSize: "0.8rem", color: "#5f6368", fontWeight: 600, marginBottom: "0.5rem" }}>
+                ⛓ Event group · {proposals.length} pages — these edits share transcript moments; keep
+                them consistent
+              </div>
+              {proposals.map(renderCard)}
+            </div>
+          );
+        })}
 
       {tab === "triage" && (
         <TriageView
