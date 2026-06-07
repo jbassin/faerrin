@@ -5,6 +5,7 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
+    "bot": "bun src/bot.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },

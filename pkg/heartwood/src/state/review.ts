@@ -367,6 +367,28 @@ export function isStaleApproval(state: ReviewState, proposalId: string): boolean
   return state.staleApprovals.includes(proposalId);
 }
 
+// ── Merge canonization (NLSpec 0002 AC-21, D-11) ────────────────────────────────────────────────
+
+/**
+ * Pure: stamp `committedAt` on the given proposals (the local act a remote merge can't do — C10).
+ * Used by the merge-canonizer to mark the pages a merged PR landed in canon; creates an `approved`
+ * decision record for any proposal that had none (an untouched, implicitly-checked page). Idempotent.
+ */
+export function markProposalsCommitted(
+  state: ReviewState,
+  proposalIds: string[],
+  at: string,
+): ReviewState {
+  const decisions: Record<string, ProposalDecision> = { ...state.decisions };
+  for (const id of proposalIds) {
+    const existing = decisions[id];
+    decisions[id] = existing
+      ? { ...existing, committedAt: at }
+      : { proposalId: id, decision: 'approved', committedAt: at, decidedAt: at };
+  }
+  return { ...state, decisions, updatedAt: new Date().toISOString() };
+}
+
 export type ReviewStatus = 'unreviewed' | 'partial' | 'reviewed';
 
 /**
