@@ -41,13 +41,16 @@ export const scriptTool: ToolSpec = {
             text: {
               type: "string",
               description:
-                "What this host says, as it should be spoken aloud. You may embed " +
-                "inline ElevenLabs v3 audio tags in square brackets to direct delivery — " +
-                "emotions ([warm], [excited], [nervous]), reactions ([laughs], [sighs], " +
-                "[gasps]), and tone/pacing ([whispers], [deadpan], [sarcastic], [pause]). " +
-                "Place a tag right where the delivery shifts (often at the start of a line, " +
-                "occasionally mid-sentence). Use them sparingly and only where they fit the " +
-                "moment; everything outside the brackets must be plain speakable words.",
+                "What this host says, as it should be spoken aloud. Punctuate for prosody: " +
+                "an ellipsis for a trailing-off or hesitation, an em-dash for an abrupt cut, " +
+                "ALL-CAPS on a word for emphasis. You may embed inline ElevenLabs v3 audio " +
+                "tags in square brackets to direct delivery — these are a non-exhaustive " +
+                "guide, infer similar ones: direction ([happy], [excited], [annoyed], " +
+                "[thoughtful], [whisper], [deadpan]), non-verbal ([laughing], [chuckles], " +
+                "[sighs], [exhales sharply], [inhales deeply], [clears throat], [short pause], " +
+                "[long pause]), and overlap/turn-timing ([jumping in], [overlapping], " +
+                "[interrupts]). Place a tag right where the delivery shifts; use them " +
+                "sparingly. Everything outside the brackets must be plain speakable words.",
             },
           },
           required: ["speaker", "text"],

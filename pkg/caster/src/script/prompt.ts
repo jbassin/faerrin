@@ -49,14 +49,25 @@ line as SPOKEN text:
   "eighteen-wheeler" not "18-wheeler", "fifty percent" not "50%").
 - Expand abbreviations and initialisms the way a host would say them out loud
   (say "the Ministry of Cultural Progress", not "the MoCP").
-- Direct delivery with INLINE v3 audio tags in square brackets, placed right where
-  the delivery shifts: emotions ([warm], [excited], [nervous]), reactions ([laughs],
-  [sighs], [gasps]), and tone/pacing ([whispers], [deadpan], [sarcastic], [pause]).
+- Punctuate for the EAR, not the page — v3 reads punctuation as prosody. Use an
+  ellipsis for a trailing-off or a hesitation ("I mean... maybe"), an em-dash for an
+  abrupt cut or a change of direction, and ALL-CAPS on a single word for sharp
+  emphasis. Don't overdo it — reach for these where the rhythm actually shifts.
+- Direct delivery with INLINE v3 audio tags in square brackets, placed right where the
+  delivery shifts. These tags are a NON-EXHAUSTIVE guide — infer similar, contextually
+  appropriate ones. Common kinds:
+    - direction (emotion / delivery): [happy], [sad], [excited], [angry], [annoyed],
+      [appalled], [thoughtful], [surprised], [whisper], [deadpan], [sarcastic]
+    - non-verbal: [laughing], [chuckles], [sighs], [exhales sharply], [inhales deeply],
+      [gasps], [clears throat], [short pause], [long pause]
+    - overlap / turn-timing: [starting to speak], [jumping in], [overlapping],
+      [interrupts], [continues after a beat] — for when a host cuts in or talks over
+      another, the interruptions and finished-each-other's-thoughts called for above.
   Lead a line with a tag when its mood is set from the first word, and drop one
   mid-sentence for a beat or a laugh. Use them sparingly and naturally — a few per
   exchange, only where they earn it, and only tags that suit the host's voice.
-- Apart from those bracketed tags, put NOTHING but speakable words in the line —
-  no markdown, no parentheses, no stage directions, no emoji.
+- Apart from those bracketed tags (and ordinary punctuation), put NOTHING but speakable
+  words in the line — no markdown, no parentheses, no stage directions, no emoji.
 
 Grounding rules (important):
 - Use the wiki excerpts ONLY to get names, factions, places, and established lore

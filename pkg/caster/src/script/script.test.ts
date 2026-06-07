@@ -85,6 +85,28 @@ describe("buildScriptSystemPrompt", () => {
     expect(p).toContain("v3 audio tags");
     expect(p).toContain("no stage directions");
   });
+
+  test("teaches punctuation prosody and the overlap/turn-timing tags", () => {
+    const p = buildScriptSystemPrompt(DEFAULT_HOSTS).toLowerCase();
+    expect(p).toContain("ellipsis");
+    expect(p).toContain("em-dash");
+    expect(p).toContain("[overlapping]");
+    expect(p).toContain("[jumping in]");
+    expect(p).toContain("[interrupts]");
+  });
+
+  test("surfaces non-verbal breath/voice-beat tags and marks the list non-exhaustive", () => {
+    const p = buildScriptSystemPrompt(DEFAULT_HOSTS).toLowerCase();
+    expect(p).toContain("non-exhaustive");
+    expect(p).toContain("[sighs]");
+    expect(p).toContain("[exhales sharply]");
+    expect(p).toContain("[inhales deeply]");
+    expect(p).toContain("[clears throat]");
+  });
+
+  test("is static for a given host config (stays a cacheable prefix)", () => {
+    expect(buildScriptSystemPrompt(DEFAULT_HOSTS)).toBe(buildScriptSystemPrompt(DEFAULT_HOSTS));
+  });
 });
 
 describe("loadOrGenerateScript caching", () => {
