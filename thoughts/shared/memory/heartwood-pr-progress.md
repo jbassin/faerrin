@@ -59,10 +59,22 @@ is `import type`) — no aether/Bun/React leak into the Node/Bun package.
   unchecked+flagged. `bot.ts` = thin one-shot poll CLI (`bun run bot <open|poll|tick|canonize>`).
 - Counts: heartwood-pr **85** tests, core **180**, web app **59** — all green, typecheck clean.
 
-**STILL OWED (Phase C — the host boundary, gated on the worldbuilder; bot.ts THROWS until wired):**
-- **writeBranch** real impl: write drafted prose + provenance sidecar to the branch as one additive jj
-  revision WITHOUT setting committedAt (the page-write core of `performCommit`, minus committedAt/lock).
-- **verifyBuild** real impl: the 763-file aether build + file-set diff guard (AC-21 — NOT code yet).
+**PHASE C PARTIAL (2026-06-06): writeBranch + verifyBuild WIRED (DI'd + unit-tested).**
+- `bot-impl.ts` `makeWriteBranch`: weave passage→page (append) + provenance sidecar (D-8), create new
+  pages, REVERT/delete rejected pages (restore amend from `jj file show -r main`), then ONE
+  path-scoped `jj commit` WITHOUT committedAt (canon only on merge). Redraft-safe (rebuild from base,
+  strip+rewrite this session's provenance). `writeProvenanceFor` now exported from commit-impl.
+- `bot-impl.ts` `makeVerifyBuild`: run aether build + assert only this session's pages changed;
+  failure blocks canonization. File logic tested against a temp tree + fake jj (heartwood-pr now 95
+  tests). `bot.ts` wires writeBranch fully.
+
+**STILL OWED (Phase C — the genuine host boundary, can't be validated offline):**
+- **verifyBuild.expectedChanged** — the wiki-page → built-aether-output path map (needs aether's slug
+  logic confirmed on the host) so the 763-file guard can name allowed changes (open-decision #2). It's
+  the ONLY remaining gated thrower; canonize's build guard fails loudly until wired.
+- The Phase-0 **sanitizer spike** (R7/D-10) + the **deploy-preview host** (AC-18).
+- The first real `gh pr create` / `jj git push` + a real end-to-end PR round-trip (the product bet —
+  writeBranch/verifyBuild's real jj/build defaults are unvalidated offline by design).
 - **External deps that pause autonomy:** the Phase-0 **sanitization spike** (empirically confirm
   against the live GitHub sanitizer, R7/D-10), the **deploy-preview host** (AC-18), and the first real
   `gh pr create` + `jj git push` on a live session.
