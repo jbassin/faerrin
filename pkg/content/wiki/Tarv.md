@@ -1,0 +1,1 @@
+That a [[comic book]] hero with a gun for an arm should emerge independently across multiple worlds says something either about the universality of certain fantasies or the limits of imagination — [[Tarv]], in whichever version you encounter, is less an invention than an inevitability.

@@ -1,0 +1,45 @@
+{
+  "wikiPath": "Geography/Calaria/Hallia/Sableclutch/index.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 3,
+        "normHash": "80e75d8b3102cf4ed3ebd64570eb059450121c67aeb49d753253051c91cf2f3b",
+        "norm": "sableclutch scrap is copperjaw's operation — a dwarven man whose yard sits amid the winding, unenforced streets of the district, where trucks hauling between factories and scrapyards move more or less as they please, and the factory floors they service are worked in no small part by goblinoid labour."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1877,
+          "end": 1921
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1881,
+          "end": 1883
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2764,
+          "end": 2766
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2817,
+          "end": 2819
+        }
+      ],
+      "claimId": "c072",
+      "entityIds": [
+        "wiki:Geography/Calaria/Hallia/Sableclutch/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.127Z"
+    }
+  ]
+}

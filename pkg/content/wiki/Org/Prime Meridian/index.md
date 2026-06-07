@@ -9,3 +9,5 @@ Prime Meridian holds the lofty title of being the only [[Org/index|Org]] to perf
 By the time the Calarian royals had realized they had outsourced their entire logistic network it was too late. In a joint announcement with the [[Org/Iridescent Church/index|Iridescent Church]], Cain declared the dissolution of royal rule. The king of Calaria found out at the same time as everyone else. Seeing that he had lost the Church's support and could not escape, the king stepped down.
 
 In the old aristocracy's place, Cain and the Church founded the Council that now rules Calaria. Now, years after Cain's death, the Council remains in power and Prime Meridian still build the roads and operates the trains that connect most of Færrin.
+
+The tram itself is operated by [[Prime Meridian]], though the wealthy residential pocket around [[Prime (Zero)]] station sits conspicuously beyond its reach — residents there are assumed, by whoever made that decision, to have no need of public transport.

@@ -1,0 +1,79 @@
+{
+  "wikiPath": "Org/Belvedere.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [
+          "What Have You Become?"
+        ],
+        "ordinal": 18,
+        "normHash": "1e32e52bcdfff911b1ea05a085dd7e8194311bad4f0f7e42967a6217fc703036",
+        "norm": "few places in austrene concentrate fanes and hearts as densely as belvedere — the hearts folded into the city's hierarchy as an additional layer rather than an afterthought, which lends the place an unusual spiritual texture."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 858,
+          "end": 862
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1698,
+          "end": 1702
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1745,
+          "end": 1746
+        }
+      ],
+      "claimId": "c019",
+      "entityIds": [
+        "wiki:Org/Belvedere.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:19.962Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [
+          "What Have You Become?"
+        ],
+        "ordinal": 19,
+        "normHash": "9f5d876cbe93a8f3db9244b75626d014d58dd90d1c1dbf8a15cfdd35bf854ac7",
+        "norm": "that the city doubles as a school, with children receiving a proper education alongside whatever else belvedere demands of them, only deepens the sense that power here is being quietly cultivated from the ground up."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 858,
+          "end": 862
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1698,
+          "end": 1702
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1745,
+          "end": 1746
+        }
+      ],
+      "claimId": "c019",
+      "entityIds": [
+        "wiki:Org/Belvedere.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:19.962Z"
+    }
+  ]
+}

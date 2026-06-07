@@ -1,0 +1,75 @@
+{
+  "wikiPath": "Fane.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "80c82c7ec98603696a3aeea92662e00e48b40b6b2db6d34e780f9bc8060b27bb",
+        "norm": "how much of a fane a heart can sustain is a direct expression of its magical reserves — the greater the energy, the greater the footprint."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 840,
+          "end": 840
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 841,
+          "end": 842
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 882,
+          "end": 882
+        }
+      ],
+      "claimId": "c017",
+      "entityIds": [
+        "new:fane"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.269Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "fc355d3f243864741a8d5daed3c67718d0b8bd5733a10a3f20a4d92dbaf04b59",
+        "norm": "large organisations sidestep this constraint by yoking multiple hearts together to maintain a single fane jointly, a practice common enough among major org headquarters to be considered standard; where those hearts share a common origin the result is seamless, but where they differ, the boundaries where their influences meet tend toward the patchwork and the strange, as though the fane itself cannot quite agree on what it is."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 840,
+          "end": 840
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 841,
+          "end": 842
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 882,
+          "end": 882
+        }
+      ],
+      "claimId": "c017",
+      "entityIds": [
+        "new:fane"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.269Z"
+    }
+  ]
+}

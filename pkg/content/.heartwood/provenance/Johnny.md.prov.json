@@ -1,0 +1,95 @@
+{
+  "wikiPath": "Johnny.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "5bfc160193d8150da96660595598acf16cd482e4cbb11fd30c085be4befa67db",
+        "norm": "half-elven and border-bred, johnny came up in helmstier — a small mountain town pressed against the edge of raelion — where he ran the last stop, a bar whose name did double duty as both a traveller's landmark and a closing-time joke."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1369,
+          "end": 1378
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1632,
+          "end": 1632
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1753,
+          "end": 1755
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1757,
+          "end": 1765
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 3375,
+          "end": 3379
+        }
+      ],
+      "claimId": "c048",
+      "entityIds": [
+        "new:johnny"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.271Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "fb59327912aa44378f6d806e6cab54018f64103e189eff28adf58abdadfa0578",
+        "norm": "his path to iconoclasm was eased by an existing familiarity with smiler and more than a few prior visits to the undertable, though what he carried with him from that mountain threshold was something quieter — a melancholy poem he composed for anzu, about a blackbird making its life inside a library."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1369,
+          "end": 1378
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1632,
+          "end": 1632
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1753,
+          "end": 1755
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1757,
+          "end": 1765
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 3375,
+          "end": 3379
+        }
+      ],
+      "claimId": "c048",
+      "entityIds": [
+        "new:johnny"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.271Z"
+    }
+  ]
+}

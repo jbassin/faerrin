@@ -1,0 +1,95 @@
+{
+  "wikiPath": "The City.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "36c14f98ca1ca4db9566e2e98c7cbb8de35664d1cc54c5855680af08116e9a4a",
+        "norm": "cosmopolitan enough that a bird-folk merchant draws no more notice than any other commuter, the city organises its inter-district movement with a firm hand — private vehicles are confined to designated transit corridors or must yield to the public transit network within city limits, the prohibition on unrestricted sliding being less a courtesy than a security doctrine."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2374,
+          "end": 2375
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2790,
+          "end": 2790
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2793,
+          "end": 2793
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2795,
+          "end": 2796
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2785,
+          "end": 2787
+        }
+      ],
+      "claimId": "c085",
+      "entityIds": [
+        "new:the-city"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.275Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "b380600a8f2c24a67c873684f57c82e6f87d02f1b3e3c143e73b3c6b1b9b164a",
+        "norm": "those willing to do their sliding beyond the city boundary can equip a vehicle with the necessary slide device for around two gold pieces, though the vehicles themselves run closer to two thousand — an asymmetry that says something pointed about who, exactly, the city expects to be travelling in comfort."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2374,
+          "end": 2375
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2790,
+          "end": 2790
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2793,
+          "end": 2793
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2795,
+          "end": 2796
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2785,
+          "end": 2787
+        }
+      ],
+      "claimId": "c085",
+      "entityIds": [
+        "new:the-city"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.275Z"
+    }
+  ]
+}

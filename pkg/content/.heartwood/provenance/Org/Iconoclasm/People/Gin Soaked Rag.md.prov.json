@@ -1,0 +1,75 @@
+{
+  "wikiPath": "Org/Iconoclasm/People/Gin Soaked Rag.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 6,
+        "normHash": "7b36c484244a5102fcfdc804c81a66cdc8c8c34f8a8754b39a1b64a8f8b3e1a2",
+        "norm": "the gin soaked rag is, in truth, ginny — the heart of the sin and tonic, manifesting as a suit vest and dress pants with a twisted dish rag where a head ought to be, wringing and craning itself toward whoever has just walked in."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 566,
+          "end": 566
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 903,
+          "end": 906
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 919,
+          "end": 929
+        }
+      ],
+      "claimId": "c002",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/People/Gin Soaked Rag.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.352Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 7,
+        "normHash": "7470a32b5c98783e0b027e2c4f298de7e453faf1b6289362884178797e7f6fdf",
+        "norm": "ginny works the bar and can turn a hand to cooking, though those with a preference for human food are better served waiting on illmari."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 566,
+          "end": 566
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 903,
+          "end": 906
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 919,
+          "end": 929
+        }
+      ],
+      "claimId": "c002",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/People/Gin Soaked Rag.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.352Z"
+    }
+  ]
+}

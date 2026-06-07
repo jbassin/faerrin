@@ -1,0 +1,40 @@
+{
+  "wikiPath": "The Undertable.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "27cdf89b30ed10d9a8ec480743345bfdc9acf4ee2e084dbd24165b0c11c3dac1",
+        "norm": "wedged between two former homes in the starward reaches of sableclutch, the undertable announces itself only by a handwritten sign — name and a crude drawing of a table — above a door with no shop-front to speak of, which suits its inventory well enough: inside, kitchen appliances and loose jewellery share shelf space with radios in various states of deconstruction, and an unlicensed firearms collection that would give hallia's licensing authorities pause, were they ever inclined to look this far starward."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1196,
+          "end": 1253
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1342,
+          "end": 1352
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1354,
+          "end": 1363
+        }
+      ],
+      "claimId": "c041",
+      "entityIds": [
+        "new:the-undertable"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.276Z"
+    }
+  ]
+}

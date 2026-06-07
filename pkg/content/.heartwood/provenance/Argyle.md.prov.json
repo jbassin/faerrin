@@ -1,0 +1,115 @@
+{
+  "wikiPath": "Argyle.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "b151b6b5b098a4b707550e43ee8fe52946021124db22f3cb11ab8a64c0342bd5",
+        "norm": "young even by humanoid reckoning, argyle carries himself with the quiet authority of someone whose scale-issued business cards announce his doctor's licence in bold — a perk funded, quietly, by his parents aaron cross and joran davinrock, both operatives of the scale whose precise roles remain classified."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1637,
+          "end": 1644
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1577,
+          "end": 1578
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1829,
+          "end": 1829
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1812,
+          "end": 1813
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1818,
+          "end": 1821
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1847,
+          "end": 1854
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1818,
+          "end": 1822
+        }
+      ],
+      "claimId": "c055",
+      "entityIds": [
+        "new:argyle"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.266Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "1703aa52e740665e7d7036ced5da75f91f222d1eee8079c74b77947c59d22470",
+        "norm": "his eyes, ordinarily gold, have a habit of shifting toward bright white or a cold blue, which tends to unsettle people who notice."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1637,
+          "end": 1644
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1577,
+          "end": 1578
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1829,
+          "end": 1829
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1812,
+          "end": 1813
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1818,
+          "end": 1821
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1847,
+          "end": 1854
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1818,
+          "end": 1822
+        }
+      ],
+      "claimId": "c055",
+      "entityIds": [
+        "new:argyle"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.266Z"
+    }
+  ]
+}

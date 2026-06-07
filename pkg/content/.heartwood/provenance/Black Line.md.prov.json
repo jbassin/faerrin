@@ -1,0 +1,125 @@
+{
+  "wikiPath": "Black Line.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "7e796dda11fd56c20393538a7f215d31f4e372e98121a7d9c48ad6dc5a6c89fc",
+        "norm": "where the wealthier districts of the city are concerned, it is blackline — not any civic authority — that keeps the peace, its uniformed officers patrolling only those streets whose residents and businesses have paid for the privilege."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2552,
+          "end": 2558
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2552,
+          "end": 2554
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2556,
+          "end": 2558
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2571,
+          "end": 2574
+        }
+      ],
+      "claimId": "c087",
+      "entityIds": [
+        "new:black-line"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.268Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "6e9b1b48168a5fa743f6d756fe093b36ec3d25cfcb9f832e127827aa702f943d",
+        "norm": "the subscription model makes the protection explicit in a way most law enforcement would rather obscure; those who haven't subscribed are, by design, someone else's problem."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2552,
+          "end": 2558
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2552,
+          "end": 2554
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2556,
+          "end": 2558
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2571,
+          "end": 2574
+        }
+      ],
+      "claimId": "c087",
+      "entityIds": [
+        "new:black-line"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.268Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 2,
+        "normHash": "bc7de66b9528610886470d4296c4c0e4ccd3d62f8ab8ebdab995f1b69cd4ee68",
+        "norm": "officers carry batons rather than firearms, a choice that reads as either reassuringly civilised or dangerously underprepared, depending on what trouble finds them."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2552,
+          "end": 2558
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2552,
+          "end": 2554
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2556,
+          "end": 2558
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2571,
+          "end": 2574
+        }
+      ],
+      "claimId": "c087",
+      "entityIds": [
+        "new:black-line"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.268Z"
+    }
+  ]
+}

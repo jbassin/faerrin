@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/Iconoclasm/People/Elias Ramsey.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 7,
+        "normHash": "605a7c1053c66572c09b75a394a4d6457d7ece3f2540d2a2b901ad1ad68172ee",
+        "norm": "tucked away in iconoclasm's storeroom, elias ramsey keeps the organisation's arsenal in order — a dwarf quartermaster whose days are spent sorting spears and little else, by most accounts."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 543,
+          "end": 570
+        }
+      ],
+      "claimId": "c005",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/People/Elias Ramsey.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.188Z"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/Roundhat Gang/index.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 3,
+        "normHash": "a06264f5361c5fe280a8b9e5f62e02e5d70890e28a33671fca5275173b02dae2",
+        "norm": "under tywelwyn leatherhide, the roundhat gang operates with whatever authority its leader's reputation can command."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 576,
+          "end": 578
+        }
+      ],
+      "claimId": "c008",
+      "entityIds": [
+        "wiki:Org/Roundhat Gang/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.956Z"
+    }
+  ]
+}

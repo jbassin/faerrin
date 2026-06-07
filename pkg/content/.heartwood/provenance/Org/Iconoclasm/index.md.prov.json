@@ -1,0 +1,35 @@
+{
+  "wikiPath": "Org/Iconoclasm/index.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 10,
+        "normHash": "f8b80c0fba3591afd20f583ec02ac88ed588945d65b099bcf6ce92ad4e3afedc",
+        "norm": "their base of operations is the sin and tonic, with a company car available to members who need it."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 705,
+          "end": 728
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 706,
+          "end": 707
+        }
+      ],
+      "claimId": "c012",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.549Z"
+    }
+  ]
+}

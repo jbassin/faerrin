@@ -1,0 +1,1 @@
+Born from the [[divination]] ritual rather than any natural process, Augers are less a species than a byproduct — creatures that emerge as an offshoot of the working itself, and which can, in turn, be fed back into it to sharpen the sight of whoever performs it.

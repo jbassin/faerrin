@@ -1,0 +1,1 @@
+Whatever the city's residents make of it, the [[Masque District]] belongs, in practice, to its visitors — the hotels here cater almost exclusively to tourists, making it one of the few quarters where a stranger's coin is more welcome than a familiar face.

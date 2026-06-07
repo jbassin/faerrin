@@ -1,0 +1,125 @@
+{
+  "wikiPath": "Benny.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "01f28844e22f6cccd77dfba97ca588b5ed673653e724dc49a06d13c5137b7f8f",
+        "norm": "nine years old and already carrying a permission slip that would turn heads among belvedere's administrators, benny is a student of that institution whose freedom of movement sits well outside what children are ordinarily granted — a special dispensation that raises more questions than it answers."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1606,
+          "end": 1659
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1658,
+          "end": 1706
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1675,
+          "end": 1710
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1776,
+          "end": 1791
+        }
+      ],
+      "claimId": "c060",
+      "entityIds": [
+        "new:benny"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.267Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "efa40ded9efae7a0290cd7b99160c124e25f745bb71581d1e7a2195b7d0cd8ef",
+        "norm": "his father, atum, is a name that surfaces somewhere in anzu's memory without quite resolving into a face, connected to belvedere in some archival capacity."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1606,
+          "end": 1659
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1658,
+          "end": 1706
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1675,
+          "end": 1710
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1776,
+          "end": 1791
+        }
+      ],
+      "claimId": "c060",
+      "entityIds": [
+        "new:benny"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.267Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 2,
+        "normHash": "ad3f23109c33b52c72629d9a7dc87d40e033f426c3704368046192da2c98b17b",
+        "norm": "that the pulse has taken an interest in keeping the boy alive does little to make the situation feel less unusual."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1606,
+          "end": 1659
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1658,
+          "end": 1706
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1675,
+          "end": 1710
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1776,
+          "end": 1791
+        }
+      ],
+      "claimId": "c060",
+      "entityIds": [
+        "new:benny"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.267Z"
+    }
+  ]
+}

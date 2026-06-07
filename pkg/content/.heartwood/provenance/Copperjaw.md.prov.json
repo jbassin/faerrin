@@ -1,0 +1,85 @@
+{
+  "wikiPath": "Copperjaw.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "3e51a9d6cd77690b7c5683ebd9e2e6ccae50cf2fa5bc134aa53ccb7d95864b3b",
+        "norm": "the face that greets visitors to sableclutch scrap is a memorable one — a mashed nose, a perpetual black eye, and the dull gleam of a crude copper jaw that has long since replaced whatever he was born with — and copperjaw himself seems entirely unbothered by the impression it makes."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1973,
+          "end": 1981
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2184,
+          "end": 2187
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2587,
+          "end": 2588
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2693,
+          "end": 2695
+        }
+      ],
+      "claimId": "c075",
+      "entityIds": [
+        "new:copperjaw"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.268Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "56aad03ad541656c41007f3aa9ef2223a0a713b06ee27c17fb02990002d1d1a0",
+        "norm": "he has worked the junkyard long enough that the neighbourhood has simply absorbed him, a dwarf somewhere in his second century who keeps the scrap moving and, notably, tends to offer delivery work to anyone willing, newcomers included."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1973,
+          "end": 1981
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2184,
+          "end": 2187
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2587,
+          "end": 2588
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2693,
+          "end": 2695
+        }
+      ],
+      "claimId": "c075",
+      "entityIds": [
+        "new:copperjaw"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.268Z"
+    }
+  ]
+}

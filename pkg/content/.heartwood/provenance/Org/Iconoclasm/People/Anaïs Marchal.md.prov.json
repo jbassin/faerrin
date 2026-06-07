@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/Iconoclasm/People/Anaïs Marchal.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 8,
+        "normHash": "d5acd1462c6dc73210a3e3e178ce3fab605c8a4239a51c43a980fb95e09da9a7",
+        "norm": "between anaïs and her sister anouk, no small amount of hard-won experience stands behind them — seasoned adventurers both, and formidable for it."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 567,
+          "end": 567
+        }
+      ],
+      "claimId": "c003",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/People/Anaïs Marchal.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:19.820Z"
+    }
+  ]
+}

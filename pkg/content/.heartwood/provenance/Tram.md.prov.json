@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Tram.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "68bf9ea8a170a6ca53dcabe1400ee268b5d4f654b20e1c7cfc8e26c27d99a438",
+        "norm": "the line orients itself around proximity to prime (zero), its intermediate stops — void 1 and void 2 — named not for what they contain but for how far they fall from that centre."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2893,
+          "end": 2895
+        }
+      ],
+      "claimId": "c103",
+      "entityIds": [
+        "new:tram"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.280Z"
+    }
+  ]
+}

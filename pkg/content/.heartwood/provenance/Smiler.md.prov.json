@@ -1,0 +1,105 @@
+{
+  "wikiPath": "Smiler.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "6ed61ed05f59257b05167afcb1aa17a09fe33943ac7059545d1d985c20811211",
+        "norm": "proprietor of the undertable and its resident fence, smiler cuts an unmistakable figure — a centaur near nine feet tall, every inch of him weighted with yellowish metal bands stacked along both arms, gems braided through his tail and long beard alike, and flared gauges set with stones in each ear, the whole ensemble offset by a stained white t-shirt that suggests he has never once found the jewellery impractical."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1369,
+          "end": 1371
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1382,
+          "end": 1383
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1385,
+          "end": 1391
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1366,
+          "end": 1366
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1441,
+          "end": 1601
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1593,
+          "end": 1599
+        }
+      ],
+      "claimId": "c044",
+      "entityIds": [
+        "new:smiler"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.273Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 1,
+        "normHash": "4ac1be6a3316db2cfe7178b8c2a63481d1b8d98e4266363c1c5b01fbc54ae5dd",
+        "norm": "through the undertable's pawn shop he moves the full range of what the city quietly needs rid of — armor, silverware, radios, poly tools — at prices that reflect, as nine gold pieces for the latter will attest, that smiler knows exactly what things are worth."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1369,
+          "end": 1371
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1382,
+          "end": 1383
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1385,
+          "end": 1391
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1366,
+          "end": 1366
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1441,
+          "end": 1601
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1593,
+          "end": 1599
+        }
+      ],
+      "claimId": "c044",
+      "entityIds": [
+        "new:smiler"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.273Z"
+    }
+  ]
+}

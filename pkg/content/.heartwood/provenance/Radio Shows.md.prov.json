@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Radio Shows.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "a18e51c750679d83305e2bfdf62a719641ec22b38b74242ee25aca0f1a6eb050",
+        "norm": "without television to compete with, the radio show occupies a cultural space that is difficult to overstate — it is, for most people, the primary means by which drama, news, and music enter the home."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2348,
+          "end": 2350
+        }
+      ],
+      "claimId": "c083",
+      "entityIds": [
+        "new:radio-shows"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.272Z"
+    }
+  ]
+}

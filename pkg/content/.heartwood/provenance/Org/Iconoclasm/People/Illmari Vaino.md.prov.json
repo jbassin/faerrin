@@ -1,0 +1,35 @@
+{
+  "wikiPath": "Org/Iconoclasm/People/Illmari Vaino.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 5,
+        "normHash": "112bf499b3f2aa074172b0fac212ee8f8fb3306c06fb9610dabafe7ebcb4a78f",
+        "norm": "the founder of iconoclasm, illmari vaino is better known around sin and tonic as a cook — a tension between those two identities that those who know him tend not to press on."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 565,
+          "end": 565
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 919,
+          "end": 919
+        }
+      ],
+      "claimId": "c001",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/People/Illmari Vaino.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.623Z"
+    }
+  ]
+}

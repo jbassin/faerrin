@@ -1,0 +1,1 @@
+Born in a nest, [[Anzu]] has never quite left that world behind — [[Othello]], a raven companion bound to them by something deeper than training, communicates not in words but in feeling, and offers Anzu a second pair of eyes to see through when one pair isn't enough.

@@ -1,0 +1,1 @@
+Wealth announces itself quietly in the [[Diamond District]] — the jewelers and fine metal shops that line its streets draw the kind of clientele that prefers [[Hallia]]'s better residential addresses, and the neighbourhood obliges, keeping both close together.

@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Othello.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "9173da4bc8b770dfb727c99abbcd55c9505d171e432f864ae44a990fde23d87c",
+        "norm": "whatever expectations one might bring to a raven named othello, they are met with something resolutely ordinary — a normal-sized bird, no more and no less."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1274,
+          "end": 1274
+        }
+      ],
+      "claimId": "c032",
+      "entityIds": [
+        "new:othello"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.272Z"
+    }
+  ]
+}

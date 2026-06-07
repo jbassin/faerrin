@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/Chorath Engineering.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 3,
+        "normHash": "34732463adbf1efbe0a64d8c419c537ad41d4cce3561eb7802bfb15766d87a7d",
+        "norm": "that chorath engineering's name carries more weight in dining rooms than in garages owes everything to the chorath guide — a publication that began as a motorist's companion in an age when automobiles were still a novelty, and quietly became the arbiter of culinary reputation across hallia."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2103,
+          "end": 2109
+        }
+      ],
+      "claimId": "c081",
+      "entityIds": [
+        "wiki:Org/Chorath Engineering.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.014Z"
+    }
+  ]
+}

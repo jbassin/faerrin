@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/Pyrelight/index.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "ea27fe72c12002f491d743af2892177513c40f84d3739b927a289b85faca9cc3",
+        "norm": "operating under the corporate banner of embercall industries, pyrelight keeps its commercial interests at arm's length from its factional ones — at least in appearance."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 613,
+          "end": 613
+        }
+      ],
+      "claimId": "c009",
+      "entityIds": [
+        "wiki:Org/Pyrelight/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.798Z"
+    }
+  ]
+}

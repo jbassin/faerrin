@@ -1,0 +1,35 @@
+{
+  "wikiPath": "Flynn.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "f50f9b5a6db2ad22c8a4c9ec19e45e9c17c04205c1f39693448715e4f1e2a5b2",
+        "norm": "whatever flynn once did for iconoclasm, he does no longer — the sprite is dead."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 575,
+          "end": 575
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 695,
+          "end": 696
+        }
+      ],
+      "claimId": "c006",
+      "entityIds": [
+        "new:flynn"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.270Z"
+    }
+  ]
+}

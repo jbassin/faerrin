@@ -1,0 +1,45 @@
+{
+  "wikiPath": "Anzu.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "e739dbf5a989fd037b2d89904aa4ce7f28a627aaabbe5bd7bb44a224e9b51c2e",
+        "norm": "born in a nest, anzu has never quite left that world behind — othello, a raven companion bound to them by something deeper than training, communicates not in words but in feeling, and offers anzu a second pair of eyes to see through when one pair isn't enough."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1268,
+          "end": 1284
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1726,
+          "end": 1726
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1954,
+          "end": 1957
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2240,
+          "end": 2244
+        }
+      ],
+      "claimId": "c031",
+      "entityIds": [
+        "new:anzu"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.265Z"
+    }
+  ]
+}

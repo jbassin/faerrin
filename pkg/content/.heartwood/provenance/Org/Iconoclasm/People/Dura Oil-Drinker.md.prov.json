@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/Iconoclasm/People/Dura Oil-Drinker.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 8,
+        "normHash": "1a887c0425215b56de33f086a49d62c89eac2eea2066fa4112161d7b1e7aba2f",
+        "norm": "known across the district as a mechanic of some repute, dura oil-drinker keeps the kind of company that gets things running again."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 568,
+          "end": 568
+        }
+      ],
+      "claimId": "c004",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/People/Dura Oil-Drinker.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.131Z"
+    }
+  ]
+}

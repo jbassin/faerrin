@@ -1,0 +1,35 @@
+{
+  "wikiPath": "Org/Prime Meridian/index.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 11,
+        "normHash": "05867a62455b725d9be7c7327d064c13187871989f6b4319f6d5a2f85c0b7cb9",
+        "norm": "the tram itself is operated by prime meridian, though the wealthy residential pocket around prime (zero) station sits conspicuously beyond its reach — residents there are assumed, by whoever made that decision, to have no need of public transport."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2933,
+          "end": 2933
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2950,
+          "end": 2951
+        }
+      ],
+      "claimId": "c104",
+      "entityIds": [
+        "wiki:Org/Prime Meridian/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:20.719Z"
+    }
+  ]
+}

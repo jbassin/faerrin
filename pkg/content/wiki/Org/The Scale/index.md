@@ -14,3 +14,5 @@ The Scale operates as an extranational form of governance with stronger guarante
 - **Timekeepers** prevent meddling with the time stream, preventing the creation of paradoxes.
 
 The average person would be most familiar with the Pactbrokers -- in most cities, one can find a member of the Scale who will (for a fee) witness the signing of a contract. Magic imbued in the contract will monitor the signees, and deviating from one's responsibilities will bring the full might of the Scale down on the contract-breaker.
+
+Unlike many organisations that farm such work out to independent contractors, [[The Scale]] keeps its bounty hunting strictly in-house — only its own [[arbiters]] are empowered to pursue and recover marks.

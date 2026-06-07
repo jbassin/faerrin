@@ -1,3 +1,5 @@
 The Sin and Tonic is a bar in [[Geography/Calaria/Hallia/Sableclutch/index|Sableclutch]]. Owned by [[Illmari Vaino]], it's the current headquarters of [[Org/Iconoclasm/index|Iconoclasm]].
 
 The interior is dingy and dark, and Illmari keeps incense censors burning tobacco hanging from the ceiling during operating ours. The main serving area is a large rectangular room with booths along the walls and a bar in the center. The left exit leads to the workshop and garage, the right exit leads to the stockroom and armory, and the back exit leads to bedrooms and an office.
+
+Unlike many a [[Fane]] — its walls sustained by a [[Heart]] rather than mere brickwork — the [[Sin and Tonic]] makes no pretence of grandeur: the sleeping quarters are tucked at the back on the same level as the bar, the beds hovering somewhere around two-star comfort on a generous night. The [[twins]] are the greater draw for those in need, skilled enough to brew healing potions, though they run nothing so formal as a shop — bring your own components, or don't bother asking. A supermarket a few blocks off covers the more mundane resupply.

@@ -1,0 +1,40 @@
+{
+  "wikiPath": "Threshold Authority.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "384bdd7f690b4ceb4e8665f382ebf2d47e50e7b5c4cf8d127e1e4be6b9f6b827",
+        "norm": "whatever order exists in the area is kept — tenuously or otherwise — by the threshold authority, whose officers are a familiar sight in their greenish uniforms, the large ta insignia leaving little ambiguity about who holds the local monopoly on law enforcement."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 667,
+          "end": 677
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2550,
+          "end": 2551
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2551,
+          "end": 2551
+        }
+      ],
+      "claimId": "c010",
+      "entityIds": [
+        "new:threshold-authority"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.277Z"
+    }
+  ]
+}

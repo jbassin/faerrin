@@ -1,0 +1,1 @@
+Whatever order exists in the area is kept — tenuously or otherwise — by the [[Threshold Authority]], whose officers are a familiar sight in their greenish uniforms, the large *TA* insignia leaving little ambiguity about who holds the local monopoly on law enforcement.

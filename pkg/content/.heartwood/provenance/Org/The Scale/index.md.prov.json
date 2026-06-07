@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/The Scale/index.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 8,
+        "normHash": "ed9e3678d050d8a95757f209103c55c261d778b880be540d488d81c280d19325",
+        "norm": "unlike many organisations that farm such work out to independent contractors, the scale keeps its bounty hunting strictly in-house — only its own arbiters are empowered to pursue and recover marks."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1205,
+          "end": 1208
+        }
+      ],
+      "claimId": "c051",
+      "entityIds": [
+        "wiki:Org/The Scale/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.264Z"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Augers.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "2998b3907dc9f7c178ec3898831106831bc11cb2cf80ff4a6a8b74f576900cfa",
+        "norm": "born from the divination ritual rather than any natural process, augers are less a species than a byproduct — creatures that emerge as an offshoot of the working itself, and which can, in turn, be fed back into it to sharpen the sight of whoever performs it."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 697,
+          "end": 698
+        }
+      ],
+      "claimId": "c011",
+      "entityIds": [
+        "new:augers"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.266Z"
+    }
+  ]
+}

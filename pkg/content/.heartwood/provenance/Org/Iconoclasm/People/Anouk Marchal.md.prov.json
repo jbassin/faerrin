@@ -1,0 +1,30 @@
+{
+  "wikiPath": "Org/Iconoclasm/People/Anouk Marchal.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 8,
+        "normHash": "cdd83ce2774c66b31be9a705704affe4aa5a39eab43484446d2566d69133cfc8",
+        "norm": "in sableclutch, she maintains a contact who runs a scrapyard — one who prefers to purchase labour directly rather than through any intermediary service, and so regularly offers work to couriers and other hands willing to deal without a middleman."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 1196,
+          "end": 1199
+        }
+      ],
+      "claimId": "c052",
+      "entityIds": [
+        "wiki:Org/Iconoclasm/People/Anouk Marchal.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:19.876Z"
+    }
+  ]
+}

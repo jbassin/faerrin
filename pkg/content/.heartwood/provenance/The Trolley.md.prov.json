@@ -1,0 +1,30 @@
+{
+  "wikiPath": "The Trolley.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 0,
+        "normHash": "034750c48ef6befcaf988584cfdb42ecb475000cf994ab98f37b44a3c17cd76c",
+        "norm": "stations are numbered outward along the horizon, with direction doing the work of an address — void 2, prime, zero and their kin marking districts as much as stops."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 2894,
+          "end": 2895
+        }
+      ],
+      "claimId": "c101",
+      "entityIds": [
+        "new:the-trolley"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.275Z"
+    }
+  ]
+}

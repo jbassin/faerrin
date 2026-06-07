@@ -1,0 +1,75 @@
+{
+  "wikiPath": "Org/RunGunners/index.md",
+  "records": [
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 6,
+        "normHash": "05967bff10f7996347a25d216826f317e748711ebaed46ba92372877e00f3244",
+        "norm": "among the most celebrated guns-for-hire in the known world, the rungunners have staked their reputation on a peculiar proof of ambition: a city held in the heart of the desert, viable only because the whole of it functions as one enormous fane — there being no other means by which such a place could survive."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 875,
+          "end": 875
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 876,
+          "end": 877
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 878,
+          "end": 879
+        }
+      ],
+      "claimId": "c022",
+      "entityIds": [
+        "wiki:Org/RunGunners/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.037Z"
+    },
+    {
+      "anchor": {
+        "headingPath": [],
+        "ordinal": 7,
+        "normHash": "750f82cb2092c41a3199166e7f0470c1a75385e910e1dc4e8eb01ff8e223d695",
+        "norm": "that it is powered by a multitude of hearts of wildly differing personalities gives the city its unmistakable character, each district lurching into the next with the clashing, mismatched quality of a place that was never quite meant to cohere."
+      },
+      "session": {
+        "arc": "through-a-song-darkly",
+        "date": "2025-08-28"
+      },
+      "arc": "through-a-song-darkly",
+      "citations": [
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 875,
+          "end": 875
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 876,
+          "end": 877
+        },
+        {
+          "transcript": "000.through-a-song-darkly.2025-8-28.txt",
+          "start": 878,
+          "end": 879
+        }
+      ],
+      "claimId": "c022",
+      "entityIds": [
+        "wiki:Org/RunGunners/index.md"
+      ],
+      "approvedAt": "2026-06-07T02:12:21.037Z"
+    }
+  ]
+}
