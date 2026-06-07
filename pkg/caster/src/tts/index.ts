@@ -18,6 +18,8 @@ export {
   resolveStability,
   deriveSeed,
   parseSeedFlag,
+  audioFormatInfo,
+  pcmToWav,
 } from "./elevenlabs.ts";
 export { DEFAULT_OUT_DIR, clipsDir, manifestPath, readManifest, writeManifest } from "./store.ts";
 

@@ -10,8 +10,10 @@ import {
   ElevenLabsTTSProvider,
   SEED_MAX,
   STABILITY_MODES,
+  audioFormatInfo,
   deriveSeed,
   parseSeedFlag,
+  pcmToWav,
   resolveStability,
 } from "./elevenlabs.ts";
 
@@ -36,17 +38,33 @@ function spyDialogue(
 }
 
 describe("ElevenLabsTTSProvider", () => {
-  test("declares mp3 format", () => {
-    expect(new ElevenLabsTTSProvider({ fetcher: spyFetch().fetcher }).format).toBe("mp3");
+  test("declares wav format by default (PCM), mp3 when an mp3 format is requested", () => {
+    expect(new ElevenLabsTTSProvider({ fetcher: spyFetch().fetcher }).format).toBe("wav");
+    expect(
+      new ElevenLabsTTSProvider({ fetcher: spyFetch().fetcher, outputFormat: "mp3_44100_128" }).format,
+    ).toBe("mp3");
   });
 
-  test("collects audio and estimates duration at 128 kbps (16000 B/s)", async () => {
+  test("mp3 format: passes bytes through and estimates duration at the bitrate", async () => {
     const { fetcher } = spyFetch(new Array(16000).fill(0));
+    const { audio, durationMs } = await new ElevenLabsTTSProvider({
+      fetcher,
+      outputFormat: "mp3_44100_128", // 128 kbps → 16000 B/s
+    }).synthesize({ text: "hello", voice: "v" });
+    expect(audio.byteLength).toBe(16000);
+    expect(durationMs).toBe(1000);
+  });
+
+  test("PCM format: wraps the clip as WAV and computes exact duration", async () => {
+    // pcm_44100 mono s16le → 88200 B/s; 88200 bytes = exactly 1s.
+    const { fetcher } = spyFetch(new Array(88200).fill(0));
     const { audio, durationMs } = await new ElevenLabsTTSProvider({ fetcher }).synthesize({
       text: "hello",
       voice: "v",
     });
-    expect(audio.byteLength).toBe(16000);
+    expect(audio.byteLength).toBe(88200 + 44); // 44-byte WAV header prepended
+    expect(String.fromCharCode(...audio.slice(0, 4))).toBe("RIFF");
+    expect(String.fromCharCode(...audio.slice(8, 12))).toBe("WAVE");
     expect(durationMs).toBe(1000);
   });
 
@@ -159,6 +177,7 @@ describe("ElevenLabsTTSProvider dialogue", () => {
     const { audio, durationMs } = await new ElevenLabsTTSProvider({
       fetcher: spyFetch().fetcher,
       dialogueFetcher,
+      outputFormat: "mp3_44100_128", // 16000 B/s, so 8000 B = 500 ms; bytes pass through
     }).synthesizeDialogue({
       inputs: [
         { text: "[warm] Hey.", voice: "voiceA" },
@@ -252,6 +271,47 @@ describe("seed helpers", () => {
     expect(() => parseSeedFlag("-1", "abc")).toThrow(/seed/);
     expect(() => parseSeedFlag("1.5", "abc")).toThrow(/seed/);
     expect(() => parseSeedFlag("nope", "abc")).toThrow(/seed/);
+  });
+});
+
+describe("audioFormatInfo", () => {
+  test("parses PCM as a wav container with mono s16le params", () => {
+    const info = audioFormatInfo("pcm_44100");
+    expect(info.container).toBe("wav");
+    expect(info.isPcm).toBe(true);
+    expect(info.sampleRate).toBe(44100);
+    expect(info.channels).toBe(1);
+    expect(info.bitsPerSample).toBe(16);
+    expect(info.bytesPerSecond).toBe(88200); // 44100 * 1 * 2
+  });
+
+  test("parses mp3 sample rate + bitrate into bytes/sec", () => {
+    const info = audioFormatInfo("mp3_44100_128");
+    expect(info.container).toBe("mp3");
+    expect(info.isPcm).toBe(false);
+    expect(info.bytesPerSecond).toBe(16000); // 128 kbps / 8
+  });
+});
+
+describe("pcmToWav", () => {
+  test("prepends a 44-byte header with correct fields", () => {
+    const pcm = new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7]);
+    const wav = pcmToWav(pcm, { sampleRate: 44100, channels: 1, bitsPerSample: 16 });
+    expect(wav.byteLength).toBe(44 + pcm.byteLength);
+    const view = new DataView(wav.buffer, wav.byteOffset, wav.byteLength);
+    expect(String.fromCharCode(...wav.slice(0, 4))).toBe("RIFF");
+    expect(view.getUint32(4, true)).toBe(36 + pcm.byteLength); // RIFF chunk size
+    expect(String.fromCharCode(...wav.slice(8, 12))).toBe("WAVE");
+    expect(String.fromCharCode(...wav.slice(12, 16))).toBe("fmt ");
+    expect(view.getUint16(20, true)).toBe(1); // PCM
+    expect(view.getUint16(22, true)).toBe(1); // channels
+    expect(view.getUint32(24, true)).toBe(44100); // sample rate
+    expect(view.getUint32(28, true)).toBe(88200); // byte rate
+    expect(view.getUint16(32, true)).toBe(2); // block align
+    expect(view.getUint16(34, true)).toBe(16); // bits per sample
+    expect(String.fromCharCode(...wav.slice(36, 40))).toBe("data");
+    expect(view.getUint32(40, true)).toBe(pcm.byteLength); // data size
+    expect([...wav.slice(44)]).toEqual([...pcm]); // payload preserved
   });
 });
 

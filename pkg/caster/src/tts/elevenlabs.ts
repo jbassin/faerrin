@@ -19,9 +19,87 @@ export const DEFAULT_ELEVENLABS_VOICES: VoiceConfig = {
   C: "exsUS4vynmxd379XN4yO", // Charlotte
 };
 
-/** mp3 44.1kHz @ 128 kbps → 16000 bytes/sec, for duration estimation. */
-const OUTPUT_FORMAT = "mp3_44100_128";
-const BYTES_PER_SECOND = 16000;
+/**
+ * Default to lossless PCM at 44.1 kHz so Stage 5's loudnorm is the ONLY mp3
+ * encode (fetching mp3 here would mean two lossy generations). ElevenLabs PCM is
+ * headerless s16le mono; we wrap it in a WAV container per clip (see pcmToWav).
+ * Note: pcm_44100 can require a paid tier — drop to pcm_24000 if the API rejects it.
+ */
+const OUTPUT_FORMAT = "pcm_44100";
+
+/** Parsed properties of an ElevenLabs `output_format` string. */
+export interface AudioFormatInfo {
+  /** File container we write clips in: "wav" for PCM, "mp3" otherwise. */
+  container: "wav" | "mp3";
+  /** True when the API returns raw (headerless) PCM that we must wrap as WAV. */
+  isPcm: boolean;
+  sampleRate: number;
+  channels: number;
+  bitsPerSample: number;
+  /** Bytes per second of the returned audio, for duration math. */
+  bytesPerSecond: number;
+}
+
+/**
+ * Parse an ElevenLabs `output_format` (e.g. "pcm_44100", "mp3_44100_128") into
+ * container + duration parameters. ElevenLabs PCM is mono 16-bit; mp3 is
+ * `mp3_<sampleRate>_<kbps>`.
+ */
+export function audioFormatInfo(outputFormat: string): AudioFormatInfo {
+  if (outputFormat.startsWith("pcm_")) {
+    const sampleRate = Number(outputFormat.slice(4)) || 44100;
+    const channels = 1;
+    const bitsPerSample = 16;
+    return {
+      container: "wav",
+      isPcm: true,
+      sampleRate,
+      channels,
+      bitsPerSample,
+      bytesPerSecond: sampleRate * channels * (bitsPerSample / 8),
+    };
+  }
+  // mp3_<sampleRate>_<kbps>
+  const [, rate, kbps] = outputFormat.split("_");
+  return {
+    container: "mp3",
+    isPcm: false,
+    sampleRate: Number(rate) || 44100,
+    channels: 1,
+    bitsPerSample: 16,
+    bytesPerSecond: ((Number(kbps) || 128) * 1000) / 8,
+  };
+}
+
+/** Wrap raw PCM (s16le) in a 44-byte canonical WAV header so ffprobe/ffmpeg can read it. */
+export function pcmToWav(
+  pcm: Uint8Array,
+  { sampleRate, channels, bitsPerSample }: Pick<AudioFormatInfo, "sampleRate" | "channels" | "bitsPerSample">,
+): Uint8Array {
+  const blockAlign = channels * (bitsPerSample / 8);
+  const byteRate = sampleRate * blockAlign;
+  const dataSize = pcm.byteLength;
+  const buffer = new ArrayBuffer(44 + dataSize);
+  const view = new DataView(buffer);
+  const writeStr = (offset: number, s: string) => {
+    for (let i = 0; i < s.length; i++) view.setUint8(offset + i, s.charCodeAt(i));
+  };
+  writeStr(0, "RIFF");
+  view.setUint32(4, 36 + dataSize, true); // file size minus the first 8 bytes
+  writeStr(8, "WAVE");
+  writeStr(12, "fmt ");
+  view.setUint32(16, 16, true); // PCM fmt chunk size
+  view.setUint16(20, 1, true); // audio format 1 = PCM
+  view.setUint16(22, channels, true);
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, byteRate, true);
+  view.setUint16(32, blockAlign, true);
+  view.setUint16(34, bitsPerSample, true);
+  writeStr(36, "data");
+  view.setUint32(40, dataSize, true);
+  new Uint8Array(buffer, 44).set(pcm);
+  return new Uint8Array(buffer);
+}
 
 /**
  * v3 stability named modes. Lower = broader emotional range and stronger
@@ -180,11 +258,13 @@ export interface ElevenLabsOptions {
  * and per-turn /v1/text-to-speech is used. Needs ELEVENLABS_API_KEY (paid).
  */
 export class ElevenLabsTTSProvider implements TTSProvider {
-  readonly format = "mp3";
+  /** Clip container, derived from outputFormat ("wav" for PCM, "mp3" otherwise). */
+  readonly format: string;
   /** Dialogue (and audio tags) are a v3 capability. */
   readonly dialogue: boolean;
   private readonly modelId: string;
   private readonly outputFormat: string;
+  private readonly formatInfo: AudioFormatInfo;
   private readonly audioTags: boolean;
   private readonly stability?: number;
   private readonly seed?: number;
@@ -194,6 +274,8 @@ export class ElevenLabsTTSProvider implements TTSProvider {
   constructor(options: ElevenLabsOptions = {}) {
     this.modelId = options.modelId ?? "eleven_v3";
     this.outputFormat = options.outputFormat ?? OUTPUT_FORMAT;
+    this.formatInfo = audioFormatInfo(this.outputFormat);
+    this.format = this.formatInfo.container;
     // Audio tags / dialogue only make sense on v3; on other models a "[tag]"
     // would be read aloud literally, so default them off unless forced on.
     this.audioTags = options.audioTags ?? this.modelId.startsWith("eleven_v3");
@@ -204,9 +286,20 @@ export class ElevenLabsTTSProvider implements TTSProvider {
     this.dialogueFetcher = options.dialogueFetcher ?? liveDialogueFetch;
   }
 
+  /**
+   * Turn raw API bytes into a clip + duration. PCM is wrapped as WAV and its
+   * duration is exact from the byte count; mp3 passes through with a byte-rate
+   * estimate. Duration is always computed from the raw audio payload (pre-header).
+   */
+  private finalize(raw: Uint8Array): SynthesisResult {
+    const durationMs = estimateMp3DurationMs(raw.byteLength, this.formatInfo.bytesPerSecond);
+    const audio = this.formatInfo.isPcm ? pcmToWav(raw, this.formatInfo) : raw;
+    return { audio, durationMs };
+  }
+
   async synthesize(req: SynthesisRequest): Promise<SynthesisResult> {
     const text = renderDelivery(req.text, req.emotion, this.audioTags);
-    const audio = await this.fetcher({
+    const raw = await this.fetcher({
       voiceId: req.voice,
       text,
       modelId: this.modelId,
@@ -214,23 +307,23 @@ export class ElevenLabsTTSProvider implements TTSProvider {
       stability: this.stability,
       seed: this.seed,
     });
-    if (audio.byteLength === 0) {
+    if (raw.byteLength === 0) {
       throw new Error(`ElevenLabs returned no audio for voice "${req.voice}".`);
     }
-    return { audio, durationMs: estimateMp3DurationMs(audio.byteLength, BYTES_PER_SECOND) };
+    return this.finalize(raw);
   }
 
   async synthesizeDialogue(req: DialogueRequest): Promise<SynthesisResult> {
-    const audio = await this.dialogueFetcher({
+    const raw = await this.dialogueFetcher({
       inputs: req.inputs.map((i) => ({ voiceId: i.voice, text: i.text })),
       modelId: this.modelId,
       outputFormat: this.outputFormat,
       stability: this.stability,
       seed: this.seed,
     });
-    if (audio.byteLength === 0) {
+    if (raw.byteLength === 0) {
       throw new Error("ElevenLabs returned no audio for the dialogue chunk.");
     }
-    return { audio, durationMs: estimateMp3DurationMs(audio.byteLength, BYTES_PER_SECOND) };
+    return this.finalize(raw);
   }
 }
