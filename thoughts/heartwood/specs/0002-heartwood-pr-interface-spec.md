@@ -1,6 +1,6 @@
 ---
 title: Heartwood PR Interface — Natural-Language Specification
-status: draft (v0.2, pre-implementation — brainstorm + adversarial completeness pass incorporated; pending ratification)
+status: ratified (v1.0, pre-implementation — brainstorm + adversarial completeness pass incorporated; all open questions resolved)
 date: 2026-06-06
 authors: team-mode spec effort (Claude personas: backend-architect, ux-researcher, devops/contrarian, code-reviewer/adversarial, synthesis)
 related:
@@ -13,8 +13,11 @@ related:
 
 # Heartwood PR Interface — Specification
 
-> **v0.2 note.** An adversarial completeness pass (a code-reviewer persona, grounded in the real
-> code) corrected load-bearing assumptions and is folded in here: (1) **GitHub's comment/PR-body
+> **v1.0 note (ratified).** v0.2 incorporated an adversarial completeness pass (a code-reviewer
+> persona, grounded in the real code) that corrected load-bearing assumptions; v1.0 ratifies the
+> result — all open questions are resolved, with the single merge-method choice (D-15) deliberately
+> left to the implementation plan (an implementation detail, not a stakeholder question). The
+> corrections folded in: (1) **GitHub's comment/PR-body
 > sanitizer strips aether's HTML** (callout `<div>`s, `::` directive output, `<pre>`, inline
 > styles), so "rendered prose in the PR body" would silently degrade to GitHub's renderer —
 > re-importing the original failure #2. The **deploy-preview is therefore the *primary* fidelity
