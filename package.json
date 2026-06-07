@@ -10,7 +10,7 @@
     "typecheck": "bun --filter '*' typecheck",
     "check": "bun --filter '*' check",
     "build": "bun --filter '*' build",
-    "lint": "bun --filter '*' lint",
+    "lint": "bun --filter '*' format && bun --filter '*' lint",
     "format": "bun --filter '*' format",
     "ci": "dagger call all --source=.",
     "ci:check": "dagger call check --source=.",
