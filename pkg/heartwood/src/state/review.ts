@@ -68,6 +68,31 @@ function migrateConflictResolutions(v: unknown): unknown {
   return out;
 }
 
+/**
+ * Which surface is actively reviewing a session (NLSpec 0002 §7, D-4/D-13). One ledger, one
+ * active surface: while a session's PR is open the web app is read-only for it, and vice-versa.
+ * `null` ⇒ neither holds it. Validity is *derived from PR-open state* — see `isSurfaceHeld`/
+ * the bot's crash-recovery reconciliation (AC-22): a dead bot can't wedge a session because the
+ * marker is reconciled against actually-open PRs on start.
+ */
+export const REVIEW_SURFACES = ['web', 'pr'] as const;
+export type ReviewSurface = (typeof REVIEW_SURFACES)[number];
+
+/**
+ * PR linkage for the session (NLSpec 0002 §7). The bot-vs-human commit discriminator is
+ * **jj-aware**: `lastBotBookmarkTarget` is the bookmark target the bot last pushed, NOT a git SHA
+ * (jj churns SHAs on every push), so a page the human hand-edited on the branch is detectable
+ * (AC-10, D-14).
+ */
+export const PrLinkageSchema = z.object({
+  surface: z.enum(REVIEW_SURFACES),
+  prNumber: z.number().int().positive().optional(),
+  branch: z.string().optional(),
+  lastBotBookmarkTarget: z.string().optional(),
+  acquiredAt: z.string(), // ISO
+});
+export type PrLinkage = z.infer<typeof PrLinkageSchema>;
+
 export const ReviewStateSchema = z.object({
   sessionId: SessionIdSchema,
   /** Keyed by proposalId. Absent ⇒ pending. */
@@ -79,6 +104,25 @@ export const ReviewStateSchema = z.object({
     .default({}),
   /** Claim ids the reviewer promoted from Uncertain/Noise back to Canon (AC-14). */
   promotedClaims: z.array(z.string()).default([]),
+  /**
+   * The single active review surface + its PR linkage (NLSpec 0002 D-4/D-13). Absent ⇒ unlocked.
+   * Distinct from a proposal's `'deferred'` *decision*: this is session-level mutual exclusion.
+   */
+  reviewSurface: PrLinkageSchema.nullable().default(null),
+  /**
+   * Conflict claimIds the reviewer `/defer`red in the PR (NLSpec 0002 D-12). This is a
+   * **conflict-level** defer, deliberately separate from the proposal-level `'deferred'` decision:
+   * a `/defer`red conflict has *no* accept/reject resolution yet and **blocks merge** (AC-24); it
+   * is resolved in the web app after the PR is closed. `isMergeable` reads this set.
+   */
+  deferredConflicts: z.array(z.string()).default([]),
+  /**
+   * Idempotency audit for PR-comment commands (NLSpec 0002 §7, AC-13): processed GitHub
+   * `comment.id` → the resolution it produced. Durable independent of GitHub's thread state (a
+   * force-push can mark threads "outdated"); lets the bot catch up on offline commands without
+   * re-applying ones it already handled.
+   */
+  processedComments: z.record(z.string(), z.string()).default({}),
   updatedAt: z.string(),
 });
 export type ReviewState = z.infer<typeof ReviewStateSchema>;
@@ -93,6 +137,9 @@ export function emptyReviewState(id: SessionId): ReviewState {
     decisions: {},
     conflictResolutions: {},
     promotedClaims: [],
+    reviewSurface: null,
+    deferredConflicts: [],
+    processedComments: {},
     updatedAt: new Date().toISOString(),
   };
 }
@@ -131,7 +178,8 @@ export function decisionFor(state: ReviewState, proposalId: string): Decision {
   return state.decisions[proposalId]?.decision ?? 'pending';
 }
 
-/** Pure: record a conflict resolution by claimId (AC-11), returning a new state. */
+/** Pure: record a conflict resolution by claimId (AC-11), returning a new state. Resolving a
+ *  claim also clears any prior `/defer` on it (last-write-wins re-resolution — AC-24). */
 export function applyConflictResolution(
   state: ReviewState,
   claimId: string,
@@ -140,6 +188,9 @@ export function applyConflictResolution(
   return {
     ...state,
     conflictResolutions: { ...state.conflictResolutions, [claimId]: resolution },
+    deferredConflicts: state.deferredConflicts.includes(claimId)
+      ? state.deferredConflicts.filter((c) => c !== claimId)
+      : state.deferredConflicts,
     updatedAt: new Date().toISOString(),
   };
 }
@@ -156,6 +207,92 @@ export function togglePromotion(state: ReviewState, claimId: string): ReviewStat
     promotedClaims: has
       ? state.promotedClaims.filter((c) => c !== claimId)
       : [...state.promotedClaims, claimId],
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+// ── Session lock (NLSpec 0002 D-4/D-13): one ledger, one active surface ──────────────────────
+
+/** Is a surface currently holding this session? (Marker only — callers reconcile against
+ *  actually-open PRs for crash recovery, AC-22.) */
+export function isSurfaceHeld(state: ReviewState): boolean {
+  return state.reviewSurface !== null;
+}
+
+/**
+ * Pure compare-and-swap acquire (AC-7): a surface may take the lock iff it is free, or it already
+ * holds it (idempotent re-acquire that refreshes linkage). Returns the new state on success, or
+ * `null` if the *other* surface holds it — the caller treats `null` as "lost the race / locked
+ * elsewhere". Two near-simultaneous opens therefore settle to one winner (the second sees the
+ * first's marker and gets `null`).
+ */
+export function acquireSurface(
+  state: ReviewState,
+  link: Omit<PrLinkage, 'acquiredAt'> & { acquiredAt?: string },
+): ReviewState | null {
+  const held = state.reviewSurface;
+  if (held && held.surface !== link.surface) return null;
+  const full: PrLinkage = {
+    ...link,
+    acquiredAt: link.acquiredAt ?? held?.acquiredAt ?? new Date().toISOString(),
+  };
+  return { ...state, reviewSurface: full, updatedAt: new Date().toISOString() };
+}
+
+/** Pure: release the lock (on PR merge/close, AC-17/AC-21, or stale-lock reconciliation, AC-22). */
+export function releaseSurface(state: ReviewState): ReviewState {
+  if (state.reviewSurface === null) return state;
+  return { ...state, reviewSurface: null, updatedAt: new Date().toISOString() };
+}
+
+// ── Conflict defer (NLSpec 0002 D-12): /defer leaves a conflict unresolved and blocks merge ─────
+
+/** Pure: mark a conflict `/defer`red (AC-24). Clears any prior accept/reject so it is genuinely
+ *  unresolved, and adds it to the merge-blocking set. Idempotent. */
+export function deferConflict(state: ReviewState, claimId: string): ReviewState {
+  const { [claimId]: _dropped, ...rest } = state.conflictResolutions;
+  void _dropped;
+  return {
+    ...state,
+    conflictResolutions: rest,
+    deferredConflicts: state.deferredConflicts.includes(claimId)
+      ? state.deferredConflicts
+      : [...state.deferredConflicts, claimId],
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+/** Pure: clear a defer (e.g. a later `/keep`/`/replace` re-resolves it — AC-24 last-write-wins). */
+export function clearDefer(state: ReviewState, claimId: string): ReviewState {
+  if (!state.deferredConflicts.includes(claimId)) return state;
+  return {
+    ...state,
+    deferredConflicts: state.deferredConflicts.filter((c) => c !== claimId),
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+/** A session is mergeable only when no conflict is `/defer`red (NLSpec 0002 D-12, AC-24). */
+export function isMergeable(state: ReviewState): boolean {
+  return state.deferredConflicts.length === 0;
+}
+
+// ── Command idempotency audit (NLSpec 0002 §7, AC-13) ───────────────────────────────────────────
+
+/** Has this PR comment already been processed into a resolution? (Idempotent polling.) */
+export function isCommentProcessed(state: ReviewState, commentId: string): boolean {
+  return commentId in state.processedComments;
+}
+
+/** Pure: record that a comment was processed and what resolution it produced (durable audit). */
+export function recordProcessedComment(
+  state: ReviewState,
+  commentId: string,
+  resolution: string,
+): ReviewState {
+  return {
+    ...state,
+    processedComments: { ...state.processedComments, [commentId]: resolution },
     updatedAt: new Date().toISOString(),
   };
 }
