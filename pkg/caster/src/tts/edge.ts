@@ -5,8 +5,8 @@ import type { SynthesisRequest, SynthesisResult, TTSProvider } from "./provider.
 import { stripAudioTags } from "./tags.ts";
 
 /**
- * Default Edge voices for the three hosts. Reed (warm recapper) / Quill (dry
- * lorekeeper) / Charlotte (bright instigator). Override via
+ * Default Edge voices for the three hosts. Bram (warm storyteller) / Maeve
+ * (grounded lorekeeper) / Pip (bright needler). Override via
  * synthesizeScript({ voices }). Any Edge ShortName works.
  */
 export const DEFAULT_EDGE_VOICES: VoiceConfig = {

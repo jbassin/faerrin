@@ -21,7 +21,7 @@ export interface ScriptOptions {
   client?: LlmClient;
   model?: string;
   maxTokens?: number;
-  /** Host names/personas (changes the system prompt; default Reed/Quill). */
+  /** Host names/personas (changes the system prompt; default Bram/Maeve/Pip). */
   hosts?: HostConfig;
 }
 

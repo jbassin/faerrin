@@ -9,9 +9,9 @@ import type {
 import { renderDelivery } from "./tags.ts";
 
 /**
- * Default ElevenLabs voices for the three hosts. Reed (warm) / Quill (calm) /
- * Charlotte (bright, expressive). Override via synthesizeScript({ voices }) with
- * any voice id from your account.
+ * Default ElevenLabs voices for the three hosts. Bram (warm, boisterous) /
+ * Maeve (calm, grounded) / Pip (bright, quick). Override via
+ * synthesizeScript({ voices }) with any voice id from your account.
  */
 export const DEFAULT_ELEVENLABS_VOICES: VoiceConfig = {
   A: "UgBBYS2sOqTuMpoF3BR0", // Mark
