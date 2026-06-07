@@ -40,6 +40,30 @@ test('passes the cited facts (and only them) into the prompt under the draft sta
   expect(user).toContain('Hallia is a hill district above the river.');
 });
 
+test('threads a reviewer /merge instruction into the prompt (AC-6)', async () => {
+  let user = '';
+  await draftProse(
+    {
+      canonicalName: 'Iomenei',
+      kind: 'amend',
+      facts: [{ text: 'Iomenei was interred beneath the chapter house.' }],
+      instructions: 'lean on the older spelling and keep it elegiac',
+    },
+    { completeFn: draftStub('x', (u) => { user = u; }) },
+  );
+  expect(user).toContain('Reviewer instruction');
+  expect(user).toContain('lean on the older spelling and keep it elegiac');
+});
+
+test('omits the instruction block when no instructions are given (existing callers unchanged)', async () => {
+  let user = '';
+  await draftProse(
+    { canonicalName: 'X', kind: 'create', facts: [{ text: 'a fact' }] },
+    { completeFn: draftStub('y', (u) => { user = u; }) },
+  );
+  expect(user).not.toContain('Reviewer instruction');
+});
+
 test('honors an injected model override', async () => {
   let model = '';
   await draftProse(

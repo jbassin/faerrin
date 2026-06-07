@@ -12,3 +12,5 @@
 - [Heartwood-review Phase 2 A-D review](heartwood-review-phase2-stage-a-d.md) — reviewer-found security/portability gaps (path traversal, 0.0.0.0 bind, latent Bun import) now all FIXED in Stage E; guards documented
 - [Heartwood PR reuse map](heartwood-pr-reuse-map.md) — verified signatures + spec-vs-code flags for the NLSpec-0002 GitHub-PR bot (draftProse passage ✅, ledger ✅, missing build-guard ⚠️, package boundary)
 - [Heartwood PR progress](heartwood-pr-progress.md) — NLSpec 0002 PR-interface: pure local foundation DONE (pkg/heartwood-pr, 44 tests, 7 commits); gh/jj I/O shell + merge-canonizer + deploy-preview still owed (GitHub boundary)
+- [Heartwood PR Phase B design](heartwood-pr-phase-b-design.md) — gh/jj DI client interfaces + openSession/pollOnce/redraftBatch/canonize step decomposition + 7-commit order (design pass, ready to implement)
+- [Heartwood PR Phase B open decisions](heartwood-pr-phase-b-open-decisions.md) — 3 unresolved worldbuilder decisions blocking Phase B: lastSeenPrBody storage, the new 763-file build guard, bot launch model

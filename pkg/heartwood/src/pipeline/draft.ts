@@ -25,6 +25,12 @@ export interface DraftInput {
   facts: { text: string }[];
   /** Surrounding page prose (amend) — the voice reference the draft must blend into. */
   pageContext?: string;
+  /**
+   * Reviewer instructions that condition the draft (NLSpec 0002 AC-6/D-7): the free-text note from a
+   * `/merge <note>` command. Scoped + low-risk — the only free text the surface feeds the LLM. Absent
+   * for every existing caller (the web-app draft assist passes only facts/pageContext).
+   */
+  instructions?: string;
 }
 
 export interface DraftOptions {
@@ -66,6 +72,12 @@ function buildUser(input: DraftInput): string {
       '',
       'Existing page prose (match this voice; your draft will be woven in — do not repeat it):',
       input.pageContext.trim(),
+    );
+  }
+  if (input.instructions?.trim()) {
+    parts.push(
+      '',
+      `Reviewer instruction (condition the draft on this, but assert nothing beyond the cited facts): ${input.instructions.trim()}`,
     );
   }
   parts.push('', 'Draft the passage now.');
