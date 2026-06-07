@@ -1,4 +1,0 @@
-[test]
-# Populate dummy required env vars before any test runs so the suite is hermetic
-# (works in CI / fresh clones without the gitignored .env). See test-setup.ts.
-preload = ["./test-setup.ts"]
