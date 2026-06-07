@@ -71,7 +71,7 @@ export const defaultCommitDeps: CommitDeps = {
 
 type Proposal = SessionArtifact["proposals"][number];
 
-async function writeProvenanceFor(
+export async function writeProvenanceFor(
   provRoot: string,
   wikiPath: string,
   newBody: string,
