@@ -101,6 +101,19 @@
         "typescript": "^5.9.3",
       },
     },
+    "pkg/heartwood-pr": {
+      "name": "@faerrin/heartwood-pr",
+      "version": "0.1.0",
+      "dependencies": {
+        "@faerrin/heartwood": "workspace:*",
+        "@faerrin/heartwood-review": "workspace:*",
+        "zod": "^3.23.0",
+      },
+      "devDependencies": {
+        "@types/bun": "^1.3.14",
+        "typescript": "^5.9.3",
+      },
+    },
     "pkg/heartwood-review": {
       "name": "@faerrin/heartwood-review",
       "version": "0.1.0",
@@ -386,6 +399,8 @@
     "@faerrin/face": ["@faerrin/face@workspace:pkg/face"],
 
     "@faerrin/heartwood": ["@faerrin/heartwood@workspace:pkg/heartwood"],
+
+    "@faerrin/heartwood-pr": ["@faerrin/heartwood-pr@workspace:pkg/heartwood-pr"],
 
     "@faerrin/heartwood-review": ["@faerrin/heartwood-review@workspace:pkg/heartwood-review"],
 
