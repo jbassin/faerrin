@@ -33,7 +33,9 @@ Defaults live in `src/ingest/index.ts`:
 - **wiki** ← `../content/wiki` (the monorepo SSOT; aether is canonical). caster **excludes
   `Script/`** — those are aether transcript pages, not wiki articles.
 - **shibboleth** ← local `content/shibboleth.json` (the speaker map: `arcTitle → { isMain, roles }`).
-  `content/pronunciations.json` is an optional local lexicon override.
+  `content/pronunciations.json` is an in-repo term→IPA lexicon: on the v3 dialogue path Stage 4
+  wraps each known term's first occurrence in inline `/IPA/` (never inside `[audio tags]`). Empty
+  `{}` or a missing file is a no-op; `tts --no-pronunciation` skips it.
 
 Do **not** re-create per-app `wiki/`/`transcripts/` copies here — that's exactly the stale pattern the
 removed `update-content.sh` embodied. Edit content in `@faerrin/content`.

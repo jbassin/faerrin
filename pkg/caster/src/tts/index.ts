@@ -4,6 +4,7 @@ import type { TTSProvider } from "./provider.ts";
 import { MockTTSProvider } from "./mock.ts";
 import { chunkTurns, DEFAULT_DIALOGUE_BUDGET } from "./dialogue.ts";
 import { renderDelivery } from "./tags.ts";
+import { applyPronunciations, type Lexicon } from "./pronunciation.ts";
 import { DEFAULT_OUT_DIR, clipsDir, manifestPath, readManifest, writeManifest } from "./store.ts";
 
 export type { SynthesisRequest, SynthesisResult, TTSProvider } from "./provider.ts";
@@ -21,6 +22,7 @@ export {
   audioFormatInfo,
   pcmToWav,
 } from "./elevenlabs.ts";
+export { applyPronunciations, loadLexicon, type Lexicon } from "./pronunciation.ts";
 export { DEFAULT_OUT_DIR, clipsDir, manifestPath, readManifest, writeManifest } from "./store.ts";
 
 /** Placeholder voice ids for the mock provider; real providers override these. */
@@ -34,6 +36,8 @@ export interface SynthesizeOptions {
   provider?: TTSProvider;
   voices?: VoiceConfig;
   outDir?: string;
+  /** Term→IPA lexicon applied to the v3 dialogue text. Empty/omitted = no-op. */
+  pronunciations?: Lexicon;
 }
 
 /** Zero-pad a turn index for stable, sortable clip filenames (e.g. 007). */
@@ -62,7 +66,7 @@ export async function synthesizeScript(
 
   const useDialogue = provider.dialogue === true && typeof provider.synthesizeDialogue === "function";
   const clips = useDialogue
-    ? await synthesizeDialogueChunks(script, provider, voices, dir)
+    ? await synthesizeDialogueChunks(script, provider, voices, dir, options.pronunciations ?? {})
     : await synthesizePerTurn(script, provider, voices, dir);
 
   const manifest: AudioManifest = {
@@ -109,8 +113,13 @@ async function synthesizeDialogueChunks(
   provider: TTSProvider,
   voices: VoiceConfig,
   dir: string,
+  lexicon: Lexicon,
 ): Promise<TtsClip[]> {
-  const render = (turn: Script["turns"][number]) => renderDelivery(turn.text, turn.emotion, true);
+  // v3 path: render delivery tags, then inline IPA for known terms. Pronunciation
+  // is applied here (and only here) because this is the v3 dialogue path — on
+  // non-v3 the slashes would be read aloud.
+  const render = (turn: Script["turns"][number]) =>
+    applyPronunciations(renderDelivery(turn.text, turn.emotion, true), lexicon);
   const chunks = chunkTurns(script.turns, DEFAULT_DIALOGUE_BUDGET, (t) => render(t).length);
 
   const clips: TtsClip[] = [];

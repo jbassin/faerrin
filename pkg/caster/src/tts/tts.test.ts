@@ -103,6 +103,31 @@ describe("synthesizeScript dialogue mode", () => {
       { text: "Strap in.", voice: "voiceB" },
     ]);
   });
+
+  test("applies the pronunciation lexicon to the v3 dialogue text", async () => {
+    const spy = new DialogueSpyProvider();
+    await synthesizeScript(script(), {
+      provider: spy,
+      voices: { A: "voiceA", B: "voiceB", C: "voiceC" },
+      outDir: `${TMP}/pron`,
+      pronunciations: { Sedecium: "sɛˈdɛkiʊm" },
+    });
+    expect(spy.chunks[0]?.inputs[0]?.text).toBe("[warm] Welcome to the /sɛˈdɛkiʊm/ briefing.");
+  });
+});
+
+describe("synthesizeScript pronunciation on the per-turn path", () => {
+  test("does not inject IPA on the non-dialogue path (slashes would be read aloud)", async () => {
+    const spy = new SpyProvider();
+    await synthesizeScript(script(), {
+      provider: spy,
+      voices: { A: "voiceA", B: "voiceB", C: "voiceC" },
+      outDir: `${TMP}/pron-perturn`,
+      pronunciations: { Sedecium: "sɛˈdɛkiʊm" },
+    });
+    // Per-turn (non-v3) text is untouched by the lexicon.
+    expect(spy.requests[0]?.text).toBe("Welcome to the Sedecium briefing.");
+  });
 });
 
 describe("synthesizeScript stale-clip cleanup", () => {
