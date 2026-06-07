@@ -60,7 +60,50 @@ autonomy boundary — outward-facing and host-dependent, so it pauses for the wo
   skip human-edited pages via `lastBotBookmarkTarget`; auto-uncheck invalidated). *(AC-4..14.)*
 - **Merge canonizer**: `gh pr view --json state` / `jj git fetch` detects merge → reuse
   `performCommit` path to set `committedAt`, verify sidecar landed, release lock, **new** aether
-  build + 763-file diff guard. *(AC-21, D-11, D-15: choose squash; reconcile via `jj git fetch`.)*
+  build + 763-file diff guard. *(AC-21, D-11; merge method resolved below.)*
+
+## D-15 RESOLVED — squash merge + fetch-verify-abandon reconciliation
+
+The spec left D-15 (merge method + post-merge jj reconciliation) to this plan. **Decision: squash
+merge.** The session branch accumulates many jj revisions during review (open draft + each additive
+re-draft); how those collapse onto `main` at merge is the whole question.
+
+**Why squash (not merge-commit / rebase):**
+1. **It is the web-app model.** The web app lands exactly **one batched jj revision per session**
+   (0001 AC-7). Squash produces exactly **one `main` commit per session** — matching AC-8's
+   "byte-identical to what a web-app commit would have produced" at the *history* level, not just the
+   tree. A merge-commit (two parents) or rebase would smear `main` with the intermediate LLM-redraft
+   churn the web-app path never creates — noise in a hand-curated wiki's history.
+2. **Cleanest jj reconciliation.** A squash commit is an *independent* commit (it doesn't preserve
+   the branch parentage), so the canonizer just `jj git fetch`es it onto `main`, verifies content,
+   then abandons the now-redundant local branch revisions. No two-parent merge to import, no
+   SHA-churning replay.
+3. **Content parity is automatic.** The branch was written via the SAME `performCommit`/
+   `replacePageBody` path the web app uses (D-1 reuse), and the provenance sidecar travels in the
+   branch (outside `wiki/`, D-8). So the squashed tree = approved prose + sidecar = the web-app tree.
+
+**Canonizer reconciliation steps (post-merge, AC-21/D-11):**
+1. **Detect** the merge by PR state (`gh pr view --json state,mergedAt` → `MERGED`) — key off
+   *merged state*, NOT the method, for safety.
+2. `jj git fetch` → `main` advances to GitHub's squash commit; the remote session branch is deleted
+   (GitHub default on merge).
+3. **Verify** (the byte-stability gate, *still to be built as code*): the fetched `main` tree carries
+   the approved page bodies + provenance sidecar exactly as `performCommit` would write them, and the
+   other **763** aether build files are unchanged (build + file-set diff). On mismatch → **do NOT
+   canonize**; flag for manual review (never silently bless a divergent merge).
+4. **Local-only acts** a remote merge can't do (C10): set `committedAt` in the shared ledger,
+   `releaseSurface` (release the lock), record canonization.
+5. **Clean jj:** delete the local `hw/<arc>-<date>` bookmark + abandon its merged revisions (content
+   now lives in `main`'s squash commit); rebase the bot's working copy onto the new `main`.
+
+**Two enforcement guardrails for the worldbuilder (repo config, not code):**
+- Set the GitHub repo to **allow squash merging only** (disable merge-commit/rebase buttons) so the
+  human can't accidentally pick a history-smearing method — "the human always clicks merge" (C2), so
+  constrain the button, not the click.
+- The bot sets the **PR title = the canonical commit-message subject** (`commitMessage` helper) so the
+  squash commit's default subject matches a web-app commit's, completing message-level parity.
+- *Safety net:* if a non-squash merge happens anyway, the canonizer still reconciles off `MERGED`
+  state and the content guard still protects byte-stability — it just warns that history diverged.
 
 ## Phase C — External-dependency boundary (worldbuilder)
 - **Sanitization spike** (R7/D-10): empirically confirm the safe representation survives GitHub's

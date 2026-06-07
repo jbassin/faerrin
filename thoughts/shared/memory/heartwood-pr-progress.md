@@ -50,4 +50,13 @@ is `import type`) — no aether/Bun/React leak into the Node/Bun package.
   must be built — D-11/AC-21).
 - **External deps that pause autonomy:** the Phase-0 **sanitization spike** (empirically confirm
   against the live GitHub sanitizer, R7/D-10), the **deploy-preview host** (AC-18), and the first real
-  `gh pr create` + `jj git push` on a live session. D-15 merge method (squash vs commit) still TBD.
+  `gh pr create` + `jj git push` on a live session.
+
+**D-15 RESOLVED (2026-06-06): squash merge.** The session branch's many redraft revisions collapse to
+**one `main` commit per session** — matching the web app's one-batched-jj-revision model (AC-8) and
+giving the simplest jj reconciliation. Canonizer: detect `MERGED` (gh pr view) → `jj git fetch` →
+**verify** the fetched main tree = approved prose + provenance sidecar with the other 763 aether files
+unchanged (build+diff guard, STILL TO BUILD) → set `committedAt` + `releaseSurface` (local-only acts a
+remote merge can't do) → delete local `hw/<arc>-<date>` bookmark + abandon its merged revs. Guardrails:
+set repo to **squash-only** merges; bot sets PR title = canonical `commitMessage` subject. Full
+rationale + steps in the plan's "D-15 RESOLVED" section.

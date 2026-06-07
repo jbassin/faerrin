@@ -453,6 +453,12 @@ Priorities: **P0** = the surface fails without it; **P1** = should-have; **P2** 
 - **D-15 Merge method = TBD-at-plan, with post-merge `jj git fetch` reconciliation.** Choose
   merge-commit vs squash and specify how the colocated jj repo ends consistent after the merge is
   imported. *(C10, §8; the one decision deliberately left to the implementation plan.)*
+  → **Resolved (2026-06-06, in the plan): squash merge** + a `jj git fetch` → verify-content →
+  abandon-local-branch reconciliation. Squash gives **one `main` commit per session** (matching the
+  web app's one-batched-revision model, AC-8) and the simplest jj reconciliation (a squash commit is
+  independent — fetch it, verify the prose+sidecar tree, abandon the redundant local branch revs).
+  Repo config: allow **squash-only** merges; bot sets PR title = the canonical commit-message
+  subject. See the implementation plan's "D-15 RESOLVED" section.
 
 ## 14. Risks
 
