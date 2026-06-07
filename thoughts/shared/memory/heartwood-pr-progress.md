@@ -1,6 +1,6 @@
 ---
 name: heartwood-pr-progress
-description: Build status of NLSpec 0002 (Heartwood GitHub-PR interface) — pure local foundation DONE (pkg/heartwood-pr, 44 tests); gh/jj I/O shell + merge-canonizer + deploy-preview still owed
+description: Build status of NLSpec 0002 (Heartwood GitHub-PR interface) — Phase A (pure core) + Phase B (gh/jj DI shell, all 4 bot steps, fake-tested) DONE on main; only real-host wiring (writeBranch/verifyBuild), the sanitizer spike, and the deploy-preview remain (Phase C)
 metadata:
   type: project
 ---
@@ -42,12 +42,27 @@ A team-mode code-reviewer pass caught + fixed one real AC-23 gap (`<style>`/`<if
 sanitizer gate). Cross-package deep-imports are pure (`event-groups` has zero imports; `store` import
 is `import type`) — no aether/Bun/React leak into the Node/Bun package.
 
-**STILL OWED (Phase B/C — the GitHub boundary, paused for the worldbuilder):**
-- gh/jj I/O shell (DI'd `GhClient`/`JjClient` over gh 2.4.0 — has `pr create/comment/edit/list/merge`
-  + `gh api` for reactions/comment-ids/body-PATCH; remote `github.com:jbassin/faerrin`), the bot poll
-  loop (open→poll→redraft via `draftProse`+`replacePageBody`), and the **merge-canonizer** (reuse
-  `performCommit` to set `committedAt`/land sidecar; the 763-file aether build guard is NOT code yet,
-  must be built — D-11/AC-21).
+**PHASE B DONE (2026-06-06, 7 commits on main, gh/jj DI shell + all 4 bot steps, fake-tested):**
+- `draftProse` gained `DraftInput.instructions` (threads `/merge <note>`, AC-6).
+- `gh.ts` (`GhClient`+`FakeGh`) over gh 2.4.0 (`gh api` for reactions/comment-ids/body-PATCH);
+  `jj.ts` (`JjClient`+`FakeJj`, incl. `changedPaths` = the AC-10 human-edit discriminator). Both real
+  impls via execFile are the gated boundary (no live calls in tests).
+- `deps.ts` BotDeps seam + in-memory fakes (`FakeLedger`/`FakeArtifacts`/`FakeBranchWriter`); every
+  step is `(deps)`-pure and fake-tested.
+- Four steps: **openSession** (CAS-lock before any GitHub side-effect, AC-7/27a), **pollOnce**
+  (idempotent: commands→ledger w/ 👀→🚀 ack + checkbox-uncheck diff, AC-5/13/14/24/26), **redraftBatch**
+  (batch per page, /merge-note-conditioned, skip human-edited via `changedPaths`, auto-uncheck stale
+  approvals, AC-6/10/11/12), **canonize** (jj fetch→MERGED→verifyBuild→committedAt+release+cleanup;
+  verify-fail BLOCKS, deferred-at-merge flagged; AC-21/D-11/D-15).
+- New migration-safe ledger fields: `lastSeenPrBody`, `conflictNotes`, `staleApprovals`; reducers
+  `recordConflictNote`/`markStaleApproval`/`markProposalsCommitted`/etc. `pr-body` renders stale as
+  unchecked+flagged. `bot.ts` = thin one-shot poll CLI (`bun run bot <open|poll|tick|canonize>`).
+- Counts: heartwood-pr **85** tests, core **180**, web app **59** — all green, typecheck clean.
+
+**STILL OWED (Phase C — the host boundary, gated on the worldbuilder; bot.ts THROWS until wired):**
+- **writeBranch** real impl: write drafted prose + provenance sidecar to the branch as one additive jj
+  revision WITHOUT setting committedAt (the page-write core of `performCommit`, minus committedAt/lock).
+- **verifyBuild** real impl: the 763-file aether build + file-set diff guard (AC-21 — NOT code yet).
 - **External deps that pause autonomy:** the Phase-0 **sanitization spike** (empirically confirm
   against the live GitHub sanitizer, R7/D-10), the **deploy-preview host** (AC-18), and the first real
   `gh pr create` + `jj git push` on a live session.
