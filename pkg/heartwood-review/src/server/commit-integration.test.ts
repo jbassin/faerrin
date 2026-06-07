@@ -174,40 +174,74 @@ describe("performCommit (Stage F, AC-7/AC-15)", () => {
     }
   });
 
-  it("Supersede replaces the existing statement in place (AC-21)", async () => {
+  const conflictOnC1 = () => {
+    const art = artifact();
+    art.conflicts = [
+      {
+        claimId: "c1",
+        entityId: "e1",
+        canonicalName: "Sableclutch",
+        newStatement: "The wharves now pay an informal levy.",
+        existingStatement: "Sableclutch is overlooked by the capital.",
+        source: "wiki" as const,
+        sourceRef: AMEND_PATH,
+        explanation: "tension",
+      },
+    ];
+    return art;
+  };
+
+  it("an accepted conflict tallies the page as a correction (AC-11)", async () => {
     const { base, deps, amendAbs } = await setup();
     try {
-      // Add a conflict on the amend's claim, with the existing page sentence as its statement.
-      const art = artifact();
-      art.conflicts = [
-        {
-          claimId: "c1",
-          entityId: "e1",
-          canonicalName: "Sableclutch",
-          newStatement: "A levy now bites the wharves.",
-          existingStatement: "Sableclutch is overlooked by the capital.",
-          source: "wiki",
-          sourceRef: AMEND_PATH,
-          explanation: "tension",
-        },
-      ];
-      await writeSessionArtifact(deps.sessionsDir, art);
-      // approve the amend + resolve the conflict as Supersede
+      await writeSessionArtifact(deps.sessionsDir, conflictOnC1());
       let rs = emptyReviewState(SID);
       rs = applyDecision(rs, {
         proposalId: "prop:e1",
         decision: "approved",
-        authoredText: "The wharves now pay a levy.",
+        authoredText:
+          "The wharves now pay a levy; the capital still looks away.",
       });
-      rs = applyConflictResolution(rs, "c1", "supersede");
+      rs = applyConflictResolution(rs, "c1", "accepted");
       await writeReviewState(deps.reviewDir, rs);
 
       const r = await performCommit(SID, deps);
       expect(r.corrected).toBe(1);
       expect(r.amend).toBe(0);
       const body = await readFile(amendAbs, "utf8");
-      expect(body).toContain("The wharves now pay a levy.");
-      expect(body).not.toContain("Sableclutch is overlooked by the capital.");
+      expect(body).toContain("The wharves now pay a levy");
+    } finally {
+      await rm(base, { recursive: true, force: true });
+    }
+  });
+
+  it("a rejected conflict drops the fact; a now-factless proposal is skipped (AC-11)", async () => {
+    const { base, deps } = await setup();
+    try {
+      await writeSessionArtifact(deps.sessionsDir, conflictOnC1());
+      // prop:e1's only fact is c1 — rejecting it leaves nothing to add.
+      let rs = emptyReviewState(SID);
+      rs = applyDecision(rs, {
+        proposalId: "prop:e1",
+        decision: "approved",
+        authoredText: "should not be written",
+      });
+      rs = applyDecision(rs, {
+        proposalId: "prop:e2",
+        decision: "approved",
+        authoredText: "Maren Dock keeps the warehouses honest.",
+        targetPath: "People/Maren Dock.md",
+      });
+      rs = applyConflictResolution(rs, "c1", "rejected");
+      await writeReviewState(deps.reviewDir, rs);
+
+      const r = await performCommit(SID, deps);
+      expect(r.amend).toBe(0);
+      expect(r.corrected).toBe(0);
+      expect(r.create).toBe(1); // the unrelated create still commits
+      expect(
+        r.skipped.some((s) => /rejected as conflicts/.test(s.reason)),
+      ).toBe(true);
     } finally {
       await rm(base, { recursive: true, force: true });
     }

@@ -46,16 +46,37 @@ export const ProposalDecisionSchema = z.object({
 });
 export type ProposalDecision = z.infer<typeof ProposalDecisionSchema>;
 
-/** How the reviewer resolves a cross-arc canon conflict (AC-11). Never auto-resolved. */
-export const CONFLICT_RESOLUTIONS = ['supersede', 'coexist', 'reject'] as const;
+/**
+ * How the reviewer resolves a flagged canon conflict (AC-11). Never auto-resolved.
+ * - `accepted` — the contradicting new fact is a real change: keep it in its page's proposal
+ *   (the page becomes a correction of existing canon).
+ * - `rejected` — drop the contradicting fact from its proposal; the page keeps the old canon.
+ */
+export const CONFLICT_RESOLUTIONS = ['accepted', 'rejected'] as const;
 export type ConflictResolution = (typeof CONFLICT_RESOLUTIONS)[number];
+
+// Migrate legacy resolutions (the earlier supersede/coexist/reject model) from older local
+// review files so a stale state file never fails to load: supersede/coexist → accepted (the
+// new fact stood), reject → rejected (the new fact was dropped); anything else is discarded.
+function migrateConflictResolutions(v: unknown): unknown {
+  if (!v || typeof v !== 'object') return v;
+  const out: Record<string, ConflictResolution> = {};
+  for (const [k, val] of Object.entries(v as Record<string, unknown>)) {
+    if (val === 'accepted' || val === 'supersede' || val === 'coexist') out[k] = 'accepted';
+    else if (val === 'rejected' || val === 'reject') out[k] = 'rejected';
+  }
+  return out;
+}
 
 export const ReviewStateSchema = z.object({
   sessionId: SessionIdSchema,
   /** Keyed by proposalId. Absent ⇒ pending. */
   decisions: z.record(z.string(), ProposalDecisionSchema),
-  /** Conflict resolutions keyed by the conflicting claimId (AC-11). Defaulted for old files. */
-  conflictResolutions: z.record(z.string(), z.enum(CONFLICT_RESOLUTIONS)).default({}),
+  /** Conflict resolutions keyed by the conflicting claimId (AC-11). Defaulted for old files;
+   *  legacy supersede/coexist/reject values are migrated on read. */
+  conflictResolutions: z
+    .preprocess(migrateConflictResolutions, z.record(z.string(), z.enum(CONFLICT_RESOLUTIONS)))
+    .default({}),
   /** Claim ids the reviewer promoted from Uncertain/Noise back to Canon (AC-14). */
   promotedClaims: z.array(z.string()).default([]),
   updatedAt: z.string(),

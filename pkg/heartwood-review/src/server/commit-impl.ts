@@ -134,11 +134,14 @@ export async function performCommit(
   if (!artifact) throw new Error(`Session ${sid.arc}@${sid.date} not ingested`);
   const review = await readReviewState(deps.reviewDir, sid);
 
-  // Supersede resolutions (AC-21): map a conflicting claimId → the existing statement to replace.
-  const supersededByClaim = new Map<string, string>();
+  // Conflict resolutions (AC-11): a Rejected conflict drops its fact from the proposal; an
+  // Accepted one keeps it and marks the page a correction of existing canon.
+  const rejectedClaims = new Set<string>();
+  const acceptedClaims = new Set<string>();
   for (const c of artifact.conflicts) {
-    if (review.conflictResolutions[c.claimId] === "supersede")
-      supersededByClaim.set(c.claimId, c.existingStatement);
+    const r = review.conflictResolutions[c.claimId];
+    if (r === "rejected") rejectedClaims.add(c.claimId);
+    else if (r === "accepted") acceptedClaims.add(c.claimId);
   }
 
   const written: string[] = [];
@@ -162,6 +165,15 @@ export async function performCommit(
     }
 
     if (p.kind === "amend" && p.targetPath) {
+      // Drop facts whose conflict was Rejected; if none remain there's nothing to add.
+      const facts = p.facts.filter((f) => !rejectedClaims.has(f.claimId));
+      if (facts.length === 0) {
+        skipped.push({
+          proposal: p.canonicalName,
+          reason: "all backing facts were rejected as conflicts",
+        });
+        continue;
+      }
       const abs = within(deps.wikiDir, p.targetPath);
       const existing = await readFile(abs, "utf8");
       // The reviewer edited the populated page text in place; `text` IS the new full body. Replace
@@ -169,20 +181,18 @@ export async function performCommit(
       const newBody = replacePageBody(existing, text);
       await writeFileAtomic(abs, newBody);
       written.push(`pkg/content/wiki/${p.targetPath}`);
+      // Provenance + the correction tally use only the non-rejected facts.
       const sc = await writeProvenanceFor(
         deps.provRoot,
         p.targetPath,
         newBody,
         existing,
-        p,
+        { ...p, facts },
         sid,
       );
       if (sc) written.push(sc);
-      // A page carrying a Supersede conflict resolution is tallied as a correction (AC-21); the
-      // reviewer performs the actual edit inline in the full-page text.
-      const isCorrection = p.facts.some((f) =>
-        supersededByClaim.has(f.claimId),
-      );
+      // A page carrying an Accepted conflict is tallied as a correction (AC-11/AC-21).
+      const isCorrection = facts.some((f) => acceptedClaims.has(f.claimId));
       if (isCorrection) corrected++;
       else amend++;
       committedIds.push(p.id);

@@ -30,6 +30,8 @@ interface Props {
   /** Existing page body (frontmatter-stripped) for an amend — populates the editor. */
   initialPageBody: string;
   initialReason: string;
+  /** A backing fact carries an Accepted conflict — this page changes existing canon (AC-11). */
+  acceptedConflict?: boolean;
   pageType: PageType;
   allSlugs: string[];
   onSaved: (state: ReviewState) => void;
@@ -51,6 +53,7 @@ export function ProposalCard({
   initialTargetPath,
   initialPageBody,
   initialReason,
+  acceptedConflict,
   pageType,
   allSlugs,
   onSaved,
@@ -162,6 +165,21 @@ export function ProposalCard({
           · {decision}
         </span>
       </header>
+
+      {/* AC-11: an accepted conflict means this page revises existing canon. */}
+      {acceptedConflict && (
+        <div
+          style={{
+            marginTop: "0.4rem",
+            fontSize: "0.78rem",
+            color: "#b06000",
+            fontWeight: 600,
+          }}
+        >
+          ⚠ accepted conflict — this changes existing canon; edit the page to
+          reconcile the contradiction.
+        </div>
+      )}
 
       {/* Source facts with per-citation hover (AC-3). */}
       <ul style={{ margin: "0.6rem 0", paddingLeft: "1.1rem" }}>

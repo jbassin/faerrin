@@ -72,12 +72,12 @@ describe('review state', () => {
   it('records + round-trips conflict resolutions by claimId (AC-11)', async () => {
     await withTmp(async (dir) => {
       let s = emptyReviewState(SID);
-      s = applyConflictResolution(s, 'c1', 'supersede');
-      s = applyConflictResolution(s, 'c2', 'coexist');
+      s = applyConflictResolution(s, 'c1', 'accepted');
+      s = applyConflictResolution(s, 'c2', 'rejected');
       await writeReviewState(dir, s);
       const back = await readReviewState(dir, SID);
-      expect(conflictResolutionFor(back, 'c1')).toBe('supersede');
-      expect(conflictResolutionFor(back, 'c2')).toBe('coexist');
+      expect(conflictResolutionFor(back, 'c1')).toBe('accepted');
+      expect(conflictResolutionFor(back, 'c2')).toBe('rejected');
       expect(conflictResolutionFor(back, 'c3')).toBeUndefined();
     });
   });
@@ -85,6 +85,24 @@ describe('review state', () => {
   it('defaults conflictResolutions for older review files (schema default)', () => {
     // emptyReviewState always includes it; the schema default covers files written before AC-11.
     expect(emptyReviewState(SID).conflictResolutions).toEqual({});
+  });
+
+  it('migrates legacy supersede/coexist/reject resolutions on read (AC-11 rework)', async () => {
+    await withTmp(async (dir) => {
+      // Simulate an older review file written with the previous three-way model.
+      const { reviewStatePath } = await import('./review');
+      const legacy = {
+        sessionId: SID,
+        decisions: {},
+        conflictResolutions: { a: 'supersede', b: 'coexist', c: 'reject', d: 'bogus' },
+        promotedClaims: [],
+        updatedAt: '2026-06-06T00:00:00.000Z',
+      };
+      const { writeFileAtomic } = await import('./atomic');
+      await writeFileAtomic(reviewStatePath(dir, SID), JSON.stringify(legacy));
+      const back = await readReviewState(dir, SID);
+      expect(back.conflictResolutions).toEqual({ a: 'accepted', b: 'accepted', c: 'rejected' });
+    });
   });
 
   it('toggles claim promotion (AC-14)', () => {

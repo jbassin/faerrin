@@ -20,8 +20,11 @@ commit). This `CLAUDE.md` is the developer/internals view.
   (AC-4), voice warnings (AC-9), approve/reject/defer with nothing-written-until-commit (AC-6) +
   resume (AC-8); commit writes prose + provenance sidecar (AC-15) as one path-scoped **jj**
   revision (AC-7, D-2), idempotent via `committedAt`.
-- **Phase 3 (depth):** AC-11 conflict resolution (Supersede/Coexist/Reject, `ConflictCard`);
-  AC-21 corrections (Supersede REPLACES the existing statement via `applySupersede`); AC-10
+- **Phase 3 (depth):** AC-11 conflict resolution — **Accept/Reject** (`ConflictCard`): Accept keeps
+  the conflicting fact in its page's proposal (flagged as a canon-changing correction, counted
+  `corrected` at commit); Reject drops the fact from the proposal (empty proposals disappear). The
+  session route splits conflicts into an unresolved banner + a reversible "Resolved conflicts" tray
+  and filters rejected facts out of `effectiveProposals`; AC-10
   create-page folder picker + inbound-link suggestions (`CreatePagePicker`); AC-12 **seamless amend
   via full-page editing** (the editor is populated with the existing page body via `getSession`'s
   `pageBodies`; the reviewer edits the whole page and on commit `replacePageBody` swaps the body and

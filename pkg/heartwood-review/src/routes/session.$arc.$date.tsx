@@ -37,15 +37,37 @@ function SessionPage() {
       (review.decisions[p.id]?.decision ?? "pending") !== "pending",
   ).length;
 
-  const proposalById = new Map(
-    artifact.proposals.map((p: Proposal) => [p.id, p]),
+  // AC-11 (rework): a Rejected conflict drops its fact from the page's proposal; an Accepted
+  // conflict keeps it (and flags the proposal as a canon-changing correction).
+  const rejectedClaimIds = new Set(
+    artifact.conflicts
+      .filter(
+        (c: Conflict) => review.conflictResolutions[c.claimId] === "rejected",
+      )
+      .map((c: Conflict) => c.claimId),
   );
+  const acceptedClaimIds = new Set(
+    artifact.conflicts
+      .filter(
+        (c: Conflict) => review.conflictResolutions[c.claimId] === "accepted",
+      )
+      .map((c: Conflict) => c.claimId),
+  );
+  // Drop rejected facts; a proposal left with no facts disappears from review entirely.
+  const effectiveProposals: Proposal[] = artifact.proposals
+    .map((p: Proposal) => ({
+      ...p,
+      facts: p.facts.filter((f) => !rejectedClaimIds.has(f.claimId)),
+    }))
+    .filter((p) => p.facts.length > 0);
+
+  const proposalById = new Map(effectiveProposals.map((p) => [p.id, p]));
   const suppressed = new Set(suppressedProposalIds);
   // AC-26: previously-rejected proposals are kept out of the main flow (shown in a tray below).
-  const shownProposals = artifact.proposals.filter(
-    (p: Proposal) => !suppressed.has(p.id),
+  const shownProposals = effectiveProposals.filter(
+    (p) => !suppressed.has(p.id),
   );
-  const suppressedProposals = artifact.proposals.filter((p: Proposal) =>
+  const suppressedProposals = effectiveProposals.filter((p) =>
     suppressed.has(p.id),
   );
   const eventGroups = groupProposalsByEvent(shownProposals);
@@ -56,6 +78,7 @@ function SessionPage() {
       arc={artifact.sessionId.arc}
       date={artifact.sessionId.date}
       proposal={p}
+      acceptedConflict={p.facts.some((f) => acceptedClaimIds.has(f.claimId))}
       initialDecision={review.decisions[p.id]?.decision ?? "pending"}
       initialText={review.decisions[p.id]?.authoredText ?? ""}
       initialTargetPath={review.decisions[p.id]?.targetPath ?? ""}
@@ -66,16 +89,24 @@ function SessionPage() {
       onSaved={setReview}
     />
   );
-  const approvedUncommitted = artifact.proposals.filter((p: Proposal) => {
+  const approvedUncommitted = effectiveProposals.filter((p) => {
     const d = review.decisions[p.id];
     return d?.decision === "approved" && !d.committedAt;
   }).length;
 
   // AC-18: live session tally (the same shape the commit message is built from).
   const tally = { approved: 0, rejected: 0, deferred: 0, pending: 0 };
-  for (const p of artifact.proposals) {
+  for (const p of effectiveProposals) {
     tally[review.decisions[p.id]?.decision ?? "pending"]++;
   }
+
+  // Unresolved conflicts head the page; resolved ones collapse into a reversible tray.
+  const unresolvedConflicts = artifact.conflicts.filter(
+    (c: Conflict) => !review.conflictResolutions[c.claimId],
+  );
+  const resolvedConflicts = artifact.conflicts.filter(
+    (c: Conflict) => review.conflictResolutions[c.claimId],
+  );
 
   async function doCommit() {
     setCommitting(true);
@@ -124,8 +155,9 @@ function SessionPage() {
         </p>
       </section>
 
-      {/* AC-11: conflicts surfaced, pulled to the top. */}
-      {artifact.conflicts.length > 0 && (
+      {/* AC-11: unresolved conflicts surfaced, pulled to the top. Accept keeps the fact in its
+          page's proposal; Reject drops it. Resolved ones collapse into the tray below. */}
+      {unresolvedConflicts.length > 0 && (
         <section
           style={{
             marginTop: "1rem",
@@ -136,9 +168,9 @@ function SessionPage() {
           }}
         >
           <strong style={{ color: "#b06000" }}>
-            ⚠ {artifact.conflicts.length} potential conflict(s)
+            ⚠ {unresolvedConflicts.length} conflict(s) to resolve
           </strong>
-          {artifact.conflicts.map((c: Conflict, i: number) => (
+          {unresolvedConflicts.map((c: Conflict, i: number) => (
             <ConflictCard
               key={`${c.claimId}:${i}`}
               arc={artifact.sessionId.arc}
@@ -149,6 +181,41 @@ function SessionPage() {
             />
           ))}
         </section>
+      )}
+
+      {/* Resolved conflicts — minimized, reversible (change the choice to bring one back). */}
+      {resolvedConflicts.length > 0 && (
+        <details style={{ marginTop: "0.75rem" }}>
+          <summary
+            style={{
+              cursor: "pointer",
+              color: "#777",
+              fontSize: "0.85rem",
+              fontWeight: 600,
+            }}
+          >
+            Resolved conflicts ({resolvedConflicts.length})
+          </summary>
+          <div
+            style={{
+              padding: "0.5rem 1.1rem",
+              border: "1px solid #e2e2e5",
+              borderRadius: 8,
+              marginTop: "0.4rem",
+            }}
+          >
+            {resolvedConflicts.map((c: Conflict, i: number) => (
+              <ConflictCard
+                key={`${c.claimId}:${i}`}
+                arc={artifact.sessionId.arc}
+                date={artifact.sessionId.date}
+                conflict={c}
+                initial={review.conflictResolutions[c.claimId]}
+                onResolved={setReview}
+              />
+            ))}
+          </div>
+        </details>
       )}
 
       {/* Tabs. */}

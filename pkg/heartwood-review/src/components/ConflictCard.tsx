@@ -7,25 +7,28 @@ import type {
 
 type Conflict = SessionView["artifact"]["conflicts"][number];
 
-// AC-11: surface a cross-arc canon conflict with both statements + source, and offer
-// Supersede / Coexist / Reject (never auto-resolved). The choice is persisted by the
-// conflicting claimId; its mechanical effect (Supersede → a correction of the existing
-// sentence, AC-21) is applied when authoring/committing — the human stays the gate.
-const OPTIONS: { value: ConflictResolution; label: string; hint: string }[] = [
+// AC-11: surface a flagged canon conflict with both statements + source, and offer Accept /
+// Reject (never auto-resolved). The choice is persisted by the conflicting claimId:
+// - Accept → keep the new fact in its page's proposal (the page becomes a correction); the
+//   conflict collapses into the resolved tray and you reconcile it in the full-page editor.
+// - Reject → drop the new fact from its proposal entirely (the page keeps the old canon).
+const OPTIONS: {
+  value: ConflictResolution;
+  label: string;
+  hint: string;
+  tone: string;
+}[] = [
   {
-    value: "supersede",
-    label: "Supersede",
-    hint: "the new fact replaces the existing one (a retcon/correction)",
+    value: "accepted",
+    label: "Accept",
+    hint: "the new fact is right — keep it in this page's proposal (changing existing canon)",
+    tone: "#137333",
   },
   {
-    value: "coexist",
-    label: "Coexist",
-    hint: "both are true — keep them side by side",
-  },
-  {
-    value: "reject",
+    value: "rejected",
     label: "Reject",
-    hint: "drop the new fact; the page stays as is",
+    hint: "drop the new fact from the proposal; the page keeps what it already says",
+    tone: "#c5221f",
   },
 ];
 
@@ -106,9 +109,9 @@ export function ConflictCard({
                 fontWeight: 600,
                 padding: "0.25rem 0.7rem",
                 borderRadius: 6,
-                border: "1px solid #b06000",
-                background: active ? "#b06000" : "transparent",
-                color: active ? "#fff" : "#b06000",
+                border: `1px solid ${o.tone}`,
+                background: active ? o.tone : "transparent",
+                color: active ? "#fff" : o.tone,
                 cursor: busy ? "wait" : "pointer",
               }}
             >

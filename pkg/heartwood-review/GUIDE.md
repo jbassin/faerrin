@@ -167,11 +167,17 @@ reading aid.)
 
 **Conflicts (if any, pulled to the top).** When a new fact contradicts something already on the wiki
 (even from a different arc — the world's canon is shared), it's flagged here with **both**
-statements, their sources, and three choices. You must pick one; nothing is auto-resolved:
+statements and their sources. Each contradicting fact already belongs to that page's proposal; you
+decide what to do with it (nothing is auto-resolved):
 
-- **Supersede** — the new fact replaces the old statement on the page.
-- **Coexist** — both are kept (e.g. they're true at different times).
-- **Reject** — discard the new fact; the page is unchanged.
+- **Accept** — the new fact is right. It stays in the page's proposal, which is now flagged as
+  **changing existing canon** (a correction); you reconcile the old and new wording when you edit
+  the full page. The conflict collapses into a **Resolved conflicts** tray.
+- **Reject** — the new fact is wrong. It's **dropped from the proposal** entirely (it won't be
+  committed or shown); if it was the proposal's only fact, that proposal disappears. The conflict
+  also collapses into the Resolved tray.
+
+The tray is reversible — expand it and change a choice to bring a conflict back.
 
 **Two tabs:**
 

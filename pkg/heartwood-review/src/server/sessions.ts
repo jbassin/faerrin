@@ -326,9 +326,9 @@ export const togglePromotion = createServerFn({ method: "POST" })
     return next;
   });
 
-const CONFLICT_RESOLUTIONS = ["supersede", "coexist", "reject"] as const;
+const CONFLICT_RESOLUTIONS = ["accepted", "rejected"] as const;
 
-/** Record a conflict resolution (Supersede / Coexist / Reject) by claimId (AC-11). */
+/** Record a conflict resolution (Accept / Reject) by claimId (AC-11). */
 export const saveConflictResolution = createServerFn({ method: "POST" })
   .inputValidator(
     (data: {
