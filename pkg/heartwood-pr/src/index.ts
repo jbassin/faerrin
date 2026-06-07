@@ -13,3 +13,4 @@
 // Pure machinery (no GitHub, no jj) — the testable foundation. Modules are exported as they land.
 export const PACKAGE = '@faerrin/heartwood-pr';
 export * from './command';
+export * from './markers';
