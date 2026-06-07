@@ -8,7 +8,7 @@
 //  - buildArcTitles / buildMainArcs from src/ingest/shibboleth.ts (titles + main/one-shot)
 //  - parseFilename / dateSortKey from src/ingest/transcript.ts (campaign numbering)
 
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import path from "node:path";
@@ -73,7 +73,7 @@ export interface Episode {
   runtimeMs: number;
   /** Synopsis, audio tags stripped. */
   synopsis: string;
-  /** Public URL of the copied audio, e.g. "/audio/<id>.mp3". */
+  /** Public URL of the copied audio with a content version, e.g. "/audio/<id>.mp3?v=<token>". */
   mp3Url: string;
   transcript: TranscriptLine[];
 }
@@ -83,6 +83,22 @@ async function readJson<T>(file: string): Promise<T | null> {
     return JSON.parse(await readFile(file, "utf8")) as T;
   } catch {
     return null;
+  }
+}
+
+/**
+ * Cache-busting token for an episode's audio: size + mtime of the source mp3.
+ * The copied audio lives at a stable URL (/audio/<id>.mp3), so without this a
+ * regenerated episode keeps the old bytes in browser/proxy caches. Changes only
+ * when the episode is re-synthesized (a plain site rebuild preserves mtime), so
+ * unchanged audio is still served from cache. Empty string if the file is gone.
+ */
+async function audioVersion(id: string): Promise<string> {
+  try {
+    const s = await stat(path.join(OUT_DIR, `${id}${EPISODE_SUFFIX}`));
+    return `${s.size.toString(36)}-${Math.floor(s.mtimeMs).toString(36)}`;
+  } catch {
+    return "";
   }
 }
 
@@ -221,7 +237,7 @@ export async function loadEpisodes(): Promise<Episode[]> {
       hostC,
       runtimeMs: await probeRuntimeMs(id, manifest),
       synopsis: stripAudioTags(digest?.synopsis ?? ""),
-      mp3Url: `/audio/${id}.mp3`,
+      mp3Url: `/audio/${id}.mp3?v=${await audioVersion(id)}`,
       transcript: script.turns.map((t) => ({
         speaker: t.speaker,
         name: script.hosts[t.speaker]?.name ?? t.speaker,
