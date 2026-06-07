@@ -14,9 +14,9 @@ import { renderDelivery } from "./tags.ts";
  * any voice id from your account.
  */
 export const DEFAULT_ELEVENLABS_VOICES: VoiceConfig = {
-  A: "3jR9BuQAOPMWUjWpi0ll", // Mark
-  B: "uYXf8XasLslADfZ2MB4u", // Juniper
-  C: "XEQBC9sleaE3f5ff82UR", // Charlotte
+  A: "EkK5I93UQWFDigLMpZcX", // Mark
+  B: "aMSt68OGf4xUZAnLpTU8", // Juniper
+  C: "exsUS4vynmxd379XN4yO", // Charlotte
 };
 
 /** mp3 44.1kHz @ 128 kbps → 16000 bytes/sec, for duration estimation. */
