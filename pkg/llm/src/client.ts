@@ -103,7 +103,9 @@ export class AnthropicClient implements LlmClient {
     const stream = this.anthropic.messages.stream({
       model: req.model ?? DEFAULT_MODEL,
       max_tokens: req.maxTokens ?? DEFAULT_MAX_TOKENS,
-      temperature: req.temperature ?? 0,
+      // Only send temperature when explicitly requested — Opus 4.8 (the default
+      // model) removed sampling params and 400s if `temperature` is present.
+      ...(req.temperature !== undefined ? { temperature: req.temperature } : {}),
       ...(req.system ? { system: toSystemParam(req.system) } : {}),
       ...(req.tool
         ? {

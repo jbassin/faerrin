@@ -8,7 +8,8 @@ the Anthropic SDK directly.
 
 - **`AnthropicClient`** (`src/client.ts`) — a thin, provider-neutral wrapper over `@anthropic-ai/sdk`.
   Key shapes: `MessageRequest` (system as a plain string → one cached block, or explicit `SystemBlock[]`
-  for finer cache control; optional forced `tool` for structured output; `temperature` defaults to 0),
+  for finer cache control; optional forced `tool` for structured output; `temperature` is omitted
+  unless explicitly set — Opus 4.8 removed sampling params and 400s if it's sent),
   `MessageResult`, and a normalized `Usage` (`inputTokens` / `cacheReadTokens` / `cacheWriteTokens` /
   `outputTokens`).
 - **`DEFAULT_MODEL`** = `claude-opus-4-8` (Opus 4.8), **`DEFAULT_MAX_TOKENS`** = 16,000.
