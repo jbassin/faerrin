@@ -14,7 +14,7 @@ import { renderDelivery } from "./tags.ts";
  * synthesizeScript({ voices }) with any voice id from your account.
  */
 export const DEFAULT_ELEVENLABS_VOICES: VoiceConfig = {
-  A: "UgBBYS2sOqTuMpoF3BR0", // Mark
+  A: "3jR9BuQAOPMWUjWpi0ll", // Mark
   B: "BZgkqPqms7Kj9ulSkVzn", // Juniper
   C: "exsUS4vynmxd379XN4yO", // Charlotte
 };
