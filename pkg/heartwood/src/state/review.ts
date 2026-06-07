@@ -129,6 +129,12 @@ export const ReviewStateSchema = z.object({
    * re-applying ones it already handled.
    */
   processedComments: z.record(z.string(), z.string()).default({}),
+  /**
+   * The free-text note from a `/merge <note>` command, keyed by claimId (NLSpec 0002 AC-6/D-7).
+   * Persisted (not just passed in-memory) so the SEPARATE re-draft pass — and an offline catch-up —
+   * can condition the in-voice re-draft on it. Cleared when the claim is re-resolved another way.
+   */
+  conflictNotes: z.record(z.string(), z.string()).default({}),
   updatedAt: z.string(),
 });
 export type ReviewState = z.infer<typeof ReviewStateSchema>;
@@ -146,6 +152,7 @@ export function emptyReviewState(id: SessionId): ReviewState {
     reviewSurface: null,
     deferredConflicts: [],
     processedComments: {},
+    conflictNotes: {},
     updatedAt: new Date().toISOString(),
   };
 }
@@ -301,6 +308,30 @@ export function recordProcessedComment(
     processedComments: { ...state.processedComments, [commentId]: resolution },
     updatedAt: new Date().toISOString(),
   };
+}
+
+// ── /merge note persistence (NLSpec 0002 AC-6) ──────────────────────────────────────────────────
+
+/** Pure: store a `/merge <note>` for a claim so the later re-draft can condition on it. */
+export function recordConflictNote(state: ReviewState, claimId: string, note: string): ReviewState {
+  return {
+    ...state,
+    conflictNotes: { ...state.conflictNotes, [claimId]: note },
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+/** Pure: drop a claim's `/merge` note (it was re-resolved another way). No-op if absent. */
+export function clearConflictNote(state: ReviewState, claimId: string): ReviewState {
+  if (!(claimId in state.conflictNotes)) return state;
+  const { [claimId]: _dropped, ...rest } = state.conflictNotes;
+  void _dropped;
+  return { ...state, conflictNotes: rest, updatedAt: new Date().toISOString() };
+}
+
+/** The `/merge` note for a claim, if any. */
+export function conflictNoteFor(state: ReviewState, claimId: string): string | undefined {
+  return state.conflictNotes[claimId];
 }
 
 export type ReviewStatus = 'unreviewed' | 'partial' | 'reviewed';
