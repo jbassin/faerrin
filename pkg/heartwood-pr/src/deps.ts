@@ -24,10 +24,17 @@ export interface ArtifactIO {
   read(sid: SessionId): Promise<SessionArtifact | null>;
 }
 
-/** One page's prose to write to the branch this pass. */
+/** One page's reconciliation to the branch this pass. */
 export interface PageWrite {
   proposalId: string;
   prose: string;
+  /**
+   * `'write'` (default) writes the drafted prose; `'remove'` reverts the page to its pre-session
+   * state (amend → drop the woven passage; create → delete the new page). A rejected/emptied page
+   * MUST be removed so it never reaches the merge tree (AC-26/AC-8). The fake records the action; the
+   * real (gated) writeBranch performs it.
+   */
+  action?: 'write' | 'remove';
 }
 
 export interface BranchWriteResult {

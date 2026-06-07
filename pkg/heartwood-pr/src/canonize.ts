@@ -10,7 +10,6 @@
 // so a divergent merge is never silently blessed.
 
 import {
-  decisionFor,
   isMergeable,
   markProposalsCommitted,
   releaseSurface,
@@ -18,6 +17,7 @@ import {
 } from '@faerrin/heartwood/src/state/review';
 import type { SessionId } from '@faerrin/heartwood/src/state/identity';
 import type { BotDeps } from './deps';
+import { proposalIsLive } from './redraft';
 
 export interface CanonizeResult {
   ok: boolean;
@@ -58,16 +58,18 @@ export async function canonize(sid: SessionId, deps: BotDeps): Promise<CanonizeR
 
   const deferredAtMerge = !isMergeable(state); // merged despite a /defer (can't un-merge — flag it)
 
-  // Local-only canonization acts (C10): stamp committedAt on every landed (non-rejected) page, then
-  // release the lock.
-  const landed = artifact.proposals.filter((p) => decisionFor(state, p.id) !== 'rejected').map((p) => p.id);
+  // Local-only canonization acts (C10): stamp committedAt on exactly the pages that LANDED — the
+  // same live set the branch carries (proposalIsLive), so the committedAt set and the merge tree
+  // never diverge (AC-8).
+  const landed = artifact.proposals.filter((p) => proposalIsLive(artifact, state, p)).map((p) => p.id);
   state = markProposalsCommitted(state, landed, deps.now());
   state = releaseSurface(state);
   await deps.ledger.write(sid, state);
 
-  // jj cleanup (D-15): the squash commit is on main now; drop the redundant local branch.
+  // jj cleanup (D-15): the squash commit is on main now; drop the redundant local branch and abandon
+  // ALL of its own revisions (open draft + every redraft), not just the tip — revset `base..<tip>`.
   await deps.jj.bookmarkDelete(branch);
-  if (link.lastBotBookmarkTarget) await deps.jj.abandon(link.lastBotBookmarkTarget);
+  if (link.lastBotBookmarkTarget) await deps.jj.abandon(`${deps.base}..${link.lastBotBookmarkTarget}`);
 
   return { ok: true, canonized: true, deferredAtMerge };
 }

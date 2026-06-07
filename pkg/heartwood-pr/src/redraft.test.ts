@@ -75,14 +75,37 @@ describe('redraftBatch (NLSpec 0002 AC-6/12)', () => {
     expect(iomInput?.instructions).toBe('use the elegiac older spelling');
   });
 
-  it('drops a rejected fact from the re-draft input', async () => {
+  it('removes a page whose only fact was rejected (AC-26/AC-8)', async () => {
     const inputs: DraftInput[] = [];
-    const { h } = await setup('/keep', inputs); // /keep rejects the claim
+    const { h } = await setup('/keep', inputs); // /keep rejects the page's only conflict fact
     inputs.length = 0;
-    await redraftBatch(SID, h.deps, ['prop:iom']);
-    const iomInput = inputs.find((i) => i.canonicalName === 'Iomenei');
-    // prop:iom's only fact was the rejected conflict claim → no facts remain
-    expect(iomInput?.facts).toEqual([]);
+    const r = await redraftBatch(SID, h.deps, ['prop:iom']);
+    if (!r.ok) throw new Error('noop');
+    expect(r.removed).toContain('prop:iom');
+    expect(r.redrafted).not.toContain('prop:iom');
+    expect(inputs.find((i) => i.canonicalName === 'Iomenei')).toBeUndefined(); // no LLM call for a removed page
+    const lastCall = h.writer.calls.at(-1)!;
+    expect(lastCall.pages.find((p) => p.proposalId === 'prop:iom')?.action).toBe('remove');
+  });
+});
+
+describe('redraftBatch — rejected pages leave the branch (BLOCKER fix, AC-26/AC-8)', () => {
+  it('an unchecked clean page is removed from the branch on reconcile', async () => {
+    const h = makeHarness({ artifact: artifactWithConflict() });
+    const open = await openSession(SID, h.deps);
+    if (!open.ok) throw new Error('open failed');
+    const view = await h.gh.prView(open.prNumber);
+    h.gh.simulateBodyEdit(open.prNumber, view.body.replace('[x] **CleanPage**', '[ ] **CleanPage**'));
+
+    const polled = await pollOnce(SID, h.deps);
+    if (!polled.ok) throw new Error('poll failed');
+    expect(polled.redraftPages).toContain('prop:clean'); // the uncheck flags the page for reconcile
+
+    const r = await redraftBatch(SID, h.deps, polled.redraftPages);
+    if (!r.ok) throw new Error('redraft failed');
+    expect(r.removed).toContain('prop:clean');
+    const lastCall = h.writer.calls.at(-1)!;
+    expect(lastCall.pages.find((p) => p.proposalId === 'prop:clean')?.action).toBe('remove');
   });
 });
 

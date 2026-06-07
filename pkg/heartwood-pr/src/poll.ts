@@ -73,6 +73,7 @@ export async function pollOnce(sid: SessionId, deps: BotDeps): Promise<PollResul
       // A command not bindable to a known conflict (AC-24): acknowledge confusion + don't reapply.
       await deps.gh.addReaction(cm.id, 'confused');
       state = recordProcessedComment(state, cm.id, 'ignored:unbound');
+      await deps.ledger.write(sid, state); // durable before the next comment's side-effects
       ignored++;
       continue;
     }
@@ -85,10 +86,14 @@ export async function pollOnce(sid: SessionId, deps: BotDeps): Promise<PollResul
         ? recordConflictNote(state, claimId, parsed.command.note)
         : clearConflictNote(state, claimId);
     state = recordProcessedComment(state, cm.id, applied.resolution);
-    if (applied.redraft) {
-      const pid = claimToProposal.get(claimId);
-      if (pid) redraftPages.add(pid);
-    }
+    // Reconcile the commanded page on the branch. We flag it regardless of the narrow `redraft`
+    // heuristic: the open draft asserted ALL of the page's facts, so any resolution can change its
+    // effective prose set (incl. dropping the page entirely) — redraftBatch decides write vs remove.
+    const pid = claimToProposal.get(claimId);
+    if (pid) redraftPages.add(pid);
+    // Persist the audit + resolution NOW (AC-13): a crash before the next comment must not re-apply
+    // this one. Idempotent polling depends on processedComments being durable per command.
+    await deps.ledger.write(sid, state);
     await deps.gh.addReaction(cm.id, 'rocket'); // ✅≈🚀 applied
     commandsApplied++;
   }
@@ -97,6 +102,9 @@ export async function pollOnce(sid: SessionId, deps: BotDeps): Promise<PollResul
   let unchecks = 0;
   let rechecks = 0;
   for (const ch of diffCheckboxState(link.lastSeenPrBody ?? '', pr.body)) {
+    // The branch must reflect the new approved set (AC-26/AC-8): an uncheck removes the page, a
+    // re-check restores it — both reconcile in redraftBatch.
+    redraftPages.add(ch.proposalId);
     if (ch.checked) {
       // Re-checking re-approves the page AND clears any "re-read, this changed" flag (AC-11).
       state = applyDecision(state, { proposalId: ch.proposalId, decision: 'approved' });

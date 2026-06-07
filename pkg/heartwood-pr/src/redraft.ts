@@ -28,11 +28,28 @@ type Proposal = SessionArtifact['proposals'][number];
 
 const STALE_NOTE = '🔄 re-read — this changed since you approved it';
 
-/** Build the re-draft input for a page: its non-rejected facts + the `/merge` note conditioning it. */
-function redraftInputFor(artifact: SessionArtifact, state: ReviewState, p: Proposal): DraftInput {
-  const rejected = new Set(
+/** claimIds whose conflict the reviewer rejected (their fact is dropped from the page). */
+function rejectedClaims(artifact: SessionArtifact, state: ReviewState): Set<string> {
+  return new Set(
     artifact.conflicts.filter((c) => conflictResolutionFor(state, c.claimId) === 'rejected').map((c) => c.claimId),
   );
+}
+
+/**
+ * Does this proposal still belong on the branch / merge tree? No, if the reviewer rejected the page
+ * (unchecked it) OR every backing fact was rejected as a conflict (the page has nothing left to say).
+ * Shared by redraftBatch (write vs remove) and canonize (which pages "landed") so the branch tree and
+ * the committedAt set never diverge (AC-26/AC-8).
+ */
+export function proposalIsLive(artifact: SessionArtifact, state: ReviewState, p: Proposal): boolean {
+  if (decisionFor(state, p.id) === 'rejected') return false;
+  const rejected = rejectedClaims(artifact, state);
+  return p.facts.some((f) => !rejected.has(f.claimId));
+}
+
+/** Build the re-draft input for a page: its non-rejected facts + the `/merge` note conditioning it. */
+function redraftInputFor(artifact: SessionArtifact, state: ReviewState, p: Proposal): DraftInput {
+  const rejected = rejectedClaims(artifact, state);
   const facts = p.facts.filter((f) => !rejected.has(f.claimId)).map((f) => ({ text: f.text }));
   // The note (if any) from this page's conflicting claims conditions the re-draft (AC-6).
   const note = artifact.conflicts
@@ -45,6 +62,8 @@ function redraftInputFor(artifact: SessionArtifact, state: ReviewState, p: Propo
 export interface RedraftOk {
   ok: true;
   redrafted: string[];
+  /** Pages reverted/deleted off the branch because they were rejected/emptied (AC-26/AC-8). */
+  removed: string[];
   skippedHumanEdited: string[];
   pushed: boolean;
 }
@@ -70,7 +89,9 @@ export async function redraftBatch(
   const branch = link.branch ?? deps.branchFor(sid);
   const byId = new Map(artifact.proposals.map((p) => [p.id, p]));
   const targets = [...new Set(proposalIds)].map((id) => byId.get(id)).filter((p): p is Proposal => !!p);
-  if (targets.length === 0) return { ok: true, redrafted: [], skippedHumanEdited: [], pushed: false };
+  if (targets.length === 0) {
+    return { ok: true, redrafted: [], removed: [], skippedHumanEdited: [], pushed: false };
+  }
 
   // AC-10: which pages did the human hand-edit on the branch since the bot's last push?
   let humanPaths: string[] = [];
@@ -79,8 +100,9 @@ export async function redraftBatch(
     humanPaths = await deps.jj.changedPaths(link.lastBotBookmarkTarget, liveTarget);
   }
 
-  const pages: { proposalId: string; prose: string }[] = [];
+  const pages: { proposalId: string; prose: string; action?: 'write' | 'remove' }[] = [];
   const redrafted: string[] = [];
+  const removed: string[] = [];
   const skippedHumanEdited: string[] = [];
 
   for (const p of targets) {
@@ -92,11 +114,17 @@ export async function redraftBatch(
       skippedHumanEdited.push(p.id);
       continue;
     }
+    if (!proposalIsLive(artifact, state, p)) {
+      // Rejected or emptied → revert/delete it off the branch so it never reaches the merge tree.
+      pages.push({ proposalId: p.id, prose: '', action: 'remove' });
+      removed.push(p.id);
+      continue;
+    }
     const { draft } = await deps.draft(redraftInputFor(artifact, state, p));
     pages.push({ proposalId: p.id, prose: draft });
     redrafted.push(p.id);
     // AC-11: an approved page whose prose just changed must be re-read → auto-uncheck + flag.
-    if (decisionFor(state, p.id) !== 'rejected') state = markStaleApproval(state, p.id);
+    state = markStaleApproval(state, p.id);
   }
 
   let pushed = false;
@@ -118,5 +146,5 @@ export async function redraftBatch(
   }
 
   await deps.ledger.write(sid, state);
-  return { ok: true, redrafted, skippedHumanEdited, pushed };
+  return { ok: true, redrafted, removed, skippedHumanEdited, pushed };
 }
