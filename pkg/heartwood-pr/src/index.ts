@@ -14,3 +14,5 @@
 export const PACKAGE = '@faerrin/heartwood-pr';
 export * from './command';
 export * from './markers';
+export * from './render-safe';
+export * from './pr-body';
