@@ -23,11 +23,66 @@ export const DEFAULT_ELEVENLABS_VOICES: VoiceConfig = {
 const OUTPUT_FORMAT = "mp3_44100_128";
 const BYTES_PER_SECOND = 16000;
 
+/**
+ * v3 stability named modes. Lower = broader emotional range and stronger
+ * response to audio tags (but more drift); higher = flatter/more consistent.
+ */
+export const STABILITY_MODES = { creative: 0.0, natural: 0.5, robust: 1.0 } as const;
+/** Default leans expressive (toward Creative) without full-Creative drift. */
+export const DEFAULT_STABILITY = 0.3;
+/** Seed is a uint32 on the ElevenLabs API. */
+export const SEED_MAX = 4_294_967_295;
+
+/**
+ * Resolve a `--stability` value: a named mode (creative|natural|robust) or a raw
+ * 0..1 float. Throws on anything else so a typo fails loudly instead of silently
+ * sending a bad body.
+ */
+export function resolveStability(input: string | number): number {
+  if (typeof input !== "number") {
+    const key = input.trim().toLowerCase();
+    if (key in STABILITY_MODES) return STABILITY_MODES[key as keyof typeof STABILITY_MODES];
+  }
+  const n = typeof input === "number" ? input : Number(input);
+  if (!Number.isFinite(n) || n < 0 || n > 1) {
+    throw new Error(`Invalid stability "${input}" — use creative|natural|robust or a number 0..1.`);
+  }
+  return n;
+}
+
+/** Deterministic uint32 seed from a session id (FNV-1a), so re-renders are stable. */
+export function deriveSeed(sessionId: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < sessionId.length; i++) {
+    h ^= sessionId.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0; // unsigned 32-bit
+}
+
+/**
+ * Resolve a `--seed` flag: undefined → derive from sessionId (reproducible),
+ * "random" → a fresh uint32, otherwise a literal integer in [0, SEED_MAX].
+ */
+export function parseSeedFlag(value: string | undefined, sessionId: string): number {
+  if (value === undefined) return deriveSeed(sessionId);
+  if (value.trim().toLowerCase() === "random") return Math.floor(Math.random() * (SEED_MAX + 1));
+  const n = Number(value);
+  if (!Number.isInteger(n) || n < 0 || n > SEED_MAX) {
+    throw new Error(`Invalid seed "${value}" — use an integer 0..${SEED_MAX} or "random".`);
+  }
+  return n;
+}
+
 export interface ElevenLabsRequest {
   voiceId: string;
   text: string;
   modelId: string;
   outputFormat: string;
+  /** v3 stability (0..1); omitted from the body when undefined. */
+  stability?: number;
+  /** Deterministic seed (uint32); omitted from the body when undefined. */
+  seed?: number;
 }
 
 /** A multi-turn dialogue call: ordered (voiceId, text) inputs → one clip. */
@@ -35,6 +90,10 @@ export interface ElevenLabsDialogueRequest {
   inputs: { voiceId: string; text: string }[];
   modelId: string;
   outputFormat: string;
+  /** v3 stability (0..1); omitted from the body when undefined. */
+  stability?: number;
+  /** Deterministic seed (uint32); omitted from the body when undefined. */
+  seed?: number;
 }
 
 /** The network call, injectable so the provider is unit-tested with no live call. */
@@ -48,13 +107,16 @@ function requireKey(): string {
   return apiKey;
 }
 
-const liveFetch: ElevenLabsFetch = async ({ voiceId, text, modelId, outputFormat }) => {
+const liveFetch: ElevenLabsFetch = async ({ voiceId, text, modelId, outputFormat, stability, seed }) => {
+  const body: Record<string, unknown> = { text, model_id: modelId };
+  if (stability !== undefined) body.voice_settings = { stability };
+  if (seed !== undefined) body.seed = seed;
   const res = await fetch(
     `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=${outputFormat}`,
     {
       method: "POST",
       headers: { "xi-api-key": requireKey(), "content-type": "application/json", accept: "audio/mpeg" },
-      body: JSON.stringify({ text, model_id: modelId }),
+      body: JSON.stringify(body),
     },
   );
   if (!res.ok) {
@@ -64,7 +126,19 @@ const liveFetch: ElevenLabsFetch = async ({ voiceId, text, modelId, outputFormat
 };
 
 /** Text-to-Dialogue: one call returns a single clip with natural turn-taking. */
-const liveDialogueFetch: ElevenLabsDialogueFetch = async ({ inputs, modelId, outputFormat }) => {
+const liveDialogueFetch: ElevenLabsDialogueFetch = async ({
+  inputs,
+  modelId,
+  outputFormat,
+  stability,
+  seed,
+}) => {
+  const body: Record<string, unknown> = {
+    inputs: inputs.map((i) => ({ text: i.text, voice_id: i.voiceId })),
+    model_id: modelId,
+  };
+  if (stability !== undefined) body.settings = { stability };
+  if (seed !== undefined) body.seed = seed;
   const res = await fetch(
     `https://api.elevenlabs.io/v1/text-to-dialogue?output_format=${outputFormat}`,
     {
@@ -72,10 +146,7 @@ const liveDialogueFetch: ElevenLabsDialogueFetch = async ({ inputs, modelId, out
       // Text-to-Dialogue returns application/octet-stream; output_format governs the
       // bytes, so don't constrain the response via Accept (avoids a strict-negotiation 406).
       headers: { "xi-api-key": requireKey(), "content-type": "application/json", accept: "*/*" },
-      body: JSON.stringify({
-        inputs: inputs.map((i) => ({ text: i.text, voice_id: i.voiceId })),
-        model_id: modelId,
-      }),
+      body: JSON.stringify(body),
     },
   );
   if (!res.ok) {
@@ -91,6 +162,10 @@ export interface ElevenLabsOptions {
   outputFormat?: string;
   /** Keep inline v3 audio tags (and promote `emotion` to a leading tag). Default: on for v3. */
   audioTags?: boolean;
+  /** v3 stability (0..1). Omitted from the request body (API default) when unset. */
+  stability?: number;
+  /** Deterministic seed (uint32). Omitted from the request body when unset. */
+  seed?: number;
   /** Override the per-turn network call (tests). */
   fetcher?: ElevenLabsFetch;
   /** Override the dialogue network call (tests). */
@@ -111,6 +186,8 @@ export class ElevenLabsTTSProvider implements TTSProvider {
   private readonly modelId: string;
   private readonly outputFormat: string;
   private readonly audioTags: boolean;
+  private readonly stability?: number;
+  private readonly seed?: number;
   private readonly fetcher: ElevenLabsFetch;
   private readonly dialogueFetcher: ElevenLabsDialogueFetch;
 
@@ -121,6 +198,8 @@ export class ElevenLabsTTSProvider implements TTSProvider {
     // would be read aloud literally, so default them off unless forced on.
     this.audioTags = options.audioTags ?? this.modelId.startsWith("eleven_v3");
     this.dialogue = this.audioTags;
+    this.stability = options.stability;
+    this.seed = options.seed;
     this.fetcher = options.fetcher ?? liveFetch;
     this.dialogueFetcher = options.dialogueFetcher ?? liveDialogueFetch;
   }
@@ -132,6 +211,8 @@ export class ElevenLabsTTSProvider implements TTSProvider {
       text,
       modelId: this.modelId,
       outputFormat: this.outputFormat,
+      stability: this.stability,
+      seed: this.seed,
     });
     if (audio.byteLength === 0) {
       throw new Error(`ElevenLabs returned no audio for voice "${req.voice}".`);
@@ -144,6 +225,8 @@ export class ElevenLabsTTSProvider implements TTSProvider {
       inputs: req.inputs.map((i) => ({ voiceId: i.voice, text: i.text })),
       modelId: this.modelId,
       outputFormat: this.outputFormat,
+      stability: this.stability,
+      seed: this.seed,
     });
     if (audio.byteLength === 0) {
       throw new Error("ElevenLabs returned no audio for the dialogue chunk.");

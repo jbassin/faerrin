@@ -5,7 +5,15 @@ import type {
   ElevenLabsFetch,
   ElevenLabsRequest,
 } from "./elevenlabs.ts";
-import { ElevenLabsTTSProvider } from "./elevenlabs.ts";
+import {
+  DEFAULT_STABILITY,
+  ElevenLabsTTSProvider,
+  SEED_MAX,
+  STABILITY_MODES,
+  deriveSeed,
+  parseSeedFlag,
+  resolveStability,
+} from "./elevenlabs.ts";
 
 function spyFetch(bytes = [1, 2, 3, 4]): { fetcher: ElevenLabsFetch; calls: ElevenLabsRequest[] } {
   const calls: ElevenLabsRequest[] = [];
@@ -105,6 +113,21 @@ describe("ElevenLabsTTSProvider", () => {
     expect(calls[0]?.text).toBe("[whispers] Did you hear that?");
   });
 
+  test("passes stability and seed through when set; omits them when unset", async () => {
+    const set = spyFetch();
+    await new ElevenLabsTTSProvider({ fetcher: set.fetcher, stability: 0.3, seed: 42 }).synthesize({
+      text: "x",
+      voice: "v",
+    });
+    expect(set.calls[0]?.stability).toBe(0.3);
+    expect(set.calls[0]?.seed).toBe(42);
+
+    const unset = spyFetch();
+    await new ElevenLabsTTSProvider({ fetcher: unset.fetcher }).synthesize({ text: "x", voice: "v" });
+    expect(unset.calls[0]?.stability).toBeUndefined();
+    expect(unset.calls[0]?.seed).toBeUndefined();
+  });
+
   test("non-v3 strips inline audio tags so they aren't read aloud", async () => {
     const { fetcher, calls } = spyFetch();
     await new ElevenLabsTTSProvider({ fetcher, modelId: "eleven_multilingual_v2" }).synthesize({
@@ -151,6 +174,26 @@ describe("ElevenLabsTTSProvider dialogue", () => {
     expect(durationMs).toBe(500); // 8000 B / 16000 B/s
   });
 
+  test("passes stability and seed through to the dialogue fetcher; omits when unset", async () => {
+    const set = spyDialogue();
+    await new ElevenLabsTTSProvider({
+      fetcher: spyFetch().fetcher,
+      dialogueFetcher: set.dialogueFetcher,
+      stability: 0.3,
+      seed: 7,
+    }).synthesizeDialogue({ inputs: [{ text: "x", voice: "v" }] });
+    expect(set.calls[0]?.stability).toBe(0.3);
+    expect(set.calls[0]?.seed).toBe(7);
+
+    const unset = spyDialogue();
+    await new ElevenLabsTTSProvider({
+      fetcher: spyFetch().fetcher,
+      dialogueFetcher: unset.dialogueFetcher,
+    }).synthesizeDialogue({ inputs: [{ text: "x", voice: "v" }] });
+    expect(unset.calls[0]?.stability).toBeUndefined();
+    expect(unset.calls[0]?.seed).toBeUndefined();
+  });
+
   test("throws on empty dialogue audio", async () => {
     const { dialogueFetcher } = spyDialogue([]);
     await expect(
@@ -158,6 +201,57 @@ describe("ElevenLabsTTSProvider dialogue", () => {
         inputs: [{ text: "x", voice: "v" }],
       }),
     ).rejects.toThrow(/no audio/);
+  });
+});
+
+describe("resolveStability", () => {
+  test("maps named modes", () => {
+    expect(resolveStability("creative")).toBe(STABILITY_MODES.creative);
+    expect(resolveStability("natural")).toBe(STABILITY_MODES.natural);
+    expect(resolveStability("robust")).toBe(STABILITY_MODES.robust);
+    expect(resolveStability("  Natural ")).toBe(0.5); // trimmed, case-insensitive
+  });
+
+  test("passes through valid 0..1 numbers (string or number)", () => {
+    expect(resolveStability("0.3")).toBe(0.3);
+    expect(resolveStability(DEFAULT_STABILITY)).toBe(0.3);
+    expect(resolveStability(0)).toBe(0);
+    expect(resolveStability(1)).toBe(1);
+  });
+
+  test("throws on out-of-range or garbage", () => {
+    expect(() => resolveStability("-0.1")).toThrow(/stability/);
+    expect(() => resolveStability("1.5")).toThrow(/stability/);
+    expect(() => resolveStability("loud")).toThrow(/stability/);
+  });
+});
+
+describe("seed helpers", () => {
+  test("deriveSeed is deterministic and a uint32", () => {
+    const a = deriveSeed("105.observatory-slipped");
+    expect(a).toBe(deriveSeed("105.observatory-slipped"));
+    expect(deriveSeed("other")).not.toBe(a);
+    expect(Number.isInteger(a)).toBe(true);
+    expect(a).toBeGreaterThanOrEqual(0);
+    expect(a).toBeLessThanOrEqual(SEED_MAX);
+  });
+
+  test("parseSeedFlag: undefined derives from session id", () => {
+    expect(parseSeedFlag(undefined, "abc")).toBe(deriveSeed("abc"));
+  });
+
+  test("parseSeedFlag: 'random' is an in-range uint32", () => {
+    const s = parseSeedFlag("random", "abc");
+    expect(Number.isInteger(s)).toBe(true);
+    expect(s).toBeGreaterThanOrEqual(0);
+    expect(s).toBeLessThanOrEqual(SEED_MAX);
+  });
+
+  test("parseSeedFlag: literal integer passes through; bad values throw", () => {
+    expect(parseSeedFlag("42", "abc")).toBe(42);
+    expect(() => parseSeedFlag("-1", "abc")).toThrow(/seed/);
+    expect(() => parseSeedFlag("1.5", "abc")).toThrow(/seed/);
+    expect(() => parseSeedFlag("nope", "abc")).toThrow(/seed/);
   });
 });
 

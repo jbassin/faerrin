@@ -9,7 +9,16 @@ import { DEFAULT_OUT_DIR, clipsDir, manifestPath, readManifest, writeManifest } 
 export type { SynthesisRequest, SynthesisResult, TTSProvider } from "./provider.ts";
 export { MockTTSProvider } from "./mock.ts";
 export { EdgeTTSProvider, DEFAULT_EDGE_VOICES, estimateMp3DurationMs } from "./edge.ts";
-export { ElevenLabsTTSProvider, DEFAULT_ELEVENLABS_VOICES } from "./elevenlabs.ts";
+export {
+  ElevenLabsTTSProvider,
+  DEFAULT_ELEVENLABS_VOICES,
+  DEFAULT_STABILITY,
+  STABILITY_MODES,
+  SEED_MAX,
+  resolveStability,
+  deriveSeed,
+  parseSeedFlag,
+} from "./elevenlabs.ts";
 export { DEFAULT_OUT_DIR, clipsDir, manifestPath, readManifest, writeManifest } from "./store.ts";
 
 /** Placeholder voice ids for the mock provider; real providers override these. */

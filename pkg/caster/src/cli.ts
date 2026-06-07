@@ -15,6 +15,9 @@ import {
   DEFAULT_EDGE_VOICES,
   ElevenLabsTTSProvider,
   DEFAULT_ELEVENLABS_VOICES,
+  DEFAULT_STABILITY,
+  resolveStability,
+  parseSeedFlag,
 } from "./tts/index.ts";
 import { readManifest } from "./tts/index.ts";
 import { assembleEpisode } from "./assemble/index.ts";
@@ -79,9 +82,11 @@ if (process.argv[2] === "tts") {
   const providerArg = (args.find((a) => a.startsWith("--provider="))?.split("=")[1] ??
     "elevenlabs") as "mock" | "edge" | "elevenlabs";
   const modelArg = args.find((a) => a.startsWith("--model="))?.split("=")[1];
+  const stabilityArg = args.find((a) => a.startsWith("--stability="))?.split("=")[1];
+  const seedArg = args.find((a) => a.startsWith("--seed="))?.split("=")[1];
   const target = args.find((a) => !a.startsWith("--"));
   if (!target) {
-    console.error("Usage: bun run src/cli.ts tts <session-id|arc> [--provider=elevenlabs|edge|mock] [--model=<id>] [--force]");
+    console.error("Usage: bun run src/cli.ts tts <session-id|arc> [--provider=elevenlabs|edge|mock] [--model=<id>] [--stability=creative|natural|robust|0..1] [--seed=<int>|random] [--force]");
     process.exit(1);
   }
   const sessions = await loadSessions();
@@ -95,12 +100,23 @@ if (process.argv[2] === "tts") {
     console.error(`No script for ${match.id}. Run \`bun run script ${target}\` first.`);
     process.exit(1);
   }
+  let elevenLabs: ElevenLabsTTSProvider;
+  try {
+    elevenLabs = new ElevenLabsTTSProvider({
+      modelId: modelArg,
+      stability: stabilityArg !== undefined ? resolveStability(stabilityArg) : DEFAULT_STABILITY,
+      seed: parseSeedFlag(seedArg, match.id),
+    });
+  } catch (err) {
+    console.error(err instanceof Error ? err.message : String(err));
+    process.exit(1);
+  }
   const synth =
     providerArg === "edge"
       ? { provider: new EdgeTTSProvider(), voices: DEFAULT_EDGE_VOICES }
       : providerArg === "mock"
         ? { provider: new MockTTSProvider() }
-        : { provider: new ElevenLabsTTSProvider({ modelId: modelArg }), voices: DEFAULT_ELEVENLABS_VOICES };
+        : { provider: elevenLabs, voices: DEFAULT_ELEVENLABS_VOICES };
   let result;
   try {
     result = await loadOrSynthesize(script, { force, ...synth });
