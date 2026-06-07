@@ -14,8 +14,8 @@ import { renderDelivery } from "./tags.ts";
  * any voice id from your account.
  */
 export const DEFAULT_ELEVENLABS_VOICES: VoiceConfig = {
-  A: "EkK5I93UQWFDigLMpZcX", // Mark
-  B: "aMSt68OGf4xUZAnLpTU8", // Juniper
+  A: "UgBBYS2sOqTuMpoF3BR0", // Mark
+  B: "BZgkqPqms7Kj9ulSkVzn", // Juniper
   C: "exsUS4vynmxd379XN4yO", // Charlotte
 };
 
