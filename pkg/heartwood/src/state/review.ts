@@ -89,6 +89,12 @@ export const PrLinkageSchema = z.object({
   prNumber: z.number().int().positive().optional(),
   branch: z.string().optional(),
   lastBotBookmarkTarget: z.string().optional(),
+  /**
+   * The PR body the bot last rendered/saw. `diffCheckboxState` (AC-26) needs the PREVIOUS body to
+   * detect an uncheck across polls; storing it on the lock makes uncheck detection survive a bot
+   * restart. Bot-only (the web app never sets it). Optional ⇒ migration-safe.
+   */
+  lastSeenPrBody: z.string().optional(),
   acquiredAt: z.string(), // ISO
 });
 export type PrLinkage = z.infer<typeof PrLinkageSchema>;

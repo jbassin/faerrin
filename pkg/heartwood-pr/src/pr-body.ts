@@ -15,10 +15,32 @@
 import type { SessionArtifact } from '@faerrin/heartwood/src/state/store';
 import { decisionFor, type ReviewState } from '@faerrin/heartwood/src/state/review';
 import { groupProposalsByEvent } from '@faerrin/heartwood-review/src/lib/event-groups';
-import { proposalMarker } from './markers';
+import { conflictMarker, proposalMarker } from './markers';
 import { toSanitizerSafe } from './render-safe';
 
 type Proposal = SessionArtifact['proposals'][number];
+type Conflict = SessionArtifact['conflicts'][number];
+
+/**
+ * A top-level conflict comment (NLSpec 0002 §5 glossary, AC-5): the existing statement, the new
+ * statement, the explanation/context, the command menu, and an invisible `hw:conflict` marker
+ * binding it to its claim (AC-13). Sanitizer-safe throughout. The bot posts one per conflict.
+ */
+export function buildConflictComment(c: Conflict): string {
+  return [
+    `**Canon conflict — ${toSanitizerSafe(c.canonicalName)}**`,
+    '',
+    `> **Existing canon:** ${toSanitizerSafe(c.existingStatement)}`,
+    `> **This session says:** ${toSanitizerSafe(c.newStatement)}`,
+    '',
+    toSanitizerSafe(c.explanation),
+    `_(source: ${toSanitizerSafe(c.sourceRef)})_`,
+    '',
+    'Reply with **one** — `/keep` (keep existing canon) · `/replace` (take the new fact) · ' +
+      '`/merge <note>` (accept, conditioned on your note) · `/defer` (resolve later in the workbench — blocks merge).',
+    conflictMarker(c.claimId),
+  ].join('\n');
+}
 
 export interface PrBodyInput {
   artifact: SessionArtifact;
