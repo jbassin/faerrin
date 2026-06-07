@@ -1,5 +1,9 @@
 # Transcript Typo-Surfacer CLI Implementation Plan
 
+> **Historical note (2026-06-06):** this plan cites `pkg/heartwood/src/llm.ts` as the `complete()`
+> pattern to mirror. The `heartwood` package was later removed (failed experiment, commit `e2cb11e`),
+> so those paths are dead — the realized pattern now lives in `pkg/content/scripts/lib/llm.ts`.
+
 ## Overview
 
 Add a CLI to `@faerrin/content` that **automatically surfaces likely transcription

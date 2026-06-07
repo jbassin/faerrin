@@ -21,10 +21,10 @@ is only unique as `(transcript, lineId)`, never `lineId` alone. Transcripts are 
 / ~230KB each. Format: `NNNNNN<TAB>Speaker: text  ` (speakers include `Gamemaster`,
 player names like `Johnny`, `Argyle`).
 
-**Why:** surfaced while reviewing the heartwood rewrite spec — the spec assumed "one
-transcript = one session" on a single timeline, which the real data contradicts (arcs may be
-parallel parties / different world-times; filename dates are recording dates, not world-time).
+**Why:** surfaced while reviewing tooling that assumed "one transcript = one session" on a
+single timeline, which the real data contradicts (arcs may be parallel parties / different
+world-times; filename dates are recording dates, not world-time).
 
 **How to apply:** any tool keying off `sessionId`, cross-session conflict detection, or a
 "canon timeline" must account for the arc dimension and must not derive a unique ID from the
-bare filename stem. See [[heartwood-rewrite-constraints]].
+bare filename stem.

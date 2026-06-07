@@ -1,7 +1,7 @@
 # CLAUDE.md — `@faerrin/llm`
 
 Guidance for **llm** (`@faerrin/llm`): the monorepo's **shared Anthropic client + pricing**.
-It is the one place LLM calls are made — caster and heartwood depend on it; nothing else should call
+It is the one place LLM calls are made — caster depends on it; nothing else should call
 the Anthropic SDK directly.
 
 ## What it exports (`src/index.ts`)
@@ -18,10 +18,8 @@ the Anthropic SDK directly.
 ## How it's consumed
 
 This package is **imported** (a real workspace dependency `@faerrin/llm`, unlike the content data which
-is referenced by path). Consumers wrap it rather than calling it raw:
+is referenced by path):
 
-- **heartwood** wraps it in `complete()` (`src/llm.ts`) — adds a Zod schema for typed structured output
-  and per-call cost logging.
 - **caster** calls it from its `distill` and `script` stages.
 
 ## Conventions

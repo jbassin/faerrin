@@ -13,10 +13,10 @@ for the narrative overview; this file is the editing contract.
 
 - **`wiki/`** — the hand-maintained Obsidian wiki (aether is canonical for content). Also holds the
   **generated** `wiki/Script/` transcript pages (written by the pipeline's `export` step). aether's
-  Astro build reads `wiki/` as its content root; **heartwood and caster read `wiki/` but exclude
+  Astro build reads `wiki/` as its content root; **caster reads `wiki/` but excludes
   `Script/`** (those are transcript pages, not wiki articles).
 - **`transcripts/`** — canonical line-numbered session transcripts (`NNNNNN\t<text>`), generated from
-  the pipeline's `scripts/script/*.txt` by `build:transcripts`. Consumed by heartwood + caster.
+  the pipeline's `scripts/script/*.txt` by `build:transcripts`. Consumed by caster.
 
 ## Pipeline (`scripts/`)
 

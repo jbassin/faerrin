@@ -32,11 +32,11 @@ Tonic" → *Anzu has a raven companion named Othello*.
 142 candidates, cutting precisely the session-event/party-action entries while keeping every
 people/places/things/lore fact. The old draft-labels prompt over-generated event narrative.
 
-**How to apply:** the `mine` stage and the draft-labels prompt must instruct extraction of
-**setting/state facts only**, explicitly excluding party-action/session-event narrative, and must
-extract the standing fact out of an event rather than recording the event. This is a criterion
-ORTHOGONAL to epistemic modality (gm-stated vs speculation, see [[heartwood-rewrite-constraints]]):
-a fact can be GM-stated canon and still be a session event that does NOT belong in the wiki.
+**How to apply:** any wiki-mining tool must extract **setting/state facts only**, explicitly
+excluding party-action/session-event narrative, and must extract the standing fact out of an event
+rather than recording the event. This is a criterion ORTHOGONAL to epistemic modality (gm-stated vs
+speculation): a fact can be GM-stated canon and still be a session event that does NOT belong in the
+wiki.
 
 ## Further refinements (worldbuilder review of fae-and-forest, 2025-09-18)
 

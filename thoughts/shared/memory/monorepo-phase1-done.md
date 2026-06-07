@@ -7,6 +7,10 @@ metadata:
   originSessionId: a41d7bcb-21c6-477e-98c0-11899c79da15
 ---
 
+> **Historical note (2026-06-06):** the `heartwood` package was later deemed a failed experiment and
+> removed from the repo (commit `e2cb11e`). The mentions of heartwood below are a point-in-time record
+> of the migration as it stood; heartwood no longer exists in the workspace.
+
 Phase 1 of the faerrin monorepo migration (foundation) is **done** as of 2026-06-03, on a stack of
 jj commits above `swxqlsqu` (docs: discovery+plan): `lnxymxyq` (bun workspace foundation),
 `mlxkxwkz` (heartwood test-type fixes), `rxkwtnut` (@anthropic-ai/sdk 0.39→0.100), `trsoootk`

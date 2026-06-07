@@ -1,5 +1,5 @@
 {
-  "//": "Shared compilerOptions base for the faerrin monorepo. Holds only universally-safe knobs; apps extend this and re-declare lib/types/jsx/module/paths + their own include/exclude. Adopted by @faerrin/caster, @faerrin/heartwood, @faerrin/llm, @faerrin/content, @faerrin/strider. The Astro apps (@faerrin/aether, @faerrin/face) extend astro/tsconfigs/strict instead.",
+  "//": "Shared compilerOptions base for the faerrin monorepo. Holds only universally-safe knobs; apps extend this and re-declare lib/types/jsx/module/paths + their own include/exclude. Adopted by @faerrin/caster, @faerrin/llm, @faerrin/content, @faerrin/strider. The Astro apps (@faerrin/aether, @faerrin/face) extend astro/tsconfigs/strict instead.",
   "compilerOptions": {
     "strict": true,
     "skipLibCheck": true,

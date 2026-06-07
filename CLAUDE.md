@@ -72,7 +72,6 @@ bun --filter '*' format          # per-app prettier (no single root config — a
 |-----|---------|------------|
 | `caster` | `@faerrin/caster` | Bun CLI — audio/podcast (TTS) pipeline |
 | `face` | `@faerrin/face` | Astro + Solid podcast site (the player UI for caster's output) |
-| `heartwood` | `@faerrin/heartwood` | Bun CLI — turns session transcripts into wiki-edit GitHub PRs |
 | `wretch` | `@faerrin/wretch` | Producer (Python/whisperx + TS) — Craig Discord recordings → transcript + audio (upstream of `@faerrin/content`) |
 | `aether` | `@faerrin/aether` | Astro + Solid renderer — the campaign wiki site (`heart.iridi.cc`) |
 | `strider` | `@faerrin/strider` | TanStack Start + Vite + React — interactive faction-map site |
@@ -91,7 +90,7 @@ per-app copies. aether is canonical for content.
   Run: `bun run --filter @faerrin/content pipeline` (or `build:transcripts`).
 - Consumers reference the data by **filesystem path** (cwd-relative `../content/...`), not as a
   package import — except aether's renderer imports `folderIndexName` from `content/scripts/lib`.
-- **`Script/` = aether-only transcript pages.** heartwood and caster **exclude `Script/`** when
+- **`Script/` = aether-only transcript pages.** caster **excludes `Script/`** when
   reading `wiki/` (those aren't wiki articles).
 
 ## Conventions
@@ -102,12 +101,11 @@ per-app copies. aether is canonical for content.
 - **TypeScript**: non-Astro apps extend the root **`tsconfig.base.json`**; the Astro apps (aether,
   face) extend `astro/tsconfigs/strict`.
 - **Env**: there is **no root `.env`** — each package that needs env vars has its own
-  `.env.example` (`caster`, `heartwood`, `wretch`, `content`); copy it to `.env`
+  `.env.example` (`caster`, `wretch`, `content`); copy it to `.env`
   (gitignored) in that package. Bun auto-loads `.env` from the launched process's cwd and an
   inherited env var **overrides** a local `.env` file, so run each app from its own dir to get its
-  own values. `ANTHROPIC_API_KEY` is needed by both caster and heartwood (each in its own `.env`).
-- **LLM calls** go through `@faerrin/llm` (`AnthropicClient`). heartwood wraps it in `complete()`
-  (Zod schema + cost logging); don't call the Anthropic SDK directly there.
+  own values. `ANTHROPIC_API_KEY` is needed by caster (in its own `.env`).
+- **LLM calls** go through `@faerrin/llm` (`AnthropicClient`); don't call the Anthropic SDK directly.
 - **CI**: GitHub Actions (`.github/workflows/ci.yml`) that just **calls Dagger** — the pipeline is a
   Dagger TypeScript module at the repo root (`.dagger/src/index.ts`, `dagger.json`), so the same steps
   run locally and in CI. Reproduce CI on your machine with `dagger call check` (typecheck → astro check

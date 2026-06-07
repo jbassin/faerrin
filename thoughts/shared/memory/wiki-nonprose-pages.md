@@ -16,13 +16,11 @@ break any "reads as human prose" / encyclopedia-opener-regex machinery:
 - **Stub pages** — frontmatter only, no body (placeholders so wikilinks resolve).
 
 Corpus size (2026-06-06): 196 `.md` files, of which **75 are under `Script/`** (38%) —
-aether-generated transcript pages that heartwood excludes as edit targets, but real articles
-DO wikilink into them, so `Script/` may still be a valid link *target*.
+aether-generated transcript pages (not wiki articles), but real articles DO wikilink into them,
+so `Script/` may still be a valid link *target*.
 
-**Why:** found while critiquing the heartwood rewrite spec's §9 "good prose acceptance bar,"
-which calibrates only against literary pages (Sableclutch) and would misfire on stat blocks,
-HTML Timeline, and `<pre>` docs.
+**Why:** found while critiquing a "good prose acceptance bar" that calibrates only against
+literary pages (Sableclutch) and would misfire on stat blocks, HTML Timeline, and `<pre>` docs.
 
 **How to apply:** any voice/slop check, opener regex, or "seamless amend" feature must be
-page-type-aware; the per-type templates are enumerated in `pkg/heartwood/CLAUDE.md`.
-See [[heartwood-rewrite-constraints]].
+page-type-aware.

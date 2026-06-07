@@ -17,7 +17,6 @@ podcast-style audio recap come out the other.
 | [`pkg/strider`](./pkg/strider) | `@faerrin/strider` | TanStack Start + Vite + React — interactive faction-map site ([strider.iridi.cc](https://strider.iridi.cc)) |
 | [`pkg/caster`](./pkg/caster) | `@faerrin/caster` | Bun CLI — turns transcripts into a three-host podcast audio recap (TTS) |
 | [`pkg/face`](./pkg/face) | `@faerrin/face` | Astro + Solid podcast site ([caster.iridi.cc](https://caster.iridi.cc)) |
-| [`pkg/heartwood`](./pkg/heartwood) | `@faerrin/heartwood` | Bun CLI — turns transcripts into wiki-edit GitHub PRs for human review |
 | [`pkg/wretch`](./pkg/wretch) | `@faerrin/wretch` | Producer (Python/whisperx + TS) — Craig Discord recordings → transcript + audio |
 | [`pkg/llm`](./pkg/llm) | `@faerrin/llm` | Shared Anthropic client (`AnthropicClient`) + pricing |
 
@@ -26,10 +25,10 @@ podcast-style audio recap come out the other.
 ```
 Craig recording ─▶ wretch ─▶ content (SSOT: wiki/ + transcripts/)
                                  │
-               ┌─────────────────┼──────────────────┐
-               ▼                 ▼                  ▼
-            aether           heartwood            caster ─▶ face
-         (wiki site)     (wiki-edit PRs)       (podcast audio)
+                    ┌────────────┴────────────┐
+                    ▼                         ▼
+                 aether                  caster ─▶ face
+              (wiki site)             (podcast audio)
 ```
 
 **`@faerrin/content` is the single source of truth.** The wiki and transcripts live there and only
@@ -57,7 +56,7 @@ bun run format                   # per-app prettier
 ```
 
 There's **no root `.env`** — each package that needs env vars has its own `.env.example`; copy it to
-`.env` (gitignored) in that package. `ANTHROPIC_API_KEY` is needed by both caster and heartwood.
+`.env` (gitignored) in that package. `ANTHROPIC_API_KEY` is needed by caster.
 
 ## CI
 

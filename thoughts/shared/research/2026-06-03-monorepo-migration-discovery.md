@@ -9,6 +9,10 @@ status: discovery complete
 
 # Monorepo Migration — Discovery Findings
 
+> **Historical note (2026-06-06):** this is a point-in-time discovery snapshot. The `heartwood`
+> package referenced throughout was later deemed a failed experiment and removed from the repo
+> (commit `e2cb11e`); it no longer exists. Read its mentions below as historical inventory only.
+
 Four independently-developed apps live under `pkg/`. All four serve the same Pathfinder 2e
 "Faerrin" TTRPG campaign and share data. Goal: migrate into one Bun-workspaces monorepo with a
 single source of truth for shared content. Repo is **jj-backed** (`.jj/` present) — all moves/

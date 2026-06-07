@@ -1,6 +1,6 @@
 // Generates the canonical line-numbered transcripts under ../transcripts/ from
 // the pipeline's output (scripts/script/*.txt, in this package) — the single source
-// of truth. Replaces the old, broken heartwood/update-transcripts.sh (which had
+// of truth. Replaces an old, broken update-transcripts.sh (which had
 // dead /emerald/ paths AND a fixed `tail -n +38` that assumed a 37-line header;
 // headers actually vary 27–38 lines by campaign).
 //

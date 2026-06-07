@@ -7,7 +7,7 @@ const STEPS: Record<string, () => Promise<void>> = {
   export: () => import("./pipeline/export").then((m) => m.run()),
   script: () => import("./pipeline/script").then((m) => m.run()),
   // build the canonical line-numbered transcripts/ from script/*.txt — the SSOT
-  // heartwood/caster read. Runs last so corrections in earlier steps reach it
+  // caster reads. Runs last so corrections in earlier steps reach it
   // (otherwise transcripts/ silently goes stale vs the corrected data).
   transcripts: () => import("./build-transcripts").then((m) => m.run()),
 }

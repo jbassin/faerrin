@@ -11,9 +11,9 @@ As of 2026-06-05, every workspace package was renamed to the `@faerrin/*` scope 
 aligned to the package short-name. **The old codenames in [[monorepo-phase1-done]] are stale** —
 translate when reading older notes/commits.
 
-Folder → package name (8 packages, root `workspaces: ["pkg/*"]`):
+Folder → package name (root `workspaces: ["pkg/*"]`; was 8 packages at rename time, now 7 —
+`heartwood` was later removed as a failed experiment, commit `e2cb11e`):
 - `pkg/caster` → `@faerrin/caster` (name-only; folder unchanged)
-- `pkg/heartwood` → `@faerrin/heartwood` (name-only)
 - `pkg/strider` → `@faerrin/strider` (name-only)
 - `pkg/wretch` → `@faerrin/wretch` (was `listener`/`pkg/listener`)
 - `pkg/aether` → `@faerrin/aether` (was `quartz`/`pkg/quartz` — the live wiki renderer, heart.iridi.cc)

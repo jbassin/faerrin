@@ -90,6 +90,6 @@ island** (`src/components/islands/TranscriptPlayer.tsx`, attached on Script page
   never re-create per-app copies. aether reads `../content/wiki`. To change content or the
   pipeline, edit `content` (see its `CLAUDE.md`).
 - **`Script/` pages are aether-only** transcript pages generated into `content/wiki/Script` by
-  the pipeline; heartwood and caster exclude `Script/` when reading the wiki.
+  the pipeline; caster excludes `Script/` when reading the wiki.
 - **Never `.split("content/")` on a path** — `"content/"` contains `"content/"`. Split on the
   real base (`"content/wiki/"`).

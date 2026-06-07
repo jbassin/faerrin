@@ -1,8 +1,8 @@
-// Thin content-local wrapper over @faerrin/llm's AnthropicClient, mirroring
-// heartwood's complete(): build an (optionally cached) system prompt, force a tool
-// derived from a Zod schema for structured output, log cost, and return the parsed
-// value. Does NOT import heartwood. The API key is read from this package's .env
-// by the default AnthropicClient/Anthropic constructor (no key plumbing here).
+// Thin content-local wrapper over @faerrin/llm's AnthropicClient: build an
+// (optionally cached) system prompt, force a tool derived from a Zod schema for
+// structured output, log cost, and return the parsed value. The API key is read
+// from this package's .env by the default AnthropicClient/Anthropic constructor
+// (no key plumbing here).
 
 import { AnthropicClient, costUSD, type SystemBlock } from "@faerrin/llm"
 import type { z, ZodTypeAny } from "zod"
