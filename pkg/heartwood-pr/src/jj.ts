@@ -30,6 +30,9 @@ export interface JjClient {
   bookmarkDelete(name: string): Promise<void>;
   /** Abandon revisions (canonizer drops the now-merged local branch revs — D-15). */
   abandon(revset: string): Promise<void>;
+  /** Content-relative paths changed between two revisions — the per-page human-edit detector
+   *  (AC-10): the files in `from..to` that the bot didn't write are the reviewer's hand-edits. */
+  changedPaths(from: string, to: string): Promise<string[]>;
 }
 
 // ── Real implementation (the gated boundary — never exercised in tests) ──────────────────────────
@@ -72,6 +75,15 @@ export function makeJjClient(cwd: string = process.cwd(), run: JjRunner = defaul
     async abandon(revset) {
       await run(['abandon', revset]);
     },
+    async changedPaths(from, to) {
+      // `jj diff --from <from> --to <to> --summary` → lines like "M path", "A path"; take the path.
+      const out = await run(['diff', '--from', from, '--to', to, '--summary']);
+      return out
+        .split('\n')
+        .map((l) => l.trim())
+        .filter(Boolean)
+        .map((l) => l.replace(/^[A-Z]\s+/, ''));
+    },
   };
 }
 
@@ -112,8 +124,19 @@ export class FakeJj implements JjClient {
   async abandon(revset: string): Promise<void> {
     this.abandoned.push(revset);
   }
+  async changedPaths(from: string, to: string): Promise<string[]> {
+    return [...(this.humanPaths.get(`${from}..${to}`) ?? [])];
+  }
+
+  private humanPaths = new Map<string, string[]>();
 
   // — reviewer simulation (test-only) —
+  /** Reviewer pushes a hand-edit to the branch (AC-10): moves the bookmark to `newTarget` and
+   *  records the pages they changed between `fromBotTarget` and `newTarget`. */
+  simulateHumanEdit(bookmark: string, fromBotTarget: string, newTarget: string, paths: string[]): void {
+    this.bookmarks.set(bookmark, newTarget);
+    this.humanPaths.set(`${fromBotTarget}..${newTarget}`, paths);
+  }
   /** Reviewer pushes their own commit to the branch: the bookmark target moves to one the bot didn't
    *  push, so a later `bookmarkTarget` ≠ the ledger's `lastBotBookmarkTarget` (AC-10 trips). */
   simulateHumanCommit(bookmark: string, newTarget: string): void {

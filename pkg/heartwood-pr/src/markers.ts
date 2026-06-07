@@ -60,6 +60,32 @@ export function parseCheckboxStates(body: string): Map<string, boolean> {
   return out;
 }
 
+/**
+ * Patch a single proposal's checkbox in a PR body in place: set its checked state and optionally
+ * insert a `note` (idempotently) before its marker. Used by the re-draft pass to auto-uncheck +
+ * flag a page whose approved prose changed (AC-11), without re-rendering (and thus needing) every
+ * other page's prose. Lines that aren't this proposal's checkbox are returned verbatim.
+ */
+export function setCheckboxInBody(
+  body: string,
+  proposalId: string,
+  checked: boolean,
+  note?: string,
+): string {
+  const marker = proposalMarker(proposalId);
+  return body
+    .split('\n')
+    .map((line) => {
+      if (!CHECKBOX_RE.test(line) || parseProposalMarker(line) !== proposalId) return line;
+      let out = line.replace(CHECKBOX_RE, (m, c: string) => m.replace(`[${c}]`, `[${checked ? 'x' : ' '}]`));
+      if (note && !out.includes(note)) {
+        out = out.includes(marker) ? out.replace(marker, `${note} ${marker}`) : `${out} ${note}`;
+      }
+      return out;
+    })
+    .join('\n');
+}
+
 export interface CheckboxChange {
   proposalId: string;
   /** The checkbox's new state after the reviewer's edit. `false` ⇒ an uncheck ⇒ reject (AC-26). */

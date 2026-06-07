@@ -10,6 +10,7 @@ import {
   acquireSurface,
   applyDecision,
   clearConflictNote,
+  clearStaleApproval,
   isCommentProcessed,
   recordConflictNote,
   recordProcessedComment,
@@ -97,7 +98,9 @@ export async function pollOnce(sid: SessionId, deps: BotDeps): Promise<PollResul
   let rechecks = 0;
   for (const ch of diffCheckboxState(link.lastSeenPrBody ?? '', pr.body)) {
     if (ch.checked) {
+      // Re-checking re-approves the page AND clears any "re-read, this changed" flag (AC-11).
       state = applyDecision(state, { proposalId: ch.proposalId, decision: 'approved' });
+      state = clearStaleApproval(state, ch.proposalId);
       rechecks++;
     } else {
       state = applyDecision(state, { proposalId: ch.proposalId, decision: 'rejected' });

@@ -135,6 +135,12 @@ export const ReviewStateSchema = z.object({
    * can condition the in-voice re-draft on it. Cleared when the claim is re-resolved another way.
    */
   conflictNotes: z.record(z.string(), z.string()).default({}),
+  /**
+   * ProposalIds whose already-approved (checked) prose a later re-draft changed (NLSpec 0002 AC-11):
+   * they are auto-unchecked + flagged "re-read, this changed" so nothing approved silently mutates.
+   * Cleared when the reviewer re-checks (re-approves) the page.
+   */
+  staleApprovals: z.array(z.string()).default([]),
   updatedAt: z.string(),
 });
 export type ReviewState = z.infer<typeof ReviewStateSchema>;
@@ -153,6 +159,7 @@ export function emptyReviewState(id: SessionId): ReviewState {
     deferredConflicts: [],
     processedComments: {},
     conflictNotes: {},
+    staleApprovals: [],
     updatedAt: new Date().toISOString(),
   };
 }
@@ -332,6 +339,32 @@ export function clearConflictNote(state: ReviewState, claimId: string): ReviewSt
 /** The `/merge` note for a claim, if any. */
 export function conflictNoteFor(state: ReviewState, claimId: string): string | undefined {
   return state.conflictNotes[claimId];
+}
+
+// ── Stale-approval invalidation (NLSpec 0002 AC-11) ─────────────────────────────────────────────
+
+/** Pure: flag an approved proposal whose prose a re-draft changed (auto-uncheck). Idempotent. */
+export function markStaleApproval(state: ReviewState, proposalId: string): ReviewState {
+  if (state.staleApprovals.includes(proposalId)) return state;
+  return {
+    ...state,
+    staleApprovals: [...state.staleApprovals, proposalId],
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+/** Pure: clear a stale flag (the reviewer re-read + re-checked the page). No-op if absent. */
+export function clearStaleApproval(state: ReviewState, proposalId: string): ReviewState {
+  if (!state.staleApprovals.includes(proposalId)) return state;
+  return {
+    ...state,
+    staleApprovals: state.staleApprovals.filter((p) => p !== proposalId),
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+export function isStaleApproval(state: ReviewState, proposalId: string): boolean {
+  return state.staleApprovals.includes(proposalId);
 }
 
 export type ReviewStatus = 'unreviewed' | 'partial' | 'reviewed';

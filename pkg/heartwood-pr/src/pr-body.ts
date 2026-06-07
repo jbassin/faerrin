@@ -13,7 +13,7 @@
 // module only assembles + makes everything sanitizer-safe and marker-bound.
 
 import type { SessionArtifact } from '@faerrin/heartwood/src/state/store';
-import { decisionFor, type ReviewState } from '@faerrin/heartwood/src/state/review';
+import { decisionFor, isStaleApproval, type ReviewState } from '@faerrin/heartwood/src/state/review';
 import { groupProposalsByEvent } from '@faerrin/heartwood-review/src/lib/event-groups';
 import { conflictMarker, proposalMarker } from './markers';
 import { toSanitizerSafe } from './render-safe';
@@ -85,12 +85,15 @@ function asNestedQuote(prose: string): string {
 
 function renderProposal(input: PrBodyInput, p: Proposal): string {
   const { artifact, state, drafts = {}, previewUrls = {} } = input;
-  // The ledger is authoritative for check state (AC-26): a rejected page renders unchecked.
-  const checked = decisionFor(state, p.id) === 'rejected' ? ' ' : 'x';
+  // The ledger is authoritative for check state (AC-26/AC-11): a rejected page, or one whose
+  // approved prose a re-draft changed (stale), renders UNCHECKED so the reviewer must re-read it.
+  const stale = isStaleApproval(state, p.id);
+  const checked = decisionFor(state, p.id) === 'rejected' || stale ? ' ' : 'x';
   const conflictIds = conflictsForProposal(artifact, p);
   const kindTag = p.kind === 'create' ? 'new page' : 'amend';
 
   const lineBits = [`- [${checked}] **${p.canonicalName}**`, `_(${kindTag})_`];
+  if (stale) lineBits.push('🔄 re-read — this changed since you approved it');
   if (conflictIds.length > 0) {
     lineBits.push('⚠️ canon conflict — resolve in the thread below');
   }
