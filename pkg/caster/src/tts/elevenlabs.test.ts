@@ -58,7 +58,10 @@ describe("ElevenLabsTTSProvider", () => {
   test("PCM format: wraps the clip as WAV and computes exact duration", async () => {
     // pcm_44100 mono s16le → 88200 B/s; 88200 bytes = exactly 1s.
     const { fetcher } = spyFetch(new Array(88200).fill(0));
-    const { audio, durationMs } = await new ElevenLabsTTSProvider({ fetcher }).synthesize({
+    const { audio, durationMs } = await new ElevenLabsTTSProvider({
+      fetcher,
+      outputFormat: "pcm_44100",
+    }).synthesize({
       text: "hello",
       voice: "v",
     });

@@ -20,12 +20,13 @@ export const DEFAULT_ELEVENLABS_VOICES: VoiceConfig = {
 };
 
 /**
- * Default to lossless PCM at 44.1 kHz so Stage 5's loudnorm is the ONLY mp3
- * encode (fetching mp3 here would mean two lossy generations). ElevenLabs PCM is
- * headerless s16le mono; we wrap it in a WAV container per clip (see pcmToWav).
- * Note: pcm_44100 can require a paid tier — drop to pcm_24000 if the API rejects it.
+ * Default to lossless PCM so Stage 5's loudnorm is the ONLY mp3 encode (fetching
+ * mp3 here would mean two lossy generations). ElevenLabs PCM is headerless s16le
+ * mono; we wrap it in a WAV container per clip (see pcmToWav). 24 kHz because
+ * pcm_44100 is gated to the Pro tier and above — pcm_24000 is available more
+ * broadly and is plenty for speech (loudnorm resamples to 44.1 kHz on encode).
  */
-const OUTPUT_FORMAT = "pcm_44100";
+const OUTPUT_FORMAT = "pcm_24000";
 
 /** Parsed properties of an ElevenLabs `output_format` string. */
 export interface AudioFormatInfo {
