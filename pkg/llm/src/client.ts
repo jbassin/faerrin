@@ -114,9 +114,20 @@ export class AnthropicClient implements LlmClient {
                 name: req.tool.name,
                 description: req.tool.description,
                 input_schema: req.tool.input_schema as Anthropic.Tool.InputSchema,
+                // Strict tool use constrains the call to the schema — without it,
+                // Opus 4.8 can emit malformed/duplicate forced-tool calls (e.g. beat
+                // fields leaking to the top level). Requires a strict-compatible
+                // schema: additionalProperties:false and all properties required.
+                strict: true,
               },
             ],
-            tool_choice: { type: "tool" as const, name: req.tool.name },
+            // Forced structured output is a single call; stop the model splitting
+            // it across parallel tool_use blocks (we only keep one).
+            tool_choice: {
+              type: "tool" as const,
+              name: req.tool.name,
+              disable_parallel_tool_use: true,
+            },
           }
         : {}),
       messages: [{ role: "user", content: req.userContent }],
