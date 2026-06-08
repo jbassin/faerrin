@@ -188,3 +188,108 @@ WIKI EXCERPTS (for grounding names/lore only; do not reveal undiscovered plot):
 
 ${wiki}`;
 }
+
+/**
+ * Pass A of two-pass generation: a free-text "raw table transcript" prompt. The
+ * point is to NOT produce a polished script — emitting prose (not a forced tool
+ * call) and asking for a transcript of unprepared talk keeps the model out of the
+ * clean-podcast attractor that one-shot structured output falls into. Pass B
+ * (dressing) turns this into structured turns without polishing it. Static per
+ * host config, like the one-shot prompt.
+ */
+export function buildImprovSystemPrompt(hosts: HostConfig = DEFAULT_HOSTS): string {
+  return `You are writing down a RAW, unedited recording of three friends —
+${hosts.A.name}, ${hosts.B.name}, and ${hosts.C.name} — talking at their usual tavern
+table about last night's Pathfinder 2e session. They did NOT prepare. This is a
+TRANSCRIPT of what was actually said, mess and all — not a script, not a polished
+recap. Your job is to capture how the talk really went.
+
+The three friends:
+- ${hosts.A.name}: ${hosts.A.persona}.
+- ${hosts.B.name}: ${hosts.B.persona}.
+- ${hosts.C.name}: ${hosts.C.persona}.
+
+Format: plain text, one line per turn, as
+${hosts.A.name}: what they said
+${hosts.B.name}: what they said
+Use the hosts' names as the speaker labels. NOTHING else — no headings, no audio tags,
+no stage directions, no markdown. Ordinary spoken punctuation only: an ellipsis for
+trailing off, an em-dash for a thought that gets cut off.
+
+Real talk is mostly imperfect — write it that way:
+- People interrupt and a line ends mid-thought on an em-dash; the dropped thought is
+  often NEVER picked back up.
+- False starts and self-corrections ("the green one — no, the blue one").
+- Someone fetches a name or detail wrong and gets corrected.
+- A tangent that goes nowhere and just deflates ("...anyway").
+- A joke that lands flat or gets ignored; one-word reactions; people talking past each
+  other; stretches of clipped back-and-forth and the odd beat of dead air.
+At least a third of the lines should fail as standalone wit. If a line reads like a
+polished podcast quip, it's wrong — rough it up. Keep the three voices UNEQUAL:
+${hosts.A.name} fluent but imprecise, ${hosts.B.name} precise but terse,
+${hosts.C.name} fast but scattered. If you could swap two names on a line and it would
+still fit, it's too generic.
+
+They are at a tavern table, not in a booth — let the room (a mug, the fire, the
+barkeep, food) intrude a few times, ambient not constant.
+
+Cover what's INTERESTING from the session below — not in order, and you don't have to
+cover all of it. Reach a moment through memory or an argument, double back, skip the
+dull bits, sit on a good one. Don't announce an agenda, don't open with "welcome to
+the show", don't sign off cleanly: start mid-conversation and let it trail off. Aim
+for a long session, roughly 30-40 minutes of talk.
+
+Grounding: use the wiki excerpts ONLY to spell names, factions, places, and lore right
+(${hosts.B.name} is the one who'd know them). Do NOT invent events or outcomes not in
+the digest, and do NOT reveal lore the players haven't discovered in-session.
+
+Write the transcript now, and nothing else.`;
+}
+
+/**
+ * Pass B of two-pass generation: the "protective dressing" prompt. It takes Pass A's
+ * raw transcript and records it as structured turns via the record_script tool,
+ * adding inline v3 audio tags and TTS-safe spelling — but is FORBIDDEN to improve the
+ * dialogue. The whole value of two-pass is lost if this pass polishes the mess, so the
+ * prohibitions are emphatic. Static per host config.
+ */
+export function buildDressingSystemPrompt(hosts: HostConfig = DEFAULT_HOSTS): string {
+  return `You are a careful transcript FORMATTER, not a writer. You are given a raw
+transcript of three friends (${hosts.A.name}, ${hosts.B.name}, ${hosts.C.name}) talking
+at a tavern table. Your only job is to record it as structured turns by calling the
+provided tool exactly once: split it into turns, map each speaker, add inline delivery
+direction, and make it speakable. You are a typesetter.
+
+Map the speaker labels to ids: ${hosts.A.name} → A, ${hosts.B.name} → B,
+${hosts.C.name} → C.
+
+DO NOT improve the dialogue. This is the most important rule:
+- Do NOT make any line wittier, more complete, more articulate, smoother, or more
+  polished. Preserve every fumble, false start, self-correction, repetition,
+  interruption, trailing-off, one-word reaction, and dropped/unfinished thread EXACTLY
+  as written. If a line is awkward or unfinished, keep it awkward and unfinished.
+- Do NOT add, remove, merge, reorder, or "clean up" content. Same words, same order,
+  same mess. Do NOT resolve anything the transcript left unresolved.
+
+What you MAY do (formatting only):
+- Split the raw text into one turn per speaker utterance, in order.
+- Add inline ElevenLabs v3 audio tags in square brackets where the delivery the words
+  already imply shifts — direction ([happy], [excited], [annoyed], [thoughtful],
+  [deadpan], [sarcastic]), non-verbal ([laughing], [chuckles], [sighs], [exhales
+  sharply], [clears throat], [short pause], [long pause]), and overlap/turn-timing
+  ([jumping in], [overlapping], [interrupts]). Use them sparingly, only where earned,
+  and only tags that suit the speaker. Infer similar ones as needed.
+- Make text speakable for ElevenLabs v3: spell out numbers, dates, symbols, and
+  abbreviations in words; keep the ellipses, em-dashes, and single-word CAPS that carry
+  prosody. Everything outside the [tags] must be plain speakable words — no markdown, no
+  parentheses, no stage directions, no emoji.
+- Give the episode its own short, evocative title (this episode only — no campaign or
+  arc name, no date).
+
+Call the tool exactly once with the full formatted script.`;
+}
+
+/** Wrap Pass A's raw transcript as the user content for the Pass B dressing call. */
+export function buildDressingUserContent(transcript: string): string {
+  return `RAW TRANSCRIPT (format this as-is; do not improve it):\n\n${transcript}`;
+}

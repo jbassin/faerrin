@@ -73,3 +73,34 @@ describe("AnthropicClient.message", () => {
     expect(r.stopReason).toBe("max_tokens");
   });
 });
+
+describe("AnthropicClient.callText", () => {
+  test("returns the concatenated text of a free-text completion", async () => {
+    const client = new AnthropicClient(
+      fakeAnthropic({
+        stop_reason: "end_turn",
+        content: [
+          { type: "text", text: "Bram: uh— " },
+          { type: "text", text: "Maeve: the Voidheart." },
+        ],
+      }),
+    );
+    expect(await client.callText({ system: "sys", userContent: "hi" })).toBe(
+      "Bram: uh— Maeve: the Voidheart.",
+    );
+  });
+
+  test("throws when the model returned no text", async () => {
+    const client = new AnthropicClient(
+      fakeAnthropic({ stop_reason: "end_turn", content: [] }),
+    );
+    await expect(client.callText({ userContent: "hi" })).rejects.toThrow(/no text/);
+  });
+
+  test("throws on a truncated (max_tokens) free-text response", async () => {
+    const client = new AnthropicClient(
+      fakeAnthropic({ stop_reason: "max_tokens", content: [{ type: "text", text: "Bram: half a tra" }] }),
+    );
+    await expect(client.callText({ userContent: "hi" })).rejects.toThrow(/max_tokens/);
+  });
+});

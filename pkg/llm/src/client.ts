@@ -58,12 +58,26 @@ export interface ToolCallRequest {
   maxTokens?: number;
 }
 
+/** Free-text request: a completion with no forced tool (returns prose). */
+export interface TextRequest {
+  system?: string | SystemBlock[];
+  userContent: string;
+  model?: string;
+  maxTokens?: number;
+  /** Opus 4.8 rejects this — only set it for models that accept sampling params. */
+  temperature?: number;
+}
+
 /**
  * Minimal, provider-agnostic seam: force a tool, return its `input`. Tests use a
  * hand-written stub implementing this interface — no live call.
+ *
+ * `callText` (free-text, no tool) is optional: not every stub provides it, and
+ * callers that need it must check for it. The real `AnthropicClient` implements both.
  */
 export interface LlmClient {
   callTool(req: ToolCallRequest): Promise<unknown>;
+  callText?(req: TextRequest): Promise<string>;
 }
 
 function toSystemParam(system: string | SystemBlock[]): Anthropic.TextBlockParam[] {
@@ -166,5 +180,28 @@ export class AnthropicClient implements LlmClient {
       );
     }
     return result.toolInput;
+  }
+
+  async callText(req: TextRequest): Promise<string> {
+    const result = await this.message({
+      system: req.system,
+      userContent: req.userContent,
+      model: req.model,
+      maxTokens: req.maxTokens,
+      temperature: req.temperature,
+    });
+    // Unlike a forced tool call, a truncated free-text response is still valid text,
+    // so message() won't flag it — guard here so a cut-off transcript fails loudly
+    // instead of silently flowing downstream.
+    if (result.stopReason === "max_tokens") {
+      throw new Error(
+        `Free-text output hit max_tokens (${req.maxTokens ?? DEFAULT_MAX_TOKENS}); ` +
+          `the result is truncated. Re-run with a higher maxTokens.`,
+      );
+    }
+    if (result.text.trim() === "") {
+      throw new Error(`Free-text call returned no text (stop_reason: ${result.stopReason}).`);
+    }
+    return result.text;
   }
 }

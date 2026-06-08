@@ -1,7 +1,7 @@
 import { test, expect, describe, afterAll } from "bun:test";
 import { rm } from "node:fs/promises";
 import type { SessionDigest, WikiCorpus, WikiPage } from "../types.ts";
-import type { LlmClient, ToolCallRequest } from "@faerrin/llm";
+import type { LlmClient, ToolCallRequest, TextRequest } from "@faerrin/llm";
 import { generateScript, loadOrGenerateScript } from "./index.ts";
 import { buildScriptSystemPrompt, buildScriptUserContent } from "./prompt.ts";
 import { SCRIPT_TOOL_NAME } from "./schema.ts";
@@ -75,6 +75,55 @@ describe("generateScript", () => {
     expect(stub.lastRequest?.system).toContain("Sol");
     expect(stub.lastRequest?.system).toContain("Wren");
     expect(stub.lastRequest?.system).toContain("Vex");
+  });
+});
+
+// Records both passes so we can assert order and what each pass received.
+class TwoPassStub implements LlmClient {
+  textReq?: TextRequest;
+  toolReq?: ToolCallRequest;
+  order: string[] = [];
+  constructor(
+    private readonly transcript: string,
+    private readonly toolReturn: unknown,
+  ) {}
+  async callText(req: TextRequest): Promise<string> {
+    this.order.push("text");
+    this.textReq = req;
+    return this.transcript;
+  }
+  async callTool(req: ToolCallRequest): Promise<unknown> {
+    this.order.push("tool");
+    this.toolReq = req;
+    return this.toolReturn;
+  }
+}
+
+describe("generateScript two-pass", () => {
+  test("runs the improv pass (free-text) then the dressing pass (tool)", async () => {
+    const stub = new TwoPassStub("Bram: uh— the Voidheart, I think— Maeve: The Voidheart.", goodScript);
+    const script = await generateScript(digest, wiki, { client: stub, twoPass: true });
+
+    // Order: raw transcript first, then structure it.
+    expect(stub.order).toEqual(["text", "tool"]);
+    // Pass A: an improv/transcript prompt, fed the grounded digest.
+    expect(String(stub.textReq?.system).toLowerCase()).toContain("transcript");
+    expect(stub.textReq?.userContent).toContain("Entered the station.");
+    // Pass B: a protective dressing prompt that forbids improving the dialogue,
+    // and is handed Pass A's raw transcript as its content.
+    expect(stub.toolReq?.system).toContain("DO NOT improve");
+    expect(stub.toolReq?.userContent).toContain("the Voidheart");
+    expect(stub.toolReq?.tool.name).toBe(SCRIPT_TOOL_NAME);
+
+    expect(script.sessionId).toBe(digest.sessionId);
+    expect(script.turns).toHaveLength(2);
+  });
+
+  test("errors clearly when the client cannot do free-text (no callText)", async () => {
+    const stub = new StubClient(goodScript); // callTool only
+    await expect(
+      generateScript(digest, wiki, { client: stub, twoPass: true }),
+    ).rejects.toThrow(/callText|free-text/i);
   });
 });
 

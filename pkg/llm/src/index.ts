@@ -7,6 +7,7 @@ export type {
   LlmClient,
   ToolSpec,
   ToolCallRequest,
+  TextRequest,
   MessageRequest,
   MessageResult,
   SystemBlock,
