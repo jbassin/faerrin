@@ -7,7 +7,7 @@ import { loadCorpus, loadSessions } from "./ingest/index.ts";
 import { loadWiki } from "./ingest/wiki.ts";
 import { loadOrDistill, readDigest } from "./distill/index.ts";
 import { loadOrGenerateScript } from "./script/index.ts";
-import { readScript } from "./script/index.ts";
+import { readScript, scoreScript, formatReport } from "./script/index.ts";
 import {
   loadOrSynthesize,
   MockTTSProvider,
@@ -39,9 +39,10 @@ function apiKeyHint(err: unknown): string {
 if (process.argv[2] === "script") {
   const args = process.argv.slice(3);
   const force = args.includes("--force");
+  const lint = args.includes("--lint");
   const target = args.find((a) => !a.startsWith("--"));
   if (!target) {
-    console.error("Usage: bun run src/cli.ts script <session-id|arc> [--force]");
+    console.error("Usage: bun run src/cli.ts script <session-id|arc> [--force] [--lint]");
     process.exit(1);
   }
   const sessions = await loadSessions();
@@ -49,6 +50,17 @@ if (process.argv[2] === "script") {
   if (!match) {
     console.error(`No session matching "${target}".`);
     process.exit(1);
+  }
+  // `--lint`: score the EXISTING cached script's tavern-ness; never generate.
+  if (lint) {
+    const existing = await readScript(match.id);
+    if (!existing) {
+      console.error(`No script for ${match.id}. Run \`bun run script ${target}\` first.`);
+      process.exit(1);
+    }
+    console.log(`# ${existing.title}  (${existing.turns.length} turns)\n`);
+    console.log(formatReport(scoreScript(existing)));
+    process.exit(0);
   }
   const digest = await readDigest(match.id);
   if (!digest) {

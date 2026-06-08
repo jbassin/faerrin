@@ -13,6 +13,8 @@ export { groundDigest } from "./grounding.ts";
 export { ScriptParseError, parseScript } from "./parse.ts";
 export { DEFAULT_HOSTS } from "./hosts.ts";
 export { DEFAULT_OUT_DIR, scriptPath, readScript, writeScript } from "./store.ts";
+export { computeMetrics, scoreScript, formatReport, words, THRESHOLDS } from "./lint.ts";
+export type { LintMetrics, LintReport, CriterionScore } from "./lint.ts";
 
 /** A 30-40 minute episode is a large output; give the model ample room (streamed). */
 export const DEFAULT_SCRIPT_MAX_TOKENS = 32_000;
