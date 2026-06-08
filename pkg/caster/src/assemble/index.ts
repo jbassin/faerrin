@@ -5,12 +5,16 @@ import { DEFAULT_OUT_DIR } from "../distill/store.ts";
 import { computeGaps, DEFAULT_GAP_OPTIONS, type GapOptions } from "./gaps.ts";
 import { buildConcatList } from "./concat.ts";
 import { renderTranscript } from "./transcript.ts";
-import { concatLoudnorm, fadeClip, makeSilence, probeClip } from "./ffmpeg.ts";
+import { concatLoudnorm, fadeClip, makeSilence, probeClip, type BedOptions } from "./ffmpeg.ts";
 
 export { computeGaps, DEFAULT_GAP_OPTIONS } from "./gaps.ts";
 export { buildConcatList } from "./concat.ts";
 export { renderTranscript } from "./transcript.ts";
-export { probeClip, makeSilence, fadeClip, concatLoudnorm } from "./ffmpeg.ts";
+export { probeClip, makeSilence, fadeClip, concatLoudnorm, bedFilter } from "./ffmpeg.ts";
+export type { BedOptions } from "./ffmpeg.ts";
+
+/** Default ambient-bed gain: ~−23 dB under the −16 LUFS dialogue. */
+export const DEFAULT_BED_GAIN = 0.07;
 
 /** Short fades applied to each clip before stitching, to tame end-of-line clicks. */
 export const DEFAULT_FADE_IN_MS = 10;
@@ -32,6 +36,11 @@ export interface AssembleOptions {
   chunkGapMs?: number;
   /** Injectable RNG for deterministic jitter in tests. */
   rng?: () => number;
+  /**
+   * Mix a low ambient bed (e.g. tavern room tone) under the episode. Skipped with a
+   * notice if `path` doesn't exist, so assembly still works without the local asset.
+   */
+  bed?: { path: string; gain?: number };
 }
 
 export interface EpisodeOutputs {
@@ -75,7 +84,8 @@ export async function assembleEpisode(
 
     const listPath = `${work}/concat.txt`;
     await Bun.write(listPath, buildConcatList(segments.clipPaths, segments.gaps, segments.silenceFor));
-    await concatLoudnorm(resolve(listPath), resolve(audioPath));
+    const bed = await resolveBed(manifest, segments, options.bed);
+    await concatLoudnorm(resolve(listPath), resolve(audioPath), bed);
 
     await Bun.write(tPath, renderTranscript(script));
   } finally {
@@ -138,4 +148,38 @@ async function prepareDialogue(
   }
   const gaps = new Array(manifest.clips.length - 1).fill(chunkGapMs);
   return { clipPaths: manifest.clips.map((c) => resolve(c.path)), gaps, silenceFor };
+}
+
+/**
+ * Resolve the ambient-bed config: returns undefined (no bed) when not requested or
+ * when the file is missing (with a notice — assembly must still work without the
+ * local asset). Episode length = clip durations + inter-clip gaps; the start offset
+ * is a deterministic per-session seek into the (much longer) bed for variety.
+ */
+async function resolveBed(
+  manifest: AudioManifest,
+  segments: Segments,
+  bedOpt: AssembleOptions["bed"],
+): Promise<BedOptions | undefined> {
+  if (!bedOpt) return undefined;
+  if (!(await Bun.file(bedOpt.path).exists())) {
+    console.error(`(bed: ${bedOpt.path} not found — assembling without an ambient bed)`);
+    return undefined;
+  }
+  const clipMs = manifest.clips.reduce((sum, c) => sum + c.durationMs, 0);
+  const gapMs = segments.gaps.reduce((sum, g) => sum + g, 0);
+  return {
+    path: resolve(bedOpt.path),
+    gain: bedOpt.gain ?? DEFAULT_BED_GAIN,
+    totalMs: clipMs + gapMs,
+    startOffsetSec: bedOffset(manifest.sessionId),
+  };
+}
+
+/** Deterministic seek (seconds) into the bed from the session id. Bounded well under
+ * the bed length (~3 h) so even a long episode never runs past the end. */
+function bedOffset(sessionId: string): number {
+  let h = 0;
+  for (let i = 0; i < sessionId.length; i++) h = (h * 31 + sessionId.charCodeAt(i)) >>> 0;
+  return h % 7000;
 }

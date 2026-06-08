@@ -61,7 +61,50 @@ export async function fadeClip(
   await $`ffmpeg -hide_banner -y -i ${src} -af ${af} -ac ${params.channels} -ar ${params.sampleRate} ${codec} ${dst}`.quiet();
 }
 
-/** Concatenate the list and loudness-normalize to a 128 kbps mp3 at `outPath`. */
-export async function concatLoudnorm(listPath: string, outPath: string): Promise<void> {
-  await $`ffmpeg -hide_banner -y -f concat -safe 0 -i ${listPath} -af ${LOUDNORM} -c:a libmp3lame -b:a 128k -ar 44100 ${outPath}`.quiet();
+/** A low ambient bed (e.g. tavern room tone) mixed under the dialogue. */
+export interface BedOptions {
+  /** Path to the bed audio file (already verified to exist). */
+  path: string;
+  /** Linear gain applied to the bed; ~0.07 ≈ −23 dB under full-scale speech. */
+  gain: number;
+  /** Episode length (ms) — used to time the bed's fade-out. */
+  totalMs: number;
+  /** Seconds to seek into the bed before mixing, for per-episode variety. */
+  startOffsetSec?: number;
+}
+
+/**
+ * `filter_complex` that mixes a low ambient bed UNDER the loudnorm'd dialogue.
+ * Key details: loudnorm the SPEECH only (so the bed can't fight the −16 LUFS
+ * target); `amix … normalize=0` keeps speech at full level instead of halving it;
+ * `duration=first` trims the (much longer) bed to the episode; a final limiter
+ * catches the small peaks the added bed introduces.
+ */
+export function bedFilter(bed: BedOptions): string {
+  const fadeOutStart = Math.max(0, bed.totalMs / 1000 - 3).toFixed(3);
+  return (
+    `[0:a]${LOUDNORM},aresample=44100,aformat=channel_layouts=stereo[spx];` +
+    `[1:a]aresample=44100,aformat=channel_layouts=stereo,volume=${bed.gain},` +
+    `afade=t=in:st=0:d=2,afade=t=out:st=${fadeOutStart}:d=3[bed];` +
+    `[spx][bed]amix=inputs=2:duration=first:normalize=0[mix];` +
+    `[mix]alimiter=limit=0.85[out]`
+  );
+}
+
+/**
+ * Concatenate the list and loudness-normalize to a 128 kbps mp3 at `outPath`.
+ * With `bed`, mixes a low ambient track under the dialogue in the same pass.
+ */
+export async function concatLoudnorm(
+  listPath: string,
+  outPath: string,
+  bed?: BedOptions,
+): Promise<void> {
+  if (!bed) {
+    await $`ffmpeg -hide_banner -y -f concat -safe 0 -i ${listPath} -af ${LOUDNORM} -c:a libmp3lame -b:a 128k -ar 44100 ${outPath}`.quiet();
+    return;
+  }
+  const off = (bed.startOffsetSec ?? 0).toFixed(3);
+  const outLabel = "[out]";
+  await $`ffmpeg -hide_banner -y -f concat -safe 0 -i ${listPath} -ss ${off} -i ${bed.path} -filter_complex ${bedFilter(bed)} -map ${outLabel} -c:a libmp3lame -b:a 128k -ar 44100 ${outPath}`.quiet();
 }

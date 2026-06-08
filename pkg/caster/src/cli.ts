@@ -210,11 +210,24 @@ if (process.argv[2] === "tts") {
 
 // `assemble <id|arc>` — Stage 5: stitch clips → episode.mp3 + transcript.md (needs ffmpeg).
 if (process.argv[2] === "assemble") {
-  const target = process.argv.slice(3).find((a) => !a.startsWith("--"));
+  const args = process.argv.slice(3);
+  const target = args.find((a) => !a.startsWith("--"));
   if (!target) {
-    console.error("Usage: bun run src/cli.ts assemble <session-id|arc>");
+    console.error("Usage: bun run src/cli.ts assemble <session-id|arc> [--no-bed] [--bed=<path>] [--bed-gain=<0..1>]");
     process.exit(1);
   }
+  // Ambient bed is ON by default (assets/tavern.mp3); --no-bed opts out. A missing
+  // file is skipped with a notice inside assembleEpisode, so this stays safe in CI.
+  const noBed = args.includes("--no-bed");
+  const bedPath = args.find((a) => a.startsWith("--bed="))?.split("=")[1] ?? "assets/tavern.mp3";
+  const bedGain = args.find((a) => a.startsWith("--bed-gain="))?.split("=")[1];
+  if (bedGain !== undefined && !(Number(bedGain) >= 0 && Number(bedGain) <= 1)) {
+    console.error("--bed-gain must be a number in [0,1] (e.g. 0.07).");
+    process.exit(1);
+  }
+  const bed = noBed
+    ? undefined
+    : { path: bedPath, ...(bedGain !== undefined ? { gain: Number(bedGain) } : {}) };
   const sessions = await loadSessions();
   const match = findSession(sessions, target);
   if (!match) {
@@ -233,7 +246,7 @@ if (process.argv[2] === "assemble") {
   }
   let outputs;
   try {
-    outputs = await assembleEpisode(manifest, script);
+    outputs = await assembleEpisode(manifest, script, { bed });
   } catch (err) {
     console.error(`Assembly failed: ${err instanceof Error ? err.message : String(err)}`);
     process.exit(1);
