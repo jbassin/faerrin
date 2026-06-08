@@ -9,6 +9,8 @@ export interface PlayerProps {
   artist?: string;
   /** Build-time runtime estimate; replaced by the real duration once metadata loads. */
   runtimeMs: number;
+  /** Content hash for cache-busting the lock-screen artwork (iOS caches it hard). */
+  iconVersion?: string;
 }
 
 function mmss(sec: number): string {
@@ -159,11 +161,18 @@ export default function Player(props: PlayerProps) {
     window.addEventListener("beforeunload", savePos);
 
     if (ms) {
+      // Raster PNGs (not SVG) for the lock-screen card — iOS Now Playing doesn't
+      // reliably render SVG artwork. Cache-bust with the icon's content hash.
+      const v = props.iconVersion ? `?v=${props.iconVersion}` : "";
       ms.metadata = new MediaMetadata({
         title: props.title,
         artist: props.artist ?? "",
         album: "Caster",
-        artwork: [{ src: "/favicon.svg", type: "image/svg+xml" }],
+        artwork: [192, 256, 512].map((s) => ({
+          src: `/icon-${s}.png${v}`,
+          sizes: `${s}x${s}`,
+          type: "image/png",
+        })),
       });
       // setActionHandler throws on unsupported actions in some engines; guard each.
       const setAction = (action: MediaSessionAction, handler: MediaSessionActionHandler | null) => {
