@@ -41,9 +41,10 @@ if (process.argv[2] === "script") {
   const force = args.includes("--force");
   const lint = args.includes("--lint");
   const twoPass = args.includes("--two-pass");
+  const sharpen = args.includes("--sharpen");
   const target = args.find((a) => !a.startsWith("--"));
   if (!target) {
-    console.error("Usage: bun run src/cli.ts script <session-id|arc> [--two-pass] [--force] [--lint]");
+    console.error("Usage: bun run src/cli.ts script <session-id|arc> [--two-pass] [--sharpen] [--force] [--lint]");
     process.exit(1);
   }
   const sessions = await loadSessions();
@@ -74,7 +75,7 @@ if (process.argv[2] === "script") {
   }
   let result;
   try {
-    result = await loadOrGenerateScript(digest, wiki, { force, twoPass });
+    result = await loadOrGenerateScript(digest, wiki, { force, twoPass, sharpen });
   } catch (err) {
     console.error(`Script generation failed: ${apiKeyHint(err)}`);
     process.exit(1);

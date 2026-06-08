@@ -1,4 +1,4 @@
-import type { Beat, HostConfig, SessionDigest } from "../types.ts";
+import type { Beat, HostConfig, Script, SessionDigest, SpeakerId } from "../types.ts";
 import type { GroundingEntry } from "./grounding.ts";
 import { DEFAULT_HOSTS } from "./hosts.ts";
 
@@ -295,4 +295,45 @@ Call the tool exactly once with the full formatted script.`;
 /** Wrap Pass A's raw transcript as the user content for the Pass B dressing call. */
 export function buildDressingUserContent(transcript: string): string {
   return `RAW TRANSCRIPT (format this as-is; do not improve it):\n\n${transcript}`;
+}
+
+/**
+ * Voice-sharpening pass (Phase 5): a focused per-host rewrite. One pass per host,
+ * each pushing exactly that host's lines further into their archetype while copying
+ * every other turn verbatim — done one host at a time so the model can't re-average
+ * the three voices toward a shared mean (the regression a single pass produces).
+ * Static per (host config, target).
+ */
+export function buildSharpenSystemPrompt(
+  hosts: HostConfig,
+  target: SpeakerId,
+): string {
+  const host = hosts[target];
+  return `You are doing a FOCUSED VOICE PASS on a finished episode script. Sharpen
+exactly ONE host's voice — ${host.name} (speaker "${target}") — and change NOTHING else.
+
+${host.name}'s voice, pushed further toward the extreme: ${host.persona}.
+
+Rules:
+- Rewrite ONLY ${host.name}'s lines. Push their phrasing and delivery further into the
+  voice above — more distinctly themselves, LESS like the other two. If one of their
+  lines reads like it could belong to another host, that's the one to fix.
+- Keep the same CONTENT and intent in each of ${host.name}'s lines: say the same thing,
+  just more in their voice. Do NOT add new claims, jokes, facts, or callbacks; do NOT
+  resolve anything that was left open.
+- Copy every OTHER host's turn EXACTLY as given — same words, same speaker, same order.
+  Do not touch them.
+- Keep the EXACT same number of turns, in the same order, with the same speakers. Do
+  not add, remove, merge, or reorder turns. Keep the title unchanged.
+- Keep it spoken text for ElevenLabs v3: inline [audio tags] where delivery shifts,
+  numbers and symbols spelled out, ellipses/em-dashes/CAPS for prosody, and nothing but
+  speakable words outside the tags.
+
+Record the FULL script — every turn, in order — by calling the tool exactly once.`;
+}
+
+/** Render the current script as the input for a voice-sharpening pass. */
+export function buildSharpenUserContent(script: Script): string {
+  const body = script.turns.map((t) => `${t.speaker}: ${t.text}`).join("\n");
+  return `EPISODE TITLE: ${script.title}\n\nSCRIPT:\n${body}`;
 }

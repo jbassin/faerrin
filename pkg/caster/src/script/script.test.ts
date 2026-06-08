@@ -2,7 +2,7 @@ import { test, expect, describe, afterAll } from "bun:test";
 import { rm } from "node:fs/promises";
 import type { SessionDigest, WikiCorpus, WikiPage } from "../types.ts";
 import type { LlmClient, ToolCallRequest, TextRequest } from "@faerrin/llm";
-import { generateScript, loadOrGenerateScript } from "./index.ts";
+import { generateScript, loadOrGenerateScript, sharpenVoices } from "./index.ts";
 import { buildScriptSystemPrompt, buildScriptUserContent } from "./prompt.ts";
 import { SCRIPT_TOOL_NAME } from "./schema.ts";
 import { DEFAULT_HOSTS } from "./hosts.ts";
@@ -124,6 +124,50 @@ describe("generateScript two-pass", () => {
     await expect(
       generateScript(digest, wiki, { client: stub, twoPass: true }),
     ).rejects.toThrow(/callText|free-text/i);
+  });
+});
+
+// Records the system prompt of every callTool so we can see how many passes ran.
+class RecordingStub implements LlmClient {
+  systems: string[] = [];
+  constructor(private readonly toReturn: unknown) {}
+  async callTool(req: ToolCallRequest): Promise<unknown> {
+    this.systems.push(req.system);
+    return this.toReturn;
+  }
+}
+
+describe("generateScript voice-sharpening (--sharpen)", () => {
+  test("runs one focused pass per host after generation, in A/B/C order", async () => {
+    const stub = new RecordingStub(goodScript);
+    const script = await generateScript(digest, wiki, { client: stub, sharpen: true });
+    // 1 generation call + 3 sharpen passes (Bram, Maeve, Pip).
+    expect(stub.systems).toHaveLength(4);
+    expect(stub.systems[1]).toContain("ONLY Bram");
+    expect(stub.systems[2]).toContain("ONLY Maeve");
+    expect(stub.systems[3]).toContain("ONLY Pip");
+    expect(script.turns).toHaveLength(2);
+  });
+
+  test("runs no sharpening passes when the option is off", async () => {
+    const stub = new RecordingStub(goodScript);
+    await generateScript(digest, wiki, { client: stub });
+    expect(stub.systems).toHaveLength(1);
+  });
+
+  test("throws if a sharpen pass changes the turn count (dropped turns)", async () => {
+    const shortened = { title: "T", turns: [{ speaker: "A", text: "only one left" }] };
+    const stub = new RecordingStub(shortened);
+    const full = {
+      sessionId: "s",
+      title: "T",
+      hosts: DEFAULT_HOSTS,
+      turns: [
+        { speaker: "A" as const, text: "one" },
+        { speaker: "B" as const, text: "two" },
+      ],
+    };
+    await expect(sharpenVoices(stub, full, DEFAULT_HOSTS)).rejects.toThrow(/turn count/i);
   });
 });
 

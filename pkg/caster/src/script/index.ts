@@ -12,6 +12,7 @@ import {
 } from "./prompt.ts";
 import { scriptTool } from "./schema.ts";
 import { parseScript } from "./parse.ts";
+import { sharpenVoices } from "./sharpen.ts";
 import { DEFAULT_HOSTS } from "./hosts.ts";
 import { DEFAULT_OUT_DIR, readScript, scriptPath, writeScript } from "./store.ts";
 
@@ -22,6 +23,7 @@ export { DEFAULT_HOSTS } from "./hosts.ts";
 export { DEFAULT_OUT_DIR, scriptPath, readScript, writeScript } from "./store.ts";
 export { computeMetrics, scoreScript, formatReport, words, THRESHOLDS } from "./lint.ts";
 export type { LintMetrics, LintReport, CriterionScore } from "./lint.ts";
+export { sharpenVoices } from "./sharpen.ts";
 
 /** A 30-40 minute episode is a large output; give the model ample room (streamed). */
 export const DEFAULT_SCRIPT_MAX_TOKENS = 32_000;
@@ -39,6 +41,11 @@ export interface ScriptOptions {
    * Requires a client with `callText` (free-text). Default false (one-shot).
    */
   twoPass?: boolean;
+  /**
+   * After generating, run a focused voice-sharpening pass per host (Phase 5) to push
+   * each voice further from the mean. Adds three LLM calls; default false.
+   */
+  sharpen?: boolean;
 }
 
 /**
@@ -56,21 +63,24 @@ export async function generateScript(
   const grounding = groundDigest(digest, wiki);
   const maxTokens = options.maxTokens ?? DEFAULT_SCRIPT_MAX_TOKENS;
 
-  if (options.twoPass) {
-    const script = await generateTwoPass(client, digest, grounding, hosts, options.model, maxTokens);
-    return { ...script, hosts };
+  const base = options.twoPass
+    ? await generateTwoPass(client, digest, grounding, hosts, options.model, maxTokens)
+    : parseScript(
+        digest.sessionId,
+        await client.callTool({
+          system: buildScriptSystemPrompt(hosts),
+          userContent: buildScriptUserContent(digest, grounding),
+          tool: scriptTool,
+          model: options.model,
+          maxTokens,
+        }),
+      );
+
+  let script: Script = { ...base, hosts };
+  if (options.sharpen) {
+    script = await sharpenVoices(client, script, hosts, options.model, maxTokens);
   }
-
-  const raw = await client.callTool({
-    system: buildScriptSystemPrompt(hosts),
-    userContent: buildScriptUserContent(digest, grounding),
-    tool: scriptTool,
-    model: options.model,
-    maxTokens,
-  });
-
-  const script = parseScript(digest.sessionId, raw);
-  return { ...script, hosts };
+  return script;
 }
 
 /**
