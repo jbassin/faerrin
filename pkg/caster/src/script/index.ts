@@ -48,7 +48,8 @@ export interface ScriptOptions {
    * Two-pass generation: a free-text "raw transcript" improv pass (Pass A) then a
    * protective "dressing" pass that structures it without polishing (Pass B). Removes
    * the one-shot global-lookahead that flattens the conversation into a podcast.
-   * Requires a client with `callText` (free-text). Default false (one-shot).
+   * Requires a client with `callText` (free-text). **Default true.** Set false for the
+   * legacy one-shot path (e.g. tests with a callTool-only stub, or an A/B comparison).
    */
   twoPass?: boolean;
   /**
@@ -78,8 +79,9 @@ export async function generateScript(
   const grounding = groundDigest(digest, wiki);
   const maxTokens = options.maxTokens ?? DEFAULT_SCRIPT_MAX_TOKENS;
   const threadsBlock = formatThreads(options.threads ?? []);
+  const useTwoPass = options.twoPass ?? true;
 
-  const base = options.twoPass
+  const base = useTwoPass
     ? await generateTwoPass(client, digest, grounding, hosts, options.model, maxTokens, threadsBlock)
     : parseScript(
         digest.sessionId,

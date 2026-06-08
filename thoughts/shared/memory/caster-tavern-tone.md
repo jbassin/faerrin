@@ -26,17 +26,21 @@ All shipped to `main` (commits Phases 1–5b). What exists now:
   the friends would argue about" — seeds friction; strict-schema required, type/parser
   optional so old digests still parse.
 
-Opt-in, **default OFF**, pending real-session A/B before flipping defaults:
-- **`--two-pass`** — free-text improv (Pass A) → protective dressing (Pass B); the
-  structural fix that removes global lookahead. Needs `callText` (added to `@faerrin/llm`).
+- **Two-pass is now the DEFAULT** (`generateScript` `twoPass ?? true`): free-text improv
+  (Pass A) → protective dressing (Pass B), the structural fix that removes global
+  lookahead. Needs `callText` (added to `@faerrin/llm`; the real `AnthropicClient` has it).
+  Opt out with **`bun run script <id> --one-shot`** (also `{ twoPass: false }` in code —
+  the one-shot unit tests use that since their stubs are callTool-only).
+
+Still opt-in, **default OFF**:
 - **`--sharpen`** — 3 extra LLM calls, one focused per-host voice pass each.
 - **`threads` command + cross-session memory** — `content/running-threads.json`
   accumulates inside-jokes/grudges; injected into the script user content as callbacks.
 
-**Remaining decision (needs real generations / API budget):** run two-pass + sharpen on
-3–4 real sessions, compare `--lint` deltas (expect R3 meta-recap→0, R6 quip density
-down, R2 turn variance up) vs the 8/12 baseline, then decide whether to flip two-pass to
-the default. The linter is a measurement tool, NOT a CI gate.
+The `--lint` linter is a measurement tool, NOT a CI gate. To validate tone changes, run
+on real sessions and compare deltas vs the 8/12 baseline (expect R3 meta-recap→0, R6 quip
+density down, R2 turn variance up). Cached scripts under `out/` predate two-pass — use
+`--force` to regenerate them through the new default.
 
 Companion: `2026-06-07-elevenlabs-naturalness.md` is the *acoustic* layer (Stage 4 TTS);
 this work is the *script register* layer (Stage 3). They only overlap in `prompt.ts`.

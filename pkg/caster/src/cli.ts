@@ -49,11 +49,11 @@ if (process.argv[2] === "script") {
   const args = process.argv.slice(3);
   const force = args.includes("--force");
   const lint = args.includes("--lint");
-  const twoPass = args.includes("--two-pass");
+  const oneShot = args.includes("--one-shot");
   const sharpen = args.includes("--sharpen");
   const target = args.find((a) => !a.startsWith("--"));
   if (!target) {
-    console.error("Usage: bun run src/cli.ts script <session-id|arc> [--two-pass] [--sharpen] [--force] [--lint]");
+    console.error("Usage: bun run src/cli.ts script <session-id|arc> [--one-shot] [--sharpen] [--force] [--lint]");
     process.exit(1);
   }
   const sessions = await loadSessions();
@@ -79,14 +79,12 @@ if (process.argv[2] === "script") {
     process.exit(1);
   }
   const wiki = await loadWiki("../content/wiki");
-  if (twoPass && !force) {
-    console.error("(--two-pass: reusing any cached script; add --force to regenerate with two-pass)");
-  }
   // Cross-session running threads (inside jokes/grudges/predictions) for callbacks.
   const threads = await loadThreads("content/running-threads.json");
   let result;
   try {
-    result = await loadOrGenerateScript(digest, wiki, { force, twoPass, sharpen, threads });
+    // Two-pass (improv → dressing) is the default; --one-shot opts out.
+    result = await loadOrGenerateScript(digest, wiki, { force, twoPass: !oneShot, sharpen, threads });
   } catch (err) {
     console.error(`Script generation failed: ${apiKeyHint(err)}`);
     process.exit(1);

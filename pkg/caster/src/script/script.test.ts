@@ -44,7 +44,7 @@ class StubClient implements LlmClient {
 describe("generateScript", () => {
   test("wires the static system prompt + grounded digest, returns parsed script", async () => {
     const stub = new StubClient(goodScript);
-    const script = await generateScript(digest, wiki, { client: stub });
+    const script = await generateScript(digest, wiki, { client: stub, twoPass: false });
 
     expect(stub.lastRequest?.system).toBe(buildScriptSystemPrompt(DEFAULT_HOSTS));
     expect(stub.lastRequest?.tool.name).toBe(SCRIPT_TOOL_NAME);
@@ -59,7 +59,7 @@ describe("generateScript", () => {
 
   test("uses a generous default maxTokens for a long episode", async () => {
     const stub = new StubClient(goodScript);
-    await generateScript(digest, wiki, { client: stub });
+    await generateScript(digest, wiki, { client: stub, twoPass: false });
     expect(stub.lastRequest?.maxTokens).toBeGreaterThanOrEqual(32_000);
   });
 
@@ -70,7 +70,7 @@ describe("generateScript", () => {
       C: { name: "Vex", persona: "spiky" },
     };
     const stub = new StubClient(goodScript);
-    const script = await generateScript(digest, wiki, { client: stub, hosts });
+    const script = await generateScript(digest, wiki, { client: stub, hosts, twoPass: false });
     expect(script.hosts).toEqual(hosts);
     expect(stub.lastRequest?.system).toContain("Sol");
     expect(stub.lastRequest?.system).toContain("Wren");
@@ -119,6 +119,12 @@ describe("generateScript two-pass", () => {
     expect(script.turns).toHaveLength(2);
   });
 
+  test("is the default path (no twoPass flag needed)", async () => {
+    const stub = new TwoPassStub("Bram: uh— Maeve: The Voidheart.", goodScript);
+    await generateScript(digest, wiki, { client: stub });
+    expect(stub.order).toEqual(["text", "tool"]);
+  });
+
   test("errors clearly when the client cannot do free-text (no callText)", async () => {
     const stub = new StubClient(goodScript); // callTool only
     await expect(
@@ -140,7 +146,7 @@ class RecordingStub implements LlmClient {
 describe("generateScript voice-sharpening (--sharpen)", () => {
   test("runs one focused pass per host after generation, in A/B/C order", async () => {
     const stub = new RecordingStub(goodScript);
-    const script = await generateScript(digest, wiki, { client: stub, sharpen: true });
+    const script = await generateScript(digest, wiki, { client: stub, sharpen: true, twoPass: false });
     // 1 generation call + 3 sharpen passes (Bram, Maeve, Pip).
     expect(stub.systems).toHaveLength(4);
     expect(stub.systems[1]).toContain("ONLY Bram");
@@ -151,7 +157,7 @@ describe("generateScript voice-sharpening (--sharpen)", () => {
 
   test("runs no sharpening passes when the option is off", async () => {
     const stub = new RecordingStub(goodScript);
-    await generateScript(digest, wiki, { client: stub });
+    await generateScript(digest, wiki, { client: stub, twoPass: false });
     expect(stub.systems).toHaveLength(1);
   });
 
@@ -325,11 +331,11 @@ describe("loadOrGenerateScript caching", () => {
 
   test("generates + writes on a miss, then serves from disk on the next call", async () => {
     const stub = new StubClient(goodScript);
-    const first = await loadOrGenerateScript(digest, wiki, { client: stub, outDir: TMP });
+    const first = await loadOrGenerateScript(digest, wiki, { client: stub, twoPass: false, outDir: TMP });
     expect(first.cached).toBe(false);
     expect(stub.calls).toBe(1);
 
-    const second = await loadOrGenerateScript(digest, wiki, { client: stub, outDir: TMP });
+    const second = await loadOrGenerateScript(digest, wiki, { client: stub, twoPass: false, outDir: TMP });
     expect(second.cached).toBe(true);
     expect(stub.calls).toBe(1);
     expect(second.script).toEqual(first.script);

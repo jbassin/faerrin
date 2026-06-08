@@ -6,4 +6,4 @@
 - [Transcript arcs and naming](transcript-arcs-and-naming.md) — transcripts span 6+ concurrent arcs; 000 arc's 30 files share one basename (differ only by date); line IDs are per-file
 - [Wiki non-prose pages](wiki-nonprose-pages.md) — Timeline.md is HTML, deity pages are :: stat blocks, flavor docs are <pre>; prose/voice tooling must be page-type-aware
 - [Wiki is setting, not session log](wiki-is-setting-not-session-log.md) — wiki records persistent world-state (people/places/things/lore), NOT party-action/session events; mining extracts standing facts, drops event narrative
-- [Caster tavern-tone rework](caster-tavern-tone.md) — caster script stage reworked for tavern-table feel; two-pass/sharpen/threads are opt-in flags (default off) pending real-session A/B vs the 8/12 lint baseline
+- [Caster tavern-tone rework](caster-tavern-tone.md) — caster script stage reworked for tavern-table feel; two-pass generation is now the DEFAULT (--one-shot opts out); sharpen/threads still opt-in
