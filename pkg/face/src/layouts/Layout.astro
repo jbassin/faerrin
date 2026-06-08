@@ -3,6 +3,8 @@ import "@fontsource-variable/archivo";
 import "@fontsource/space-mono/400.css";
 import "@fontsource/space-mono/700.css";
 import "../styles/global.css";
+import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 interface Props {
   title: string;
@@ -12,6 +14,13 @@ const {
   title,
   description = "Two-host audio recaps of a Pathfinder 2e campaign.",
 } = Astro.props;
+
+// Content-hash the favicon at build time so the tab icon cache-busts whenever it
+// changes (browsers cache favicons aggressively, ignoring a plain rebuild).
+const faviconVersion = createHash("sha1")
+  .update(readFileSync(new URL("../../public/favicon.svg", import.meta.url)))
+  .digest("hex")
+  .slice(0, 8);
 ---
 
 <!doctype html>
@@ -41,7 +50,7 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={`/favicon.svg?v=${faviconVersion}`} type="image/svg+xml" />
     <title>{title}</title>
   </head>
   <body>
