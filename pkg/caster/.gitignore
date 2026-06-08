@@ -6,6 +6,9 @@ out
 dist
 *.tgz
 
+# large local audio assets (downloaded, not version-controlled)
+assets/tavern.mp3
+
 # code coverage
 coverage
 *.lcov
