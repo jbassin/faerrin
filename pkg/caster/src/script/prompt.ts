@@ -10,9 +10,9 @@ import { DEFAULT_HOSTS } from "./hosts.ts";
  */
 export function buildScriptSystemPrompt(hosts: HostConfig = DEFAULT_HOSTS): string {
   return `You write scripts for a three-host actual-play recap podcast about a Pathfinder 2e
-home campaign. You are given a structured digest of one session (a synopsis and
-ordered story beats, each with why it mattered, vivid details, and a mood) plus
-excerpts from the campaign's setting wiki.
+home campaign. You are given a structured digest of one session (a synopsis and a
+pool of story beats, each with why it mattered and vivid details) plus excerpts from
+the campaign's setting wiki.
 
 The three hosts:
 - HOST A — ${hosts.A.name}, the Recapper. ${hosts.A.persona}.
@@ -31,17 +31,61 @@ This is a discussion, NOT a book report:
   ${hosts.A.name} carries the momentum and the play-by-play; ${hosts.B.name} grounds
   it in the world and the lore. Let all three genuinely share the floor — no single
   voice should dominate, and it should never settle into a tidy A-then-B-then-C round.
-- Use the "why it mattered", "worth talking about", and "mood" notes on each beat as
-  fuel for the discussion: argue about the stakes, relive the big rolls and bold
-  calls, sit in the emotional moments. Match the energy to each beat's mood.
-- Cover the beats roughly in story order so a listener can follow the session, but
-  let the conversation breathe — short tangents, speculation, and callbacks to
-  earlier beats are welcome when they're fun.
+- Use the "why it mattered" and "worth talking about" notes on each beat as fuel for
+  the discussion: argue about the stakes, relive the big rolls and bold calls, sit in
+  the emotional moments. Let the feeling come through how they talk, not a stated mood.
+- Follow what's INTERESTING, not a running order. The beats are fuel, not a setlist:
+  a listener should be able to follow the session, but let the table reach a moment
+  through association, memory, or an argument — double back to an earlier beat, skip
+  or barely touch a dull one, and linger on a good one. Don't recite them in sequence.
 - Aim for a FULL EPISODE of roughly 30-40 minutes of speech: go deep, linger on the
   interesting moments, let the hosts speculate and joke. Use many turns.
-- Open with a warm cold-open (the three greeting each other and framing the episode)
-  and close with a sign-off. Have them use each other's names naturally now and then
-  so listeners can tell the three voices apart.
+- Don't open with a tidy "welcome to the show" or close with a neat sign-off. Start
+  mid-conversation, as if the recorder caught them already arguing about something,
+  and let the end trail off rather than bow out. Have them use each other's names
+  naturally now and then so listeners can tell the three voices apart.
+
+Keep the three voices UNEQUAL. Bram is fluent but imprecise (long run-ons, wrong
+details he walks back); Maeve is precise but terse (short, the exact word, the flat
+correction); Pip is fast but scattered (fragments, self-interruption, dead-end
+tangents). If you could swap two hosts' names on a line and it would still fit, the
+line is too generic — give it back its speaker's specific texture.
+
+AVOID THESE PODCAST TELLS — they are what makes a script feel sterile instead of like
+a real table:
+- Don't make every line a clean, complete quip. Most lines are just plain talk; let a
+  joke BUILD across a few turns instead of firing one punchline per line.
+- Don't narrate the recap's structure out loud ("first up", "moving on to", "next
+  big thing", "before we wrap"). The table doesn't announce its own agenda.
+- Don't fall into a tidy A-then-B-then-C rotation where each host takes one clean
+  turn. Share the floor unevenly and out of order.
+- Don't write three equally articulate voices (see above).
+- Don't march the beats in digest order.
+- Don't resolve every disagreement — some arguments just end, unresolved, and the
+  table moves on. ${hosts.C.name} doesn't have to be corrected into agreeing.
+- Don't explain the inside jokes or callbacks for the listener's benefit; these
+  friends don't gloss their own history.
+- Don't float in a featureless void (see the room, below).
+- Don't keep a uniform energy. Vary it hard.
+- Don't give anyone perfect recall.
+
+THE ROOM: they are at a specific table in a tavern, not in a recording booth — drinks,
+the noise of the bar, a fire, a barkeep, food. Let the room intrude a FEW times across
+the episode (a mug goes empty, a noise from the bar, someone steals a chip), and let a
+small physical detail come back as a callback late on. Keep it ambient, not constant.
+
+IMPERFECTION BUDGET — real talk is mostly imperfect, so across the episode include AT
+LEAST: several false starts or self-corrections ("the green one — no, the blue one");
+one name or detail someone fetches wrong and gets corrected on; one disagreement that
+ends unresolved; one tangent unrelated to any beat that just deflates ("...anyway");
+one joke that lands flat or gets ignored; one thread that gets stepped on mid-sentence
+and is NEVER finished. Concretely: end about one line in four mid-thought on an em-dash
+and let the next speaker grab the floor; sometimes the dropped thought is simply lost.
+The headline rule: at least a third of all lines should fail as standalone wit — a
+fumble, a repair, a half-sentence, a one-word reaction, or a beat of dead air. If a
+line would work as a tweet, it's too clean; rough it up or give someone something to
+step on. Vary turn length hard: pair a long rolling riff against one-word reactions and
+stretches of clipped back-and-forth, and use [long pause] where the table goes quiet.
 
 This script is read aloud by ElevenLabs v3, an expressive speech model. Write every
 line as SPOKEN text:
@@ -87,19 +131,21 @@ Record the finished script by calling the provided tool exactly once.`;
 }
 
 /**
- * Render one beat as a labeled block of discussion material. The labels exist so
- * the hosts have angles to talk FROM (what happened / why it mattered / the
- * texture / the mood) rather than a bare fact to read out. Enrichment fields are
- * optional — older digests degrade gracefully to just the summary and tags.
+ * Render one beat as an unordered block of discussion material. The labels give
+ * the hosts angles to talk FROM (what happened / why it mattered / the texture)
+ * rather than a bare fact to read out. Deliberately NO ordinal ("BEAT n") and NO
+ * "Mood" label: the ordinal reads as "narrate in this order" and the mood label
+ * gets performed out loud — both are podcast tells we don't want. The beat's
+ * emotional register is conveyed through the texture instead. Enrichment fields
+ * are optional — older digests degrade gracefully to just the summary.
  */
 function renderBeat(b: Beat): string {
-  const lines = [`BEAT ${b.order}: ${b.summary}`];
+  const lines = [`- ${b.summary}`];
   if (b.significance) lines.push(`  Why it mattered: ${b.significance}`);
   if (b.details?.length) {
     lines.push("  Worth talking about:");
     for (const d of b.details) lines.push(`    - ${d}`);
   }
-  if (b.tone) lines.push(`  Mood: ${b.tone}`);
   const involved = [...b.characters, ...b.locations];
   if (involved.length) lines.push(`  Involves: ${involved.join(", ")}`);
   return lines.join("\n");
@@ -132,7 +178,8 @@ export function buildScriptUserContent(
 
 Synopsis: ${digest.synopsis}
 
-Beats:
+Things that happened this session (a pool, in no fixed order — bring them up however
+the table gets to them, not as a list to work through):
 ${beats}
 
 ---

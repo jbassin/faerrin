@@ -26,7 +26,9 @@ export const scriptTool: ToolSpec = {
         description:
           "The dialogue in spoken order. Each turn is one host speaking. Write " +
           "natural, conversational lines — not narration or stage directions. The " +
-          "three hosts should genuinely share the floor; avoid a fixed A-B-C rotation.",
+          "three hosts should genuinely share the floor, unevenly and out of order; " +
+          "avoid a fixed A-B-C rotation. Vary turn length hard (long riffs next to " +
+          "one-word reactions); most lines are plain talk, not a punchline per turn.",
         items: {
           type: "object",
           additionalProperties: false,

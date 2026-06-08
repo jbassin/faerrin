@@ -3,7 +3,7 @@ import { rm } from "node:fs/promises";
 import type { SessionDigest, WikiCorpus, WikiPage } from "../types.ts";
 import type { LlmClient, ToolCallRequest } from "@faerrin/llm";
 import { generateScript, loadOrGenerateScript } from "./index.ts";
-import { buildScriptSystemPrompt } from "./prompt.ts";
+import { buildScriptSystemPrompt, buildScriptUserContent } from "./prompt.ts";
 import { SCRIPT_TOOL_NAME } from "./schema.ts";
 import { DEFAULT_HOSTS } from "./hosts.ts";
 
@@ -106,6 +106,88 @@ describe("buildScriptSystemPrompt", () => {
 
   test("is static for a given host config (stays a cacheable prefix)", () => {
     expect(buildScriptSystemPrompt(DEFAULT_HOSTS)).toBe(buildScriptSystemPrompt(DEFAULT_HOSTS));
+  });
+});
+
+describe("buildScriptSystemPrompt — tavern-table tone (Phase 1)", () => {
+  const prompt = buildScriptSystemPrompt(DEFAULT_HOSTS);
+  const lower = prompt.toLowerCase();
+
+  test("names the podcast anti-patterns to avoid", () => {
+    expect(lower).toContain("avoid these podcast tells");
+    expect(lower).toContain("don't march the beats");
+    expect(lower).toContain("tidy a-then-b-then-c");
+  });
+
+  test("grounds the conversation in a physical tavern room", () => {
+    expect(lower).toContain("the room");
+    expect(lower).toContain("tavern");
+    expect(lower).toContain("barkeep");
+  });
+
+  test("sets a counted imperfection budget with the standalone-wit rule", () => {
+    expect(lower).toContain("imperfection budget");
+    expect(lower).toContain("fail as standalone wit");
+    expect(lower).toContain("unresolved");
+  });
+
+  test("keeps the three host voices asymmetric (mechanics, not just adjectives)", () => {
+    expect(prompt).toContain("fluent but imprecise");
+    expect(prompt).toContain("precise but terse");
+    expect(prompt).toContain("fast but scattered");
+  });
+});
+
+describe("buildScriptUserContent — de-structured beats (Phase 1)", () => {
+  const enriched: SessionDigest = {
+    sessionId: "105.observatory-slipped.2026-4-6",
+    synopsis: "They explore the slipped observatory.",
+    beats: [
+      {
+        order: 1,
+        summary: "Entered the station.",
+        significance: "First foothold past the wall.",
+        details: ["a clutch Stealth roll"],
+        tone: "tense",
+        characters: ["Foral"],
+        locations: ["Observatory"],
+        wikiRefs: [],
+      },
+    ],
+    discarded: [],
+  };
+
+  test("drops the BEAT ordinal and the Mood label", () => {
+    const content = buildScriptUserContent(enriched, []);
+    expect(content).not.toContain("BEAT 1");
+    expect(content).not.toContain("Mood:");
+    // The mood value is no longer surfaced (it got performed out loud before).
+    expect(content).not.toContain("tense");
+  });
+
+  test("still surfaces summary, significance, details, and involves", () => {
+    const content = buildScriptUserContent(enriched, []);
+    expect(content).toContain("Entered the station.");
+    expect(content).toContain("Why it mattered: First foothold past the wall.");
+    expect(content).toContain("a clutch Stealth roll");
+    expect(content).toContain("Involves: Foral, Observatory");
+  });
+
+  test("frames the beats as an unordered pool, not a numbered list", () => {
+    const content = buildScriptUserContent(enriched, []).toLowerCase();
+    expect(content).toContain("no fixed order");
+  });
+
+  test("degrades gracefully for an older minimal digest", () => {
+    const minimal: SessionDigest = {
+      sessionId: "x",
+      synopsis: "s",
+      beats: [{ order: 1, summary: "Just a summary.", characters: [], locations: [], wikiRefs: [] }],
+      discarded: [],
+    };
+    const content = buildScriptUserContent(minimal, []);
+    expect(content).toContain("Just a summary.");
+    expect(content).not.toContain("Why it mattered");
   });
 });
 
