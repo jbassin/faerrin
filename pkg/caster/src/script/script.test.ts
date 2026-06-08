@@ -302,6 +302,19 @@ describe("buildScriptUserContent — de-structured beats (Phase 1)", () => {
     const content = buildScriptUserContent(withAngle, []);
     expect(content).toContain("What they'd argue about: Was that brave or just reckless?");
   });
+
+  test("injects a running-threads block only when one is provided", () => {
+    const d: SessionDigest = {
+      sessionId: "z",
+      synopsis: "s",
+      beats: [{ order: 1, summary: "A beat.", characters: [], locations: [], wikiRefs: [] }],
+      discarded: [],
+    };
+    expect(buildScriptUserContent(d, [])).not.toContain("RUNNING THREADS");
+    const withThreads = buildScriptUserContent(d, [], "RUNNING THREADS\n- the goat thing [bit]");
+    expect(withThreads).toContain("RUNNING THREADS");
+    expect(withThreads).toContain("the goat thing [bit]");
+  });
 });
 
 describe("loadOrGenerateScript caching", () => {

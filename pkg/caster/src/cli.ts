@@ -6,8 +6,17 @@
 import { loadCorpus, loadSessions } from "./ingest/index.ts";
 import { loadWiki } from "./ingest/wiki.ts";
 import { loadOrDistill, readDigest } from "./distill/index.ts";
+import { AnthropicClient } from "@faerrin/llm";
 import { loadOrGenerateScript } from "./script/index.ts";
-import { readScript, scoreScript, formatReport } from "./script/index.ts";
+import {
+  readScript,
+  scoreScript,
+  formatReport,
+  loadThreads,
+  saveThreads,
+  mergeThreads,
+  extractThreads,
+} from "./script/index.ts";
 import {
   loadOrSynthesize,
   MockTTSProvider,
@@ -73,9 +82,11 @@ if (process.argv[2] === "script") {
   if (twoPass && !force) {
     console.error("(--two-pass: reusing any cached script; add --force to regenerate with two-pass)");
   }
+  // Cross-session running threads (inside jokes/grudges/predictions) for callbacks.
+  const threads = await loadThreads("content/running-threads.json");
   let result;
   try {
-    result = await loadOrGenerateScript(digest, wiki, { force, twoPass, sharpen });
+    result = await loadOrGenerateScript(digest, wiki, { force, twoPass, sharpen, threads });
   } catch (err) {
     console.error(`Script generation failed: ${apiKeyHint(err)}`);
     process.exit(1);
@@ -89,6 +100,44 @@ if (process.argv[2] === "script") {
     console.log(`${who}${emo}: ${turn.text}\n`);
   }
   console.log(`(${script.turns.length} turns)`);
+  process.exit(0);
+}
+
+// `threads <id|arc>` — mine a cached script for cross-session running threads
+// (inside jokes, grudges, predictions) and accumulate them into the store so future
+// episodes can call back to them. Needs ANTHROPIC_API_KEY.
+if (process.argv[2] === "threads") {
+  const target = process.argv.slice(3).find((a) => !a.startsWith("--"));
+  if (!target) {
+    console.error("Usage: bun run src/cli.ts threads <session-id|arc>");
+    process.exit(1);
+  }
+  const sessions = await loadSessions();
+  const match = findSession(sessions, target);
+  if (!match) {
+    console.error(`No session matching "${target}".`);
+    process.exit(1);
+  }
+  const script = await readScript(match.id);
+  if (!script) {
+    console.error(`No script for ${match.id}. Run \`bun run script ${target}\` first.`);
+    process.exit(1);
+  }
+  const STORE = "content/running-threads.json";
+  let mined;
+  try {
+    mined = await extractThreads(new AnthropicClient(), script, script.hosts);
+  } catch (err) {
+    console.error(`Thread extraction failed: ${apiKeyHint(err)}`);
+    process.exit(1);
+  }
+  const existing = await loadThreads(STORE);
+  const merged = mergeThreads(existing, mined);
+  await saveThreads(STORE, merged);
+  console.error(`(threads → ${STORE})`);
+  console.log(`# running threads after ${match.id}`);
+  console.log(`mined ${mined.length}; store now ${merged.length} (was ${existing.length})\n`);
+  for (const t of mined) console.log(`- ${t.text} [${t.kind}]`);
   process.exit(0);
 }
 

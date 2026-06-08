@@ -156,10 +156,16 @@ function renderBeat(b: Beat): string {
 
 const GROUNDING_BUDGET = 24_000; // ~chars of wiki text to include, most-central first
 
-/** Render the per-session user content: digest beats + matched wiki excerpts. */
+/**
+ * Render the per-session user content: digest beats + matched wiki excerpts, plus an
+ * optional pre-formatted running-threads block (cross-session callbacks). The threads
+ * block is per-session data, so it correctly lives in the user content, not the
+ * cacheable system prompt.
+ */
 export function buildScriptUserContent(
   digest: SessionDigest,
   grounding: GroundingEntry[],
+  threadsBlock: string = "",
 ): string {
   const beats = digest.beats.map(renderBeat).join("\n\n");
 
@@ -177,6 +183,8 @@ export function buildScriptUserContent(
     ? wikiParts.join("\n\n")
     : "(no matching wiki pages for this session's references)";
 
+  const threads = threadsBlock.trim() === "" ? "" : `\n\n---\n\n${threadsBlock.trim()}`;
+
   return `SESSION DIGEST — ${digest.sessionId}
 
 Synopsis: ${digest.synopsis}
@@ -189,7 +197,7 @@ ${beats}
 
 WIKI EXCERPTS (for grounding names/lore only; do not reveal undiscovered plot):
 
-${wiki}`;
+${wiki}${threads}`;
 }
 
 /**
