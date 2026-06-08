@@ -65,7 +65,7 @@ export async function fadeClip(
 export interface BedOptions {
   /** Path to the bed audio file (already verified to exist). */
   path: string;
-  /** Linear gain applied to the bed; ~0.07 ≈ −23 dB under full-scale speech. */
+  /** Linear gain applied to the bed; ~0.22 ≈ −13 dB under full-scale speech. */
   gain: number;
   /** Episode length (ms) — used to time the bed's fade-out. */
   totalMs: number;

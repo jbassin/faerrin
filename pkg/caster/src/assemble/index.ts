@@ -13,8 +13,8 @@ export { renderTranscript } from "./transcript.ts";
 export { probeClip, makeSilence, fadeClip, concatLoudnorm, bedFilter } from "./ffmpeg.ts";
 export type { BedOptions } from "./ffmpeg.ts";
 
-/** Default ambient-bed gain: ~−23 dB under the −16 LUFS dialogue. */
-export const DEFAULT_BED_GAIN = 0.07;
+/** Default ambient-bed gain: ~0.22 ≈ −13 dB — present-but-under the dialogue. */
+export const DEFAULT_BED_GAIN = 0.22;
 
 /** Short fades applied to each clip before stitching, to tame end-of-line clicks. */
 export const DEFAULT_FADE_IN_MS = 10;
