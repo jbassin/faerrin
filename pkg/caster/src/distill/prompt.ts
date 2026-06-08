@@ -34,8 +34,12 @@ read it. So for every beat, capture more than the bare fact:
   dice roll, a bold or foolish decision, a striking image, an emotional turn, a
   memorable in-character line. Short fragments, drawn ONLY from the transcript.
 - tone — the emotional register in a word or two (tense, triumphant, grim, comedic…).
-Stay grounded: significance, details, and tone must come from what actually happened
-at the table. Do not invent drama, outcomes, or color the transcript doesn't support.
+- tableAngle — what three friends recapping this over drinks would ARGUE or rib each
+  other about: the contested or questionable call, the bold or dumb decision, the read
+  one would defend and another would mock. One sentence, grounded in what happened — a
+  seed for table friction, not invented drama.
+Stay grounded: significance, details, tone, and tableAngle must come from what actually
+happened at the table. Do not invent drama, outcomes, or color the transcript doesn't support.
 
 Record your result by calling the provided tool exactly once.`;
 

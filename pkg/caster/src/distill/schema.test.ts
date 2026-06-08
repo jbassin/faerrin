@@ -21,6 +21,7 @@ describe("distillTool", () => {
       "significance",
       "details",
       "tone",
+      "tableAngle",
       "characters",
       "locations",
       "wikiRefs",

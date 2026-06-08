@@ -235,6 +235,7 @@ if (process.argv[2] === "distill") {
     console.log(`${beat.order}. ${beat.summary}${tags.length ? `  [${tags.join(", ")}]` : ""}${mood}`);
     if (beat.significance) console.log(`   why: ${beat.significance}`);
     for (const d of beat.details ?? []) console.log(`   - ${d}`);
+    if (beat.tableAngle) console.log(`   angle: ${beat.tableAngle}`);
     if (beat.wikiRefs.length) console.log(`   wiki: ${beat.wikiRefs.join(", ")}`);
   }
   console.log(`\n(${digest.discarded.length} table-talk samples discarded)`);

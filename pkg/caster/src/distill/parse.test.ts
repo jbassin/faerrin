@@ -25,7 +25,7 @@ describe("parseDigest", () => {
     expect(d.beats[1]?.summary).toBe("They disarm a trap.");
   });
 
-  test("carries enrichment fields (significance/details/tone) when present", () => {
+  test("carries enrichment fields (significance/details/tone/tableAngle) when present", () => {
     const d = parseDigest("x", {
       synopsis: "s",
       beats: [
@@ -35,12 +35,14 @@ describe("parseDigest", () => {
           significance: "First real test of the new alliance.",
           details: ["nat 20 on the opening shot", "  ", "Foral hesitates"],
           tone: "tense",
+          tableAngle: "Was springing it early reckless or the only real play?",
         },
       ],
     });
     expect(d.beats[0]?.significance).toBe("First real test of the new alliance.");
     expect(d.beats[0]?.details).toEqual(["nat 20 on the opening shot", "Foral hesitates"]);
     expect(d.beats[0]?.tone).toBe("tense");
+    expect(d.beats[0]?.tableAngle).toBe("Was springing it early reckless or the only real play?");
   });
 
   test("omits enrichment fields on older digests that lack them", () => {
@@ -48,6 +50,7 @@ describe("parseDigest", () => {
     expect(d.beats[0]?.significance).toBeUndefined();
     expect(d.beats[0]?.details).toBeUndefined();
     expect(d.beats[0]?.tone).toBeUndefined();
+    expect(d.beats[0]?.tableAngle).toBeUndefined();
   });
 
   test("defaults missing optional arrays to empty", () => {

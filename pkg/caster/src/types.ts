@@ -110,6 +110,13 @@ export interface Beat {
   details?: string[];
   /** Emotional register of the beat (e.g. "tense", "triumphant", "grim", "comedic"). */
   tone?: string;
+  /**
+   * What three friends recapping this would ARGUE about: the contested call, the
+   * dumb/bold decision, the read one host would defend and another would mock — a
+   * seed for table friction so Stage 3 doesn't have to invent it. Optional so older
+   * digests (which lacked it) still parse; new distills always set it.
+   */
+  tableAngle?: string;
   /** Characters involved (in-world names, as they appear in the transcript). */
   characters: string[];
   /** Locations involved. */

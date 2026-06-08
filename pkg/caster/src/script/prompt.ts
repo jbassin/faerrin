@@ -31,9 +31,10 @@ This is a discussion, NOT a book report:
   ${hosts.A.name} carries the momentum and the play-by-play; ${hosts.B.name} grounds
   it in the world and the lore. Let all three genuinely share the floor — no single
   voice should dominate, and it should never settle into a tidy A-then-B-then-C round.
-- Use the "why it mattered" and "worth talking about" notes on each beat as fuel for
-  the discussion: argue about the stakes, relive the big rolls and bold calls, sit in
-  the emotional moments. Let the feeling come through how they talk, not a stated mood.
+- Use the "why it mattered", "worth talking about", and "what they'd argue about" notes
+  on each beat as fuel for the discussion: argue the contested calls, relive the big
+  rolls and bold moves, sit in the emotional moments. Let the feeling come through how
+  they talk, not a stated mood.
 - Follow what's INTERESTING, not a running order. The beats are fuel, not a setlist:
   a listener should be able to follow the session, but let the table reach a moment
   through association, memory, or an argument — double back to an earlier beat, skip
@@ -132,12 +133,13 @@ Record the finished script by calling the provided tool exactly once.`;
 
 /**
  * Render one beat as an unordered block of discussion material. The labels give
- * the hosts angles to talk FROM (what happened / why it mattered / the texture)
- * rather than a bare fact to read out. Deliberately NO ordinal ("BEAT n") and NO
- * "Mood" label: the ordinal reads as "narrate in this order" and the mood label
- * gets performed out loud — both are podcast tells we don't want. The beat's
- * emotional register is conveyed through the texture instead. Enrichment fields
- * are optional — older digests degrade gracefully to just the summary.
+ * the hosts angles to talk FROM (what happened / why it mattered / the texture /
+ * what they'd argue about) rather than a bare fact to read out. Deliberately NO
+ * ordinal ("BEAT n") and NO "Mood" label: the ordinal reads as "narrate in this
+ * order" and the mood label gets performed out loud — both are podcast tells we
+ * don't want. The beat's emotional register is conveyed through the texture
+ * instead. Enrichment fields are optional — older digests degrade gracefully to
+ * just the summary.
  */
 function renderBeat(b: Beat): string {
   const lines = [`- ${b.summary}`];
@@ -146,6 +148,7 @@ function renderBeat(b: Beat): string {
     lines.push("  Worth talking about:");
     for (const d of b.details) lines.push(`    - ${d}`);
   }
+  if (b.tableAngle) lines.push(`  What they'd argue about: ${b.tableAngle}`);
   const involved = [...b.characters, ...b.locations];
   if (involved.length) lines.push(`  Involves: ${involved.join(", ")}`);
   return lines.join("\n");

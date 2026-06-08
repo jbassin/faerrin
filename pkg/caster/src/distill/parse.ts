@@ -43,6 +43,9 @@ function parseBeat(value: unknown, i: number): Beat {
   if (typeof b.tone === "string" && b.tone.trim() !== "") {
     beat.tone = b.tone;
   }
+  if (typeof b.tableAngle === "string" && b.tableAngle.trim() !== "") {
+    beat.tableAngle = b.tableAngle;
+  }
   return beat;
 }
 

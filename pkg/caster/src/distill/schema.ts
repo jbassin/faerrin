@@ -63,6 +63,15 @@ export const distillTool: ToolSpec = {
                 "The emotional register of the beat in a word or two (e.g. \"tense\", " +
                 "\"triumphant\", \"grim\", \"comedic\", \"bittersweet\").",
             },
+            tableAngle: {
+              type: "string",
+              description:
+                "What three friends recapping this beat over drinks would ARGUE or rib " +
+                "each other about: the contested or questionable call, the bold/dumb " +
+                "decision, the read one of them would defend and another would mock. A " +
+                "seed for table friction — grounded in what happened, not invented drama. " +
+                "One sentence.",
+            },
             characters: {
               type: "array",
               items: { type: "string" },
@@ -88,6 +97,7 @@ export const distillTool: ToolSpec = {
             "significance",
             "details",
             "tone",
+            "tableAngle",
             "characters",
             "locations",
             "wikiRefs",

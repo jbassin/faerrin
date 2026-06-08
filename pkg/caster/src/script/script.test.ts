@@ -238,6 +238,26 @@ describe("buildScriptUserContent — de-structured beats (Phase 1)", () => {
     expect(content).toContain("Just a summary.");
     expect(content).not.toContain("Why it mattered");
   });
+
+  test("surfaces the table angle as a discussion seed when present", () => {
+    const withAngle: SessionDigest = {
+      sessionId: "z",
+      synopsis: "s",
+      beats: [
+        {
+          order: 1,
+          summary: "They leapt into the portal.",
+          tableAngle: "Was that brave or just reckless?",
+          characters: [],
+          locations: [],
+          wikiRefs: [],
+        },
+      ],
+      discarded: [],
+    };
+    const content = buildScriptUserContent(withAngle, []);
+    expect(content).toContain("What they'd argue about: Was that brave or just reckless?");
+  });
 });
 
 describe("loadOrGenerateScript caching", () => {
