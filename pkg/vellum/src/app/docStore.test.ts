@@ -30,6 +30,19 @@ describe("deriveTitle", () => {
       deriveTitle(':::statblock[Gob :action[2]]{level="Creature 1"}\nx\n:::'),
     ).toBe("Gob");
   });
+
+  test("learns the VSS @kind \"Title\" opener (else VSS docs all 'Untitled')", () => {
+    expect(deriveTitle('@item "Reinforced Bulkheads"\n| level: 1\n{\nx\n}')).toBe(
+      "Reinforced Bulkheads",
+    );
+    // whichever surface appears first in the source wins
+    expect(deriveTitle('@statblock "First"\n{\nx\n}\n\n:::item[Second]\ny\n:::')).toBe(
+      "First",
+    );
+    expect(deriveTitle(':::item[Canonical]\nx\n:::\n\n@spell "Later" {\ny\n}')).toBe(
+      "Canonical",
+    );
+  });
 });
 
 describe("docStore reducers", () => {

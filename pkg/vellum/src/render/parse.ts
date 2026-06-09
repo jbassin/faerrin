@@ -3,6 +3,7 @@ import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
 import { desugar } from "./surface.ts";
+import { compileVss } from "./vss.ts";
 import type { PhrasingContent, Root, RootContent } from "mdast";
 import type { ContainerDirective } from "mdast-util-directive";
 import {
@@ -23,10 +24,13 @@ const processor = unified()
   .use(remarkGfm)
   .use(remarkDirective);
 
-/** Parse markdown (+ directive syntax) into an mdast tree. Pure. Surface sigils
- * (`@action`, `||redact||`, `#trait`) are desugared to canonical directives first. */
+/** Parse markdown (+ directive syntax) into an mdast tree. Pure. Two source
+ * passes run first, both no-ops on input that doesn't use their syntax:
+ * `compileVss` lowers the VSS structural surface (`@kind "…" { … }`,
+ * `@columns [ … ]`) to canonical `:::` directives, then `desugar` rewrites the
+ * inline sigils (`@action`, `||redact||`, `#trait`) those bodies may carry. */
 export function parseMarkdown(source: string): Root {
-  return processor.parse(desugar(source)) as Root;
+  return processor.parse(desugar(compileVss(source))) as Root;
 }
 
 function isKind(name: string): name is DocumentKind {

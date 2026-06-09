@@ -41,6 +41,11 @@ function renderDirective(
   if (name === "redact") {
     return <Redaction>{collectText(children)}</Redaction>;
   }
+  if (name === "vsserr") {
+    // VSS compile error (`:vsserr[reason]`). The compiler emits it for any
+    // malformed structural input; render the reason so errors are never blank.
+    return <ErrorChip message={collectText(children)} />;
+  }
   return <ErrorChip message={`?${name}`} />;
 }
 

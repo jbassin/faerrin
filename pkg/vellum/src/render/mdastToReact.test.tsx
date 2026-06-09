@@ -45,6 +45,21 @@ describe("mdastToReact", () => {
     expect(out).not.toContain("||");
   });
 
+  describe("VSS (structural surface)", () => {
+    test(":vsserr[reason] renders an ErrorChip showing the reason (§6 branch)", () => {
+      // `@item` with no title compiles to a :vsserr chip; it must not be blank.
+      const out = html("@item");
+      expect(out).toContain('expected &quot;title&quot;'); // the reason text
+      expect(out).not.toContain("?vsserr"); // not the content-free fallback
+    });
+
+    test("sigils inside a VSS body still render their glyphs", () => {
+      const out = html('@item "Blade" {\nStrike @2 vs a #fire foe.\n}');
+      expect(out).toContain('aria-label="two actions"'); // @2 survives compile
+      expect(out).toContain("fire"); // #fire → trait pill
+    });
+  });
+
   describe("GFM", () => {
     test("renders a table with header and per-column alignment", () => {
       const out = html("| A | B |\n|:--|--:|\n| 1 | 2 |");

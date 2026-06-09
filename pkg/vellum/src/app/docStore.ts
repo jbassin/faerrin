@@ -23,16 +23,23 @@ const LEGACY_KEY = "vellum:active-doc";
 const UNTITLED = "Untitled";
 
 /**
- * Title from the first `:::kind[Label]`, else "Untitled". Reads the label up to
- * the end of the opener line (so a nested `:action[free]` doesn't truncate it),
- * then strips inline directives so the glyph syntax doesn't leak into the title.
+ * Title from the first card label — either a canonical `:::kind[Label]` or a
+ * VSS `@kind "Title"` opener, whichever appears first in the source (so VSS
+ * docs don't all title "Untitled"). Reads the canonical label up to the end of
+ * the opener line (so a nested `:action[free]` doesn't truncate it), then
+ * strips inline directives so the glyph syntax doesn't leak into the title.
  */
 export function deriveTitle(source: string): string {
-  const match = source.match(
-    /:{3,}[a-z][\w-]*\[(.+)\](?:\{[^}\n]*\})?\s*$/im,
-  );
-  if (!match) return UNTITLED;
-  const title = match[1]!
+  const canonical = source.match(/:{3,}[a-z][\w-]*\[(.+)\](?:\{[^}\n]*\})?\s*$/im);
+  const vss = source.match(/^\s*@[a-z]+\s+"([^"]+)"/m);
+
+  const candidates: { index: number; raw: string }[] = [];
+  if (canonical) candidates.push({ index: canonical.index ?? 0, raw: canonical[1]! });
+  if (vss) candidates.push({ index: vss.index ?? 0, raw: vss[1]! });
+  if (candidates.length === 0) return UNTITLED;
+  candidates.sort((a, b) => a.index - b.index);
+
+  const title = candidates[0]!.raw
     .replace(/:[a-z][\w-]*\[[^\]\n]*\]/gi, "") // drop inline directives
     .replace(/\s+/g, " ")
     .trim();

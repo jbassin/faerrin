@@ -5,6 +5,7 @@
  */
 export { parseDocument, parseMarkdown } from "./parse.ts";
 export { desugar } from "./surface.ts";
+export { compileVss } from "./vss.ts";
 export {
   DOCUMENT_KINDS,
   DEFAULT_MODE_BY_KIND,
