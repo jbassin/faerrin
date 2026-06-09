@@ -419,10 +419,10 @@
   accent-color: var(--wax);
 }
 
-/* R-11: trait glyphs are suppressed in diegetic mode (in-world props hide the
-   mechanical chrome). */
-.document[data-mode="diegetic"] .traits {
-  display: none;
+/* Trait pills on parchment: a wax-red ink stamp with parchment lettering. */
+.document[data-mode="diegetic"] .trait {
+  background-color: var(--wax);
+  color: var(--parchment);
 }
 
 /* R-17: a faint, deterministically-placed coffee/blood ring. */

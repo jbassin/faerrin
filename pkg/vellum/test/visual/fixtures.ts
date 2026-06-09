@@ -22,6 +22,16 @@ Flinch :action[reaction] — when struck.
 :::`,
   },
   {
+    name: "statblock-diegetic",
+    mode: "diegetic",
+    source: `:::statblock[Censer-Wraith]{level="Creature 4" traits="undead,incorporeal,fire"}
+A coil of burning incense-smoke that remembers being a priest.
+
+## Actions
+Smoke Lash :action[1] — reach 10 ft.
+:::`,
+  },
+  {
     name: "handout-diegetic",
     mode: "diegetic",
     source: `:::handout[+++ Inquisitorial Dispatch +++]

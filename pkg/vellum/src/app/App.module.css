@@ -184,6 +184,11 @@
   margin: 0 auto;
 }
 
+/* Match the export backdrop: diegetic previews sit on aged parchment. */
+.previewSurface[data-mode="diegetic"] {
+  background-color: var(--parchment-edge);
+}
+
 .previewEmpty {
   font-family: var(--font-mono), monospace;
   font-size: 0.8rem;

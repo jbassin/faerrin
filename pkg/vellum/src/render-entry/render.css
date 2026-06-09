@@ -21,3 +21,8 @@ body {
   padding: 1.5rem;
   width: 42rem;
 }
+
+/* Diegetic exports sit on aged parchment, not the teal void. */
+[data-vellum-export][data-mode="diegetic"] {
+  background-color: var(--parchment-edge);
+}
