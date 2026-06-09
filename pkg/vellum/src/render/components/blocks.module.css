@@ -10,6 +10,29 @@
   color: var(--ink);
 }
 
+/* Side-by-side layout (`:::columns`). Equal-width tracks; children stack
+   within each column. Collapses to one column on narrow viewports so the
+   editor preview stays legible (PNG export uses the full width). */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(var(--vellum-column-count, 2), minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+@media (max-width: 40rem) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Mechanical (default) ─────────────────────────────────────────────── */
 
 .card {
@@ -84,11 +107,14 @@
 }
 
 .body,
-.proseBody {
+.proseBody,
+.prose {
   font-size: 1rem;
   line-height: 1.55;
 }
 
+/* Inside a card, headings are flat section labels (`## Actions`) — uniform by
+   design so the stat layout stays tight. */
 .body :is(h1, h2, h3, h4, h5, h6),
 .proseBody :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-display), serif;
@@ -99,27 +125,79 @@
   margin: 0.7rem 0 0.2rem;
 }
 
+/* Top-level document headings express a real hierarchy: size scales with the
+   heading level (`#` largest → `######` smallest). */
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-display), serif;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.12;
+  margin: 1.1rem 0 0.45rem;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose h1 {
+  font-size: 2.2rem;
+  letter-spacing: 0.015em;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid var(--rule-bright);
+}
+
+.prose h2 {
+  font-size: 1.7rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.prose h3 {
+  font-size: 1.35rem;
+}
+
+.prose h4 {
+  font-size: 1.12rem;
+}
+
+.prose h5 {
+  font-size: 0.95rem;
+  color: var(--accent-amber);
+}
+
+.prose h6 {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-amber);
+}
+
 .body p,
-.proseBody p {
+.proseBody p,
+.prose p {
   margin: 0.45rem 0;
 }
 
 .body a,
-.proseBody a {
+.proseBody a,
+.prose a {
   color: var(--accent);
 }
 
 .body ul,
 .body ol,
 .proseBody ul,
-.proseBody ol {
+.proseBody ol,
+.prose ul,
+.prose ol {
   padding-left: 1.2rem;
   margin: 0.4rem 0;
 }
 
 /* Inline action glyphs inherit color here. */
 .body svg,
-.proseBody svg {
+.proseBody svg,
+.prose svg {
   color: var(--accent-amber);
 }
 
@@ -185,15 +263,19 @@
   border-bottom-color: color-mix(in srgb, var(--parchment-edge) 70%, transparent);
 }
 
-.document[data-mode="diegetic"] :is(.body, .proseBody) :is(h1, h2, h3, h4, h5, h6) {
+.document[data-mode="diegetic"] :is(.body, .proseBody, .prose) :is(h1, h2, h3, h4, h5, h6) {
   color: var(--wax);
 }
 
-.document[data-mode="diegetic"] :is(.body, .proseBody) a {
+.document[data-mode="diegetic"] .prose :is(h1, h2) {
+  border-bottom-color: color-mix(in srgb, var(--parchment-edge) 70%, transparent);
+}
+
+.document[data-mode="diegetic"] :is(.body, .proseBody, .prose) a {
   color: var(--wax);
 }
 
-.document[data-mode="diegetic"] :is(.body, .proseBody) svg {
+.document[data-mode="diegetic"] :is(.body, .proseBody, .prose) svg {
   color: var(--wax);
 }
 

@@ -14,10 +14,10 @@ export function Preview({ source, mode }: { source: string; mode: ThemeMode }) {
   );
   return (
     <div className={styles.previewSurface} data-mode={mode}>
-      {document.blocks.length === 0 ? (
+      {document.nodes.length === 0 ? (
         <p className={styles.previewEmpty}>
-          Nothing to render yet. Open a <code>:::statblock</code> or{" "}
-          <code>:::handout</code> block.
+          Nothing to render yet. Write some markdown, or open a{" "}
+          <code>:::statblock</code> / <code>:::handout</code> block.
         </p>
       ) : (
         <DocumentView document={document} />

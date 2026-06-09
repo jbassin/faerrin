@@ -141,7 +141,9 @@
       "name": "@faerrin/vellum",
       "dependencies": {
         "@codemirror/autocomplete": "^6.18.0",
+        "@codemirror/commands": "^6.10.3",
         "@codemirror/lang-markdown": "^6.3.0",
+        "@codemirror/language": "^6.12.3",
         "@codemirror/state": "^6.4.1",
         "@codemirror/view": "^6.34.0",
         "@faerrin/gothic": "workspace:*",

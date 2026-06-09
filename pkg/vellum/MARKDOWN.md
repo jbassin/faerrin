@@ -6,19 +6,26 @@ what the implementation does** — `src/render/parse.ts`, `src/render/mdastToRea
 and the components in `src/render/components/`.
 
 > TL;DR: it is **CommonMark + [`remark-directive`](https://github.com/remarkjs/remark-directive)**.
-> The only things that render are top-level `:::kind … :::` blocks of six fixed
-> kinds; everything else at the top level is dropped. Inside a block you write
-> ordinary CommonMark plus three inline directives (`:action`, `:trait`, `:redact`).
+> **Ordinary CommonMark renders at the top level** (headings, lists, prose, …).
+> `:::kind … :::` blocks of six fixed kinds render as PF2e cards. `:::columns`
+> lays its `:::column` children side by side under shared headers. Inside a block
+> you write CommonMark plus three inline directives (`:action`, `:trait`, `:redact`).
 
 ---
 
 ## 1. Mental model
 
-1. A document is a list of **blocks**. A block is a top-level *container directive*
-   `:::kind[Title]{attrs}` … `:::` whose `kind` is one of the six below.
-2. **Only those six container kinds, and only at the top level, produce output.**
-   Loose prose, blockquotes, headings, lists, or unknown directives written
-   *outside* a block are **silently ignored** (not rendered, not exported).
+1. A document is an ordered list of **nodes**, rendered top-to-bottom. A node is
+   one of three things:
+   - a **prose run** — ordinary top-level CommonMark (headings, lists, prose,
+     blockquotes, …), rendered as document text;
+   - a **block** — a *container directive* `:::kind[Title]{attrs}` … `:::` whose
+     `kind` is one of the six below, rendered as a PF2e card;
+   - a **columns layout** — a `:::columns` directive whose `:::column` children
+     render **side by side** (see §4.1).
+2. **Top-level markdown is kept**, in document order. A heading or list written
+   between or above blocks renders where you put it. Unknown directives (a
+   `:::kind` that isn't one of the six) degrade to prose rather than vanishing.
 3. Inside a block you write normal CommonMark + the inline directives.
 4. The **theme** (mechanical/diegetic) is **not** part of the markdown — it's a
    viewer/export setting (the editor toggle, or the render request's `mode`).
@@ -123,11 +130,14 @@ is mistyped.
 
 ---
 
-## 4. CommonMark you can use (inside a block)
+## 4. CommonMark you can use (top level **and** inside a block)
 
-All standard CommonMark works in a block body:
+All standard CommonMark works both at the document top level and in a block body:
 
-- Headings `#`–`######` (used as section labels, e.g. `## Actions`)
+- Headings `#`–`######`. **At the top level they scale by level** — `#` is the
+  largest (a ruled document title), down to `######` — so heading depth expresses
+  real hierarchy. **Inside a card** the same headings render as flat, uniform
+  section labels (e.g. `## Actions`), keeping the stat layout tight.
 - `**bold**`, `*italic*`, `` `inline code` ``
 - Fenced ```` ``` ```` and indented code blocks
 - `> blockquotes`
@@ -136,6 +146,70 @@ All standard CommonMark works in a block body:
 - Images `![alt](url)` — **alt text only is rendered; the image is never fetched**
   (a deliberate no-SSRF rule). Don't rely on external images.
 - Thematic breaks `---`, hard line breaks (two trailing spaces), entities `&amp;`
+
+### 4.1 Columns — side-by-side layout
+
+`:::columns` lays out equal-width tracks side by side. Anything *outside* the
+columns (e.g. a heading above it) spans the full page, so the columns sit **under
+a shared header**. A column can hold anything a document can: prose, several
+`:::kind` cards, lists, even nested columns.
+
+**The recommended syntax: put your content directly inside `:::columns` and
+separate columns with a `---` divider.** Each column holds as many elements as
+you like — they stack in order.
+
+```
+# Encounter: The Drowned Vault     ← full-width heading, above the columns
+
+::::columns
+:::statblock[Goblin A]{level="Creature 1"}
+First card.
+:::
+:::statblock[Goblin B]{level="Creature 1"}
+Second card — stacked under the first, SAME column.
+:::
+
+---                                ← column break
+
+## Right brief
+- two guards
+- one cogitator-lock
+::::
+```
+
+> **The one rule:** the `:::columns` fence needs **more colons than the blocks
+> inside it.** Cards use three colons (`:::statblock`), so wrap them in a
+> **four**-colon `::::columns`. Add a colon for every extra nesting level. If you
+> use the *same* colon count for `:::columns` and a block inside it, the block's
+> closing `:::` ends the columns early — that's why a second `:::item` would
+> "disappear". When in doubt, give `:::columns` extra colons.
+
+A `---` inside `:::columns` is always a column break (you can't also use it as a
+horizontal rule there). No `---` at all → a single column.
+
+**Alternative — explicit `:::column` containers.** If you prefer named columns,
+each `:::column` child is a column. This needs one *more* colon level than the
+`---` style (`:::::columns` → `::::column` → `:::statblock`), so the `---` form is
+usually easier:
+
+```
+:::::columns
+::::column
+left
+::::
+::::column
+right
+::::
+:::::
+```
+
+Two-or-more columns are supported (tracks size to the column count); narrow
+viewports collapse them to a single stack in the live preview (PNG export keeps
+the full width). A `[label]` on a `:::column` is **ignored** (columns have no
+header of their own — put any heading inside the column). `:::columns`/`:::column`
+are **layout-only and top-level**: written inside a `:::kind` card, or orphaned
+without a `:::columns` parent, they render their content with a visible `?…`
+error chip instead of laying out.
 
 ### Not supported
 
@@ -165,8 +239,10 @@ All standard CommonMark works in a block body:
   `{level=5}`.
 - `#id` and `.class` shorthands are parsed but vellum ignores them.
 
-Container fences: the opening `:::name[…]{…}` is one line; the closing `:::` is on
-its own line. Use exactly three colons for blocks.
+Container fences: the opening `:::name[…]{…}` is one line; the closing fence is on
+its own line. Use three colons for a standalone block; when **nesting**
+containers (columns), the outer fence needs **more** colons than what it holds —
+see §4.1.
 
 ---
 
@@ -183,11 +259,16 @@ document's content, so the same text always exports the same image.
 
 ## 7. Gotchas (read before authoring)
 
-- **Top-level only.** A `:::statblock` nested inside a list/blockquote, or a
-  block whose kind isn't one of the six, is **not** rendered. Keep blocks at the
-  document's top level with the exact kind names.
-- **Content outside blocks is dropped.** Notes, prose, or comments between/around
-  blocks won't appear in the output or export. Put everything inside a block.
+- **Top-level markdown renders now.** Notes, headings, and lists between/around
+  blocks *do* appear in the output and export — they're no longer dropped. If you
+  want a scratch note to stay out of the export, delete it; there's no comment
+  syntax that hides it.
+- **A block's kind must be exact.** A `:::statblock` nested inside a list/blockquote,
+  or a directive whose kind isn't one of the six, won't render as a card — an
+  unknown `:::kind` falls back to plain prose. Keep card blocks at the top level
+  (or inside a `:::column`) with the exact kind names.
+- **Columns need outward-increasing colons** (§4.1). Three colons everywhere
+  closes the layout after the first column.
 - **A colon before a letter can start an inline directive.** `:gate` in prose is
   parsed as a text directive (`:name`) and, being unknown, shows an error chip.
   If you need a literal colon-word, escape the colon (`\:gate`) or reword. Normal
@@ -248,5 +329,11 @@ cipher.
 :trait[fire]                                           # inline trait pill
 :redact[secret]                                        # inline blackout
 
-**bold**  *italic*  `code`  > quote  - list  [t](url)  ## Heading   # CommonMark only (no GFM/HTML)
+# Heading   - list   > quote   **bold**   [t](url)     # top-level CommonMark renders (no GFM/HTML)
+
+::::columns                                            # side-by-side (outer fence > inner block colons)
+left column                                            #   `---` separates columns; blocks stack per column
+---
+right column
+::::
 ```

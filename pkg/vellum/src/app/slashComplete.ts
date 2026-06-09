@@ -47,6 +47,14 @@ const SNIPPETS: Snippet[] = [
     detail: "proclamation",
     insert: ":::edict[Proclamation]\nBy order of the authority…\n:::\n",
   },
+  {
+    label: "/columns",
+    detail: "side-by-side layout (--- splits columns)",
+    // `::::columns` out-colons the blocks inside; `---` separates columns so
+    // multiple blocks per column work without more colons (MARKDOWN.md §4.1).
+    insert:
+      "::::columns\nLeft column.\n\n---\n\nRight column.\n::::\n",
+  },
   { label: "/action", detail: "action glyph", insert: ":action[2]" },
   { label: "/trait", detail: "trait pill", insert: ":trait[fire]" },
   { label: "/redact", detail: "redaction bar", insert: ":redact[secret]" },

@@ -10,6 +10,9 @@ export {
   type DocumentKind,
   type ThemeMode,
   type VellumBlock,
+  type VellumProse,
+  type VellumColumns,
+  type VellumNode,
   type VellumDocument,
 } from "./model.ts";
 export { DocumentView } from "./components/DocumentView.tsx";

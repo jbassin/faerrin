@@ -29,11 +29,13 @@ export const DEFAULT_MODE_BY_KIND: Record<DocumentKind, ThemeMode> = {
 };
 
 /**
- * One parsed document block. `children` is the block's inner markdown content as
- * mdast nodes — the React layer renders it. The model is rules-illiterate: it
- * carries the author's text/attributes verbatim and never evaluates a number.
+ * One parsed document block from a `:::kind` directive. `children` is the
+ * block's inner markdown content as mdast nodes — the React layer renders it.
+ * The model is rules-illiterate: it carries the author's text/attributes
+ * verbatim and never evaluates a number.
  */
 export interface VellumBlock {
+  type: "block";
   kind: DocumentKind;
   /** Directive attributes, e.g. `:::statblock{level=5 rarity=unique}`. */
   attributes: Record<string, string>;
@@ -43,7 +45,36 @@ export interface VellumBlock {
   children: RootContent[];
 }
 
+/**
+ * A run of loose top-level markdown — headings, lists, prose, blockquotes,
+ * etc. — that lives outside any directive. Consecutive loose nodes are grouped
+ * into one run so document order (e.g. a heading above some columns) survives.
+ */
+export interface VellumProse {
+  type: "prose";
+  /** Loose markdown nodes, rendered verbatim by mdastToReact. */
+  children: RootContent[];
+}
+
+/**
+ * Side-by-side layout from a `:::columns` directive. Each column is itself an
+ * ordered list of nodes, so a column can hold prose, `:::kind` blocks, and even
+ * nested columns (recursive). Authoring uses nested directive fences — the
+ * outer fence needs MORE colons than what it contains (see MARKDOWN.md).
+ */
+export interface VellumColumns {
+  type: "columns";
+  /** Directive attributes, e.g. `:::columns{gap=wide}`. */
+  attributes: Record<string, string>;
+  /** Each entry is one column's ordered node list. */
+  columns: VellumNode[][];
+}
+
+/** A top-level document node: a kind block, a prose run, or a columns layout. */
+export type VellumNode = VellumBlock | VellumProse | VellumColumns;
+
 export interface VellumDocument {
   mode: ThemeMode;
-  blocks: VellumBlock[];
+  /** Ordered, heterogeneous content: prose, `:::kind` blocks, and columns. */
+  nodes: VellumNode[];
 }

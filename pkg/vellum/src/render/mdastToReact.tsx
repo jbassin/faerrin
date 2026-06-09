@@ -106,7 +106,19 @@ function renderNode(node: Nodes, key: number): ReactNode {
         </span>
       );
     case "containerDirective":
-      // Nested containers render their content generically in M1.
+      // `:::columns`/`:::column` only mean something to the document-level
+      // parser (parse.ts). If one reaches the renderer it's misplaced — nested
+      // inside a `:::kind` block, or an orphan `:::column`. Flag it (R-4) so the
+      // author sees it, but still render the content so nothing is lost.
+      if (node.name === "columns" || node.name === "column") {
+        return (
+          <div key={key}>
+            <ErrorChip message={`?${node.name} — only at top level`} />
+            {renderNodes(node.children)}
+          </div>
+        );
+      }
+      // Other unknown containers render their content generically.
       return <div key={key}>{renderNodes(node.children)}</div>;
     default:
       return <ErrorChip key={key} message={`?${node.type}`} />;

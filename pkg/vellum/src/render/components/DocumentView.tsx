@@ -1,8 +1,13 @@
-import type { ReactElement } from "react";
+import type { CSSProperties, ReactElement, ReactNode } from "react";
 import styles from "./blocks.module.css";
-import type { VellumBlock, VellumDocument } from "../model.ts";
+import type {
+  VellumBlock,
+  VellumDocument,
+  VellumNode,
+} from "../model.ts";
 import { StatCard } from "./StatCard.tsx";
 import { ProseCard } from "./ProseCard.tsx";
+import { renderNodes } from "../mdastToReact.tsx";
 
 function Block({ block }: { block: VellumBlock }): ReactElement {
   switch (block.kind) {
@@ -12,6 +17,34 @@ function Block({ block }: { block: VellumBlock }): ReactElement {
     default:
       // statblock / hazard / item / spell
       return <StatCard block={block} kind={block.kind} />;
+  }
+}
+
+/** Render one top-level node: a kind block, a loose prose run, or columns. */
+function Node({ node }: { node: VellumNode }): ReactNode {
+  switch (node.type) {
+    case "block":
+      return <Block block={node} />;
+    case "prose":
+      // Loose top-level markdown (headings, lists, prose) rendered verbatim.
+      // `.prose` carries document typography — including a real heading scale
+      // (h1→h6), unlike the flat section labels inside cards (`.body`).
+      return <div className={styles.prose}>{renderNodes(node.children)}</div>;
+    case "columns":
+      return (
+        <div
+          className={styles.columns}
+          style={{ "--vellum-column-count": node.columns.length } as CSSProperties}
+        >
+          {node.columns.map((column, i) => (
+            <div key={i} className={styles.column}>
+              {column.map((child, j) => (
+                <Node key={j} node={child} />
+              ))}
+            </div>
+          ))}
+        </div>
+      );
   }
 }
 
@@ -31,8 +64,8 @@ export function DocumentView({
       data-vellum-export=""
       data-mode={document.mode}
     >
-      {document.blocks.map((block, i) => (
-        <Block key={i} block={block} />
+      {document.nodes.map((node, i) => (
+        <Node key={i} node={node} />
       ))}
     </article>
   );

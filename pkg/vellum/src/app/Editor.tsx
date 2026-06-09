@@ -1,10 +1,22 @@
 import { useEffect, useRef } from "react";
-import { EditorState } from "@codemirror/state";
-import { EditorView } from "@codemirror/view";
+import { EditorState, Prec } from "@codemirror/state";
+import { EditorView, keymap } from "@codemirror/view";
+import { indentWithTab } from "@codemirror/commands";
+import { indentUnit } from "@codemirror/language";
 import { basicSetup } from "codemirror";
 import { markdown } from "@codemirror/lang-markdown";
 import { slashComplete } from "./slashComplete.ts";
 import styles from "./App.module.css";
+
+/**
+ * Tab inserts 2 spaces (and indents/dedents a multi-line selection) instead of
+ * moving focus. `Prec.low` keeps this below the autocomplete keymap, so Tab
+ * still accepts an open `/` completion before falling back to indentation.
+ */
+const tabIndents = [
+  indentUnit.of("  "),
+  Prec.low(keymap.of([indentWithTab])),
+];
 
 /** CM6 theme wired to @faerrin/gothic tokens (NFR-3: colors via vars, no hex). */
 const gothicTheme = EditorView.theme(
@@ -66,6 +78,7 @@ export function Editor({
           basicSetup,
           markdown(),
           slashComplete,
+          tabIndents,
           EditorView.lineWrapping,
           gothicTheme,
           listener,
