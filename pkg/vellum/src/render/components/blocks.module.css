@@ -154,6 +154,9 @@
 /* ── Diegetic — aged Imperial parchment ───────────────────────────────── */
 
 .document[data-mode="diegetic"] .card {
+  position: relative;
+  /* R-17: deterministic ±2° stamp rotation, seeded from content. */
+  transform: rotate(var(--vellum-rotate, 0deg));
   color: var(--parchment-ink);
   background-color: var(--parchment);
   background-image: radial-gradient(
@@ -198,6 +201,22 @@
    mechanical chrome). */
 .document[data-mode="diegetic"] .traits {
   display: none;
+}
+
+/* R-17: a faint, deterministically-placed coffee/blood ring. */
+.document[data-mode="diegetic"] .card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  left: var(--vellum-ring-x, 50%);
+  top: var(--vellum-ring-y, 50%);
+  width: 6rem;
+  height: 6rem;
+  transform: translate(-50%, -50%) scale(var(--vellum-ring-scale, 1));
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--wax) 28%, transparent);
+  box-shadow: inset 0 0 0.6rem color-mix(in srgb, var(--wax) 14%, transparent);
+  opacity: 0.55;
 }
 
 /* Illuminated gold-leaf drop-cap on the first paragraph of a prose document. */

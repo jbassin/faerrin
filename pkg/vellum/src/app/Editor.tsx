@@ -3,6 +3,7 @@ import { EditorState } from "@codemirror/state";
 import { EditorView } from "@codemirror/view";
 import { basicSetup } from "codemirror";
 import { markdown } from "@codemirror/lang-markdown";
+import { slashComplete } from "./slashComplete.ts";
 import styles from "./App.module.css";
 
 /** CM6 theme wired to @faerrin/gothic tokens (NFR-3: colors via vars, no hex). */
@@ -64,6 +65,7 @@ export function Editor({
         extensions: [
           basicSetup,
           markdown(),
+          slashComplete,
           EditorView.lineWrapping,
           gothicTheme,
           listener,

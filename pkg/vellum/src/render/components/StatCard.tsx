@@ -1,7 +1,8 @@
 import type { ReactElement } from "react";
 import styles from "./blocks.module.css";
-import { renderNodes } from "../mdastToReact.tsx";
+import { renderNodes, collectText } from "../mdastToReact.tsx";
 import { TraitPill } from "./TraitPill.tsx";
+import { grimeStyle } from "./grimeStyle.ts";
 import type { DocumentKind, VellumBlock } from "../model.ts";
 
 function splitTraits(value: string | undefined): string[] {
@@ -29,7 +30,11 @@ export function StatCard({
   const meta = attributes.level ?? attributes.rank ?? attributes.price;
 
   return (
-    <section className={`${styles.card} ${styles.statCard}`} data-kind={kind}>
+    <section
+      className={`${styles.card} ${styles.statCard}`}
+      data-kind={kind}
+      style={grimeStyle((label ?? "") + collectText(children))}
+    >
       <header className={styles.header}>
         <span className={styles.name}>{name ?? kind}</span>
         <span className={styles.kindTag}>{kind}</span>

@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import styles from "./blocks.module.css";
-import { renderNodes } from "../mdastToReact.tsx";
+import { renderNodes, collectText } from "../mdastToReact.tsx";
+import { grimeStyle } from "./grimeStyle.ts";
 import type { DocumentKind, VellumBlock } from "../model.ts";
 
 /**
@@ -17,7 +18,11 @@ export function ProseCard({
 }): ReactElement {
   const { label, children } = block;
   return (
-    <section className={`${styles.card} ${styles.proseCard}`} data-kind={kind}>
+    <section
+      className={`${styles.card} ${styles.proseCard}`}
+      data-kind={kind}
+      style={grimeStyle((label ?? "") + collectText(children))}
+    >
       {label ? <header className={styles.proseTitle}>{label}</header> : null}
       <div className={styles.proseBody}>{renderNodes(children)}</div>
     </section>

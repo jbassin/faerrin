@@ -89,6 +89,43 @@
   text-align: right;
 }
 
+.note {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--ink-dim);
+  max-width: 20rem;
+  text-align: right;
+}
+
+.select {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.4rem;
+  background-color: var(--bg-panel);
+  color: var(--ink-dim);
+  border: 1px solid var(--rule-bright);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.ghostButton {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.7rem;
+  background-color: transparent;
+  color: var(--ink-dim);
+  border: 1px solid var(--rule-bright);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.ghostButton:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .panes {
   flex: 1;
   display: grid;
