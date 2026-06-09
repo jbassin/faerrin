@@ -67,6 +67,7 @@ Recognized attributes (others are parsed but ignored):
 | `traits="a,b,c"` | comma-separated trait pills (suppressed in diegetic mode) |
 | `level=…` / `rank=…` / `price=…` | a meta line under the header (first one present wins) |
 | `name=…` | title fallback when there's no `[Title]` label |
+| `tag=…` | overrides the corner tag text (defaults to the kind, e.g. `item`) — e.g. `tag="Consumable"` |
 
 ```
 :::statblock[Vox-Thrall Acolyte]{level="Creature 2" traits="undead,mindless"}

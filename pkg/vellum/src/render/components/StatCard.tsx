@@ -29,6 +29,9 @@ export function StatCard({
   // Render the label's inline nodes (so `[Name :action[free]]` shows the glyph);
   // fall back to the `name=` attribute or the kind when there's no label.
   const name = labelNodes ? renderNodes(labelNodes) : (attributes.name ?? kind);
+  // The corner tag defaults to the kind, but `tag=` overrides it with any label
+  // (e.g. `:::item{tag="Consumable"}`). `data-kind` still drives the CSS skin.
+  const tag = attributes.tag ?? kind;
   const meta = attributes.level ?? attributes.rank ?? attributes.price;
 
   return (
@@ -39,7 +42,7 @@ export function StatCard({
     >
       <header className={styles.header}>
         <span className={styles.name}>{name}</span>
-        <span className={styles.kindTag}>{kind}</span>
+        <span className={styles.kindTag}>{tag}</span>
       </header>
       {meta ? <div className={styles.meta}>{meta}</div> : null}
       {traits.length ? (
