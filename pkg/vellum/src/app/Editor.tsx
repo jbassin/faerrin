@@ -6,6 +6,7 @@ import { indentUnit } from "@codemirror/language";
 import { basicSetup } from "codemirror";
 import { markdown } from "@codemirror/lang-markdown";
 import { slashComplete } from "./slashComplete.ts";
+import { vellumHighlighting } from "./vellumHighlight.ts";
 import styles from "./App.module.css";
 
 /**
@@ -77,6 +78,7 @@ export function Editor({
         extensions: [
           basicSetup,
           markdown(),
+          vellumHighlighting,
           slashComplete,
           tabIndents,
           EditorView.lineWrapping,
