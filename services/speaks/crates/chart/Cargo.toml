@@ -1,0 +1,16 @@
+[package]
+name = "chart"
+version = "0.0.0"
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+# workspace dependencies
+color-eyre.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+# remote dependencies
+urlencoding = "2.1.3"

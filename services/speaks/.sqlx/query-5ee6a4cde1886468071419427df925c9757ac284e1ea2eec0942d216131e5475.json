@@ -1,0 +1,35 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT d.value        as \"value: i32\",\n       count(d.value) as \"count!: i32\",\n       p.name         as player_name\nFROM dice d\n         join players p on d.player_id = p.id\nWHERE d.timestamp > (now() - ($2::text)::interval)\n  AND d.base = $1::int\n  AND d.player_id <> 6\nGROUP BY (p.name, d.value);\n",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "value: i32",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 1,
+        "name": "count!: i32",
+        "type_info": "Int8"
+      },
+      {
+        "ordinal": 2,
+        "name": "player_name",
+        "type_info": "Varchar"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      null,
+      false
+    ]
+  },
+  "hash": "5ee6a4cde1886468071419427df925c9757ac284e1ea2eec0942d216131e5475"
+}

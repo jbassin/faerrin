@@ -142,4 +142,68 @@ export class Ci {
     const buildOutput = await this.build(source)
     return `${checkOutput}\n\n=== Build ===\n${buildOutput}`
   }
+
+  /**
+   * Base container for the Rust service `services/speaks` (the vendored Discord
+   * bot). Pinned to clux/muslrust:nightly — the same image the bot's Dockerfile
+   * uses, and nightly is required (the `roller` crate enables a nightly feature).
+   * Kept ENTIRELY separate from the Bun lanes (`bun --filter '*'` never sees it):
+   * a Rust failure must not block a static-site deploy, and vice versa. Cargo's
+   * registry + the crate's target dir are cached so warm runs are fast.
+   * SQLX_OFFLINE makes the sqlx macros validate against the committed `.sqlx/`
+   * metadata instead of needing a live database.
+   */
+  private rustBase(source: Directory): Container {
+    return dag
+      .container()
+      .from("clux/muslrust:nightly")
+      .withEnvVariable("SQLX_OFFLINE", "true")
+      .withMountedCache("/root/.cargo/registry", dag.cacheVolume("faerrin-cargo-registry"))
+      .withMountedCache(
+        "/src/services/speaks/target",
+        dag.cacheVolume("faerrin-speaks-target"),
+      )
+      .withMountedDirectory("/src", source)
+      .withWorkdir("/src/services/speaks")
+  }
+
+  /**
+   * The Rust `check` job for `services/speaks`: format check → clippy → test, in
+   * order and fail-fast. NOTE (Phase 1): clippy runs in report mode — the
+   * vendored bot still carries pre-existing dead-code warnings that Phase 2's
+   * shed cleanup removes; `clippy -- -D warnings` becomes the hard gate from
+   * Phase 2 onward (spec R2.3/AC3). `roller` carries the only real unit tests.
+   */
+  @func()
+  async rustCheck(source: Directory): Promise<string> {
+    const steps: Array<[string, string[]]> = [
+      ["fmt", ["cargo", "fmt", "--check"]],
+      ["clippy", ["cargo", "clippy", "--workspace"]],
+      ["test", ["cargo", "test", "--workspace"]],
+    ]
+    let container = this.rustBase(source)
+    let output = ""
+    for (const [label, cmd] of steps) {
+      output += `\n=== ${label} ===\n`
+      container = container.withExec(cmd)
+      output += await container.stdout()
+    }
+    return output
+  }
+
+  /** The Rust `build` job: the musl release binary the deploy unit runs. */
+  @func()
+  async rustBuild(source: Directory): Promise<string> {
+    return this.rustBase(source)
+      .withExec([
+        "cargo",
+        "build",
+        "--release",
+        "--target",
+        "x86_64-unknown-linux-musl",
+        "--bin",
+        "discord",
+      ])
+      .stdout()
+  }
 }

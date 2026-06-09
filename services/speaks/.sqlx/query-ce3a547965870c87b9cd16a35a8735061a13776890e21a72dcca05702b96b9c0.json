@@ -1,0 +1,93 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT\n    -- discord\n    u.username     AS discord_name,\n    u.snowflake    AS discord_snowflake,\n    u.is_admin     AS discord_is_admin,\n\n    -- player\n    p.id           AS player_id,\n    p.name         AS player_name,\n\n    -- campaign\n    cp.name        AS campaign_name,\n    cp.edition     AS \"campaign_edition: GameEdition\",\n    cp.is_one_shot AS campaign_is_one_shot,\n\n    -- character\n    c.name         AS character_name,\n    c.class        AS character_class,\n    c.is_dm        AS character_is_dm\nFROM users u\n         JOIN players p ON u.player_id = p.id\n         JOIN characters c ON p.id = c.player_id\n         JOIN campaigns cp ON c.campaign_id = cp.id\n         LEFT JOIN active_campaign ac ON cp.id = ac.campaign_id\nWHERE ac.id IS NOT NULL\n  AND u.snowflake = $1\nLIMIT 1;\n",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "discord_name",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 1,
+        "name": "discord_snowflake",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 2,
+        "name": "discord_is_admin",
+        "type_info": "Bool"
+      },
+      {
+        "ordinal": 3,
+        "name": "player_id",
+        "type_info": "Int4"
+      },
+      {
+        "ordinal": 4,
+        "name": "player_name",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 5,
+        "name": "campaign_name",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 6,
+        "name": "campaign_edition: GameEdition",
+        "type_info": {
+          "Custom": {
+            "name": "game_edition",
+            "kind": {
+              "Enum": [
+                "pathfinder_2e",
+                "dnd_5e",
+                "one_dnd"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "ordinal": 7,
+        "name": "campaign_is_one_shot",
+        "type_info": "Bool"
+      },
+      {
+        "ordinal": 8,
+        "name": "character_name",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 9,
+        "name": "character_class",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 10,
+        "name": "character_is_dm",
+        "type_info": "Bool"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "ce3a547965870c87b9cd16a35a8735061a13776890e21a72dcca05702b96b9c0"
+}

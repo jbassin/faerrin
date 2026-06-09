@@ -1,0 +1,45 @@
+# systemd USER unit — install to ~/.config/systemd/user/speaks.service
+#
+# Runs the speaks Discord bot as a long-lived daemon (serenity autosharded gateway
+# + internal axum control plane on 127.0.0.1:10203). Unlike wretch's oneshot
+# reconciler, this is a persistent Type=simple service. Mirrors wretch's deploy
+# discipline: bare systemd user unit (NO container), secrets via EnvironmentFile.
+#
+# Enable lingering so it runs without an active login:
+#   loginctl enable-linger "$USER"
+#   systemctl --user enable --now speaks.service
+# See deploy/CUTOVER.md.
+
+[Unit]
+Description=Faerrin speaks — Discord dice/roller + NPC-voice bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/ruby/data/experiments/faerrin
+
+# Secrets + config (DISCORD_TOKEN, DATABASE_URL, *_URL, SPEAKS_BIND_ADDR, RUST_LOG).
+# Keep this file OUT of git, mode 0600. Copy services/speaks/.env.example as a guide.
+EnvironmentFile=%h/.config/faerrin/speaks.env
+
+# The release binary. Build on the host (`cargo build --release`) or extract the
+# musl binary from the cargo-chef Docker image (see CUTOVER.md), then point here.
+ExecStart=/ruby/data/experiments/faerrin/services/speaks/target/release/discord
+
+# Supervision: auto-restart with backoff, but CAP restarts so a crash-loop cannot
+# hammer Discord's identify endpoint and earn a rate-limit/ban. serenity resumes
+# sessions on reconnect, so a bounded restart recovers cleanly.
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+# Blast-radius isolation from the live aether/Caddy static host — a bot OOM/spin
+# must not starve heart.iridi.cc. Tune values to the host (see CUTOVER "open" notes).
+MemoryMax=512M
+CPUQuota=50%
+OOMScoreAdjust=200
+
+[Install]
+WantedBy=default.target

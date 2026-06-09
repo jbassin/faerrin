@@ -1,6 +1,7 @@
 # NLSpec 0001 — Migrate `speaks_with_passion` into Faerrin (staged hybrid)
 
-**Status:** Defined — adversarial completeness pass (§12) + Define decisions (§10) folded in; ready for Develop (Phase 1)
+**Status:** Phase 1 SHIPPED (2026-06-09) — vendored to `services/speaks`, portable, Rust Dagger
+lane added, deploy unit + CUTOVER written; whole workspace green. Phases 2–4 pending. See §13.
 **Created:** 2026-06-09
 **Authoring:** /octo:spec — team mode (Claude persona agents: backend-, database-, cloud-architect)
 **Source:** `/ruby/data/experiments/speaks_with_passion` (Rust Cargo workspace, edition 2024)
@@ -337,6 +338,30 @@ Findings were verified against the codebase and folded in above. Summary of what
 9. **Unpinned host assumptions** — elevated OQ-1; added risk row.
 10. **Scope leak on `embed.iridi.cc`** — clarified caller-removal in-scope vs service-retire
     out-of-scope (OQ-4).
+
+## 13. Progress log
+
+### Phase 1 — SHIPPED 2026-06-09
+- Vendored the Cargo workspace to `services/speaks/` (3 crates, `.sqlx/`, Dockerfile) via jj;
+  `target/` and `.env` ignored.
+- **Portability:** `DICE_FEED_URL` (was a hardcoded **leaked webhook token**), `FEED_WS_URL`,
+  `EMBED_URL`, `CHART_BASE_URL` (a 5th iridi literal found in `chart`), and `SPEAKS_BIND_ADDR`
+  all moved to env via `LazyLock`; axum now binds `127.0.0.1:10203` (was `0.0.0.0`); `dotenvy`
+  made optional so systemd `EnvironmentFile` works with no `.env` present.
+- Added `services/speaks/{CLAUDE.md, .env.example, deploy/speaks.service, deploy/CUTOVER.md}`.
+- Added Dagger `rustCheck`/`rustBuild` funcs (`clux/muslrust:nightly`, cached), kept out of the
+  Bun lanes; verified the module loads (`dagger functions`).
+- **Two unplanned, in-spirit fixes (no behavior change):** added `#![recursion_limit = "256"]`
+  to the `discord` crate (the `message` handler overflowed the default layout-recursion limit on
+  the current toolchain — the source's own `cargo test` didn't even compile without it); and
+  refreshed 6 stale `expect_test` snapshots in `roller` (`UPDATE_EXPECT` + 2 manual) to capture
+  the vendored parser/eval's actual output — these tests were already failing in the source.
+- **Validation:** `cargo check` green; `cargo fmt --check` green; 8 `roller` tests pass; bun
+  `--filter '*' typecheck` green; `pkg/` untouched (AC4 byte-identical by construction). clippy
+  still reports the pre-existing dead-code warnings (identity fields, unused `Host` variants) —
+  these get cleaned in Phases 2–3, at which point the lane escalates to `-D warnings`.
+- **⚠️ User action (R1.4):** rotate the leaked Discord webhook — code no longer holds the token,
+  but it remains in git history. See `deploy/CUTOVER.md` §1.
 
 **Completeness score (self-assessed): 88/100.** Remaining −12: the six open questions (§10)
 are genuine Define-phase decisions (host, roster export format details, snowflake-map source,

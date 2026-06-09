@@ -1,0 +1,36 @@
+[package]
+name = "discord"
+version = "0.0.0"
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[profile.dev.package.sqlx-macros]
+opt-level = 3
+
+[dependencies]
+# local deps
+chart.workspace = true
+roller.workspace = true
+
+# workspace deps
+chrono.workspace = true
+color-eyre.workspace = true
+rand.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+# remote deps
+regex = "1.12"
+dotenvy = "0.15.7"
+pgvector = { version = "0.4", features = ["sqlx", "serde", "postgres"] }
+serenity = { version = "0.12", features = ["full"] }
+tokio = { version = "1.21.2", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+sqlx = { version = "0.8", features = ["runtime-tokio", "tls-rustls-ring-native-roots", "postgres", "derive", "macros", "chrono", "json"] }
+reqwest = { version = "0.12.22", default-features = false, features = ["rustls-tls", "json"] }
+uiua = { version = "*", default-features = false, features = ["batteries"] }
+futures = "0.3.31"
+axum = { version = "0.8.8", features = ["macros"] }

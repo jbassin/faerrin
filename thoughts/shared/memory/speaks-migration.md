@@ -17,6 +17,12 @@ features `uiua` + vector embeddings**, move identity to content, converge to **S
 as a bare **systemd user service running the static musl binary** (no container), axum :3000
 bound 127.0.0.1, no new Caddy subdomain.
 
+**Progress:** Phase 1 SHIPPED 2026-06-09 (committed + pushed to main) — vendored to
+`services/speaks`, all hardcoded URLs/secrets env-ized, axum binds localhost, optional dotenv for
+systemd, Dagger `rustCheck`/`rustBuild` lane, deploy unit + CUTOVER. Needed `#![recursion_limit]`
+on the discord crate + refreshed stale roller `expect_test` snapshots (both pre-existing issues).
+Whole workspace green. **User must rotate the leaked webhook (still in git history).** Phases 2–4 pending.
+
 **Phase order (RESEQUENCED 2026-06-09 to retire PG/Podman ASAP):**
 1 vendor + portability (validate against the OLD/snapshot PG; never provision a fresh host PG) →
 2 **shed uiua + embeddings** → 3 identity-to-content → 4 **Postgres→SQLite cutover**.

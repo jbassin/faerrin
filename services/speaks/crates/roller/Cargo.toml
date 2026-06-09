@@ -1,0 +1,23 @@
+[package]
+name = "roller"
+version = "0.0.0"
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+# workspace crates
+rand.workspace = true
+serde.workspace = true
+serde-lexpr.workspace = true
+serde_json.workspace = true
+
+# remote crates
+counter = "0.5.7"
+expect-test = "1.4.0"
+itertools = "0.10.5"
+nom = "7.1.1"
+pipe-trait = "0.4.0"
+pratt = "0.4.0"
+tera = "1.20.0"

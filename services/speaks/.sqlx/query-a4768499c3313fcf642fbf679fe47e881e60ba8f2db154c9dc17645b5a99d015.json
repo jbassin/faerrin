@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE\nFROM embedding_listings\nWHERE name = $1;",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "a4768499c3313fcf642fbf679fe47e881e60ba8f2db154c9dc17645b5a99d015"
+}
