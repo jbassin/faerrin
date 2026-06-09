@@ -8,7 +8,7 @@ function script(turns: ScriptTurn[]): Script {
 }
 
 // A deliberately "podcasty" episode: uniform, clean, complete sentences that
-// recite the recap in order and announce their own agenda; no room, no fumbles.
+// recite the recap in order and announce their own agenda; no fumbles.
 const podcasty = script([
   { speaker: "A", text: "Welcome back to the show, everyone, we have a great session to talk about today." },
   { speaker: "B", text: "It was a really eventful evening with a lot of important developments for the party." },
@@ -25,7 +25,8 @@ const podcasty = script([
 ]);
 
 // A deliberately "tavern" episode: uneven turns, interruptions, dropped threads,
-// a dead-end tangent, room/sensory grounding, no agenda announcements.
+// a dead-end tangent, no agenda announcements. (The tavern stays in the background —
+// R5 room-grounding was retired, so room words here are incidental, not scored.)
 const tavern = script([
   { speaker: "A", text: "[excited] Okay so they walk into the gala and immediately, IMMEDIATELY, the whole barghest thing kicks off and there's a portal and a hand-monster and honestly I lost the thread of who grabbed what—" },
   { speaker: "B", text: "The Voidheart." },
@@ -52,15 +53,13 @@ describe("tavern-ness linter", () => {
     expect(r.zeros.length).toBeGreaterThan(0);
     // The structural tells are present, so those criteria bottom out.
     expect(r.zeros).toContain("R3"); // recites an agenda
-    expect(r.zeros).toContain("R5"); // featureless void
   });
 
   test("tavern script scores high and clears the structural tells", () => {
     const r = scoreScript(tavern);
-    expect(r.mechanicalSubtotal).toBeGreaterThanOrEqual(9);
+    expect(r.mechanicalSubtotal).toBeGreaterThanOrEqual(7); // of 10 (R5 retired)
     expect(r.zeros).not.toContain("R3"); // no meta-recap
     expect(r.zeros).not.toContain("R4"); // has disfluencies
-    expect(r.zeros).not.toContain("R5"); // has room references
   });
 
   test("tavern beats podcasty on every structural axis", () => {
@@ -68,7 +67,6 @@ describe("tavern-ness linter", () => {
     const t = computeMetrics(tavern);
     expect(t.metaRecapRatio).toBeLessThan(p.metaRecapRatio);
     expect(t.disfluencyRatio).toBeGreaterThan(p.disfluencyRatio);
-    expect(t.roomReferences).toBeGreaterThan(p.roomReferences);
     expect(t.turnLengthStdev).toBeGreaterThan(p.turnLengthStdev);
     expect(t.cleanLineRatio).toBeLessThan(p.cleanLineRatio);
   });

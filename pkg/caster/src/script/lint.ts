@@ -5,13 +5,17 @@ import type { Script, ScriptTurn, SpeakerId } from "../types.ts";
  * quantify how much it reads like friends at a tavern table vs. a polished
  * podcast. This is MEASUREMENT/REGRESSION tooling, not a gate: it turns the
  * vibe into numbers so prompt/generation changes can be compared, and flags the
- * podcast tells (uniform turns, recited agenda, no room, no fumbles, every line
- * a clean quip) that the script-stage prompt is trying to suppress.
+ * podcast tells (uniform turns, recited agenda, no fumbles, every line a clean
+ * quip) that the script-stage prompt is trying to suppress.
  *
- * It scores only the six MECHANICALLY measurable rubric criteria (R1-R6, max
- * 12). The three judgment criteria (R7 voice-attribution, R8 unresolved
- * friction, R9 coverage-vs-conversation) need a human or an LLM judge and are
- * out of scope here — the /18 acceptance bar is completed elsewhere.
+ * It scores the mechanically measurable rubric criteria — R1-R4 and R6 (max 10,
+ * = THRESHOLDS.length * 2). R5 (room / sensory references) was RETIRED: the recap
+ * is friends in a tavern discussing a story with the room kept deliberately in the
+ * background, so room-word density is no longer a quality signal (it once rewarded
+ * exactly the waiter/ordering/food-and-drink business the prompt now suppresses).
+ * The three judgment criteria (R7 voice-attribution, R8 unresolved friction, R9
+ * coverage-vs-conversation) need a human or an LLM judge and are out of scope
+ * here — the /18 acceptance bar is completed elsewhere.
  *
  * Thresholds are PROVISIONAL and calibration-pending: they were set against
  * hand-built fixtures, not real generated episodes. Re-tune `THRESHOLDS` once a
@@ -59,15 +63,6 @@ const META_RECAP_PATTERNS: readonly RegExp[] = [
   /\bfinally,/,
 ];
 
-/** Tavern-room / sensory vocabulary — proof the talk happens somewhere. */
-const ROOM_WORDS: ReadonlySet<string> = new Set([
-  "drink", "drinks", "drinking", "ale", "beer", "mead", "wine", "mug", "mugs",
-  "tankard", "sip", "sips", "sipped", "pint", "cup", "glass", "fire", "hearth",
-  "barkeep", "bartender", "bar", "tavern", "stool", "bench", "bread", "stew",
-  "candle", "lantern", "tab", "cheers", "foam", "spill", "spilled", "pour",
-  "poured", "smoke", "crowd", "chip", "chips", "plate", "napkin", "round",
-]);
-
 /** Per-turn disfluency / repair signals (interruptions, restarts, trailing off). */
 function isDisfluentTurn(text: string): boolean {
   const t = stripTags(text).trim();
@@ -109,8 +104,6 @@ export interface LintMetrics {
   metaRecapRatio: number;
   /** Fraction of turns carrying a disfluency/repair signal (higher = better, to a point). */
   disfluencyRatio: number;
-  /** Count of room/sensory word occurrences across the script (higher = better). */
-  roomReferences: number;
   /** Fraction of turns that are clean complete sentences (lower = better — fewer uniform quips). */
   cleanLineRatio: number;
   /** Diagnostics (not scored): how evenly the floor is shared. */
@@ -202,9 +195,6 @@ export function computeMetrics(script: Script): LintMetrics {
 
   const disfluent = turns.filter((t) => isDisfluentTurn(t.text)).length;
 
-  let roomReferences = 0;
-  for (const t of turns) for (const w of words(t.text)) if (ROOM_WORDS.has(w)) roomReferences++;
-
   const cleanLines = turns.filter((t) => isCleanLine(t.text)).length;
 
   const n = turns.length || 1;
@@ -215,7 +205,6 @@ export function computeMetrics(script: Script): LintMetrics {
     perSpeakerMeanSpread,
     metaRecapRatio: metaRecap / n,
     disfluencyRatio: disfluent / n,
-    roomReferences,
     cleanLineRatio: cleanLines / n,
     floorGiniTurns: gini(perSpeakerTurns.map((ts) => ts.length)),
     floorGiniWords: gini(
@@ -246,7 +235,8 @@ export const THRESHOLDS: readonly Threshold[] = [
   { id: "R2", label: "turn-length variance", metric: "turnLengthStdev", dir: "high", two: 6, one: 3 },
   { id: "R3", label: "meta-recap-line ratio", metric: "metaRecapRatio", dir: "low", two: 0.02, one: 0.08 },
   { id: "R4", label: "disfluency / repair rate", metric: "disfluencyRatio", dir: "high", two: 0.25, one: 0.12 },
-  { id: "R5", label: "room / sensory references", metric: "roomReferences", dir: "high", two: 4, one: 1 },
+  // R5 (room / sensory references) retired — see file header. The gap is intentional:
+  // it preserves the R1-R9 rubric numbering (R6 keeps its id; R7-R9 are judgment criteria).
   { id: "R6", label: "quip density (clean-line ratio)", metric: "cleanLineRatio", dir: "low", two: 0.45, one: 0.65 },
 ] as const;
 
@@ -265,7 +255,7 @@ export interface CriterionScore {
 export interface LintReport {
   metrics: LintMetrics;
   criteria: CriterionScore[];
-  /** Sum of the six mechanical criteria (max 12). */
+  /** Sum of the mechanical criteria (R1-R4 and R6; max = THRESHOLDS.length * 2). */
   mechanicalSubtotal: number;
   /** Mechanical criteria scored 0 — a single one means a podcast tell survived. */
   zeros: string[];
@@ -290,13 +280,14 @@ export function scoreScript(script: Script): LintReport {
 /** Human-readable report for the CLI. */
 export function formatReport(report: LintReport): string {
   const lines: string[] = [];
-  lines.push("Tavern-ness (mechanical rubric R1-R6; PROVISIONAL thresholds)");
+  const max = THRESHOLDS.length * 2;
+  lines.push("Tavern-ness (mechanical rubric R1-R4, R6; PROVISIONAL thresholds)");
   for (const c of report.criteria) {
     const bar = "●".repeat(c.score) + "○".repeat(2 - c.score);
     const val = Number.isInteger(c.value) ? String(c.value) : c.value.toFixed(2);
     lines.push(`  ${bar} ${c.id} ${c.label}: ${val}`);
   }
-  lines.push(`  mechanical subtotal: ${report.mechanicalSubtotal}/12`);
+  lines.push(`  mechanical subtotal: ${report.mechanicalSubtotal}/${max}`);
   lines.push(
     report.zeros.length
       ? `  ⚠ criteria at 0 (podcast tell survived): ${report.zeros.join(", ")}`

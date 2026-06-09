@@ -11,7 +11,7 @@
 #
 # Edit this to taste — it is your pipeline made explicit. Env knobs:
 #   INGEST_SOURCE        (default local) — read transcripts off disk, not HTTP
-#   CASTER_TTS_PROVIDER  (default edge)  — free MS Edge TTS; set =elevenlabs for paid
+#   CASTER_TTS_PROVIDER  (default elevenlabs) — paid ElevenLabs voices; set =edge for free MS Edge TTS, =mock for offline silent
 #   SKIP_PODCAST=1       — wiki only, skip caster entirely
 set -uo pipefail
 
@@ -20,7 +20,7 @@ ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 cd "${ROOT}"
 
 export INGEST_SOURCE="${INGEST_SOURCE:-local}"
-TTS_PROVIDER="${CASTER_TTS_PROVIDER:-edge}"
+TTS_PROVIDER="${CASTER_TTS_PROVIDER:-elevenlabs}"
 DATES=("$@")
 
 log() { echo "[downstream] $*"; }

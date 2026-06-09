@@ -21,10 +21,10 @@ The three hosts:
 
 Write a LIVELY ROUNDTABLE conversation between the three of them about the session.
 This is a discussion, NOT a book report:
-- Do NOT narrate the beats one after another like a summary read aloud. The beats
-  are the SPINE of what the table talks about, not a checklist to recite. Enter each
-  moment through a reaction, a question, a hot take, or a callback — then let the
-  three of them actually TALK ABOUT it.
+- Do NOT narrate the beats like a summary read aloud. The beats are the SPINE the
+  table follows — the through-line of the night, in the order it happened, not a
+  checklist to recite. Enter each moment through a reaction, a question, a hot take,
+  or a callback — then let the three of them actually TALK ABOUT it.
 - Give them real chemistry: they react, interrupt, finish each other's thoughts,
   disagree, tease, and change their minds. ${hosts.C.name} stirs the pot — pushing on
   the characters' choices and stakes and making the others defend their reads;
@@ -35,10 +35,13 @@ This is a discussion, NOT a book report:
   on each beat as fuel for the discussion: argue the contested calls, relive the big
   rolls and bold moves, sit in the emotional moments. Let the feeling come through how
   they talk, not a stated mood.
-- Follow what's INTERESTING, not a running order. The beats are fuel, not a setlist:
-  a listener should be able to follow the session, but let the table reach a moment
-  through association, memory, or an argument — double back to an earlier beat, skip
-  or barely touch a dull one, and linger on a good one. Don't recite them in sequence.
+- Move through the session ROUGHLY IN ORDER. The beats are given in the order they
+  happened; let the conversation broadly follow that through-line so a listener can
+  track the night as it unfolded. It's still a discussion, not a setlist: reach each
+  moment through a reaction, a memory, or an argument rather than reciting it, glance
+  back to an earlier beat when it genuinely connects, and skip or barely touch a dull
+  one while lingering on a good one. Don't jump around so much the night's order gets
+  lost — but don't read the list out in lockstep either.
 - Aim for a FULL EPISODE of roughly 30-40 minutes of speech: go deep, linger on the
   interesting moments, let the hosts speculate and joke. Use many turns.
 - Don't open with a tidy "welcome to the show" or close with a neat sign-off. Start
@@ -59,21 +62,25 @@ a real table:
 - Don't narrate the recap's structure out loud ("first up", "moving on to", "next
   big thing", "before we wrap"). The table doesn't announce its own agenda.
 - Don't fall into a tidy A-then-B-then-C rotation where each host takes one clean
-  turn. Share the floor unevenly and out of order.
+  turn. Share the floor unevenly, not in a fixed rotation.
 - Don't write three equally articulate voices (see above).
-- Don't march the beats in digest order.
+- Don't march the beats out in lockstep like a numbered list read aloud — follow the
+  night's order loosely and in conversation, not as a mechanical recital.
 - Don't resolve every disagreement — some arguments just end, unresolved, and the
   table moves on. ${hosts.C.name} doesn't have to be corrected into agreeing.
 - Don't explain the inside jokes or callbacks for the listener's benefit; these
   friends don't gloss their own history.
-- Don't float in a featureless void (see the room, below).
+- Don't turn the tavern into stage business — no waiter, no ordering, no fussing over
+  food or drink. It's a backdrop, not a scene to play (see the setting, below).
 - Don't keep a uniform energy. Vary it hard.
 - Don't give anyone perfect recall.
 
-THE ROOM: they are at a specific table in a tavern, not in a recording booth — drinks,
-the noise of the bar, a fire, a barkeep, food. Let the room intrude a FEW times across
-the episode (a mug goes empty, a noise from the bar, someone steals a chip), and let a
-small physical detail come back as a callback late on. Keep it ambient, not constant.
+THE SETTING: they are friends at a tavern table, not in a recording booth — that's the
+WARMTH and informality of it, the reason the talk is loose and unguarded. But keep the
+tavern in the BACKGROUND: no waiter or barkeep interactions, no ordering, no fussing
+over food or drink, no stage business with mugs or plates. The room never intrudes on
+the talk — these friends are lost in the STORY, not in their dinner. Let the place
+colour the tone, but never let it pull focus from the recap.
 
 IMPERFECTION BUDGET — real talk is mostly imperfect, so across the episode include AT
 LEAST: several false starts or self-corrections ("the green one — no, the blue one");
@@ -132,14 +139,16 @@ Record the finished script by calling the provided tool exactly once.`;
 }
 
 /**
- * Render one beat as an unordered block of discussion material. The labels give
- * the hosts angles to talk FROM (what happened / why it mattered / the texture /
- * what they'd argue about) rather than a bare fact to read out. Deliberately NO
- * ordinal ("BEAT n") and NO "Mood" label: the ordinal reads as "narrate in this
- * order" and the mood label gets performed out loud — both are podcast tells we
- * don't want. The beat's emotional register is conveyed through the texture
- * instead. Enrichment fields are optional — older digests degrade gracefully to
- * just the summary.
+ * Render one beat as a block of discussion material. Beats are emitted in the
+ * chronological order distill produced them, and the surrounding framing asks the
+ * table to follow that order loosely — but we still omit an explicit ordinal
+ * ("BEAT n"), because a numbered label tips the hosts into reading the list out in
+ * mechanical lockstep rather than following the night's order in conversation. The
+ * labels give the hosts angles to talk FROM (what happened / why it mattered / the
+ * texture / what they'd argue about) rather than a bare fact to read out. NO "Mood"
+ * label either: it gets performed out loud — the beat's emotional register is
+ * conveyed through the texture instead. Enrichment fields are optional — older
+ * digests degrade gracefully to just the summary.
  */
 function renderBeat(b: Beat): string {
   const lines = [`- ${b.summary}`];
@@ -189,8 +198,9 @@ export function buildScriptUserContent(
 
 Synopsis: ${digest.synopsis}
 
-Things that happened this session (a pool, in no fixed order — bring them up however
-the table gets to them, not as a list to work through):
+Things that happened this session, in the order they happened — walk through them
+roughly in this order so the recap is easy to follow, but talk ABOUT each moment as
+you reach it; don't just read the list out:
 ${beats}
 
 ---
@@ -241,14 +251,19 @@ ${hosts.A.name} fluent but imprecise, ${hosts.B.name} precise but terse,
 ${hosts.C.name} fast but scattered. If you could swap two names on a line and it would
 still fit, it's too generic.
 
-They are at a tavern table, not in a booth — let the room (a mug, the fire, the
-barkeep, food) intrude a few times, ambient not constant.
+They are friends at a tavern table, not in a booth — that's the warm, informal feel of
+it. Keep the tavern in the background, though: no waiter or barkeep, no ordering, no
+fussing over food or drink. The room never pulls focus — they're lost in the story, not
+their dinner.
 
-Cover what's INTERESTING from the session below — not in order, and you don't have to
-cover all of it. Reach a moment through memory or an argument, double back, skip the
-dull bits, sit on a good one. Don't announce an agenda, don't open with "welcome to
-the show", don't sign off cleanly: start mid-conversation and let it trail off. Aim
-for a long session, roughly 30-40 minutes of talk.
+Walk through the session below ROUGHLY IN THE ORDER IT HAPPENED — the moments are
+listed in sequence, and the talk should broadly follow that through-line so it's easy
+to follow. You don't have to cover all of it: skip the dull bits, sit on a good one,
+and glance back to an earlier moment when it connects — just don't jump around so much
+the night's order gets lost. Reach each moment through memory or an argument, not a
+flat recital. Don't announce an agenda, don't open with "welcome to the show", don't
+sign off cleanly: start mid-conversation and let it trail off. Aim for a long session,
+roughly 30-40 minutes of talk.
 
 Grounding: use the wiki excerpts ONLY to spell names, factions, places, and lore right
 (${hosts.B.name} is the one who'd know them). Do NOT invent events or outcomes not in

@@ -218,10 +218,12 @@ describe("buildScriptSystemPrompt — tavern-table tone (Phase 1)", () => {
     expect(lower).toContain("tidy a-then-b-then-c");
   });
 
-  test("grounds the conversation in a physical tavern room", () => {
-    expect(lower).toContain("the room");
+  test("keeps the tavern as warm background, not stage business", () => {
     expect(lower).toContain("tavern");
-    expect(lower).toContain("barkeep");
+    expect(lower).toContain("background");
+    // The room must not pull focus — no waiter/ordering/food-and-drink interactions.
+    expect(lower).toContain("no ordering");
+    expect(lower).toContain("pull focus");
   });
 
   test("sets a counted imperfection budget with the standalone-wit rule", () => {
@@ -272,9 +274,11 @@ describe("buildScriptUserContent — de-structured beats (Phase 1)", () => {
     expect(content).toContain("Involves: Foral, Observatory");
   });
 
-  test("frames the beats as an unordered pool, not a numbered list", () => {
+  test("frames the beats as a roughly chronological walkthrough, not a numbered list", () => {
     const content = buildScriptUserContent(enriched, []).toLowerCase();
-    expect(content).toContain("no fixed order");
+    expect(content).toContain("in the order they happened");
+    // Still no numbered ordinal that would invite mechanical recitation.
+    expect(content).not.toContain("beat 1");
   });
 
   test("degrades gracefully for an older minimal digest", () => {
