@@ -1,33 +1,13 @@
+/* Design tokens (palette, motion) and fonts come from @faerrin/gothic,
+   imported in src/routes/__root.tsx. This file keeps only strider's reset
+   and its canvas-coupled atmosphere (scanline overlay + vignette). */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-:root {
-  /* Void palette */
-  --bg-void: #090c10;
-  --bg-panel: #0f1318;
-  --bg-elevated: #171c24;
-  --bg-hover: #1e2530;
-
-  --ink: #dce8f0;
-  --ink-dim: #7a8a99;
-  --ink-faint: #3a434f;
-
-  --accent: #6dd5c0; /* phosphor teal */
-  --accent-amber: #f0b46e;
-
-  --rule: #1e2730;
-  --rule-bright: #2f3c4e;
-
-  /* Motion */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration-fast: 120ms;
-  --duration-base: 220ms;
-  --duration-slow: 400ms;
 }
 
 html,

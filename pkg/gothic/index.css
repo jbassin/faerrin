@@ -1,0 +1,4 @@
+/* @faerrin/gothic — full skin: fonts + design tokens.
+   Import this for everything, or import ./fonts.css / ./tokens.css individually. */
+@import "./fonts.css";
+@import "./tokens.css";

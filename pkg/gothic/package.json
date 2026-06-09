@@ -1,0 +1,22 @@
+{
+  "name": "@faerrin/gothic",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared amber/teal Warhammer-40k gothic skin — design tokens + fonts. Domain-agnostic; no app or TTRPG logic.",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./fonts.css": "./fonts.css",
+    "./index.css": "./index.css",
+    "./fonts/*": "./fonts/*"
+  },
+  "files": [
+    "tokens.css",
+    "fonts.css",
+    "index.css",
+    "fonts"
+  ]
+}

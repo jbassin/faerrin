@@ -11,7 +11,7 @@ import { EntitiesObservedProvider } from "@/components/SiteHeader/entitiesObserv
 import { CONTENT_HASH } from "@/generated/contentHash";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
-import "@/styles/fonts.css";
+import "@faerrin/gothic/index.css";
 import "@/styles/globals.css";
 
 const OG_IMAGE_URL = `https://strider.iridi.cc/og-map.png?id=${CONTENT_HASH}`;
