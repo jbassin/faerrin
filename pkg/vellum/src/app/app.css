@@ -1,0 +1,24 @@
+/* Global shell. Colors/fonts from @faerrin/gothic tokens (loaded in main.tsx). */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background-color: var(--bg-void);
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--font-body), serif;
+  -webkit-font-smoothing: antialiased;
+}

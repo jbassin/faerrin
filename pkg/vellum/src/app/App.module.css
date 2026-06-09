@@ -1,0 +1,135 @@
+/* Editor shell (mechanical chrome). Colors via @faerrin/gothic vars (NFR-3). */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-void);
+  border-bottom: 1px solid var(--rule-bright);
+}
+
+.brand {
+  font-family: var(--font-display), serif;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+}
+
+.tagline {
+  font-family: var(--font-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.6rem;
+  color: var(--ink-dim);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.modeToggle {
+  display: flex;
+  border: 1px solid var(--rule-bright);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.modeOn,
+.modeOff {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.modeOn {
+  background-color: var(--accent);
+  color: var(--bg-void);
+}
+
+.modeOff {
+  background-color: transparent;
+  color: var(--ink-dim);
+}
+
+.exportButton {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.7rem;
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.exportButton:disabled {
+  color: var(--ink-faint);
+  border-color: var(--rule-bright);
+  cursor: not-allowed;
+}
+
+.panes {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 0;
+}
+
+.pane {
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pane:first-child {
+  border-right: 1px solid var(--rule-bright);
+}
+
+.editor {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.previewPane {
+  overflow: auto;
+  background-color: var(--bg-void);
+}
+
+.previewSurface {
+  padding: 1.5rem;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.previewEmpty {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+}
+
+@media (max-width: 720px) {
+  .panes {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .pane:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--rule-bright);
+  }
+}

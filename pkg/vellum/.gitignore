@@ -1,0 +1,10 @@
+# dependencies
+/node_modules
+
+# build
+/dist
+
+# testing
+/coverage
+/playwright-report
+/test-results
