@@ -7,10 +7,14 @@ statblocks/handouts in the amber/teal 40k-gothic skin, export as PNG. See the sp
 Built milestone-by-milestone; **M0–M6 are complete** — renderer library (`src/render/`), editor
 SPA (`src/app/`), warm Playwright render service (`src/server/` + `scripts/render-server.ts`), the
 full six-kind zoo + mechanical|diegetic theme axis, authoring polish (slash palette, template
-gallery, share links, seeded grime), and deploy (`deploy/`). See `README.md` for run/deploy and the
-spec for requirement IDs. Deferred slices: the full multi-document list (new/switch/rename/delete —
-the rest of R-19) and golden-image visual-regression in Dagger CI with Chromium (NFR-9; `bun test`
-is deliberately pure so CI stays green without a browser).
+gallery, share links, seeded grime), deploy (`deploy/`), the multi-document manager (`docStore.ts`,
+completing R-19), and golden-image visual regression (`scripts/visual-regression.ts` +
+`test/visual/`, NFR-9). See `README.md` for run/deploy and the spec for requirement IDs.
+
+**Visual regression (NFR-9):** goldens are authoritative only in the pinned CI container. CI runs
+`dagger call visual-regression`; regenerate goldens after an intentional visual change with
+`dagger call update-goldens --source=. export --path=pkg/vellum/test/visual/golden`. `bun test`
+stays pure (no Playwright) so the unit-test job needs no browser.
 
 ## Architecture (AD-4)
 

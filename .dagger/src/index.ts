@@ -93,6 +93,48 @@ export class Ci {
       .stdout()
   }
 
+  /**
+   * Base container for vellum's PNG render: Chromium installed + vellum built
+   * (the render service serves dist/). Shared by the VR compare/update funcs.
+   */
+  private vellumRenderBase(source: Directory): Container {
+    return this.base(source)
+      .withEnvVariable("PLAYWRIGHT_BROWSERS_PATH", "/ms-playwright")
+      .withExec(["bunx", "playwright", "install", "--with-deps", "chromium"])
+      .withExec(["bun", "--filter", "@faerrin/vellum", "build"])
+  }
+
+  /**
+   * Golden-image visual regression for vellum (NFR-9). Renders the fixtures and
+   * compares to the committed goldens with a perceptual tolerance — throws on
+   * drift. Goldens are authoritative in THIS pinned container only.
+   */
+  @func()
+  async visualRegression(source: Directory): Promise<string> {
+    return this.vellumRenderBase(source)
+      .withExec(["bun", "--filter", "@faerrin/vellum", "visual-regression"])
+      .stdout()
+  }
+
+  /**
+   * Regenerate vellum's goldens IN the pinned container and return them as a
+   * Directory, e.g.:
+   *   dagger call update-goldens --source=. export --path=pkg/vellum/test/visual/golden
+   */
+  @func()
+  updateGoldens(source: Directory): Directory {
+    return this.vellumRenderBase(source)
+      .withExec([
+        "bun",
+        "--filter",
+        "@faerrin/vellum",
+        "visual-regression",
+        "--",
+        "--update",
+      ])
+      .directory("/src/pkg/vellum/test/visual/golden")
+  }
+
   /** The full pipeline: `check` then `build`. */
   @func()
   async all(source: Directory): Promise<string> {
