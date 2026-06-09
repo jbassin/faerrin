@@ -247,6 +247,9 @@ are **layout-only and top-level**: written inside a `:::kind` card, or orphaned
 without a `:::columns` parent, they render their content with a visible `?…`
 error chip instead of laying out.
 
+> **Tired of counting colons?** The **Structured syntax (§5)** writes the same
+> layout as `@columns [ {…} {…} ]` and computes the fence depth for you.
+
 ### 4.2 GitHub-Flavored Markdown
 
 **GFM is on** (`remark-gfm`), so the GitHub extensions all work, top level and in
@@ -275,7 +278,96 @@ a block body:
 
 ---
 
-## 5. Directive syntax rules (reference)
+## 5. Structured syntax (VSS) — braces for structure
+
+**Vellum Structured Syntax (VSS)** is a brace/bracket surface for the *structure*
+of a document — blocks and columns — so you never count colons. It **compiles to
+the canonical `:::` directives** above before anything else runs; markdown + GFM +
+the inline sigils stay the language of **content** inside `{ … }` bodies. The
+`/statblock`, `/item`, `/columns`, … snippets now scaffold VSS.
+
+> **Design axiom: braces for STRUCTURE, markdown for CONTENT.** VSS never
+> reimplements markdown — it emits canonical directive markdown and hands bodies
+> to the renderer verbatim. The model and the rendered cards are identical to the
+> `:::` form.
+
+### 5.1 Blocks
+
+```
+@item "Reinforced Bulkheads"
+| price: 30 Energy
+| level: 1
+{
+  The Fortitude DC of the base camp increases by **+2**.
+}
+```
+
+- **`@kind "Title"`** opens a block. `kind` is one of the six
+  (`statblock`/`hazard`/`item`/`spell`/`handout`/`edict`); the quoted title
+  becomes the `[label]` and may carry sigils (`@item "Look Out @reaction"`).
+- **`| key: value`** lines — one attribute per line, **between the title and the
+  `{`**. The value is the rest of the line (so `level: Creature 2` works); split on
+  the first `:`. `traits: a, b` → `traits="a,b"`. A `|` line *after* the `{` is
+  ordinary body text, not an attribute.
+- **`{ … }`** is the body: any markdown, sigils, and **nested** blocks/columns.
+
+### 5.2 Columns
+
+```
+@columns [
+  {
+    ## Tier I
+    @item "Reinforced Bulkheads"
+    | price: 30 Energy
+    { The Fortitude DC increases by **+2**. }
+  }
+  {
+    ## Tier 2
+    @item "Alarm Wards"
+    | price: 35 Energy
+    { Stealth checks suffer a **-2** penalty. }
+  }
+]
+```
+
+`@columns [ {…} {…} ]` — **each `{ }` is one column** (hold as many cards/paragraphs
+as you like). VSS computes the fence depth from brace nesting, so the colon-count
+footgun from §4.1 is gone: the example above compiles to `:::::columns` →
+`::::column` → `:::item` automatically.
+
+### 5.3 Braces, escapes, and code
+
+The matcher finds the `}` that *matches* the opening `{`, not the first one. It
+tracks markdown so structural braces count but content braces don't:
+
+- **Balanced braces in prose nest** (`press {the} key`). For a **lone** literal
+  brace, escape it: `\{` / `\}` (kept escaped in the output).
+- **Braces inside inline code (`` `{` ``) and fenced code blocks are ignored**
+  (a `~~~` fence may even contain ```` ``` ````).
+- **4-space indented code is *not* tracked** — a `}` there closes the body early.
+  Use a *fenced* block for brace-bearing code in a body.
+- A bare canonical `:::` fence **inside** a VSS body is rejected (use VSS braces to
+  nest, not `:::`).
+
+### 5.4 Errors never throw
+
+Any malformed VSS compiles to a visible **error chip** `?…` instead of throwing or
+blanking the document — a missing title, a body that never opens, an unterminated
+`{`/`[`, an attribute value containing `"`/`}`, nesting past the depth cap, etc.
+An **unknown** `@kind` (e.g. `@monster "x"`) is left as literal text.
+
+### 5.5 Portability (AD-6a) — the one trade-off
+
+Canonical `:::` and the inline sigils stay **valid-ish CommonMark** and degrade
+gracefully in a vanilla viewer (aether/Obsidian). **VSS source does not degrade** —
+`@columns [ … ]` is garbage outside vellum. VSS is therefore an **opt-in** surface:
+authoring in it trades portability for structure, scoped to vellum-rendered
+contexts (editor preview, render service, share links). Nothing forces VSS on
+existing content, and a future formatter will serialize VSS ↔ canonical for export.
+
+---
+
+## 6. Directive syntax rules (reference)
 
 `remark-directive` defines three nesting levels — vellum uses two of them:
 
@@ -300,7 +392,7 @@ see §4.1.
 
 ---
 
-## 6. Theme modes (not markdown)
+## 7. Theme modes (not markdown)
 
 `mechanical` (teal cogitator-dataslate, default) vs `diegetic` (amber Imperial
 parchment) is chosen in the editor toolbar or the export request — **there is no
@@ -311,7 +403,7 @@ document's content, so the same text always exports the same image.
 
 ---
 
-## 7. Gotchas (read before authoring)
+## 8. Gotchas (read before authoring)
 
 - **Top-level markdown renders now.** Notes, headings, and lists between/around
   blocks *do* appear in the output and export — they're no longer dropped. If you
@@ -335,7 +427,7 @@ document's content, so the same text always exports the same image.
 
 ---
 
-## 8. Complete annotated example
+## 9. Complete annotated example
 
 ```
 :::statblock[Censer-Wraith]{level="Creature 4" traits="undead,incorporeal,fire"}
@@ -368,7 +460,7 @@ cipher.
 
 ---
 
-## 9. Cheat sheet
+## 10. Cheat sheet
 
 ```
 :::statblock[Name]{level="Creature 1" traits="a,b"}   # statblock | hazard | item | spell

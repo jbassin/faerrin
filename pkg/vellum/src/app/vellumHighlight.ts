@@ -6,7 +6,11 @@ import {
   ViewPlugin,
   type ViewUpdate,
 } from "@codemirror/view";
-import { HighlightStyle, syntaxHighlighting } from "@codemirror/language";
+import {
+  foldService,
+  HighlightStyle,
+  syntaxHighlighting,
+} from "@codemirror/language";
 import { tags as t } from "@lezer/highlight";
 
 /**
@@ -56,6 +60,15 @@ const inlineUnknownMark = Decoration.mark({ class: "cm-vellum-inline-unknown" })
 const OPEN_FENCE = /^(:{3,})([A-Za-z][\w-]*)/;
 /** A bare closing fence line, `:::` (any colon count). */
 const CLOSE_FENCE = /^:{3,}\s*$/;
+/** VSS opener — `@kind`/`@columns` at line start (the closed kind set only, so
+ * an `@reaction` action sigil on its own line isn't mistaken for a block). */
+const VSS_KINDS = "statblock|hazard|item|spell|handout|edict|columns";
+const VSS_OPENER = new RegExp(`^(\\s*)(@(?:${VSS_KINDS}))\\b`);
+/** A quoted VSS title, `"…"` (with `\"` escapes). */
+const VSS_TITLE = /"(?:[^"\\]|\\.)*"/;
+/** A VSS attribute line, `| key:` (the leading gutter; the value stays plain).
+ * Requires the `:` so a GFM table row `| Ability |` never matches. */
+const VSS_ATTR = /^(\s*)(\|\s*[A-Za-z][\w-]*\s*:)/;
 /** `[label]` and `{attributes}` trailing a directive opener. */
 const LABEL = /\[[^\]\n]*\]/;
 const ATTRS = /\{[^}\n]*\}/;
@@ -93,6 +106,22 @@ function buildDecorations(view: EditorView): DecorationSet {
         }
       } else if (CLOSE_FENCE.test(text)) {
         out.push(fenceMark.range(line.from, line.from + text.trimEnd().length));
+      } else if (VSS_OPENER.test(text)) {
+        // VSS `@kind "Title"` / `@columns` opener: the `@kind` reads like a
+        // fence, the quoted title like a `[label]`.
+        const op = VSS_OPENER.exec(text)!;
+        const kindStart = line.from + op[1]!.length;
+        out.push(fenceMark.range(kindStart, kindStart + op[2]!.length));
+        const title = VSS_TITLE.exec(text);
+        if (title) {
+          const start = line.from + title.index;
+          out.push(labelMark.range(start, start + title[0].length));
+        }
+      } else if (VSS_ATTR.test(text)) {
+        // VSS `| key:` attribute gutter.
+        const at = VSS_ATTR.exec(text)!;
+        const start = line.from + at[1]!.length;
+        out.push(attrMark.range(start, start + at[2]!.length));
       } else {
         // Inline directives anywhere in a body line.
         INLINE.lastIndex = 0;
@@ -152,6 +181,38 @@ const directiveTheme = EditorView.baseTheme({
 });
 
 /**
+ * Fold VSS structure: a `{ … }` body or a `@columns [ … ]` list whose opener is
+ * on the given line folds to its matching close. Complements basicSetup's
+ * markdown-section folding (both fold services are tried). The match scan is a
+ * plain depth counter — good enough for the gutter affordance; the authoritative
+ * lexical-state matcher lives in `render/vss.ts`.
+ */
+const vssFold = foldService.of((state, lineStart, lineEnd) => {
+  const line = state.doc.sliceString(lineStart, lineEnd);
+  let openPos = -1;
+  let openCh = "";
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i]!;
+    if (c === "{" || c === "[") {
+      openPos = lineStart + i;
+      openCh = c;
+    }
+  }
+  if (openPos === -1) return null;
+  const closeCh = openCh === "{" ? "}" : "]";
+  const doc = state.doc.toString();
+  let depth = 0;
+  for (let i = openPos; i < doc.length; i++) {
+    const c = doc[i];
+    if (c === openCh) depth++;
+    else if (c === closeCh && --depth === 0) {
+      return i > lineEnd ? { from: openPos + 1, to: i } : null;
+    }
+  }
+  return null;
+});
+
+/**
  * Full editor highlighting extension. `Prec.high` lets the gothic markdown
  * style win over basicSetup's default highlight style for the tags we define.
  */
@@ -159,4 +220,5 @@ export const vellumHighlighting: Extension = [
   Prec.high(syntaxHighlighting(gothicMarkdown)),
   directivePlugin,
   directiveTheme,
+  vssFold,
 ];
