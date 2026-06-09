@@ -5,65 +5,101 @@ import { WELCOME_DOC } from "./welcomeDoc.ts";
 import { TEMPLATES } from "./templates.ts";
 import { useExport } from "./useExport.ts";
 import { docToHash, hashToDoc, isShareable } from "./shareLink.ts";
+import {
+  type DocStore,
+  loadStore,
+  saveStore,
+  addDoc,
+  setActive,
+  updateActiveSource,
+  renameActive,
+  deleteDoc,
+  activeDoc,
+} from "./docStore.ts";
 import type { ThemeMode } from "../render/index.ts";
 import styles from "./App.module.css";
 
-const STORAGE_KEY = "vellum:active-doc";
-
-/** Initial source: a shared #doc= link wins, then localStorage, then welcome (R-19b/R-20). */
-function loadInitialSource(): string {
+/** Initial store: migrate/load, then a #doc= share link opens as a new doc. */
+function initialStore(): DocStore {
+  const base = loadStore(WELCOME_DOC);
   try {
-    const fromHash = hashToDoc(window.location.hash);
-    if (fromHash) return fromHash;
-    return localStorage.getItem(STORAGE_KEY) ?? WELCOME_DOC;
+    const shared = hashToDoc(window.location.hash);
+    if (shared) return addDoc(base, shared);
   } catch {
-    return WELCOME_DOC;
+    /* ignore */
   }
+  return base;
 }
 
 export function App() {
-  const [source, setSource] = useState<string>(loadInitialSource);
-  // `seedText` is what the (uncontrolled) editor was last seeded with; bumping
-  // `loadKey` remounts the editor to load a template/share without fighting the
-  // cursor. `source !== seedText` ⇒ the user has unsaved edits (clobber guard).
-  const [seedText, setSeedText] = useState<string>(source);
+  const [store, setStore] = useState<DocStore>(initialStore);
+  const active = activeDoc(store);
+  const [source, setSource] = useState<string>(active.source);
+  const [seedText, setSeedText] = useState<string>(active.source);
   const [loadKey, setLoadKey] = useState(0);
   const [mode, setMode] = useState<ThemeMode>("mechanical");
   const [note, setNote] = useState<string | null>(null);
   const { status: exportStatus, exportPng } = useExport();
   const deferredSource = useDeferredValue(source);
 
-  // Debounced localStorage autosave (R-19).
+  // Once: a share link is now its own doc — strip it so reload doesn't re-add.
+  useEffect(() => {
+    if (window.location.hash.startsWith("#doc=")) {
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search,
+      );
+    }
+  }, []);
+
+  // Debounced persist of the active doc's source (R-19 autosave).
   useEffect(() => {
     const id = setTimeout(() => {
-      try {
-        localStorage.setItem(STORAGE_KEY, source);
-      } catch {
-        /* private mode / quota — non-fatal */
-      }
-    }, 250);
+      setStore((prev) => {
+        const next = updateActiveSource(prev, source);
+        saveStore(next);
+        return next;
+      });
+    }, 300);
     return () => clearTimeout(id);
   }, [source]);
 
-  // R-19a clobber protection: loading a template/share never silently discards
-  // unsaved edits.
-  const loadDoc = useCallback(
-    (text: string, confirmReplace: boolean) => {
-      if (
-        confirmReplace &&
-        source.trim().length > 0 &&
-        source !== seedText &&
-        !window.confirm("Replace the current document? Unsaved edits are lost.")
-      ) {
-        return;
-      }
+  /** Switch which doc is active, seeding the editor with its text. */
+  const openDoc = useCallback(
+    (next: DocStore) => {
+      saveStore(next);
+      setStore(next);
+      const text = activeDoc(next).source;
       setSource(text);
       setSeedText(text);
       setLoadKey((k) => k + 1);
       setNote(null);
     },
-    [source, seedText],
+    [],
   );
+
+  const flushed = useCallback(
+    () => updateActiveSource(store, source),
+    [store, source],
+  );
+
+  const newDoc = () => openDoc(addDoc(flushed(), ""));
+  const openTemplate = (src: string) => openDoc(addDoc(flushed(), src));
+  const switchTo = (id: string) => openDoc(setActive(flushed(), id));
+
+  const rename = () => {
+    const title = window.prompt("Document title", active.title);
+    if (title == null) return;
+    const next = renameActive(flushed(), title);
+    saveStore(next);
+    setStore(next);
+  };
+
+  const removeActive = () => {
+    if (!window.confirm(`Delete "${active.title}"?`)) return;
+    openDoc(deleteDoc(store, active.id));
+  };
 
   const share = useCallback(async () => {
     if (!isShareable(source)) {
@@ -71,13 +107,13 @@ export function App() {
       return;
     }
     const hash = docToHash(source);
-    window.location.hash = hash;
     const url = `${window.location.origin}${window.location.pathname}${hash}`;
     try {
       await navigator.clipboard.writeText(url);
       setNote("Share link copied to clipboard.");
     } catch {
-      setNote("Share link is in the address bar.");
+      setNote("Could not access the clipboard — copy the address bar.");
+      window.location.hash = hash;
     }
   }, [source]);
 
@@ -85,17 +121,55 @@ export function App() {
     <div className={styles.app}>
       <header className={styles.toolbar}>
         <span className={styles.brand}>▌ VELLUM</span>
-        <span className={styles.tagline}>diegetic document forge</span>
+
+        <div className={styles.docbar}>
+          <select
+            className={styles.select}
+            value={active.id}
+            onChange={(e) => switchTo(e.target.value)}
+            aria-label="Active document"
+          >
+            {store.docs.map((d) => (
+              <option key={d.id} value={d.id}>
+                {d.title}
+              </option>
+            ))}
+          </select>
+          <button
+            type="button"
+            className={styles.iconButton}
+            onClick={newDoc}
+            title="New document"
+          >
+            ＋
+          </button>
+          <button
+            type="button"
+            className={styles.iconButton}
+            onClick={rename}
+            title="Rename document"
+          >
+            ✎
+          </button>
+          <button
+            type="button"
+            className={styles.iconButton}
+            onClick={removeActive}
+            title="Delete document"
+          >
+            🗑
+          </button>
+        </div>
 
         <select
           className={styles.select}
           value=""
           onChange={(e) => {
             const template = TEMPLATES.find((t) => t.id === e.target.value);
-            if (template) loadDoc(template.source, true);
+            if (template) openTemplate(template.source);
             e.currentTarget.value = "";
           }}
-          aria-label="Insert a template"
+          aria-label="Open a template"
         >
           <option value="" disabled>
             Templates ▾

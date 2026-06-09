@@ -34,6 +34,29 @@
   flex: 1;
 }
 
+.docbar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.iconButton {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  background-color: transparent;
+  color: var(--ink-dim);
+  border: 1px solid var(--rule-bright);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 .modeToggle {
   display: flex;
   border: 1px solid var(--rule-bright);
