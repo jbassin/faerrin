@@ -4,8 +4,13 @@ The **Diegetic Document Forge**: write `remark`-directive markdown, see it rende
 statblocks/handouts in the amber/teal 40k-gothic skin, export as PNG. See the spec at
 `thoughts/vellum/specs/2026-06-09-vellum-diegetic-document-forge.md` (read it before large changes).
 
-Built milestone-by-milestone. **Current: M1 — the renderer library** (`src/render/`). The editor
-SPA (M2), server-side PNG export (M3), full zoo + diegetic theme (M4) come later.
+Built milestone-by-milestone; **M0–M6 are complete** — renderer library (`src/render/`), editor
+SPA (`src/app/`), warm Playwright render service (`src/server/` + `scripts/render-server.ts`), the
+full six-kind zoo + mechanical|diegetic theme axis, authoring polish (slash palette, template
+gallery, share links, seeded grime), and deploy (`deploy/`). See `README.md` for run/deploy and the
+spec for requirement IDs. Deferred slices: the full multi-document list (new/switch/rename/delete —
+the rest of R-19) and golden-image visual-regression in Dagger CI with Chromium (NFR-9; `bun test`
+is deliberately pure so CI stays green without a browser).
 
 ## Architecture (AD-4)
 

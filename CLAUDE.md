@@ -77,6 +77,8 @@ bun --filter '*' format          # per-app prettier (no single root config — a
 | `strider` | `@faerrin/strider` | TanStack Start + Vite + React — interactive faction-map site |
 | `llm` | `@faerrin/llm` | Shared Anthropic client (`AnthropicClient`) + pricing |
 | `content` | `@faerrin/content` | **Content platform**: SSOT data (wiki + transcripts) + the generation pipeline |
+| `gothic` | `@faerrin/gothic` | Shared amber/teal 40k-gothic **skin** — design tokens + fonts (pure CSS; consumed by strider + vellum) |
+| `vellum` | `@faerrin/vellum` | Vite + React PF2e document forge (`vellum.iridi.cc`) — directive-markdown → gothic statblocks/handouts → PNG, via a warm Playwright render service |
 
 ## Shared data — single source of truth (`pkg/content`)
 

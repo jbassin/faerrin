@@ -1,0 +1,26 @@
+# Warm render-service sidecar (OQ-1). Install on the host as
+#   /etc/systemd/system/vellum-render.service
+# then: systemctl daemon-reload && systemctl enable --now vellum-render
+#
+# The service launches one Chromium and keeps it warm; Restart=always supervises
+# it, and a daily restart bounds Chromium's memory leak (NFR-8). It serves the
+# render assets + /render + /health on 127.0.0.1:5252; Caddy proxies the public
+# /render and /health to it (see Caddyfile.example).
+
+[Unit]
+Description=Vellum render service (Bun + Playwright)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/ruby/data/experiments/faerrin/pkg/vellum
+Environment=VELLUM_RENDER_PORT=5252
+ExecStart=/usr/bin/env bun run scripts/render-server.ts
+Restart=always
+RestartSec=3
+# Recycle daily to bound Chromium memory (pair with a .timer, or:)
+RuntimeMaxSec=86400
+MemoryMax=1500M
+
+[Install]
+WantedBy=multi-user.target

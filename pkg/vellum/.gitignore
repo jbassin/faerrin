@@ -1,6 +1,9 @@
 # dependencies
 /node_modules
 
+# env (copy .env.example → .env)
+.env
+
 # build
 /dist
 

@@ -2,6 +2,13 @@
 
 > **Status:** Reviewed (adversarial completeness pass incorporated — see §14) · **Date:** 2026-06-09 · **Author:** brainstorm → spec (octo:spec, team mode / Claude personas)
 > **Downstream:** feeds an implementation plan (`create-plan`) under `thoughts/vellum/plans/`.
+>
+> **Implementation status (2026-06-09):** M0–M6 shipped to `main` (`@faerrin/gothic` extracted +
+> strider consuming it; renderer library; editor SPA; warm Playwright render service with the full
+> SEC-1…5 model; six-kind zoo + mechanical|diegetic axis; slash palette / gallery / share links /
+> seeded grime; Caddy + systemd deploy artifacts). Deferred: the full multi-document list
+> (new/switch/rename/delete — rest of R-19) and golden-image visual-regression in Dagger CI with
+> Chromium (NFR-9; `bun test` is kept pure so CI is green without a browser).
 
 ---
 
