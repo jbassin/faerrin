@@ -1,0 +1,22 @@
+/**
+ * @faerrin/vellum renderer library. Pure parse pipeline + presentational React
+ * components. Knows layout; never knows PF2e rules (R-9) or theme colors (those
+ * come from injected @faerrin/gothic tokens).
+ */
+export { parseDocument, parseMarkdown } from "./parse.ts";
+export {
+  DOCUMENT_KINDS,
+  DEFAULT_MODE_BY_KIND,
+  type DocumentKind,
+  type ThemeMode,
+  type VellumBlock,
+  type VellumDocument,
+} from "./model.ts";
+export { DocumentView } from "./components/DocumentView.tsx";
+export { Statblock } from "./components/Statblock.tsx";
+export { Handout } from "./components/Handout.tsx";
+export { GenericBlock } from "./components/GenericBlock.tsx";
+export { TraitPill } from "./components/TraitPill.tsx";
+export { ErrorChip } from "./components/ErrorChip.tsx";
+export { ActionGlyph, normalizeActionCost, type ActionCost } from "./glyphs/actions.tsx";
+export { renderNodes, collectText } from "./mdastToReact.tsx";
