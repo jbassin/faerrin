@@ -149,6 +149,7 @@
         "@faerrin/gothic": "workspace:*",
         "@fontsource/ibm-plex-mono": "^5.2.7",
         "@lezer/highlight": "^1.2.3",
+        "@lezer/markdown": "^1.6.4",
         "codemirror": "^6.0.1",
         "lz-string": "^1.5.0",
         "playwright": "^1.60.0",

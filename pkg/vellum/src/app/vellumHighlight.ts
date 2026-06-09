@@ -21,6 +21,10 @@ import { tags as t } from "@lezer/highlight";
  *   2. a regex ViewPlugin that decorates vellum's own directive syntax — which
  *      the markdown grammar doesn't know about — so `:::kind` fences, inline
  *      `:action`/`:trait`/`:redact`, labels, and attributes read at a glance.
+ *
+ * The VSS structural surface (`@kind "Title"`, `| key:`, braces) is NOT
+ * decorated here — it's parsed into real grammar nodes by `vssLanguage.ts`
+ * (spec Phase 3) and styled through its own HighlightStyle.
  */
 
 // ── 1. Markdown tokens, re-themed ──────────────────────────────────────────
@@ -60,15 +64,6 @@ const inlineUnknownMark = Decoration.mark({ class: "cm-vellum-inline-unknown" })
 const OPEN_FENCE = /^(:{3,})([A-Za-z][\w-]*)/;
 /** A bare closing fence line, `:::` (any colon count). */
 const CLOSE_FENCE = /^:{3,}\s*$/;
-/** VSS opener — `@kind`/`@columns` at line start (the closed kind set only, so
- * an `@reaction` action sigil on its own line isn't mistaken for a block). */
-const VSS_KINDS = "statblock|hazard|item|spell|handout|edict|columns";
-const VSS_OPENER = new RegExp(`^(\\s*)(@(?:${VSS_KINDS}))\\b`);
-/** A quoted VSS title, `"…"` (with `\"` escapes). */
-const VSS_TITLE = /"(?:[^"\\]|\\.)*"/;
-/** A VSS attribute line, `| key:` (the leading gutter; the value stays plain).
- * Requires the `:` so a GFM table row `| Ability |` never matches. */
-const VSS_ATTR = /^(\s*)(\|\s*[A-Za-z][\w-]*\s*:)/;
 /** `[label]` and `{attributes}` trailing a directive opener. */
 const LABEL = /\[[^\]\n]*\]/;
 const ATTRS = /\{[^}\n]*\}/;
@@ -106,22 +101,6 @@ function buildDecorations(view: EditorView): DecorationSet {
         }
       } else if (CLOSE_FENCE.test(text)) {
         out.push(fenceMark.range(line.from, line.from + text.trimEnd().length));
-      } else if (VSS_OPENER.test(text)) {
-        // VSS `@kind "Title"` / `@columns` opener: the `@kind` reads like a
-        // fence, the quoted title like a `[label]`.
-        const op = VSS_OPENER.exec(text)!;
-        const kindStart = line.from + op[1]!.length;
-        out.push(fenceMark.range(kindStart, kindStart + op[2]!.length));
-        const title = VSS_TITLE.exec(text);
-        if (title) {
-          const start = line.from + title.index;
-          out.push(labelMark.range(start, start + title[0].length));
-        }
-      } else if (VSS_ATTR.test(text)) {
-        // VSS `| key:` attribute gutter.
-        const at = VSS_ATTR.exec(text)!;
-        const start = line.from + at[1]!.length;
-        out.push(attrMark.range(start, start + at[2]!.length));
       } else {
         // Inline directives anywhere in a body line.
         INLINE.lastIndex = 0;

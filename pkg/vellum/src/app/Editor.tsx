@@ -7,6 +7,7 @@ import { basicSetup } from "codemirror";
 import { markdown } from "@codemirror/lang-markdown";
 import { slashComplete } from "./slashComplete.ts";
 import { vellumHighlighting } from "./vellumHighlight.ts";
+import { vssMarkdown, vssHighlighting } from "./vssLanguage.ts";
 import styles from "./App.module.css";
 
 /**
@@ -77,7 +78,10 @@ export function Editor({
         doc: initialValue,
         extensions: [
           basicSetup,
-          markdown(),
+          // The VSS structural surface is parsed by real grammar nodes
+          // (vssLanguage.ts); canonical fences + sigils stay regex-decorated.
+          markdown({ extensions: vssMarkdown }),
+          vssHighlighting,
           vellumHighlighting,
           slashComplete,
           tabIndents,
