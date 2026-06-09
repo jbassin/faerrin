@@ -16,7 +16,7 @@ const SNIPPETS: Snippet[] = [
     label: "/statblock",
     detail: "creature / NPC",
     insert:
-      ':::statblock[Name]{level="Creature 1" traits=""}\nDescription.\n\n## Actions\nStrike :action[1] — a weapon.\n:::\n',
+      ':::statblock[Name]{level="Creature 1" traits=""}\nDescription.\n\n## Actions\nStrike @1 — a weapon.\n:::\n',
   },
   {
     label: "/hazard",
@@ -34,13 +34,13 @@ const SNIPPETS: Snippet[] = [
     label: "/spell",
     detail: "spell",
     insert:
-      ':::spell[Name]{level="1" traits=""}\n**Cast** :action[2]\nThe effect.\n:::\n',
+      ':::spell[Name]{level="1" traits=""}\n**Cast** @2\nThe effect.\n:::\n',
   },
   {
     label: "/handout",
     detail: "in-world handout",
     insert:
-      ':::handout[Title]\nBody text. Hide secrets with :redact[like this].\n:::\n',
+      ':::handout[Title]\nBody text. Hide secrets with ||like this||.\n:::\n',
   },
   {
     label: "/edict",
@@ -55,9 +55,9 @@ const SNIPPETS: Snippet[] = [
     insert:
       "::::columns\nLeft column.\n\n---\n\nRight column.\n::::\n",
   },
-  { label: "/action", detail: "action glyph", insert: ":action[2]" },
-  { label: "/trait", detail: "trait pill", insert: ":trait[fire]" },
-  { label: "/redact", detail: "redaction bar", insert: ":redact[secret]" },
+  { label: "/action", detail: "action glyph (@2)", insert: "@2" },
+  { label: "/trait", detail: "trait pill (#fire)", insert: "#fire" },
+  { label: "/redact", detail: "redaction bar (||…||)", insert: "||secret||" },
 ];
 
 function slashSource(context: CompletionContext): CompletionResult | null {

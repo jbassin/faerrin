@@ -119,7 +119,7 @@ These work **inside a block body** (and in a `[Title]` label — see §2). They 
 | Directive | Renders | Notes |
 |-----------|---------|-------|
 | `:action[N]` | a PF2e action glyph (inline SVG) | `N` ∈ `1`,`2`,`3`,`reaction`,`free` (+ aliases below) |
-| `:trait[name]` | a trait pill | hidden in diegetic mode; any name allowed |
+| `:trait[name]` | a trait pill | any name allowed (a wax-red stamp in diegetic mode) |
 | `:redact[text]` | a `[DATA EXPUNGED]` blackout bar over `text` | for diegetic props |
 
 **Action cost tokens** (case-insensitive): `1`/`one`/`single`, `2`/`two`/`double`,
@@ -129,6 +129,35 @@ These work **inside a block body** (and in a `[Title]` label — see §2). They 
 Cast :action[2], then Step :action[1] and Strike :action[reaction].
 A :trait[fire] :trait[evocation] spell. The password is :redact[swordfish].
 ```
+
+### 3.1 Shorthand sigils (recommended)
+
+Three terse sigils expand to those directives before parsing — use these; they're
+far easier to type and read. They're pure sugar (the line above and below render
+identically):
+
+| Sigil | Expands to | Example |
+|-------|-----------|---------|
+| `@N` | `:action[N]` | `Strike @1`, `@reaction`, `@free`, `@r`, `@f` |
+| `#name` | `:trait[name]` | `a #fire #evocation spell` |
+| `\|\|text\|\|` | `:redact[text]` | `the password is \|\|swordfish\|\|` |
+
+```
+Cast @2, then Step @1 and Strike @reaction.
+A #fire #evocation spell. The password is ||swordfish||.
+```
+
+**Scoping** (so ordinary prose doesn't trigger them):
+
+- `@` only fires on a **known action token** and not when it follows a letter —
+  so `@2`/`@free` convert, but `email@host`, `@everyone`, `@dawn`, and `@2d6` do not.
+- `#name` needs a letter right after `#` and whitespace before it — so `#fire`
+  converts, but `# Heading`, `## Actions`, `C#`, and `#123` do not.
+- `||…||` is a single line of any text. (GFM tables use single `|`, so they're safe.)
+
+**Limitations:** sigils are expanded everywhere, including inside `` `code spans` ``
+and `||…||`. If you need a literal `@2` or `#word` to survive, write the canonical
+`:action[2]` / `:trait[word]` form instead.
 
 A malformed or unknown inline directive (e.g. `:action[seven]`, `:trait[]`, or any
 unrecognized `:name[…]`) renders a small visible **error chip** like `?action[seven]`
@@ -350,9 +379,9 @@ cipher.
 …body…
 :::
 
-:action[2]   :action[reaction]   :action[free]         # inline action glyph
-:trait[fire]                                           # inline trait pill
-:redact[secret]                                        # inline blackout
+@2   @reaction   @free                                 # action glyph  (= :action[…])
+#fire                                                  # trait pill    (= :trait[fire])
+||secret||                                             # redaction bar (= :redact[secret])
 
 # Heading  - list  > quote  **bold**  [t](url)  ~~del~~   # CommonMark + GFM (tables, tasks, footnotes); HTML inert
 

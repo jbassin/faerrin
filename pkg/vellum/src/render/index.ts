@@ -4,6 +4,7 @@
  * come from injected @faerrin/gothic tokens).
  */
 export { parseDocument, parseMarkdown } from "./parse.ts";
+export { desugar } from "./surface.ts";
 export {
   DOCUMENT_KINDS,
   DEFAULT_MODE_BY_KIND,

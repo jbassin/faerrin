@@ -62,6 +62,10 @@ const ATTRS = /\{[^}\n]*\}/;
 /** Inline directive token, `:action[…]` / `:trait[…]` / `:foo[…]`. */
 const INLINE = /:([A-Za-z][\w-]*)\[[^\]\n]*\]/g;
 const KNOWN_INLINE = new Set(["action", "trait", "redact"]);
+/** Authoring sigils (kept in sync with surface.ts `desugar`): `@action`,
+ * `||redact||`, `#trait`. Highlighted like the directives they expand to. */
+const SIGIL =
+  /(?<![\w@])@(?:reaction|react|free|single|double|triple|one|two|three|[0-3rf])\b|\|\|[^|\n]+\|\||(?<![\w#])#[A-Za-z][\w-]*/gi;
 
 function buildDecorations(view: EditorView): DecorationSet {
   const out: Range<Decoration>[] = [];
@@ -102,6 +106,13 @@ function buildDecorations(view: EditorView): DecorationSet {
               start + m[0].length,
             ),
           );
+        }
+        // Authoring sigils (the terse forms that desugar to those directives).
+        SIGIL.lastIndex = 0;
+        let s: RegExpExecArray | null;
+        while ((s = SIGIL.exec(text))) {
+          const start = line.from + s.index;
+          out.push(inlineMark.range(start, start + s[0].length));
         }
       }
 

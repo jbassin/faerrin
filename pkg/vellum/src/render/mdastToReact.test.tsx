@@ -36,6 +36,15 @@ describe("mdastToReact", () => {
     expect(out).toContain("orphan content");
   });
 
+  test("surface sigils render as their directives (@action / #trait / ||redact||)", () => {
+    const out = html("Strike @2 vs a #fire foe; codeword ||swordfish||.");
+    expect(out).toContain('aria-label="two actions"'); // @2 → action glyph
+    expect(out).toContain("fire"); // #fire → trait pill
+    expect(out).not.toContain("#fire");
+    expect(out).toContain("swordfish"); // ||…|| → redaction bar
+    expect(out).not.toContain("||");
+  });
+
   describe("GFM", () => {
     test("renders a table with header and per-column alignment", () => {
       const out = html("| A | B |\n|:--|--:|\n| 1 | 2 |");

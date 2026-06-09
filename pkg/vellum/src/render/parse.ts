@@ -2,6 +2,7 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
+import { desugar } from "./surface.ts";
 import type { PhrasingContent, Root, RootContent } from "mdast";
 import type { ContainerDirective } from "mdast-util-directive";
 import {
@@ -22,9 +23,10 @@ const processor = unified()
   .use(remarkGfm)
   .use(remarkDirective);
 
-/** Parse markdown (+ directive syntax) into an mdast tree. Pure. */
+/** Parse markdown (+ directive syntax) into an mdast tree. Pure. Surface sigils
+ * (`@action`, `||redact||`, `#trait`) are desugared to canonical directives first. */
 export function parseMarkdown(source: string): Root {
-  return processor.parse(source) as Root;
+  return processor.parse(desugar(source)) as Root;
 }
 
 function isKind(name: string): name is DocumentKind {
