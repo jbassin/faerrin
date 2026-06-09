@@ -72,6 +72,14 @@
   letter-spacing: 0.02em;
 }
 
+/* Inline action glyph sitting in a card title, e.g. `[Boots :action[free]]`.
+   Amber so it reads as an action symbol against the teal/parchment name. */
+.name svg,
+.proseTitle svg {
+  color: var(--accent-amber);
+  margin-left: 0.15em;
+}
+
 .kindTag {
   font-family: var(--font-mono), monospace;
   font-size: 0.65rem;
@@ -253,6 +261,10 @@
 
 .document[data-mode="diegetic"] :is(.name, .proseTitle) {
   color: var(--parchment-ink);
+}
+
+.document[data-mode="diegetic"] :is(.name, .proseTitle) svg {
+  color: var(--wax);
 }
 
 .document[data-mode="diegetic"] :is(.kindTag, .meta) {

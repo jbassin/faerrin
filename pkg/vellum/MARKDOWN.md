@@ -53,6 +53,11 @@ The bridge is out.             ← CommonMark body
 Syntax: `:::<kind>[Title]{attributes}` then body lines, then `:::` on its own line.
 `[Title]` and `{attributes}` are both optional.
 
+The `[Title]` may contain inline directives — most usefully an action glyph next
+to the name: `:::item[Boots of Speed :action[free]]` renders the title with a
+free-action glyph beside it. (The derived document title stays plain text — the
+glyph shows only on the card.)
+
 ### Stat cards — `statblock`, `hazard`, `item`, `spell`
 
 Recognized attributes (others are parsed but ignored):
@@ -106,8 +111,8 @@ line):
 
 ## 3. Inline directives
 
-These work **inside a block body**. They use `remark-directive` *text* directive
-syntax `:name[label]`.
+These work **inside a block body** (and in a `[Title]` label — see §2). They use
+`remark-directive` *text* directive syntax `:name[label]`.
 
 | Directive | Renders | Notes |
 |-----------|---------|-------|

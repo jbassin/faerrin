@@ -16,14 +16,16 @@ export function ProseCard({
   block: VellumBlock;
   kind: DocumentKind;
 }): ReactElement {
-  const { label, children } = block;
+  const { label, labelNodes, children } = block;
   return (
     <section
       className={`${styles.card} ${styles.proseCard}`}
       data-kind={kind}
       style={grimeStyle((label ?? "") + collectText(children))}
     >
-      {label ? <header className={styles.proseTitle}>{label}</header> : null}
+      {labelNodes ? (
+        <header className={styles.proseTitle}>{renderNodes(labelNodes)}</header>
+      ) : null}
       <div className={styles.proseBody}>{renderNodes(children)}</div>
     </section>
   );

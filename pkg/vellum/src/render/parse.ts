@@ -1,7 +1,7 @@
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkDirective from "remark-directive";
-import type { Root, RootContent } from "mdast";
+import type { PhrasingContent, Root, RootContent } from "mdast";
 import type { ContainerDirective } from "mdast-util-directive";
 import {
   DOCUMENT_KINDS,
@@ -39,20 +39,40 @@ function normalizeAttributes(
 }
 
 /**
+ * Flatten inline nodes to the plain-text label (for titles/seeds). Skips the
+ * inline directive (`:action[…]` — the only directive valid in phrasing) so it
+ * doesn't leak "free" into the title; only its glyph renders, via `labelNodes`.
+ */
+function inlineText(nodes: readonly PhrasingContent[]): string {
+  let out = "";
+  for (const node of nodes) {
+    if (node.type === "text" || node.type === "inlineCode") out += node.value;
+    else if (node.type === "textDirective") continue; // not readable label text
+    else if ("children" in node) out += inlineText(node.children);
+  }
+  return out;
+}
+
+/**
  * mdast-util-directive marks the `[label]` of a directive as the first child
- * paragraph carrying `data.directiveLabel === true`. Split it off the content.
+ * paragraph carrying `data.directiveLabel === true`. Split it off the content,
+ * returning both the label's inline nodes (so it can carry `:action[…]` etc.)
+ * and a flattened plain-text form for titles/seeds.
  */
 function splitLabel(directive: ContainerDirective): {
   label?: string;
+  labelNodes?: PhrasingContent[];
   children: RootContent[];
 } {
   const [first, ...rest] = directive.children;
   if (first?.type === "paragraph" && first.data?.directiveLabel) {
-    const label = first.children
-      .map((node) => (node.type === "text" ? node.value : ""))
-      .join("")
-      .trim();
-    return { label: label || undefined, children: rest };
+    const labelNodes = first.children;
+    const label = inlineText(labelNodes).trim();
+    return {
+      label: label || undefined,
+      labelNodes: labelNodes.length ? labelNodes : undefined,
+      children: rest,
+    };
   }
   return { children: directive.children };
 }
@@ -79,12 +99,13 @@ function parseNodes(content: readonly RootContent[]): VellumNode[] {
   for (const node of content) {
     if (node.type === "containerDirective" && isKind(node.name)) {
       flushProse();
-      const { label, children } = splitLabel(node);
+      const { label, labelNodes, children } = splitLabel(node);
       nodes.push({
         type: "block",
         kind: node.name,
         attributes: normalizeAttributes(node.attributes),
         label,
+        labelNodes,
         children,
       });
     } else if (

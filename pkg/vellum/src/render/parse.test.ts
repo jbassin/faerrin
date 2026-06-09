@@ -34,6 +34,18 @@ describe("parseDocument", () => {
     expect(collectText(block.children)).toContain("small menace");
   });
 
+  test("a label keeps inline nodes so it can carry an action glyph", () => {
+    const doc = parseDocument(":::item[Boots of Speed :action[free]]\nx\n:::");
+    const block = asBlock(doc.nodes[0]);
+    // plain-text label (titles/seeds) drops the directive content entirely
+    expect(block.label).toBe("Boots of Speed");
+    // inline nodes are preserved so the renderer can draw the glyph
+    expect(block.labelNodes?.map((n) => n.type)).toEqual([
+      "text",
+      "textDirective",
+    ]);
+  });
+
   test("recognizes every kind in the zoo", () => {
     const src = DOCUMENT_KINDS.map(
       (kind) => `:::${kind}\nbody\n:::`,

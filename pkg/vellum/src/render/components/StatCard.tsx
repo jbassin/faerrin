@@ -24,9 +24,11 @@ export function StatCard({
   block: VellumBlock;
   kind: DocumentKind;
 }): ReactElement {
-  const { attributes, label, children } = block;
+  const { attributes, label, labelNodes, children } = block;
   const traits = splitTraits(attributes.traits);
-  const name = label ?? attributes.name;
+  // Render the label's inline nodes (so `[Name :action[free]]` shows the glyph);
+  // fall back to the `name=` attribute or the kind when there's no label.
+  const name = labelNodes ? renderNodes(labelNodes) : (attributes.name ?? kind);
   const meta = attributes.level ?? attributes.rank ?? attributes.price;
 
   return (
@@ -36,7 +38,7 @@ export function StatCard({
       style={grimeStyle((label ?? "") + collectText(children))}
     >
       <header className={styles.header}>
-        <span className={styles.name}>{name ?? kind}</span>
+        <span className={styles.name}>{name}</span>
         <span className={styles.kindTag}>{kind}</span>
       </header>
       {meta ? <div className={styles.meta}>{meta}</div> : null}

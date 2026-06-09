@@ -19,6 +19,17 @@ describe("deriveTitle", () => {
     );
     expect(deriveTitle("just prose")).toBe("Untitled");
   });
+
+  test("strips an inline directive from a label title", () => {
+    // The action glyph renders on the card, but the title stays clean text.
+    expect(
+      deriveTitle(":::item[Boots of Speed :action[free]]\nx\n:::"),
+    ).toBe("Boots of Speed");
+    // …even with attributes after the label.
+    expect(
+      deriveTitle(':::statblock[Gob :action[2]]{level="Creature 1"}\nx\n:::'),
+    ).toBe("Gob");
+  });
 });
 
 describe("docStore reducers", () => {

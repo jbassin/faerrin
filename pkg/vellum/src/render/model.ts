@@ -1,4 +1,4 @@
-import type { RootContent } from "mdast";
+import type { PhrasingContent, RootContent } from "mdast";
 
 /**
  * Theme axis. mechanical = teal cogitator-dataslate; diegetic = amber Imperial
@@ -39,8 +39,14 @@ export interface VellumBlock {
   kind: DocumentKind;
   /** Directive attributes, e.g. `:::statblock{level=5 rarity=unique}`. */
   attributes: Record<string, string>;
-  /** Optional inline label from `:::statblock[Label]`. */
+  /** Plain-text label from `:::statblock[Label]` (used for titles/seeds). */
   label?: string;
+  /**
+   * The label's inline mdast nodes, so a label can carry inline directives —
+   * e.g. `:::item[Boots of Speed :action[free]]` renders the action glyph next
+   * to the name. Present whenever `label` is; the React layer renders these.
+   */
+  labelNodes?: PhrasingContent[];
   /** Inner content nodes (prose, lists, inline directives). */
   children: RootContent[];
 }

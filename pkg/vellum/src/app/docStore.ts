@@ -22,10 +22,21 @@ const STORE_KEY = "vellum:docs";
 const LEGACY_KEY = "vellum:active-doc";
 const UNTITLED = "Untitled";
 
-/** Title from the first `:::kind[Label]`, else "Untitled". */
+/**
+ * Title from the first `:::kind[Label]`, else "Untitled". Reads the label up to
+ * the end of the opener line (so a nested `:action[free]` doesn't truncate it),
+ * then strips inline directives so the glyph syntax doesn't leak into the title.
+ */
 export function deriveTitle(source: string): string {
-  const match = source.match(/:::[a-z]+\[([^\]\n]+)\]/i);
-  return match?.[1]?.trim() || UNTITLED;
+  const match = source.match(
+    /:{3,}[a-z][\w-]*\[(.+)\](?:\{[^}\n]*\})?\s*$/im,
+  );
+  if (!match) return UNTITLED;
+  const title = match[1]!
+    .replace(/:[a-z][\w-]*\[[^\]\n]*\]/gi, "") // drop inline directives
+    .replace(/\s+/g, " ")
+    .trim();
+  return title || UNTITLED;
 }
 
 let fallbackCounter = 0;
