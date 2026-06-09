@@ -1,0 +1,23 @@
+/* Render-page surface. The screenshotted [data-vellum-export] element gets an
+   opaque void backdrop + padding so exported PNGs are non-transparent (R-15b)
+   and match the editor's preview surface. Colors via @faerrin/gothic vars. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: var(--bg-void);
+}
+
+#render-root {
+  display: inline-block;
+}
+
+[data-vellum-export] {
+  background-color: var(--bg-void);
+  padding: 1.5rem;
+  width: 42rem;
+}

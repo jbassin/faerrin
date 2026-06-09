@@ -2,6 +2,7 @@ import { useDeferredValue, useEffect, useRef, useState } from "react";
 import { Editor } from "./Editor.tsx";
 import { Preview } from "./Preview.tsx";
 import { WELCOME_DOC } from "./welcomeDoc.ts";
+import { useExport } from "./useExport.ts";
 import type { ThemeMode } from "../render/index.ts";
 import styles from "./App.module.css";
 
@@ -18,6 +19,7 @@ function loadInitialSource(): string {
 export function App() {
   const [source, setSource] = useState<string>(loadInitialSource);
   const [mode, setMode] = useState<ThemeMode>("mechanical");
+  const { status: exportStatus, exportPng } = useExport();
   // Preview lags input but never blocks typing (R-2).
   const deferredSource = useDeferredValue(source);
   // Seed the (uncontrolled) editor exactly once.
@@ -57,13 +59,23 @@ export function App() {
             diegetic
           </button>
         </div>
+        {exportStatus.state === "error" ? (
+          <span className={styles.exportError} role="alert">
+            {exportStatus.message}
+          </span>
+        ) : null}
         <button
           type="button"
           className={styles.exportButton}
-          disabled
-          title="PNG export arrives with the render service (M3)"
+          onClick={() => void exportPng(source, mode)}
+          disabled={exportStatus.state === "exporting"}
+          title="Render a PNG via the render service (downloads + copies to clipboard)"
         >
-          Export PNG
+          {exportStatus.state === "exporting"
+            ? "Exporting…"
+            : exportStatus.state === "done"
+              ? "Exported ✓"
+              : "Export PNG"}
         </button>
       </header>
       <main className={styles.panes}>

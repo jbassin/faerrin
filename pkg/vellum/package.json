@@ -10,6 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "render:server": "bun run scripts/render-server.ts",
     "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
@@ -20,6 +21,7 @@
     "@faerrin/gothic": "workspace:*",
     "@fontsource/ibm-plex-mono": "^5.2.7",
     "codemirror": "^6.0.1",
+    "playwright": "^1.60.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "remark-directive": "^3.0.0",

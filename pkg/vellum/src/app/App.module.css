@@ -81,6 +81,14 @@
   cursor: not-allowed;
 }
 
+.exportError {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  color: var(--accent-amber);
+  max-width: 22rem;
+  text-align: right;
+}
+
 .panes {
   flex: 1;
   display: grid;
