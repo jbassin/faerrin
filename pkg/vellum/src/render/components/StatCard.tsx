@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import styles from "./blocks.module.css";
 import { renderNodes } from "../mdastToReact.tsx";
 import { TraitPill } from "./TraitPill.tsx";
-import type { VellumBlock } from "../model.ts";
+import type { DocumentKind, VellumBlock } from "../model.ts";
 
 function splitTraits(value: string | undefined): string[] {
   return (value ?? "")
@@ -11,20 +11,30 @@ function splitTraits(value: string | undefined): string[] {
     .filter(Boolean);
 }
 
-/** A PF2e-style statblock card (mechanical theme). Layout only; never computes. */
-export function Statblock({ block }: { block: VellumBlock }): ReactElement {
+/**
+ * Mechanical "stat" layout shared by statblock / hazard / item / spell. Layout
+ * only — every field is the author's text, rendered verbatim (R-9). The kind
+ * tag distinguishes the four; `meta` surfaces level/rank/price if present.
+ */
+export function StatCard({
+  block,
+  kind,
+}: {
+  block: VellumBlock;
+  kind: DocumentKind;
+}): ReactElement {
   const { attributes, label, children } = block;
   const traits = splitTraits(attributes.traits);
   const name = label ?? attributes.name;
+  const meta = attributes.level ?? attributes.rank ?? attributes.price;
 
   return (
-    <section className={`${styles.card} ${styles.statblock}`}>
+    <section className={`${styles.card} ${styles.statCard}`} data-kind={kind}>
       <header className={styles.header}>
-        {name ? <span className={styles.name}>{name}</span> : null}
-        {attributes.level ? (
-          <span className={styles.level}>{attributes.level}</span>
-        ) : null}
+        <span className={styles.name}>{name ?? kind}</span>
+        <span className={styles.kindTag}>{kind}</span>
       </header>
+      {meta ? <div className={styles.meta}>{meta}</div> : null}
       {traits.length ? (
         <div className={styles.traits}>
           {traits.map((trait, i) => (

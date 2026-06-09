@@ -14,8 +14,9 @@ Flinch :action[reaction] — when struck, the thrall recoils.
 :::handout[+++ Inquisitorial Dispatch +++]
 To the Lord-Captain, under seal:
 
-The observatory has gone dark. Three cogitator-shrines remain unaccounted for.
-Trust no transmission that does not bear the second cipher.
+The observatory has gone dark. Three cogitator-shrines remain unaccounted for,
+last logged near :redact[Sub-Sector Coram]. Trust no transmission that does not
+bear the second cipher.
 
 — Interrogator Vael
 :::

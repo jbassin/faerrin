@@ -1,25 +1,24 @@
 import type { ReactElement } from "react";
 import styles from "./blocks.module.css";
 import type { VellumBlock, VellumDocument } from "../model.ts";
-import { Statblock } from "./Statblock.tsx";
-import { Handout } from "./Handout.tsx";
-import { GenericBlock } from "./GenericBlock.tsx";
+import { StatCard } from "./StatCard.tsx";
+import { ProseCard } from "./ProseCard.tsx";
 
 function Block({ block }: { block: VellumBlock }): ReactElement {
   switch (block.kind) {
-    case "statblock":
-      return <Statblock block={block} />;
     case "handout":
-      return <Handout block={block} />;
+    case "edict":
+      return <ProseCard block={block} kind={block.kind} />;
     default:
-      return <GenericBlock block={block} />;
+      // statblock / hazard / item / spell
+      return <StatCard block={block} kind={block.kind} />;
   }
 }
 
 /**
  * Renders a parsed document. The `[data-vellum-export]` element is the card
- * boundary that the render service screenshots (R-15/R-18) — editor chrome
- * (scanline/vignette overlays) lives outside it.
+ * boundary the render service screenshots (R-15/R-18); `data-mode` drives the
+ * mechanical|diegetic skin entirely in CSS (structure stays theme-agnostic).
  */
 export function DocumentView({
   document,

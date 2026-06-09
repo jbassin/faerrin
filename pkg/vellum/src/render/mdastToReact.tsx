@@ -3,6 +3,7 @@ import type { Nodes } from "mdast";
 import { ActionGlyph, normalizeActionCost } from "./glyphs/actions.tsx";
 import { TraitPill } from "./components/TraitPill.tsx";
 import { ErrorChip } from "./components/ErrorChip.tsx";
+import { Redaction } from "./components/Redaction.tsx";
 
 /** Flatten a node subtree to its text content (verbatim, no evaluation). */
 export function collectText(nodes: readonly Nodes[]): string {
@@ -36,6 +37,9 @@ function renderDirective(
     ) : (
       <ErrorChip message="?trait[]" />
     );
+  }
+  if (name === "redact") {
+    return <Redaction>{collectText(children)}</Redaction>;
   }
   return <ErrorChip message={`?${name}`} />;
 }

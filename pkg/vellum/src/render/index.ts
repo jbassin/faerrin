@@ -13,10 +13,14 @@ export {
   type VellumDocument,
 } from "./model.ts";
 export { DocumentView } from "./components/DocumentView.tsx";
-export { Statblock } from "./components/Statblock.tsx";
-export { Handout } from "./components/Handout.tsx";
-export { GenericBlock } from "./components/GenericBlock.tsx";
+export { StatCard } from "./components/StatCard.tsx";
+export { ProseCard } from "./components/ProseCard.tsx";
 export { TraitPill } from "./components/TraitPill.tsx";
+export { Redaction } from "./components/Redaction.tsx";
 export { ErrorChip } from "./components/ErrorChip.tsx";
-export { ActionGlyph, normalizeActionCost, type ActionCost } from "./glyphs/actions.tsx";
+export {
+  ActionGlyph,
+  normalizeActionCost,
+  type ActionCost,
+} from "./glyphs/actions.tsx";
 export { renderNodes, collectText } from "./mdastToReact.tsx";

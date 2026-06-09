@@ -1,6 +1,6 @@
-/* Mechanical theme (teal cogitator-dataslate). Colors come ONLY from
-   @faerrin/gothic tokens (NFR-3: no raw hex) — the consuming app loads them.
-   Diegetic (amber parchment) styling is M4. */
+/* Two skins on one structure (the theme axis). Colors come ONLY from
+   @faerrin/gothic tokens (NFR-3). Mechanical = teal cogitator-dataslate
+   (default); diegetic = amber Imperial parchment ([data-mode="diegetic"]). */
 
 .document {
   display: flex;
@@ -10,8 +10,10 @@
   color: var(--ink);
 }
 
+/* ── Mechanical (default) ─────────────────────────────────────────────── */
+
 .card {
-  background: var(--bg-panel);
+  background-color: var(--bg-panel);
   border: 1px solid var(--rule-bright);
   border-radius: 2px;
   padding: 1rem 1.25rem;
@@ -20,12 +22,12 @@
     0 10px 28px color-mix(in srgb, var(--bg-void) 80%, transparent);
 }
 
-.statblock {
+.statCard {
   border-top: 3px solid var(--accent);
 }
 
-.generic {
-  border-top: 3px solid var(--rule-bright);
+.proseCard {
+  border-top: 3px solid var(--accent-amber);
 }
 
 .header {
@@ -35,7 +37,7 @@
   gap: 0.75rem;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 0.4rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .name {
@@ -47,19 +49,20 @@
   letter-spacing: 0.02em;
 }
 
-.level {
+.kindTag {
   font-family: var(--font-mono), monospace;
-  font-size: 0.95rem;
-  color: var(--accent-amber);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-dim);
   white-space: nowrap;
 }
 
-.kindTag {
+.meta {
   font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--ink-dim);
+  font-size: 0.85rem;
+  color: var(--accent-amber);
+  margin-bottom: 0.5rem;
 }
 
 .traits {
@@ -76,16 +79,18 @@
   letter-spacing: 0.08em;
   padding: 0.12rem 0.5rem;
   color: var(--bg-void);
-  background: var(--accent-amber);
+  background-color: var(--accent-amber);
   border-radius: 1px;
 }
 
-.body {
+.body,
+.proseBody {
   font-size: 1rem;
   line-height: 1.55;
 }
 
-.body :is(h1, h2, h3, h4, h5, h6) {
+.body :is(h1, h2, h3, h4, h5, h6),
+.proseBody :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--font-display), serif;
   color: var(--accent);
   font-size: 1rem;
@@ -94,36 +99,46 @@
   margin: 0.7rem 0 0.2rem;
 }
 
-.body p {
-  margin: 0.4rem 0;
+.body p,
+.proseBody p {
+  margin: 0.45rem 0;
 }
 
-.body a {
+.body a,
+.proseBody a {
   color: var(--accent);
 }
 
 .body ul,
-.body ol {
+.body ol,
+.proseBody ul,
+.proseBody ol {
   padding-left: 1.2rem;
   margin: 0.4rem 0;
 }
 
 /* Inline action glyphs inherit color here. */
-.body svg {
+.body svg,
+.proseBody svg {
   color: var(--accent-amber);
 }
 
-.handout {
-  border-top: 3px solid var(--accent-amber);
-}
-
-.handoutTitle {
+.proseTitle {
   font-family: var(--font-display), serif;
   font-size: 1.25rem;
   color: var(--accent-amber);
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin-bottom: 0.5rem;
+}
+
+/* [DATA EXPUNGED] blackout — text hidden under an opaque bar. */
+.redaction {
+  background-color: var(--redaction);
+  color: transparent;
+  border-radius: 1px;
+  padding: 0 0.2rem;
+  user-select: none;
 }
 
 /* R-4: malformed/unknown directive placeholder — visible, never a crash. */
@@ -134,4 +149,71 @@
   border: 1px solid var(--accent-amber);
   border-radius: 1px;
   padding: 0 0.25rem;
+}
+
+/* ── Diegetic — aged Imperial parchment ───────────────────────────────── */
+
+.document[data-mode="diegetic"] .card {
+  color: var(--parchment-ink);
+  background-color: var(--parchment);
+  background-image: radial-gradient(
+    ellipse at 30% 0%,
+    color-mix(in srgb, var(--parchment) 70%, var(--parchment-shade)) 0%,
+    var(--parchment) 45%,
+    color-mix(in srgb, var(--parchment) 60%, var(--parchment-edge)) 100%
+  );
+  border: 1px solid var(--parchment-edge);
+  border-top-width: 3px;
+  border-top-color: var(--wax);
+  box-shadow:
+    inset 0 0 2.5rem color-mix(in srgb, var(--parchment-edge) 55%, transparent),
+    0 10px 28px color-mix(in srgb, var(--bg-void) 70%, transparent);
+}
+
+.document[data-mode="diegetic"] :is(.name, .proseTitle) {
+  color: var(--parchment-ink);
+}
+
+.document[data-mode="diegetic"] :is(.kindTag, .meta) {
+  color: var(--parchment-ink-dim);
+}
+
+.document[data-mode="diegetic"] .header {
+  border-bottom-color: color-mix(in srgb, var(--parchment-edge) 70%, transparent);
+}
+
+.document[data-mode="diegetic"] :is(.body, .proseBody) :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--wax);
+}
+
+.document[data-mode="diegetic"] :is(.body, .proseBody) a {
+  color: var(--wax);
+}
+
+.document[data-mode="diegetic"] :is(.body, .proseBody) svg {
+  color: var(--wax);
+}
+
+/* R-11: trait glyphs are suppressed in diegetic mode (in-world props hide the
+   mechanical chrome). */
+.document[data-mode="diegetic"] .traits {
+  display: none;
+}
+
+/* Illuminated gold-leaf drop-cap on the first paragraph of a prose document. */
+.document[data-mode="diegetic"] .proseBody > p:first-of-type::first-letter {
+  font-family: var(--font-display), serif;
+  font-size: 3.4em;
+  line-height: 0.72;
+  float: left;
+  margin: 0.04em 0.09em 0 0;
+  color: var(--gold-leaf);
+  background-image: linear-gradient(
+    160deg,
+    var(--accent-amber),
+    var(--gold-leaf)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

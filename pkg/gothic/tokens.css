@@ -20,4 +20,15 @@
   --duration-fast: 120ms;
   --duration-base: 220ms;
   --duration-slow: 400ms;
+
+  /* Diegetic substrate — aged Imperial parchment (the amber counterpart to the
+     teal void). Used by vellum's diegetic mode; harmless/unused elsewhere. */
+  --parchment: #d8c9a3;
+  --parchment-shade: #c2ad80;
+  --parchment-edge: #a98f5f;
+  --parchment-ink: #2c2114;
+  --parchment-ink-dim: #5c4a30;
+  --wax: #7c2a22; /* seal red */
+  --gold-leaf: #b4842f; /* illuminated drop-cap bronze */
+  --redaction: #120f0b; /* [DATA EXPUNGED] bar */
 }

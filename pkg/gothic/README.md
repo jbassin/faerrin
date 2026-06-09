@@ -42,6 +42,12 @@ import "@faerrin/gothic/tokens.css";
 | `--rule` / `--rule-bright` | `#1e2730` / `#2f3c4e` | hairlines |
 | `--ease-out`, `--duration-fast/base/slow` | — | motion |
 | `--font-display` / `--font-body` / `--font-mono` | ITC Serif Gothic / Caslon Antique / IBM Plex Mono | type |
+| `--parchment` / `--parchment-shade` / `--parchment-edge` | `#d8c9a3` / `#c2ad80` / `#a98f5f` | diegetic substrate (aged paper) |
+| `--parchment-ink` / `--parchment-ink-dim` | `#2c2114` / `#5c4a30` | sepia ink |
+| `--wax` / `--gold-leaf` / `--redaction` | `#7c2a22` / `#b4842f` / `#120f0b` | seal / drop-cap / blackout |
+
+The `--parchment-*` / `--wax` / `--gold-leaf` / `--redaction` tokens are the **diegetic** (amber
+parchment) counterpart to the teal void — used by vellum's diegetic mode; harmless elsewhere.
 
 ## Fonts & licensing
 
