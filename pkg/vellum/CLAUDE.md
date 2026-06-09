@@ -38,7 +38,9 @@ CSS vars. The editor UI (later) is a separate, disposable consumer of this libra
 
 - **Bun everywhere** (`bun test`, `bun run typecheck`). No npm/node/npx.
 - **Directive flavor, not a bespoke grammar** (AD-6): `:::statblock{…}[Label]`, inline `:action[2]`
-  / `:trait[fire]`. Stays valid CommonMark so it degrades gracefully.
+  / `:trait[fire]`. Stays valid CommonMark so it degrades gracefully. The **authoritative dialect
+  reference is `MARKDOWN.md`** (for agents + humans) — keep it in sync with `parse.ts` /
+  `mdastToReact.tsx` when you change the grammar.
 - **No raw hex in CSS** (NFR-3): colors only via `@faerrin/gothic` vars. (stylelint enforcement is
   a later add.)
 - **Keep `src/render/` pure**: no DOM/`window`/`fs`, no rules math. DOM/IO belongs in the editor app.

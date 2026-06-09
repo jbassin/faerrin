@@ -9,6 +9,9 @@ Spec: `thoughts/vellum/specs/2026-06-09-vellum-diegetic-document-forge.md`.
 
 ## The flavor
 
+**Full dialect reference: [`MARKDOWN.md`](./MARKDOWN.md)** — the precise grammar
+for authoring (and for AI agents writing documents).
+
 Block documents are `:::kind[Title]{attrs}` … `:::` containers. Six kinds:
 `statblock`, `hazard`, `item`, `spell` (mechanical/teal) and `handout`, `edict`
 (diegetic/parchment). Inline: `:action[2]` / `:action[reaction]` glyphs,
