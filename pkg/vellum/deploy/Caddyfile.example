@@ -5,7 +5,8 @@
 # Topology: Caddy serves the static editor SPA from dist/, and reverse-proxies
 # the render API to the warm Bun + Playwright sidecar (see
 # vellum-render.service.example). Because the browser hits /render on the SAME
-# origin, no CORS is needed and the build sets VITE_VELLUM_RENDER_URL="" (see
+# origin, no CORS is needed and the editor defaults to a same-origin render URL
+# (leave VITE_VELLUM_RENDER_URL UNSET for the production build — see
 # .env.example).
 
 vellum.iridi.cc {

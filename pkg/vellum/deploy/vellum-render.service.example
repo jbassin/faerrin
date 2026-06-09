@@ -13,9 +13,16 @@ After=network.target
 
 [Service]
 Type=simple
+# Run as the user that owns the bun install + the Playwright browser cache
+# (~/.cache/ms-playwright). Running as root fails: systemd's PATH has no `bun`
+# (status=127), and the warm Chromium can't find its browsers.
+User=jbassin
+Group=jbassin
 WorkingDirectory=/ruby/data/experiments/faerrin/pkg/vellum
 Environment=VELLUM_RENDER_PORT=5252
-ExecStart=/usr/bin/env bun run scripts/render-server.ts
+# Absolute bun path + a PATH that includes ~/.bun/bin for any child processes.
+Environment=PATH=/home/jbassin/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/home/jbassin/.bun/bin/bun run scripts/render-server.ts
 Restart=always
 RestartSec=3
 # Recycle daily to bound Chromium memory (pair with a .timer, or:)
