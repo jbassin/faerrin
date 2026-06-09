@@ -80,6 +80,15 @@
   margin-left: 0.15em;
 }
 
+/* Right side of the header: the kind/tag stamp and the level, side by side
+   (e.g. "ITEM 4"). */
+.tagLine {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
 .kindTag {
   font-family: var(--font-mono), monospace;
   font-size: 0.65rem;
@@ -89,7 +98,17 @@
   white-space: nowrap;
 }
 
-.meta {
+/* The level beside the tag — amber to stand out from the dim tag. */
+.level {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-amber);
+}
+
+/* Price line, in the body under the header. */
+.price {
   font-family: var(--font-mono), monospace;
   font-size: 0.85rem;
   color: var(--accent-amber);
@@ -267,7 +286,7 @@
   color: var(--wax);
 }
 
-.document[data-mode="diegetic"] :is(.kindTag, .meta) {
+.document[data-mode="diegetic"] :is(.kindTag, .level, .price) {
   color: var(--parchment-ink-dim);
 }
 

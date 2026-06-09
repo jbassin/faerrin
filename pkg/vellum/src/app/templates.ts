@@ -47,7 +47,7 @@ reveals whether a message bears the true cant.
   {
     id: "spell",
     title: "Spell",
-    source: `:::spell[Auspex Scan]{rank="Spell 2" traits="divination,concentrate"}
+    source: `:::spell[Auspex Scan]{level="2" traits="divination,concentrate"}
 **Cast** :action[2]
 **Range** 60 feet
 

@@ -65,7 +65,8 @@ Recognized attributes (others are parsed but ignored):
 | Attribute | Effect |
 |-----------|--------|
 | `traits="a,b,c"` | comma-separated trait pills (suppressed in diegetic mode) |
-| `level=…` / `rank=…` / `price=…` | a meta line under the header (first one present wins) |
+| `level=…` | shown beside the tag in the header, e.g. `ITEM 4` |
+| `price=…` | a line in the body, under the header |
 | `name=…` | title fallback when there's no `[Title]` label |
 | `tag=…` | overrides the corner tag text (defaults to the kind, e.g. `item`) — e.g. `tag="Consumable"` |
 
@@ -324,7 +325,7 @@ cipher.
 
 ```
 :::statblock[Name]{level="Creature 1" traits="a,b"}   # statblock | hazard | item | spell
-…body…                                                 #   attrs: traits, level/rank/price, name
+…body…                                                 #   attrs: traits, level (header), price (body), tag, name
 :::
 
 :::handout[Title]                                      # handout | edict (prose; drop-cap in diegetic)

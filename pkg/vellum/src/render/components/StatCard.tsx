@@ -15,7 +15,7 @@ function splitTraits(value: string | undefined): string[] {
 /**
  * Mechanical "stat" layout shared by statblock / hazard / item / spell. Layout
  * only — every field is the author's text, rendered verbatim (R-9). The kind
- * tag distinguishes the four; `meta` surfaces level/rank/price if present.
+ * tag distinguishes the four; `level` shows beside the tag, `price` in the body.
  */
 export function StatCard({
   block,
@@ -32,7 +32,10 @@ export function StatCard({
   // The corner tag defaults to the kind, but `tag=` overrides it with any label
   // (e.g. `:::item{tag="Consumable"}`). `data-kind` still drives the CSS skin.
   const tag = attributes.tag ?? kind;
-  const meta = attributes.level ?? attributes.rank ?? attributes.price;
+  // `level` reads beside the tag in the header (e.g. "ITEM 4"); `price` stays in
+  // the body, under the header.
+  const level = attributes.level;
+  const price = attributes.price;
 
   return (
     <section
@@ -42,9 +45,12 @@ export function StatCard({
     >
       <header className={styles.header}>
         <span className={styles.name}>{name}</span>
-        <span className={styles.kindTag}>{tag}</span>
+        <span className={styles.tagLine}>
+          <span className={styles.kindTag}>{tag}</span>
+          {level ? <span className={styles.level}>{level}</span> : null}
+        </span>
       </header>
-      {meta ? <div className={styles.meta}>{meta}</div> : null}
+      {price ? <div className={styles.price}>{price}</div> : null}
       {traits.length ? (
         <div className={styles.traits}>
           {traits.map((trait, i) => (

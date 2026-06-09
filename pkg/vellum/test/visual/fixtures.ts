@@ -39,7 +39,7 @@ for, last logged near :redact[Sub-Sector Coram]. Trust no transmission.
 The plate triggers a 15-foot burst of searing ash.
 :::
 
-:::spell[Auspex Scan]{rank="Spell 2" traits="divination"}
+:::spell[Auspex Scan]{level="2" traits="divination"}
 **Cast** :action[2]
 Learn the position of every heat-source for 1 round.
 :::`,

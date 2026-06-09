@@ -34,7 +34,7 @@ const SNIPPETS: Snippet[] = [
     label: "/spell",
     detail: "spell",
     insert:
-      ':::spell[Name]{rank="Spell 1" traits=""}\n**Cast** :action[2]\nThe effect.\n:::\n',
+      ':::spell[Name]{level="1" traits=""}\n**Cast** :action[2]\nThe effect.\n:::\n',
   },
   {
     label: "/handout",
