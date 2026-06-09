@@ -7,3 +7,4 @@
 - [Wiki non-prose pages](wiki-nonprose-pages.md) — Timeline.md is HTML, deity pages are :: stat blocks, flavor docs are <pre>; prose/voice tooling must be page-type-aware
 - [Wiki is setting, not session log](wiki-is-setting-not-session-log.md) — wiki records persistent world-state (people/places/things/lore), NOT party-action/session events; mining extracts standing facts, drops event narrative
 - [Caster tavern-tone rework](caster-tavern-tone.md) — caster script stage reworked for tavern-table feel; two-pass generation is now the DEFAULT (--one-shot opts out); sharpen/threads still opt-in
+- [speaks_with_passion migration](speaks-migration.md) — staged-hybrid plan/spec to vendor the Rust Discord bot as services/speaks (SQLite, shed uiua+embeddings); spec at thoughts/speaks/plans/0001; 3-identifier-space gotcha + leaked webhook token
