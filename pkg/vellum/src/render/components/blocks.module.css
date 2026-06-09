@@ -228,6 +228,88 @@
   color: var(--accent-amber);
 }
 
+/* ── GFM: tables, task lists, footnotes ───────────────────────────────── */
+
+.body table,
+.proseBody table,
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.6rem 0;
+  font-size: 0.95rem;
+}
+
+.body :is(th, td),
+.proseBody :is(th, td),
+.prose :is(th, td) {
+  border: 1px solid var(--rule);
+  padding: 0.3rem 0.55rem;
+  text-align: left;
+}
+
+.body th,
+.proseBody th,
+.prose th {
+  background-color: var(--bg-elevated);
+  color: var(--accent);
+  font-family: var(--font-display), serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.body tbody tr:nth-child(even),
+.proseBody tbody tr:nth-child(even),
+.prose tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--bg-elevated) 45%, transparent);
+}
+
+/* Task-list items: no bullet, teal checkbox. */
+.body li[data-task],
+.proseBody li[data-task],
+.prose li[data-task] {
+  list-style: none;
+  margin-left: -1rem;
+}
+
+.body li[data-task] input,
+.proseBody li[data-task] input,
+.prose li[data-task] input {
+  margin-right: 0.4em;
+  vertical-align: middle;
+  accent-color: var(--accent);
+}
+
+/* Keep the item text on the checkbox's line (remark wraps it in a <p>). */
+.body li[data-task] p,
+.proseBody li[data-task] p,
+.prose li[data-task] p {
+  display: inline;
+  margin: 0;
+}
+
+/* Footnote reference (superscript) + the definitions block. */
+[data-footnote-ref] {
+  color: var(--accent);
+}
+
+.body [data-footnote],
+.proseBody [data-footnote],
+.prose [data-footnote] {
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  border-top: 1px solid var(--rule);
+  margin-top: 0.5rem;
+  padding-top: 0.3rem;
+}
+
+.body [data-footnote] p,
+.proseBody [data-footnote] p,
+.prose [data-footnote] p {
+  display: inline;
+  margin: 0;
+}
+
 .proseTitle {
   font-family: var(--font-display), serif;
   font-size: 1.25rem;
@@ -308,6 +390,33 @@
 
 .document[data-mode="diegetic"] :is(.body, .proseBody, .prose) svg {
   color: var(--wax);
+}
+
+/* GFM elements on parchment. */
+.document[data-mode="diegetic"] :is(.body, .proseBody, .prose) :is(th, td) {
+  border-color: color-mix(in srgb, var(--parchment-edge) 70%, transparent);
+}
+
+.document[data-mode="diegetic"] :is(.body, .proseBody, .prose) th {
+  background-color: color-mix(in srgb, var(--parchment-shade) 55%, transparent);
+  color: var(--wax);
+}
+
+.document[data-mode="diegetic"] :is(.body, .proseBody, .prose) tbody tr:nth-child(even) {
+  background-color: color-mix(in srgb, var(--parchment-shade) 28%, transparent);
+}
+
+.document[data-mode="diegetic"] :is(.body, .proseBody, .prose) [data-footnote] {
+  color: var(--parchment-ink-dim);
+  border-top-color: color-mix(in srgb, var(--parchment-edge) 70%, transparent);
+}
+
+.document[data-mode="diegetic"] [data-footnote-ref] {
+  color: var(--wax);
+}
+
+.document[data-mode="diegetic"] li[data-task] input {
+  accent-color: var(--wax);
 }
 
 /* R-11: trait glyphs are suppressed in diegetic mode (in-world props hide the

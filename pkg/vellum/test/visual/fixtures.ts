@@ -44,4 +44,19 @@ The plate triggers a 15-foot burst of searing ash.
 Learn the position of every heat-source for 1 round.
 :::`,
   },
+  {
+    name: "gfm-mechanical",
+    mode: "mechanical",
+    source: `:::item[Targeting Auspex]{level="3"}
+| Range | Bonus |
+|:------|------:|
+| Close | +4 |
+| Far | +2 |
+
+- [x] calibrated
+- [ ] aligned
+
+~~Obsolete pattern.~~ See cogitator log www.example.com for details.
+:::`,
+  },
 ];

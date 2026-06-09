@@ -218,11 +218,29 @@ are **layout-only and top-level**: written inside a `:::kind` card, or orphaned
 without a `:::columns` parent, they render their content with a visible `?…`
 error chip instead of laying out.
 
+### 4.2 GitHub-Flavored Markdown
+
+**GFM is on** (`remark-gfm`), so the GitHub extensions all work, top level and in
+a block body:
+
+- **Tables** — pipe tables with an alignment row. The first row is the header;
+  `:---`, `---:`, `:---:` set left/right/center alignment per column.
+
+  ```
+  | Ability | Mod |
+  |:--------|----:|
+  | Str     | +4  |
+  | Dex     | +2  |
+  ```
+- **Strikethrough** — `~~struck~~`.
+- **Task lists** — `- [x]` / `- [ ]` render checkboxes (read-only).
+- **Autolink literals** — bare `https://…` and `www.…` URLs become links (no
+  fetch happens; for PNG export they're inert).
+- **Footnotes** — `text[^id]` with a `[^id]: definition` block; the reference
+  renders as a superscript `[id]` and definitions render below.
+
 ### Not supported
 
-- **GitHub-Flavored extensions are OFF** (no `remark-gfm`): no tables, no
-  `~~strikethrough~~`, no `- [ ]` task lists, no bare-URL autolinks. Write tables
-  as plain text / lists; use `<https://…>` for links.
 - **Raw HTML is inert.** Any `<tag>` or `<script>` is rendered as escaped text,
   never as HTML (a security rule). Don't use HTML for layout.
 
@@ -336,7 +354,11 @@ cipher.
 :trait[fire]                                           # inline trait pill
 :redact[secret]                                        # inline blackout
 
-# Heading   - list   > quote   **bold**   [t](url)     # top-level CommonMark renders (no GFM/HTML)
+# Heading  - list  > quote  **bold**  [t](url)  ~~del~~   # CommonMark + GFM (tables, tasks, footnotes); HTML inert
+
+| A | B |                                              # GFM table (`:--`/`--:`/`:-:` set alignment)
+|--:|:--|
+| 1 | 2 |
 
 ::::columns                                            # side-by-side (outer fence > inner block colons)
 left column                                            #   `---` separates columns; blocks stack per column

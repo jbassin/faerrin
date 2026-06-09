@@ -84,7 +84,67 @@ function renderNode(node: Nodes, key: number): ReactNode {
         <ul key={key}>{renderNodes(node.children)}</ul>
       );
     case "listItem":
+      // GFM task list: `- [x]` / `- [ ]` carry a boolean `checked`.
+      if (typeof node.checked === "boolean") {
+        return (
+          <li key={key} data-task="">
+            <input type="checkbox" checked={node.checked} readOnly disabled />{" "}
+            {renderNodes(node.children)}
+          </li>
+        );
+      }
       return <li key={key}>{renderNodes(node.children)}</li>;
+    case "table": {
+      // GFM table. First row is the header; `align` is per-column.
+      const [head, ...body] = node.children;
+      const cellAlign = (i: number) => {
+        const a = node.align?.[i];
+        return a ? { textAlign: a } : undefined;
+      };
+      return (
+        <table key={key}>
+          {head ? (
+            <thead>
+              <tr>
+                {head.children.map((cell, i) => (
+                  <th key={i} style={cellAlign(i)}>
+                    {renderNodes(cell.children)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+          ) : null}
+          <tbody>
+            {body.map((row, r) => (
+              <tr key={r}>
+                {row.children.map((cell, i) => (
+                  <td key={i} style={cellAlign(i)}>
+                    {renderNodes(cell.children)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
+    }
+    case "tableRow":
+      return <tr key={key}>{renderNodes(node.children)}</tr>;
+    case "tableCell":
+      return <td key={key}>{renderNodes(node.children)}</td>;
+    case "footnoteReference":
+      return (
+        <sup key={key} data-footnote-ref="">
+          [{node.label ?? node.identifier}]
+        </sup>
+      );
+    case "footnoteDefinition":
+      return (
+        <div key={key} data-footnote="">
+          <sup>[{node.label ?? node.identifier}]</sup>{" "}
+          {renderNodes(node.children)}
+        </div>
+      );
     case "link":
       return (
         <a key={key} href={node.url}>

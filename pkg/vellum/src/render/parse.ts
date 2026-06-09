@@ -1,5 +1,6 @@
 import { unified } from "unified";
 import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
 import remarkDirective from "remark-directive";
 import type { PhrasingContent, Root, RootContent } from "mdast";
 import type { ContainerDirective } from "mdast-util-directive";
@@ -16,7 +17,10 @@ import {
 const COLUMNS_NAME = "columns";
 const COLUMN_NAME = "column";
 
-const processor = unified().use(remarkParse).use(remarkDirective);
+const processor = unified()
+  .use(remarkParse)
+  .use(remarkGfm)
+  .use(remarkDirective);
 
 /** Parse markdown (+ directive syntax) into an mdast tree. Pure. */
 export function parseMarkdown(source: string): Root {
