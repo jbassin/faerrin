@@ -16,7 +16,7 @@ import {
   deleteDoc,
   activeDoc,
 } from "./docStore.ts";
-import type { ThemeMode } from "../render/index.ts";
+import { canonicalToVss, compileVss, type ThemeMode } from "../render/index.ts";
 import styles from "./App.module.css";
 
 /** Initial store: migrate/load, then a #doc= share link opens as a new doc. */
@@ -99,6 +99,25 @@ export function App() {
   const removeActive = () => {
     if (!window.confirm(`Delete "${active.title}"?`)) return;
     openDoc(deleteDoc(store, active.id));
+  };
+
+  /**
+   * Flip the active doc between the two structural surfaces: a doc using VSS
+   * compiles to canonical `:::` (the portable form); a canonical doc converts
+   * to VSS where it safely round-trips. Both passes are model-preserving.
+   */
+  const convertSyntax = () => {
+    const canonical = compileVss(source);
+    const usesVss = canonical !== source;
+    const next = usesVss ? canonical : canonicalToVss(source);
+    if (next === source) {
+      setNote("Nothing to convert — no structured blocks found.");
+      return;
+    }
+    setSource(next);
+    setSeedText(next);
+    setLoadKey((k) => k + 1);
+    setNote(usesVss ? "Converted to canonical ::: syntax." : "Converted to VSS.");
   };
 
   const share = useCallback(async () => {
@@ -211,6 +230,14 @@ export function App() {
           </button>
         </div>
 
+        <button
+          type="button"
+          className={styles.ghostButton}
+          onClick={convertSyntax}
+          title="Convert the document between VSS braces and canonical ::: syntax"
+        >
+          ⇄ Syntax
+        </button>
         <button
           type="button"
           className={styles.ghostButton}

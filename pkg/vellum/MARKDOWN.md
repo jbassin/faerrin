@@ -363,7 +363,10 @@ gracefully in a vanilla viewer (aether/Obsidian). **VSS source does not degrade*
 `@columns [ … ]` is garbage outside vellum. VSS is therefore an **opt-in** surface:
 authoring in it trades portability for structure, scoped to vellum-rendered
 contexts (editor preview, render service, share links). Nothing forces VSS on
-existing content, and a future formatter will serialize VSS ↔ canonical for export.
+existing content, and the **⇄ Syntax** toolbar button converts both ways on
+demand: VSS → canonical (`compileVss`, always exact) for portable export, and
+canonical → VSS (`canonicalToVss`, conservative — anything that wouldn't
+round-trip model-identically is left canonical).
 
 ---
 

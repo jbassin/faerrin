@@ -557,7 +557,10 @@ function serializeNode(node: VssNode): string {
   if (node.type === "block") {
     const fence = ":".repeat(colonsOf(node));
     const pre = node.errors.map((e) => `:vsserr[${sanitize(e)}]\n\n`).join("");
-    const header = fence + node.kind + "[" + escapeLabel(node.title) + "]" + attrBlock(node.attrs);
+    // An empty title emits no [label] at all — `:::item[]` and `:::item` are
+    // model-equal, and the bare form is the cleaner canonical output.
+    const label = node.title === "" ? "" : "[" + escapeLabel(node.title) + "]";
+    const header = fence + node.kind + label + attrBlock(node.attrs);
     return pre + header + "\n" + joinContent(node.body) + "\n" + fence;
   }
 
