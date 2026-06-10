@@ -21,6 +21,18 @@ voice daemon) while the server/DB/engine stay on Bun. Deck endpoint reference:
   **`LARK_NODE_BIN`** to its absolute path (`which node`).
 - The `.mjs` daemon is excluded from `tsc` (`tsconfig.json` exclude) — it's plain JS, run by Node.
 
+### Voice gotchas (learned the hard way)
+
+- **DAVE / E2EE is mandatory.** Discord now requires the DAVE end-to-end-encryption protocol and
+  closes the voice WS with **code 4017 "E2EE/DAVE protocol required"** otherwise. This needs
+  `@discordjs/voice` **≥ 0.19** + the native **`@snazzah/davey`** (an `optionalDependency`). 0.18 has
+  no DAVE → never reaches Ready. Don't downgrade below 0.19.
+- **This host's IPv6 is broken** (ULA only, no route). Discord voice (`*.discord.media`) advertises
+  AAAA, so the daemon forces IPv4: `dns.setDefaultResultOrder("ipv4first")` **and** the
+  `--dns-result-order=ipv4first` node flag (the in-code call alone was bypassed by the voice ws).
+- To debug a stuck voice connection, set `debug: true` on `joinVoiceChannel` and log `conn.on("debug")`
+  — the raw WS close code (e.g. 4017) is the answer. Bun itself was never the problem.
+
 ## Architecture (all TypeScript on Bun — D1)
 
 One package, mirroring eerie's `createApp()/startServer()` split so the HTTP layer is unit-testable

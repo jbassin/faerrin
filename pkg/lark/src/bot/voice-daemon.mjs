@@ -89,13 +89,10 @@ async function join(channelId) {
   const guild = client.guilds.cache.get(GUILD_ID);
   if (!guild) throw new Error(`guild ${GUILD_ID} not in gateway cache`);
   log(`joining voice channel ${channelId}…`);
-  const conn = joinVoiceChannel({ channelId, guildId: GUILD_ID, adapterCreator: guild.voiceAdapterCreator, debug: true });
+  const conn = joinVoiceChannel({ channelId, guildId: GUILD_ID, adapterCreator: guild.voiceAdapterCreator });
   if (conn !== connection) {
     conn.on("stateChange", (o, n) => log(`voice connection ${o.status} → ${n.status}`));
     conn.on("error", (e) => log("voice connection error:", e?.message ?? e));
-    // Verbose @discordjs/voice internals (voice WS close codes, UDP discovery) —
-    // the decisive diagnostic for why the connection won't reach Ready.
-    conn.on("debug", (m) => log("voiceconn:", m));
   }
   connection = conn;
   conn.subscribe(player);

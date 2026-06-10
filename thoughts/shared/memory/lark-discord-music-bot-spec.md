@@ -16,20 +16,25 @@ auto-leave, Discord voice behind an injected `VoiceAdapter`), and the Stream Dec
 key auth, web-UI key mgmt, `docs/stream-deck.md`). Deploy: `deploy/lark.service` + `deploy/DEPLOY.md`;
 caddy route added to the host's gitignored `sites.caddyfile` (port 8788).
 
-**D1 RESOLVED (the hard way):** the live spike proved **Bun cannot run `@discordjs/voice`** —
-`entersState(Ready)` aborts at "joining voice" (`AbortError`/`ABORT_ERR`; Bun `node:dgram`/UDP gaps).
-So voice now runs in a **Node subprocess** (`src/bot/voice-daemon.mjs`, plain JS) driven by the
-Bun-side `SubprocessBot` (`src/bot/subprocess-voice.ts`) over newline-JSON on stdio; server/DB/engine
-stay on Bun, engine unchanged (still `FakeVoice` in tests). Needs a `node` binary — set
-**`LARK_NODE_BIN`** if not on the service PATH (nvm). The old in-process `DiscordVoiceAdapter` +
-`bun run spike` are gone/legacy. Also from Phase 0: `libsodium-wrappers` ESM is broken under Bun →
-use **`@noble/ciphers`** (pure-JS) for voice encryption, `opusscript` for Opus (CI bun lane native-free).
+**VOICE WORKS — confirmed live 2026-06-10** (`STATE connecting → ready`). The marathon debug's REAL
+cause: Discord **requires the DAVE E2EE protocol** and closes the voice WS with **code 4017 "E2EE/DAVE
+protocol required"**. `@discordjs/voice` **0.18 has NO DAVE support** → never reached Ready. **Fix:
+`@discordjs/voice` ≥0.19.2 + native `@snazzah/davey` (optionalDependency).** Don't downgrade below 0.19.
 
-Other live-debugging fixes that landed: follow-the-operator resolution falls back to the Discord REST
-voice-state endpoint when the gateway cache misses (`GET /guilds/{g}/voice-states/{u}`); the Import UI
-auto-reattaches to in-flight ingest jobs on load; `GET /api/v1/voice/debug` reports uid/guild/resolved
-channel for diagnosis. **Still not live-validated end-to-end** (no token in-session), but the Node
-voice path is the architecture.
+Voice runs in a **Node subprocess** (`src/bot/voice-daemon.mjs`, plain JS) driven by the Bun-side
+`SubprocessBot` (`src/bot/subprocess-voice.ts`) over newline-JSON stdio; server/DB/engine stay on Bun,
+engine unchanged (`FakeVoice` in tests). (Bun *also* can't do voice, but the Node split was needed
+regardless.) Host quirk: **broken IPv6** (ULA only) vs Discord voice's AAAA records → daemon forces
+IPv4 (`dns.setDefaultResultOrder("ipv4first")` + `--dns-result-order=ipv4first` node flag). Needs a
+`node` binary — set **`LARK_NODE_BIN`** if not on the service PATH (nvm). `libsodium-wrappers` is broken
+under Bun → `@noble/ciphers` + `opusscript` (pure-JS, CI native-free).
+
+**To debug a stuck voice connection:** hook the raw ws `close` event for the code (don't guess) —
+that's how 4017 surfaced. Red herrings ruled out: Bun-vs-Node, the resolver, OAuth, OOM (MemoryMax
+raised to **16G** on the 62GiB host; ingest throttled to concurrency 2 + optional loudness), UDP
+egress, port filtering — all fine. Other fixes that landed: REST voice-state fallback on cache miss;
+Import UI auto-reattach to in-flight jobs; `reconcileInterruptedJobs` clears zombie imports on restart;
+`GET /api/v1/voice/debug`; stateless signed OAuth state + bot-install-redirect guidance.
 
 It's a **single-guild Discord music bot** (audio-only — Discord has no bot video API) that joins a
 voice channel and streams video-game OSTs from a curated library: collections (by game/IP), a flexible
