@@ -555,35 +555,52 @@ impl Handler {
         )
         .await?;
 
-        let feed = self.get_feed(ctx).await?;
-        Host::Custom(profile.player_name.clone())
-            .send_simple(&ctx.http, feed, format!("rolled a {}", roll.value()))
-            .await?;
+        // The dice-feed side-effects — the Discord feed webhook and the external
+        // roll broadcast — are BEST-EFFORT. The roll itself is already posted and
+        // saved by now, so a down feed (e.g. feed-ws returning 502) must NOT fail
+        // the handler: log and continue instead of propagating.
+        let broadcast: Result<()> = async {
+            let feed = self.get_feed(ctx).await?;
+            Host::Custom(profile.player_name.clone())
+                .send_simple(&ctx.http, feed, format!("rolled a {}", roll.value()))
+                .await?;
 
-        let (is_crit, is_fumble) = match (&roll).into() {
-            RollGoodness::Crit => (true, false),
-            RollGoodness::Fumble => (false, true),
-            _ => (false, false),
-        };
+            let (is_crit, is_fumble) = match (&roll).into() {
+                RollGoodness::Crit => (true, false),
+                RollGoodness::Fumble => (false, true),
+                _ => (false, false),
+            };
 
-        let client = reqwest::Client::new();
-        let msg = json!({
-            "user": profile.player_name,
-            "value": roll.value(),
-            "is_crit": is_crit,
-            "is_fumble": is_fumble,
-        });
-        let payload = serde_json::to_vec(&msg)?;
+            let client = reqwest::Client::new();
+            let msg = json!({
+                "user": profile.player_name,
+                "value": roll.value(),
+                "is_crit": is_crit,
+                "is_fumble": is_fumble,
+            });
+            let payload = serde_json::to_vec(&msg)?;
 
-        let res = client
-            .post(FEED_WS_URL.as_str())
-            .header(reqwest::header::CONTENT_TYPE, "application/json")
-            .body(reqwest::Body::from(payload))
-            .send()
-            .await?;
+            let res = client
+                .post(FEED_WS_URL.as_str())
+                .header(reqwest::header::CONTENT_TYPE, "application/json")
+                .body(reqwest::Body::from(payload))
+                .send()
+                .await?;
 
-        if !res.status().is_success() {
-            bail!("{}: {}", res.status().as_str(), res.status().canonical_reason().unwrap_or(""));
+            if !res.status().is_success() {
+                bail!(
+                    "feed-ws {}: {}",
+                    res.status().as_str(),
+                    res.status().canonical_reason().unwrap_or("")
+                );
+            }
+
+            Ok(())
+        }
+        .await;
+
+        if let Err(e) = broadcast {
+            error!("dice-feed broadcast failed (non-fatal): {e}");
         }
 
         Ok(())
