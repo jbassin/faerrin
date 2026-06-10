@@ -19,6 +19,9 @@
 Description=Faerrin lark — Discord music bot + web library + Stream Deck API
 After=network-online.target
 Wants=network-online.target
+# Start-rate limiting belongs in [Unit] (not [Service]) or systemd ignores it.
+StartLimitIntervalSec=300
+StartLimitBurst=5
 
 [Service]
 Type=simple
@@ -35,18 +38,19 @@ Environment=PATH=/home/jbassin/.bun/bin:/home/jbassin/.local/bin:/usr/local/bin:
 
 ExecStart=/home/jbassin/.bun/bin/bun run start
 
-# Supervision: auto-restart with bounded backoff.
+# Supervision: auto-restart with bounded backoff (start-limit set in [Unit]).
 Restart=on-failure
 RestartSec=5
-StartLimitIntervalSec=300
-StartLimitBurst=5
 
 # Blast-radius isolation from the live aether/Caddy host — lark must never
 # starve heart.iridi.cc. MORE generous than eerie because ffmpeg transcode +
 # Opus encode + yt-dlp downloads are CPU/memory heavier than a pure SSE relay,
 # but still capped so a runaway can't take the box down.
-MemoryMax=3000M
-CPUQuota=150%
+# Generous on this 62 GiB host: a playlist import (parallel yt-dlp + ffmpeg
+# loudness on long OST files) can spike multiple GB. 16G leaves ~46G for the
+# rest of the box, so lark can't threaten heart.iridi.cc but won't OOM on import.
+MemoryMax=16G
+CPUQuota=400%
 OOMScoreAdjust=150
 
 [Install]
