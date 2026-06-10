@@ -1,12 +1,26 @@
 ---
 name: lark-discord-music-bot-spec
-description: SPECCED (not built) @faerrin/lark discord music bot + web library + Stream Deck API; spec at thoughts/lark/plans/0001
+description: BUILT (phases 0-6, on main) @faerrin/lark discord music bot + web library + Stream Deck API; one live-voice gate left
 metadata:
   type: project
 ---
 
-`@faerrin/lark` (pkg/lark, host `lark.iridi.cc`) is **specced but not built** — an NLSpec lives at
-`thoughts/lark/plans/0001-discord-music-bot.md` (authored 2026-06-10 via octo:spec).
+`@faerrin/lark` (pkg/lark, host `lark.iridi.cc`) is **built and on `main`** (phases 0–6, whole
+workspace green, 106 lark tests). NLSpec: `thoughts/lark/plans/0001-discord-music-bot.md` (authored
+2026-06-10 via octo:spec; implemented 2026-06-10 via octo:embrace).
+
+**Built:** Bun `server.ts` (eerie-pattern testable `handle`), `bun:sqlite` schema+migrations, Discord
+OAuth+session auth, library CRUD + bulk-rename(preview)/bulk-tag + upload, yt-dlp single/playlist
+ingest with SSE progress + dedup + R128 loudness, the serialized playback engine (queue/loop/gain/
+auto-leave, Discord voice behind an injected `VoiceAdapter`), and the Stream Deck API (dual session/
+key auth, web-UI key mgmt, `docs/stream-deck.md`). Deploy: `deploy/lark.service` + `deploy/DEPLOY.md`;
+caddy route added to the host's gitignored `sites.caddyfile` (port 8788).
+
+**The one remaining gate:** the LIVE voice test — `cd pkg/lark && bun run spike` with a real
+`DISCORD_TOKEN` + `LARK_GUILD_ID` + `LARK_SPIKE_CHANNEL_ID` and a human in the channel. Everything
+else is built + unit-tested; voice playback was never live-validated (no token available in-session).
+Key Phase-0 finding: `libsodium-wrappers` ESM is broken under Bun → use **`@noble/ciphers`** (pure-JS,
+works) for @discordjs/voice encryption; `opusscript` for Opus. Both keep the CI bun lane native-free.
 
 It's a **single-guild Discord music bot** (audio-only — Discord has no bot video API) that joins a
 voice channel and streams video-game OSTs from a curated library: collections (by game/IP), a flexible

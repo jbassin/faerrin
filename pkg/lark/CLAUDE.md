@@ -6,6 +6,11 @@ tracks from a curated library, operated via a web UI (`lark.iridi.cc`) and a Str
 **Plan of record:** [`thoughts/lark/plans/0001-discord-music-bot.md`](../../thoughts/lark/plans/0001-discord-music-bot.md)
 (decisions D1–D8, behaviors B1–B26, phasing). Read it before changing scope.
 
+**Status:** Phases 0–6 built and green (skeleton/auth, library + bulk rename/tag, YouTube ingest with
+SSE progress, playback engine, Stream Deck API, deploy). The **one remaining gate** is the live voice
+test (`bun run spike` with a real token + a human in the channel) — see "Voice spike status" below.
+Deck endpoint reference: [`docs/stream-deck.md`](./docs/stream-deck.md). Deploy: [`deploy/DEPLOY.md`](./deploy/DEPLOY.md).
+
 ## Architecture (all TypeScript on Bun — D1)
 
 One package, mirroring eerie's `createApp()/startServer()` split so the HTTP layer is unit-testable

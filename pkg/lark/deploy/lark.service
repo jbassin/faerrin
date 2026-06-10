@@ -1,0 +1,53 @@
+# systemd USER unit — install to ~/.config/systemd/user/lark.service
+#
+# Runs @faerrin/lark: one Bun process serving the built SPA (dist/), the JSON +
+# Stream Deck API, the SSE feeds, AND (when DISCORD_TOKEN is set) the Discord
+# voice/playback bot. Mirrors eerie/mouth deploy discipline: bare systemd user
+# unit (NO container), config via EnvironmentFile.
+#
+# Build the SPA first (produces dist/ that this server serves):
+#   cd /ruby/data/experiments/faerrin && bun install && bun run --filter @faerrin/lark build
+#
+# Host needs `yt-dlp` and `ffmpeg` on PATH (ingest + loudness + playback).
+#
+# Enable lingering so it runs without an active login:
+#   loginctl enable-linger "$USER"
+#   systemctl --user enable --now lark.service
+# See deploy/DEPLOY.md.
+
+[Unit]
+Description=Faerrin lark — Discord music bot + web library + Stream Deck API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# cwd = the package dir so relative dist/ + data/ resolve and `bun run start` works.
+WorkingDirectory=/ruby/data/experiments/faerrin/pkg/lark
+
+# Config: PORT, DISCORD_*, SESSION_SECRET, LARK_ALLOWED_USER_IDS, LARK_GUILD_ID,
+# LARK_DATA_DIR (point at a backed-up persistent dir), LARK_TARGET_LUFS.
+# Keep this file OUT of git, mode 0600. Copy pkg/lark/.env.example as a guide.
+EnvironmentFile=/ruby/data/experiments/faerrin/pkg/lark/.env
+
+# Ensure the host's yt-dlp/ffmpeg + bun are findable.
+Environment=PATH=/home/jbassin/.bun/bin:/home/jbassin/.local/bin:/usr/local/bin:/usr/bin:/bin
+
+ExecStart=/home/jbassin/.bun/bin/bun run start
+
+# Supervision: auto-restart with bounded backoff.
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+# Blast-radius isolation from the live aether/Caddy host — lark must never
+# starve heart.iridi.cc. MORE generous than eerie because ffmpeg transcode +
+# Opus encode + yt-dlp downloads are CPU/memory heavier than a pure SSE relay,
+# but still capped so a runaway can't take the box down.
+MemoryMax=1500M
+CPUQuota=150%
+OOMScoreAdjust=150
+
+[Install]
+WantedBy=default.target
