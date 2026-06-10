@@ -274,3 +274,25 @@ body {
 .keys__list li.is-revoked {
   opacity: 0.5;
 }
+
+/* --- bulk strip/delete controls (Library) --- */
+.lib__selcount {
+  align-self: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.btn--danger {
+  color: #e0654a;
+  border-color: #5a2a22;
+}
+.lib__del {
+  background: transparent;
+  border: 0;
+  color: #6a352d;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.lib__del:hover {
+  color: #e0654a;
+}

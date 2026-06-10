@@ -112,6 +112,25 @@ describe("collections + tracks", () => {
     expect(res.status).toBe(204);
     expect(repo.getTrack(app.db, t.id)).toBeNull();
   });
+
+  test("bulk-delete removes all given tracks (B18)", async () => {
+    const a = repo.createTrack(app.db, { title: "a", sourceType: "upload" });
+    const b = repo.createTrack(app.db, { title: "b", sourceType: "upload" });
+    const keep = repo.createTrack(app.db, { title: "keep", sourceType: "upload" });
+    const res = await app.handle(req("POST", "/api/v1/tracks/bulk-delete", { ids: [a.id, b.id] }));
+    expect(await res.json()).toEqual({ deleted: 2 });
+    expect(repo.getTrack(app.db, a.id)).toBeNull();
+    expect(repo.getTrack(app.db, keep.id)).not.toBeNull();
+  });
+
+  test("bulk strip-suffix via bulk-rename cleans noisy titles (B13)", async () => {
+    const t1 = repo.createTrack(app.db, { title: "Phantom - Persona 5 OST [Extended]", sourceType: "youtube" });
+    const t2 = repo.createTrack(app.db, { title: "Mementos - Persona 5 OST [Extended]", sourceType: "youtube" });
+    const ops = [{ kind: "stripSuffix", value: " - Persona 5 OST [Extended]" }, { kind: "collapseWhitespace" }];
+    await app.handle(req("POST", "/api/v1/tracks/bulk-rename", { ids: [t1.id, t2.id], ops }));
+    expect(repo.getTrack(app.db, t1.id)!.title).toBe("Phantom");
+    expect(repo.getTrack(app.db, t2.id)!.title).toBe("Mementos");
+  });
 });
 
 describe("upload ingest (B19)", () => {

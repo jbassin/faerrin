@@ -101,6 +101,25 @@ export const libraryRoutes: ApiRoute[] = [
     },
   },
 
+  // Bulk delete (rows + underlying files), B18.
+  {
+    method: "POST",
+    path: "/api/v1/tracks/bulk-delete",
+    handler: async (ctx) => {
+      const body = await readJson<{ ids?: number[] }>(ctx.req);
+      if (!Array.isArray(body.ids) || body.ids.length === 0) throw new HttpError(400, "ids_required");
+      let deleted = 0;
+      for (const id of body.ids) {
+        const removed = repo.deleteTrack(ctx.db, id);
+        if (removed) {
+          deleted++;
+          if (removed.filePath) await unlink(removed.filePath).catch(() => {});
+        }
+      }
+      return json({ deleted });
+    },
+  },
+
   // --- Bulk rename (B13): preview or apply ---
   {
     method: "POST",

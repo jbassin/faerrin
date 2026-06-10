@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import type { RenameOp } from "../lib/rename";
 import { apiGet, apiSend } from "./api";
 import type { Collection, Tag, Track } from "./types";
 
@@ -61,25 +62,67 @@ export function Library() {
     }
   }
 
-  async function bulkStripPrefix() {
-    const ops = [{ kind: "replace", find: "^\\d+\\s*[-.]\\s*", replaceWith: "", regex: true }];
+  /** Preview a bulk rename, show a sample diff, and apply on confirm. */
+  async function runBulkRename(ops: RenameOp[], emptyMsg: string) {
     const { preview } = await apiSend<{ preview: { from: string; to: string; changed: boolean }[] }>(
       "POST",
       "/api/v1/tracks/bulk-rename",
       { ids: selectedIds, ops, preview: true },
     );
     const changes = preview.filter((p) => p.changed);
-    if (changes.length === 0) return window.alert("No titles would change.");
+    if (changes.length === 0) return window.alert(emptyMsg);
     const sample = changes
-      .slice(0, 8)
-      .map((c) => `${c.from}  →  ${c.to}`)
+      .slice(0, 10)
+      .map((c) => `${c.from}\n   →  ${c.to || "(empty)"}`)
       .join("\n");
-    if (window.confirm(`Apply to ${changes.length} track(s)?\n\n${sample}`)) {
+    if (window.confirm(`Apply to ${changes.length} of ${selectedIds.length} selected?\n\n${sample}`)) {
       await withBusy(async () => {
         await apiSend("POST", "/api/v1/tracks/bulk-rename", { ids: selectedIds, ops });
         await loadTracks();
       });
     }
+  }
+
+  const stripLeadingNumber = () =>
+    runBulkRename(
+      [{ kind: "replace", find: "^\\d+\\s*[-.]\\s*", replaceWith: "", regex: true }],
+      "No selected titles start with a number.",
+    );
+
+  async function stripPrefix() {
+    const value = window.prompt("Remove this text from the START of every selected title:");
+    if (!value) return;
+    await runBulkRename(
+      [{ kind: "stripPrefix", value }, { kind: "collapseWhitespace" }],
+      `No selected titles start with "${value}".`,
+    );
+  }
+
+  async function stripSuffix() {
+    const value = window.prompt("Remove this text from the END of every selected title:");
+    if (!value) return;
+    await runBulkRename(
+      [{ kind: "stripSuffix", value }, { kind: "collapseWhitespace" }],
+      `No selected titles end with "${value}".`,
+    );
+  }
+
+  async function deleteSelected() {
+    if (!window.confirm(`Delete ${selected.size} track(s) and their audio files? This cannot be undone.`)) return;
+    await withBusy(async () => {
+      await apiSend("POST", "/api/v1/tracks/bulk-delete", { ids: selectedIds });
+      setSelected(new Set());
+      await loadFacets();
+      await loadTracks();
+    });
+  }
+
+  async function deleteOne(t: Track) {
+    if (!window.confirm(`Delete "${t.title}" and its file? This cannot be undone.`)) return;
+    await withBusy(async () => {
+      await apiSend("DELETE", `/api/v1/tracks/${t.id}`);
+      await loadTracks();
+    });
   }
 
   async function bulkTag() {
@@ -174,14 +217,24 @@ export function Library() {
             Upload
             <input type="file" multiple hidden accept="audio/*" onChange={(e) => upload(e.target.files)} />
           </label>
-          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void bulkStripPrefix()}>
-            Strip leading number ({selected.size})
+          <span className="lib__selcount">{selected.size} selected</span>
+          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void stripPrefix()}>
+            Strip prefix…
+          </button>
+          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void stripSuffix()}>
+            Strip suffix…
+          </button>
+          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void stripLeadingNumber()}>
+            Strip #
           </button>
           <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void bulkTag()}>
-            Tag selected
+            Tag
+          </button>
+          <button className="btn btn--ghost btn--danger" disabled={!selected.size || busy} onClick={() => void deleteSelected()}>
+            Delete
           </button>
           <button className="btn" disabled={!selected.size} onClick={() => void play(selectedIds)}>
-            ▶ Play selected
+            ▶ Play
           </button>
         </div>
 
@@ -192,6 +245,7 @@ export function Library() {
               <th>Title</th>
               <th>Tags</th>
               <th>Status</th>
+              <th />
             </tr>
           </thead>
           <tbody>
@@ -210,11 +264,16 @@ export function Library() {
                 </td>
                 <td className="muted">{t.tags.map((tag) => tag.name).join(", ")}</td>
                 <td className={t.status === "error" ? "is-error" : "muted"}>{t.status}</td>
+                <td>
+                  <button className="lib__del" title="Delete track + file" onClick={() => void deleteOne(t)}>
+                    ✕
+                  </button>
+                </td>
               </tr>
             ))}
             {tracks.length === 0 && (
               <tr>
-                <td colSpan={4} className="muted">
+                <td colSpan={5} className="muted">
                   No tracks — upload audio or import from YouTube.
                 </td>
               </tr>
