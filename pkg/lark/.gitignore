@@ -1,0 +1,8 @@
+dist/
+.env
+node_modules/
+*.log
+
+# Persistent data dir (SQLite DB + downloaded/uploaded audio). Never a build
+# artifact; on the host this is backed up, not version-controlled.
+data/
