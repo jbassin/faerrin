@@ -41,6 +41,16 @@ export function Library() {
       return next;
     });
 
+  // Select-all operates on the current (filtered) view.
+  const allSelected = tracks.length > 0 && tracks.every((t) => selected.has(t.id));
+  const someSelected = tracks.some((t) => selected.has(t.id));
+  const toggleAll = () =>
+    setSelected((prev) => {
+      const next = new Set(prev);
+      for (const t of tracks) (allSelected ? next.delete(t.id) : next.add(t.id));
+      return next;
+    });
+
   const selectedIds = useMemo(() => [...selected], [selected]);
 
   async function withBusy(fn: () => Promise<void>) {
@@ -241,7 +251,17 @@ export function Library() {
         <table className="lib__tracks">
           <thead>
             <tr>
-              <th />
+              <th>
+                <input
+                  type="checkbox"
+                  title="Select all (filtered)"
+                  checked={allSelected}
+                  ref={(el) => {
+                    if (el) el.indeterminate = !allSelected && someSelected;
+                  }}
+                  onChange={toggleAll}
+                />
+              </th>
               <th>Title</th>
               <th>Tags</th>
               <th>Status</th>
