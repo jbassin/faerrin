@@ -73,7 +73,8 @@ docs/_build/
 
 # Env files
 **/.env
-# sqlite runtime/dev databases
+# sqlite runtime/dev databases (+ timestamped backups, e.g. mouth.db.bak-20260609-231543)
 *.db
 *.db-shm
 *.db-wal
+*.db.bak-*
