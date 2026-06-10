@@ -101,6 +101,21 @@ export const libraryRoutes: ApiRoute[] = [
     },
   },
 
+  // Move selected tracks into a collection (or out, with collectionId: null), B15.
+  {
+    method: "POST",
+    path: "/api/v1/tracks/bulk-move",
+    handler: async (ctx) => {
+      const body = await readJson<{ ids?: number[]; collectionId?: number | null }>(ctx.req);
+      if (!Array.isArray(body.ids) || body.ids.length === 0) throw new HttpError(400, "ids_required");
+      const collectionId = body.collectionId ?? null;
+      if (collectionId !== null && !repo.getCollection(ctx.db, collectionId)) throw new HttpError(404, "collection_not_found");
+      let moved = 0;
+      for (const id of body.ids) moved += repo.setTrackCollection(ctx.db, id, collectionId) ? 1 : 0;
+      return json({ moved });
+    },
+  },
+
   // Bulk delete (rows + underlying files), B18.
   {
     method: "POST",

@@ -29,7 +29,15 @@ export function Import({ onImported }: { onImported: () => void }) {
   const [url, setUrl] = useState("");
   const [snap, setSnap] = useState<Snapshot | null>(null);
   const [busy, setBusy] = useState(false);
+  const [collections, setCollections] = useState<{ id: number; name: string }[]>([]);
+  const [target, setTarget] = useState(""); // "" = new collection (playlist) / none (single)
   const esRef = useRef<EventSource | null>(null);
+
+  useEffect(() => {
+    apiGet<{ id: number; name: string }[]>("/api/v1/collections")
+      .then(setCollections)
+      .catch(() => {});
+  }, []);
 
   const watch = useCallback(
     (jobId: number) => {
@@ -81,7 +89,10 @@ export function Import({ onImported }: { onImported: () => void }) {
     setBusy(true);
     setSnap(null);
     try {
-      const job = await apiSend<Job>("POST", "/api/v1/ingest/youtube", { url: url.trim() });
+      const job = await apiSend<Job>("POST", "/api/v1/ingest/youtube", {
+        url: url.trim(),
+        collectionId: target ? Number(target) : undefined,
+      });
       setUrl("");
       watch(job.id);
     } catch {
@@ -98,6 +109,14 @@ export function Import({ onImported }: { onImported: () => void }) {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
+        <select className="lib__moveto" value={target} onChange={(e) => setTarget(e.target.value)} title="Import into">
+          <option value="">New collection / none</option>
+          {collections.map((c) => (
+            <option key={c.id} value={c.id}>
+              into: {c.name}
+            </option>
+          ))}
+        </select>
         <button className="btn" type="submit" disabled={busy || !url.trim()}>
           {busy ? "Importing…" : "Import"}
         </button>

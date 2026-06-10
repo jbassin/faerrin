@@ -296,3 +296,54 @@ body {
 .lib__del:hover {
   color: #e0654a;
 }
+
+/* --- collection management (Library sidebar + move) --- */
+.lib__facets h3 .lib__add {
+  background: transparent;
+  border: 0;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.4rem;
+  text-transform: none;
+}
+.lib__collrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lib__collrow > button:first-child {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lib__collacts {
+  display: none;
+  gap: 0.1rem;
+}
+.lib__collrow:hover .lib__collacts {
+  display: flex;
+}
+.lib__collacts button {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+.lib__collacts button:hover {
+  color: var(--ink);
+}
+.lib__moveto {
+  align-self: center;
+  background: var(--panel);
+  border: 1px solid #2c3040;
+  border-radius: 8px;
+  color: var(--ink);
+  padding: 0.35rem 0.4rem;
+  font-size: 0.85rem;
+}
+.lib__moveto:disabled {
+  opacity: 0.5;
+}

@@ -88,6 +88,19 @@ describe("playlist ingest (B21)", () => {
     expect(repo.listTracks(db, { collectionId: collection.id })).toHaveLength(3);
   });
 
+  test("imports into an existing collection when given (no new collection)", async () => {
+    const dest = repo.createCollection(db, { name: "My Mix" });
+    const entries = [
+      { videoId: "a", title: "A" },
+      { videoId: "b", title: "B" },
+    ];
+    const { job, done } = service(stubYtDlp({ entries })).start("https://youtube.com/playlist?list=PL1", dest.id);
+    await done;
+    expect(repo.getDownloadJob(db, job.id)!.collection_id).toBe(dest.id);
+    expect(repo.listCollections(db)).toHaveLength(1); // no new collection created
+    expect(repo.listTracks(db, { collectionId: dest.id })).toHaveLength(2);
+  });
+
   test("one failing item → partial job, others still imported (B21)", async () => {
     const entries = [
       { videoId: "ok1", title: "ok1" },

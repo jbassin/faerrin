@@ -113,6 +113,24 @@ describe("collections + tracks", () => {
     expect(repo.getTrack(app.db, t.id)).toBeNull();
   });
 
+  test("bulk-move puts tracks into a collection / out with null (B15)", async () => {
+    const c = repo.createCollection(app.db, { name: "Dest" });
+    const a = repo.createTrack(app.db, { title: "a", sourceType: "upload" });
+    const b = repo.createTrack(app.db, { title: "b", sourceType: "upload", collectionId: c.id });
+    const res = await app.handle(req("POST", "/api/v1/tracks/bulk-move", { ids: [a.id], collectionId: c.id }));
+    expect(await res.json()).toEqual({ moved: 1 });
+    expect(repo.getTrack(app.db, a.id)!.collection_id).toBe(c.id);
+    // move b out
+    await app.handle(req("POST", "/api/v1/tracks/bulk-move", { ids: [b.id], collectionId: null }));
+    expect(repo.getTrack(app.db, b.id)!.collection_id).toBeNull();
+  });
+
+  test("bulk-move to a missing collection → 404", async () => {
+    const a = repo.createTrack(app.db, { title: "a", sourceType: "upload" });
+    const res = await app.handle(req("POST", "/api/v1/tracks/bulk-move", { ids: [a.id], collectionId: 9999 }));
+    expect(res.status).toBe(404);
+  });
+
   test("bulk-delete removes all given tracks (B18)", async () => {
     const a = repo.createTrack(app.db, { title: "a", sourceType: "upload" });
     const b = repo.createTrack(app.db, { title: "b", sourceType: "upload" });

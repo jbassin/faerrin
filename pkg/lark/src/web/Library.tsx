@@ -135,6 +135,45 @@ export function Library() {
     });
   }
 
+  // --- collection management ---
+  async function newCollection() {
+    const name = window.prompt("New collection name:");
+    if (!name?.trim()) return;
+    await withBusy(async () => {
+      await apiSend("POST", "/api/v1/collections", { name: name.trim() });
+      await loadFacets();
+    });
+  }
+
+  async function renameCollection(c: Collection) {
+    const name = window.prompt("Rename collection:", c.name);
+    if (!name?.trim() || name === c.name) return;
+    await withBusy(async () => {
+      await apiSend("PATCH", `/api/v1/collections/${c.id}`, { name: name.trim() });
+      await loadFacets();
+    });
+  }
+
+  async function deleteCollection(c: Collection) {
+    if (!window.confirm(`Delete collection "${c.name}"? Its tracks are kept (moved to no collection).`)) return;
+    await withBusy(async () => {
+      await apiSend("DELETE", `/api/v1/collections/${c.id}`);
+      if (collectionId === c.id) setCollectionId(null);
+      await loadFacets();
+      await loadTracks();
+    });
+  }
+
+  async function moveSelected(value: string) {
+    if (!value || !selected.size) return;
+    const target = value === "none" ? null : Number(value);
+    await withBusy(async () => {
+      await apiSend("POST", "/api/v1/tracks/bulk-move", { ids: selectedIds, collectionId: target });
+      await loadFacets();
+      await loadTracks();
+    });
+  }
+
   async function bulkTag() {
     const raw = window.prompt("Add tag(s) to selected (comma-separated)", "calm");
     if (!raw) return;
@@ -182,7 +221,12 @@ export function Library() {
   return (
     <div className="lib">
       <aside className="lib__facets">
-        <h3>Collections</h3>
+        <h3>
+          Collections
+          <button className="lib__add" title="New collection" onClick={() => void newCollection()}>
+            ＋
+          </button>
+        </h3>
         <ul className="lib__list">
           <li>
             <button className={collectionId === null ? "is-active" : ""} onClick={() => setCollectionId(null)}>
@@ -190,10 +234,18 @@ export function Library() {
             </button>
           </li>
           {collections.map((c) => (
-            <li key={c.id}>
+            <li key={c.id} className="lib__collrow">
               <button className={collectionId === c.id ? "is-active" : ""} onClick={() => setCollectionId(c.id)}>
                 {c.name}
               </button>
+              <span className="lib__collacts">
+                <button title="Rename" onClick={() => void renameCollection(c)}>
+                  ✎
+                </button>
+                <button title="Delete collection" onClick={() => void deleteCollection(c)}>
+                  ✕
+                </button>
+              </span>
             </li>
           ))}
         </ul>
@@ -240,6 +292,20 @@ export function Library() {
           <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void bulkTag()}>
             Tag
           </button>
+          <select
+            className="lib__moveto"
+            disabled={!selected.size || busy}
+            value=""
+            onChange={(e) => void moveSelected(e.target.value)}
+          >
+            <option value="">Move to…</option>
+            <option value="none">(no collection)</option>
+            {collections.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
+              </option>
+            ))}
+          </select>
           <button className="btn btn--ghost btn--danger" disabled={!selected.size || busy} onClick={() => void deleteSelected()}>
             Delete
           </button>

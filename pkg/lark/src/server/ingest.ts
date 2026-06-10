@@ -32,9 +32,13 @@ export interface StartResult {
 export class IngestService {
   constructor(private readonly deps: IngestDeps) {}
 
-  /** Detect URL type and kick off ingest. Returns the job + a completion promise. */
-  start(url: string): StartResult {
-    return isPlaylistUrl(url) ? this.startPlaylist(url) : this.startSingle(url);
+  /**
+   * Detect URL type and kick off ingest. If `collectionId` is given, tracks land
+   * in that collection (a playlist won't create its own). Returns the job + a
+   * completion promise.
+   */
+  start(url: string, collectionId?: number): StartResult {
+    return isPlaylistUrl(url) ? this.startPlaylist(url, collectionId) : this.startSingle(url, collectionId);
   }
 
   private audioDir(): string {
@@ -48,9 +52,9 @@ export class IngestService {
     });
   }
 
-  private startSingle(url: string): StartResult {
+  private startSingle(url: string, collectionId?: number): StartResult {
     const { db } = this.deps;
-    const job = repo.createDownloadJob(db, { type: "single", sourceUrl: url });
+    const job = repo.createDownloadJob(db, { type: "single", sourceUrl: url, collectionId: collectionId ?? null });
     const videoId = extractVideoId(url) ?? url;
     const item = repo.addJobItem(db, { jobId: job.id, videoId, title: videoId, position: 0 });
     repo.updateDownloadJob(db, job.id, { totalItems: 1, status: "running" });
@@ -58,7 +62,7 @@ export class IngestService {
     return { job: repo.getDownloadJob(db, job.id)!, done };
   }
 
-  private startPlaylist(url: string): StartResult {
+  private startPlaylist(url: string, collectionId?: number): StartResult {
     const { db } = this.deps;
     const job = repo.createDownloadJob(db, { type: "playlist", sourceUrl: url });
     const done = (async () => {
@@ -70,14 +74,13 @@ export class IngestService {
         this.publish(job.id);
         return;
       }
-      const collection = repo.createCollection(db, {
-        name: info.title,
-        sourceType: "youtube_playlist",
-        sourceUrl: url,
-      });
+      // Target an existing collection if given, else create one from the playlist.
+      const targetId =
+        collectionId ??
+        repo.createCollection(db, { name: info.title, sourceType: "youtube_playlist", sourceUrl: url }).id;
       repo.updateDownloadJob(db, job.id, {
         title: info.title,
-        collectionId: collection.id,
+        collectionId: targetId,
         totalItems: info.entries.length,
         status: "running",
       });

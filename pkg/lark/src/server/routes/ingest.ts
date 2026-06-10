@@ -19,9 +19,9 @@ export const ingestRoutes: ApiRoute[] = [
     handler: async (ctx) => {
       const ingest = ctx.services.ingest;
       if (!ingest) throw new HttpError(503, "ingest_unavailable");
-      const body = await readJson<{ url?: string }>(ctx.req);
+      const body = await readJson<{ url?: string; collectionId?: number }>(ctx.req);
       if (!body.url?.trim()) throw new HttpError(400, "url_required");
-      const { job, done } = ingest.start(body.url.trim());
+      const { job, done } = ingest.start(body.url.trim(), body.collectionId ?? undefined);
       // Run in the background; never block the request on the download.
       void done.catch((err) => console.error("[lark] ingest job failed", err));
       return json(job, 202);
