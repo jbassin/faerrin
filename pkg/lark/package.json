@@ -10,6 +10,7 @@
     "build": "vite build",
     "start": "bun run server.ts",
     "spike": "bun run src/spike/voice-spike.ts",
+    "loudness:backfill": "bun run scripts/backfill-loudness.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },
