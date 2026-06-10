@@ -99,7 +99,9 @@ export default function DiceDashboard() {
 
   onMount(async () => {
     setPalette(readPalette())
-    document.addEventListener("themechange", () => setPalette(readPalette()))
+    const onTheme = () => setPalette(readPalette())
+    document.addEventListener("themechange", onTheme)
+    onCleanup(() => document.removeEventListener("themechange", onTheme))
     try {
       const res = await fetch("/dice/summary.json", { cache: "no-cache" })
       if (!res.ok) throw new Error(`no export yet (${res.status})`)
@@ -186,7 +188,7 @@ function Overview(props: { summary: DiceSummary; palette: Palette }) {
         title: "Luckiest (d20)",
         entries: lb().luckiest.map((e) => ({
           name: e.name,
-          value: `+${e.value.toFixed(2)}`,
+          value: `${e.value >= 0 ? "+" : ""}${e.value.toFixed(2)}`,
           detail: e.detail,
         })),
       },
