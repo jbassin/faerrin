@@ -16,12 +16,20 @@ body,
   color: var(--ink);
 }
 
+/* pixi fx canvas sits behind the ticker text so rolls stay legible through bursts. */
+.eerie-fx {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
 /* Bottom-left ticker. The list is newest-first; column-reverse seats the newest
    row at the bottom (chat-style), older rolls stacking upward. */
 .eerie-ticker {
   position: absolute;
   left: 2.5rem;
   bottom: 2.5rem;
+  z-index: 1;
   margin: 0;
   padding: 0;
   list-style: none;
