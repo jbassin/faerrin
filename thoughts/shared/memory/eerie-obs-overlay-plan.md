@@ -1,13 +1,21 @@
 ---
 name: eerie-obs-overlay-plan
-description: planned @faerrin/eerie package — rebuild of the dice-roll OBS overlay fed by mouth
+description: @faerrin/eerie package — the dice-roll OBS overlay fed by mouth (BUILT; awaiting host cutover)
 metadata:
   type: project
 ---
 
-`@faerrin/eerie` (`pkg/eerie`) is a PLANNED, not-yet-built Bun-workspace member: a rebuild
-of the decommissioned live dice-roll OBS overlay. Plan lives at
+`@faerrin/eerie` (`pkg/eerie`) is a Bun-workspace member: the rebuilt live dice-roll OBS
+overlay. **Built and on `main`** (Phases A–F via octo:embrace, 2026-06-09); the only thing
+left is the **manual host cutover** (DNS + Caddy `eerie.iridi.cc` block + systemd + OBS
+Browser Source) documented in `pkg/eerie/deploy/DEPLOY.md`. Plan/spec at
 `thoughts/eerie/plans/0001-obs-overlay.md`.
+
+What shipped: `server.ts` (one Bun.serve: `POST /api/v1/roll` token-auth ingest + `GET /feed`
+SSE hub + static `dist/`), a Vite+React 19 ticker (`src/Overlay.tsx`/`RollRow.tsx`), lazy
+pixi.js crit/fumble fx (`src/fx/*`), gothic skin. mouth now POSTs the v1 payload
+(`handler.rs`) with the `X-Eerie-Token` header. `dice[]`/`modifier` faces remain a deferred
+stretch (need Roll traversal).
 
 Locked decisions: **Vite + React 19 + pixi.js** overlay (WebGL crit/fumble fx, gothic skin),
 **SSE** transport (one-way, EventSource auto-reconnect), **redesigned versioned payload**

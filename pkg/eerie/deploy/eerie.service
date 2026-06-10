@@ -1,0 +1,46 @@
+# systemd USER unit — install to ~/.config/systemd/user/eerie.service
+#
+# Runs the eerie dice-roll OBS overlay server: one Bun process serving the built
+# overlay (dist/), the authenticated roll ingest (POST /api/v1/roll), and the SSE
+# feed (GET /feed). Long-lived Type=simple service. Mirrors mouth's deploy
+# discipline: bare systemd user unit (NO container), config via EnvironmentFile.
+#
+# Build the overlay first (produces dist/ that this server serves):
+#   cd /ruby/data/experiments/faerrin && bun install && bun run --filter @faerrin/eerie build
+#
+# Enable lingering so it runs without an active login:
+#   loginctl enable-linger "$USER"
+#   systemctl --user enable --now eerie.service
+# See deploy/DEPLOY.md.
+
+[Unit]
+Description=Faerrin eerie — live dice-roll OBS overlay (ingest + SSE + static)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# cwd = the package dir so `import.meta.dir`/dist resolve and `bun run start` works.
+WorkingDirectory=/ruby/data/experiments/faerrin/pkg/eerie
+
+# Config: PORT and the EERIE_TOKEN shared secret (must match mouth's EERIE_TOKEN).
+# Keep this file OUT of git, mode 0600. Copy pkg/eerie/.env.example as a guide.
+EnvironmentFile=/ruby/data/experiments/faerrin/pkg/eerie/.env
+
+# Serves dist/ + ingest + SSE. `bun run start` === `bun run server.ts`.
+ExecStart=/home/jbassin/.bun/bin/bun run start
+
+# Supervision: auto-restart with bounded backoff.
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+# Blast-radius isolation from the live aether/Caddy static host — an overlay
+# spin/OOM must never starve heart.iridi.cc. It's a tiny SSE relay; keep it small.
+MemoryMax=256M
+CPUQuota=25%
+OOMScoreAdjust=200
+
+[Install]
+WantedBy=default.target

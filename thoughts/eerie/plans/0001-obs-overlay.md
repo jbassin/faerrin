@@ -1,8 +1,10 @@
 # 0001 — `@faerrin/eerie`: the dice-roll OBS overlay (rebuild)
 
-**Status:** PLAN (not yet implemented)
+**Status:** IMPLEMENTED (Phases A–F landed on `main`, 2026-06-09). Remaining work is the
+**manual host cutover** in `pkg/eerie/deploy/DEPLOY.md` (DNS + Caddy block + systemd + OBS) —
+those steps need host access and the gitignored `sites.caddyfile`, so they can't be automated.
 **Created:** 2026-06-09
-**Author:** octo:plan (Claude-only, team mode)
+**Author:** octo:plan → octo:embrace (Claude-only, team mode)
 **Package:** `pkg/eerie` → `@faerrin/eerie`
 
 Rebuild the decommissioned live dice-feed OBS overlay from scratch as a Bun-workspace
