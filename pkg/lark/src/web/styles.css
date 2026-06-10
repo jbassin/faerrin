@@ -65,3 +65,101 @@ body {
   color: var(--ink);
   border: 1px solid #2c3040;
 }
+
+/* --- userbar + library (Phase 2) --- */
+.app__userbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lib {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.25rem;
+}
+
+.lib__facets h3 {
+  margin: 1rem 0 0.4rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.lib__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lib__list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.lib__list button.is-active {
+  background: var(--panel);
+  color: var(--accent);
+}
+
+.lib__tags button {
+  display: inline-block;
+  width: auto;
+}
+
+.lib__toolbar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.lib__search {
+  flex: 1 1 200px;
+  padding: 0.5rem 0.6rem;
+  background: var(--panel);
+  border: 1px solid #2c3040;
+  border-radius: 8px;
+  color: var(--ink);
+}
+
+.lib__tracks {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.lib__tracks th,
+.lib__tracks td {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid #20232f;
+}
+
+.lib__tracks tr.is-selected {
+  background: #14223044;
+}
+
+.lib__title {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.is-error {
+  color: #e0654a;
+}

@@ -7,11 +7,12 @@ import { mkdirSync } from "node:fs";
 import { loadConfig } from "./src/lib/appconfig";
 import { openDb } from "./src/db/index";
 import { startServer } from "./src/server/app";
+import { ffmpegProber } from "./src/media/probe";
 
 const config = loadConfig();
 mkdirSync(config.dataDir, { recursive: true });
 const db = openDb(config.dbPath);
-const { server } = startServer(config, db);
+const { server } = startServer(config, db, { services: { prober: ffmpegProber } });
 
 console.log(`[lark] listening on http://localhost:${server.port}`);
 console.log(`[lark] data dir: ${config.dataDir}`);

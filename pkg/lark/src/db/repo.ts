@@ -1,0 +1,312 @@
+/**
+ * Typed repository functions over bun:sqlite (plan §5/§6). Thin, explicit SQL —
+ * no ORM. Every function is unit-testable against an in-memory DB.
+ */
+import type { Database } from "bun:sqlite";
+import { normalizeTag, slugify, uniqueSlug } from "../lib/text";
+
+export interface Collection {
+  id: number;
+  name: string;
+  slug: string;
+  ip_or_game: string | null;
+  source_type: "manual" | "youtube_playlist";
+  source_url: string | null;
+  cover_url: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Track {
+  id: number;
+  collection_id: number | null;
+  title: string;
+  original_title: string;
+  source_type: "upload" | "youtube";
+  source_url: string | null;
+  source_video_id: string | null;
+  file_path: string | null;
+  format: string | null;
+  duration_ms: number | null;
+  file_size: number | null;
+  loudness_lufs: number | null;
+  status: "ready" | "downloading" | "error";
+  error: string | null;
+  added_at: string;
+  updated_at: string;
+}
+
+export interface Tag {
+  id: number;
+  name: string;
+  category: string | null;
+  created_at: string;
+}
+
+export interface Playlist {
+  id: number;
+  name: string;
+  loop_mode: "none" | "track" | "playlist";
+  shuffle: number;
+  created_at: string;
+  updated_at: string;
+}
+
+// --- Collections ---
+
+export function createCollection(
+  db: Database,
+  input: {
+    name: string;
+    ipOrGame?: string | null;
+    sourceType?: "manual" | "youtube_playlist";
+    sourceUrl?: string | null;
+  },
+): Collection {
+  const slug = uniqueSlug(slugify(input.name), (s) =>
+    db.query<{ n: number }, [string]>("SELECT COUNT(*) AS n FROM collections WHERE slug = ?").get(s)!.n > 0,
+  );
+  const { lastInsertRowid } = db.run(
+    "INSERT INTO collections (name, slug, ip_or_game, source_type, source_url) VALUES (?, ?, ?, ?, ?)",
+    [input.name, slug, input.ipOrGame ?? null, input.sourceType ?? "manual", input.sourceUrl ?? null],
+  );
+  return getCollection(db, Number(lastInsertRowid))!;
+}
+
+export function getCollection(db: Database, id: number): Collection | null {
+  return db.query<Collection, [number]>("SELECT * FROM collections WHERE id = ?").get(id) ?? null;
+}
+
+export function listCollections(db: Database): Collection[] {
+  return db.query<Collection, []>("SELECT * FROM collections ORDER BY name COLLATE NOCASE").all();
+}
+
+export function renameCollection(db: Database, id: number, name: string): boolean {
+  return db.run("UPDATE collections SET name = ?, updated_at = datetime('now') WHERE id = ?", [name, id]).changes > 0;
+}
+
+export function deleteCollection(db: Database, id: number): boolean {
+  // Tracks' collection_id is ON DELETE SET NULL — tracks/files survive (B15).
+  return db.run("DELETE FROM collections WHERE id = ?", [id]).changes > 0;
+}
+
+// --- Tracks ---
+
+export interface NewTrack {
+  collectionId?: number | null;
+  title: string;
+  originalTitle?: string;
+  sourceType: "upload" | "youtube";
+  sourceUrl?: string | null;
+  sourceVideoId?: string | null;
+  filePath?: string | null;
+  format?: string | null;
+  durationMs?: number | null;
+  fileSize?: number | null;
+  loudnessLufs?: number | null;
+  status?: "ready" | "downloading" | "error";
+}
+
+export function createTrack(db: Database, t: NewTrack): Track {
+  const { lastInsertRowid } = db.run(
+    `INSERT INTO tracks
+       (collection_id, title, original_title, source_type, source_url, source_video_id,
+        file_path, format, duration_ms, file_size, loudness_lufs, status)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      t.collectionId ?? null,
+      t.title,
+      t.originalTitle ?? t.title,
+      t.sourceType,
+      t.sourceUrl ?? null,
+      t.sourceVideoId ?? null,
+      t.filePath ?? null,
+      t.format ?? null,
+      t.durationMs ?? null,
+      t.fileSize ?? null,
+      t.loudnessLufs ?? null,
+      t.status ?? "ready",
+    ],
+  );
+  return getTrack(db, Number(lastInsertRowid))!;
+}
+
+export function getTrack(db: Database, id: number): Track | null {
+  return db.query<Track, [number]>("SELECT * FROM tracks WHERE id = ?").get(id) ?? null;
+}
+
+export function findTrackByVideoId(db: Database, videoId: string): Track | null {
+  return db.query<Track, [string]>("SELECT * FROM tracks WHERE source_video_id = ? LIMIT 1").get(videoId) ?? null;
+}
+
+export interface TrackFilter {
+  collectionId?: number;
+  tagId?: number;
+  q?: string;
+  limit?: number;
+  offset?: number;
+}
+
+export function listTracks(db: Database, f: TrackFilter = {}): Track[] {
+  const where: string[] = [];
+  const params: (string | number)[] = [];
+  let from = "tracks t";
+  if (f.tagId !== undefined) {
+    from += " JOIN track_tags tt ON tt.track_id = t.id AND tt.tag_id = ?";
+    params.push(f.tagId);
+  }
+  if (f.collectionId !== undefined) {
+    where.push("t.collection_id = ?");
+    params.push(f.collectionId);
+  }
+  if (f.q) {
+    where.push("t.title LIKE ?");
+    params.push(`%${f.q}%`);
+  }
+  const whereSql = where.length ? `WHERE ${where.join(" AND ")}` : "";
+  const limit = Math.min(Math.max(f.limit ?? 200, 1), 500);
+  const offset = Math.max(f.offset ?? 0, 0);
+  return db
+    .query<Track, (string | number)[]>(
+      `SELECT t.* FROM ${from} ${whereSql} ORDER BY t.title COLLATE NOCASE LIMIT ? OFFSET ?`,
+    )
+    .all(...params, limit, offset);
+}
+
+export function updateTrackTitle(db: Database, id: number, title: string): boolean {
+  return db.run("UPDATE tracks SET title = ?, updated_at = datetime('now') WHERE id = ?", [title, id]).changes > 0;
+}
+
+/** Apply a map of {id → new title} in one transaction (bulk rename commit, B13). */
+export function bulkUpdateTitles(db: Database, updates: { id: number; title: string }[]): number {
+  let n = 0;
+  db.transaction(() => {
+    for (const u of updates) n += updateTrackTitle(db, u.id, u.title) ? 1 : 0;
+  })();
+  return n;
+}
+
+export function setTrackCollection(db: Database, id: number, collectionId: number | null): boolean {
+  return db.run("UPDATE tracks SET collection_id = ?, updated_at = datetime('now') WHERE id = ?", [collectionId, id])
+    .changes > 0;
+}
+
+export function setTrackLoudness(db: Database, id: number, lufs: number): boolean {
+  return db.run("UPDATE tracks SET loudness_lufs = ?, updated_at = datetime('now') WHERE id = ?", [lufs, id]).changes > 0;
+}
+
+/** Delete a track row; returns its file_path so the caller can unlink the file (B18). */
+export function deleteTrack(db: Database, id: number): { filePath: string | null } | null {
+  const track = getTrack(db, id);
+  if (!track) return null;
+  db.run("DELETE FROM tracks WHERE id = ?", [id]); // track_tags cascade
+  return { filePath: track.file_path };
+}
+
+// --- Tags ---
+
+export function upsertTag(db: Database, name: string, category?: string | null): Tag {
+  const norm = normalizeTag(name);
+  const existing = db.query<Tag, [string]>("SELECT * FROM tags WHERE name = ?").get(norm);
+  if (existing) return existing;
+  const { lastInsertRowid } = db.run("INSERT INTO tags (name, category) VALUES (?, ?)", [norm, category ?? null]);
+  return db.query<Tag, [number]>("SELECT * FROM tags WHERE id = ?").get(Number(lastInsertRowid))!;
+}
+
+export function listTags(db: Database): (Tag & { track_count: number })[] {
+  return db
+    .query<Tag & { track_count: number }, []>(
+      `SELECT tags.*, COUNT(track_tags.track_id) AS track_count
+       FROM tags LEFT JOIN track_tags ON track_tags.tag_id = tags.id
+       GROUP BY tags.id ORDER BY tags.name`,
+    )
+    .all();
+}
+
+export function tagsForTrack(db: Database, trackId: number): Tag[] {
+  return db
+    .query<Tag, [number]>(
+      "SELECT tags.* FROM tags JOIN track_tags tt ON tt.tag_id = tags.id WHERE tt.track_id = ? ORDER BY tags.name",
+    )
+    .all(trackId);
+}
+
+/** Add tags (by id) to many tracks; idempotent. Returns rows inserted. */
+export function addTagsToTracks(db: Database, trackIds: number[], tagIds: number[]): number {
+  let n = 0;
+  db.transaction(() => {
+    for (const trackId of trackIds)
+      for (const tagId of tagIds)
+        n += db.run("INSERT OR IGNORE INTO track_tags (track_id, tag_id) VALUES (?, ?)", [trackId, tagId]).changes;
+  })();
+  return n;
+}
+
+export function removeTagsFromTracks(db: Database, trackIds: number[], tagIds: number[]): number {
+  let n = 0;
+  db.transaction(() => {
+    for (const trackId of trackIds)
+      for (const tagId of tagIds)
+        n += db.run("DELETE FROM track_tags WHERE track_id = ? AND tag_id = ?", [trackId, tagId]).changes;
+  })();
+  return n;
+}
+
+export function deleteTag(db: Database, id: number): boolean {
+  return db.run("DELETE FROM tags WHERE id = ?", [id]).changes > 0;
+}
+
+// --- Playlists ---
+
+export function createPlaylist(db: Database, name: string): Playlist {
+  const { lastInsertRowid } = db.run("INSERT INTO playlists (name) VALUES (?)", [name]);
+  return getPlaylist(db, Number(lastInsertRowid))!;
+}
+
+export function getPlaylist(db: Database, id: number): Playlist | null {
+  return db.query<Playlist, [number]>("SELECT * FROM playlists WHERE id = ?").get(id) ?? null;
+}
+
+export function listPlaylists(db: Database): Playlist[] {
+  return db.query<Playlist, []>("SELECT * FROM playlists ORDER BY name COLLATE NOCASE").all();
+}
+
+export function updatePlaylist(
+  db: Database,
+  id: number,
+  patch: { name?: string; loopMode?: "none" | "track" | "playlist"; shuffle?: boolean },
+): boolean {
+  const sets: string[] = [];
+  const params: (string | number)[] = [];
+  if (patch.name !== undefined) (sets.push("name = ?"), params.push(patch.name));
+  if (patch.loopMode !== undefined) (sets.push("loop_mode = ?"), params.push(patch.loopMode));
+  if (patch.shuffle !== undefined) (sets.push("shuffle = ?"), params.push(patch.shuffle ? 1 : 0));
+  if (!sets.length) return false;
+  sets.push("updated_at = datetime('now')");
+  params.push(id);
+  return db.run(`UPDATE playlists SET ${sets.join(", ")} WHERE id = ?`, params).changes > 0;
+}
+
+export function deletePlaylist(db: Database, id: number): boolean {
+  return db.run("DELETE FROM playlists WHERE id = ?", [id]).changes > 0;
+}
+
+/** Replace a playlist's ordered items (reorder/add/remove in one shot, B17). */
+export function setPlaylistItems(db: Database, playlistId: number, trackIds: number[]): void {
+  db.transaction(() => {
+    db.run("DELETE FROM playlist_items WHERE playlist_id = ?", [playlistId]);
+    trackIds.forEach((trackId, i) =>
+      db.run("INSERT INTO playlist_items (playlist_id, track_id, position) VALUES (?, ?, ?)", [playlistId, trackId, i]),
+    );
+    db.run("UPDATE playlists SET updated_at = datetime('now') WHERE id = ?", [playlistId]);
+  })();
+}
+
+export function playlistTrackIds(db: Database, playlistId: number): number[] {
+  return db
+    .query<{ track_id: number }, [number]>(
+      "SELECT track_id FROM playlist_items WHERE playlist_id = ? ORDER BY position",
+    )
+    .all(playlistId)
+    .map((r) => r.track_id);
+}

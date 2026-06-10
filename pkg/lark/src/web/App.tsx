@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ApiError, apiGet } from "./api";
+import { Library } from "./Library";
 
 interface Me {
   uid: string;
@@ -38,17 +39,19 @@ export function App() {
       )}
 
       {auth.status === "authed" && (
-        <section className="card">
-          <p>
-            Signed in as <code>{auth.me.uid}</code>.
-          </p>
-          <p className="muted">Library, ingest, playback, and Stream Deck keys land in the next phases.</p>
-          <form method="POST" action="/auth/logout">
-            <button className="btn btn--ghost" type="submit">
-              Sign out
-            </button>
-          </form>
-        </section>
+        <>
+          <div className="app__userbar">
+            <span className="muted">
+              Signed in as <code>{auth.me.uid}</code>
+            </span>
+            <form method="POST" action="/auth/logout">
+              <button className="btn btn--ghost" type="submit">
+                Sign out
+              </button>
+            </form>
+          </div>
+          <Library />
+        </>
       )}
     </main>
   );
