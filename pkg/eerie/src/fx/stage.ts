@@ -35,12 +35,12 @@ export class FxStage {
     this.#app = app;
   }
 
-  /** Fire the effect near the ticker (bottom-left of the canvas). */
+  /** Fire the effect near the ticker (top-left of the canvas). */
   play(kind: "crit" | "fumble"): void {
     const app = this.#app;
     if (!app) return;
     const x = 120;
-    const y = window.innerHeight - 90;
+    const y = 90;
     if (kind === "crit") playCrit(app, x, y);
     else playFumble(app, x, y);
   }

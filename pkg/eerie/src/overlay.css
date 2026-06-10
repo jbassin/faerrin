@@ -23,18 +23,18 @@ body,
   z-index: 0;
 }
 
-/* Bottom-left ticker. The list is newest-first; column-reverse seats the newest
-   row at the bottom (chat-style), older rolls stacking upward. */
+/* Top-left ticker. The list is newest-first; `column` puts the newest row at the
+   top, older rolls stacking downward beneath it. */
 .eerie-ticker {
   position: absolute;
   left: 2.5rem;
-  bottom: 2.5rem;
+  top: 2.5rem;
   z-index: 1;
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 0.55rem;
 }
 
@@ -112,17 +112,30 @@ body,
   color: var(--ink);
 }
 
-.eerie-row--fresh {
-  animation: eerie-enter var(--duration-base, 220ms) var(--ease-out, ease-out);
+/* Whole-life animation: fade/slide in, hold, then fade out. The duration is set
+   inline (RollRow) so it stays in lockstep with Overlay's removal timer. `both`
+   keeps the row hidden after the final keyframe until React unmounts it. */
+.eerie-row {
+  animation-name: eerie-life;
+  animation-timing-function: var(--ease-out, ease-out);
+  animation-fill-mode: both;
 }
 
-@keyframes eerie-enter {
-  from {
+@keyframes eerie-life {
+  0% {
     opacity: 0;
     transform: translateX(-14px) scale(0.98);
   }
-  to {
+  3% {
     opacity: 1;
     transform: none;
+  }
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.98);
   }
 }
