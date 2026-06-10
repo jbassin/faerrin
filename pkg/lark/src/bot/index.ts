@@ -36,11 +36,13 @@ export async function startBot(opts: {
         const vs = (await client.rest.get(`/guilds/${opts.guildId}/voice-states/${userId}`)) as {
           channel_id?: string | null;
         };
+        console.log(`[lark] voice-state REST lookup for ${userId}: channel=${vs?.channel_id ?? "none"}`);
         return vs?.channel_id ?? null;
       } catch (err) {
         const status = (err as { status?: number }).status;
-        if (status !== 404) console.error(`[lark] voice-state lookup failed for user ${userId}:`, err);
-        return null; // 404 = genuinely not in a voice channel
+        if (status === 404) console.log(`[lark] voice-state REST lookup for ${userId}: 404 (not in voice)`);
+        else console.error(`[lark] voice-state lookup failed for user ${userId}:`, err);
+        return null;
       }
     },
   };

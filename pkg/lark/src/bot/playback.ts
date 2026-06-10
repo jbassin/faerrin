@@ -171,6 +171,15 @@ export class PlaybackEngine {
     });
   }
 
+  /** Diagnostic: which channel (if any) the resolver finds for `userId`. Never throws. */
+  async whereIsOperator(userId: string): Promise<string | null> {
+    try {
+      return (await this.deps.resolver.channelOf(userId)) ?? null;
+    } catch {
+      return null;
+    }
+  }
+
   /** Gateway tells us how many non-bot members remain; drives 60s auto-leave (B2). */
   notifyPopulation(nonBotCount: number): void {
     if (!this.deps.voice.isConnected()) return;

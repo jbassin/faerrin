@@ -28,6 +28,25 @@ function resolveTrackIds(
 export const playbackRoutes: ApiRoute[] = [
   { method: "GET", path: "/api/v1/playback/now", handler: (ctx) => json(engineOf(ctx).nowPlaying()) },
 
+  // Diagnostic: confirms what the server sees for the calling operator — your
+  // resolved uid, the configured guild, whether the bot is up, and which voice
+  // channel (if any) it can resolve for you. Hit it in the browser while you're
+  // sitting in a voice channel.
+  {
+    method: "GET",
+    path: "/api/v1/voice/debug",
+    handler: async (ctx) => {
+      const engine = ctx.services.playback;
+      return json({
+        uid: ctx.session.uid,
+        guildId: ctx.config.guildId || null,
+        playbackAvailable: Boolean(engine),
+        resolvedChannelId: engine ? await engine.whereIsOperator(ctx.session.uid) : null,
+        now: engine ? engine.nowPlaying() : null,
+      });
+    },
+  },
+
   {
     method: "POST",
     path: "/api/v1/playback/play",
