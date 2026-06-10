@@ -185,6 +185,23 @@ describe("auto-leave (B2)", () => {
   });
 });
 
+describe("async channel resolution (REST fallback, D8)", () => {
+  test("play awaits an async resolver and joins the resolved channel", async () => {
+    const asyncResolver: VoiceStateResolver = {
+      channelOf: async (uid) => (uid === "op" ? "chan-async" : null),
+    };
+    const e = new PlaybackEngine({ db, voice, resolver: asyncResolver, targetLufs: -16 });
+    await e.play({ trackIds: [mkTrack("a")], userId: "op" });
+    expect(voice.channel).toBe("chan-async");
+  });
+
+  test("409 when the async resolver finds no channel", async () => {
+    const asyncResolver: VoiceStateResolver = { channelOf: async () => null };
+    const e = new PlaybackEngine({ db, voice, resolver: asyncResolver, targetLufs: -16 });
+    await expect(e.play({ trackIds: [mkTrack("a")], userId: "ghost" })).rejects.toMatchObject({ status: 409 });
+  });
+});
+
 describe("serialization (B9)", () => {
   test("interleaved commands resolve to a consistent state", async () => {
     const e = engine();

@@ -75,10 +75,10 @@ export class PlaybackEngine {
   }
 
   // --- channel resolution (B1/D8) ---
-  private resolveChannel(req: { userId?: string; channelId?: string }): string {
+  private async resolveChannel(req: { userId?: string; channelId?: string }): Promise<string> {
     if (req.channelId) return req.channelId;
     if (req.userId) {
-      const ch = this.deps.resolver.channelOf(req.userId);
+      const ch = await this.deps.resolver.channelOf(req.userId);
       if (ch) return ch;
     }
     throw new PlaybackError(409, "join a voice channel first");
@@ -86,7 +86,7 @@ export class PlaybackEngine {
 
   join(req: { userId?: string; channelId?: string }): Promise<void> {
     return this.run(async () => {
-      const channelId = this.resolveChannel(req);
+      const channelId = await this.resolveChannel(req);
       await this.deps.voice.join(channelId);
     });
   }
@@ -95,7 +95,7 @@ export class PlaybackEngine {
     return this.run(async () => {
       if (req.trackIds.length === 0) throw new PlaybackError(400, "no_tracks");
       if (!this.deps.voice.isConnected()) {
-        await this.deps.voice.join(this.resolveChannel(req));
+        await this.deps.voice.join(await this.resolveChannel(req));
       } else if (req.channelId && req.channelId !== this.deps.voice.currentChannelId()) {
         await this.deps.voice.join(req.channelId); // move (one session, D3)
       }

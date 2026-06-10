@@ -25,8 +25,23 @@ export async function startBot(opts: {
   const adapter = new DiscordVoiceAdapter(client, opts.guildId);
 
   const resolver: VoiceStateResolver = {
-    channelOf(userId) {
-      return client.guilds.cache.get(opts.guildId)?.voiceStates.cache.get(userId)?.channelId ?? null;
+    async channelOf(userId) {
+      // Fast path: the gateway voice-state cache (populated by GuildVoiceStates).
+      const cached = client.guilds.cache.get(opts.guildId)?.voiceStates.cache.get(userId)?.channelId ?? null;
+      if (cached) return cached;
+      // Cache miss (timing / gateway gap / cold cache) → ask Discord directly.
+      // GET /guilds/{guild}/voice-states/{user} is authoritative: 200 with a
+      // channel_id if the user is in voice, 404 if they aren't.
+      try {
+        const vs = (await client.rest.get(`/guilds/${opts.guildId}/voice-states/${userId}`)) as {
+          channel_id?: string | null;
+        };
+        return vs?.channel_id ?? null;
+      } catch (err) {
+        const status = (err as { status?: number }).status;
+        if (status !== 404) console.error(`[lark] voice-state lookup failed for user ${userId}:`, err);
+        return null; // 404 = genuinely not in a voice channel
+      }
     },
   };
 
@@ -40,6 +55,15 @@ export async function startBot(opts: {
     const channel = client.guilds.cache.get(opts.guildId)?.channels.cache.get(channelId);
     if (channel?.isVoiceBased()) {
       engine.notifyPopulation(channel.members.filter((m) => !m.user.bot).size);
+    }
+  });
+
+  client.once("clientReady", () => {
+    const guild = client.guilds.cache.get(opts.guildId);
+    if (!guild) {
+      console.error(`[lark] WARNING: guild ${opts.guildId} not found — is LARK_GUILD_ID correct and the bot invited?`);
+    } else {
+      console.log(`[lark] ready in "${guild.name}" — ${guild.voiceStates.cache.size} voice state(s) cached`);
     }
   });
 
