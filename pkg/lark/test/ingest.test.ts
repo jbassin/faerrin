@@ -118,6 +118,45 @@ describe("dedup (B23)", () => {
   });
 });
 
+describe("resumeInterrupted (restart recovery)", () => {
+  test("re-downloads non-done items of an interrupted job; keeps done ones", async () => {
+    // Simulate a playlist job interrupted after 1 of 3 downloaded.
+    const job = repo.createDownloadJob(db, { type: "playlist", sourceUrl: "https://yt/playlist?list=PL1" });
+    repo.updateDownloadJob(db, job.id, { status: "running", totalItems: 3 });
+    const a = repo.addJobItem(db, { jobId: job.id, videoId: "a", title: "A", position: 0 });
+    repo.addJobItem(db, { jobId: job.id, videoId: "b", title: "B", position: 1 });
+    repo.addJobItem(db, { jobId: job.id, videoId: "c", title: "C", position: 2 });
+    // 'a' already finished (with a real track), 'b'/'c' were left mid-flight.
+    const trackA = repo.createTrack(db, { title: "A", sourceType: "youtube", sourceVideoId: "a" });
+    repo.updateJobItem(db, a.id, { status: "done", trackId: trackA.id });
+
+    const svc = service(stubYtDlp({ entries: [] }));
+    expect(svc.resumeInterrupted()).toBe(1);
+    // Let the resumed downloads finish.
+    await new Promise((r) => setTimeout(r, 50));
+
+    const finished = repo.getDownloadJob(db, job.id)!;
+    expect(finished.status).toBe("done");
+    expect(finished.completed_items).toBe(3);
+    expect(repo.listTracks(db)).toHaveLength(3); // A kept + B,C downloaded
+  });
+
+  test("a fully-done interrupted job is just marked done", () => {
+    const job = repo.createDownloadJob(db, { type: "single", sourceUrl: "u" });
+    repo.updateDownloadJob(db, job.id, { status: "running" });
+    const x = repo.addJobItem(db, { jobId: job.id, videoId: "x", title: "x", position: 0 });
+    repo.updateJobItem(db, x.id, { status: "done" });
+    service(stubYtDlp()).resumeInterrupted();
+    expect(repo.getDownloadJob(db, job.id)!.status).toBe("done");
+  });
+
+  test("leaves already-finished jobs alone", () => {
+    const job = repo.createDownloadJob(db, { type: "single", sourceUrl: "u" });
+    repo.updateDownloadJob(db, job.id, { status: "done" });
+    expect(service(stubYtDlp()).resumeInterrupted()).toBe(0);
+  });
+});
+
 describe("sse hub", () => {
   test("publishes progress frames to subscribers", async () => {
     const frames: string[] = [];

@@ -97,26 +97,54 @@ export class IngestService {
   ): Promise<void> {
     const { db } = this.deps;
     await mkdir(this.audioDir(), { recursive: true }).catch(() => {});
-    let completed = 0;
-    let failed = 0;
+    const doneCount = () => repo.listJobItems(db, jobId).filter((i) => i.status === "done").length;
 
     await runPool(work, this.deps.concurrency ?? 3, async ({ item, target }) => {
       try {
         await this.processItem(jobId, item, target);
-        completed++;
       } catch (err) {
-        failed++;
         repo.updateJobItem(db, item.id, { status: "error", error: (err as Error).message });
       }
-      repo.updateDownloadJob(db, jobId, { completedItems: completed });
+      repo.updateDownloadJob(db, jobId, { completedItems: doneCount() });
       this.publish(jobId);
     });
 
-    const total = work.length;
-    const status = failed === 0 ? "done" : completed === 0 ? "error" : "partial";
-    repo.updateDownloadJob(db, jobId, { status, completedItems: completed });
+    // Compute final status from the DB so it's correct for resumed jobs too.
+    const items = repo.listJobItems(db, jobId);
+    const done = items.filter((i) => i.status === "done").length;
+    const failed = items.filter((i) => i.status === "error").length;
+    repo.updateDownloadJob(db, jobId, {
+      status: failed === 0 ? "done" : done === 0 ? "error" : "partial",
+      completedItems: done,
+    });
     this.publish(jobId);
-    void total;
+  }
+
+  /**
+   * Resume jobs left mid-flight by a crash/restart (status still queued/running):
+   * re-queue their non-done items and download them. Dedup makes already-finished
+   * items instant. Returns the number of jobs resumed.
+   */
+  resumeInterrupted(): number {
+    const { db } = this.deps;
+    const jobs = db
+      .query<repo.DownloadJob, []>("SELECT * FROM download_jobs WHERE status IN ('queued','running') ORDER BY id")
+      .all();
+    for (const job of jobs) {
+      const pending = repo.listJobItems(db, job.id).filter((i) => i.status !== "done");
+      if (pending.length === 0) {
+        repo.updateDownloadJob(db, job.id, { status: "done" });
+        continue;
+      }
+      repo.updateDownloadJob(db, job.id, { status: "running" });
+      for (const it of pending) repo.updateJobItem(db, it.id, { status: "queued", progressPct: 0, error: null });
+      const work = pending.map((item) => ({
+        item,
+        target: job.type === "single" ? { url: job.source_url } : { videoId: item.video_id },
+      }));
+      void this.runItems(job.id, work).catch((err) => console.error(`[lark] resume of job ${job.id} failed`, err));
+    }
+    return jobs.length;
   }
 
   private async processItem(

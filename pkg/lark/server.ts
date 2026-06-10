@@ -6,7 +6,6 @@
 import { mkdirSync } from "node:fs";
 import { loadConfig } from "./src/lib/appconfig";
 import { openDb } from "./src/db/index";
-import { reconcileInterruptedJobs } from "./src/db/repo";
 import { startServer } from "./src/server/app";
 import { ffmpegProber } from "./src/media/probe";
 import { realYtDlp } from "./src/media/ytdlp";
@@ -18,11 +17,6 @@ import type { PlaybackEngine } from "./src/bot/playback";
 const config = loadConfig();
 mkdirSync(config.dataDir, { recursive: true });
 const db = openDb(config.dbPath);
-
-// Clear zombie download jobs left "running" by a previous crash/restart so the
-// UI doesn't show a perpetual import. Re-importing is cheap (video-id dedup).
-const orphaned = reconcileInterruptedJobs(db);
-if (orphaned > 0) console.log(`[lark] reconciled ${orphaned} interrupted download job(s) from a prior restart`);
 
 const hub = new JobHub();
 // Throttle bulk ingest: each item can spawn yt-dlp + an ffmpeg loudness pass, so
@@ -40,6 +34,11 @@ const ingest = new IngestService({
   concurrency: ingestConcurrency,
 });
 console.log(`[lark] ingest concurrency=${ingestConcurrency} loudness=${measureLoudness ? "on" : "off"}`);
+
+// Resume any import interrupted by a crash/restart (re-downloads non-done items;
+// dedup skips finished ones) so a restart never loses an in-progress playlist.
+const resumed = ingest.resumeInterrupted();
+if (resumed > 0) console.log(`[lark] resuming ${resumed} interrupted download job(s)`);
 
 // The Discord bot (voice/playback) is optional: without a token the web UI +
 // library + ingest still run, and playback routes return 503 (§11.1).
