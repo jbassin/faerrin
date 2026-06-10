@@ -15,19 +15,19 @@ are **manual** — nothing here runs automatically.
 - **Postgres** reachable at `DATABASE_URL` — for Phases 1–3 only. Point at the **existing**
   bot database (or a local snapshot); do **not** stand up a fresh PG daemon for this — by Phase 4
   the datastore becomes a plain SQLite file (R1.6).
-- A secrets file at `~/.config/faerrin/speaks.env`, mode `0600`, **not** in git. Use
-  `services/speaks/.env.example` as the template.
+- A secrets file at `~/.config/faerrin/mouth.env`, mode `0600`, **not** in git. Use
+  `pkg/mouth/.env.example` as the template.
 
 ## 1. ⚠️ Rotate the leaked webhook (DO THIS FIRST)
 
 The dice-feed webhook token was hardcoded in the bot's source and is in git history — treat it
 as **compromised**. In Discord: delete/regenerate that channel webhook, then put the **new** URL
-in `~/.config/faerrin/speaks.env` as `DICE_FEED_URL=`. The code no longer contains any token.
+in `~/.config/faerrin/mouth.env` as `DICE_FEED_URL=`. The code no longer contains any token.
 
 ## 2. Build the binary
 
 ```sh
-cd /ruby/data/experiments/faerrin/services/speaks
+cd /ruby/data/experiments/faerrin/pkg/mouth
 
 # Option A — host build (fastest for iterating):
 SQLX_OFFLINE=true cargo build --release           # → target/release/discord
@@ -60,14 +60,14 @@ ss -ltnp | grep 10203   # expect 127.0.0.1, never 0.0.0.0
 
 ```sh
 mkdir -p ~/.config/systemd/user ~/.config/faerrin
-cp services/speaks/deploy/speaks.service ~/.config/systemd/user/
-# create ~/.config/faerrin/speaks.env (see .env.example), chmod 600
+cp pkg/mouth/deploy/mouth.service ~/.config/systemd/user/
+# create ~/.config/faerrin/mouth.env (see .env.example), chmod 600
 
 loginctl enable-linger "$USER"          # run without an active login
 systemctl --user daemon-reload
-systemctl --user enable --now speaks.service
-systemctl --user status speaks.service
-journalctl --user -u speaks.service -f  # watch it connect to the gateway
+systemctl --user enable --now mouth.service
+systemctl --user status mouth.service
+journalctl --user -u mouth.service -f  # watch it connect to the gateway
 ```
 
 ## 5. Isolation & safety checklist
@@ -85,10 +85,10 @@ moves the runtime data over and retires Postgres. **Do it in a freeze window —
 Rows written to SQLite after cutover are lost if you roll back to PG, so keep a PG snapshot.
 
 ```sh
-cd /ruby/data/experiments/faerrin/services/speaks
+cd /ruby/data/experiments/faerrin/pkg/mouth
 
 # 1. Stop the bot (freeze).
-systemctl --user stop speaks.service
+systemctl --user stop mouth.service
 
 # 2. Migrate runtime state PG → SQLite. By DEFAULT this EXCLUDES the junk
 #    `d123456789` mega-roll (47.16M rows of one pathological pool), keeping the
@@ -97,13 +97,13 @@ PG_URL="postgres://…the old bot DB…" \
   bun scripts/migrate-to-sqlite.ts --out ~/.local/share/faerrin/speaks.db
 #   → also accepts --keep-all or --exclude-base <n>
 
-# 3. Point the bot at it (edit ~/.config/faerrin/speaks.env):
+# 3. Point the bot at it (edit ~/.config/faerrin/mouth.env):
 #      DATABASE_URL=sqlite:///home/<you>/.local/share/faerrin/speaks.db
 #    (triple slash = absolute path). The file is backed up by backing up that path.
 
 # 4. Start + verify a roll persists and a plot renders.
-systemctl --user start speaks.service
-journalctl --user -u speaks.service -f
+systemctl --user start mouth.service
+journalctl --user -u mouth.service -f
 
 # 5. Once happy (keep the PG snapshot N days as fallback), retire Postgres: stop
 #    the PG container/service. The identity tables (users/players/characters/

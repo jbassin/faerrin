@@ -100,6 +100,10 @@
         "typescript": "^5.9.3",
       },
     },
+    "pkg/mouth": {
+      "name": "@faerrin/mouth",
+      "version": "0.1.0",
+    },
     "pkg/strider": {
       "name": "@faerrin/strider",
       "version": "0.1.0",
@@ -396,6 +400,8 @@
     "@faerrin/gothic": ["@faerrin/gothic@workspace:pkg/gothic"],
 
     "@faerrin/llm": ["@faerrin/llm@workspace:pkg/llm"],
+
+    "@faerrin/mouth": ["@faerrin/mouth@workspace:pkg/mouth"],
 
     "@faerrin/strider": ["@faerrin/strider@workspace:pkg/strider"],
 

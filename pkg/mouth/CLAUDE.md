@@ -1,16 +1,24 @@
-# CLAUDE.md — `speaks`
+# CLAUDE.md — `@faerrin/mouth`
 
-A **Rust** Discord bot (PF2e dice/roller + NPC-voice "host") vendored into the Faerrin
-monorepo. It is **not** a Bun-workspace member — it lives under `services/` (not `pkg/`)
-precisely because it has no `package.json` and cargo isn't in the Bun CI container. See the
-migration spec at [`thoughts/speaks/plans/0001-speaks-migration-spec.md`](../../thoughts/speaks/plans/0001-speaks-migration-spec.md).
+A **Rust** Discord bot (PF2e dice/roller + NPC-voice "host"), `pkg/mouth`. It IS a Bun-workspace
+member — but a **script-less one**: its `package.json` declares no `typecheck`/`test`/`build`/`lint`
+scripts, so the `bun --filter '*'` fan-out simply skips it (exactly like the CSS-only
+[`@faerrin/gothic`](../gothic/)). The real build/test runs in a **dedicated Dagger Rust lane**
+(`.dagger` → `rustCheck`/`rustBuild`). See the migration spec at
+[`thoughts/speaks/plans/0001-speaks-migration-spec.md`](../../thoughts/speaks/plans/0001-speaks-migration-spec.md).
+
+> **Why `pkg/` is fine (was `services/speaks`):** the original objection — "a Rust crate has no
+> `package.json` so it can't be a `pkg/*` member" — dissolved once we confirmed `bun --filter`
+> skips packages lacking a script (`gothic` proves it). So a thin, script-less `package.json` makes
+> it a first-class `pkg/` member without faking cargo-shelling scripts. The eventual TS rewrite
+> (see [`thoughts/mouth/plans/`](../../thoughts/mouth/plans/)) becomes an in-place swap.
 
 ## ⚠️ Deliberate Rust exception to "Bun everywhere"
 
-Like `wretch` (Python), this package is intentionally not Bun. It depends on serenity (Discord
-gateway), `uiua` (an embedded array language with no TS equivalent), and SQLx. Rewriting in TS
-was rejected for the same reason `wretch` stayed Python. It builds in a **dedicated Dagger Rust
-lane** (`.dagger` → `rustCheck`/`rustBuild`), kept entirely out of `bun --filter '*'`.
+Like `wretch` (Python), this package is intentionally not Bun — it's serenity (Discord gateway) +
+a dice-DSL parser + SQLx. A TS rewrite is now *feasible* (the `uiua`/`pgvector` blockers were shed)
+but was deliberately **deferred** (zero functional gain — see the mouth plan). It builds in the
+**Dagger Rust lane**, kept entirely out of `bun --filter '*'`.
 
 ## Layout
 
@@ -29,7 +37,7 @@ deploy/              # systemd user unit + CUTOVER runbook
 ## Run / check
 
 ```sh
-# from services/speaks (needs a host Rust toolchain; musl is CI/Docker only)
+# from pkg/mouth (needs a host Rust toolchain; musl is CI/Docker only)
 SQLX_OFFLINE=true cargo check --workspace
 cargo clippy --workspace -- -D warnings
 cargo test --workspace          # pure-logic tests (roller); no DB needed
@@ -39,8 +47,8 @@ cargo run --bin discord         # needs a populated .env (DISCORD_TOKEN, DATABAS
 ## Config (all env-driven — nothing hardcoded after Phase 1)
 
 `DISCORD_TOKEN`, `DATABASE_URL`, `DICE_FEED_URL` (rotated webhook), `FEED_WS_URL`,
-`CHART_BASE_URL`, `SPEAKS_BIND_ADDR` (default `127.0.0.1:10203` — internal only),
-`SPEAKS_PLAYERS_PATH` (default `players.toml`), `RUST_LOG`. See `.env.example`. `.env` is
+`CHART_BASE_URL`, `MOUTH_BIND_ADDR` (default `127.0.0.1:10203` — internal only),
+`MOUTH_PLAYERS_PATH` (default `players.toml`), `RUST_LOG`. See `.env.example`. `.env` is
 optional at runtime (dotenvy won't fail if absent; prod supplies env via systemd).
 
 ## Identity (`players.toml`)
@@ -73,9 +81,11 @@ CI/offline builds use the committed `.sqlx/` metadata (`SQLX_OFFLINE=true`); reg
 
 ## Gotchas
 
-- **Don't move this under `pkg/`** — `bun --filter '*'` would try to treat it as a workspace
-  member. It is `services/`-only by design.
+- **Keep the `package.json` script-less.** It's a `pkg/*` member only so it lives beside the other
+  packages; if you add a `typecheck`/`test`/`build`/`lint` script, the `bun --filter '*'` fan-out
+  will try to run it in the bun container (no cargo there) and break CI. Real checks = the Dagger
+  Rust lane.
 - The bot dials Discord **outbound**; the axum endpoints are an internal control plane. Do **not**
   add a `sites.caddyfile` entry / public subdomain.
-- Postgres is **temporary** (Phases 1–3). The end-state is a plain SQLite file — don't invest in
-  PG infra on the host.
+- The datastore is a plain **SQLite file** (`DATABASE_URL=sqlite:///…`); no DB daemon. Back up =
+  copy the file.

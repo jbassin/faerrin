@@ -7,7 +7,9 @@ metadata:
 
 Decision (2026-06-09): rewriting the `speaks` Rust Discord bot (now at `services/speaks`, see
 [[speaks-migration]]) into a TypeScript Bun package **`@faerrin/mouth` under `pkg/`** was planned
-via `/octo:plan` (team mode) and **DEFERRED** — do NOT start it as a standalone project.
+via `/octo:plan` (team mode) and **DEFERRED** — do NOT start it as a standalone project. (The Rust
+bot was since relocated `services/speaks` → **`pkg/mouth`** (`@faerrin/mouth`) as a script-less Bun
+member — see [[speaks-migration]] — so the rewrite is now an *in-place* TS swap of `pkg/mouth`.)
 
 **Why defer:** the 4-phase migration removed the things that justified Rust (`uiua`, `pgvector`),
 so a TS rewrite is now *feasible* — but it buys **zero functional gain**. It would spend its whole

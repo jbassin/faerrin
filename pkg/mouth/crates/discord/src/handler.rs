@@ -31,7 +31,7 @@ use std::sync::{Arc, LazyLock};
 use tracing::{error, info, instrument};
 
 // Dice-feed Discord webhook + the roll-broadcast websocket endpoint, both
-// environment-driven (see services/speaks/.env.example). The webhook token is a
+// environment-driven (see pkg/mouth/.env.example). The webhook token is a
 // secret — it must NEVER be hardcoded in source. Read once, lazily, after
 // dotenv / systemd EnvironmentFile have populated the environment.
 static DICE_FEED_URL: LazyLock<String> =
@@ -169,9 +169,9 @@ impl Handler {
             .with_state(HttpState { handler: self.state.clone() });
 
         // Internal-only by default (Discord dials outbound; these endpoints are a
-        // local control plane). Override with SPEAKS_BIND_ADDR only behind a proxy —
+        // local control plane). Override with MOUTH_BIND_ADDR only behind a proxy —
         // never bind all interfaces by default.
-        let bind = std::env::var("SPEAKS_BIND_ADDR").unwrap_or_else(|_| "127.0.0.1:10203".into());
+        let bind = std::env::var("MOUTH_BIND_ADDR").unwrap_or_else(|_| "127.0.0.1:10203".into());
         let listener = tokio::net::TcpListener::bind(&bind).await?;
         tokio::spawn(async { axum::serve(listener, app).await });
 

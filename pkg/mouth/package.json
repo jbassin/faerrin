@@ -1,0 +1,6 @@
+{
+  "name": "@faerrin/mouth",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Rust PF2e dice/host Discord bot (a Cargo workspace). A Bun-workspace MEMBER with no bun-lane scripts — built & tested by the dedicated Dagger rust lane (rust-check / rust-build), not the `bun --filter '*'` lanes (which skip it, like @faerrin/gothic). See CLAUDE.md."
+}

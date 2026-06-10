@@ -38,6 +38,12 @@ Phase 4 SHIPPED 2026-06-09 (pushed) — SQLx backend Postgres→**SQLite** (`db/
 (`scripts/migrate-to-sqlite.ts`, validated against live PG). `dice` has no `campaign_id` so
 per-campaign filtering was impossible. End state: static musl binary + a SQLite file, no DB daemon.
 
+**RELOCATED 2026-06-09:** `services/speaks` → **`pkg/mouth`** (`@faerrin/mouth`); the `services/`
+dir is gone. It's a script-less Bun-workspace member (the `gothic` pattern — `bun --filter '*'`
+skips packages lacking a script, so no fake cargo-shelling scripts; the Dagger rust lane still does
+the real checks). Env vars renamed `SPEAKS_*` → `MOUTH_*`; deploy unit `speaks.service` →
+`mouth.service`. Pure relocation, zero behavior change. Plan: `thoughts/speaks/plans/0002`.
+
 **ALL 4 PHASES of the code migration are DONE + pushed to main; workspace green throughout.**
 Remaining = **host-owned production cutover only** (run `scripts/migrate-to-sqlite.ts` in a freeze
 window, switch DATABASE_URL to `sqlite:///…`, retire PG + drop identity tables, rotate the leaked

@@ -1,4 +1,4 @@
-# services/speaks/players.toml — bot identity binding (the snowflake↔player map +
+# pkg/mouth/players.toml — bot identity binding (the snowflake↔player map +
 # the Discord-runtime / mechanical fields that @faerrin/content doesn't track).
 #
 # This is the bot-owned half of the identity boundary (spec §5). The `name` of

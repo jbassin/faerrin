@@ -1,4 +1,4 @@
-# systemd USER unit — install to ~/.config/systemd/user/speaks.service
+# systemd USER unit — install to ~/.config/systemd/user/mouth.service
 #
 # Runs the speaks Discord bot as a long-lived daemon (serenity autosharded gateway
 # + internal axum control plane on 127.0.0.1:10203). Unlike wretch's oneshot
@@ -7,7 +7,7 @@
 #
 # Enable lingering so it runs without an active login:
 #   loginctl enable-linger "$USER"
-#   systemctl --user enable --now speaks.service
+#   systemctl --user enable --now mouth.service
 # See deploy/CUTOVER.md.
 
 [Unit]
@@ -18,16 +18,16 @@ Wants=network-online.target
 [Service]
 Type=simple
 # cwd = the package dir so the default `players.toml` (the bot identity file)
-# resolves; override the path with SPEAKS_PLAYERS_PATH if needed.
-WorkingDirectory=/ruby/data/experiments/faerrin/services/speaks
+# resolves; override the path with MOUTH_PLAYERS_PATH if needed.
+WorkingDirectory=/ruby/data/experiments/faerrin/pkg/mouth
 
-# Secrets + config (DISCORD_TOKEN, DATABASE_URL, *_URL, SPEAKS_BIND_ADDR, RUST_LOG).
-# Keep this file OUT of git, mode 0600. Copy services/speaks/.env.example as a guide.
-EnvironmentFile=%h/.config/faerrin/speaks.env
+# Secrets + config (DISCORD_TOKEN, DATABASE_URL, *_URL, MOUTH_BIND_ADDR, RUST_LOG).
+# Keep this file OUT of git, mode 0600. Copy pkg/mouth/.env.example as a guide.
+EnvironmentFile=%h/.config/faerrin/mouth.env
 
 # The release binary. Build on the host (`cargo build --release`) or extract the
 # musl binary from the cargo-chef Docker image (see CUTOVER.md), then point here.
-ExecStart=/ruby/data/experiments/faerrin/services/speaks/target/release/discord
+ExecStart=/ruby/data/experiments/faerrin/pkg/mouth/target/release/discord
 
 # Supervision: auto-restart with backoff, but CAP restarts so a crash-loop cannot
 # hammer Discord's identify endpoint and earn a rate-limit/ban. serenity resumes

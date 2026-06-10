@@ -24,9 +24,9 @@ impl Env {
         let discord_token = env::var("DISCORD_TOKEN")?;
         let database_url = env::var("DATABASE_URL")?;
         // Bot-owned identity file (snowflake → player). Default resolves from the
-        // unit's WorkingDirectory (services/speaks); override with SPEAKS_PLAYERS_PATH.
+        // unit's WorkingDirectory (pkg/mouth); override with MOUTH_PLAYERS_PATH.
         let players_path =
-            env::var("SPEAKS_PLAYERS_PATH").unwrap_or_else(|_| "players.toml".into());
+            env::var("MOUTH_PLAYERS_PATH").unwrap_or_else(|_| "players.toml".into());
 
         Ok(Self { log_level, discord_token, database_url, players_path })
     }

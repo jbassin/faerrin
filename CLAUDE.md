@@ -79,6 +79,7 @@ bun --filter '*' format          # per-app prettier (no single root config — a
 | `content` | `@faerrin/content` | **Content platform**: SSOT data (wiki + transcripts) + the generation pipeline |
 | `gothic` | `@faerrin/gothic` | Shared amber/teal 40k-gothic **skin** — design tokens + fonts (pure CSS; consumed by strider + vellum) |
 | `vellum` | `@faerrin/vellum` | Vite + React PF2e document forge (`vellum.iridi.cc`) — directive-markdown → gothic statblocks/handouts → PNG, via a warm Playwright render service |
+| `mouth` | `@faerrin/mouth` | **Rust** PF2e dice/host Discord bot (Cargo workspace + SQLite). A script-less Bun member (built by the Dagger rust lane, not the bun lanes — like `gothic`). |
 
 ## Shared data — single source of truth (`pkg/content`)
 

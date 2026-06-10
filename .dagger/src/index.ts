@@ -144,7 +144,7 @@ export class Ci {
   }
 
   /**
-   * Base container for the Rust service `services/speaks` (the vendored Discord
+   * Base container for the Rust service `pkg/mouth` (the vendored Discord
    * bot). Pinned to clux/muslrust:nightly — the same image the bot's Dockerfile
    * uses, and nightly is required (the `roller` crate enables a nightly feature).
    * Kept ENTIRELY separate from the Bun lanes (`bun --filter '*'` never sees it):
@@ -160,15 +160,15 @@ export class Ci {
       .withEnvVariable("SQLX_OFFLINE", "true")
       .withMountedCache("/root/.cargo/registry", dag.cacheVolume("faerrin-cargo-registry"))
       .withMountedCache(
-        "/src/services/speaks/target",
-        dag.cacheVolume("faerrin-speaks-target"),
+        "/src/pkg/mouth/target",
+        dag.cacheVolume("faerrin-mouth-target"),
       )
       .withMountedDirectory("/src", source)
-      .withWorkdir("/src/services/speaks")
+      .withWorkdir("/src/pkg/mouth")
   }
 
   /**
-   * The Rust `check` job for `services/speaks`: format check → clippy → test, in
+   * The Rust `check` job for `pkg/mouth`: format check → clippy → test, in
    * order and fail-fast. NOTE: clippy runs in report mode while the staged
    * migration is in flight — the bulk of the remaining dead-code warnings are the
    * identity fields/queries (`Profile`, `get_active_campaign`, `Campaign`) that
