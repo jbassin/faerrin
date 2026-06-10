@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { apiSend } from "./api";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { apiGet, apiSend } from "./api";
 
 interface JobItem {
   id: number;
@@ -31,7 +31,49 @@ export function Import({ onImported }: { onImported: () => void }) {
   const [busy, setBusy] = useState(false);
   const esRef = useRef<EventSource | null>(null);
 
-  useEffect(() => () => esRef.current?.close(), []);
+  const watch = useCallback(
+    (jobId: number) => {
+      setBusy(true);
+      esRef.current?.close();
+      const es = new EventSource(`/api/v1/ingest/jobs/${jobId}/events`);
+      esRef.current = es;
+      es.onmessage = (ev) => {
+        const data = JSON.parse(ev.data) as Snapshot;
+        setSnap(data);
+        if (data.job && TERMINAL.has(data.job.status)) {
+          es.close();
+          setBusy(false);
+          onImported();
+        }
+      };
+      es.onerror = () => {
+        es.close();
+        setBusy(false);
+      };
+    },
+    [onImported],
+  );
+
+  // Keep the latest `watch` reachable from the mount-only reattach effect
+  // without re-running it whenever `onImported` changes identity.
+  const watchRef = useRef(watch);
+  watchRef.current = watch;
+
+  // On (re)load, resume watching any still-running import (server-side downloads
+  // outlive the page, so a returning operator sees live progress again). B22.
+  useEffect(() => {
+    let cancelled = false;
+    apiGet<Job[]>("/api/v1/ingest/jobs")
+      .then((jobs) => {
+        const active = jobs.find((j) => j.status === "queued" || j.status === "running");
+        if (active && !cancelled) watchRef.current(active.id);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+      esRef.current?.close();
+    };
+  }, []);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -45,25 +87,6 @@ export function Import({ onImported }: { onImported: () => void }) {
     } catch {
       setBusy(false);
     }
-  }
-
-  function watch(jobId: number) {
-    esRef.current?.close();
-    const es = new EventSource(`/api/v1/ingest/jobs/${jobId}/events`);
-    esRef.current = es;
-    es.onmessage = (ev) => {
-      const data = JSON.parse(ev.data) as Snapshot;
-      setSnap(data);
-      if (data.job && TERMINAL.has(data.job.status)) {
-        es.close();
-        setBusy(false);
-        onImported();
-      }
-    };
-    es.onerror = () => {
-      es.close();
-      setBusy(false);
-    };
   }
 
   return (
