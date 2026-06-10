@@ -190,6 +190,8 @@ export interface RunningServer {
 
 export function startServer(config: AppConfig, db: DB, deps: AppDeps = {}): RunningServer {
   const app = createApp(config, db, deps);
-  const server = Bun.serve({ port: config.port, fetch: app.handle });
+  // Voice join can take a few seconds; the default 10s idle timeout would cut a
+  // /playback/play request off mid-join. Give it room.
+  const server = Bun.serve({ port: config.port, fetch: app.handle, idleTimeout: 60 });
   return { server, app, stop: () => server.stop(true) };
 }

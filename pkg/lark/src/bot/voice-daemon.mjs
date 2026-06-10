@@ -12,6 +12,7 @@
  * Env: DISCORD_TOKEN, LARK_GUILD_ID. Plain JS (no build step) so `node
  * voice-daemon.mjs` just runs.
  */
+import dns from "node:dns";
 import {
   AudioPlayerStatus,
   StreamType,
@@ -23,6 +24,12 @@ import {
 } from "@discordjs/voice";
 import { Client, GatewayIntentBits } from "discord.js";
 import prism from "prism-media";
+
+// This host's IPv6 is broken (ULA only, no default route). Discord's voice
+// servers (*.discord.media) publish AAAA records, so Node's default "verbatim"
+// DNS order picks the unreachable IPv6 address and the voice connection loops
+// signalling↔connecting forever. Force IPv4 so voice can actually connect.
+dns.setDefaultResultOrder("ipv4first");
 
 const TOKEN = process.env.DISCORD_TOKEN;
 const GUILD_ID = process.env.LARK_GUILD_ID;
