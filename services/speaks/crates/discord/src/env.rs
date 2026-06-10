@@ -8,6 +8,7 @@ pub(crate) struct Env {
     pub log_level: Level,
     pub discord_token: String,
     pub database_url: String,
+    pub players_path: String,
 }
 
 impl Env {
@@ -22,7 +23,11 @@ impl Env {
             env::var("RUST_LOG").map_or(Level::INFO, |t| Level::from_str(t.as_str()).unwrap());
         let discord_token = env::var("DISCORD_TOKEN")?;
         let database_url = env::var("DATABASE_URL")?;
+        // Bot-owned identity file (snowflake → player). Default resolves from the
+        // unit's WorkingDirectory (services/speaks); override with SPEAKS_PLAYERS_PATH.
+        let players_path =
+            env::var("SPEAKS_PLAYERS_PATH").unwrap_or_else(|_| "players.toml".into());
 
-        Ok(Self { log_level, discord_token, database_url })
+        Ok(Self { log_level, discord_token, database_url, players_path })
     }
 }

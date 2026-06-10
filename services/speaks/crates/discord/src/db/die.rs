@@ -7,7 +7,7 @@ use tracing::instrument;
 pub(crate) struct Die {
     pub value: i32,
     pub count: i32,
-    pub player_name: String,
+    pub player_id: i32,
 }
 
 impl DB {
@@ -26,12 +26,15 @@ impl DB {
             .map(|_| ())
     }
 
+    /// Roll counts per player for the last `interval`, keyed by `player_id`. The
+    /// caller maps ids → display names via the roster (the `players` table is no
+    /// longer joined — identity lives in `players.toml`).
     #[instrument(level = "trace", skip(self))]
     pub(crate) async fn get_dice(
         &self,
         base: usize,
         interval: &str,
-    ) -> Result<HashMap<String, Vec<i32>>> {
+    ) -> Result<HashMap<i32, Vec<i32>>> {
         let dice = query_file_as!(Die, "src/db/queries/get_dice_query.sql", base as i32, interval)
             .fetch_all(&self.pool)
             .await
@@ -39,7 +42,7 @@ impl DB {
 
         let mut res = HashMap::new();
         for die in dice {
-            let arr = res.entry(die.player_name).or_insert_with(|| vec![0; base]);
+            let arr = res.entry(die.player_id).or_insert_with(|| vec![0; base]);
             arr[die.value as usize - 1] = die.count;
         }
 

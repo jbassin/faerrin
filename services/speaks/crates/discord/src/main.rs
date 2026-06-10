@@ -10,6 +10,7 @@ mod goodness;
 mod handler;
 mod host;
 pub mod http;
+mod roster;
 mod seed_info;
 
 use crate::env::Env;

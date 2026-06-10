@@ -1,11 +1,11 @@
 use crate::control::Control;
 use crate::db::DB;
 use crate::db::campaign::GameEdition;
-use crate::db::player::Profile;
 use crate::env::Env;
 use crate::goodness::RollGoodness;
 use crate::host::{Host, SendArgs, Thumbnail, host_says};
 use crate::http::{HttpState, speak};
+use crate::roster::{Profile, Roster};
 use crate::seed_info::SeedInfo;
 use axum::Router;
 use chart::{Chart, Data, Dataset};
@@ -44,6 +44,7 @@ static FUNC_RE: LazyLock<Regex> =
 
 pub(crate) struct Handler {
     pub db: Arc<DB>,
+    pub roster: Roster,
     pub state: Arc<Mutex<HandlerState>>,
 
     pub is_initialized: AtomicBool,
@@ -61,6 +62,7 @@ impl Handler {
     #[instrument(level = "trace")]
     pub(crate) async fn new_client(env: &Env) -> Result<Client> {
         let db = Arc::new(DB::new(&env.database_url).await?);
+        let roster = Roster::load(&env.players_path)?;
 
         let intents = GatewayIntents::non_privileged()
             | GatewayIntents::GUILD_MESSAGES
@@ -70,6 +72,7 @@ impl Handler {
         Client::builder(&env.discord_token, intents)
             .event_handler(Self {
                 db,
+                roster,
                 state: Arc::new(Mutex::new(HandlerState {
                     webhooks: Mutex::new(HashMap::new()),
                     feed: Mutex::new(RefCell::new(None)),
@@ -313,7 +316,7 @@ impl Handler {
 
         let datasets = dice
             .into_iter()
-            .map(|(label, data)| {
+            .map(|(player_id, data)| {
                 len = data.len() as i32;
 
                 let total = data.iter().sum::<i32>();
@@ -326,6 +329,7 @@ impl Handler {
                     normalized[idx] = (((*val as f64) / (total as f64)) * 100.) as i32;
                 }
 
+                let label = self.roster.name_for(player_id).unwrap_or("unknown");
                 Dataset { label: format!("{label} ({avg:.1} • {total})"), data: normalized }
             })
             .collect();
@@ -716,15 +720,11 @@ impl EventHandler for Handler {
             webhook.unwrap().clone()
         };
 
-        let profile = {
-            let profile = self.db.get_profile(msg.author.id.to_string().as_str()).await;
-
-            match profile {
-                Ok(p) => p,
-                Err(e) => {
-                    error!("error fetching profile: {e}");
-                    return;
-                }
+        let profile = match self.roster.get(msg.author.id.to_string().as_str()) {
+            Some(p) => p,
+            None => {
+                info!("no roster entry for author {}", msg.author.id);
+                return;
             }
         };
 

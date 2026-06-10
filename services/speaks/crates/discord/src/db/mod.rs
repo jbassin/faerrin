@@ -1,7 +1,6 @@
 pub(crate) mod campaign;
 mod die;
 pub(crate) mod funcs;
-pub(crate) mod player;
 
 use color_eyre::eyre::Result;
 use sqlx::postgres::PgPoolOptions;

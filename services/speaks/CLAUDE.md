@@ -38,18 +38,27 @@ cargo run --bin discord         # needs a populated .env (DISCORD_TOKEN, DATABAS
 
 ## Config (all env-driven — nothing hardcoded after Phase 1)
 
-`DISCORD_TOKEN`, `DATABASE_URL`, `DICE_FEED_URL` (rotated webhook), `FEED_WS_URL`, `EMBED_URL`,
-`CHART_BASE_URL`, `SPEAKS_BIND_ADDR` (default `127.0.0.1:10203` — internal only), `RUST_LOG`.
-See `.env.example`. `.env` is optional at runtime (dotenvy won't fail if absent; prod supplies
-env via systemd).
+`DISCORD_TOKEN`, `DATABASE_URL`, `DICE_FEED_URL` (rotated webhook), `FEED_WS_URL`,
+`CHART_BASE_URL`, `SPEAKS_BIND_ADDR` (default `127.0.0.1:10203` — internal only),
+`SPEAKS_PLAYERS_PATH` (default `players.toml`), `RUST_LOG`. See `.env.example`. `.env` is
+optional at runtime (dotenvy won't fail if absent; prod supplies env via systemd).
+
+## Identity (`players.toml`)
+
+Player identity is read from **`players.toml`** at startup (snowflake → player + character +
+class + edition), not from Postgres. This is the bot-owned half of the identity boundary; the
+player `name`s are the SSOT join key with `@faerrin/content` (`campaigns.yaml`). The DB now holds
+only **runtime** state (`dice` history keyed by the stable integer `player_id`, and `funcs`
+macros). See the spec §5 and `thoughts/speaks/plans/identity-sources.md`.
 
 ## Migration status (staged hybrid — see spec)
 
-- **Phase 1 (this) — vendored + made portable.** All hardcoded URLs/secrets externalized to env;
-  axum binds localhost; `.env` made optional for systemd. No behavior change.
-- Phase 2 — shed `uiua` + the vector-embedding subsystem (unblocks SQLite; pgvector is PG-only).
-- Phase 3 — read campaign/player identity from `@faerrin/content`'s `shibboleth.json`; bot keeps
-  a `players.toml` for the snowflake binding. Runtime schema shrinks to `dice` + `funcs`.
+- **Phase 1 — vendored + made portable.** Hardcoded URLs/secrets → env; axum binds localhost.
+- **Phase 2 — shed `uiua` + the vector-embedding subsystem** (unblocks SQLite; pgvector is PG-only).
+- **Phase 3 — identity → `players.toml`.** Bot reads `players.toml` instead of the Postgres
+  identity tables (`users`/`players`/`characters`/`campaigns`/`active_campaign`); those tables are
+  no longer read (drop is gated to Phase 4). `dice` keeps its integer `player_id` (no 47M-row
+  migration). Content stays SSOT at the player-display-name level.
 - Phase 4 — Postgres → SQLite cutover; no datastore daemon at all.
 
 ## Gotchas

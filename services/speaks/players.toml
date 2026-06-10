@@ -1,0 +1,75 @@
+# services/speaks/players.toml — bot identity binding (the snowflake↔player map +
+# the Discord-runtime / mechanical fields that @faerrin/content doesn't track).
+#
+# This is the bot-owned half of the identity boundary (spec §5). The `name` of
+# each player is the SSOT JOIN KEY with content's campaigns.yaml — it MUST match
+# content's display-names (Josh / Jorge / Mike / Noah / Tanner). Everything else
+# here (character, class, edition, snowflakes) is the bot's to own.
+#
+# >>> RECONCILE: values below are pre-filled from the live bot DB (what the bot
+# >>> shows today). Comments flag where content disagrees — set the canonical
+# >>> value you want the BOT to display, then hand it back and I'll wire it in.
+#
+# Snowflakes are public Discord user IDs (not secrets). If you'd still rather not
+# commit them, say so and I'll gitignore this file + ship it via the deploy env
+# instead. `usernames` are comments only; the bot ignores them.
+
+schema_version = 1
+
+[campaign]
+# Bot's active campaign. `edition` drives the PF2e-vs-D&D thumbnail logic — it is
+# the only campaign field the bot reads.
+name = "Through a Song, Darkly"  # content labels this same campaign "Through a Song, Darkly"
+edition = "pathfinder_2e"     # one of: pathfinder_2e | dnd_5e | one_dnd
+
+# One [[players]] block per player. `player_id` is kept as the dice-history key
+# (47M existing rows reference it) — do not renumber existing players.
+
+[[players]]
+name = "Josh"                          # SSOT join key — matches content
+snowflakes = ["333321567926878209"]    # jbassin#8820
+player_id = 1
+character = "Gamemaster"
+class = "gm"
+is_dm = true
+is_admin = true
+
+[[players]]
+name = "Jorge"
+snowflakes = ["712150290169593856", "753011285003730955"]   # Kajymo#8050, Jorge Ipad#9322
+player_id = 2
+character = "Argyle"
+class = "champion"
+is_dm = false
+is_admin = false
+
+[[players]]
+name = "Mike"
+snowflakes = ["555850241912602631"]    # Mike D#6187
+player_id = 3
+character = "Benny"
+class = "fighter"
+is_dm = false
+is_admin = false
+
+[[players]]
+name = "Noah"
+snowflakes = ["652106046571020299"]    # nnaiman#4551
+player_id = 4
+character = "Johnny"
+class = "bard"
+is_dm = false
+is_admin = false
+
+[[players]]
+name = "Tanner"
+snowflakes = ["417896818844893194"]    # TannerK#1952
+player_id = 5
+character = "Anzu"
+class = "psychic"
+is_dm = false
+is_admin = false
+
+# DB player_id 6 = "S.C.H.I.S.M." has no Discord user and no character in the
+# active campaign, so it's omitted. Add a [[players]] block (with snowflakes) if
+# it should resolve to a roller identity.

@@ -23,8 +23,16 @@ systemd, Dagger `rustCheck`/`rustBuild` lane, deploy unit + CUTOVER. Needed `#![
 on the discord crate + refreshed stale roller `expect_test` snapshots (both pre-existing issues).
 Whole workspace green. **User must rotate the leaked webhook (still in git history).**
 Phase 2 SHIPPED 2026-06-09 (pushed) — shed `uiua` + vector embeddings (deps 389→58 crates);
-removed orphaned `SyncDie` + `HandlerState.db`; clippy lane stays report-only until Phase 3
-(identity dead-code) then escalates to `-D warnings`. Phases 3–4 pending.
+removed orphaned `SyncDie` + `HandlerState.db`.
+Phase 3 SHIPPED 2026-06-09 (pushed) — identity → `players.toml` (new `roster.rs`), **decoupled
+from content's pipeline** (content's `campaigns.yaml` drives the live wiki/caster, and the rosters
+diverge — so making the bot read shibboleth would change bot output or re-baseline the live wiki;
+user chose decouple). Bot no longer reads the PG identity tables; `dice` keeps integer `player_id`
+(47M rows untouched). `.sqlx` regenerated against the **live DB** (DATABASE_URL is in
+`/ruby/data/experiments/speaks_with_passion/.env`, host localhost:9556). Identity-table `DROP`s
+gated to Phase 4. Remaining clippy warnings are pre-existing cosmetic only.
+**Phase 4 pending:** Postgres→SQLite cutover (2 tables: dice ~47M rows + funcs), drop identity
+tables, retire PG. Needs the live DB + a freeze window.
 
 **Phase order (RESEQUENCED 2026-06-09 to retire PG/Podman ASAP):**
 1 vendor + portability (validate against the OLD/snapshot PG; never provision a fresh host PG) →

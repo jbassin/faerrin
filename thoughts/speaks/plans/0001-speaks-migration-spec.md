@@ -1,8 +1,9 @@
 # NLSpec 0001 — Migrate `speaks_with_passion` into Faerrin (staged hybrid)
 
-**Status:** Phases 1–2 SHIPPED (2026-06-09). P1: vendored to `services/speaks`, portable, Rust
-Dagger lane, deploy unit. P2: shed `uiua` + vector embeddings (deps 389→58 crates). Whole
-workspace green. Phases 3–4 (identity→content, SQLite cutover) pending. See §13.
+**Status:** Phases 1–3 SHIPPED (2026-06-09). P1: vendored + portable. P2: shed `uiua` + vector
+embeddings (389→58 crates). P3: identity → `players.toml` (decoupled from content's pipeline;
+bot no longer reads the Postgres identity tables). Whole workspace green; `.sqlx` regenerated
+against the live DB. Phase 4 (SQLite cutover) pending. See §13.
 **Created:** 2026-06-09
 **Authoring:** /octo:spec — team mode (Claude persona agents: backend-, database-, cloud-architect)
 **Source:** `/ruby/data/experiments/speaks_with_passion` (Rust Cargo workspace, edition 2024)
@@ -382,6 +383,32 @@ Findings were verified against the codebase and folded in above. Summary of what
 - **`.sqlx/` note:** the deleted embedding queries leave orphaned `.sqlx/*.json` entries —
   harmless for offline builds (validated). A clean `cargo sqlx prepare` against a live DB at the
   Phase 3/4 cutover removes them.
+
+### Phase 3 — SHIPPED 2026-06-09
+- **Design change (supersedes R3.0/R3.1):** the content roster and the bot DB genuinely diverge,
+  and `campaigns.yaml` drives the live wiki/caster pipeline (GM detection by name, transcript
+  keyword matching) — so making the bot read `shibboleth.json` would either change bot output or
+  re-baseline the live `heart.iridi.cc` wiki. **Decision (user): decouple.** The bot reads
+  **`players.toml`** (its own file) for identity; content stays SSOT only at the
+  **player-display-name** level (Josh/Jorge/Mike/Noah/Tanner match). No content-pipeline changes.
+- **`players.toml`** authored from a live-DB pull (`users ⋈ players ⋈ characters ⋈ active_campaign`),
+  then reconciled by the user (character labels aligned to content: "Gamemaster", "Through a Song,
+  Darkly"; classes kept from the DB). Maps snowflake → player (Jorge has 2 accounts).
+- **New `roster.rs`** loads `players.toml` at startup → `snowflake → Profile` map (+ `player_id →
+  name` for plot labels). `Profile` trimmed to the 5 fields actually read (`player_id`,
+  `player_name`, `campaign_edition`, `character_name`, `character_class`).
+- **Removed** the Postgres identity reads: `db/player.rs` (`get_profile`), `Campaign` +
+  `get_active_campaign`, `get_player_profile.sql`, `get_active_campaign.sql`. `get_dice_query.sql`
+  rewritten to drop the `players` join (returns `player_id`, mapped to a name via the roster).
+- **`dice` keeps its integer `player_id`** — the 47M existing rows are untouched (deviation from
+  R3.2's "slug string": a 47M-row rewrite for no functional gain). The identity *tables* are no
+  longer read; the actual `DROP`s are **gated to the Phase 4 cutover** (still present in the DB now).
+- **Validation:** `cargo sqlx prepare` green **against the live DB** (`.sqlx` regenerated; identity
+  queries gone); `cargo check` 0 errors (7→4 warnings — all now unrelated cosmetic: `invert`,
+  `HostPicker` variants); `cargo fmt --check` green; tests **9 pass** (new `roster` parse/resolve
+  test + 8 `roller`); real `players.toml` validated. The identity dead-code that blocked clippy
+  `-D warnings` is gone; the remaining 4 are pre-existing cosmetic (a final clippy-clean pass can
+  remove `invert` + the dead `HostPicker` variants, then the lane escalates to `-D warnings`).
 
 **Completeness score (self-assessed): 88/100.** Remaining −12: the six open questions (§10)
 are genuine Define-phase decisions (host, roster export format details, snowflake-map source,

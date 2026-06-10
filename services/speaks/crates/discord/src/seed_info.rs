@@ -1,4 +1,4 @@
-use crate::db::player::Profile;
+use crate::roster::Profile;
 use tracing::instrument;
 
 #[derive(Debug)]

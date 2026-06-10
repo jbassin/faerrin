@@ -17,7 +17,9 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/ruby/data/experiments/faerrin
+# cwd = the package dir so the default `players.toml` (the bot identity file)
+# resolves; override the path with SPEAKS_PLAYERS_PATH if needed.
+WorkingDirectory=/ruby/data/experiments/faerrin/services/speaks
 
 # Secrets + config (DISCORD_TOKEN, DATABASE_URL, *_URL, SPEAKS_BIND_ADDR, RUST_LOG).
 # Keep this file OUT of git, mode 0600. Copy services/speaks/.env.example as a guide.
