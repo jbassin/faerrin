@@ -21,7 +21,10 @@ bound 127.0.0.1, no new Caddy subdomain.
 `services/speaks`, all hardcoded URLs/secrets env-ized, axum binds localhost, optional dotenv for
 systemd, Dagger `rustCheck`/`rustBuild` lane, deploy unit + CUTOVER. Needed `#![recursion_limit]`
 on the discord crate + refreshed stale roller `expect_test` snapshots (both pre-existing issues).
-Whole workspace green. **User must rotate the leaked webhook (still in git history).** Phases 2–4 pending.
+Whole workspace green. **User must rotate the leaked webhook (still in git history).**
+Phase 2 SHIPPED 2026-06-09 (pushed) — shed `uiua` + vector embeddings (deps 389→58 crates);
+removed orphaned `SyncDie` + `HandlerState.db`; clippy lane stays report-only until Phase 3
+(identity dead-code) then escalates to `-D warnings`. Phases 3–4 pending.
 
 **Phase order (RESEQUENCED 2026-06-09 to retire PG/Podman ASAP):**
 1 vendor + portability (validate against the OLD/snapshot PG; never provision a fresh host PG) →

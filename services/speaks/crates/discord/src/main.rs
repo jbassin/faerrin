@@ -11,8 +11,6 @@ mod handler;
 mod host;
 pub mod http;
 mod seed_info;
-mod syncdie;
-mod uiua;
 
 use crate::env::Env;
 use crate::handler::Handler;

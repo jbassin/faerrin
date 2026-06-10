@@ -169,10 +169,11 @@ export class Ci {
 
   /**
    * The Rust `check` job for `services/speaks`: format check → clippy → test, in
-   * order and fail-fast. NOTE (Phase 1): clippy runs in report mode — the
-   * vendored bot still carries pre-existing dead-code warnings that Phase 2's
-   * shed cleanup removes; `clippy -- -D warnings` becomes the hard gate from
-   * Phase 2 onward (spec R2.3/AC3). `roller` carries the only real unit tests.
+   * order and fail-fast. NOTE: clippy runs in report mode while the staged
+   * migration is in flight — the bulk of the remaining dead-code warnings are the
+   * identity fields/queries (`Profile`, `get_active_campaign`, `Campaign`) that
+   * Phase 3 removes when identity moves to content. `clippy -- -D warnings`
+   * becomes the hard gate after Phase 3. `roller` carries the real unit tests.
    */
   @func()
   async rustCheck(source: Directory): Promise<string> {

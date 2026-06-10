@@ -1,7 +1,8 @@
 # NLSpec 0001 — Migrate `speaks_with_passion` into Faerrin (staged hybrid)
 
-**Status:** Phase 1 SHIPPED (2026-06-09) — vendored to `services/speaks`, portable, Rust Dagger
-lane added, deploy unit + CUTOVER written; whole workspace green. Phases 2–4 pending. See §13.
+**Status:** Phases 1–2 SHIPPED (2026-06-09). P1: vendored to `services/speaks`, portable, Rust
+Dagger lane, deploy unit. P2: shed `uiua` + vector embeddings (deps 389→58 crates). Whole
+workspace green. Phases 3–4 (identity→content, SQLite cutover) pending. See §13.
 **Created:** 2026-06-09
 **Authoring:** /octo:spec — team mode (Claude persona agents: backend-, database-, cloud-architect)
 **Source:** `/ruby/data/experiments/speaks_with_passion` (Rust Cargo workspace, edition 2024)
@@ -362,6 +363,25 @@ Findings were verified against the codebase and folded in above. Summary of what
   these get cleaned in Phases 2–3, at which point the lane escalates to `-D warnings`.
 - **⚠️ User action (R1.4):** rotate the leaked Discord webhook — code no longer holds the token,
   but it remains in git history. See `deploy/CUTOVER.md` §1.
+
+### Phase 2 — SHIPPED 2026-06-09
+- **`uiua` removed:** dependency, `uiua.rs`, `mod uiua`, the `help`/calculator dispatch in
+  `handle_message`/`try_message`, the `uiua`/`pretty_uiua_class`/`uiua_help` methods, and the
+  now-orphaned `SyncDie` (it existed only to feed the uiua interpreter — struct field, module,
+  `syncdie.rs`). **Dependency tree dropped from 389 → 58 crates.**
+- **Vector embeddings removed:** `pgvector` dep, `db/embedding.rs` + `pub mod embedding`, the 4
+  `embedding`/`embeddings` `.sql` query files, and in `http.rs` the `save` endpoint + `SaveArgs`
+  + `EmbedResp` + `embed()` + `chunk()` + `WATERMARK`/`OVERLAP` + `EMBED_URL`, plus the
+  `/api/v1/save` route and the now-dead `HandlerState.db` field. (Discord message *embeds* in
+  `host.rs` are untouched — different concept.)
+- **Validation:** `cargo check` 0 errors (7 warnings, down from 8); `cargo fmt --check` green;
+  8 `roller` tests pass; grep-clean of `uiua`/`pgvector`/`embedding`/`embed.iridi`. The
+  remaining warnings are the **identity** dead-code (`Profile` fields, `get_active_campaign`,
+  `Campaign`) that Phase 3 removes — so the Dagger clippy lane stays report-only until then,
+  escalating to `-D warnings` after Phase 3 (AC3 deferred accordingly).
+- **`.sqlx/` note:** the deleted embedding queries leave orphaned `.sqlx/*.json` entries —
+  harmless for offline builds (validated). A clean `cargo sqlx prepare` against a live DB at the
+  Phase 3/4 cutover removes them.
 
 **Completeness score (self-assessed): 88/100.** Remaining −12: the six open questions (§10)
 are genuine Define-phase decisions (host, roster export format details, snowflake-map source,

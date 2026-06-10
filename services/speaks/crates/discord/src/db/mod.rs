@@ -1,6 +1,5 @@
 pub(crate) mod campaign;
 mod die;
-pub mod embedding;
 pub(crate) mod funcs;
 pub(crate) mod player;
 

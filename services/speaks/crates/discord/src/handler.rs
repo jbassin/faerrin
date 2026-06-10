@@ -5,10 +5,8 @@ use crate::db::player::Profile;
 use crate::env::Env;
 use crate::goodness::RollGoodness;
 use crate::host::{Host, SendArgs, Thumbnail, host_says};
-use crate::http::{HttpState, save, speak};
+use crate::http::{HttpState, speak};
 use crate::seed_info::SeedInfo;
-use crate::syncdie::SyncDie;
-use crate::uiua::do_uiua;
 use axum::Router;
 use chart::{Chart, Data, Dataset};
 use color_eyre::Result;
@@ -31,7 +29,6 @@ use std::num::NonZero;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, LazyLock};
 use tracing::{error, info, instrument};
-use uiua::PrimClass;
 
 // Dice-feed Discord webhook + the roll-broadcast websocket endpoint, both
 // environment-driven (see services/speaks/.env.example). The webhook token is a
@@ -48,13 +45,11 @@ static FUNC_RE: LazyLock<Regex> =
 pub(crate) struct Handler {
     pub db: Arc<DB>,
     pub state: Arc<Mutex<HandlerState>>,
-    pub sync_die: Arc<std::sync::Mutex<SyncDie>>,
 
     pub is_initialized: AtomicBool,
 }
 
 pub(crate) struct HandlerState {
-    pub db: Arc<DB>,
     pub webhooks: Mutex<HashMap<GuildId, HashMap<ChannelId, Arc<Webhook>>>>,
     pub feed: Mutex<RefCell<Option<Arc<Webhook>>>>,
     pub env: Mutex<Vec<(String, String)>>,
@@ -74,10 +69,8 @@ impl Handler {
 
         Client::builder(&env.discord_token, intents)
             .event_handler(Self {
-                db: db.clone(),
-                sync_die: SyncDie::new(db.clone()).await,
+                db,
                 state: Arc::new(Mutex::new(HandlerState {
-                    db,
                     webhooks: Mutex::new(HashMap::new()),
                     feed: Mutex::new(RefCell::new(None)),
                     env: Mutex::new(Vec::new()),
@@ -170,7 +163,6 @@ impl Handler {
 
         let app = Router::new()
             .route("/api/v1/speak", axum::routing::post(speak))
-            .route("/api/v1/save", axum::routing::post(save))
             .with_state(HttpState { handler: self.state.clone() });
 
         // Internal-only by default (Discord dials outbound; these endpoints are a
@@ -240,7 +232,6 @@ impl Handler {
         match func {
             Ok((name, args)) => match (name.as_str(), args) {
                 ("reseed", _) => self.reseed(ctx, webhook, profile).await,
-                ("help", args) => self.uiua_help(ctx, webhook, args).await,
                 ("plot", args) => {
                     if args.len() != 2 {
                         bail!("plot takes 2 arguments")
@@ -374,212 +365,12 @@ impl Handler {
         profile: Profile,
         contents: String,
     ) -> Result<()> {
-        info!("attempt process as uiua");
-        if let Control::Stop =
-            self.uiua(ctx, webhook.clone(), profile.clone(), contents.as_str()).await
-        {
-            return Ok(());
-        }
-
         info!("attempt process as roll");
         if let Control::Stop = self.roll(ctx, webhook, profile, contents.as_str()).await {
             return Ok(());
         }
 
         Ok(())
-    }
-
-    #[instrument(level = "trace", skip(self, ctx, webhook))]
-    pub(crate) async fn uiua(
-        &self,
-        ctx: &Context,
-        webhook: Arc<Webhook>,
-        _: Profile,
-        contents: &str,
-    ) -> Control {
-        let res = do_uiua(contents, self.sync_die.clone());
-        if let Err(e) = res {
-            error!("{e}");
-
-            return Control::Cont;
-        }
-
-        let (formatted, res) = res.unwrap();
-
-        if res.len() > 1023 || res.lines().any(|l| l.len() > 44) {
-            let msg = Host::KnifeThatTeaches
-                .send(
-                    ctx.http(),
-                    webhook,
-                    SendArgs {
-                        title: Some("did sum quik-maffs 4u".to_owned()),
-                        contents: Some(
-                            [
-                                "mmm makin me do ur math is rude".to_owned(),
-                                "wowwwww this was so easy i did it with my eyes closed".to_owned(),
-                                "did u a math just for funsies".to_owned(),
-                            ]
-                            .choose(&mut rand::rngs::StdRng::from_entropy())
-                            .unwrap()
-                            .to_owned(),
-                        ),
-                        fields: vec![(
-                            "Formula".to_owned(),
-                            format!("```elixir\n{formatted}\n```"),
-                        )],
-                        img: Thumbnail::Default,
-                        raw_file: Some((res.into(), "stack.ex".to_owned())),
-                        ..Default::default()
-                    },
-                )
-                .await;
-            if let Err(err) = msg {
-                error!("failed to send message: {err}");
-            }
-
-            return Control::Stop;
-        }
-
-        let msg = Host::KnifeThatTeaches
-            .send(
-                ctx.http(),
-                webhook,
-                SendArgs {
-                    title: Some("did sum quik-maffs 4u".to_owned()),
-                    contents: Some(
-                        [
-                            "mmm makin me do ur math is rude".to_owned(),
-                            "wowwwww this was so easy i did it with my eyes closed".to_owned(),
-                            "did u a math just for funsies".to_owned(),
-                        ]
-                        .choose(&mut rand::rngs::StdRng::from_entropy())
-                        .unwrap()
-                        .to_owned(),
-                    ),
-                    fields: vec![
-                        ("Formula".to_owned(), format!("```elixir\n{formatted}\n```")),
-                        ("Stack".to_owned(), format!("```elixir\n{res}\n```")),
-                    ],
-                    img: Thumbnail::Default,
-                    ..Default::default()
-                },
-            )
-            .await;
-        if let Err(err) = msg {
-            error!("failed to send message: {err}");
-        }
-
-        Control::Stop
-    }
-
-    fn pretty_uiua_class(&self, c: PrimClass) -> String {
-        use PrimClass::*;
-        match c {
-            Stack => "stack",
-            Constant => "constant",
-            MonadicPervasive => "monadic pervasive",
-            DyadicPervasive => "dyadic pervasive",
-            MonadicArray => "monadic array",
-            DyadicArray => "dyadic array",
-            IteratingModifier => "iterating modifier",
-            AggregatingModifier => "aggregating modifier",
-            InversionModifier => "inversion modifier",
-            Planet => "planet",
-            OtherModifier => "other modifier",
-            Debug => "debug",
-            Rng => "rng",
-            Map => "map",
-            _ => unreachable!(),
-        }
-        .to_owned()
-    }
-
-    #[instrument(level = "trace", skip(self))]
-    pub(crate) async fn uiua_help(
-        &self,
-        ctx: &Context,
-        webhook: Arc<Webhook>,
-        query: Vec<String>,
-    ) -> Result<()> {
-        let classes = {
-            use PrimClass::*;
-
-            vec![
-                Stack,
-                Constant,
-                MonadicPervasive,
-                DyadicPervasive,
-                MonadicArray,
-                DyadicArray,
-                IteratingModifier,
-                AggregatingModifier,
-                InversionModifier,
-                OtherModifier,
-                Planet,
-                Debug,
-                Rng,
-                Map,
-            ]
-        };
-
-        if query.is_empty() {
-            let classes = classes
-                .iter()
-                .map(|c| format!(" - {}", self.pretty_uiua_class(*c)))
-                .collect::<Vec<_>>();
-
-            let msg = Host::KnifeThatTeaches
-                .send(
-                    ctx.http(),
-                    webhook.clone(),
-                    SendArgs {
-                        title: Some("hmm, what did u want to kno?".to_owned()),
-                        contents: Some(format!("u need to specify what ur lookin 4.\nclasses u can search 4 r:\n{}\nor u can search for a specific function by its name or glyph.\n\nex:\n```sh\nhelp(planets)\nhelp(memberof)\nhelp(≡)\n```", classes.join("\n"))),
-                        ..Default::default()
-                    },
-                )
-                .await;
-            if let Err(err) = msg {
-                error!("failed to send message: {err}");
-            }
-
-            return Ok(());
-        }
-
-        info!("{query:?}");
-        Ok(())
-
-        // for class in &classes {
-        //     for primitive in class.primitives() {
-        //         let mut fields = vec![];
-        //
-        //         if let Some(g) = primitive.glyph() {
-        //             fields.push(("glyph".to_owned(), format!("{g}")));
-        //         }
-        //
-        //         if let Some(s) = primitive.sig() {
-        //             fields.push(("signature".to_owned(), format!("{s}")));
-        //         }
-        //
-        //         let msg = Host::KnifeThatTeaches
-        //             .send(
-        //                 ctx.http(),
-        //                 webhook.clone(),
-        //                 SendArgs {
-        //                     title: Some(primitive.name().to_string()),
-        //                     contents: Some(primitive.doc().to_string()),
-        //                     fields,
-        //                     ..Default::default()
-        //                 },
-        //             )
-        //             .await;
-        //         if let Err(err) = msg {
-        //             error!("failed to send message: {err}");
-        //         }
-        //     }
-        // }
-        //
-        // Ok(())
     }
 
     #[instrument(level = "trace", skip(self, ctx, webhook))]
