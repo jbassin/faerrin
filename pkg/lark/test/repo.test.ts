@@ -90,6 +90,43 @@ describe("tags", () => {
   });
 });
 
+describe("reconcileInterruptedJobs (restart recovery)", () => {
+  test("marks running jobs partial/error and clears non-terminal items", () => {
+    const job = repo.createDownloadJob(db, { type: "playlist", sourceUrl: "u" });
+    repo.updateDownloadJob(db, job.id, { status: "running", totalItems: 3 });
+    const a = repo.addJobItem(db, { jobId: job.id, videoId: "a", title: "a", position: 0 });
+    const b = repo.addJobItem(db, { jobId: job.id, videoId: "b", title: "b", position: 1 });
+    repo.addJobItem(db, { jobId: job.id, videoId: "c", title: "c", position: 2 });
+    repo.updateJobItem(db, a.id, { status: "done" });
+    repo.updateJobItem(db, b.id, { status: "downloading", progressPct: 40 });
+
+    expect(repo.reconcileInterruptedJobs(db)).toBe(1);
+
+    const reconciled = repo.getDownloadJob(db, job.id)!;
+    expect(reconciled.status).toBe("partial"); // one item was done
+    expect(reconciled.completed_items).toBe(1);
+    const items = repo.listJobItems(db, job.id);
+    expect(items.find((i) => i.video_id === "a")!.status).toBe("done"); // preserved
+    expect(items.find((i) => i.video_id === "b")!.status).toBe("error"); // was downloading
+    expect(items.find((i) => i.video_id === "c")!.status).toBe("error"); // was queued
+  });
+
+  test("a job with nothing done becomes error", () => {
+    const job = repo.createDownloadJob(db, { type: "single", sourceUrl: "u" });
+    repo.updateDownloadJob(db, job.id, { status: "running" });
+    repo.addJobItem(db, { jobId: job.id, videoId: "x", title: "x", position: 0 });
+    repo.reconcileInterruptedJobs(db);
+    expect(repo.getDownloadJob(db, job.id)!.status).toBe("error");
+  });
+
+  test("does not touch already-finished jobs", () => {
+    const job = repo.createDownloadJob(db, { type: "single", sourceUrl: "u" });
+    repo.updateDownloadJob(db, job.id, { status: "done" });
+    expect(repo.reconcileInterruptedJobs(db)).toBe(0);
+    expect(repo.getDownloadJob(db, job.id)!.status).toBe("done");
+  });
+});
+
 describe("playlists", () => {
   test("setPlaylistItems persists order; reorder replaces (B17)", () => {
     const p = repo.createPlaylist(db, "Combat");

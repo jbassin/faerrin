@@ -462,3 +462,32 @@ export function revokeApiKey(db: Database, id: number, userId: string): boolean 
 export function touchApiKey(db: Database, id: number): void {
   db.run("UPDATE api_keys SET last_used_at = datetime('now') WHERE id = ?", [id]);
 }
+
+/**
+ * Reconcile download jobs left mid-flight by a crash/restart (their worker
+ * promises died with the process, but the rows still say queued/running so the
+ * UI shows a perpetual import). Mark non-terminal items as error and the job as
+ * partial (if anything finished) or error. Already-imported tracks are untouched
+ * — re-importing is cheap thanks to video-id dedup (B23). Returns jobs touched.
+ */
+export function reconcileInterruptedJobs(db: Database): number {
+  const jobs = db
+    .query<DownloadJob, []>("SELECT * FROM download_jobs WHERE status IN ('queued','running')")
+    .all();
+  for (const job of jobs) {
+    db.run(
+      "UPDATE download_job_items SET status='error', error='interrupted by restart' WHERE job_id=? AND status IN ('queued','downloading')",
+      [job.id],
+    );
+    const done =
+      db.query<{ c: number }, [number]>(
+        "SELECT COUNT(*) AS c FROM download_job_items WHERE job_id=? AND status='done'",
+      ).get(job.id)?.c ?? 0;
+    updateDownloadJob(db, job.id, {
+      status: done > 0 ? "partial" : "error",
+      completedItems: done,
+      error: "interrupted by restart",
+    });
+  }
+  return jobs.length;
+}

@@ -6,6 +6,7 @@
 import { mkdirSync } from "node:fs";
 import { loadConfig } from "./src/lib/appconfig";
 import { openDb } from "./src/db/index";
+import { reconcileInterruptedJobs } from "./src/db/repo";
 import { startServer } from "./src/server/app";
 import { ffmpegProber } from "./src/media/probe";
 import { realYtDlp } from "./src/media/ytdlp";
@@ -17,6 +18,12 @@ import type { PlaybackEngine } from "./src/bot/playback";
 const config = loadConfig();
 mkdirSync(config.dataDir, { recursive: true });
 const db = openDb(config.dbPath);
+
+// Clear zombie download jobs left "running" by a previous crash/restart so the
+// UI doesn't show a perpetual import. Re-importing is cheap (video-id dedup).
+const orphaned = reconcileInterruptedJobs(db);
+if (orphaned > 0) console.log(`[lark] reconciled ${orphaned} interrupted download job(s) from a prior restart`);
+
 const hub = new JobHub();
 const ingest = new IngestService({ db, dataDir: config.dataDir, ytdlp: realYtDlp, hub, prober: ffmpegProber });
 

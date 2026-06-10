@@ -108,8 +108,21 @@ export function Library() {
     for (const f of files) form.append("files", f);
     if (collectionId) form.append("collectionId", String(collectionId));
     await withBusy(async () => {
-      await fetch("/api/v1/ingest/upload", { method: "POST", credentials: "same-origin", body: form });
-      await loadTracks();
+      try {
+        const res = await fetch("/api/v1/ingest/upload", { method: "POST", credentials: "same-origin", body: form });
+        if (!res.ok) {
+          window.alert(`Upload failed: HTTP ${res.status} ${(await res.text().catch(() => "")).slice(0, 200)}`);
+          return;
+        }
+        const out = (await res.json()) as { created: unknown[]; errors: { name: string; error: string }[] };
+        if (out.errors?.length) {
+          window.alert(`Skipped ${out.errors.length} file(s):\n${out.errors.map((e) => `${e.name}: ${e.error}`).join("\n")}`);
+        }
+        await loadFacets();
+        await loadTracks();
+      } catch (err) {
+        window.alert(`Upload failed: ${(err as Error).message}`);
+      }
     });
   }
 
