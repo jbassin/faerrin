@@ -1,0 +1,32 @@
+{
+  "db_name": "SQLite",
+  "query": "SELECT d.value     as \"value!: i32\",\n       count(d.value) as \"count!: i32\",\n       d.player_id as \"player_id!: i32\"\nFROM dice d\nWHERE d.timestamp > datetime('now', '-' || ?2)\n  AND d.base = ?1\n  AND d.player_id <> 6\nGROUP BY d.player_id, d.value;\n",
+  "describe": {
+    "columns": [
+      {
+        "name": "value!: i32",
+        "ordinal": 0,
+        "type_info": "Integer"
+      },
+      {
+        "name": "count!: i32",
+        "ordinal": 1,
+        "type_info": "Null"
+      },
+      {
+        "name": "player_id!: i32",
+        "ordinal": 2,
+        "type_info": "Integer"
+      }
+    ],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": [
+      false,
+      null,
+      false
+    ]
+  },
+  "hash": "f66ff0d1bf48fdd2f83c0605309371f7947a8ce1ce29225e524879fd64543018"
+}

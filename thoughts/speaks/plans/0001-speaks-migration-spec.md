@@ -1,9 +1,10 @@
 # NLSpec 0001 — Migrate `speaks_with_passion` into Faerrin (staged hybrid)
 
-**Status:** Phases 1–3 SHIPPED (2026-06-09). P1: vendored + portable. P2: shed `uiua` + vector
-embeddings (389→58 crates). P3: identity → `players.toml` (decoupled from content's pipeline;
-bot no longer reads the Postgres identity tables). Whole workspace green; `.sqlx` regenerated
-against the live DB. Phase 4 (SQLite cutover) pending. See §13.
+**Status:** ✅ ALL PHASES SHIPPED (2026-06-09). P1: vendored + portable. P2: shed `uiua` + vector
+embeddings (389→58 crates). P3: identity → `players.toml`. P4: SQLx backend → **SQLite** (bot
+self-migrates; only `dice`+`funcs` remain). Whole workspace green. The code migration is complete;
+the **production data cutover** (PG→SQLite via `scripts/migrate-to-sqlite.ts`) is the one remaining
+host-owned, freeze-window step — see `deploy/CUTOVER.md §6`. See §13.
 **Created:** 2026-06-09
 **Authoring:** /octo:spec — team mode (Claude persona agents: backend-, database-, cloud-architect)
 **Source:** `/ruby/data/experiments/speaks_with_passion` (Rust Cargo workspace, edition 2024)
@@ -409,6 +410,28 @@ Findings were verified against the codebase and folded in above. Summary of what
   test + 8 `roller`); real `players.toml` validated. The identity dead-code that blocked clippy
   `-D warnings` is gone; the remaining 4 are pre-existing cosmetic (a final clippy-clean pass can
   remove `invert` + the dead `HostPicker` variants, then the lane escalates to `-D warnings`).
+
+### Phase 4 — SHIPPED 2026-06-09 (code; production cutover is host-owned)
+- **SQLx backend swapped Postgres → SQLite** (`db/mod.rs`: `SqliteConnectOptions` +
+  `create_if_missing`; `sqlx` features `postgres,chrono,json,tls` → `sqlite,migrate`; dropped the
+  unused `chrono` dep). The bot **self-initializes its schema** via `sqlx::migrate!` from
+  `crates/discord/migrations/0001_init.sql` (tables `dice`, `funcs`) — a fresh file just works.
+- **Dialect fixes:** `$1`→`?1` placeholders (`insert_die`, `insert_func`); `get_dice_query`
+  rewritten from PG `now() - ($2::text)::interval` to SQLite `datetime('now','-' || ?2)` (runtime
+  functional-tested: recent rows grouped, player 6 + old rows excluded); `base as i32` bound to a
+  `let` (sqlite binds by reference). `.sqlx` regenerated for SQLite.
+- **Data scope (your call):** `dice` has **no `campaign_id`**, so a per-campaign filter is
+  impossible; a 1-year filter was a no-op (99.99% of rows are < 1y old). The 47M is **one junk
+  `d123456789` mega-roll** (47.16M rows) — so the migration **excludes that base**, keeping the
+  **19,094** rows of genuine history (`--keep-all`/`--exclude-base` override).
+- **Cutover tooling:** `scripts/migrate-to-sqlite.ts` (PG→SQLite, batched, junk-base excluded) —
+  **validated end-to-end** against the live DB (19,094 dice + 10 funcs → SQLite; `get_dice`
+  resolves real per-player stats). Freeze-window runbook in `deploy/CUTOVER.md §6`; identity-table
+  drops happen with PG retirement.
+- **Validation:** offline `cargo check` (CI mode) 0 errors; online compile + `cargo sqlx prepare`
+  green against a SQLite DB; `cargo fmt --check` green; **9 tests pass**. `*.db` gitignored.
+- **End state:** no datastore daemon — the bot is a static musl binary + a SQLite file under a
+  bare systemd user unit. Repo's "static + filesystem-as-ledger" grain restored.
 
 **Completeness score (self-assessed): 88/100.** Remaining −12: the six open questions (§10)
 are genuine Define-phase decisions (host, roster export format details, snowflake-map source,

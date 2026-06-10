@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "INSERT INTO funcs(name, payload)\nVALUES (?1, ?2);\n",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": []
+  },
+  "hash": "1248dd18099dbf69e11153f1f25da7ceae6ea71d2c95fb434eb934f17e1f1771"
+}

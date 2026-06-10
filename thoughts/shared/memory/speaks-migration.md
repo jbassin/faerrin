@@ -31,8 +31,18 @@ user chose decouple). Bot no longer reads the PG identity tables; `dice` keeps i
 (47M rows untouched). `.sqlx` regenerated against the **live DB** (DATABASE_URL is in
 `/ruby/data/experiments/speaks_with_passion/.env`, host localhost:9556). Identity-table `DROP`s
 gated to Phase 4. Remaining clippy warnings are pre-existing cosmetic only.
-**Phase 4 pending:** Postgres→SQLite cutover (2 tables: dice ~47M rows + funcs), drop identity
-tables, retire PG. Needs the live DB + a freeze window.
+Phase 4 SHIPPED 2026-06-09 (pushed) — SQLx backend Postgres→**SQLite** (`db/mod.rs`
+`SqliteConnectOptions` + self-migrate via `crates/discord/migrations/`); dialect fixes
+(`$1`→`?1`, `get_dice` uses `datetime('now','-'||?2)`). **The 47M dice rows were ONE junk
+`d123456789` mega-roll** — migration excludes that base, keeping 19,094 real rows
+(`scripts/migrate-to-sqlite.ts`, validated against live PG). `dice` has no `campaign_id` so
+per-campaign filtering was impossible. End state: static musl binary + a SQLite file, no DB daemon.
+
+**ALL 4 PHASES of the code migration are DONE + pushed to main; workspace green throughout.**
+Remaining = **host-owned production cutover only** (run `scripts/migrate-to-sqlite.ts` in a freeze
+window, switch DATABASE_URL to `sqlite:///…`, retire PG + drop identity tables, rotate the leaked
+webhook) — see `services/speaks/deploy/CUTOVER.md`. Note: needed `sqlx-cli` rebuilt
+`--features sqlite` for `.sqlx` regen; offline CI builds use the committed sqlite `.sqlx`.
 
 **Phase order (RESEQUENCED 2026-06-09 to retire PG/Podman ASAP):**
 1 vendor + portability (validate against the OLD/snapshot PG; never provision a fresh host PG) →

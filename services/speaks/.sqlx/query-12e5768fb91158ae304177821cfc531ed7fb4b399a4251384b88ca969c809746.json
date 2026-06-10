@@ -1,0 +1,12 @@
+{
+  "db_name": "SQLite",
+  "query": "insert into dice (base, value, source, player_id, blame_id)\nvalues (?1, ?2, 'discord', ?3, ?4);\n",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 4
+    },
+    "nullable": []
+  },
+  "hash": "12e5768fb91158ae304177821cfc531ed7fb4b399a4251384b88ca969c809746"
+}

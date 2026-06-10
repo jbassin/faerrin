@@ -35,7 +35,8 @@ impl DB {
         base: usize,
         interval: &str,
     ) -> Result<HashMap<i32, Vec<i32>>> {
-        let dice = query_file_as!(Die, "src/db/queries/get_dice_query.sql", base as i32, interval)
+        let base_i = base as i32;
+        let dice = query_file_as!(Die, "src/db/queries/get_dice_query.sql", base_i, interval)
             .fetch_all(&self.pool)
             .await
             .wrap_err("failed to get dice")?;

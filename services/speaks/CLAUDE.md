@@ -56,10 +56,20 @@ macros). See the spec §5 and `thoughts/speaks/plans/identity-sources.md`.
 - **Phase 1 — vendored + made portable.** Hardcoded URLs/secrets → env; axum binds localhost.
 - **Phase 2 — shed `uiua` + the vector-embedding subsystem** (unblocks SQLite; pgvector is PG-only).
 - **Phase 3 — identity → `players.toml`.** Bot reads `players.toml` instead of the Postgres
-  identity tables (`users`/`players`/`characters`/`campaigns`/`active_campaign`); those tables are
-  no longer read (drop is gated to Phase 4). `dice` keeps its integer `player_id` (no 47M-row
-  migration). Content stays SSOT at the player-display-name level.
-- Phase 4 — Postgres → SQLite cutover; no datastore daemon at all.
+  identity tables (`users`/`players`/`characters`/`campaigns`/`active_campaign`). `dice` keeps its
+  integer `player_id`. Content stays SSOT at the player-display-name level.
+- **Phase 4 — Postgres → SQLite.** SQLx backend is now **SQLite**; the bot self-creates its schema
+  (`migrations/`) on first run. Only runtime state remains: `dice` (history) + `funcs` (macros).
+  `DATABASE_URL=sqlite:///…`. The data cutover (PG→SQLite, excluding the junk `d123456789`
+  mega-roll) is a freeze-window op — `scripts/migrate-to-sqlite.ts` + `deploy/CUTOVER.md §6`.
+  No datastore daemon at all.
+
+## Datastore
+
+SQLite, file-based (`DATABASE_URL=sqlite:///path`). Schema in `crates/discord/migrations/`,
+applied automatically at startup. Two tables: `dice`, `funcs`. Back up = copy the `.db` file.
+CI/offline builds use the committed `.sqlx/` metadata (`SQLX_OFFLINE=true`); regenerate with
+`cargo sqlx prepare` against a SQLite file (needs `sqlx-cli` built `--features sqlite`).
 
 ## Gotchas
 

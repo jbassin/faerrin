@@ -73,3 +73,7 @@ docs/_build/
 
 # Env files
 **/.env
+# sqlite runtime/dev databases
+*.db
+*.db-shm
+*.db-wal

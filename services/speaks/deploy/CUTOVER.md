@@ -78,9 +78,45 @@ journalctl --user -u speaks.service -f  # watch it connect to the gateway
 - Crash-loop protection: `StartLimitBurst=5` / `StartLimitIntervalSec=300` stop a bad deploy
   from hammering Discord's identify endpoint (which risks a gateway ban).
 
+## 6. Phase 4 — Postgres → SQLite cutover (freeze window, IRREVERSIBLE once live)
+
+The bot now speaks **SQLite**; it self-creates the schema on first run (`migrations/`). This step
+moves the runtime data over and retires Postgres. **Do it in a freeze window — stop the bot first.**
+Rows written to SQLite after cutover are lost if you roll back to PG, so keep a PG snapshot.
+
+```sh
+cd /ruby/data/experiments/faerrin/services/speaks
+
+# 1. Stop the bot (freeze).
+systemctl --user stop speaks.service
+
+# 2. Migrate runtime state PG → SQLite. By DEFAULT this EXCLUDES the junk
+#    `d123456789` mega-roll (47.16M rows of one pathological pool), keeping the
+#    ~19k rows of real history. Use --keep-all to copy everything (~GB file).
+PG_URL="postgres://…the old bot DB…" \
+  bun scripts/migrate-to-sqlite.ts --out ~/.local/share/faerrin/speaks.db
+#   → also accepts --keep-all or --exclude-base <n>
+
+# 3. Point the bot at it (edit ~/.config/faerrin/speaks.env):
+#      DATABASE_URL=sqlite:///home/<you>/.local/share/faerrin/speaks.db
+#    (triple slash = absolute path). The file is backed up by backing up that path.
+
+# 4. Start + verify a roll persists and a plot renders.
+systemctl --user start speaks.service
+journalctl --user -u speaks.service -f
+
+# 5. Once happy (keep the PG snapshot N days as fallback), retire Postgres: stop
+#    the PG container/service. The identity tables (users/players/characters/
+#    campaigns/active_campaign) were already unused since Phase 3 — they die with PG.
+```
+
+- **Backups:** the whole datastore is now one file — `cp`/snapshot `speaks.db` (+ `-wal`/`-shm`)
+  on a schedule. No `pg_dump`, no daemon.
+- **Rollback boundary:** safe to revert to PG only until step 4 writes new rolls. After that, the
+  PG snapshot is stale by those rolls — treat step 4 as the point of no return.
+
 ## Open (host-owned, not blockers)
 
 - Final `MemoryMax`/`CPUQuota` values for this host.
-- Whether to keep the existing PG, a snapshot, or a short-lived Podman PG for Phases 1–3 before
-  the Phase-4 SQLite cutover.
-- A `/healthz` liveness route + healthcheck (spec R-OBS.1) lands with later phases.
+- The SQLite file path / backup schedule (suggested `~/.local/share/faerrin/speaks.db`).
+- A `/healthz` liveness route + healthcheck (spec R-OBS.1) — optional hardening.
