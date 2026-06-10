@@ -440,7 +440,23 @@ impl Handler {
 
     #[instrument(level = "trace", skip(self))]
     pub(crate) async fn save_die(&self, profile: &Profile, die: &RollDie) -> Result<()> {
+        // Don't persist pathological pools/dice into the roll history. Each die in a
+        // pool is one row (see the loop below), so a novelty roll like `10000d10000`
+        // writes 10k rows and drowns out real gameplay. Skip pools larger than 30
+        // dice (still well above any real high-level damage roll), and skip any die
+        // whose base exceeds 100 (no real polyhedral die is bigger). The roll is still
+        // rolled & shown to the channel — it's just not saved.
+        const MAX_POOL: usize = 30;
+        const MAX_BASE: isize = 100;
+
+        if die.dice.len() > MAX_POOL {
+            return Ok(());
+        }
+
         for (base, value) in die.dice.iter() {
+            if *base > MAX_BASE {
+                continue;
+            }
             self.db
                 .insert_die(
                     *base as i32,
