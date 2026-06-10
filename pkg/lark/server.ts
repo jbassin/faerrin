@@ -8,11 +8,16 @@ import { loadConfig } from "./src/lib/appconfig";
 import { openDb } from "./src/db/index";
 import { startServer } from "./src/server/app";
 import { ffmpegProber } from "./src/media/probe";
+import { realYtDlp } from "./src/media/ytdlp";
+import { IngestService } from "./src/server/ingest";
+import { JobHub } from "./src/server/jobhub";
 
 const config = loadConfig();
 mkdirSync(config.dataDir, { recursive: true });
 const db = openDb(config.dbPath);
-const { server } = startServer(config, db, { services: { prober: ffmpegProber } });
+const hub = new JobHub();
+const ingest = new IngestService({ db, dataDir: config.dataDir, ytdlp: realYtDlp, hub, prober: ffmpegProber });
+const { server } = startServer(config, db, { services: { prober: ffmpegProber, ingest, hub } });
 
 console.log(`[lark] listening on http://localhost:${server.port}`);
 console.log(`[lark] data dir: ${config.dataDir}`);

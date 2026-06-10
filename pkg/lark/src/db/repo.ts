@@ -310,3 +310,109 @@ export function playlistTrackIds(db: Database, playlistId: number): number[] {
     .all(playlistId)
     .map((r) => r.track_id);
 }
+
+// --- Download jobs (ingest, B21–B24) ---
+
+export interface DownloadJob {
+  id: number;
+  type: "single" | "playlist";
+  source_url: string;
+  title: string | null;
+  collection_id: number | null;
+  status: "queued" | "running" | "done" | "error" | "partial";
+  total_items: number;
+  completed_items: number;
+  error: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface DownloadJobItem {
+  id: number;
+  job_id: number;
+  video_id: string;
+  title: string;
+  position: number;
+  status: "queued" | "downloading" | "done" | "error";
+  progress_pct: number;
+  error: string | null;
+  track_id: number | null;
+}
+
+export function createDownloadJob(
+  db: Database,
+  input: { type: "single" | "playlist"; sourceUrl: string; title?: string | null; collectionId?: number | null },
+): DownloadJob {
+  const { lastInsertRowid } = db.run(
+    "INSERT INTO download_jobs (type, source_url, title, collection_id, status) VALUES (?, ?, ?, ?, 'queued')",
+    [input.type, input.sourceUrl, input.title ?? null, input.collectionId ?? null],
+  );
+  return getDownloadJob(db, Number(lastInsertRowid))!;
+}
+
+export function getDownloadJob(db: Database, id: number): DownloadJob | null {
+  return db.query<DownloadJob, [number]>("SELECT * FROM download_jobs WHERE id = ?").get(id) ?? null;
+}
+
+export function listDownloadJobs(db: Database, limit = 25): DownloadJob[] {
+  return db.query<DownloadJob, [number]>("SELECT * FROM download_jobs ORDER BY id DESC LIMIT ?").all(limit);
+}
+
+export function updateDownloadJob(
+  db: Database,
+  id: number,
+  patch: {
+    status?: DownloadJob["status"];
+    completedItems?: number;
+    totalItems?: number;
+    error?: string | null;
+    title?: string | null;
+    collectionId?: number | null;
+  },
+): void {
+  const sets: string[] = [];
+  const params: (string | number | null)[] = [];
+  if (patch.status !== undefined) (sets.push("status = ?"), params.push(patch.status));
+  if (patch.completedItems !== undefined) (sets.push("completed_items = ?"), params.push(patch.completedItems));
+  if (patch.totalItems !== undefined) (sets.push("total_items = ?"), params.push(patch.totalItems));
+  if (patch.error !== undefined) (sets.push("error = ?"), params.push(patch.error));
+  if (patch.title !== undefined) (sets.push("title = ?"), params.push(patch.title));
+  if (patch.collectionId !== undefined) (sets.push("collection_id = ?"), params.push(patch.collectionId));
+  if (!sets.length) return;
+  sets.push("updated_at = datetime('now')");
+  params.push(id);
+  db.run(`UPDATE download_jobs SET ${sets.join(", ")} WHERE id = ?`, params);
+}
+
+export function addJobItem(
+  db: Database,
+  input: { jobId: number; videoId: string; title: string; position: number },
+): DownloadJobItem {
+  const { lastInsertRowid } = db.run(
+    "INSERT INTO download_job_items (job_id, video_id, title, position) VALUES (?, ?, ?, ?)",
+    [input.jobId, input.videoId, input.title, input.position],
+  );
+  return db.query<DownloadJobItem, [number]>("SELECT * FROM download_job_items WHERE id = ?").get(Number(lastInsertRowid))!;
+}
+
+export function listJobItems(db: Database, jobId: number): DownloadJobItem[] {
+  return db
+    .query<DownloadJobItem, [number]>("SELECT * FROM download_job_items WHERE job_id = ? ORDER BY position")
+    .all(jobId);
+}
+
+export function updateJobItem(
+  db: Database,
+  id: number,
+  patch: { status?: DownloadJobItem["status"]; progressPct?: number; error?: string | null; trackId?: number | null },
+): void {
+  const sets: string[] = [];
+  const params: (string | number | null)[] = [];
+  if (patch.status !== undefined) (sets.push("status = ?"), params.push(patch.status));
+  if (patch.progressPct !== undefined) (sets.push("progress_pct = ?"), params.push(patch.progressPct));
+  if (patch.error !== undefined) (sets.push("error = ?"), params.push(patch.error));
+  if (patch.trackId !== undefined) (sets.push("track_id = ?"), params.push(patch.trackId));
+  if (!sets.length) return;
+  params.push(id);
+  db.run(`UPDATE download_job_items SET ${sets.join(", ")} WHERE id = ?`, params);
+}

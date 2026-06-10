@@ -22,8 +22,11 @@ export interface ApiCtx {
 export interface ApiServices {
   /** Audio prober for uploads/ingest (injected; real one shells out to ffmpeg). */
   prober?: import("../media/probe").AudioProber;
+  /** YouTube ingest orchestration (jobs, downloads, loudness). */
+  ingest?: import("./ingest").IngestService;
+  /** SSE hub for download-job progress. */
+  hub?: import("./jobhub").JobHub;
   playback?: unknown;
-  ingest?: unknown;
 }
 
 export type ApiHandler = (ctx: ApiCtx) => Response | Promise<Response>;

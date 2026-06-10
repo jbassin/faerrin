@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ApiError, apiGet } from "./api";
+import { Import } from "./Import";
 import { Library } from "./Library";
 
 interface Me {
@@ -10,6 +11,7 @@ type AuthState = { status: "loading" } | { status: "anon" } | { status: "authed"
 
 export function App() {
   const [auth, setAuth] = useState<AuthState>({ status: "loading" });
+  const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
     apiGet<Me>("/api/v1/me")
@@ -50,7 +52,8 @@ export function App() {
               </button>
             </form>
           </div>
-          <Library />
+          <Import onImported={() => setRefreshKey((k) => k + 1)} />
+          <Library key={refreshKey} />
         </>
       )}
     </main>

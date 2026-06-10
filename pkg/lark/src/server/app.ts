@@ -13,6 +13,7 @@ import type { Server } from "bun";
 import type { AppConfig } from "../lib/appconfig";
 import type { DB } from "../db/index";
 import { buildAuthorizeUrl, exchangeCodeForUser } from "./oauth";
+import { ingestRoutes } from "./routes/ingest";
 import { libraryRoutes } from "./routes/library";
 import { type ApiCtx, type ApiRoute, type ApiServices, HttpError, json, matchRoute } from "./router";
 import {
@@ -28,7 +29,7 @@ const SESSION_COOKIE = "lark_session";
 const OAUTH_STATE_COOKIE = "lark_oauth_state";
 
 /** API routes that require a valid web session. Extended per phase. */
-const API_ROUTES: ApiRoute[] = [...libraryRoutes];
+const API_ROUTES: ApiRoute[] = [...libraryRoutes, ...ingestRoutes];
 
 export interface AppDeps {
   fetchImpl?: (input: string, init?: RequestInit) => Promise<Response>;

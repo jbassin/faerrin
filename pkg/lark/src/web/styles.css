@@ -163,3 +163,47 @@ body {
 .is-error {
   color: #e0654a;
 }
+
+/* --- import panel (Phase 3) --- */
+.import {
+  margin-bottom: 1.25rem;
+}
+.import__form {
+  display: flex;
+  gap: 0.5rem;
+}
+.import__items {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.import__item {
+  display: grid;
+  grid-template-columns: 1fr 120px 90px;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+.import__item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.import__bar {
+  height: 6px;
+  background: #20232f;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.import__bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.2s;
+}
+.import__item.is-error .import__bar-fill {
+  background: #e0654a;
+}

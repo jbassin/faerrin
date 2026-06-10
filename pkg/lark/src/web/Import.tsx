@@ -1,0 +1,103 @@
+import { useEffect, useRef, useState } from "react";
+import { apiSend } from "./api";
+
+interface JobItem {
+  id: number;
+  video_id: string;
+  title: string;
+  status: "queued" | "downloading" | "done" | "error";
+  progress_pct: number;
+  error: string | null;
+}
+interface Job {
+  id: number;
+  type: "single" | "playlist";
+  title: string | null;
+  status: "queued" | "running" | "done" | "error" | "partial";
+  total_items: number;
+  completed_items: number;
+}
+interface Snapshot {
+  job: Job;
+  items: JobItem[];
+}
+
+const TERMINAL = new Set(["done", "error", "partial"]);
+
+/** Submit a YouTube URL and watch per-video download progress over SSE (B22). */
+export function Import({ onImported }: { onImported: () => void }) {
+  const [url, setUrl] = useState("");
+  const [snap, setSnap] = useState<Snapshot | null>(null);
+  const [busy, setBusy] = useState(false);
+  const esRef = useRef<EventSource | null>(null);
+
+  useEffect(() => () => esRef.current?.close(), []);
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!url.trim()) return;
+    setBusy(true);
+    setSnap(null);
+    try {
+      const job = await apiSend<Job>("POST", "/api/v1/ingest/youtube", { url: url.trim() });
+      setUrl("");
+      watch(job.id);
+    } catch {
+      setBusy(false);
+    }
+  }
+
+  function watch(jobId: number) {
+    esRef.current?.close();
+    const es = new EventSource(`/api/v1/ingest/jobs/${jobId}/events`);
+    esRef.current = es;
+    es.onmessage = (ev) => {
+      const data = JSON.parse(ev.data) as Snapshot;
+      setSnap(data);
+      if (data.job && TERMINAL.has(data.job.status)) {
+        es.close();
+        setBusy(false);
+        onImported();
+      }
+    };
+    es.onerror = () => {
+      es.close();
+      setBusy(false);
+    };
+  }
+
+  return (
+    <section className="import card">
+      <form className="import__form" onSubmit={submit}>
+        <input
+          className="lib__search"
+          placeholder="Paste a YouTube video or playlist URL…"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <button className="btn" type="submit" disabled={busy || !url.trim()}>
+          {busy ? "Importing…" : "Import"}
+        </button>
+      </form>
+
+      {snap && (
+        <div className="import__progress">
+          <div className="muted">
+            {snap.job.title ?? "Importing"} — {snap.job.completed_items}/{snap.job.total_items} · {snap.job.status}
+          </div>
+          <ul className="import__items">
+            {snap.items.map((it) => (
+              <li key={it.id} className={`import__item is-${it.status}`}>
+                <span className="import__item-title">{it.title}</span>
+                <span className="import__bar">
+                  <span className="import__bar-fill" style={{ width: `${it.progress_pct}%` }} />
+                </span>
+                <span className="muted">{it.error ?? it.status}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </section>
+  );
+}
