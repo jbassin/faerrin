@@ -26,7 +26,8 @@ export interface ApiServices {
   ingest?: import("./ingest").IngestService;
   /** SSE hub for download-job progress. */
   hub?: import("./jobhub").JobHub;
-  playback?: unknown;
+  /** The single-session playback engine (present only when a bot token is set). */
+  playback?: import("../bot/playback").PlaybackEngine;
 }
 
 export type ApiHandler = (ctx: ApiCtx) => Response | Promise<Response>;

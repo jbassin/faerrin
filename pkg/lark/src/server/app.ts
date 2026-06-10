@@ -15,6 +15,7 @@ import type { DB } from "../db/index";
 import { buildAuthorizeUrl, exchangeCodeForUser } from "./oauth";
 import { ingestRoutes } from "./routes/ingest";
 import { libraryRoutes } from "./routes/library";
+import { playbackRoutes } from "./routes/playback";
 import { type ApiCtx, type ApiRoute, type ApiServices, HttpError, json, matchRoute } from "./router";
 import {
   type Session,
@@ -29,7 +30,7 @@ const SESSION_COOKIE = "lark_session";
 const OAUTH_STATE_COOKIE = "lark_oauth_state";
 
 /** API routes that require a valid web session. Extended per phase. */
-const API_ROUTES: ApiRoute[] = [...libraryRoutes, ...ingestRoutes];
+const API_ROUTES: ApiRoute[] = [...libraryRoutes, ...ingestRoutes, ...playbackRoutes];
 
 export interface AppDeps {
   fetchImpl?: (input: string, init?: RequestInit) => Promise<Response>;
@@ -105,6 +106,9 @@ export function createApp(config: AppConfig, db: DB, deps: AppDeps = {}): App {
       return await matched.route.handler(ctx);
     } catch (err) {
       if (err instanceof HttpError) return json({ error: err.message }, err.status);
+      // PlaybackError and similar carry a numeric `status`.
+      const status = (err as { status?: unknown }).status;
+      if (typeof status === "number") return json({ error: (err as Error).message ?? "error" }, status);
       console.error("[lark] api error", err);
       return json({ error: "internal" }, 500);
     }

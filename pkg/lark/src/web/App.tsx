@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ApiError, apiGet } from "./api";
 import { Import } from "./Import";
 import { Library } from "./Library";
+import { Playback } from "./Playback";
 
 interface Me {
   uid: string;
@@ -52,6 +53,7 @@ export function App() {
               </button>
             </form>
           </div>
+          <Playback />
           <Import onImported={() => setRefreshKey((k) => k + 1)} />
           <Library key={refreshKey} />
         </>

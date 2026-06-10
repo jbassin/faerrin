@@ -207,3 +207,35 @@ body {
 .import__item.is-error .import__bar-fill {
   background: #e0654a;
 }
+
+/* --- playback bar (Phase 4) --- */
+.pb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+  background: var(--panel);
+  border: 1px solid #242736;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.pb--off {
+  justify-content: center;
+}
+.pb__controls {
+  display: flex;
+  gap: 0.35rem;
+}
+.pb__controls .btn {
+  margin-top: 0;
+  padding: 0.35rem 0.6rem;
+}
+.lib__play {
+  background: transparent;
+  border: 0;
+  color: var(--accent);
+  cursor: pointer;
+  margin-right: 0.4rem;
+}

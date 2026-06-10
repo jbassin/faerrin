@@ -93,6 +93,15 @@ export function Library() {
     });
   }
 
+  async function play(trackIds: number[]) {
+    if (trackIds.length === 0) return;
+    try {
+      await apiSend("POST", "/api/v1/playback/play", { trackIds });
+    } catch {
+      window.alert("Playback unavailable (is the Discord bot online and are you in a voice channel?).");
+    }
+  }
+
   async function upload(files: FileList | null) {
     if (!files || files.length === 0) return;
     const form = new FormData();
@@ -158,6 +167,9 @@ export function Library() {
           <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void bulkTag()}>
             Tag selected
           </button>
+          <button className="btn" disabled={!selected.size} onClick={() => void play(selectedIds)}>
+            ▶ Play selected
+          </button>
         </div>
 
         <table className="lib__tracks">
@@ -176,6 +188,9 @@ export function Library() {
                   <input type="checkbox" checked={selected.has(t.id)} onChange={() => toggle(t.id)} />
                 </td>
                 <td>
+                  <button className="lib__play" title="Play" onClick={() => void play([t.id])}>
+                    ▶
+                  </button>
                   <button className="lib__title" onClick={() => void renameOne(t)} title="Click to rename">
                     {t.title}
                   </button>

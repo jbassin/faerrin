@@ -11,13 +11,32 @@ import { ffmpegProber } from "./src/media/probe";
 import { realYtDlp } from "./src/media/ytdlp";
 import { IngestService } from "./src/server/ingest";
 import { JobHub } from "./src/server/jobhub";
+import { startBot } from "./src/bot/index";
+import type { PlaybackEngine } from "./src/bot/playback";
 
 const config = loadConfig();
 mkdirSync(config.dataDir, { recursive: true });
 const db = openDb(config.dbPath);
 const hub = new JobHub();
 const ingest = new IngestService({ db, dataDir: config.dataDir, ytdlp: realYtDlp, hub, prober: ffmpegProber });
-const { server } = startServer(config, db, { services: { prober: ffmpegProber, ingest, hub } });
+
+// The Discord bot (voice/playback) is optional: without a token the web UI +
+// library + ingest still run, and playback routes return 503 (§11.1).
+let playback: PlaybackEngine | undefined;
+const token = process.env.DISCORD_TOKEN?.trim();
+if (token && config.guildId) {
+  try {
+    const bot = await startBot({ token, guildId: config.guildId, db, targetLufs: config.targetLufs });
+    playback = bot.engine;
+    console.log(`[lark] discord bot online as ${bot.client.user?.tag}`);
+  } catch (err) {
+    console.error("[lark] discord bot failed to start (playback disabled):", err);
+  }
+} else {
+  console.log("[lark] no DISCORD_TOKEN/guild — playback disabled (web UI + library still run)");
+}
+
+const { server } = startServer(config, db, { services: { prober: ffmpegProber, ingest, hub, playback } });
 
 console.log(`[lark] listening on http://localhost:${server.port}`);
 console.log(`[lark] data dir: ${config.dataDir}`);
