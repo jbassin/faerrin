@@ -1,0 +1,15 @@
+/* Transparent canvas for OBS. The gothic skin (fonts + tokens) is layered in
+   Phase C once there's actual ticker UI to style. */
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+}
+
+.eerie-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}

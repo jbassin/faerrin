@@ -1,0 +1,30 @@
+{
+  "name": "@faerrin/eerie",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Live dice-roll OBS overlay — ingests @faerrin/mouth's roll broadcast, fans it out over SSE, renders an animated ticker OBS captures as a Browser Source.",
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "bun run --hot server.ts",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "bun run server.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@faerrin/gothic": "workspace:*",
+    "pixi.js": "^8.18.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "^5.9.3",
+    "vite": "^8"
+  }
+}

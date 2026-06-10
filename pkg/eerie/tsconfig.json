@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "Preserve",
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["bun"],
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "include": ["src", "server.ts", "vite.config.ts", "test"]
+}
