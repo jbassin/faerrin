@@ -38,6 +38,10 @@ static DICE_FEED_URL: LazyLock<String> =
     LazyLock::new(|| std::env::var("DICE_FEED_URL").expect("DICE_FEED_URL must be set"));
 static FEED_WS_URL: LazyLock<String> =
     LazyLock::new(|| std::env::var("FEED_WS_URL").expect("FEED_WS_URL must be set"));
+// Optional shared secret sent as the `X-Eerie-Token` header to the eerie overlay's
+// ingest endpoint. Absent/empty = no header (eerie must then run unauthenticated).
+static EERIE_TOKEN: LazyLock<Option<String>> =
+    LazyLock::new(|| std::env::var("EERIE_TOKEN").ok().filter(|s| !s.is_empty()));
 
 static FUNC_RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r#"^\s*(?<name>.+)\((?<args>.*)\)\s*$"#).unwrap());
@@ -572,24 +576,32 @@ impl Handler {
             };
 
             let client = reqwest::Client::new();
+            // v1 payload for @faerrin/eerie. `total` is canonical; `value` is kept
+            // as a legacy alias. eerie stamps `ts` on ingest, so we don't send one.
+            // Individual die faces (`dice`) + `modifier` are a deferred stretch —
+            // they need Roll traversal; the overlay degrades gracefully without them.
             let msg = json!({
+                "v": 1,
                 "user": profile.player_name,
+                "expression": roll.text(),
+                "total": roll.value(),
                 "value": roll.value(),
                 "is_crit": is_crit,
                 "is_fumble": is_fumble,
             });
             let payload = serde_json::to_vec(&msg)?;
 
-            let res = client
+            let mut request = client
                 .post(FEED_WS_URL.as_str())
-                .header(reqwest::header::CONTENT_TYPE, "application/json")
-                .body(reqwest::Body::from(payload))
-                .send()
-                .await?;
+                .header(reqwest::header::CONTENT_TYPE, "application/json");
+            if let Some(token) = EERIE_TOKEN.as_ref() {
+                request = request.header("X-Eerie-Token", token);
+            }
+            let res = request.body(reqwest::Body::from(payload)).send().await?;
 
             if !res.status().is_success() {
                 bail!(
-                    "feed-ws {}: {}",
+                    "eerie {}: {}",
                     res.status().as_str(),
                     res.status().canonical_reason().unwrap_or("")
                 );
