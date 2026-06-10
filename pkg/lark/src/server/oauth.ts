@@ -26,7 +26,6 @@ export function buildAuthorizeUrl(cfg: OAuthConfig, state: string): string {
     response_type: "code",
     scope: "identify",
     state,
-    prompt: "none",
   });
   return `${AUTHORIZE_URL}?${params.toString()}`;
 }
