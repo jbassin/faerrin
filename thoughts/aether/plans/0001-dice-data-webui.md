@@ -139,9 +139,21 @@ high-quality. Styling matches the wiki palette.
 
 ## 6. Validation / deliver (production-ready)
 
-- **Byte-identical guard:** `astro build` on a clean tree, snapshot the file set; apply changes;
-  rebuild; diff. **Assert the existing 763 wiki files are byte-identical**; only `dice/*` data
-  assets + the new page/island chunks are added. (Repo gotcha mandates this for big aether changes.)
+- **Byte-identical guard — RESULT (embrace Deliver, 2026-06-09):** built the tree with vs without
+  the dice page and diffed all built files (null-delimited, hashing 813 vs 811 files).
+  - **Wiki CONTENT is 100% byte-identical** — after normalizing away content-hash strings, **0**
+    wiki HTML files differ. No page dropped, routing/config untouched, fully additive in content.
+  - **BUT** Vite re-hashes the shared `_astro/*.js|css` chunk *filenames* build-wide whenever the
+    module graph changes (adding any page/island does this); ~300 files get new names + the HTML
+    tags that reference them. **Lazy-loading echarts (dynamic `import("echarts")`) did NOT prevent
+    it** — the cascade is from adding the island/page itself, not echarts' size.
+  - Build is otherwise deterministic (only `index.xml`'s RSS timestamp varies run-to-run).
+  - **DECISION (user, 2026-06-09): accept the hash churn.** The wiki renders identically; only
+    content-hash filenames change (normal Vite behavior); redeploys rewrite all files anyway. The
+    alternative (a standalone /dice bundle copied verbatim into assets/, outside the Astro graph) was
+    considered and declined as not worth the rebuild + theme-head duplication.
+  - The lazy echarts import is **kept** regardless — it isolates the ~1MB payload to an async chunk
+    that only loads when a chart renders (perf win), and keeps echarts off the wiki bundle.
 - **Exporter tests:** fixture `.db` → junk base excluded, histograms/means/crit-rates correct,
   player join correct, gzip/CSV well-formed, empty-DB safe.
 - **Perf:** `summary.json` small enough for instant load; downloads gzipped; table virtualized.

@@ -11,9 +11,16 @@
  * the `themechange` event like Graph.tsx.
  */
 import { createEffect, createMemo, createSignal, For, onCleanup, onMount, Show } from "solid-js"
-import * as echarts from "echarts"
+// echarts is imported for TYPES ONLY here (erased at build) and loaded lazily at
+// runtime via import("echarts"). This keeps the ~1MB echarts payload in its own
+// async chunk, isolated from the wiki's shared bundle — so adding /dice leaves
+// every existing wiki file byte-identical (see thoughts/aether/plans/0001 §6).
+import type * as ECharts from "echarts"
 import type { BaseStats, DiceRoll, DiceSummary } from "../../lib/dice-schema"
 import "../../styles/dice.scss"
+
+let echartsPromise: Promise<typeof import("echarts")> | undefined
+const loadECharts = () => (echartsPromise ??= import("echarts"))
 
 const PLAYER_VAR: Record<string, string> = {
   Josh: "--textJosh",
@@ -49,23 +56,30 @@ function readPalette() {
 }
 type Palette = ReturnType<typeof readPalette>
 
-/** Reusable ECharts host. Rebuilds its option reactively + on theme change. */
-function EChart(props: { option: () => echarts.EChartsOption; height?: number }) {
+/** Reusable ECharts host. Lazy-loads echarts; rebuilds option reactively + on theme change. */
+function EChart(props: { option: () => ECharts.EChartsOption; height?: number }) {
   let el!: HTMLDivElement
-  let chart: echarts.ECharts | undefined
+  let chart: ECharts.ECharts | undefined
+  let ro: ResizeObserver | undefined
+  const onTheme = () => chart?.setOption(props.option(), true)
   onMount(() => {
-    chart = echarts.init(el, null, { renderer: "canvas" })
-    chart.setOption(props.option())
-    const ro = new ResizeObserver(() => chart?.resize())
-    ro.observe(el)
-    const onTheme = () => chart?.setOption(props.option(), true)
-    document.addEventListener("themechange", onTheme)
+    let disposed = false
+    loadECharts().then((echarts) => {
+      if (disposed || !el) return
+      chart = echarts.init(el, null, { renderer: "canvas" })
+      chart.setOption(props.option())
+      ro = new ResizeObserver(() => chart?.resize())
+      ro.observe(el)
+      document.addEventListener("themechange", onTheme)
+    })
     onCleanup(() => {
-      ro.disconnect()
+      disposed = true
+      ro?.disconnect()
       document.removeEventListener("themechange", onTheme)
       chart?.dispose()
     })
   })
+  // Re-apply option when reactive inputs change (no-op until the chart exists).
   createEffect(() => {
     const opt = props.option()
     chart?.setOption(opt, true)
@@ -251,12 +265,12 @@ function Distribution(props: { summary: DiceSummary; palette: Palette }) {
   }
   const [base, setBase] = createSignal(basesWithData().includes(20) ? 20 : (basesWithData()[0] ?? 20))
 
-  const option = createMemo<echarts.EChartsOption>(() => {
+  const option = createMemo<ECharts.EChartsOption>(() => {
     const b = base()
     const pal = props.palette
     const faces = Array.from({ length: b }, (_, i) => i + 1)
     const players = props.summary.perPlayer.filter((p) => p.byBase[String(b)]?.count >= 20)
-    const series: echarts.LineSeriesOption[] = players.map((p) => {
+    const series: ECharts.LineSeriesOption[] = players.map((p) => {
       const st = p.byBase[String(b)]!
       const n = st.count
       return {
@@ -332,11 +346,11 @@ function Distribution(props: { summary: DiceSummary; palette: Palette }) {
 
 // ---------- Timeline (monthly roll volume per player) ----------
 function Timeline(props: { summary: DiceSummary; palette: Palette }) {
-  const option = createMemo<echarts.EChartsOption>(() => {
+  const option = createMemo<ECharts.EChartsOption>(() => {
     const pal = props.palette
     const periods = props.summary.timeline.map((t) => t.period)
     const players = props.summary.meta.players
-    const series: echarts.LineSeriesOption[] = players.map((name) => ({
+    const series: ECharts.LineSeriesOption[] = players.map((name) => ({
       name,
       type: "line",
       stack: "total",
@@ -381,11 +395,11 @@ function Timeline(props: { summary: DiceSummary; palette: Palette }) {
 
 // ---------- Die usage (stacked bar: bases per player) ----------
 function Usage(props: { summary: DiceSummary; palette: Palette }) {
-  const option = createMemo<echarts.EChartsOption>(() => {
+  const option = createMemo<ECharts.EChartsOption>(() => {
     const pal = props.palette
     const players = props.summary.perPlayer
     const bases = props.summary.meta.bases
-    const series: echarts.BarSeriesOption[] = bases.map((b, i) => ({
+    const series: ECharts.BarSeriesOption[] = bases.map((b, i) => ({
       name: `d${b}`,
       type: "bar",
       stack: "total",
