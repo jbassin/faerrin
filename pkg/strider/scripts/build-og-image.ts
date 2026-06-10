@@ -7,6 +7,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.resolve(ROOT, "dist/client");
 const OUT = path.resolve(DIST, "og-map.png");
 const PORT = 4173;
+// Generous timeout: under a loaded CI runner the Pixi map can be slow to reach
+// `data-map-ready`, and the map's continuous animations make the screenshot
+// element slow to settle — Playwright's 30s defaults flake here intermittently.
+const TIMEOUT = 90_000;
 
 if (!(await Bun.file(path.join(DIST, "index.html")).exists())) {
   throw new Error(`${DIST}/index.html not found — run \`vite build\` first`);
@@ -39,6 +43,8 @@ try {
       deviceScaleFactor: 2,
     });
     const page = await context.newPage();
+    page.setDefaultTimeout(TIMEOUT);
+    page.setDefaultNavigationTimeout(TIMEOUT);
     await page.goto(`http://localhost:${PORT}/?seen`, {
       waitUntil: "networkidle",
     });
@@ -50,7 +56,9 @@ try {
     );
     // Frame has a 400ms fade-in with 300ms delay; wait it out.
     await page.waitForTimeout(800);
-    await target.screenshot({ path: OUT });
+    // Freeze CSS animations and give the screenshot a generous timeout so a
+    // still-settling element under CI load doesn't flake the build.
+    await target.screenshot({ path: OUT, timeout: TIMEOUT, animations: "disabled" });
     console.log(`wrote ${path.relative(ROOT, OUT)}`);
   } finally {
     await browser.close();
