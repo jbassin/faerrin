@@ -45,7 +45,7 @@ StartLimitBurst=5
 # starve heart.iridi.cc. MORE generous than eerie because ffmpeg transcode +
 # Opus encode + yt-dlp downloads are CPU/memory heavier than a pure SSE relay,
 # but still capped so a runaway can't take the box down.
-MemoryMax=1500M
+MemoryMax=3000M
 CPUQuota=150%
 OOMScoreAdjust=150
 

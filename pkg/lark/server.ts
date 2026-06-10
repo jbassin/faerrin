@@ -25,7 +25,21 @@ const orphaned = reconcileInterruptedJobs(db);
 if (orphaned > 0) console.log(`[lark] reconciled ${orphaned} interrupted download job(s) from a prior restart`);
 
 const hub = new JobHub();
-const ingest = new IngestService({ db, dataDir: config.dataDir, ytdlp: realYtDlp, hub, prober: ffmpegProber });
+// Throttle bulk ingest: each item can spawn yt-dlp + an ffmpeg loudness pass, so
+// high concurrency × ffmpeg is what OOM-kills the service. Default 2, tunable;
+// loudness measurement can be turned off entirely (LARK_MEASURE_LOUDNESS=0) if
+// memory is tight (tracks then play at unity gain until measured).
+const ingestConcurrency = Number(process.env.LARK_INGEST_CONCURRENCY) || 2;
+const measureLoudness = process.env.LARK_MEASURE_LOUDNESS !== "0";
+const ingest = new IngestService({
+  db,
+  dataDir: config.dataDir,
+  ytdlp: realYtDlp,
+  hub,
+  prober: measureLoudness ? ffmpegProber : undefined,
+  concurrency: ingestConcurrency,
+});
+console.log(`[lark] ingest concurrency=${ingestConcurrency} loudness=${measureLoudness ? "on" : "off"}`);
 
 // The Discord bot (voice/playback) is optional: without a token the web UI +
 // library + ingest still run, and playback routes return 503 (§11.1).
