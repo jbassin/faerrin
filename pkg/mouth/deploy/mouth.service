@@ -23,7 +23,7 @@ WorkingDirectory=/ruby/data/experiments/faerrin/pkg/mouth
 
 # Secrets + config (DISCORD_TOKEN, DATABASE_URL, *_URL, MOUTH_BIND_ADDR, RUST_LOG).
 # Keep this file OUT of git, mode 0600. Copy pkg/mouth/.env.example as a guide.
-EnvironmentFile=%h/.config/faerrin/mouth.env
+EnvironmentFile=/ruby/data/experiments/faerrin/pkg/mouth/.env
 
 # The release binary. Build on the host (`cargo build --release`) or extract the
 # musl binary from the cargo-chef Docker image (see CUTOVER.md), then point here.
