@@ -9,3 +9,4 @@
 - [Caster tavern-tone rework](caster-tavern-tone.md) — caster script stage reworked for tavern-table feel; two-pass generation is now the DEFAULT (--one-shot opts out); sharpen/threads still opt-in
 - [speaks_with_passion migration](speaks-migration.md) — Rust Discord bot vendored + migrated (SQLite, shed uiua+embeddings, identity via players.toml); now at **pkg/mouth** (@faerrin/mouth, script-less Bun member); spec at thoughts/speaks/plans/0001; leaked webhook still needs rotating
 - [mouth TS rewrite deferred](mouth-ts-rewrite-deferred.md) — rewriting speaks as a TS pkg @faerrin/mouth was planned then DEFERRED (zero functional gain now); revisit when the gateway/Rust-lane needs real work; roller parity-harness approach mapped
+- [eerie OBS overlay plan](eerie-obs-overlay-plan.md) — planned @faerrin/eerie (pkg/eerie): rebuild of the dice-roll OBS overlay; Vite+React+pixi / SSE / X-Eerie-Token, fed by mouth's best-effort roll POST; plan at thoughts/eerie/plans/0001
