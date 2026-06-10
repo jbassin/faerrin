@@ -41,7 +41,15 @@ export class SubprocessBot implements VoiceAdapter {
     // daemon exits, the floating rejection must not surface as "unhandled".
     void this.ready.catch(() => {});
 
-    this.proc = Bun.spawn([nodeBin, daemonPath], { stdin: "pipe", stdout: "pipe", stderr: "inherit", env });
+    // `--dns-result-order=ipv4first` belt-and-suspenders with the in-daemon
+    // dns.setDefaultResultOrder: this host's IPv6 is broken and Discord voice
+    // (*.discord.media) advertises AAAA, so we must keep Node off IPv6.
+    this.proc = Bun.spawn([nodeBin, "--dns-result-order=ipv4first", daemonPath], {
+      stdin: "pipe",
+      stdout: "pipe",
+      stderr: "inherit",
+      env,
+    });
     this.readyResolve = readyResolve;
     void this.readLoop();
     void this.proc.exited.then((code) => {
