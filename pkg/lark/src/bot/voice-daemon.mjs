@@ -66,13 +66,14 @@ setInterval(() => {
 async function resolveChannel(userId) {
   const guild = client.guilds.cache.get(GUILD_ID);
   const cached = guild?.voiceStates.cache.get(userId)?.channelId ?? null;
+  log(`resolveChannel ${userId}: cache has ${guild?.voiceStates.cache.size ?? 0} state(s), cached=${cached ?? "none"}`);
   if (cached) return cached;
   try {
     const vs = await client.rest.get(`/guilds/${GUILD_ID}/voice-states/${userId}`);
-    log(`voice-state REST lookup ${userId}: ${vs?.channel_id ?? "none"}`);
+    log(`resolveChannel ${userId}: REST channel=${vs?.channel_id ?? "none"}`);
     return vs?.channel_id ?? null;
   } catch (err) {
-    if (err?.status !== 404) log(`voice-state lookup failed for ${userId}:`, err?.message ?? err);
+    log(`resolveChannel ${userId}: REST ${err?.status === 404 ? "404 (not in voice)" : `failed: ${err?.message ?? err}`}`);
     return null;
   }
 }
@@ -113,6 +114,7 @@ function play({ filePath, filter }) {
 
 async function handle(msg) {
   const { id, cmd } = msg;
+  log(`cmd: ${cmd}${msg.channelId ? ` channel=${msg.channelId}` : ""}${msg.userId ? ` user=${msg.userId}` : ""}`);
   try {
     let result;
     switch (cmd) {
@@ -169,8 +171,11 @@ process.stdin.on("data", (chunk) => {
   }
 });
 
-// Auto-leave input (B2): report non-bot population of the active channel.
-client.on("voiceStateUpdate", () => {
+// Log every voice-state change so we can see whether the bot observes the
+// operator joining/leaving voice at all (intent/gateway sanity).
+client.on("voiceStateUpdate", (oldState, newState) => {
+  log(`voiceStateUpdate user=${newState.id} channel=${newState.channelId ?? oldState.channelId ?? "none"}`);
+  // Auto-leave input (B2): report non-bot population of the active channel.
   if (!currentChannelId) return;
   const ch = client.guilds.cache.get(GUILD_ID)?.channels.cache.get(currentChannelId);
   if (ch?.isVoiceBased()) send({ event: "population", count: ch.members.filter((m) => !m.user.bot).size });
