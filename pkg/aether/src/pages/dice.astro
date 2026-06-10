@@ -21,19 +21,22 @@ import DiceDashboard from "../components/islands/DiceDashboard.tsx"
     runs full-width. Scoped to this page by [data-slug="dice"] and emitted in the
     initial HTML (no FOUC). Touches nothing on the wiki pages. */}
 <style is:global>
+  /* Selectors include #quartz-body to out-specify base.scss's `#quartz-body .sidebar`
+     rules (ID-level specificity) — otherwise the empty sidebars stay laid out and
+     intercept pointer events over the dashboard. */
   body[data-slug="dice"] #quartz-body {
     display: block;
     max-width: 1200px;
     margin: 0 auto;
   }
-  body[data-slug="dice"] .left.sidebar,
-  body[data-slug="dice"] .right.sidebar,
-  body[data-slug="dice"] .center > .page-header,
-  body[data-slug="dice"] .center > hr,
-  body[data-slug="dice"] .center > .page-footer {
-    display: none;
+  body[data-slug="dice"] #quartz-body .left.sidebar,
+  body[data-slug="dice"] #quartz-body .right.sidebar,
+  body[data-slug="dice"] #quartz-body .center > .page-header,
+  body[data-slug="dice"] #quartz-body .center > hr,
+  body[data-slug="dice"] #quartz-body .center > .page-footer {
+    display: none !important;
   }
-  body[data-slug="dice"] .center {
+  body[data-slug="dice"] #quartz-body .center {
     max-width: none;
     width: 100%;
   }
