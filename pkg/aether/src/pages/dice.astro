@@ -1,0 +1,40 @@
+---
+// /dice — the dice-roll data dashboard (plan: thoughts/aether/plans/0001).
+// A standalone page on the wiki: PageLayout with chrome=false (no sidebar/Graph)
+// for a full-width dashboard. The data + charts live entirely in the client:only
+// Solid island, which fetches the static artifacts the exporter wrote to /dice/.
+// A specific top-level route wins over the [...slug].astro wiki catch-all.
+import PageLayout from "../layouts/PageLayout.astro"
+import DiceDashboard from "../components/islands/DiceDashboard.tsx"
+---
+
+<PageLayout
+  title="Dice — Faerrin"
+  slug="dice"
+  description="Three years of Faerrin dice rolls: distributions, luck, and downloads."
+  chrome={false}
+>
+  <DiceDashboard client:only="solid" />
+</PageLayout>
+
+{/* Page-scoped layout override: drop the 3-column wiki grid so the dashboard
+    runs full-width. Scoped to this page by [data-slug="dice"] and emitted in the
+    initial HTML (no FOUC). Touches nothing on the wiki pages. */}
+<style is:global>
+  body[data-slug="dice"] #quartz-body {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  body[data-slug="dice"] .left.sidebar,
+  body[data-slug="dice"] .right.sidebar,
+  body[data-slug="dice"] .center > .page-header,
+  body[data-slug="dice"] .center > hr,
+  body[data-slug="dice"] .center > .page-footer {
+    display: none;
+  }
+  body[data-slug="dice"] .center {
+    max-width: none;
+    width: 100%;
+  }
+</style>

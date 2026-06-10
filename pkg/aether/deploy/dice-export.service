@@ -1,0 +1,36 @@
+# systemd USER unit — install to ~/.config/systemd/user/dice-export.service
+#
+# Oneshot: refresh the /dice dashboard data from mouth's SQLite, then rebuild the
+# aether site so Caddy serves the new artifacts. Triggered by dice-export.timer
+# (nightly). Mirrors mouth/eerie deploy discipline: bare systemd user unit, no
+# container. See deploy/DICE.md.
+#
+# Enable (with lingering so it runs without an active login):
+#   loginctl enable-linger "$USER"
+#   systemctl --user enable --now dice-export.timer
+#   systemctl --user start dice-export.service   # one-off manual refresh
+
+[Unit]
+Description=Faerrin aether — export dice data + rebuild site
+After=network-online.target
+# Read-only on mouth's DB, but order after the bot for tidy logs.
+After=mouth.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/ruby/data/experiments/faerrin/pkg/aether
+
+# 1) export the static artifacts from mouth's DB → assets/dice/
+ExecStart=/home/jbassin/.bun/bin/bun scripts/export-dice.ts
+# 2) rebuild the site (additive: dice data lands in public/dice/, wiki unchanged)
+ExecStart=/home/jbassin/.bun/bin/bun run build
+
+# The export reads ../mouth/mouth.db read-only and ../mouth/players.toml. Override
+# paths with flags if the layout changes:
+#   ExecStart=/home/jbassin/.bun/bin/bun scripts/export-dice.ts --db /path/mouth.db
+
+Nice=10
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=default.target

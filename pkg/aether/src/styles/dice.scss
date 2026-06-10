@@ -1,0 +1,200 @@
+// Styles for the /dice dashboard island (components/islands/DiceDashboard.tsx).
+// Global (not Astro-scoped) because the island is client:only — its DOM is
+// created in JS and never gets Astro's scoping hash. Uses the wiki's theme vars.
+
+.dice-dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 4rem;
+
+  .dice-head {
+    margin-bottom: 1rem;
+
+    h1 {
+      margin: 0;
+      font-family: var(--titleFont, var(--headerFont));
+      color: var(--dark);
+    }
+    .dice-sub {
+      margin: 0.25rem 0 0;
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    .dice-back {
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--secondary);
+    }
+  }
+
+  .dice-note {
+    color: var(--gray);
+    font-size: 0.9rem;
+    code {
+      color: var(--tertiary);
+    }
+    &--inline {
+      margin: 0 0 0.6rem;
+    }
+  }
+
+  // --- tabs ---
+  .dice-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--lightgray);
+    margin-bottom: 1rem;
+  }
+  .dice-tab {
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--gray);
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      color: var(--dark);
+    }
+    &.active {
+      color: var(--secondary);
+      border-bottom-color: var(--secondary);
+    }
+  }
+
+  // --- charts ---
+  .dice-chart {
+    width: 100%;
+  }
+  .dice-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    margin-bottom: 0.5rem;
+
+    select {
+      background: var(--lightgray);
+      color: var(--dark);
+      border: 1px solid var(--gray);
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      font: inherit;
+    }
+  }
+
+  // --- overview cards ---
+  .dice-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .dice-card {
+    background: var(--lightgray);
+    border: 1px solid color-mix(in srgb, var(--gray) 30%, transparent);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+
+    h3 {
+      margin: 0 0 0.6rem;
+      font-size: 0.95rem;
+      color: var(--tertiary);
+      font-weight: 600;
+    }
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      counter-reset: rank;
+    }
+    li {
+      display: grid;
+      grid-template-columns: 0.8rem 1fr auto;
+      align-items: baseline;
+      column-gap: 0.5rem;
+      padding: 0.2rem 0;
+      font-size: 0.92rem;
+
+      .dot {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        align-self: center;
+      }
+      .nm {
+        color: var(--darkgray);
+      }
+      .val {
+        color: var(--dark);
+        font-variant-numeric: tabular-nums;
+        font-weight: 600;
+      }
+      .det {
+        grid-column: 2 / 4;
+        color: var(--gray);
+        font-size: 0.78rem;
+      }
+    }
+  }
+
+  // --- table ---
+  .dice-downloads {
+    color: var(--gray);
+    font-size: 0.9rem;
+    a {
+      margin-left: 0.6rem;
+      color: var(--secondary);
+    }
+  }
+  .dice-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    font-variant-numeric: tabular-nums;
+
+    th,
+    td {
+      text-align: left;
+      padding: 0.35rem 0.6rem;
+      border-bottom: 1px solid var(--lightgray);
+    }
+    th {
+      color: var(--gray);
+      font-weight: 600;
+    }
+    td {
+      color: var(--darkgray);
+    }
+    tbody tr:hover {
+      background: var(--highlight);
+    }
+  }
+  .dice-pager {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    color: var(--gray);
+    font-size: 0.9rem;
+
+    button {
+      background: var(--lightgray);
+      color: var(--dark);
+      border: 1px solid var(--gray);
+      border-radius: 4px;
+      padding: 0.25rem 0.7rem;
+      cursor: pointer;
+      font: inherit;
+      &:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+    }
+  }
+}
