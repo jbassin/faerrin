@@ -30,7 +30,6 @@ import {
 } from "./sessions";
 
 const SESSION_COOKIE = "lark_session";
-const OAUTH_STATE_COOKIE = "lark_oauth_state";
 
 /** API routes that require a valid web session. Extended per phase. */
 const API_ROUTES: ApiRoute[] = [...libraryRoutes, ...ingestRoutes, ...playbackRoutes, ...keyRoutes];
@@ -80,23 +79,19 @@ export function createApp(config: AppConfig, db: DB, deps: AppDeps = {}): App {
   }
 
   function login(): Response {
-    const state = makeState();
-    return new Response(null, {
-      status: 302,
-      headers: {
-        location: buildAuthorizeUrl(config.oauth, state),
-        "set-cookie": `${OAUTH_STATE_COOKIE}=${state}; Path=/; HttpOnly; SameSite=Lax; Max-Age=600${
-          config.secureCookies ? "; Secure" : ""
-        }`,
-      },
-    });
+    // Stateless CSRF: the `state` is an HMAC-signed, self-expiring token (10 min)
+    // rather than a value we must round-trip in a cookie. This avoids the whole
+    // class of SameSite/Secure/lost-cookie failures (invalid_oauth_state).
+    const state = signSession(makeState(), config.sessionSecret, 600, now());
+    return new Response(null, { status: 302, headers: { location: buildAuthorizeUrl(config.oauth, state) } });
   }
 
   async function callback(req: Request, url: URL): Promise<Response> {
     const code = url.searchParams.get("code");
     const state = url.searchParams.get("state");
-    const cookies = parseCookies(req.headers.get("cookie"));
-    if (!code || !state || state !== cookies[OAUTH_STATE_COOKIE]) return json({ error: "invalid_oauth_state" }, 400);
+    if (!code || !verifySession(state ?? undefined, config.sessionSecret, now())) {
+      return json({ error: "invalid_oauth_state" }, 400);
+    }
     let user;
     try {
       user = await exchangeCodeForUser(config.oauth, code, fetchImpl);

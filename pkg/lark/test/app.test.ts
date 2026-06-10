@@ -2,7 +2,7 @@ import { describe, expect, test } from "bun:test";
 import type { AppConfig } from "../src/lib/appconfig";
 import { openDb } from "../src/db/index";
 import { createApp } from "../src/server/app";
-import { signSession } from "../src/server/sessions";
+import { signSession, verifySession } from "../src/server/sessions";
 
 const SECRET = "test-secret";
 
@@ -58,12 +58,18 @@ describe("health + auth guard", () => {
 });
 
 describe("oauth login + callback", () => {
-  test("login redirects to Discord and sets a state cookie", async () => {
-    const app = makeApp(testConfig(), { makeState: () => "fixed-state" });
-    const res = await app.handle(get("/auth/login"));
+  // A valid signed state token (stateless CSRF) for the test secret.
+  const goodState = encodeURIComponent(signSession("nonce", SECRET, 600));
+
+  test("login redirects to Discord with a signed state (no cookie needed)", async () => {
+    const res = await makeApp().handle(get("/auth/login"));
     expect(res.status).toBe(302);
-    expect(res.headers.get("location")).toContain("discord.com/api/oauth2/authorize");
-    expect(res.headers.get("set-cookie")).toContain("lark_oauth_state=fixed-state");
+    const loc = res.headers.get("location")!;
+    expect(loc).toContain("discord.com/api/oauth2/authorize");
+    const state = new URL(loc).searchParams.get("state");
+    expect(state).toBeTruthy();
+    // The state Discord echoes back must verify against our secret.
+    expect(verifySession(state ?? undefined, SECRET)).not.toBeNull();
   });
 
   test("callback exchanges code, sets session, redirects home", async () => {
@@ -72,16 +78,14 @@ describe("oauth login + callback", () => {
       return new Response(JSON.stringify({ id: "allowed-uid", username: "dm" }));
     };
     const app = makeApp(testConfig(), { fetchImpl });
-    const req = get("/auth/callback?code=c&state=s", { cookie: "lark_oauth_state=s" });
-    const res = await app.handle(req);
+    const res = await app.handle(get(`/auth/callback?code=c&state=${goodState}`));
     expect(res.status).toBe(302);
     expect(res.headers.get("location")).toBe("/");
     expect(res.headers.get("set-cookie")).toContain("lark_session=");
   });
 
-  test("callback rejects a mismatched state", async () => {
-    const app = makeApp();
-    const res = await app.handle(get("/auth/callback?code=c&state=s", { cookie: "lark_oauth_state=different" }));
+  test("callback rejects an unsigned/forged state", async () => {
+    const res = await makeApp().handle(get("/auth/callback?code=c&state=garbage"));
     expect(res.status).toBe(400);
   });
 
@@ -91,7 +95,7 @@ describe("oauth login + callback", () => {
       return new Response(JSON.stringify({ id: "intruder", username: "x" }));
     };
     const app = makeApp(testConfig(), { fetchImpl });
-    const res = await app.handle(get("/auth/callback?code=c&state=s", { cookie: "lark_oauth_state=s" }));
+    const res = await app.handle(get(`/auth/callback?code=c&state=${goodState}`));
     expect(res.status).toBe(403);
   });
 });
