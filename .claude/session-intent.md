@@ -1,38 +1,24 @@
-# Session Intent Contract
+# Session Intent Contract — `@faerrin/mouth` (speaks → TypeScript)
 
 **Created:** 2026-06-09
-**Workflow:** /octo:plan (team mode — Claude persona agents)
+**Workflow:** /octo:plan (team mode — typescript-pro + backend-architect personas)
 
 ## Job Statement
-Migrate the `speaks_with_passion` Rust Discord bot
-(`/ruby/data/experiments/speaks_with_passion`) into the Faerrin Bun/TypeScript
-monorepo, landing on a concrete, production-ready, architecture-fitting approach.
+Decide whether to rewrite the now-working `services/speaks` Rust Discord bot into a TypeScript
+Bun-workspace package `@faerrin/mouth` under `pkg/`, and map the approach + risks if so.
 
-## Captured Intent (5-question calibration)
-- **Goal:** Research a topic — map all options + implications before committing.
-- **Knowledge:** Well-informed — knows both codebases; wants trade-offs, not a primer.
-- **Success:** Working solution + Clear understanding + Production-ready (wired into
-  CI/Dagger, Caddy, deploy — not just dropped in).
-- **Constraints:** Must fit architecture — respect Bun-workspace conventions, jj VCS,
-  Dagger CI, and the `@faerrin/content` file-SSOT.
+## Captured Intent
+- **Goal:** Research a topic — map the approach + risks before committing.
+- **Knowledge:** Well-informed — knows discord.js/bun:sqlite; wants trade-offs + a port strategy.
+- **Success:** Clear understanding + Working solution + Production-ready.
+- **Constraints:** Must fit architecture (real `pkg/*` Bun member; `bun --filter` lanes; jj; wretch-style deploy).
 
 ## Success Criteria
-1. A clear, defensible recommendation among vendor-as-is / TS-rewrite / hybrid.
-2. End-state is a bot that runs *inside* this repo and deploys without breaking the
-   green workspace or the live `heart.iridi.cc` static site.
-3. Honest correction of any framing that doesn't fit the architecture (esp. the
-   "port the DB into @faerrin/content" idea — content is files, not Postgres).
+1. A clear, honest "should we do this at all?" recommendation (the Rust bot already works).
+2. If yes: a production-ready approach — roller parity-tested, CI fits bun lanes, Rust lane retired.
+3. Either way: I know exactly what to do next (or what trigger would justify doing it).
 
 ## Boundaries
-- Do NOT break the Bun-only `bun --filter '*'` CI lanes or the live Caddy-served sites.
-- Do NOT fabricate Bun-workspace membership for a Rust crate.
-- VCS is jj, not git.
-
-## Source-of-truth Findings (grounding)
-- Source = Rust Cargo workspace (edition 2024): crates `discord` (serenity autosharded
-  gateway + axum :3000 + sqlx/pgvector), `roller` (dice DSL: pratt→AST→eval), `chart`.
-  Also embeds `uiua` (array language — no TS equivalent).
-- Target Dagger CI = pure Bun (`oven/bun:1.3.14`); no Rust, no DB.
-- `@faerrin/content` = file SSOT (markdown wiki + JSON transcripts); zero Postgres in repo.
-- `wretch` = the in-repo precedent for vendoring a non-Bun service (vendor-as-is →
-  portable → documented hybrid → systemd deploy + CUTOVER runbook; consumes content roster).
+- Don't break the live bot or the green workspace.
+- Roller behavior must match exactly (parity-gated).
+- This is a PLAN only — no implementation.

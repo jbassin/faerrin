@@ -8,3 +8,4 @@
 - [Wiki is setting, not session log](wiki-is-setting-not-session-log.md) — wiki records persistent world-state (people/places/things/lore), NOT party-action/session events; mining extracts standing facts, drops event narrative
 - [Caster tavern-tone rework](caster-tavern-tone.md) — caster script stage reworked for tavern-table feel; two-pass generation is now the DEFAULT (--one-shot opts out); sharpen/threads still opt-in
 - [speaks_with_passion migration](speaks-migration.md) — staged-hybrid plan/spec to vendor the Rust Discord bot as services/speaks (SQLite, shed uiua+embeddings); spec at thoughts/speaks/plans/0001; 3-identifier-space gotcha + leaked webhook token
+- [mouth TS rewrite deferred](mouth-ts-rewrite-deferred.md) — rewriting speaks as a TS pkg @faerrin/mouth was planned then DEFERRED (zero functional gain now); revisit when the gateway/Rust-lane needs real work; roller parity-harness approach mapped
