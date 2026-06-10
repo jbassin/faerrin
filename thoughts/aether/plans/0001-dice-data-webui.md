@@ -197,11 +197,31 @@ high-quality. Styling matches the wiki palette.
 - **Develop ~35%** — exporter + tests, page, island + charts, download, refresh trigger.
 - **Deliver ~20%** — byte-identical guard, exporter tests, perf, privacy sign-off, green workspace.
 
-### Remaining checkpoints (D1–D6 resolved incl. data-confirmed base cap = 100)
-- **Parquet writer choice** (the one non-trivial dep): `hyparquet`/`parquet-wasm` writer vs shelling
-  out to DuckDB. Settle early in Develop. *(Only remaining unknown.)*
-- After **Develop**: "Byte-identical wiki output proven? ECharts bundle acceptable? CSV/Parquet
-  downloads correct and filtered (base≤100, id≠6)?"
+### Remaining checkpoints (ALL resolved as of embrace Discover, 2026-06-09)
+- **Parquet writer → `hyparquet-writer`** (RESOLVED). Host has no `duckdb` CLI (checked); bun 1.3.14.
+  `hyparquet-writer` is pure-TS, zero native deps, Bun-compatible, purpose-built for writing Parquet
+  from column data. Exporter-only → **devDependency** (never enters the site bundle).
+- After **Develop**: byte-identical wiki output proven? ECharts bundle isolated to /dice? CSV/Parquet
+  downloads correct and filtered (base≤100, id≠6)?
+
+## 10. Confirmed integration points (embrace Discover)
+
+- **Page:** `src/pages/dice.astro` → clean `/dice` URL (static route wins over `[...slug].astro`
+  catch-all). Uses `PageLayout` with **`chrome={false}`** (full-width dashboard, no wiki sidebar/Graph),
+  passing `title="Dice" slug="dice"`. Adds one additive `public/dice.html`.
+- **Island mount:** `<DiceDashboard client:only="solid" />` — matches Graph/Explorer (canvas/DOM libs
+  must be client-only). onMount/onCleanup lifecycle; subscribe to the `themechange` CustomEvent like
+  `Graph.tsx` (site is **dark-only "void theme"** — default ECharts to a dark palette).
+- **Deps:** `echarts` → **dependency** (imported by the island). `hyparquet-writer` + `smol-toml`
+  (parse `players.toml`) → **devDependencies** (exporter/script only). aether already ships d3 + pixi,
+  so heavy viz deps are on-grain.
+- **Generated data:** exporter writes to `assets/dice/` (publicDir) → emitted to `public/dice/` on
+  build. **Gitignore `assets/dice/`** (regenerated nightly on host; not committed). Island degrades
+  gracefully when `summary.json` is absent (CI builds + pre-first-export).
+- **Exporter emits:** `summary.json` (aggregates — viz feed), `rolls.json` (compact raw rows — table
+  feed), `rolls.csv` + `rolls.parquet` (downloads). All honor `base<=100 AND player_id<>6`.
+- **No `test` script in aether** (per its CLAUDE.md) — exporter tests run via `bun test` directly on a
+  fixture `.db`; correctness gates are `astro check` + the byte-parity build diff.
 
 ## 9. Files this will touch (additive)
 
