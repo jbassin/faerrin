@@ -31,6 +31,7 @@ import {
 } from "./tts/index.ts";
 import { readManifest } from "./tts/index.ts";
 import { assembleEpisode } from "./assemble/index.ts";
+import { loadOrFuseMega } from "./mega/index.ts";
 import type { Session } from "./types.ts";
 
 function findSession(sessions: Session[], arg: string): Session | undefined {
@@ -255,6 +256,168 @@ if (process.argv[2] === "assemble") {
   console.log(`# ${script.title}`);
   console.log(`episode:    ${outputs.audioPath} (${(bytes / 1_000_000).toFixed(1)} MB)`);
   console.log(`transcript: ${outputs.transcriptPath}`);
+  process.exit(0);
+}
+
+// `mega <from> <to> [...]` — fuse the sessions in an inclusive date range into one
+// fresh month-in-review recap, then run the remaining stages under a synthetic
+// mega id (fuse → script → tts → assemble). The face site auto-surfaces the result
+// on its next build (no face changes). Needs ANTHROPIC_API_KEY (fuse + script) and,
+// for real audio, a TTS provider + ffmpeg (assemble). `--digest-only`/`--script-only`
+// stop early so you can eyeball the cheap stages before spending on synthesis.
+if (process.argv[2] === "mega") {
+  const args = process.argv.slice(3);
+  const [from, to] = args.filter((a) => !a.startsWith("--"));
+  if (!from || !to) {
+    console.error(
+      "Usage: bun run src/cli.ts mega <from> <to> [--minutes=<n>] [--arc=<slug>] [--digest-only] [--script-only] [--provider=elevenlabs|edge|mock] [--model=<id>] [--stability=creative|natural|robust|0..1] [--seed=<int>|random] [--no-pronunciation] [--no-bed] [--bed=<path>] [--bed-gain=<0..1>] [--force]",
+    );
+    process.exit(1);
+  }
+  // Guard the date args up front: a typo'd date would otherwise sort to NaN/0 and
+  // silently mis-select (e.g. an empty window or a widened one) rather than error.
+  const DATE_RE = /^\d{4}-\d{1,2}-\d{1,2}$/;
+  for (const [label, value] of [["from", from], ["to", to]] as const) {
+    if (!DATE_RE.test(value)) {
+      console.error(`Invalid ${label} date "${value}" — expected YYYY-M-D (e.g. 2026-5-7).`);
+      process.exit(1);
+    }
+  }
+  const force = args.includes("--force");
+  const arc = args.find((a) => a.startsWith("--arc="))?.split("=")[1];
+  const digestOnly = args.includes("--digest-only");
+  const scriptOnly = args.includes("--script-only");
+
+  // Target runtime drives both the fuse beat budget and the script token ceiling.
+  // Empirically ~2.1 min of finished audio per beat; a single session episode runs
+  // ~23 min from ~11 beats, so a "mega" defaults to ~1 hour. ~1100 output tokens/min
+  // gives the two-pass script generous headroom (well under Opus 4.8's 128k cap; the
+  // client streams, so a large ceiling carries no timeout risk and only caps truncation).
+  const minutesArg = args.find((a) => a.startsWith("--minutes="))?.split("=")[1];
+  const minutes = minutesArg !== undefined ? Number(minutesArg) : 60;
+  if (!(minutes > 0) || !Number.isFinite(minutes)) {
+    console.error(`--minutes must be a positive number (got "${minutesArg}").`);
+    process.exit(1);
+  }
+  const targetBeats = Math.max(6, Math.round(minutes / 2.1));
+  const scriptMaxTokens = Math.min(120_000, Math.max(32_000, Math.round(minutes * 1100)));
+
+  // Step 1 — fuse the in-range members' cached digests into one mega digest.
+  const sessions = await loadSessions();
+  let mega;
+  try {
+    mega = await loadOrFuseMega(
+      sessions,
+      { from, to, ...(arc ? { arc } : {}) },
+      { force, targetBeats },
+    );
+  } catch (err) {
+    console.error(`Fuse failed: ${apiKeyHint(err)}`);
+    process.exit(1);
+  }
+  const { digest, id } = mega;
+  console.error(mega.cached ? `(cached digest → ${mega.path})` : `(fused → ${mega.path})`);
+  console.log(`# mega ${id}`);
+  console.log(
+    `${digest.beats.length} beats across the span (target ~${targetBeats} ≈ ${minutes}m)\n\n${digest.synopsis}\n`,
+  );
+  if (digestOnly) {
+    console.log("(--digest-only) drop the flag to generate the script + audio.");
+    process.exit(0);
+  }
+
+  // Step 2 — Stage 3 script, keyed by the mega id (two-pass, wiki-grounded).
+  const wiki = await loadWiki("../content/wiki");
+  const threads = await loadThreads("content/running-threads.json");
+  let scriptResult;
+  try {
+    scriptResult = await loadOrGenerateScript(digest, wiki, {
+      force,
+      twoPass: true,
+      threads,
+      maxTokens: scriptMaxTokens,
+    });
+  } catch (err) {
+    console.error(`Script generation failed: ${apiKeyHint(err)}`);
+    process.exit(1);
+  }
+  const megaScript = scriptResult.script;
+  console.error(
+    scriptResult.cached
+      ? `(cached script → ${scriptResult.path})`
+      : `(generated script → ${scriptResult.path})`,
+  );
+  console.log(`script: ${megaScript.turns.length} turns — "${megaScript.title}"`);
+  if (scriptOnly) {
+    console.log("(--script-only) drop the flag to synthesize + assemble the audio.");
+    process.exit(0);
+  }
+
+  // Step 3 — Stage 4 TTS (mirrors the `tts` command's provider construction).
+  const providerArg = (args.find((a) => a.startsWith("--provider="))?.split("=")[1] ??
+    "elevenlabs") as "mock" | "edge" | "elevenlabs";
+  const modelArg = args.find((a) => a.startsWith("--model="))?.split("=")[1];
+  const stabilityArg = args.find((a) => a.startsWith("--stability="))?.split("=")[1];
+  const seedArg = args.find((a) => a.startsWith("--seed="))?.split("=")[1];
+  const noPronunciation = args.includes("--no-pronunciation");
+  let elevenLabs: ElevenLabsTTSProvider;
+  try {
+    elevenLabs = new ElevenLabsTTSProvider({
+      modelId: modelArg,
+      stability: stabilityArg !== undefined ? resolveStability(stabilityArg) : DEFAULT_STABILITY,
+      seed: parseSeedFlag(seedArg, id),
+    });
+  } catch (err) {
+    console.error(err instanceof Error ? err.message : String(err));
+    process.exit(1);
+  }
+  const synth =
+    providerArg === "edge"
+      ? { provider: new EdgeTTSProvider(), voices: DEFAULT_EDGE_VOICES }
+      : providerArg === "mock"
+        ? { provider: new MockTTSProvider() }
+        : { provider: elevenLabs, voices: DEFAULT_ELEVENLABS_VOICES };
+  const pronunciations = noPronunciation ? {} : await loadLexicon("content/pronunciations.json");
+  let ttsResult;
+  try {
+    ttsResult = await loadOrSynthesize(megaScript, { force, pronunciations, ...synth });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    if (/ELEVENLABS_API_KEY/i.test(msg)) {
+      console.error(
+        "ElevenLabs needs ELEVENLABS_API_KEY (set it in .env), or use --provider=edge (free) / --provider=mock (offline).",
+      );
+    } else {
+      console.error(`TTS failed: ${msg}`);
+    }
+    process.exit(1);
+  }
+  console.error(
+    ttsResult.cached ? `(cached audio → ${ttsResult.path})` : `(synthesized → ${ttsResult.path})`,
+  );
+
+  // Step 4 — Stage 5 assemble (mirrors the `assemble` command's bed handling).
+  const noBed = args.includes("--no-bed");
+  const bedPath = args.find((a) => a.startsWith("--bed="))?.split("=")[1] ?? "assets/tavern.mp3";
+  const bedGain = args.find((a) => a.startsWith("--bed-gain="))?.split("=")[1];
+  if (bedGain !== undefined && !(Number(bedGain) >= 0 && Number(bedGain) <= 1)) {
+    console.error("--bed-gain must be a number in [0,1] (e.g. 0.07).");
+    process.exit(1);
+  }
+  const bed = noBed
+    ? undefined
+    : { path: bedPath, ...(bedGain !== undefined ? { gain: Number(bedGain) } : {}) };
+  let outputs;
+  try {
+    outputs = await assembleEpisode(ttsResult.manifest, megaScript, { bed });
+  } catch (err) {
+    console.error(`Assembly failed: ${err instanceof Error ? err.message : String(err)}`);
+    process.exit(1);
+  }
+  const bytes = Bun.file(outputs.audioPath).size;
+  console.log(`episode:    ${outputs.audioPath} (${(bytes / 1_000_000).toFixed(1)} MB)`);
+  console.log(`transcript: ${outputs.transcriptPath}`);
+  console.log("\nRebuild face to publish it: bun run --filter @faerrin/face build");
   process.exit(0);
 }
 

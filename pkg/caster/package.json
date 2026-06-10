@@ -9,6 +9,7 @@
     "script": "bun run src/cli.ts script",
     "tts": "bun run src/cli.ts tts",
     "assemble": "bun run src/cli.ts assemble",
+    "mega": "bun run src/cli.ts mega",
     "test": "bun test",
     "typecheck": "tsc --noEmit"
   },

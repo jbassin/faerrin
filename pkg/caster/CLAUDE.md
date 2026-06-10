@@ -25,6 +25,26 @@ ingest → distill → script → tts → assemble
 Run a stage across the workspace with `bun run --filter @faerrin/caster <stage> <id>`, or from this dir with
 `bun run <stage> <id>`. `bun run typecheck` / `bun test` are the gates.
 
+### `mega` — month-in-review recap over a date range
+
+`bun run mega <from> <to>` produces a **single "mega" episode** (a *fresh, regenerated* recap, not an audio
+omnibus) covering every session whose date is in `[from, to]` inclusive. The only new step is **fuse**
+(`src/mega/`): it collapses the members' already-distilled digests into ONE month-in-review `SessionDigest`
+under a synthetic id `…<arcSlug>.<last>-recap-of-<first>` (e.g. `000.through-a-song-darkly.2026-6-8-recap-of-2026-5-7`;
+the id leads with the last covered date so face sorts the recap to the *end* of its arc).
+From there the existing stages run unchanged on that id: **fuse → script → tts → assemble**. Members must
+already be **distilled** (it errors naming any that aren't — it won't silently spend per-session LLM calls);
+all in-range sessions must share one arc, or pass `--arc=<slug>`.
+
+The synthetic id is shaped so **face auto-surfaces the result with no face changes** (real arc slug → pretty
+title; numeric date head → valid sort). `--digest-only` / `--script-only` stop early to eyeball the cheap
+stages before spending on TTS; `--provider=mock` exercises the whole chain offline.
+
+**Length tuning:** `--minutes=<n>` (default **60**) sets the target runtime. At ~2.1 min of finished audio per
+beat it drives the fuse **beat budget** (≈ `minutes / 2.1`) and the script-stage `maxTokens` ceiling
+(≈ `minutes × 1100`, capped at 120k — Opus 4.8 allows 128k and the LLM client streams, so a high ceiling only
+caps truncation, no timeout). So a 1-hour mega targets ~28 beats; pass e.g. `--minutes=30` for a tighter recap.
+
 ## Content sources (SSOT — read, don't copy)
 
 Defaults live in `src/ingest/index.ts`:
