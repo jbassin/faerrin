@@ -6,32 +6,25 @@ tracks from a curated library, operated via a web UI (`lark.iridi.cc`) and a Str
 **Plan of record:** [`thoughts/lark/plans/0001-discord-music-bot.md`](../../thoughts/lark/plans/0001-discord-music-bot.md)
 (decisions D1–D8, behaviors B1–B26, phasing). Read it before changing scope.
 
-**Status:** Phases 0–6 built and green. **D1 resolved:** Bun **cannot** run `@discordjs/voice` (the
-spike aborts at "joining voice" — `node:dgram`/UDP gaps), so voice runs in a **Node subprocess** (the
-voice daemon) while the server/DB/engine stay on Bun. Deck endpoint reference:
-[`docs/stream-deck.md`](./docs/stream-deck.md). Deploy: [`deploy/DEPLOY.md`](./deploy/DEPLOY.md).
+**Status:** Phases 0–6 built and green; **voice confirmed working live.** Everything runs in **one Bun
+process** — including voice in-process via `@discordjs/voice` (`src/bot/discord-voice.ts`). Deck
+reference: [`docs/stream-deck.md`](./docs/stream-deck.md). Deploy: [`deploy/DEPLOY.md`](./deploy/DEPLOY.md).
 
-## Voice runs in a Node subprocess (the D1 fallback)
+### Voice gotchas (learned the hard way — this took a marathon to find)
 
-- `src/bot/voice-daemon.mjs` — plain-JS **Node** process: the discord.js gateway + `@discordjs/voice`.
-  Speaks a newline-JSON protocol on stdio (commands in, responses/events out; logs on stderr).
-- `src/bot/subprocess-voice.ts` — Bun-side `SubprocessBot` implementing the engine's `VoiceAdapter`
-  + resolver, proxying to the daemon. The engine + its tests are unchanged (still use a `FakeVoice`).
-- Needs a **`node` binary** at runtime. If `node` isn't on the service PATH (e.g. nvm), set
-  **`LARK_NODE_BIN`** to its absolute path (`which node`).
-- The `.mjs` daemon is excluded from `tsc` (`tsconfig.json` exclude) — it's plain JS, run by Node.
-
-### Voice gotchas (learned the hard way)
-
-- **DAVE / E2EE is mandatory.** Discord now requires the DAVE end-to-end-encryption protocol and
-  closes the voice WS with **code 4017 "E2EE/DAVE protocol required"** otherwise. This needs
-  `@discordjs/voice` **≥ 0.19** + the native **`@snazzah/davey`** (an `optionalDependency`). 0.18 has
-  no DAVE → never reaches Ready. Don't downgrade below 0.19.
+- **DAVE / E2EE is mandatory.** Discord requires the DAVE end-to-end-encryption protocol and closes
+  the voice WS with **code 4017 "E2EE/DAVE protocol required"** otherwise. Needs `@discordjs/voice`
+  **≥ 0.19** + the native **`@snazzah/davey`** (an `optionalDependency`, so the CI bun lane stays
+  installable; it loads fine under Bun). **0.18 has no DAVE → never reaches Ready. Don't downgrade.**
+  This was THE blocker — not Bun. Bun does voice fine with the right deps.
 - **This host's IPv6 is broken** (ULA only, no route). Discord voice (`*.discord.media`) advertises
-  AAAA, so the daemon forces IPv4: `dns.setDefaultResultOrder("ipv4first")` **and** the
-  `--dns-result-order=ipv4first` node flag (the in-code call alone was bypassed by the voice ws).
-- To debug a stuck voice connection, set `debug: true` on `joinVoiceChannel` and log `conn.on("debug")`
-  — the raw WS close code (e.g. 4017) is the answer. Bun itself was never the problem.
+  AAAA, so `startBot` calls `dns.setDefaultResultOrder("ipv4first")` process-wide before connecting.
+- To debug a stuck voice connection, set `debug: true` on `joinVoiceChannel` and hook the **raw ws
+  `close` event** for the code (e.g. 4017) — state transitions alone won't tell you. Don't guess
+  (we burned hours blaming Bun/Node/IPv6/UDP/OOM before reading the close code).
+- Pure-JS deps keep the CI bun lane native-free for the rest: `opusscript` (Opus) + `@noble/ciphers`
+  (transport encryption); `libsodium-wrappers` was rejected (broken ESM under Bun). `@snazzah/davey`
+  is the one native module, and it's optional.
 
 ## Architecture (all TypeScript on Bun — D1)
 
@@ -58,12 +51,11 @@ The Dagger `oven/bun` container has **no ffmpeg/yt-dlp** and may not build nativ
 
 ## Voice spike history (D1)
 
-`src/spike/voice-spike.ts` (`bun run spike`) was the Phase 0 PoC. Running it live **proved Bun
-cannot do voice**: it logs in, then `entersState(Ready)` aborts at "joining voice" (`AbortError`).
-That triggered the §11.1 fallback — voice now runs under Node (above). The spike remains as a
-Bun-voice regression marker; the real path is the Node daemon. The CI bun lane stays native-free
-regardless (`opusscript` + `@noble/ciphers` are pure-JS; `libsodium-wrappers` was rejected — broken
-ESM under Bun).
+`src/spike/voice-spike.ts` (`bun run spike`) was the Phase 0 PoC. Its early `AbortError` at
+"joining voice" was misread as "Bun can't do voice" and triggered a (now-removed) Node-subprocess
+detour — but the real cause was the DAVE 4017 close on `@discordjs/voice` 0.18 (see voice gotchas).
+With ≥0.19 + `@snazzah/davey`, **Bun runs voice in-process fine**; the spike now works against a live
+channel.
 
 ## Conventions
 

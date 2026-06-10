@@ -1,15 +1,23 @@
 /**
- * Discord bot bootstrap (plan §4/§11.1). Bun can't do @discordjs/voice (D1),
- * so the gateway + voice run in a Node subprocess (the voice daemon) and the
- * Bun-side `SubprocessBot` proxies the engine's `VoiceAdapter`/resolver to it.
+ * Discord bot bootstrap (plan §4/B1/B2) — all in-process under Bun. Builds the
+ * client, the follow-the-operator resolver, the in-process voice adapter, and
+ * the playback engine, and wires voice-state changes to the 60s auto-leave.
  * Started from server.ts only when a token is configured. Not unit-tested.
  */
-import { resolve } from "node:path";
+import dns from "node:dns";
 import type { Database } from "bun:sqlite";
+import { Client, GatewayIntentBits } from "discord.js";
+import { DiscordVoiceAdapter } from "./discord-voice";
 import { PlaybackEngine } from "./playback";
-import { SubprocessBot } from "./subprocess-voice";
+import type { VoiceStateResolver } from "./voice";
+
+// This host's IPv6 is broken (ULA only, no default route); Discord voice
+// (*.discord.media) advertises AAAA, so without this the voice WS dials an
+// unreachable IPv6 address. Force IPv4 process-wide before any connection.
+dns.setDefaultResultOrder("ipv4first");
 
 export interface BotHandle {
+  client: Client;
   engine: PlaybackEngine;
   stop: () => void;
 }
@@ -20,26 +28,45 @@ export async function startBot(opts: {
   db: Database;
   targetLufs: number;
 }): Promise<BotHandle> {
-  // The voice daemon runs under Node (Bun voice is broken). Find a node binary:
-  // explicit override, else PATH, else "node". On the host PATH may not include
-  // nvm — set LARK_NODE_BIN in .env if `node` isn't found.
-  const nodeBin = process.env.LARK_NODE_BIN || Bun.which("node") || "node";
-  const daemonPath = resolve(import.meta.dir, "voice-daemon.mjs");
+  const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });
+  const adapter = new DiscordVoiceAdapter(client, opts.guildId);
 
-  const bot = new SubprocessBot(nodeBin, daemonPath, {
-    ...process.env,
-    DISCORD_TOKEN: opts.token,
-    LARK_GUILD_ID: opts.guildId,
+  const resolver: VoiceStateResolver = {
+    async channelOf(userId) {
+      // Fast path: gateway voice-state cache.
+      const cached = client.guilds.cache.get(opts.guildId)?.voiceStates.cache.get(userId)?.channelId ?? null;
+      if (cached) return cached;
+      // Cache miss → authoritative REST lookup (200=channel_id, 404=not in voice).
+      try {
+        const vs = (await client.rest.get(`/guilds/${opts.guildId}/voice-states/${userId}`)) as {
+          channel_id?: string | null;
+        };
+        return vs?.channel_id ?? null;
+      } catch (err) {
+        if ((err as { status?: number }).status !== 404) {
+          console.error(`[lark] voice-state lookup failed for ${userId}:`, (err as Error).message);
+        }
+        return null;
+      }
+    },
+  };
+
+  const engine = new PlaybackEngine({ db: opts.db, voice: adapter, resolver, targetLufs: opts.targetLufs });
+
+  // Auto-leave (B2): recount non-bot members in the active channel on any voice
+  // change and let the engine arm/cancel its 60s timer.
+  client.on("voiceStateUpdate", () => {
+    const channelId = adapter.currentChannelId();
+    if (!channelId) return;
+    const channel = client.guilds.cache.get(opts.guildId)?.channels.cache.get(channelId);
+    if (channel?.isVoiceBased()) engine.notifyPopulation(channel.members.filter((m) => !m.user.bot).size);
   });
 
-  const engine = new PlaybackEngine({ db: opts.db, voice: bot, resolver: bot.resolver, targetLufs: opts.targetLufs });
-  bot.onPopulation = (nonBotCount) => engine.notifyPopulation(nonBotCount);
+  const ready = new Promise<void>((resolve) => client.once("clientReady", () => resolve()));
+  await client.login(opts.token);
+  await ready;
+  const guild = client.guilds.cache.get(opts.guildId);
+  console.log(`[lark] bot ready as ${client.user?.tag} in "${guild?.name ?? opts.guildId}"`);
 
-  // Wait (bounded) for the daemon's Discord login before declaring playback ready.
-  await Promise.race([
-    bot.ready,
-    new Promise<never>((_, reject) => setTimeout(() => reject(new Error("voice daemon login timed out")), 30_000)),
-  ]);
-
-  return { engine, stop: () => bot.kill() };
+  return { client, engine, stop: () => void client.destroy() };
 }

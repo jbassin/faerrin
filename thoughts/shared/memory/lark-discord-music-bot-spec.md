@@ -21,13 +21,13 @@ cause: Discord **requires the DAVE E2EE protocol** and closes the voice WS with 
 protocol required"**. `@discordjs/voice` **0.18 has NO DAVE support** → never reached Ready. **Fix:
 `@discordjs/voice` ≥0.19.2 + native `@snazzah/davey` (optionalDependency).** Don't downgrade below 0.19.
 
-Voice runs in a **Node subprocess** (`src/bot/voice-daemon.mjs`, plain JS) driven by the Bun-side
-`SubprocessBot` (`src/bot/subprocess-voice.ts`) over newline-JSON stdio; server/DB/engine stay on Bun,
-engine unchanged (`FakeVoice` in tests). (Bun *also* can't do voice, but the Node split was needed
-regardless.) Host quirk: **broken IPv6** (ULA only) vs Discord voice's AAAA records → daemon forces
-IPv4 (`dns.setDefaultResultOrder("ipv4first")` + `--dns-result-order=ipv4first` node flag). Needs a
-`node` binary — set **`LARK_NODE_BIN`** if not on the service PATH (nvm). `libsodium-wrappers` is broken
-under Bun → `@noble/ciphers` + `opusscript` (pure-JS, CI native-free).
+**Voice runs IN-PROCESS, all-Bun** (`src/bot/discord-voice.ts` wraps `@discordjs/voice`; `src/bot/index.ts`
+`startBot`). Bun does voice fine with DAVE — the Node-subprocess detour (voice-daemon.mjs / SubprocessBot)
+was **removed** once we confirmed Bun reaches Ready with 0.19.2+davey; no `node`/`LARK_NODE_BIN` needed.
+Engine unchanged (`FakeVoice` in tests). Host quirk: **broken IPv6** (ULA only) vs Discord voice's AAAA
+records → `startBot` calls `dns.setDefaultResultOrder("ipv4first")` process-wide before connecting.
+`libsodium-wrappers` is broken under Bun → `@noble/ciphers` + `opusscript` (pure-JS); `@snazzah/davey`
+is the one native dep (optional, loads under Bun).
 
 **To debug a stuck voice connection:** hook the raw ws `close` event for the code (don't guess) —
 that's how 4017 surfaced. Red herrings ruled out: Bun-vs-Node, the resolver, OAuth, OOM (MemoryMax
