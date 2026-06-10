@@ -89,6 +89,18 @@ export function createApp(config: AppConfig, db: DB, deps: AppDeps = {}): App {
   async function callback(req: Request, url: URL): Promise<Response> {
     const code = url.searchParams.get("code");
     const state = url.searchParams.get("state");
+    // The "Add to Server" (bot install) flow redirects here with guild_id/
+    // permissions and no login `state` — a different OAuth flow. Guide the user
+    // instead of returning a confusing invalid_oauth_state.
+    if (url.searchParams.has("guild_id") || url.searchParams.has("permissions")) {
+      return new Response(
+        `<!doctype html><meta charset="utf-8"><title>lark</title>` +
+          `<body style="font-family:system-ui;max-width:36rem;margin:4rem auto;padding:0 1rem;background:#0e0f13;color:#e7e9ee">` +
+          `<h1>lark</h1><p>✅ lark is added to your server. To control playback, ` +
+          `<a style="color:#c8a24a" href="/">open the app</a> and click <b>Sign in with Discord</b>.</p></body>`,
+        { status: 200, headers: { "content-type": "text/html; charset=utf-8" } },
+      );
+    }
     if (!code || !verifySession(state ?? undefined, config.sessionSecret, now())) {
       return json({ error: "invalid_oauth_state" }, 400);
     }

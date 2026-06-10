@@ -89,6 +89,13 @@ describe("oauth login + callback", () => {
     expect(res.status).toBe(400);
   });
 
+  test("a bot-install redirect (guild_id/permissions) shows guidance, not an error", async () => {
+    const res = await makeApp().handle(get("/auth/callback?code=c&guild_id=753&permissions=3145728"));
+    expect(res.status).toBe(200);
+    expect(res.headers.get("content-type")).toContain("text/html");
+    expect(await res.text()).toContain("Sign in with Discord");
+  });
+
   test("callback 403s a non-allowlisted user", async () => {
     const fetchImpl = async (input: string): Promise<Response> => {
       if (input.includes("/token")) return new Response(JSON.stringify({ access_token: "t", token_type: "Bearer" }));
