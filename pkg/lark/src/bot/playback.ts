@@ -84,10 +84,18 @@ export class PlaybackEngine {
     throw new PlaybackError(409, "join a voice channel first");
   }
 
+  /** Connect to voice, turning adapter failures into a clear 503 (B1/§11.1). */
+  private async connect(channelId: string): Promise<void> {
+    try {
+      await this.deps.voice.join(channelId);
+    } catch (err) {
+      throw new PlaybackError(503, `voice_connect_failed: ${(err as Error).message}`);
+    }
+  }
+
   join(req: { userId?: string; channelId?: string }): Promise<void> {
     return this.run(async () => {
-      const channelId = await this.resolveChannel(req);
-      await this.deps.voice.join(channelId);
+      await this.connect(await this.resolveChannel(req));
     });
   }
 
@@ -95,9 +103,9 @@ export class PlaybackEngine {
     return this.run(async () => {
       if (req.trackIds.length === 0) throw new PlaybackError(400, "no_tracks");
       if (!this.deps.voice.isConnected()) {
-        await this.deps.voice.join(await this.resolveChannel(req));
+        await this.connect(await this.resolveChannel(req));
       } else if (req.channelId && req.channelId !== this.deps.voice.currentChannelId()) {
-        await this.deps.voice.join(req.channelId); // move (one session, D3)
+        await this.connect(req.channelId); // move (one session, D3)
       }
       this.queue = [...req.trackIds];
       this.index = 0;

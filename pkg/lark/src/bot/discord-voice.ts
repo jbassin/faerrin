@@ -47,15 +47,37 @@ export class DiscordVoiceAdapter implements VoiceAdapter {
   }
 
   async join(channelId: string): Promise<void> {
-    const guild = await this.client.guilds.fetch(this.guildId);
-    this.connection = joinVoiceChannel({
-      channelId,
-      guildId: this.guildId,
-      adapterCreator: guild.voiceAdapterCreator,
-    });
-    this.connection.subscribe(this.player);
-    await entersState(this.connection, VoiceConnectionStatus.Ready, 20_000);
+    // Use the gateway-cached guild — its voiceAdapterCreator is wired to the
+    // live shard that receives VOICE_SERVER_UPDATE. A REST-fetched guild's
+    // adapter can leave the connection stuck in Signalling.
+    const guild = this.client.guilds.cache.get(this.guildId);
+    if (!guild) throw new Error(`guild ${this.guildId} not in gateway cache — cannot acquire voice adapter`);
+
+    console.log(`[lark] joining voice channel ${channelId}…`);
+    const conn = joinVoiceChannel({ channelId, guildId: this.guildId, adapterCreator: guild.voiceAdapterCreator });
+    if (conn !== this.connection) {
+      conn.on("stateChange", (oldState, newState) =>
+        console.log(`[lark] voice connection ${oldState.status} → ${newState.status}`),
+      );
+      conn.on("error", (err) => console.error("[lark] voice connection error:", err));
+    }
+    this.connection = conn;
+    conn.subscribe(this.player);
+    try {
+      await entersState(conn, VoiceConnectionStatus.Ready, 20_000);
+    } catch (err) {
+      console.error(
+        "[lark] voice connection did not reach Ready within 20s — likely the Bun @discordjs/voice limitation (D1) " +
+          "or missing Connect/Speak permission on the channel:",
+        err,
+      );
+      conn.destroy();
+      this.connection = null;
+      this.channelId = null;
+      throw new Error("voice_connect_timeout");
+    }
     this.channelId = channelId;
+    console.log(`[lark] voice connection READY in ${channelId}`);
   }
 
   leave(): void {
