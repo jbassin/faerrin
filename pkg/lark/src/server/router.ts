@@ -10,8 +10,10 @@ export interface ApiCtx {
   req: Request;
   url: URL;
   params: Record<string, string>;
-  /** Present for session (web) auth; for API-key auth the route checks separately. */
+  /** The resolved actor — same `uid` whether authed by web session or API key. */
   session: Session;
+  /** Which credential authenticated this request (key-management requires "session"). */
+  authMethod: "session" | "apikey";
   db: DB;
   config: AppConfig;
   /** Optional shared services injected by the server (playback engine, ingest, …). */

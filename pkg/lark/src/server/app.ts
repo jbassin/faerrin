@@ -13,7 +13,10 @@ import type { Server } from "bun";
 import type { AppConfig } from "../lib/appconfig";
 import type { DB } from "../db/index";
 import { buildAuthorizeUrl, exchangeCodeForUser } from "./oauth";
+import * as repo from "../db/repo";
+import { extractApiKey, hashKey } from "./apikeys";
 import { ingestRoutes } from "./routes/ingest";
+import { keyRoutes } from "./routes/keys";
 import { libraryRoutes } from "./routes/library";
 import { playbackRoutes } from "./routes/playback";
 import { type ApiCtx, type ApiRoute, type ApiServices, HttpError, json, matchRoute } from "./router";
@@ -30,7 +33,7 @@ const SESSION_COOKIE = "lark_session";
 const OAUTH_STATE_COOKIE = "lark_oauth_state";
 
 /** API routes that require a valid web session. Extended per phase. */
-const API_ROUTES: ApiRoute[] = [...libraryRoutes, ...ingestRoutes, ...playbackRoutes];
+const API_ROUTES: ApiRoute[] = [...libraryRoutes, ...ingestRoutes, ...playbackRoutes, ...keyRoutes];
 
 export interface AppDeps {
   fetchImpl?: (input: string, init?: RequestInit) => Promise<Response>;
@@ -58,6 +61,22 @@ export function createApp(config: AppConfig, db: DB, deps: AppDeps = {}): App {
     if (!session) return null;
     if (config.allowlist.size > 0 && !config.allowlist.has(session.uid)) return null;
     return session;
+  }
+
+  /** Resolve the actor from a web session OR a Stream Deck API key (B26/D4). */
+  function authenticate(req: Request): { session: Session; method: "session" | "apikey" } | null {
+    const session = getSession(req);
+    if (session) return { session, method: "session" };
+
+    const raw = extractApiKey(req.headers);
+    if (raw) {
+      const key = repo.getApiKeyByHash(db, hashKey(raw));
+      if (key && !key.revoked_at && (config.allowlist.size === 0 || config.allowlist.has(key.user_id))) {
+        repo.touchApiKey(db, key.id);
+        return { session: { uid: key.user_id, exp: Math.floor(now() / 1000) + 60 }, method: "apikey" };
+      }
+    }
+    return null;
   }
 
   function login(): Response {
@@ -97,11 +116,20 @@ export function createApp(config: AppConfig, db: DB, deps: AppDeps = {}): App {
   }
 
   async function dispatchApi(req: Request, url: URL): Promise<Response> {
-    const session = getSession(req);
-    if (!session) return json({ error: "unauthenticated" }, 401);
+    const auth = authenticate(req);
+    if (!auth) return json({ error: "unauthenticated" }, 401);
     const matched = matchRoute(API_ROUTES, req.method, url.pathname);
     if (!matched) return json({ error: "not_found" }, 404);
-    const ctx: ApiCtx = { req, url, params: matched.params, session, db, config, services };
+    const ctx: ApiCtx = {
+      req,
+      url,
+      params: matched.params,
+      session: auth.session,
+      authMethod: auth.method,
+      db,
+      config,
+      services,
+    };
     try {
       return await matched.route.handler(ctx);
     } catch (err) {

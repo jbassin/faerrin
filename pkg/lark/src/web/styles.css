@@ -239,3 +239,38 @@ body {
   cursor: pointer;
   margin-right: 0.4rem;
 }
+
+/* --- keys (Phase 5) --- */
+.keys {
+  margin-bottom: 1.25rem;
+}
+.keys__toggle {
+  margin-top: 0;
+}
+.keys__body {
+  margin-top: 0.75rem;
+}
+.keys__raw {
+  display: block;
+  padding: 0.5rem;
+  background: #0c0d11;
+  border-radius: 6px;
+  word-break: break-all;
+  margin: 0.4rem 0;
+}
+.keys__list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+}
+.keys__list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #20232f;
+}
+.keys__list li.is-revoked {
+  opacity: 0.5;
+}

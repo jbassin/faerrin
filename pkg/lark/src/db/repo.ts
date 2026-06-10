@@ -416,3 +416,49 @@ export function updateJobItem(
   params.push(id);
   db.run(`UPDATE download_job_items SET ${sets.join(", ")} WHERE id = ?`, params);
 }
+
+// --- API keys (Stream Deck, B26) ---
+
+export interface ApiKey {
+  id: number;
+  user_id: string;
+  name: string;
+  key_hash: string;
+  key_prefix: string;
+  created_at: string;
+  last_used_at: string | null;
+  revoked_at: string | null;
+}
+
+export function createApiKey(
+  db: Database,
+  input: { userId: string; name: string; keyHash: string; keyPrefix: string },
+): ApiKey {
+  const { lastInsertRowid } = db.run(
+    "INSERT INTO api_keys (user_id, name, key_hash, key_prefix) VALUES (?, ?, ?, ?)",
+    [input.userId, input.name, input.keyHash, input.keyPrefix],
+  );
+  return db.query<ApiKey, [number]>("SELECT * FROM api_keys WHERE id = ?").get(Number(lastInsertRowid))!;
+}
+
+export function listApiKeys(db: Database, userId: string): ApiKey[] {
+  return db.query<ApiKey, [string]>("SELECT * FROM api_keys WHERE user_id = ? ORDER BY id DESC").all(userId);
+}
+
+export function getApiKeyByHash(db: Database, hash: string): ApiKey | null {
+  return db.query<ApiKey, [string]>("SELECT * FROM api_keys WHERE key_hash = ?").get(hash) ?? null;
+}
+
+/** Revoke a key, but only if it belongs to `userId` (ownership check). */
+export function revokeApiKey(db: Database, id: number, userId: string): boolean {
+  return (
+    db.run("UPDATE api_keys SET revoked_at = datetime('now') WHERE id = ? AND user_id = ? AND revoked_at IS NULL", [
+      id,
+      userId,
+    ]).changes > 0
+  );
+}
+
+export function touchApiKey(db: Database, id: number): void {
+  db.run("UPDATE api_keys SET last_used_at = datetime('now') WHERE id = ?", [id]);
+}

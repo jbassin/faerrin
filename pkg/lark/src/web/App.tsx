@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ApiError, apiGet } from "./api";
 import { Import } from "./Import";
+import { Keys } from "./Keys";
 import { Library } from "./Library";
 import { Playback } from "./Playback";
 
@@ -55,6 +56,7 @@ export function App() {
           </div>
           <Playback />
           <Import onImported={() => setRefreshKey((k) => k + 1)} />
+          <Keys />
           <Library key={refreshKey} />
         </>
       )}
