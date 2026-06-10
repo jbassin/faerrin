@@ -49,12 +49,29 @@ export async function probeDurationFormat(path: string): Promise<{ durationMs?: 
   }
 }
 
-/** Integrated loudness via `ffmpeg ... -af ebur128`, parsed from stderr summary. */
+/**
+ * Integrated loudness via `ffmpeg ... -af ebur128`, parsed from the summary.
+ *
+ * `ebur128` streams a continuous measurement line for the WHOLE track, so on long
+ * files (multi-hour OST loops) buffering all of stderr balloons memory and OOMs
+ * at high ingest concurrency. We stream it and keep only a bounded tail — the
+ * final "Integrated loudness  I: -14.2 LUFS" summary lives at the very end.
+ */
 export async function measureLoudness(path: string): Promise<number | undefined> {
-  const { stderr } = await run(["ffmpeg", "-nostats", "-i", path, "-af", "ebur128", "-f", "null", "-"]);
-  // The summary block prints "    I:         -14.2 LUFS"
-  const match = stderr.match(/I:\s*(-?\d+(?:\.\d+)?)\s*LUFS/);
-  return match ? Number(match[1]) : undefined;
+  const proc = Bun.spawn(["ffmpeg", "-nostats", "-i", path, "-af", "ebur128", "-f", "null", "-"], {
+    stdout: "ignore",
+    stderr: "pipe",
+  });
+  const decoder = new TextDecoder();
+  let tail = "";
+  for await (const chunk of proc.stderr as unknown as AsyncIterable<Uint8Array>) {
+    tail = (tail + decoder.decode(chunk)).slice(-8192); // last 8 KB is plenty for the summary
+  }
+  if ((await proc.exited) !== 0) return undefined;
+  // Take the LAST "I: … LUFS" — the end-of-run integrated value, not a mid-stream sample.
+  const matches = [...tail.matchAll(/I:\s*(-?\d+(?:\.\d+)?)\s*LUFS/g)];
+  const last = matches.at(-1);
+  return last ? Number(last[1]) : undefined;
 }
 
 /** The real prober used on the host: duration + format + loudness. */

@@ -46,10 +46,12 @@ RestartSec=5
 # starve heart.iridi.cc. MORE generous than eerie because ffmpeg transcode +
 # Opus encode + yt-dlp downloads are CPU/memory heavier than a pure SSE relay,
 # but still capped so a runaway can't take the box down.
-# Generous on this 62 GiB host: a playlist import (parallel yt-dlp + ffmpeg
-# loudness on long OST files) can spike multiple GB. 16G leaves ~46G for the
-# rest of the box, so lark can't threaten heart.iridi.cc but won't OOM on import.
-MemoryMax=16G
+# Generous on this 62 GiB host: a playlist import (LARK_INGEST_CONCURRENCY
+# parallel yt-dlp + ffmpeg R128 loudness on long "Extended" OST tracks) spikes
+# several GB per item. 32G leaves ~30G for the rest of the box. If you raise
+# concurrency further and still OOM, set LARK_MEASURE_LOUDNESS=0 (drops an ffmpeg
+# per track) rather than uncapping memory.
+MemoryMax=32G
 CPUQuota=400%
 OOMScoreAdjust=150
 
