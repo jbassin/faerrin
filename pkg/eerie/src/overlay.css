@@ -1,15 +1,120 @@
-/* Transparent canvas for OBS. The gothic skin (fonts + tokens) is layered in
-   Phase C once there's actual ticker UI to style. */
+/* Transparent canvas for OBS. Colors/fonts come from @faerrin/gothic (imported in
+   main.tsx before this file). */
 html,
 body,
 #root {
   margin: 0;
   height: 100%;
   background: transparent;
+  overflow: hidden;
 }
 
 .eerie-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
+  color: var(--ink);
+}
+
+/* Bottom-left ticker. The list is newest-first; column-reverse seats the newest
+   row at the bottom (chat-style), older rolls stacking upward. */
+.eerie-ticker {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.55rem;
+}
+
+.eerie-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  min-width: 16rem;
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-body);
+  background: color-mix(in srgb, var(--bg-panel) 84%, transparent);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 2px 14px rgb(0 0 0 / 50%);
+  backdrop-filter: blur(2px);
+}
+
+.eerie-row__user {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.eerie-row__expr {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--ink-dim);
+}
+
+.eerie-row__dice {
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  color: var(--ink-faint);
+}
+
+.eerie-row__total {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.2em;
+  color: var(--accent);
+}
+
+.eerie-row__badge {
+  font-family: var(--font-display);
+  font-size: 0.66em;
+  letter-spacing: 0.12em;
+  padding: 0.12rem 0.42rem;
+  border-radius: 2px;
+}
+
+/* Crit — phosphor-teal glow. */
+.eerie-row--crit {
+  border-left-color: var(--accent);
+}
+.eerie-row--crit .eerie-row__total {
+  text-shadow: 0 0 10px var(--accent);
+}
+.eerie-row--crit .eerie-row__badge {
+  background: var(--accent);
+  color: var(--bg-void);
+}
+
+/* Fumble — seal-wax red. */
+.eerie-row--fumble {
+  border-left-color: var(--wax);
+}
+.eerie-row--fumble .eerie-row__total {
+  color: var(--accent-amber);
+}
+.eerie-row--fumble .eerie-row__badge {
+  background: var(--wax);
+  color: var(--ink);
+}
+
+.eerie-row--fresh {
+  animation: eerie-enter var(--duration-base, 220ms) var(--ease-out, ease-out);
+}
+
+@keyframes eerie-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
