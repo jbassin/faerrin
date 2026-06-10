@@ -16,11 +16,20 @@ auto-leave, Discord voice behind an injected `VoiceAdapter`), and the Stream Dec
 key auth, web-UI key mgmt, `docs/stream-deck.md`). Deploy: `deploy/lark.service` + `deploy/DEPLOY.md`;
 caddy route added to the host's gitignored `sites.caddyfile` (port 8788).
 
-**The one remaining gate:** the LIVE voice test — `cd pkg/lark && bun run spike` with a real
-`DISCORD_TOKEN` + `LARK_GUILD_ID` + `LARK_SPIKE_CHANNEL_ID` and a human in the channel. Everything
-else is built + unit-tested; voice playback was never live-validated (no token available in-session).
-Key Phase-0 finding: `libsodium-wrappers` ESM is broken under Bun → use **`@noble/ciphers`** (pure-JS,
-works) for @discordjs/voice encryption; `opusscript` for Opus. Both keep the CI bun lane native-free.
+**D1 RESOLVED (the hard way):** the live spike proved **Bun cannot run `@discordjs/voice`** —
+`entersState(Ready)` aborts at "joining voice" (`AbortError`/`ABORT_ERR`; Bun `node:dgram`/UDP gaps).
+So voice now runs in a **Node subprocess** (`src/bot/voice-daemon.mjs`, plain JS) driven by the
+Bun-side `SubprocessBot` (`src/bot/subprocess-voice.ts`) over newline-JSON on stdio; server/DB/engine
+stay on Bun, engine unchanged (still `FakeVoice` in tests). Needs a `node` binary — set
+**`LARK_NODE_BIN`** if not on the service PATH (nvm). The old in-process `DiscordVoiceAdapter` +
+`bun run spike` are gone/legacy. Also from Phase 0: `libsodium-wrappers` ESM is broken under Bun →
+use **`@noble/ciphers`** (pure-JS) for voice encryption, `opusscript` for Opus (CI bun lane native-free).
+
+Other live-debugging fixes that landed: follow-the-operator resolution falls back to the Discord REST
+voice-state endpoint when the gateway cache misses (`GET /guilds/{g}/voice-states/{u}`); the Import UI
+auto-reattaches to in-flight ingest jobs on load; `GET /api/v1/voice/debug` reports uid/guild/resolved
+channel for diagnosis. **Still not live-validated end-to-end** (no token in-session), but the Node
+voice path is the architecture.
 
 It's a **single-guild Discord music bot** (audio-only — Discord has no bot video API) that joins a
 voice channel and streams video-game OSTs from a curated library: collections (by game/IP), a flexible

@@ -6,10 +6,20 @@ tracks from a curated library, operated via a web UI (`lark.iridi.cc`) and a Str
 **Plan of record:** [`thoughts/lark/plans/0001-discord-music-bot.md`](../../thoughts/lark/plans/0001-discord-music-bot.md)
 (decisions D1–D8, behaviors B1–B26, phasing). Read it before changing scope.
 
-**Status:** Phases 0–6 built and green (skeleton/auth, library + bulk rename/tag, YouTube ingest with
-SSE progress, playback engine, Stream Deck API, deploy). The **one remaining gate** is the live voice
-test (`bun run spike` with a real token + a human in the channel) — see "Voice spike status" below.
-Deck endpoint reference: [`docs/stream-deck.md`](./docs/stream-deck.md). Deploy: [`deploy/DEPLOY.md`](./deploy/DEPLOY.md).
+**Status:** Phases 0–6 built and green. **D1 resolved:** Bun **cannot** run `@discordjs/voice` (the
+spike aborts at "joining voice" — `node:dgram`/UDP gaps), so voice runs in a **Node subprocess** (the
+voice daemon) while the server/DB/engine stay on Bun. Deck endpoint reference:
+[`docs/stream-deck.md`](./docs/stream-deck.md). Deploy: [`deploy/DEPLOY.md`](./deploy/DEPLOY.md).
+
+## Voice runs in a Node subprocess (the D1 fallback)
+
+- `src/bot/voice-daemon.mjs` — plain-JS **Node** process: the discord.js gateway + `@discordjs/voice`.
+  Speaks a newline-JSON protocol on stdio (commands in, responses/events out; logs on stderr).
+- `src/bot/subprocess-voice.ts` — Bun-side `SubprocessBot` implementing the engine's `VoiceAdapter`
+  + resolver, proxying to the daemon. The engine + its tests are unchanged (still use a `FakeVoice`).
+- Needs a **`node` binary** at runtime. If `node` isn't on the service PATH (e.g. nvm), set
+  **`LARK_NODE_BIN`** to its absolute path (`which node`).
+- The `.mjs` daemon is excluded from `tsc` (`tsconfig.json` exclude) — it's plain JS, run by Node.
 
 ## Architecture (all TypeScript on Bun — D1)
 
@@ -34,18 +44,14 @@ The Dagger `oven/bun` container has **no ffmpeg/yt-dlp** and may not build nativ
 - `tsc --noEmit` and `bun test` MUST pass with **no** ffmpeg/yt-dlp/Discord present. Anything that
   shells out to those binaries or hits Discord goes behind an integration flag, never in unit tests.
 
-## Voice spike status (D1 gate)
+## Voice spike history (D1)
 
-Phase 0 ships a runnable spike but the **live audio test is the one manual hand-off** (token + a
-human in the channel). To run it:
-
-```sh
-cd pkg/lark && cp .env.example .env   # fill DISCORD_TOKEN, LARK_GUILD_ID, LARK_SPIKE_CHANNEL_ID
-bun run spike                         # plays a generated 440 Hz tone, then leaves
-```
-
-Hear clean audio → D1 confirmed (Bun is the runtime). If Bun can't do voice, fall back to running
-**only** the bot under Node (server/UI stay on Bun) — plan §11.1.
+`src/spike/voice-spike.ts` (`bun run spike`) was the Phase 0 PoC. Running it live **proved Bun
+cannot do voice**: it logs in, then `entersState(Ready)` aborts at "joining voice" (`AbortError`).
+That triggered the §11.1 fallback — voice now runs under Node (above). The spike remains as a
+Bun-voice regression marker; the real path is the Node daemon. The CI bun lane stays native-free
+regardless (`opusscript` + `@noble/ciphers` are pure-JS; `libsodium-wrappers` was rejected — broken
+ESM under Bun).
 
 ## Conventions
 

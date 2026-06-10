@@ -9,5 +9,6 @@
     "verbatimModuleSyntax": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["src", "test", "server.ts", "vite.config.ts"]
+  "include": ["src", "test", "server.ts", "vite.config.ts"],
+  "exclude": ["src/bot/voice-daemon.mjs"]
 }

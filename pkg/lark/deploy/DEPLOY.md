@@ -18,6 +18,9 @@ One Bun process (`server.ts`) doing several jobs on one port (default `8788`):
 ## 0. Prerequisites (host)
 
 - Bun (already at `/home/jbassin/.bun/bin/bun`).
+- **`node`** (voice runs in a Node subprocess — Bun can't do @discordjs/voice, D1). If `node` isn't on
+  the systemd service PATH (it's under nvm on this host), set **`LARK_NODE_BIN`** in `.env` to its
+  absolute path: `which node` → e.g. `/home/jbassin/.nvm/versions/node/v24.3.0/bin/node`.
 - **`yt-dlp`** and **`ffmpeg`** on `PATH` (ingest + R128 loudness + playback transcode).
   - `yt-dlp` at `/home/jbassin/.local/bin/yt-dlp`, `ffmpeg` at `/usr/bin/ffmpeg` on this host.
   - Keep `yt-dlp` updated (`yt-dlp -U`) — YouTube breaks it periodically.
@@ -81,19 +84,19 @@ journalctl --user -u lark.service -f
 The unit caps memory/CPU (more generous than eerie because of ffmpeg/yt-dlp) so a runaway can't
 threaten `heart.iridi.cc`.
 
-## 5. Phase 0 voice gate (the one manual validation)
+## 5. Voice runs under Node (D1)
 
-Before trusting playback at the table, confirm Bun voice works end-to-end with a real token and a
-human in the channel:
+Voice playback is handled by a **Node subprocess** (`src/bot/voice-daemon.mjs`) that the Bun server
+spawns — Bun's `@discordjs/voice` can't establish a voice connection. On startup the journal should
+show, from the daemon:
 
-```sh
-cd pkg/lark
-# .env already has DISCORD_TOKEN + LARK_GUILD_ID; add LARK_SPIKE_CHANNEL_ID=<a voice channel id>
-bun run spike            # bot joins, plays a 440 Hz tone, leaves
+```
+[lark-voice] ready as lark#XXXX in "<guild>" — N voice states cached
 ```
 
-Hear clean audio → D1 confirmed. If Bun can't do voice, fall back to running **only** the bot under
-Node (server/UI stay on Bun) — plan §11.1.
+If playback says "playback bot offline" or 503s, check the journal: a missing `node` binary (set
+`LARK_NODE_BIN`), a bad token, or a wrong `LARK_GUILD_ID` are the usual causes. A `voice connection
+… → Ready` line on play means voice is working.
 
 ## 6. Operate
 

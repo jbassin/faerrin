@@ -28,7 +28,7 @@ if (token && config.guildId) {
   try {
     const bot = await startBot({ token, guildId: config.guildId, db, targetLufs: config.targetLufs });
     playback = bot.engine;
-    console.log(`[lark] discord bot online as ${bot.client.user?.tag}`);
+    console.log("[lark] discord voice daemon online (Node subprocess)");
   } catch (err) {
     console.error("[lark] discord bot failed to start (playback disabled):", err);
   }
