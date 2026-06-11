@@ -327,41 +327,41 @@ export function Library() {
           </label>
         </div>
 
-        {selected.size > 0 && (
-          <div className="lib__selbar">
-            <span className="lib__selcount">{selected.size} selected</span>
-            <Menu
-              label="Rename"
-              disabled={busy}
-              items={[
-                { label: "Strip prefix…", onSelect: () => void stripPrefix() },
-                { label: "Strip suffix…", onSelect: () => void stripSuffix() },
-                { label: "Strip leading number", onSelect: () => void stripLeadingNumber() },
-              ]}
-            />
-            <Menu label="Tag" disabled={busy} items={[{ label: "Add tags…", onSelect: () => void bulkTag() }]} />
-            <select
-              className="lib__moveto"
-              disabled={busy}
-              value=""
-              onChange={(e) => void moveSelected(e.target.value)}
-            >
-              <option value="">Move to…</option>
-              <option value="none">(no collection)</option>
-              {collections.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name}
-                </option>
-              ))}
-            </select>
-            <button className="btn btn--ghost btn--danger" disabled={busy} onClick={() => void deleteSelected()}>
-              Delete
-            </button>
-            <button className="btn" disabled={busy} onClick={() => void play(selectedIds)}>
-              ▶ Play
-            </button>
-          </div>
-        )}
+        <div className="lib__selbar">
+          <span className="lib__selcount">{selected.size} selected</span>
+          <Menu
+            label="Rename"
+            disabled={!selected.size || busy}
+            items={[
+              { label: "Strip prefix…", onSelect: () => void stripPrefix() },
+              { label: "Strip suffix…", onSelect: () => void stripSuffix() },
+              { label: "Strip leading number", onSelect: () => void stripLeadingNumber() },
+            ]}
+          />
+          <Menu
+            label="Tag"
+            disabled={!selected.size || busy}
+            items={[{ label: "Add tags…", onSelect: () => void bulkTag() }]}
+          />
+          <Menu
+            label="Move to"
+            disabled={!selected.size || busy}
+            items={[
+              { label: "(no collection)", onSelect: () => void moveSelected("none") },
+              ...collections.map((c) => ({ label: c.name, onSelect: () => void moveSelected(String(c.id)) })),
+            ]}
+          />
+          <button
+            className="btn btn--ghost btn--danger"
+            disabled={!selected.size || busy}
+            onClick={() => void deleteSelected()}
+          >
+            Delete
+          </button>
+          <button className="btn" disabled={!selected.size || busy} onClick={() => void play(selectedIds)}>
+            ▶ Play
+          </button>
+        </div>
 
         <table className="lib__tracks">
           <thead>
@@ -419,16 +419,18 @@ export function Library() {
                         {t.title}
                       </button>
                     </td>
-                    <td className="lib__tagcell">
-                      {t.tags.map((tag) => (
-                        <span
-                          key={tag.id}
-                          className="lib__chip"
-                          style={tag.color ? { borderColor: tag.color, color: tag.color } : undefined}
-                        >
-                          {tag.name}
-                        </span>
-                      ))}
+                    <td>
+                      <div className="lib__tagcell">
+                        {t.tags.map((tag) => (
+                          <span
+                            key={tag.id}
+                            className="lib__chip"
+                            style={tag.color ? { borderColor: tag.color, color: tag.color } : undefined}
+                          >
+                            {tag.name}
+                          </span>
+                        ))}
+                      </div>
                     </td>
                   </tr>
                 ))}

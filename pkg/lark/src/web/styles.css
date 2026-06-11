@@ -331,18 +331,6 @@ body {
 .lib__collacts button:hover {
   color: var(--ink);
 }
-.lib__moveto {
-  align-self: center;
-  background: var(--panel);
-  border: 1px solid #2c3040;
-  border-radius: 8px;
-  color: var(--ink);
-  padding: 0.35rem 0.4rem;
-  font-size: 0.85rem;
-}
-.lib__moveto:disabled {
-  opacity: 0.5;
-}
 
 /* --- selection action bar (Library) --- */
 .lib__selbar {
@@ -375,6 +363,8 @@ body {
   left: 0;
   z-index: 10;
   min-width: 12rem;
+  max-height: 18rem;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 0.25rem;
