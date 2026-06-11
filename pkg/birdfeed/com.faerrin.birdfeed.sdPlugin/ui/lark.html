@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>birdfeed settings</title>
+		<style>
+			body {
+				font-family: -apple-system, "Segoe UI", sans-serif;
+				font-size: 13px;
+				color: #d8d8d8;
+				background: #2d2d2d;
+				margin: 0;
+				padding: 12px;
+			}
+			.row {
+				display: flex;
+				align-items: center;
+				margin-bottom: 10px;
+			}
+			label {
+				width: 96px;
+				text-align: right;
+				margin-right: 10px;
+				color: #969696;
+			}
+			input {
+				flex: 1;
+				background: #3d3d3d;
+				border: 1px solid #1d1d1d;
+				color: #fff;
+				border-radius: 4px;
+				padding: 6px 8px;
+				font-size: 13px;
+			}
+			.hint {
+				color: #7a7a7a;
+				font-size: 11px;
+				margin: 2px 0 12px 106px;
+			}
+			.status {
+				margin: 8px 0 0 106px;
+				font-size: 11px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="row">
+			<label for="origin">lark URL</label>
+			<input id="origin" type="text" placeholder="https://lark.iridi.cc" />
+		</div>
+		<div class="row">
+			<label for="key">API key</label>
+			<input id="key" type="password" placeholder="lark_…" />
+		</div>
+		<div class="hint">Mint a key in lark's web UI (Settings → API keys). Stored once, used for every device.</div>
+		<div class="status" id="status"></div>
+
+		<script>
+			let ws;
+			let piUUID;
+			let settings = {};
+
+			function send(event, payload) {
+				if (!ws || ws.readyState !== 1) return;
+				ws.send(JSON.stringify({ event, context: piUUID, payload }));
+			}
+
+			function save() {
+				settings.larkOrigin = document.getElementById("origin").value.trim();
+				settings.larkKey = document.getElementById("key").value.trim();
+				send("setGlobalSettings", settings);
+				const ok = settings.larkOrigin && settings.larkKey;
+				document.getElementById("status").textContent = ok ? "Saved." : "Enter both a URL and a key.";
+				document.getElementById("status").style.color = ok ? "#6fa86f" : "#c8a24a";
+			}
+
+			function fill() {
+				document.getElementById("origin").value = settings.larkOrigin || "";
+				document.getElementById("key").value = settings.larkKey || "";
+			}
+
+			document.getElementById("origin").addEventListener("change", save);
+			document.getElementById("key").addEventListener("change", save);
+
+			// Stream Deck calls this global on load.
+			function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent) {
+				piUUID = inUUID;
+				ws = new WebSocket("ws://127.0.0.1:" + inPort);
+				ws.onopen = function () {
+					ws.send(JSON.stringify({ event: inRegisterEvent, uuid: inUUID }));
+					send("getGlobalSettings");
+				};
+				ws.onmessage = function (evt) {
+					const data = JSON.parse(evt.data);
+					if (data.event === "didReceiveGlobalSettings") {
+						settings = (data.payload && data.payload.settings) || {};
+						fill();
+					}
+				};
+			}
+			window.connectElgatoStreamDeckSocket = connectElgatoStreamDeckSocket;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,4 @@
+com.faerrin.birdfeed.sdPlugin/bin/
+com.faerrin.birdfeed.sdPlugin/logs/
+*.streamDeckPlugin
+node_modules/

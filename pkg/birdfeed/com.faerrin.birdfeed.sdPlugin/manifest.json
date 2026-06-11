@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"Name": "birdfeed",
+	"Version": "0.1.0.0",
+	"Author": "Faerrin",
+	"UUID": "com.faerrin.birdfeed",
+	"Category": "birdfeed",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"Description": "Browse and play your lark music library from the Stream Deck: lark → collection → tag, with the currently-playing track highlighted.",
+	"CodePath": "bin/plugin.js",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.6"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "13"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"Actions": [
+		{
+			"UUID": "com.faerrin.birdfeed.slot",
+			"Name": "Library Slot",
+			"Icon": "imgs/actions/slot/icon",
+			"Tooltip": "A birdfeed navigation/track key. Place these across the deck; birdfeed paints each one based on where you are (collections → tags → tracks).",
+			"PropertyInspectorPath": "ui/lark.html",
+			"Controllers": ["Keypad"],
+			"VisibleInActionsList": true,
+			"States": [
+				{
+					"Image": "imgs/actions/slot/key",
+					"TitleAlignment": "middle",
+					"ShowTitle": false
+				}
+			]
+		}
+	]
+}
