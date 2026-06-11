@@ -8,7 +8,8 @@ Plan of record: `thoughts/lark/plans/0001-discord-music-bot.md`.
 
 ## What lark is
 
-One Bun process (`server.ts`) doing several jobs on one port (default `8788`):
+One Bun process (`server.ts`) doing several jobs on one port (`PORT`, default `8788`; the production
+host runs `10175`):
 
 - `GET /*` — serves the built SPA (`dist/`).
 - `/api/v1/*` — JSON API + Stream Deck control (session cookie **or** API key).
@@ -17,10 +18,10 @@ One Bun process (`server.ts`) doing several jobs on one port (default `8788`):
 
 ## 0. Prerequisites (host)
 
-- Bun (already at `/home/jbassin/.bun/bin/bun`).
-- **`node`** (voice runs in a Node subprocess — Bun can't do @discordjs/voice, D1). If `node` isn't on
-  the systemd service PATH (it's under nvm on this host), set **`LARK_NODE_BIN`** in `.env` to its
-  absolute path: `which node` → e.g. `/home/jbassin/.nvm/versions/node/v24.3.0/bin/node`.
+- Bun (already at `/home/jbassin/.bun/bin/bun`). Voice runs **in-process** under Bun via
+  `@discordjs/voice` (`src/bot/discord-voice.ts`) — **no `node` subprocess, no `LARK_NODE_BIN`.**
+  Requires `@discordjs/voice` ≥ 0.19 + the optional native `@snazzah/davey` (DAVE/E2EE); see the
+  package CLAUDE.md voice gotchas.
 - **`yt-dlp`** and **`ffmpeg`** on `PATH` (ingest + R128 loudness + playback transcode).
   - `yt-dlp` at `/home/jbassin/.local/bin/yt-dlp`, `ffmpeg` at `/usr/bin/ffmpeg` on this host.
   - Keep `yt-dlp` updated (`yt-dlp -U`) — YouTube breaks it periodically.
@@ -47,7 +48,7 @@ bun run --filter @faerrin/lark build      # → pkg/lark/dist/
 cp pkg/lark/.env.example pkg/lark/.env
 chmod 600 pkg/lark/.env
 # then edit:
-#   PORT=8788
+#   PORT=10175                 (must match the Caddy reverse_proxy port below)
 #   DISCORD_TOKEN=…            (lark's own bot)
 #   DISCORD_CLIENT_ID=…  DISCORD_CLIENT_SECRET=…
 #   SESSION_SECRET=$(openssl rand -hex 32)
@@ -60,11 +61,12 @@ chmod 600 pkg/lark/.env
 
 ## 3. Caddy route (host's gitignored `sites.caddyfile`)
 
-Add (the file embeds a Cloudflare token, so it lives only on the host, not in git):
+Add (the file embeds a Cloudflare token, so it lives only on the host, not in git). The proxy port
+must match `PORT` in `.env` — the production host uses `10175`, not the `8788` default:
 
 ```caddyfile
 lark.iridi.cc {
-	reverse_proxy localhost:8788
+	reverse_proxy localhost:10175
 }
 ```
 
@@ -84,19 +86,21 @@ journalctl --user -u lark.service -f
 The unit caps memory/CPU (more generous than eerie because of ffmpeg/yt-dlp) so a runaway can't
 threaten `heart.iridi.cc`.
 
-## 5. Voice runs under Node (D1)
+## 5. Voice runs in-process under Bun (D1)
 
-Voice playback is handled by a **Node subprocess** (`src/bot/voice-daemon.mjs`) that the Bun server
-spawns — Bun's `@discordjs/voice` can't establish a voice connection. On startup the journal should
-show, from the daemon:
+Voice playback runs **in the Bun server process** via `@discordjs/voice` (`src/bot/discord-voice.ts`)
+— there is no Node subprocess. On startup the journal should show:
 
 ```
-[lark-voice] ready as lark#XXXX in "<guild>" — N voice states cached
+[lark] bot ready as lark#XXXX in "<guild>"
+[lark] discord bot online (in-process voice)
+[lark] listening on http://localhost:<PORT>
 ```
 
-If playback says "playback bot offline" or 503s, check the journal: a missing `node` binary (set
-`LARK_NODE_BIN`), a bad token, or a wrong `LARK_GUILD_ID` are the usual causes. A `voice connection
-… → Ready` line on play means voice is working.
+If playback says "playback bot offline" or 503s, check the journal: a bad/missing `DISCORD_TOKEN` or
+a wrong `LARK_GUILD_ID` are the usual causes. If the voice WS closes with code **4017**, the DAVE/E2EE
+native module is missing — ensure `@discordjs/voice` ≥ 0.19 + `@snazzah/davey` are installed (see the
+package CLAUDE.md voice gotchas). A `voice connection … → Ready` line on play means voice is working.
 
 ## 6. Operate
 
