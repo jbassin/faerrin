@@ -12,6 +12,7 @@ describe("svg rendering", () => {
 			{ kind: "pageNext" },
 			{ kind: "pageInfo", page: 1, total: 3 },
 			{ kind: "playPause" },
+			{ kind: "stop" },
 			{ kind: "collection", id: 1, name: "Bloodborne" },
 			{ kind: "navTag", key: "battle", label: "Battle", color: "#c8504a", active: true, resolved: true },
 			{ kind: "track", id: 3, title: "Cleric Beast", color: "#4aa6a0" },

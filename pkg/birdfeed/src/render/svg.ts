@@ -101,6 +101,12 @@ export function pageInfoSvg(page: number, total: number): string {
 	);
 }
 
+export function stopSvg(): string {
+	return frame(
+		`<rect x="48" y="40" width="48" height="48" rx="6" fill="#c8504a"/>` + textBlock(["Stop"], "#9aa0aa", 124, 0, 20),
+	);
+}
+
 export function playPauseSvg(playing: boolean): string {
 	const glyph = playing
 		? `<rect x="50" y="40" width="14" height="48" rx="3" fill="${FG}"/><rect x="80" y="40" width="14" height="48" rx="3" fill="${FG}"/>`
@@ -181,6 +187,8 @@ export function renderRole(role: Role, opts: RenderOpts = {}): string {
 			return dataUri(pageInfoSvg(role.page, role.total));
 		case "playPause":
 			return dataUri(playPauseSvg(!!opts.playing));
+		case "stop":
+			return dataUri(stopSvg());
 		case "collection":
 			return dataUri(collectionSvg(role.name));
 		case "navTag":

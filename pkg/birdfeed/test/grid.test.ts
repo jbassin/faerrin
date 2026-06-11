@@ -46,11 +46,12 @@ const NO_DATA: GridData = tagData([], null);
 
 describe("layout — root", () => {
 	const data: GridData = { ...NO_DATA, collections: [mkCollection(1, "A"), mkCollection(2, "B")] };
-	test("collections fill from key 0", () => {
+	test("(0,0) reserved; collections start at key 1", () => {
 		const grid = layout(rootNav(), XL, data);
-		expect(roleAt(grid, { column: 0, row: 0 }, XL)).toEqual({ kind: "collection", id: 1, name: "A" });
-		expect(roleAt(grid, { column: 1, row: 0 }, XL)).toEqual({ kind: "collection", id: 2, name: "B" });
-		expect(roleAt(grid, { column: 2, row: 0 }, XL)).toEqual({ kind: "empty" });
+		expect(roleAt(grid, { column: 0, row: 0 }, XL)).toEqual({ kind: "empty" }); // reserved in every view
+		expect(roleAt(grid, { column: 1, row: 0 }, XL)).toEqual({ kind: "collection", id: 1, name: "A" });
+		expect(roleAt(grid, { column: 2, row: 0 }, XL)).toEqual({ kind: "collection", id: 2, name: "B" });
+		expect(roleAt(grid, { column: 3, row: 0 }, XL)).toEqual({ kind: "empty" });
 	});
 });
 
@@ -77,12 +78,12 @@ describe("layout — tag page (XL 8×4)", () => {
 		expect(roleAt(grid, { column: 6, row: 3 }, XL)).toMatchObject({ kind: "navTag", key: "dungeon" });
 	});
 
-	test("page-control column = info, next?, prev?, empty", () => {
+	test("page-control column = info, next?, prev?, stop", () => {
 		expect(roleAt(grid, { column: 5, row: 0 }, XL)).toEqual({ kind: "pageInfo", page: 1, total: 1 });
 		// single page → no next/prev
 		expect(roleAt(grid, { column: 5, row: 1 }, XL)).toEqual({ kind: "empty" });
 		expect(roleAt(grid, { column: 5, row: 2 }, XL)).toEqual({ kind: "empty" });
-		expect(roleAt(grid, { column: 5, row: 3 }, XL)).toEqual({ kind: "empty" });
+		expect(roleAt(grid, { column: 5, row: 3 }, XL)).toEqual({ kind: "stop" });
 	});
 });
 

@@ -18,6 +18,7 @@ import { NAMED_TAG_KEYS, type TagKey } from "./tags";
 const POLL_MS = 2500;
 const TRANSIENT_MS = 1800;
 const DEFAULT_SHAPE: DeviceShape = { columns: 8, rows: 4 }; // XL fallback
+const LARK_ORIGIN = "https://lark.iridi.cc"; // fixed; only the API key is configurable
 
 interface SlotRef {
 	action: KeyAction;
@@ -73,7 +74,7 @@ export class BirdfeedController {
 
 	private applySettings(settings: BirdfeedGlobalSettings): void {
 		this.generation++;
-		this.client = isConfigured(settings) ? new LarkClient({ origin: settings.larkOrigin, key: settings.larkKey }) : null;
+		this.client = isConfigured(settings) ? new LarkClient({ origin: LARK_ORIGIN, key: settings.larkKey }) : null;
 		this.collectionsLoaded = false;
 		this.collections = [];
 		this.tagsLoaded = false;
@@ -156,6 +157,8 @@ export class BirdfeedController {
 				return this.renderDevice(ref.deviceId);
 			case "playPause":
 				return this.togglePlayPause(ref);
+			case "stop":
+				return this.stopPlayback(ref);
 			case "track":
 				return this.toggleTrack(ref, role.id);
 			case "pageInfo":
@@ -170,6 +173,16 @@ export class BirdfeedController {
 			if (this.now?.status === "playing") this.now = await this.client.pause();
 			else if (this.now?.status === "paused") this.now = await this.client.resume();
 			else return; // idle: nothing to toggle
+			await this.renderDevice(ref.deviceId);
+		} catch (err) {
+			await this.showTransient(ref.action.id, messageSvg(playbackErrorMessage(err), "error"));
+		}
+	}
+
+	private async stopPlayback(ref: SlotRef): Promise<void> {
+		if (!this.client) return;
+		try {
+			this.now = await this.client.stop();
 			await this.renderDevice(ref.deviceId);
 		} catch (err) {
 			await this.showTransient(ref.action.id, messageSvg(playbackErrorMessage(err), "error"));
@@ -308,7 +321,7 @@ export class BirdfeedController {
 
 		let image: string;
 		if (!this.client) {
-			image = messageSvg("Set lark URL + key in settings");
+			image = messageSvg("Set lark API key in settings");
 		} else {
 			const role = roleAt(layout(ds.nav, ds.shape, this.gridData(ds)), { column: ref.column, row: ref.row }, ds.shape);
 			image = renderRole(role, this.renderOptsFor(role));

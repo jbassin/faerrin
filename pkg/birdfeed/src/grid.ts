@@ -25,6 +25,7 @@ export type Role =
 	| { kind: "pageNext" }
 	| { kind: "pageInfo"; page: number; total: number } // 1-based page / total; info only, no action
 	| { kind: "playPause" }
+	| { kind: "stop" }
 	| { kind: "collection"; id: number; name: string }
 	| { kind: "navTag"; key: TagKey; label: string; color: string | null; active: boolean; resolved: boolean }
 	| { kind: "track"; id: number; title: string; color: string | null };
@@ -119,7 +120,8 @@ export function layout(nav: NavState, device: DeviceShape, data: GridData): Role
 	const cells: Role[] = new Array(C * R).fill(EMPTY);
 
 	if (nav.level === "root") {
-		fillRegion(cells, range(0, C * R), data.collections.map(collectionRole), nav.page);
+		// (0,0) is reserved/blank in every view; collections start at key 1.
+		fillRegion(cells, range(1, C * R), data.collections.map(collectionRole), nav.page);
 		return cells;
 	}
 
@@ -164,11 +166,11 @@ export function layout(nav: NavState, device: DeviceShape, data: GridData): Role
 		cells[cellIdx[i]] = { kind: "track", id: t.id, title: t.title, color: data.activeColor };
 	});
 
-	// Page-control column: info, next, prev, (empty).
+	// Page-control column: info, next, prev, stop.
 	place(colPage, 0, { kind: "pageInfo", page: page + 1, total: pages });
 	place(colPage, 1, page < pages - 1 ? { kind: "pageNext" } : EMPTY);
 	place(colPage, 2, page > 0 ? { kind: "pagePrev" } : EMPTY);
-	place(colPage, 3, EMPTY);
+	place(colPage, 3, { kind: "stop" });
 
 	return cells;
 }

@@ -45,14 +45,10 @@
 	</head>
 	<body>
 		<div class="row">
-			<label for="origin">lark URL</label>
-			<input id="origin" type="text" placeholder="https://lark.iridi.cc" />
-		</div>
-		<div class="row">
 			<label for="key">API key</label>
 			<input id="key" type="password" placeholder="lark_…" />
 		</div>
-		<div class="hint">Mint a key in lark's web UI (Settings → API keys). Stored once, used for every device.</div>
+		<div class="hint">Mint a key in lark's web UI (Settings → API keys). Connects to lark.iridi.cc.</div>
 		<div class="status" id="status"></div>
 
 		<script>
@@ -66,20 +62,17 @@
 			}
 
 			function save() {
-				settings.larkOrigin = document.getElementById("origin").value.trim();
 				settings.larkKey = document.getElementById("key").value.trim();
 				send("setGlobalSettings", settings);
-				const ok = settings.larkOrigin && settings.larkKey;
-				document.getElementById("status").textContent = ok ? "Saved." : "Enter both a URL and a key.";
+				const ok = !!settings.larkKey;
+				document.getElementById("status").textContent = ok ? "Saved." : "Enter your API key.";
 				document.getElementById("status").style.color = ok ? "#6fa86f" : "#c8a24a";
 			}
 
 			function fill() {
-				document.getElementById("origin").value = settings.larkOrigin || "";
 				document.getElementById("key").value = settings.larkKey || "";
 			}
 
-			document.getElementById("origin").addEventListener("change", save);
 			document.getElementById("key").addEventListener("change", save);
 
 			// Stream Deck calls this global on load.

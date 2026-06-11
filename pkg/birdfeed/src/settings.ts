@@ -1,8 +1,6 @@
 /** Plugin-wide settings, set via the Property Inspector and stored in Stream Deck global settings. */
 export interface BirdfeedGlobalSettings {
-	/** lark origin, e.g. "https://lark.iridi.cc". */
-	larkOrigin?: string;
-	/** A `lark_…` API key minted in lark's web UI. */
+	/** A `lark_…` API key minted in lark's web UI. The lark origin is fixed (see controller). */
 	larkKey?: string;
 }
 
@@ -10,5 +8,5 @@ export interface BirdfeedGlobalSettings {
 export type SlotSettings = Record<string, never>;
 
 export function isConfigured(s: BirdfeedGlobalSettings): s is Required<BirdfeedGlobalSettings> {
-	return !!s.larkOrigin && !!s.larkKey;
+	return !!s.larkKey;
 }

@@ -22,11 +22,11 @@ Two nav levels: **root** (every key = a collection) → press one → its **tag 
 intermediate "tag grid" level was removed. The tag page (designed for XL 8×4; positions are relative
 to the right edge so it degrades on smaller decks):
 
-- **(0,0) reserved/blank** — not part of the system.
+- **(0,0) reserved/blank** in **every view** (collections view too) — not part of the system.
 - **rightmost column** (top→bottom): `Up` (one level up to collections — the `back` role),
   `explore`, `stealth`, `other`.
 - **next column in**: `play/pause` (toggles playback), `battle`, `calm`, `dungeon`.
-- **next column in**: page info (`p/total`, no action), next-page, prev-page, (empty).
+- **next column in**: page info (`p/total`, no action), next-page, prev-page, **stop**.
 - **left region**: track tiles, filled **column-major** (top→bottom, then left→right), skipping
   the reserved corner, paginated via the page column.
 
@@ -69,8 +69,9 @@ bun-driven `typecheck`/`test` gates.
 - **Pure vs. coupled split** mirrors lark: SDK-touching code (`controller`, `slot`, `plugin`) is
   typechecked but not unit-tested (no SDK runtime in CI); everything testable is pure and lives in
   `grid`/`nav`/`render`/`lark client helpers`.
-- **Config** (lark origin + `lark_…` key) is entered in the **Property Inspector** and stored in
-  **global settings** — shared across every key/device. No env, no `.env`.
+- **Config** is just the `lark_…` **API key** (entered in the **Property Inspector**, stored in
+  **global settings**, shared across every key/device). The lark origin is **fixed** to
+  `https://lark.iridi.cc` (`LARK_ORIGIN` in `controller.ts`) — not a setting. No env, no `.env`.
 - **Voice:** play follows the operator's Discord voice channel (lark default); a `409` shows a
   transient "Join a voice channel first" glyph on the pressed key. Track tiles + the `play/pause` key
   toggle (`pause`/`resume`) against the live now-playing state.
@@ -91,9 +92,11 @@ On every push to `main` that touches `pkg/birdfeed/**`, a dedicated workflow bui
 plugin and publishes it as a **GitHub Release** with the `.streamDeckPlugin` attached. It releases
 **only when birdfeed actually changed since the last birdfeed release** — gated twice: the `paths:`
 trigger, plus a `gate` job that diffs `HEAD` against the most recent `birdfeed-v*` tag. Tags are
-`birdfeed-v<manifest.Version>-<shortsha>`. The release job re-runs birdfeed's typecheck + test before
-packing, so a broken plugin never ships. (This is the one CI lane that is NOT Dagger — the Elgato CLI
-is a Node tool, so it runs directly in the workflow.)
+`birdfeed-v0.1.<run-number>.0`. The packaged manifest is **version-stamped** with that monotonic
+run number (via `streamdeck pack --version`), so installing a new `.streamDeckPlugin` is an **in-place
+upgrade** in the Stream Deck app — settings (the API key) are preserved; no uninstall needed. The
+release job re-runs birdfeed's typecheck + test before packing, so a broken plugin never ships. (This
+is the one CI lane that is NOT Dagger — the Elgato CLI is a Node tool, so it runs directly.)
 
 ## Not done (needs hardware / host)
 

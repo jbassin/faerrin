@@ -67,20 +67,29 @@ jobs:
           bun run --filter @faerrin/birdfeed typecheck
           bun run --filter @faerrin/birdfeed test
 
-      # rollup bundle → bin/plugin.js, then `streamdeck pack` → dist/*.streamDeckPlugin.
-      # --ignore-validation: the placeholder icons are SVG; the validator wants PNG.
-      # The plugin installs and runs fine (keys are painted at runtime) — only the
-      # static catalog icons are cosmetic. Replace imgs/* with real PNGs to drop the flag.
-      - name: Build & pack plugin
-        run: bun run --filter @faerrin/birdfeed package
-
-      - name: Compute release tag
+      # A MONOTONIC version (the workflow run number) is stamped into the packaged manifest so the
+      # Stream Deck app treats each new .streamDeckPlugin as an in-place UPGRADE (settings preserved)
+      # rather than a fresh install — no uninstall/re-add-key dance.
+      - name: Compute version
         id: meta
         run: |
           set -euo pipefail
-          version="$(jq -r '.Version' pkg/birdfeed/com.faerrin.birdfeed.sdPlugin/manifest.json)"
+          version="0.1.${GITHUB_RUN_NUMBER}.0"
           echo "version=${version}" >> "$GITHUB_OUTPUT"
-          echo "tag=birdfeed-v${version}-${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
+          echo "tag=birdfeed-v${version}" >> "$GITHUB_OUTPUT"
+
+      # rollup bundle → bin/plugin.js, then `streamdeck pack --version` → dist/*.streamDeckPlugin.
+      # --ignore-validation: the placeholder icons are SVG; the validator wants PNG. The plugin
+      # installs and runs fine (keys are painted at runtime) — only the static catalog icons are
+      # cosmetic. Replace imgs/* with real PNGs to drop the flag.
+      - name: Build & pack plugin (stamped version)
+        run: |
+          set -euo pipefail
+          bun run --filter @faerrin/birdfeed bundle
+          cd pkg/birdfeed
+          bunx @elgato/cli pack com.faerrin.birdfeed.sdPlugin \
+            --output dist --force --no-update-check --ignore-validation \
+            --version "${{ steps.meta.outputs.version }}"
 
       - name: Create GitHub release
         env:
@@ -91,8 +100,8 @@ jobs:
             pkg/birdfeed/dist/com.faerrin.birdfeed.streamDeckPlugin \
             --target "${GITHUB_SHA}" \
             --title "birdfeed ${{ steps.meta.outputs.tag }}" \
-            --notes "Stream Deck plugin build for \`@faerrin/birdfeed\` (manifest v${{ steps.meta.outputs.version }}) from commit ${GITHUB_SHA}.
+            --notes "Stream Deck plugin build for \`@faerrin/birdfeed\` (v${{ steps.meta.outputs.version }}) from commit ${GITHUB_SHA}.
 
-          **Install:** download \`com.faerrin.birdfeed.streamDeckPlugin\` below and double-click it to install into the Stream Deck app, then set the lark URL + API key in the action's settings.
+          **Install / update:** download \`com.faerrin.birdfeed.streamDeckPlugin\` below and double-click it. Because each release has a higher version, the Stream Deck app updates the plugin **in place** and keeps your API key — no need to uninstall the previous version. Then (first time only) set the lark API key in the action's settings.
 
           _Auto-generated because \`pkg/birdfeed/**\` changed since the previous birdfeed release._"
