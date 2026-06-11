@@ -1,10 +1,24 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { type CSSProperties, useCallback, useEffect, useMemo, useState } from "react";
 import type { RenameOp } from "../lib/rename";
 import { apiGet, apiSend } from "./api";
+import { groupByColor, rowTintStyle } from "./grouping";
 import type { Collection, Tag, Track } from "./types";
+import { useDialog } from "./ui/Dialog";
+import { Menu } from "./ui/Menu";
+import { TagEditModal } from "./ui/TagEditModal";
+import { useToast } from "./ui/Toast";
+
+/** Row style: colored-tag tint, with selection taking over the background. */
+function rowStyle(color: string | null, selected: boolean): CSSProperties | undefined {
+  const tint = rowTintStyle(color);
+  if (!selected) return tint;
+  return { ...(tint ?? {}), background: "var(--row-sel)" };
+}
 
 /** The library browser: filter by collection/tag/search, multi-select, rename, bulk tag, upload. */
 export function Library() {
+  const toast = useToast();
+  const { confirm, promptText } = useDialog();
   const [collections, setCollections] = useState<Collection[]>([]);
   const [tags, setTags] = useState<Tag[]>([]);
   const [tracks, setTracks] = useState<Track[]>([]);
@@ -13,6 +27,7 @@ export function Library() {
   const [q, setQ] = useState("");
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const [busy, setBusy] = useState(false);
+  const [editingTag, setEditingTag] = useState<Tag | null>(null);
 
   const loadFacets = useCallback(async () => {
     setCollections(await apiGet<Collection[]>("/api/v1/collections"));
@@ -52,6 +67,7 @@ export function Library() {
     });
 
   const selectedIds = useMemo(() => [...selected], [selected]);
+  const sections = useMemo(() => groupByColor(tracks), [tracks]);
 
   async function withBusy(fn: () => Promise<void>) {
     setBusy(true);
@@ -63,7 +79,7 @@ export function Library() {
   }
 
   async function renameOne(track: Track) {
-    const title = window.prompt("Rename track", track.title);
+    const title = await promptText({ title: "Rename track", defaultValue: track.title });
     if (title && title !== track.title) {
       await withBusy(async () => {
         await apiSend("PATCH", `/api/v1/tracks/${track.id}`, { title });
@@ -80,12 +96,24 @@ export function Library() {
       { ids: selectedIds, ops, preview: true },
     );
     const changes = preview.filter((p) => p.changed);
-    if (changes.length === 0) return window.alert(emptyMsg);
+    if (changes.length === 0) return toast.info(emptyMsg);
     const sample = changes
       .slice(0, 10)
       .map((c) => `${c.from}\n   →  ${c.to || "(empty)"}`)
       .join("\n");
-    if (window.confirm(`Apply to ${changes.length} of ${selectedIds.length} selected?\n\n${sample}`)) {
+    const ok = await confirm({
+      title: "Apply bulk rename",
+      body: (
+        <>
+          <p className="muted">
+            Apply to {changes.length} of {selectedIds.length} selected?
+          </p>
+          <pre className="modal__diff">{sample}</pre>
+        </>
+      ),
+      confirmLabel: `Apply ${changes.length}`,
+    });
+    if (ok) {
       await withBusy(async () => {
         await apiSend("POST", "/api/v1/tracks/bulk-rename", { ids: selectedIds, ops });
         await loadTracks();
@@ -100,7 +128,7 @@ export function Library() {
     );
 
   async function stripPrefix() {
-    const value = window.prompt("Remove this text from the START of every selected title:");
+    const value = await promptText({ title: "Strip prefix", label: "Remove this text from the START of every selected title:" });
     if (!value) return;
     await runBulkRename(
       [{ kind: "stripPrefix", value }, { kind: "collapseWhitespace" }],
@@ -109,7 +137,7 @@ export function Library() {
   }
 
   async function stripSuffix() {
-    const value = window.prompt("Remove this text from the END of every selected title:");
+    const value = await promptText({ title: "Strip suffix", label: "Remove this text from the END of every selected title:" });
     if (!value) return;
     await runBulkRename(
       [{ kind: "stripSuffix", value }, { kind: "collapseWhitespace" }],
@@ -118,7 +146,13 @@ export function Library() {
   }
 
   async function deleteSelected() {
-    if (!window.confirm(`Delete ${selected.size} track(s) and their audio files? This cannot be undone.`)) return;
+    const ok = await confirm({
+      title: "Delete tracks",
+      body: `Delete ${selected.size} track(s) and their audio files? This cannot be undone.`,
+      confirmLabel: "Delete",
+      danger: true,
+    });
+    if (!ok) return;
     await withBusy(async () => {
       await apiSend("POST", "/api/v1/tracks/bulk-delete", { ids: selectedIds });
       setSelected(new Set());
@@ -127,17 +161,9 @@ export function Library() {
     });
   }
 
-  async function deleteOne(t: Track) {
-    if (!window.confirm(`Delete "${t.title}" and its file? This cannot be undone.`)) return;
-    await withBusy(async () => {
-      await apiSend("DELETE", `/api/v1/tracks/${t.id}`);
-      await loadTracks();
-    });
-  }
-
   // --- collection management ---
   async function newCollection() {
-    const name = window.prompt("New collection name:");
+    const name = await promptText({ title: "New collection", label: "Collection name:" });
     if (!name?.trim()) return;
     await withBusy(async () => {
       await apiSend("POST", "/api/v1/collections", { name: name.trim() });
@@ -146,7 +172,7 @@ export function Library() {
   }
 
   async function renameCollection(c: Collection) {
-    const name = window.prompt("Rename collection:", c.name);
+    const name = await promptText({ title: "Rename collection", defaultValue: c.name });
     if (!name?.trim() || name === c.name) return;
     await withBusy(async () => {
       await apiSend("PATCH", `/api/v1/collections/${c.id}`, { name: name.trim() });
@@ -155,7 +181,13 @@ export function Library() {
   }
 
   async function deleteCollection(c: Collection) {
-    if (!window.confirm(`Delete collection "${c.name}"? Its tracks are kept (moved to no collection).`)) return;
+    const ok = await confirm({
+      title: "Delete collection",
+      body: `Delete collection "${c.name}"? Its tracks are kept (moved to no collection).`,
+      confirmLabel: "Delete",
+      danger: true,
+    });
+    if (!ok) return;
     await withBusy(async () => {
       await apiSend("DELETE", `/api/v1/collections/${c.id}`);
       if (collectionId === c.id) setCollectionId(null);
@@ -175,9 +207,10 @@ export function Library() {
   }
 
   async function bulkTag() {
-    const raw = window.prompt("Add tag(s) to selected (comma-separated)", "calm");
+    const raw = await promptText({ title: "Add tags", label: "Tag(s) to add to selected (comma-separated):", placeholder: "calm, ambient" });
     if (!raw) return;
     const addTags = raw.split(",").map((s) => s.trim()).filter(Boolean);
+    if (addTags.length === 0) return;
     await withBusy(async () => {
       await apiSend("POST", "/api/v1/tracks/bulk-tag", { ids: selectedIds, addTags });
       await loadFacets();
@@ -185,12 +218,18 @@ export function Library() {
     });
   }
 
+  async function saveTag(tag: Tag, patch: { name: string; color: string | null }) {
+    await apiSend("PATCH", `/api/v1/tags/${tag.id}`, patch);
+    await loadFacets();
+    await loadTracks(); // color change can re-group / re-tint rows
+  }
+
   async function play(trackIds: number[]) {
     if (trackIds.length === 0) return;
     try {
       await apiSend("POST", "/api/v1/playback/play", { trackIds });
     } catch {
-      window.alert("Playback unavailable (is the Discord bot online and are you in a voice channel?).");
+      toast.error("Playback unavailable — is the Discord bot online and are you in a voice channel?");
     }
   }
 
@@ -203,17 +242,17 @@ export function Library() {
       try {
         const res = await fetch("/api/v1/ingest/upload", { method: "POST", credentials: "same-origin", body: form });
         if (!res.ok) {
-          window.alert(`Upload failed: HTTP ${res.status} ${(await res.text().catch(() => "")).slice(0, 200)}`);
+          toast.error(`Upload failed: HTTP ${res.status} ${(await res.text().catch(() => "")).slice(0, 200)}`);
           return;
         }
         const out = (await res.json()) as { created: unknown[]; errors: { name: string; error: string }[] };
         if (out.errors?.length) {
-          window.alert(`Skipped ${out.errors.length} file(s):\n${out.errors.map((e) => `${e.name}: ${e.error}`).join("\n")}`);
+          toast.error(`Skipped ${out.errors.length} file(s): ${out.errors.map((e) => `${e.name} (${e.error})`).join("; ")}`);
         }
         await loadFacets();
         await loadTracks();
       } catch (err) {
-        window.alert(`Upload failed: ${(err as Error).message}`);
+        toast.error(`Upload failed: ${(err as Error).message}`);
       }
     });
   }
@@ -251,16 +290,23 @@ export function Library() {
         </ul>
 
         <h3>Tags</h3>
-        <ul className="lib__list lib__tags">
+        <ul className="lib__list">
           <li>
             <button className={tagId === null ? "is-active" : ""} onClick={() => setTagId(null)}>
               any
             </button>
           </li>
           {tags.map((t) => (
-            <li key={t.id}>
+            <li key={t.id} className="lib__tagrow">
               <button className={tagId === t.id ? "is-active" : ""} onClick={() => setTagId(t.id)}>
+                <span
+                  className="lib__tagdot"
+                  style={{ background: t.color ?? "transparent", borderColor: t.color ?? "var(--muted)" }}
+                />
                 {t.name} {t.track_count ? <span className="muted">· {t.track_count}</span> : null}
+              </button>
+              <button className="lib__tagedit" title="Edit tag" onClick={() => setEditingTag(t)}>
+                ✎
               </button>
             </li>
           ))}
@@ -268,7 +314,7 @@ export function Library() {
       </aside>
 
       <section className="lib__main">
-        <div className="lib__toolbar">
+        <div className="lib__bar">
           <input
             className="lib__search"
             placeholder="Search titles…"
@@ -279,40 +325,43 @@ export function Library() {
             Upload
             <input type="file" multiple hidden accept="audio/*" onChange={(e) => upload(e.target.files)} />
           </label>
-          <span className="lib__selcount">{selected.size} selected</span>
-          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void stripPrefix()}>
-            Strip prefix…
-          </button>
-          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void stripSuffix()}>
-            Strip suffix…
-          </button>
-          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void stripLeadingNumber()}>
-            Strip #
-          </button>
-          <button className="btn btn--ghost" disabled={!selected.size || busy} onClick={() => void bulkTag()}>
-            Tag
-          </button>
-          <select
-            className="lib__moveto"
-            disabled={!selected.size || busy}
-            value=""
-            onChange={(e) => void moveSelected(e.target.value)}
-          >
-            <option value="">Move to…</option>
-            <option value="none">(no collection)</option>
-            {collections.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-          <button className="btn btn--ghost btn--danger" disabled={!selected.size || busy} onClick={() => void deleteSelected()}>
-            Delete
-          </button>
-          <button className="btn" disabled={!selected.size} onClick={() => void play(selectedIds)}>
-            ▶ Play
-          </button>
         </div>
+
+        {selected.size > 0 && (
+          <div className="lib__selbar">
+            <span className="lib__selcount">{selected.size} selected</span>
+            <Menu
+              label="Rename"
+              disabled={busy}
+              items={[
+                { label: "Strip prefix…", onSelect: () => void stripPrefix() },
+                { label: "Strip suffix…", onSelect: () => void stripSuffix() },
+                { label: "Strip leading number", onSelect: () => void stripLeadingNumber() },
+              ]}
+            />
+            <Menu label="Tag" disabled={busy} items={[{ label: "Add tags…", onSelect: () => void bulkTag() }]} />
+            <select
+              className="lib__moveto"
+              disabled={busy}
+              value=""
+              onChange={(e) => void moveSelected(e.target.value)}
+            >
+              <option value="">Move to…</option>
+              <option value="none">(no collection)</option>
+              {collections.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+            <button className="btn btn--ghost btn--danger" disabled={busy} onClick={() => void deleteSelected()}>
+              Delete
+            </button>
+            <button className="btn" disabled={busy} onClick={() => void play(selectedIds)}>
+              ▶ Play
+            </button>
+          </div>
+        )}
 
         <table className="lib__tracks">
           <thead>
@@ -330,43 +379,72 @@ export function Library() {
               </th>
               <th>Title</th>
               <th>Tags</th>
-              <th>Status</th>
-              <th />
             </tr>
           </thead>
-          <tbody>
-            {tracks.map((t) => (
-              <tr key={t.id} className={selected.has(t.id) ? "is-selected" : ""}>
-                <td>
-                  <input type="checkbox" checked={selected.has(t.id)} onChange={() => toggle(t.id)} />
-                </td>
-                <td>
-                  <button className="lib__play" title="Play" onClick={() => void play([t.id])}>
-                    ▶
-                  </button>
-                  <button className="lib__title" onClick={() => void renameOne(t)} title="Click to rename">
-                    {t.title}
-                  </button>
-                </td>
-                <td className="muted">{t.tags.map((tag) => tag.name).join(", ")}</td>
-                <td className={t.status === "error" ? "is-error" : "muted"}>{t.status}</td>
-                <td>
-                  <button className="lib__del" title="Delete track + file" onClick={() => void deleteOne(t)}>
-                    ✕
-                  </button>
-                </td>
-              </tr>
-            ))}
-            {tracks.length === 0 && (
+          {tracks.length === 0 ? (
+            <tbody>
               <tr>
-                <td colSpan={5} className="muted">
+                <td colSpan={3} className="muted">
                   No tracks — upload audio or import from YouTube.
                 </td>
               </tr>
-            )}
-          </tbody>
+            </tbody>
+          ) : (
+            sections.map((sec) => (
+              <tbody key={sec.key}>
+                <tr className="lib__secthead">
+                  <td colSpan={3}>
+                    <span
+                      className="lib__sectdot"
+                      style={{ background: sec.color ?? "transparent", borderColor: sec.color ?? "var(--muted)" }}
+                    />
+                    {sec.label} <span className="muted">· {sec.tracks.length}</span>
+                  </td>
+                </tr>
+                {sec.tracks.map((t) => (
+                  <tr key={t.id} className={selected.has(t.id) ? "is-selected" : ""} style={rowStyle(sec.color, selected.has(t.id))}>
+                    <td>
+                      <input type="checkbox" checked={selected.has(t.id)} onChange={() => toggle(t.id)} />
+                    </td>
+                    <td>
+                      <button className="lib__play" title="Play" onClick={() => void play([t.id])}>
+                        ▶
+                      </button>
+                      {t.status === "error" && (
+                        <span className="lib__warn" title="File error — track may not play">
+                          ⚠
+                        </span>
+                      )}
+                      <button className="lib__title" onClick={() => void renameOne(t)} title="Click to rename">
+                        {t.title}
+                      </button>
+                    </td>
+                    <td className="lib__tagcell">
+                      {t.tags.map((tag) => (
+                        <span
+                          key={tag.id}
+                          className="lib__chip"
+                          style={tag.color ? { borderColor: tag.color, color: tag.color } : undefined}
+                        >
+                          {tag.name}
+                        </span>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            ))
+          )}
         </table>
       </section>
+
+      {editingTag && (
+        <TagEditModal
+          tag={editingTag}
+          onClose={() => setEditingTag(null)}
+          onSave={(patch) => saveTag(editingTag, patch)}
+        />
+      )}
     </div>
   );
 }

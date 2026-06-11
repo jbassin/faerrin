@@ -192,6 +192,24 @@ export const libraryRoutes: ApiRoute[] = [
     },
   },
   {
+    method: "PATCH",
+    path: "/api/v1/tags/:id",
+    handler: async (ctx) => {
+      const body = await readJson<{ name?: string; color?: string | null }>(ctx.req);
+      if (body.name !== undefined && !body.name.trim()) throw new HttpError(400, "name_required");
+      // color: null clears it; a string must be #rrggbb.
+      if (body.color !== undefined && body.color !== null && !/^#[0-9a-fA-F]{6}$/.test(body.color)) {
+        throw new HttpError(400, "invalid_color");
+      }
+      const updated = repo.updateTag(ctx.db, intParam(ctx.params, "id"), {
+        name: body.name?.trim(),
+        color: body.color,
+      });
+      if (!updated) throw new HttpError(404, "not_found");
+      return json(updated);
+    },
+  },
+  {
     method: "DELETE",
     path: "/api/v1/tags/:id",
     handler: (ctx) => {

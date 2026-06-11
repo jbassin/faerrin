@@ -40,6 +40,8 @@ export interface Tag {
   id: number;
   name: string;
   category: string | null;
+  /** Optional #rrggbb; drives web row tint + section grouping. NULL = uncolored. */
+  color: string | null;
   created_at: string;
 }
 
@@ -254,6 +256,31 @@ export function removeTagsFromTracks(db: Database, trackIds: number[], tagIds: n
 
 export function deleteTag(db: Database, id: number): boolean {
   return db.run("DELETE FROM tags WHERE id = ?", [id]).changes > 0;
+}
+
+/**
+ * Update a tag's name and/or color. `color: null` clears it (uncolored); an
+ * undefined field is left untouched. Returns the updated row, or null if absent.
+ */
+export function updateTag(
+  db: Database,
+  id: number,
+  patch: { name?: string; color?: string | null },
+): Tag | null {
+  const sets: string[] = [];
+  const params: (string | null)[] = [];
+  if (patch.name !== undefined) {
+    sets.push("name = ?");
+    params.push(normalizeTag(patch.name));
+  }
+  if (patch.color !== undefined) {
+    sets.push("color = ?");
+    params.push(patch.color);
+  }
+  if (sets.length > 0) {
+    db.run(`UPDATE tags SET ${sets.join(", ")} WHERE id = ?`, [...params, id]);
+  }
+  return db.query<Tag, [number]>("SELECT * FROM tags WHERE id = ?").get(id) ?? null;
 }
 
 // --- Playlists ---

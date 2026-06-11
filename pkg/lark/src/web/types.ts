@@ -3,6 +3,8 @@ export interface Tag {
   id: number;
   name: string;
   category: string | null;
+  /** Optional #rrggbb. Colored tags tint + group rows; null = plain chip. */
+  color: string | null;
   track_count?: number;
 }
 

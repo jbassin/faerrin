@@ -125,4 +125,11 @@ export const MIGRATIONS: readonly Migration[] = [
       CREATE INDEX idx_api_keys_user ON api_keys(user_id);
     `,
   },
+  {
+    version: 2,
+    name: "tag-color",
+    // Optional per-tag color (#rrggbb). Drives row tint + section grouping in
+    // the web library. NULL = uncolored (plain chip, never tints/splits).
+    sql: /* sql */ `ALTER TABLE tags ADD COLUMN color TEXT;`,
+  },
 ];

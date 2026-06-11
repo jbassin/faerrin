@@ -77,6 +77,19 @@ describe("collections + tracks", () => {
     expect(byCol).toHaveLength(1);
   });
 
+  test("PATCH tag sets color and rejects bad hex", async () => {
+    const tag = repo.upsertTag(app.db, "battle");
+    const ok = await app.handle(req("PATCH", `/api/v1/tags/${tag.id}`, { color: "#c8504a" }));
+    expect(ok.status).toBe(200);
+    expect((await ok.json()).color).toBe("#c8504a");
+
+    const cleared = await app.handle(req("PATCH", `/api/v1/tags/${tag.id}`, { color: null }));
+    expect((await cleared.json()).color).toBeNull();
+
+    const bad = await app.handle(req("PATCH", `/api/v1/tags/${tag.id}`, { color: "red" }));
+    expect(bad.status).toBe(400);
+  });
+
   test("bulk-rename preview then apply (B13)", async () => {
     const t1 = repo.createTrack(app.db, { title: "01 - Town", sourceType: "upload" });
     const t2 = repo.createTrack(app.db, { title: "02 - Field", sourceType: "upload" });
