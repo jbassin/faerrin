@@ -67,3 +67,29 @@ starts on first `willAppear` (when configured) and stops on last `willDisappear`
 - A live hardware test (needs a physical deck + a running lark + a minted `lark_…` key).
 - Bundled per-device `.streamDeckProfile` files (binary, must be authored in the SD app) — the user
   drops the "birdfeed" slot action across the grid instead.
+
+---
+
+## v2 — tag-page rework (2026-06-11, user feedback)
+
+Reworked the tag page after the first hardware-less build. Key changes:
+
+- **Dropped the intermediate collection→tag-grid level.** Nav is now just **root (collections) → tag
+  page**. Pressing a collection opens its tag page directly at the default tag **`calm`**.
+- **Fixed six-button tag taxonomy** (`src/tags.ts`): `explore/stealth/battle/calm/dungeon` resolve to
+  real lark tags **by name** (case-insensitive → id + color); **`other` = catch-all** (collection
+  tracks with none of the five). Unresolved named tags render **dim** + no-op. Colors come from lark.
+- **Fixed tag-page layout** (XL 8×4, right-edge-relative so it degrades on smaller decks):
+  - `(0,0)` reserved/blank.
+  - col C-1: `Back, explore, stealth, other`.
+  - col C-2: `play/pause, battle, calm, dungeon`.
+  - col C-3: `page info (p/total), next, prev, empty`.
+  - left region: track tiles, **column-major** (top→bottom, then left→right), skipping `(0,0)`,
+    paginated via the page column (capacity 19 on XL).
+- **Track tiles**: background = the active tag's color; **larger title font**; pressing a tile plays
+  it, or **toggles pause/resume** if it's already the current track. The dedicated `play/pause` key
+  toggles global playback.
+- Tests in `test/{nav,grid,svg}.test.ts` rewritten for the new model; 35 pass.
+
+Still open: real PNG icons; live hardware test. A transport row (skip/next/prev/stop) was discussed
+but not added.

@@ -1,8 +1,8 @@
 # CLAUDE.md — `@faerrin/birdfeed`
 
 An **Elgato Stream Deck plugin** that remote-controls `@faerrin/lark` (the Discord music bot) over
-lark's HTTP REST API. Navigation: **lark → collection → tag**, with the currently-playing track
-highlighted on its key.
+lark's HTTP REST API. Navigation: **collections → tag page**, with the currently-playing track
+highlighted on its tile.
 
 **Plan of record:** [`thoughts/birdfeed/plans/0001-birdfeed-streamdeck-plugin.md`](../../thoughts/birdfeed/plans/0001-birdfeed-streamdeck-plugin.md).
 **Feasibility research:** [`thoughts/shared/research/2026-06-11-birdfeed-streamdeck-feasibility.md`](../../thoughts/shared/research/2026-06-11-birdfeed-streamdeck-feasibility.md).
@@ -16,6 +16,27 @@ each visible key a **role** from the current nav level + its coordinates and pai
 `setImage` (SVG). This is the SDK-sanctioned pattern for data-driven content — more flexible than
 folders, and it's what makes the live now-playing highlight possible.
 
+## Tag-page layout (the model)
+
+Two nav levels: **root** (every key = a collection) → press one → its **tag page**. The old
+intermediate "tag grid" level was removed. The tag page (designed for XL 8×4; positions are relative
+to the right edge so it degrades on smaller decks):
+
+- **(0,0) reserved/blank** — not part of the system.
+- **rightmost column** (top→bottom): `Up` (one level up to collections — the `back` role),
+  `explore`, `stealth`, `other`.
+- **next column in**: `play/pause` (toggles playback), `battle`, `calm`, `dungeon`.
+- **next column in**: page info (`p/total`, no action), next-page, prev-page, (empty).
+- **left region**: track tiles, filled **column-major** (top→bottom, then left→right), skipping
+  the reserved corner, paginated via the page column.
+
+The **six tag buttons are a fixed taxonomy** (`src/tags.ts`): five (`explore/stealth/battle/calm/
+dungeon`) resolve to a real lark tag **by name** (case-insensitive) for their id + color; **`other`
+is a catch-all** for collection tracks carrying none of the five. A named tag with no matching lark
+tag renders **dim** and is a no-op. Default tag page on opening a collection = **`calm`**. **Track
+tile background = the active tag's color**; pressing a tile plays it, or **toggles pause/resume** if
+it's already the current track.
+
 ## Architecture (Node, NOT Bun — read this)
 
 The Elgato SDK runtime is **Node 20/24**, so this plugin is a **Node** package even though the repo is
@@ -26,8 +47,10 @@ bun-driven `typecheck`/`test` gates.
 - `src/actions/slot.ts` — thin `SingletonAction` shim; forwards willAppear/willDisappear/keyDown.
 - `src/controller.ts` — **all SDK-coupled state**: per-device nav, visible-slot registry, lark
   client, now-playing poller (2.5 s — lark has no push), image-diff cache, rendering.
-- `src/grid.ts` — **pure**: `layout(nav, device, data) → Role[]` (the heart). Unit-tested.
-- `src/nav.ts` — **pure** nav state machine. Unit-tested.
+- `src/grid.ts` — **pure**: `layout(nav, device, data) → Role[]` (the heart) + `tracksForSelector`
+  (named-tag + `other` catch-all), `trackCells`/`trackCapacity` pagination. Unit-tested.
+- `src/nav.ts` — **pure** nav state machine (root ↔ tag page). Unit-tested.
+- `src/tags.ts` — **pure** fixed tag taxonomy (the six keys, default tag, named vs `other`).
 - `src/render/{svg,color}.ts` — **pure** Role→SVG data-URI + color helpers. Unit-tested.
 - `src/lark/{client,types}.ts` — REST client (Bearer auth) + mirrored lark shapes.
 - `com.faerrin.birdfeed.sdPlugin/` — manifest, `ui/lark.html` (Property Inspector), `imgs/`
@@ -49,7 +72,8 @@ bun-driven `typecheck`/`test` gates.
 - **Config** (lark origin + `lark_…` key) is entered in the **Property Inspector** and stored in
   **global settings** — shared across every key/device. No env, no `.env`.
 - **Voice:** play follows the operator's Discord voice channel (lark default); a `409` shows a
-  transient "Join a voice channel first" glyph on the pressed key.
+  transient "Join a voice channel first" glyph on the pressed key. Track tiles + the `play/pause` key
+  toggle (`pause`/`resume`) against the live now-playing state.
 
 ## Local dev / packaging (needs a physical Stream Deck)
 

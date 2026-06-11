@@ -1,52 +1,36 @@
 /**
- * Pure navigation state machine: lark (root) → collection → tag.
- * One NavState is held per Stream Deck device by the controller. All transitions return a NEW
- * object (no mutation) and reset `page` to 0 when changing level.
+ * Pure navigation state machine: lark (root) → tag page.
+ *
+ * The old intermediate "collection tag-grid" level was removed — pressing a collection opens its
+ * tag page directly (at DEFAULT_TAG_KEY), and you switch tags from the fixed tag buttons on that
+ * page. One NavState is held per Stream Deck device by the controller. Transitions return a NEW
+ * object and reset `page` to 0 when the level or tag changes.
  */
+
+import { DEFAULT_TAG_KEY, type TagKey } from "./tags";
 
 export type NavState =
 	| { level: "root"; page: number }
-	| { level: "collection"; collectionId: number; collectionName: string; page: number }
-	| {
-			level: "tag";
-			collectionId: number;
-			collectionName: string;
-			tagId: number;
-			tagName: string;
-			page: number;
-	  };
+	| { level: "tag"; collectionId: number; collectionName: string; tagKey: TagKey; page: number };
 
 export function rootNav(): NavState {
 	return { level: "root", page: 0 };
 }
 
-export function enterCollection(id: number, name: string): NavState {
-	return { level: "collection", collectionId: id, collectionName: name, page: 0 };
+/** Press a collection → open its tag page at the default tag. */
+export function openCollection(id: number, name: string): NavState {
+	return { level: "tag", collectionId: id, collectionName: name, tagKey: DEFAULT_TAG_KEY, page: 0 };
 }
 
-/** Enter a tag from within a collection (or switch tags from another tag — keeps the collection). */
-export function enterTag(prev: NavState, tagId: number, tagName: string): NavState {
-	if (prev.level === "root") return prev; // not reachable from root; no-op guard
-	return {
-		level: "tag",
-		collectionId: prev.collectionId,
-		collectionName: prev.collectionName,
-		tagId,
-		tagName,
-		page: 0,
-	};
+/** Switch the active tag within the current collection (resets page). No-op from root. */
+export function selectTag(nav: NavState, tagKey: TagKey): NavState {
+	if (nav.level !== "tag") return nav;
+	return { ...nav, tagKey, page: 0 };
 }
 
-/** Pop one level: tag → its collection, collection → root, root → root. */
+/** Back: tag → root; root → root. */
 export function back(nav: NavState): NavState {
-	switch (nav.level) {
-		case "tag":
-			return enterCollection(nav.collectionId, nav.collectionName);
-		case "collection":
-			return rootNav();
-		case "root":
-			return nav;
-	}
+	return nav.level === "tag" ? rootNav() : nav;
 }
 
 export function withPage(nav: NavState, page: number): NavState {

@@ -1,17 +1,19 @@
 /**
  * Central controller: owns per-device navigation state, the visible-slot registry, the lark client,
  * the now-playing poller, and all rendering. The Slot action is a thin shim that forwards events
- * here. This keeps every SDK-coupled concern in one place; the pure logic lives in grid/nav/render.
+ * here. SDK-coupled concerns live here; the pure logic lives in grid/nav/render/tags.
  */
 
 import streamDeck, { type KeyAction, type KeyDownEvent, type WillAppearEvent, type WillDisappearEvent } from "@elgato/streamdeck";
 
-import { type DeviceShape, type GridData, type Role, coloredTagsPresent, layout, roleAt } from "./grid";
+import { type DeviceShape, type GridData, type Role, layout, roleAt, trackCapacity, totalPages, tracksForSelector } from "./grid";
 import { LarkClient, LarkError } from "./lark/client";
 import type { Collection, NowPlaying, Tag, Track } from "./lark/types";
-import { back, enterCollection, enterTag, rootNav, withPage, type NavState } from "./nav";
+import { back, openCollection, rootNav, selectTag, withPage, type NavState } from "./nav";
+import { normalizeHex } from "./render/color";
 import { messageSvg, renderRole, type RenderOpts } from "./render/svg";
 import { isConfigured, type BirdfeedGlobalSettings } from "./settings";
+import { NAMED_TAG_KEYS, type TagKey } from "./tags";
 
 const POLL_MS = 2500;
 const TRANSIENT_MS = 1800;
@@ -27,17 +29,27 @@ interface SlotRef {
 interface DeviceState {
 	shape: DeviceShape;
 	nav: NavState;
-	/** Colored tags present in the current collection. */
-	tags: Tag[];
-	/** All tracks in the current collection (the tag view filters these). */
+	/** All tracks in the current collection (the tag page filters these per selector). */
 	tracks: Track[];
+}
+
+function playbackErrorMessage(err: unknown): string {
+	if (err instanceof LarkError && err.status === 409) return "Join a voice channel first";
+	if (err instanceof LarkError && err.status === 503) return "lark bot offline";
+	return "Playback failed";
 }
 
 export class BirdfeedController {
 	private client: LarkClient | null = null;
 	private collections: Collection[] = [];
 	private collectionsLoaded = false;
+	private tagsLoaded = false;
 	private now: NowPlaying | null = null;
+
+	// Resolved fixed-tag taxonomy (rebuilt from lark's /tags).
+	private readonly namedTagIds = new Map<TagKey, number>();
+	private readonly tagColors = new Map<TagKey, string | null>();
+	private readonly tagResolved = new Set<TagKey>();
 
 	private readonly slots = new Map<string, SlotRef>(); // by action context id
 	private readonly devices = new Map<string, DeviceState>();
@@ -61,23 +73,19 @@ export class BirdfeedController {
 
 	private applySettings(settings: BirdfeedGlobalSettings): void {
 		this.generation++;
-		if (isConfigured(settings)) {
-			this.client = new LarkClient({ origin: settings.larkOrigin, key: settings.larkKey });
-		} else {
-			this.client = null;
-		}
+		this.client = isConfigured(settings) ? new LarkClient({ origin: settings.larkOrigin, key: settings.larkKey }) : null;
 		this.collectionsLoaded = false;
 		this.collections = [];
+		this.tagsLoaded = false;
+		this.resolveTags([]);
 	}
 
 	private async reloadAndRenderAll(): Promise<void> {
-		// Reset every device to root and repaint after a config change.
 		for (const ds of this.devices.values()) {
 			ds.nav = rootNav();
-			ds.tags = [];
 			ds.tracks = [];
 		}
-		await this.ensureCollections();
+		await this.ensureLibrary();
 		for (const deviceId of this.devices.keys()) await this.renderDevice(deviceId);
 		this.syncPoller();
 	}
@@ -92,13 +100,11 @@ export class BirdfeedController {
 		this.slots.set(action.id, { action, deviceId, column: coord.column, row: coord.row });
 
 		const shape = this.deviceShape(action);
-		if (!this.devices.has(deviceId)) {
-			this.devices.set(deviceId, { shape, nav: rootNav(), tags: [], tracks: [] });
-		} else {
-			this.devices.get(deviceId)!.shape = shape;
-		}
+		const existing = this.devices.get(deviceId);
+		if (existing) existing.shape = shape;
+		else this.devices.set(deviceId, { shape, nav: rootNav(), tracks: [] });
 
-		await this.ensureCollections();
+		await this.ensureLibrary();
 		await this.renderSlot(action.id);
 		this.syncPoller();
 	}
@@ -112,7 +118,6 @@ export class BirdfeedController {
 			clearTimeout(timer);
 			this.transientTimers.delete(ev.action.id);
 		}
-		// Drop device state when its last slot disappears.
 		const deviceId = ev.action.device.id;
 		if (![...this.slots.values()].some((s) => s.deviceId === deviceId)) {
 			this.devices.delete(deviceId);
@@ -123,8 +128,7 @@ export class BirdfeedController {
 	async onKeyDown(ev: KeyDownEvent): Promise<void> {
 		const ref = this.slots.get(ev.action.id);
 		const ds = ref && this.devices.get(ref.deviceId);
-		if (!ref || !ds) return;
-		if (!this.client) return; // unconfigured: keys show the "set up" message
+		if (!ref || !ds || !this.client) return;
 		const role = roleAt(layout(ds.nav, ds.shape, this.gridData(ds)), { column: ref.column, row: ref.row }, ds.shape);
 		await this.dispatch(role, ds, ref);
 	}
@@ -140,54 +144,103 @@ export class BirdfeedController {
 				ds.nav = withPage(ds.nav, ds.nav.page - 1);
 				return this.renderDevice(ref.deviceId);
 			case "pageNext":
-				ds.nav = withPage(ds.nav, ds.nav.page + 1);
+				ds.nav = withPage(ds.nav, Math.min(ds.nav.page + 1, this.tagPageCount(ds) - 1));
 				return this.renderDevice(ref.deviceId);
 			case "collection":
-				ds.nav = enterCollection(role.id, role.name);
+				ds.nav = openCollection(role.id, role.name);
 				await this.loadCollection(ds, role.id);
 				return this.renderDevice(ref.deviceId);
-			case "tag":
 			case "navTag":
-				ds.nav = enterTag(ds.nav, role.id, role.name);
+				if (!role.resolved) return; // unresolved tag → no-op
+				ds.nav = selectTag(ds.nav, role.key);
 				return this.renderDevice(ref.deviceId);
+			case "playPause":
+				return this.togglePlayPause(ref);
 			case "track":
-				return this.playTrack(ref, role.id);
+				return this.toggleTrack(ref, role.id);
+			case "pageInfo":
 			case "empty":
 				return;
 		}
 	}
 
-	private async playTrack(ref: SlotRef, trackId: number): Promise<void> {
+	private async togglePlayPause(ref: SlotRef): Promise<void> {
 		if (!this.client) return;
 		try {
-			this.now = await this.client.play({ trackId });
-			await this.renderTracks();
+			if (this.now?.status === "playing") this.now = await this.client.pause();
+			else if (this.now?.status === "paused") this.now = await this.client.resume();
+			else return; // idle: nothing to toggle
+			await this.renderDevice(ref.deviceId);
 		} catch (err) {
-			const msg =
-				err instanceof LarkError && err.status === 409
-					? "Join a voice channel first"
-					: err instanceof LarkError && err.status === 503
-						? "lark bot offline"
-						: "Play failed";
-			await this.showTransient(ref.action.id, messageSvg(msg, "error"));
+			await this.showTransient(ref.action.id, messageSvg(playbackErrorMessage(err), "error"));
+		}
+	}
+
+	/** Press a track: toggle if it's the current track, otherwise play it. */
+	private async toggleTrack(ref: SlotRef, trackId: number): Promise<void> {
+		if (!this.client) return;
+		try {
+			const current = this.now?.current?.trackId;
+			if (current === trackId && this.now?.status === "playing") this.now = await this.client.pause();
+			else if (current === trackId && this.now?.status === "paused") this.now = await this.client.resume();
+			else this.now = await this.client.play({ trackId });
+			await this.renderDevice(ref.deviceId);
+		} catch (err) {
+			await this.showTransient(ref.action.id, messageSvg(playbackErrorMessage(err), "error"));
 		}
 	}
 
 	// ---- data loading ----
 
-	private async ensureCollections(): Promise<void> {
-		if (!this.client || this.collectionsLoaded) return;
+	/** Load collections + the fixed-tag taxonomy (both global), once per config. */
+	private async ensureLibrary(): Promise<void> {
+		if (!this.client) return;
 		const client = this.client;
 		const gen = this.generation;
-		try {
-			const collections = await client.collections();
-			if (this.generation !== gen || this.client !== client) return; // config changed mid-flight
-			this.collections = collections;
-			this.collectionsLoaded = true;
-		} catch {
-			if (this.generation !== gen) return;
-			this.collections = [];
+		if (!this.collectionsLoaded) {
+			try {
+				const collections = await client.collections();
+				if (this.generation === gen && this.client === client) {
+					this.collections = collections;
+					this.collectionsLoaded = true;
+				}
+			} catch {
+				if (this.generation === gen) this.collections = [];
+			}
 		}
+		if (!this.tagsLoaded) {
+			try {
+				const tags = await client.tags();
+				if (this.generation === gen && this.client === client) {
+					this.resolveTags(tags);
+					this.tagsLoaded = true;
+				}
+			} catch {
+				if (this.generation === gen) this.resolveTags([]);
+			}
+		}
+	}
+
+	/** Resolve the five named tag keys against lark tags (by lowercase name); "other" is the catch-all. */
+	private resolveTags(tags: Tag[]): void {
+		const byName = new Map<string, Tag>();
+		for (const t of tags) byName.set(t.name.toLowerCase(), t);
+		this.namedTagIds.clear();
+		this.tagColors.clear();
+		this.tagResolved.clear();
+		for (const key of NAMED_TAG_KEYS) {
+			const t = byName.get(key);
+			if (t) {
+				this.namedTagIds.set(key, t.id);
+				this.tagColors.set(key, normalizeHex(t.color));
+				this.tagResolved.add(key);
+			} else {
+				this.tagColors.set(key, null);
+			}
+		}
+		// "other" is always selectable (catch-all), rendered neutral.
+		this.tagResolved.add("other");
+		this.tagColors.set("other", null);
 	}
 
 	private async loadCollection(ds: DeviceState, collectionId: number): Promise<void> {
@@ -196,18 +249,32 @@ export class BirdfeedController {
 		const gen = this.generation;
 		try {
 			const tracks = await client.tracks({ collection: collectionId, limit: 500 });
-			if (this.generation !== gen || this.client !== client) return; // config changed mid-flight
-			ds.tracks = tracks;
-			ds.tags = coloredTagsPresent(tracks);
+			if (this.generation === gen && this.client === client) ds.tracks = tracks;
 		} catch {
-			if (this.generation !== gen) return;
-			ds.tracks = [];
-			ds.tags = [];
+			if (this.generation === gen) ds.tracks = [];
 		}
 	}
 
 	private gridData(ds: DeviceState): GridData {
-		return { collections: this.collections, tags: ds.tags, tracks: ds.tracks };
+		let tracks: Track[] = [];
+		let activeColor: string | null = null;
+		if (ds.nav.level === "tag") {
+			tracks = tracksForSelector(ds.tracks, ds.nav.tagKey, this.namedTagIds);
+			activeColor = this.tagColors.get(ds.nav.tagKey) ?? null;
+		}
+		return {
+			collections: this.collections,
+			tagColors: this.tagColors,
+			tagResolved: this.tagResolved,
+			tracks,
+			activeColor,
+		};
+	}
+
+	private tagPageCount(ds: DeviceState): number {
+		if (ds.nav.level !== "tag") return 1;
+		const n = tracksForSelector(ds.tracks, ds.nav.tagKey, this.namedTagIds).length;
+		return totalPages(n, trackCapacity(ds.shape));
 	}
 
 	// ---- rendering ----
@@ -218,21 +285,26 @@ export class BirdfeedController {
 		return DEFAULT_SHAPE;
 	}
 
+	/** Now-playing context for the roles that depend on it (track tiles + the play/pause key). */
 	private renderOptsFor(role: Role): RenderOpts {
-		if (role.kind !== "track" || !this.now?.current || this.now.current.trackId !== role.id) return {};
-		return {
-			playing: this.now.status === "playing",
-			paused: this.now.status === "paused",
-			positionMs: this.now.current.positionMs,
-			durationMs: this.now.current.durationMs,
-		};
+		if (role.kind === "playPause") {
+			return { playing: this.now?.status === "playing", paused: this.now?.status === "paused" };
+		}
+		if (role.kind === "track" && this.now?.current && this.now.current.trackId === role.id) {
+			return {
+				playing: this.now.status === "playing",
+				paused: this.now.status === "paused",
+				positionMs: this.now.current.positionMs,
+				durationMs: this.now.current.durationMs,
+			};
+		}
+		return {};
 	}
 
 	private async renderSlot(context: string): Promise<void> {
 		const ref = this.slots.get(context);
 		const ds = ref && this.devices.get(ref.deviceId);
-		if (!ref || !ds) return;
-		if (this.transient.has(context)) return;
+		if (!ref || !ds || this.transient.has(context)) return;
 
 		let image: string;
 		if (!this.client) {
@@ -251,14 +323,14 @@ export class BirdfeedController {
 		await Promise.all(contexts.map((c) => this.renderSlot(c)));
 	}
 
-	/** Repaint only track keys (used by the now-playing poller). */
-	private async renderTracks(): Promise<void> {
+	/** Repaint only the now-playing-dependent keys (track tiles + play/pause) — used by the poller. */
+	private async renderNowDependent(): Promise<void> {
 		const jobs: Promise<void>[] = [];
 		for (const [context, ref] of this.slots) {
 			const ds = this.devices.get(ref.deviceId);
 			if (!ds || ds.nav.level !== "tag") continue;
 			const role = roleAt(layout(ds.nav, ds.shape, this.gridData(ds)), { column: ref.column, row: ref.row }, ds.shape);
-			if (role.kind === "track") jobs.push(this.renderSlot(context));
+			if (role.kind === "track" || role.kind === "playPause") jobs.push(this.renderSlot(context));
 		}
 		await Promise.all(jobs);
 	}
@@ -298,10 +370,9 @@ export class BirdfeedController {
 		try {
 			this.now = await this.client.now();
 		} catch {
-			// Keep the last known now-playing state — a transient poll failure shouldn't
-			// drop (flicker) the highlight. The next successful poll corrects it.
+			// Keep the last known state — a transient poll failure shouldn't flicker the highlight.
 			return;
 		}
-		await this.renderTracks();
+		await this.renderNowDependent();
 	}
 }

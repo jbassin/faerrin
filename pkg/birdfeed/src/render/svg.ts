@@ -12,12 +12,14 @@ const FG = "#e6e8ec";
 const ACCENT = "#4aa6a0"; // teal, matches the gothic/lark family
 
 export interface RenderOpts {
-	/** Track is the currently-playing track. */
+	/** Track / play-pause is the currently-playing track. */
 	playing?: boolean;
-	/** Track is the current track but paused. */
+	/** Track / play-pause is the current track but paused. */
 	paused?: boolean;
 	positionMs?: number;
 	durationMs?: number | null;
+	/** Track tile background (the active tag's color); null → default dark. */
+	bg?: string | null;
 }
 
 function esc(s: string): string {
@@ -48,10 +50,8 @@ export function wrapLines(text: string, maxChars: number, maxLines: number): str
 		}
 	}
 	if (cur && lines.length < maxLines) lines.push(cur);
-	// Hard-truncate an over-long final line.
 	const last = lines[lines.length - 1];
 	if (last && last.length > maxChars) lines[lines.length - 1] = `${last.slice(0, maxChars - 1)}…`;
-	// If we ran out of lines but there were more words, mark the last with an ellipsis.
 	const consumed = lines.join(" ").split(/\s+/).length;
 	if (consumed < words.length && lines.length) {
 		const l = lines[lines.length - 1];
@@ -78,18 +78,34 @@ export function emptySvg(): string {
 }
 
 export function backSvg(): string {
+	// "Up" (one level up to collections). A stemmed up-arrow — visually distinct from the
+	// stemless next/prev page chevrons so the two roles don't read the same.
 	const inner =
-		`<path d="M86 44 L56 72 L86 100" fill="none" stroke="${FG}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>` +
-		textBlock(["Back"], "#9aa0aa", 126, 0, 18);
+		`<path d="M72 44 L72 100" fill="none" stroke="${FG}" stroke-width="12" stroke-linecap="round"/>` +
+		`<path d="M50 62 L72 40 L94 62" fill="none" stroke="${FG}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>` +
+		textBlock(["Up"], "#9aa0aa", 128, 0, 20);
 	return frame(inner);
 }
 
 export function pagerSvg(dir: "prev" | "next"): string {
 	const arrow =
 		dir === "next"
-			? `<path d="M48 56 L72 84 L96 56" fill="none" stroke="${ACCENT}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>`
-			: `<path d="M48 88 L72 60 L96 88" fill="none" stroke="${ACCENT}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>`;
-	return frame(arrow + textBlock([dir === "next" ? "More" : "Prev"], "#9aa0aa", 126, 0, 18));
+			? `<path d="M44 54 L72 86 L100 54" fill="none" stroke="${ACCENT}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>`
+			: `<path d="M44 90 L72 58 L100 90" fill="none" stroke="${ACCENT}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>`;
+	return frame(arrow + textBlock([dir === "next" ? "Next" : "Prev"], "#9aa0aa", 128, 0, 20));
+}
+
+export function pageInfoSvg(page: number, total: number): string {
+	return frame(
+		textBlock(["Page"], "#9aa0aa", 50, 0, 20) + textBlock([`${page}/${total}`], FG, 96, 0, 40),
+	);
+}
+
+export function playPauseSvg(playing: boolean): string {
+	const glyph = playing
+		? `<rect x="50" y="40" width="14" height="48" rx="3" fill="${FG}"/><rect x="80" y="40" width="14" height="48" rx="3" fill="${FG}"/>`
+		: `<path d="M54 38 L54 90 L98 64 Z" fill="${FG}"/>`;
+	return frame(glyph + textBlock([playing ? "Pause" : "Play"], "#9aa0aa", 124, 0, 20));
 }
 
 export function collectionSvg(name: string): string {
@@ -101,42 +117,46 @@ export function collectionSvg(name: string): string {
 	return frame(folder + textBlock(lines, FG, startY, 16, 15));
 }
 
-export function tagSwatchSvg(name: string, color: string | null, active: boolean): string {
-	const fill = fillFor(color);
-	const txt = contrastText(fill);
+/** A fixed tag button. Dim when the named tag didn't resolve to a lark tag. */
+export function navTagSvg(label: string, color: string | null, active: boolean, resolved: boolean): string {
+	const fill = resolved ? fillFor(color) : "#23262d";
+	const txt = resolved ? contrastText(fill) : "#6b7280";
 	const border = active
-		? `<rect x="6" y="6" width="${SIZE - 12}" height="${SIZE - 12}" rx="14" fill="none" stroke="${FG}" stroke-width="6"/>`
+		? `<rect x="6" y="6" width="${SIZE - 12}" height="${SIZE - 12}" rx="14" fill="none" stroke="${FG}" stroke-width="7"/>`
 		: `<rect x="10" y="10" width="${SIZE - 20}" height="${SIZE - 20}" rx="12" fill="none" stroke="${shade(fill, -0.4)}" stroke-width="3"/>`;
-	const lines = wrapLines(name, 11, 3);
-	const startY = 80 - (lines.length - 1) * 15;
 	const swatch = `<rect x="10" y="10" width="${SIZE - 20}" height="${SIZE - 20}" rx="12" fill="${fill}"/>`;
-	return frame(swatch + border + textBlock(lines, txt, startY, 30, 17));
+	const lines = wrapLines(label, 9, 2);
+	const startY = 84 - (lines.length - 1) * 16;
+	return frame(swatch + border + textBlock(lines, txt, startY, 32, 22));
 }
 
+/** A track tile. Background = the active tag's color; bigger title font for legibility. */
 export function trackSvg(title: string, opts: RenderOpts): string {
+	const base = opts.bg ? fillFor(opts.bg) : BG;
+	const txt = opts.bg ? contrastText(base) : FG;
 	const active = opts.playing || opts.paused;
-	const bg = active ? "#1d2a28" : BG;
 	const border = opts.playing
-		? `<rect x="4" y="4" width="${SIZE - 8}" height="${SIZE - 8}" rx="12" fill="none" stroke="${ACCENT}" stroke-width="6"/>`
+		? `<rect x="4" y="4" width="${SIZE - 8}" height="${SIZE - 8}" rx="12" fill="none" stroke="#ffffff" stroke-width="7"/>`
 		: opts.paused
-			? `<rect x="4" y="4" width="${SIZE - 8}" height="${SIZE - 8}" rx="12" fill="none" stroke="#c8a24a" stroke-width="6"/>`
+			? `<rect x="4" y="4" width="${SIZE - 8}" height="${SIZE - 8}" rx="12" fill="none" stroke="#ffffff" stroke-width="7" stroke-dasharray="10 8"/>`
 			: "";
 	const glyph = opts.playing
-		? `<path d="M58 36 L58 64 L82 50 Z" fill="${ACCENT}"/>`
+		? `<path d="M12 14 L12 36 L30 25 Z" fill="${txt}"/>`
 		: opts.paused
-			? `<rect x="58" y="36" width="8" height="28" fill="#c8a24a"/><rect x="74" y="36" width="8" height="28" fill="#c8a24a"/>`
+			? `<rect x="12" y="14" width="6" height="22" fill="${txt}"/><rect x="24" y="14" width="6" height="22" fill="${txt}"/>`
 			: "";
-	const lines = wrapLines(title, 13, 3);
-	const startY = 96 - (lines.length - 1) * 15;
+	const lines = wrapLines(title, 9, 4);
+	const startY = 78 - (lines.length - 1) * 13;
 	let progress = "";
 	if (active && opts.durationMs && opts.durationMs > 0) {
 		const ratio = Math.max(0, Math.min(1, (opts.positionMs ?? 0) / opts.durationMs));
-		const w = Math.round((SIZE - 32) * ratio);
+		const w = Math.round((SIZE - 24) * ratio);
+		const trough = opts.bg ? shade(base, -0.35) : "#2a2e37";
 		progress =
-			`<rect x="16" y="128" width="${SIZE - 32}" height="6" rx="3" fill="#2a2e37"/>` +
-			`<rect x="16" y="128" width="${w}" height="6" rx="3" fill="${ACCENT}"/>`;
+			`<rect x="12" y="130" width="${SIZE - 24}" height="7" rx="3" fill="${trough}"/>` +
+			`<rect x="12" y="130" width="${w}" height="7" rx="3" fill="${txt}"/>`;
 	}
-	return frame(border + glyph + textBlock(lines, FG, startY, 16, 15) + progress, bg);
+	return frame(border + glyph + textBlock(lines, txt, startY, 25, 23) + progress, base);
 }
 
 export function messageSvg(text: string, tone: "error" | "info" = "info"): string {
@@ -146,7 +166,7 @@ export function messageSvg(text: string, tone: "error" | "info" = "info"): strin
 	return frame(textBlock(lines, color, startY, 22, 15));
 }
 
-/** Dispatch a Role (plus optional now-playing context for tracks) to a data-URI image. */
+/** Dispatch a Role (plus optional now-playing context) to a data-URI image. */
 export function renderRole(role: Role, opts: RenderOpts = {}): string {
 	switch (role.kind) {
 		case "empty":
@@ -157,13 +177,15 @@ export function renderRole(role: Role, opts: RenderOpts = {}): string {
 			return dataUri(pagerSvg("prev"));
 		case "pageNext":
 			return dataUri(pagerSvg("next"));
+		case "pageInfo":
+			return dataUri(pageInfoSvg(role.page, role.total));
+		case "playPause":
+			return dataUri(playPauseSvg(!!opts.playing));
 		case "collection":
 			return dataUri(collectionSvg(role.name));
-		case "tag":
-			return dataUri(tagSwatchSvg(role.name, role.color, false));
 		case "navTag":
-			return dataUri(tagSwatchSvg(role.name, role.color, role.active));
+			return dataUri(navTagSvg(role.label, role.color, role.active, role.resolved));
 		case "track":
-			return dataUri(trackSvg(role.title, opts));
+			return dataUri(trackSvg(role.title, { ...opts, bg: role.color }));
 	}
 }
