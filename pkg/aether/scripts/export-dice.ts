@@ -72,9 +72,14 @@ const csvCell = (s: string) => `"${s.replace(/"/g, '""')}"`
 const csvLines = ["timestamp,player,character,base,value,source"]
 for (const r of rows) {
   csvLines.push(
-    [csvCell(r.t), csvCell(nameOf(players, r.pid)), csvCell(charFor(r.pid)), r.b, r.v, csvCell(r.src)].join(
-      ",",
-    ),
+    [
+      csvCell(r.t),
+      csvCell(nameOf(players, r.pid)),
+      csvCell(charFor(r.pid)),
+      r.b,
+      r.v,
+      csvCell(r.src),
+    ].join(","),
   )
 }
 await Bun.write(`${outDir}/rolls.csv`, csvLines.join("\n") + "\n")

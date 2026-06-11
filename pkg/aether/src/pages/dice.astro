@@ -17,9 +17,11 @@ import DiceDashboard from "../components/islands/DiceDashboard.tsx"
   <DiceDashboard client:only="solid" />
 </PageLayout>
 
-{/* Page-scoped layout override: drop the 3-column wiki grid so the dashboard
+{
+  /* Page-scoped layout override: drop the 3-column wiki grid so the dashboard
     runs full-width. Scoped to this page by [data-slug="dice"] and emitted in the
-    initial HTML (no FOUC). Touches nothing on the wiki pages. */}
+    initial HTML (no FOUC). Touches nothing on the wiki pages. */
+}
 <style is:global>
   /* Selectors include #quartz-body to out-specify base.scss's `#quartz-body .sidebar`
      rules (ID-level specificity) — otherwise the empty sidebars stay laid out and

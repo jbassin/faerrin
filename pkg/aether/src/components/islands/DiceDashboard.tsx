@@ -182,45 +182,44 @@ export default function DiceDashboard() {
 // ---------- Overview ----------
 function Overview(props: { summary: DiceSummary; palette: Palette }) {
   const lb = () => props.summary.leaderboards
-  const cards: { title: string; entries: { name: string; value: string; detail?: string }[] }[] =
-    [
-      {
-        title: "Luckiest (d20)",
-        entries: lb().luckiest.map((e) => ({
-          name: e.name,
-          value: `${e.value >= 0 ? "+" : ""}${e.value.toFixed(2)}`,
-          detail: e.detail,
-        })),
-      },
-      {
-        title: "Unluckiest (d20)",
-        entries: lb().unluckiest.map((e) => ({
-          name: e.name,
-          value: e.value.toFixed(2),
-          detail: e.detail,
-        })),
-      },
-      {
-        title: "Most crits (nat 20)",
-        entries: lb().mostCrits.map((e) => ({
-          name: e.name,
-          value: fmtNum(e.value),
-          detail: e.detail,
-        })),
-      },
-      {
-        title: "Most fumbles (nat 1)",
-        entries: lb().mostFumbles.map((e) => ({
-          name: e.name,
-          value: fmtNum(e.value),
-          detail: e.detail,
-        })),
-      },
-      {
-        title: "Most rolls",
-        entries: lb().mostRolls.map((e) => ({ name: e.name, value: fmtNum(e.value) })),
-      },
-    ]
+  const cards: { title: string; entries: { name: string; value: string; detail?: string }[] }[] = [
+    {
+      title: "Luckiest (d20)",
+      entries: lb().luckiest.map((e) => ({
+        name: e.name,
+        value: `${e.value >= 0 ? "+" : ""}${e.value.toFixed(2)}`,
+        detail: e.detail,
+      })),
+    },
+    {
+      title: "Unluckiest (d20)",
+      entries: lb().unluckiest.map((e) => ({
+        name: e.name,
+        value: e.value.toFixed(2),
+        detail: e.detail,
+      })),
+    },
+    {
+      title: "Most crits (nat 20)",
+      entries: lb().mostCrits.map((e) => ({
+        name: e.name,
+        value: fmtNum(e.value),
+        detail: e.detail,
+      })),
+    },
+    {
+      title: "Most fumbles (nat 1)",
+      entries: lb().mostFumbles.map((e) => ({
+        name: e.name,
+        value: fmtNum(e.value),
+        detail: e.detail,
+      })),
+    },
+    {
+      title: "Most rolls",
+      entries: lb().mostRolls.map((e) => ({ name: e.name, value: fmtNum(e.value) })),
+    },
+  ]
   return (
     <div class="dice-overview">
       <p class="dice-note dice-note--inline">
@@ -265,7 +264,9 @@ function Distribution(props: { summary: DiceSummary; palette: Palette }) {
       }
     return [...set].sort((a, b) => a - b)
   }
-  const [base, setBase] = createSignal(basesWithData().includes(20) ? 20 : (basesWithData()[0] ?? 20))
+  const [base, setBase] = createSignal(
+    basesWithData().includes(20) ? 20 : (basesWithData()[0] ?? 20),
+  )
 
   const option = createMemo<ECharts.EChartsOption>(() => {
     const b = base()
@@ -338,7 +339,8 @@ function Distribution(props: { summary: DiceSummary; palette: Palette }) {
           </select>
         </label>
         <span class="dice-note dice-note--inline">
-          % of each player’s d{base()} rolls landing on each face; dashed line = a perfectly fair die.
+          % of each player’s d{base()} rolls landing on each face; dashed line = a perfectly fair
+          die.
         </span>
       </div>
       <EChart option={option} height={440} />
@@ -458,8 +460,18 @@ function parseColor(s: string): [number, number, number] | null {
   }
   if (s.startsWith("#")) {
     const h = s.slice(1)
-    const hex = h.length === 3 ? h.split("").map((c) => c + c).join("") : h
-    return [parseInt(hex.slice(0, 2), 16), parseInt(hex.slice(2, 4), 16), parseInt(hex.slice(4, 6), 16)]
+    const hex =
+      h.length === 3
+        ? h
+            .split("")
+            .map((c) => c + c)
+            .join("")
+        : h
+    return [
+      parseInt(hex.slice(0, 2), 16),
+      parseInt(hex.slice(2, 4), 16),
+      parseInt(hex.slice(4, 6), 16),
+    ]
   }
   return null
 }

@@ -133,10 +133,26 @@ export function aggregateDice(
       .slice(0, TOP_N)
 
   const leaderboards: Leaderboards = {
-    luckiest: board((p) => d20(p)!.luckDeviation, "desc", (p) => `n=${d20(p)!.count}`),
-    unluckiest: board((p) => d20(p)!.luckDeviation, "asc", (p) => `n=${d20(p)!.count}`),
-    mostCrits: board((p) => d20(p)!.crits, "desc", (p) => `${pct(d20(p)!.critRate)} rate`),
-    mostFumbles: board((p) => d20(p)!.fumbles, "desc", (p) => `${pct(d20(p)!.fumbleRate)} rate`),
+    luckiest: board(
+      (p) => d20(p)!.luckDeviation,
+      "desc",
+      (p) => `n=${d20(p)!.count}`,
+    ),
+    unluckiest: board(
+      (p) => d20(p)!.luckDeviation,
+      "asc",
+      (p) => `n=${d20(p)!.count}`,
+    ),
+    mostCrits: board(
+      (p) => d20(p)!.crits,
+      "desc",
+      (p) => `${pct(d20(p)!.critRate)} rate`,
+    ),
+    mostFumbles: board(
+      (p) => d20(p)!.fumbles,
+      "desc",
+      (p) => `${pct(d20(p)!.fumbleRate)} rate`,
+    ),
     mostRolls: perPlayer.slice(0, TOP_N).map((p) => ({ name: p.name, value: p.totalRolls })),
   }
 

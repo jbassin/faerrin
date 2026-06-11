@@ -13,12 +13,12 @@ All host steps are **manual** — nothing here runs automatically until you inst
 `../mouth/players.toml`, applies the filter (`base <= 100 AND player_id ∉ {6}`), and writes into
 `assets/dice/`:
 
-| artifact | role |
-|----------|------|
-| `summary.json` | aggregated viz feed (small) |
-| `rolls.json` | compact raw rows for the "All rolls" table |
-| `rolls.csv` | download (timestamp,player,character,base,value,source) |
-| `rolls.parquet` | download (columnar, for pandas/polars/DuckDB) |
+| artifact        | role                                                    |
+| --------------- | ------------------------------------------------------- |
+| `summary.json`  | aggregated viz feed (small)                             |
+| `rolls.json`    | compact raw rows for the "All rolls" table              |
+| `rolls.csv`     | download (timestamp,player,character,base,value,source) |
+| `rolls.parquet` | download (columnar, for pandas/polars/DuckDB)           |
 
 `astro build` then copies `assets/dice/` → `public/dice/` (additive — the 763 wiki files are
 unchanged). `assets/dice/` is gitignored; the artifacts are regenerated, never committed.
