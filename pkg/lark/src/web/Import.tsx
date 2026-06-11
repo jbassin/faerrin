@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiGet, apiSend } from "./api";
+import { Menu } from "./ui/Menu";
 
 interface JobItem {
   id: number;
@@ -109,14 +110,13 @@ export function Import({ onImported }: { onImported: () => void }) {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
-        <select className="lib__moveto" value={target} onChange={(e) => setTarget(e.target.value)} title="Import into">
-          <option value="">New collection / none</option>
-          {collections.map((c) => (
-            <option key={c.id} value={c.id}>
-              into: {c.name}
-            </option>
-          ))}
-        </select>
+        <Menu
+          label={target ? `into: ${collections.find((c) => String(c.id) === target)?.name ?? "…"}` : "New collection / none"}
+          items={[
+            { label: "New collection / none", onSelect: () => setTarget("") },
+            ...collections.map((c) => ({ label: `into: ${c.name}`, onSelect: () => setTarget(String(c.id)) })),
+          ]}
+        />
         <button className="btn" type="submit" disabled={busy || !url.trim()}>
           {busy ? "Importing…" : "Import"}
         </button>

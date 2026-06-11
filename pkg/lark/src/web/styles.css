@@ -389,6 +389,15 @@ body {
 .menu__item.is-danger {
   color: var(--danger);
 }
+.menu__dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  margin-right: 0.5rem;
+  vertical-align: baseline;
+}
 .menu__item:disabled {
   opacity: 0.4;
   cursor: default;
@@ -403,8 +412,7 @@ body {
 .lib__tagrow > button:first-child {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
 }
 .lib__tagdot {
   display: inline-block;
@@ -416,15 +424,21 @@ body {
   vertical-align: baseline;
 }
 .lib__tagedit {
-  display: none;
+  flex: 0 0 auto;
+  opacity: 0;
+  pointer-events: none;
   background: transparent;
   border: 0;
+  padding: 0 0.2rem;
   color: var(--muted);
   cursor: pointer;
   font-size: 0.78rem;
+  line-height: 1;
 }
-.lib__tagrow:hover .lib__tagedit {
-  display: inline;
+.lib__tagrow:hover .lib__tagedit,
+.lib__tagedit:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 .lib__tagedit:hover {
   color: var(--ink);

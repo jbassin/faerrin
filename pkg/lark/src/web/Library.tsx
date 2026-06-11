@@ -206,16 +206,19 @@ export function Library() {
     });
   }
 
-  async function bulkTag() {
-    const raw = await promptText({ title: "Add tags", label: "Tag(s) to add to selected (comma-separated):", placeholder: "calm, ambient" });
-    if (!raw) return;
-    const addTags = raw.split(",").map((s) => s.trim()).filter(Boolean);
-    if (addTags.length === 0) return;
+  async function applyTags(addTags: string[]) {
+    if (addTags.length === 0 || !selected.size) return;
     await withBusy(async () => {
       await apiSend("POST", "/api/v1/tracks/bulk-tag", { ids: selectedIds, addTags });
       await loadFacets();
       await loadTracks();
     });
+  }
+
+  async function bulkTag() {
+    const raw = await promptText({ title: "New tag", label: "Tag(s) to add to selected (comma-separated):", placeholder: "calm, ambient" });
+    if (!raw) return;
+    await applyTags(raw.split(",").map((s) => s.trim()).filter(Boolean));
   }
 
   async function saveTag(tag: Tag, patch: { name: string; color: string | null }) {
@@ -341,7 +344,14 @@ export function Library() {
           <Menu
             label="Tag"
             disabled={!selected.size || busy}
-            items={[{ label: "Add tags…", onSelect: () => void bulkTag() }]}
+            items={[
+              ...tags.map((t) => ({
+                label: t.name,
+                color: t.color,
+                onSelect: () => void applyTags([t.name]),
+              })),
+              { label: "New tag…", onSelect: () => void bulkTag() },
+            ]}
           />
           <Menu
             label="Move to"

@@ -10,6 +10,8 @@ export interface MenuItem {
   onSelect: () => void;
   danger?: boolean;
   disabled?: boolean;
+  /** Optional leading color dot (e.g. a tag's color). */
+  color?: string | null;
 }
 
 export function Menu({
@@ -66,6 +68,12 @@ export function Menu({
                 it.onSelect();
               }}
             >
+              {it.color !== undefined && (
+                <span
+                  className="menu__dot"
+                  style={{ background: it.color ?? "transparent", borderColor: it.color ?? "var(--muted)" }}
+                />
+              )}
               {it.label}
             </button>
           ))}
