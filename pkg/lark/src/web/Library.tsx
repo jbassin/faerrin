@@ -70,6 +70,15 @@ export function Library() {
 
   const selectedIds = useMemo(() => [...selected], [selected]);
   const sections = useMemo(() => groupByColor(tracks), [tracks]);
+  // Tags actually present on the selected (visible) tracks — the candidates for Untag.
+  const selectedTags = useMemo(() => {
+    const present = new Map<number, Tag>();
+    for (const t of tracks) {
+      if (!selected.has(t.id)) continue;
+      for (const tag of t.tags) present.set(tag.id, tag);
+    }
+    return [...present.values()].sort((a, b) => a.name.localeCompare(b.name));
+  }, [tracks, selected]);
   // The track id currently sounding (not just queued/paused), for the row toggle.
   const playingId = playback.np?.status === "playing" ? playback.np.current?.trackId : undefined;
 
@@ -225,6 +234,15 @@ export function Library() {
     await applyTags(raw.split(",").map((s) => s.trim()).filter(Boolean));
   }
 
+  async function removeTag(tagId: number) {
+    if (!selected.size) return;
+    await withBusy(async () => {
+      await apiSend("POST", "/api/v1/tracks/bulk-tag", { ids: selectedIds, removeTagIds: [tagId] });
+      await loadFacets();
+      await loadTracks();
+    });
+  }
+
   async function saveTag(tag: Tag, patch: { name: string; color: string | null }) {
     await apiSend("PATCH", `/api/v1/tags/${tag.id}`, patch);
     await loadFacets();
@@ -366,6 +384,16 @@ export function Library() {
               })),
               { label: "New tag…", onSelect: () => void bulkTag() },
             ]}
+          />
+          <Menu
+            label="Untag"
+            disabled={!selectedTags.length || busy}
+            items={selectedTags.map((t) => ({
+              label: t.name,
+              color: t.color,
+              danger: true,
+              onSelect: () => void removeTag(t.id),
+            }))}
           />
           <Menu
             label="Move to"
