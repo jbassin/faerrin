@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { apiGet, apiSend } from "./api";
+import { useDialog } from "./ui/Dialog";
+import { useToast } from "./ui/Toast";
 
 interface KeyRow {
   id: number;
@@ -12,6 +14,8 @@ interface KeyRow {
 
 /** Stream Deck API-key management (B26): generate (shown once), list, revoke. */
 export function Keys() {
+  const toast = useToast();
+  const { confirm, promptText } = useDialog();
   const [keys, setKeys] = useState<KeyRow[]>([]);
   const [fresh, setFresh] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
@@ -22,17 +26,31 @@ export function Keys() {
   }, [open, load]);
 
   async function generate() {
-    const name = window.prompt("Name this key (e.g. 'Stream Deck')", "Stream Deck");
+    const name = await promptText({ title: "New API key", label: "Name this key (e.g. 'Stream Deck')", defaultValue: "Stream Deck" });
     if (name === null) return;
-    const created = await apiSend<KeyRow & { key: string }>("POST", "/api/v1/keys", { name });
-    setFresh(created.key);
-    await load();
+    try {
+      const created = await apiSend<KeyRow & { key: string }>("POST", "/api/v1/keys", { name });
+      setFresh(created.key);
+      await load();
+    } catch (err) {
+      toast.error(`Could not create key: ${(err as Error).message}`);
+    }
   }
 
   async function revoke(id: number) {
-    if (!window.confirm("Revoke this key? Any Stream Deck using it stops working.")) return;
-    await apiSend("DELETE", `/api/v1/keys/${id}`);
-    await load();
+    const ok = await confirm({
+      title: "Revoke key",
+      body: "Revoke this key? Any Stream Deck using it stops working.",
+      confirmLabel: "Revoke",
+      danger: true,
+    });
+    if (!ok) return;
+    try {
+      await apiSend("DELETE", `/api/v1/keys/${id}`);
+      await load();
+    } catch (err) {
+      toast.error(`Could not revoke key: ${(err as Error).message}`);
+    }
   }
 
   return (
