@@ -1,9 +1,9 @@
 # Release the birdfeed Stream Deck plugin as an installable .streamDeckPlugin.
 #
-# Unlike ci.yml (which delegates everything to the Dagger module), this is a
-# publish workflow: it builds + packs pkg/birdfeed and attaches the artifact to a
-# GitHub Release. The Elgato CLI is a Node tool that pins Node 20/24 and is not
-# part of the bun build lanes, so packing lives here rather than in Dagger.
+# Separate from ci.yml (the test/build gates), this is a publish workflow: it
+# builds + packs pkg/birdfeed and attaches the artifact to a GitHub Release. The
+# Elgato CLI is a Node tool that pins Node 20/24 and is not part of the bun build
+# lanes, so packing lives in its own workflow.
 #
 # It only ever releases when birdfeed actually changed since the LAST birdfeed
 # release — gated twice: the `paths:` trigger skips pushes that don't touch
@@ -56,7 +56,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: "1.3.14" # match the CI/Dagger bun version
+          bun-version: "1.3.14" # match the CI bun version
 
       - name: Install (frozen lockfile)
         run: bun install --frozen-lockfile

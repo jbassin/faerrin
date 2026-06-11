@@ -60,15 +60,15 @@ There's **no root `.env`** — each package that needs env vars has its own `.en
 
 ## CI
 
-CI is [Dagger](https://dagger.io) (TypeScript module at `.dagger/`), called from GitHub Actions
-(`.github/workflows/ci.yml`), so the same steps run locally and in CI inside a pinned `oven/bun`
-container:
+CI is plain **GitHub Actions** (`.github/workflows/ci.yml`): each gate is its own job so they run in
+parallel, with Bun + Playwright dependency caching. Reproduce most of it locally with:
 
 ```sh
-bun run ci:check                 # dagger call check  (typecheck → astro check → lint → test)
-bun run ci:build                 # dagger call build
-bun run ci                       # dagger call all
+bun run ci    # typecheck → check → lint → test → build (all apps); visual-regression runs in CI only
 ```
+
+The `visual-regression` job runs inside the pinned `oven/bun:1.3.14` container because vellum's golden
+images were generated there. Bun is pinned to `1.3.14` across all jobs.
 
 ## Version control: Jujutsu (jj)
 

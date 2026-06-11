@@ -1,7 +1,17 @@
-# Monorepo CI (GitHub Actions). The pipeline is defined as a Dagger TypeScript
-# module at the repo root (.dagger/), so the exact same steps run locally
-# (`dagger call check` / `dagger call build`) and in CI — no local-vs-CI drift.
-# jj is git-colocated, so CI clones the git side normally; no jj-specific handling.
+# Monorepo CI — plain GitHub Actions (no Dagger).
+#
+# Every gate runs as its own job so they execute in PARALLEL (wall time ≈ the
+# slowest job, not the sum). Each job restores a Bun dependency cache via the
+# shared composite at .github/actions/setup, so installs are warm on repeat runs.
+#
+# Environment notes:
+#  - Most jobs run on ubuntu-latest with pinned Bun (1.3.14).
+#  - `build` + `visual-regression` also cache + install Playwright Chromium
+#    (strider renders an OG image, vellum renders statblocks).
+#  - `visual-regression` runs INSIDE the pinned `oven/bun:1.3.14` container
+#    because vellum's golden images were generated there — a different OS/font
+#    stack would fail the perceptual compare. Regenerate goldens in that same
+#    environment with: `bun --filter @faerrin/vellum visual-regression -- --update`.
 name: CI
 
 on:
@@ -9,46 +19,83 @@ on:
     branches: [main]
   pull_request:
 
+# Cancel superseded runs on the same ref so pushes don't pile up.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  check:
+  typecheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # typecheck → astro check → lint → test for every app, inside a pinned
-      # oven/bun:1.3.14 container provisioned by Dagger (see .dagger/src/index.ts).
-      - name: Check (Dagger)
-        uses: dagger/dagger-for-github@v8.4.1
-        with:
-          version: "0.21.4"
-          call: check --source=.
+      - uses: ./.github/actions/setup
+      - run: bun --filter '*' typecheck
+
+  astro-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: bun --filter '*' check # astro check + prettier (aether, face)
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: bun --filter '*' lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: bun --filter '*' test
 
   build:
     runs-on: ubuntu-latest
-    needs: check
     steps:
       - uses: actions/checkout@v4
-      # Builds every site (aether, strider, face). strider's build renders
-      # an OG image via Playwright, so the Dagger build function installs Chromium
-      # inside the container. aether builds astro against committed content/; the
-      # production remote-ingest pipeline (pkg/aether/build.sh) is intentionally
-      # NOT run in CI.
-      - name: Build (Dagger)
-        uses: dagger/dagger-for-github@v8.4.1
+      - uses: ./.github/actions/setup
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
         with:
-          version: "0.21.4"
-          call: build --source=.
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            playwright-${{ runner.os }}-
+      - name: Install Chromium (strider OG render)
+        run: bunx playwright install --with-deps chromium
+      - run: bun --filter '*' build
 
   visual-regression:
     runs-on: ubuntu-latest
-    needs: check
+    # Pinned container = the environment vellum's goldens were generated in.
+    container:
+      image: oven/bun:1.3.14
+    env:
+      BUN_INSTALL_CACHE_DIR: /bun-cache
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
     steps:
+      - name: Ensure git (for checkout inside the container)
+        run: command -v git >/dev/null || (apt-get update && apt-get install -y git)
       - uses: actions/checkout@v4
-      # Golden-image VR for vellum (NFR-9): builds vellum + installs Chromium in
-      # the pinned container, renders the fixtures, and compares to the committed
-      # goldens (authoritative in this same container). Regenerate them with
-      # `dagger call update-goldens --source=. export --path=pkg/vellum/test/visual/golden`.
-      - name: Visual regression (Dagger)
-        uses: dagger/dagger-for-github@v8.4.1
+      - name: Restore bun dependency cache
+        uses: actions/cache@v4
         with:
-          version: "0.21.4"
-          call: visual-regression --source=.
+          path: /bun-cache
+          key: bun-container-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            bun-container-
+      - run: bun install --frozen-lockfile
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: /ms-playwright
+          key: playwright-container-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            playwright-container-
+      - run: bunx playwright install --with-deps chromium
+      - run: bun --filter @faerrin/vellum build
+      - run: bun --filter @faerrin/vellum visual-regression

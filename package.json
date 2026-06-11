@@ -12,8 +12,6 @@
     "build": "bun --filter '*' build",
     "lint": "bun --filter '*' format && bun --filter '*' lint",
     "format": "bun --filter '*' format",
-    "ci": "dagger call all --source=.",
-    "ci:check": "dagger call check --source=.",
-    "ci:build": "dagger call build --source=."
+    "ci": "bun --filter '*' typecheck && bun --filter '*' check && bun --filter '*' lint && bun --filter '*' test && bun --filter '*' build"
   }
 }

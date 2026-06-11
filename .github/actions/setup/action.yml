@@ -1,0 +1,25 @@
+# Composite step shared by every CI job: pin Bun, restore the dependency cache,
+# and install the workspace from the frozen lockfile. Keeps the per-job boilerplate
+# in one place so the parallel jobs stay short.
+name: Setup Bun + install
+description: Install pinned Bun, restore the bun dependency cache, and install workspace deps.
+
+runs:
+  using: composite
+  steps:
+    - name: Install Bun
+      uses: oven-sh/setup-bun@v2
+      with:
+        bun-version: "1.3.14" # keep in lockstep with the rest of the repo
+
+    - name: Restore bun dependency cache
+      uses: actions/cache@v4
+      with:
+        path: ~/.bun/install/cache
+        key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+        restore-keys: |
+          bun-${{ runner.os }}-
+
+    - name: Install (frozen lockfile)
+      shell: bash
+      run: bun install --frozen-lockfile
