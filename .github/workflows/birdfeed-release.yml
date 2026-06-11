@@ -1,0 +1,98 @@
+# Release the birdfeed Stream Deck plugin as an installable .streamDeckPlugin.
+#
+# Unlike ci.yml (which delegates everything to the Dagger module), this is a
+# publish workflow: it builds + packs pkg/birdfeed and attaches the artifact to a
+# GitHub Release. The Elgato CLI is a Node tool that pins Node 20/24 and is not
+# part of the bun build lanes, so packing lives here rather than in Dagger.
+#
+# It only ever releases when birdfeed actually changed since the LAST birdfeed
+# release — gated twice: the `paths:` trigger skips pushes that don't touch
+# pkg/birdfeed at all, and the `gate` job diffs HEAD against the most recent
+# `birdfeed-v*` tag so repeat pushes without a real birdfeed change don't release.
+name: birdfeed release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "pkg/birdfeed/**"
+  workflow_dispatch: # allow a manual release (e.g. first run, or to re-pack)
+
+permissions:
+  contents: write # create tags + releases
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.decide.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # need full history + tags to diff against the last release
+      - name: Decide whether birdfeed changed since the last release
+        id: decide
+        run: |
+          set -euo pipefail
+          last="$(git tag -l 'birdfeed-v*' --sort=-creatordate | head -n1 || true)"
+          if [ -z "$last" ]; then
+            echo "No previous birdfeed release tag found — will release."
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          elif ! git diff --quiet "$last" HEAD -- pkg/birdfeed; then
+            echo "pkg/birdfeed changed since $last — will release."
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "pkg/birdfeed unchanged since $last — skipping release."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  release:
+    needs: gate
+    if: needs.gate.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.3.14" # match the CI/Dagger bun version
+
+      - name: Install (frozen lockfile)
+        run: bun install --frozen-lockfile
+
+      # Don't ship a broken plugin: re-run birdfeed's own gates before packing.
+      - name: Verify birdfeed (typecheck + test)
+        run: |
+          bun run --filter @faerrin/birdfeed typecheck
+          bun run --filter @faerrin/birdfeed test
+
+      # rollup bundle → bin/plugin.js, then `streamdeck pack` → dist/*.streamDeckPlugin.
+      # --ignore-validation: the placeholder icons are SVG; the validator wants PNG.
+      # The plugin installs and runs fine (keys are painted at runtime) — only the
+      # static catalog icons are cosmetic. Replace imgs/* with real PNGs to drop the flag.
+      - name: Build & pack plugin
+        run: bun run --filter @faerrin/birdfeed package
+
+      - name: Compute release tag
+        id: meta
+        run: |
+          set -euo pipefail
+          version="$(jq -r '.Version' pkg/birdfeed/com.faerrin.birdfeed.sdPlugin/manifest.json)"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "tag=birdfeed-v${version}-${GITHUB_SHA:0:7}" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create "${{ steps.meta.outputs.tag }}" \
+            pkg/birdfeed/dist/com.faerrin.birdfeed.streamDeckPlugin \
+            --target "${GITHUB_SHA}" \
+            --title "birdfeed ${{ steps.meta.outputs.tag }}" \
+            --notes "Stream Deck plugin build for \`@faerrin/birdfeed\` (manifest v${{ steps.meta.outputs.version }}) from commit ${GITHUB_SHA}.
+
+          **Install:** download \`com.faerrin.birdfeed.streamDeckPlugin\` below and double-click it to install into the Stream Deck app, then set the lark URL + API key in the action's settings.
+
+          _Auto-generated because \`pkg/birdfeed/**\` changed since the previous birdfeed release._"

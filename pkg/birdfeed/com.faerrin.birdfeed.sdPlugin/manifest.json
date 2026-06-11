@@ -34,7 +34,9 @@
 			"Icon": "imgs/actions/slot/icon",
 			"Tooltip": "A birdfeed navigation/track key. Place these across the deck; birdfeed paints each one based on where you are (collections → tags → tracks).",
 			"PropertyInspectorPath": "ui/lark.html",
-			"Controllers": ["Keypad"],
+			"Controllers": [
+				"Keypad"
+			],
 			"VisibleInActionsList": true,
 			"States": [
 				{

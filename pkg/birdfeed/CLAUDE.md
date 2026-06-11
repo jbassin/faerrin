@@ -39,6 +39,10 @@ bun-driven `typecheck`/`test` gates.
   **not** extend the repo `tsconfig.base.json` (that targets bundler/ESNext, not Node).
 - **No `build` script on purpose.** Bundling is `bun run bundle` (`rollup -c`) so `bun --filter '*'
   build` skips birdfeed — it packages outside the bun lanes. `typecheck` + `test` DO run in the gates.
+  Packaging an installable plugin is `bun run package` (`bundle` + `streamdeck pack … --output dist
+  --no-update-check --ignore-validation`) → `dist/com.faerrin.birdfeed.streamDeckPlugin`. `--ignore-validation`
+  is needed only because the placeholder icons are SVG (the validator wants PNG) — drop it once real
+  PNG icons land in `imgs/`.
 - **Pure vs. coupled split** mirrors lark: SDK-touching code (`controller`, `slot`, `plugin`) is
   typechecked but not unit-tested (no SDK runtime in CI); everything testable is pure and lives in
   `grid`/`nav`/`render`/`lark client helpers`.
@@ -54,8 +58,18 @@ bun run --filter @faerrin/birdfeed bundle     # rollup → com.faerrin.birdfeed.
 bunx @elgato/cli link com.faerrin.birdfeed.sdPlugin   # register with the Stream Deck app
 bunx @elgato/cli restart com.faerrin.birdfeed
 # or: bun run --filter @faerrin/birdfeed watch  (rebuild + hot-restart)
-bunx @elgato/cli pack com.faerrin.birdfeed.sdPlugin   # → distributable .streamDeckPlugin
+bun run --filter @faerrin/birdfeed package            # → dist/com.faerrin.birdfeed.streamDeckPlugin
 ```
+
+## CI release (`.github/workflows/birdfeed-release.yml`)
+
+On every push to `main` that touches `pkg/birdfeed/**`, a dedicated workflow builds + packs the
+plugin and publishes it as a **GitHub Release** with the `.streamDeckPlugin` attached. It releases
+**only when birdfeed actually changed since the last birdfeed release** — gated twice: the `paths:`
+trigger, plus a `gate` job that diffs `HEAD` against the most recent `birdfeed-v*` tag. Tags are
+`birdfeed-v<manifest.Version>-<shortsha>`. The release job re-runs birdfeed's typecheck + test before
+packing, so a broken plugin never ships. (This is the one CI lane that is NOT Dagger — the Elgato CLI
+is a Node tool, so it runs directly in the workflow.)
 
 ## Not done (needs hardware / host)
 

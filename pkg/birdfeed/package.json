@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "test": "bun test",
     "bundle": "rollup -c",
-    "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.faerrin.birdfeed\""
+    "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.faerrin.birdfeed\"",
+    "package": "rollup -c && streamdeck pack com.faerrin.birdfeed.sdPlugin --output dist --force --no-update-check --ignore-validation"
   },
   "dependencies": {
     "@elgato/streamdeck": "^2.1.0"
