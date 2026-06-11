@@ -4,6 +4,7 @@ import { Import } from "./Import";
 import { Keys } from "./Keys";
 import { Library } from "./Library";
 import { Playback } from "./Playback";
+import { PlaybackProvider } from "./playbackState";
 
 interface Me {
   uid: string;
@@ -54,10 +55,12 @@ export function App() {
               </button>
             </form>
           </div>
-          <Playback />
-          <Import onImported={() => setRefreshKey((k) => k + 1)} />
-          <Keys />
-          <Library key={refreshKey} />
+          <PlaybackProvider>
+            <Playback />
+            <Import onImported={() => setRefreshKey((k) => k + 1)} />
+            <Keys />
+            <Library key={refreshKey} />
+          </PlaybackProvider>
         </>
       )}
     </main>

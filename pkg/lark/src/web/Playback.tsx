@@ -1,15 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
-import { ApiError, apiGet, apiSend } from "./api";
-
-interface NowPlaying {
-  connected: boolean;
-  channelId: string | null;
-  status: "idle" | "playing" | "paused";
-  loopMode: "none" | "track" | "playlist";
-  current: { trackId: number; title: string; positionMs: number; durationMs: number | null } | null;
-  queueLength: number;
-  queueIndex: number;
-}
+import { type NowPlaying, usePlayback } from "./playbackState";
 
 const LOOP_NEXT: Record<NowPlaying["loopMode"], NowPlaying["loopMode"]> = {
   none: "playlist",
@@ -18,33 +7,9 @@ const LOOP_NEXT: Record<NowPlaying["loopMode"], NowPlaying["loopMode"]> = {
 };
 const LOOP_LABEL: Record<NowPlaying["loopMode"], string> = { none: "Loop: off", playlist: "Loop: queue", track: "Loop: track" };
 
-/** Now-playing bar with transport controls; polls the engine and hides if no bot. */
+/** Now-playing bar with transport controls; reads shared state and hides if no bot. */
 export function Playback() {
-  const [np, setNp] = useState<NowPlaying | null>(null);
-  const [unavailable, setUnavailable] = useState(false);
-
-  const refresh = useCallback(async () => {
-    try {
-      setNp(await apiGet<NowPlaying>("/api/v1/playback/now"));
-      setUnavailable(false);
-    } catch (err) {
-      if (err instanceof ApiError && err.status === 503) setUnavailable(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    void refresh();
-    const id = setInterval(() => void refresh(), 2500);
-    return () => clearInterval(id);
-  }, [refresh]);
-
-  async function cmd(path: string, body?: unknown) {
-    try {
-      setNp(await apiSend<NowPlaying>("POST", path, body));
-    } catch {
-      void refresh();
-    }
-  }
+  const { np, unavailable, cmd } = usePlayback();
 
   if (unavailable) return <div className="pb pb--off muted">Playback bot offline (no Discord token configured).</div>;
   if (!np) return null;

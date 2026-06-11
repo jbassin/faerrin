@@ -2,6 +2,7 @@ import { type CSSProperties, useCallback, useEffect, useMemo, useState } from "r
 import type { RenameOp } from "../lib/rename";
 import { apiGet, apiSend } from "./api";
 import { groupByColor, rowTintStyle } from "./grouping";
+import { usePlayback } from "./playbackState";
 import type { Collection, Tag, Track } from "./types";
 import { useDialog } from "./ui/Dialog";
 import { Menu } from "./ui/Menu";
@@ -19,6 +20,7 @@ function rowStyle(color: string | null, selected: boolean): CSSProperties | unde
 export function Library() {
   const toast = useToast();
   const { confirm, promptText } = useDialog();
+  const playback = usePlayback();
   const [collections, setCollections] = useState<Collection[]>([]);
   const [tags, setTags] = useState<Tag[]>([]);
   const [tracks, setTracks] = useState<Track[]>([]);
@@ -68,6 +70,8 @@ export function Library() {
 
   const selectedIds = useMemo(() => [...selected], [selected]);
   const sections = useMemo(() => groupByColor(tracks), [tracks]);
+  // The track id currently sounding (not just queued/paused), for the row toggle.
+  const playingId = playback.np?.status === "playing" ? playback.np.current?.trackId : undefined;
 
   async function withBusy(fn: () => Promise<void>) {
     setBusy(true);
@@ -230,10 +234,20 @@ export function Library() {
   async function play(trackIds: number[]) {
     if (trackIds.length === 0) return;
     try {
-      await apiSend("POST", "/api/v1/playback/play", { trackIds });
+      await playback.playTracks(trackIds);
     } catch {
       toast.error("Playback unavailable — is the Discord bot online and are you in a voice channel?");
     }
+  }
+
+  /** Row button: pause/resume if this track is the current one, otherwise start it. */
+  function togglePlay(t: Track) {
+    const np = playback.np;
+    if (np?.current?.trackId === t.id) {
+      if (np.status === "playing") return void playback.cmd("/api/v1/playback/pause");
+      if (np.status === "paused") return void playback.cmd("/api/v1/playback/resume");
+    }
+    void play([t.id]);
   }
 
   async function upload(files: FileList | null) {
@@ -417,8 +431,12 @@ export function Library() {
                       <input type="checkbox" checked={selected.has(t.id)} onChange={() => toggle(t.id)} />
                     </td>
                     <td>
-                      <button className="lib__play" title="Play" onClick={() => void play([t.id])}>
-                        ▶
+                      <button
+                        className="lib__play"
+                        title={playingId === t.id ? "Pause" : "Play"}
+                        onClick={() => togglePlay(t)}
+                      >
+                        {playingId === t.id ? "⏸" : "▶"}
                       </button>
                       {t.status === "error" && (
                         <span className="lib__warn" title="File error — track may not play">
