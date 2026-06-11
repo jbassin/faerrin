@@ -34,6 +34,13 @@ export class DiscordVoiceAdapter implements VoiceAdapter {
     private readonly guildId: string,
   ) {
     this.player.on(AudioPlayerStatus.Idle, () => this.fireEnd("finished"));
+    // Diagnostic: surface player buffering/underruns the same way the voice
+    // connection already logs its state. A `playing → buffering → playing`
+    // blip mid-track means the ffmpeg/opus pipe underran (startup ramp), not a
+    // voice reconnect (those show up on the connection's stateChange log).
+    this.player.on("stateChange", (o, n) => {
+      if (o.status !== n.status) console.log(`[lark] audio player ${o.status} → ${n.status}`);
+    });
     this.player.on("error", (err) => {
       console.error("[lark] audio player error:", err?.message ?? err);
       this.fireEnd("error");
@@ -93,11 +100,16 @@ export class DiscordVoiceAdapter implements VoiceAdapter {
 
   async play(filePath: string, filter: string, onEnd: (reason: TrackEndReason) => void): Promise<void> {
     if (this.resource) this.suppressEnd = true; // replacing — no spurious end
+    // ffmpeg decodes → applies the loudness/limiter filter → encodes Opus
+    // natively (libopus) into an Ogg-Opus stream. Encoding Opus in ffmpeg
+    // (far faster than realtime) keeps opusscript out of the realtime hot path,
+    // so the pipe never starves at startup — which was causing the ~1s-then-gap
+    // underrun. opusscript stays a dep but is no longer used for playback.
     const args = ["-analyzeduration", "0", "-loglevel", "0", "-i", filePath];
     if (filter) args.push("-af", filter);
-    args.push("-f", "s16le", "-ar", "48000", "-ac", "2");
+    args.push("-c:a", "libopus", "-b:a", "128k", "-ar", "48000", "-ac", "2", "-f", "opus");
     const transcoder = new prism.FFmpeg({ args });
-    this.resource = createAudioResource(transcoder, { inputType: StreamType.Raw });
+    this.resource = createAudioResource(transcoder, { inputType: StreamType.OggOpus });
     this.endCb = onEnd;
     this.player.play(this.resource);
   }
